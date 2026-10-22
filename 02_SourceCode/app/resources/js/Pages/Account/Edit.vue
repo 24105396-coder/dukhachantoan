@@ -16,8 +16,8 @@ import { nationalityOptions } from '@/Utils/countries';
 import { LOCALES, CHANNELS } from '@/Utils/options';
 
 /**
- * Tài khoản: hồ sơ + tùy chọn nhận thông báo (NotificationPreferences) gửi chung một PUT /tai-khoan;
- * đổi mật khẩu là form riêng.
+ * Tài khoản: hồ sơ, liên hệ khẩn cấp + tùy chọn nhận thông báo (NotificationPreferences) gửi chung một PUT /tai-khoan;
+ * đổi mật khẩu là form riêng (PATCH /tai-khoan/mat-khau).
  */
 const props = defineProps({
     user: { type: Object, default: () => ({}) },
@@ -36,7 +36,9 @@ const profile = useForm({
     name: props.user?.name || '',
     phone: props.user?.phone || '',
     nationality: props.user?.nationality || '',
-    locale: props.user?.preferred_locale || props.user?.locale || locale,
+    emergency_contact_name: props.user?.emergency_contact_name || '',
+    emergency_contact_phone: props.user?.emergency_contact_phone || '',
+    locale: props.user?.locale || locale,
     theme: props.user?.theme || theme.value || 'light',
     preferences: {
         channels_level1: prefs.channels_level1 ?? DEFAULT_CHANNELS[1],
@@ -54,6 +56,8 @@ const password = useForm({ current_password: '', password: '', password_confirma
 const profileCheck = useClientValidation(profile, {
     name: { label: 'common.name', required: true, min: 2, max: 120 },
     phone: { label: 'common.phone', pattern: { regex: PHONE_RE, message: 'phone' } },
+    emergency_contact_name: { label: 'account.emergency_contact_name', max: 120 },
+    emergency_contact_phone: { label: 'account.emergency_contact_phone', pattern: { regex: PHONE_RE, message: 'phone' } },
 });
 const passwordCheck = useClientValidation(password, {
     current_password: { label: 'account.current_password', required: true },
@@ -81,7 +85,7 @@ function saveProfile(e) {
 
 function savePassword(e) {
     if (!passwordCheck.validate(e)) return;
-    password.put(lr('/tai-khoan/mat-khau'), { preserveScroll: true, onSuccess: () => password.reset() });
+    password.patch(lr('/tai-khoan/mat-khau'), { preserveScroll: true, onSuccess: () => password.reset() });
 }
 </script>
 
@@ -98,6 +102,11 @@ function savePassword(e) {
                 <FormField v-model="profile.nationality" :label="t('account.nationality')" type="select" :options="countries" :placeholder="t('auth.nationality_placeholder')" :error="profile.errors.nationality" />
                 <FormField v-model="profile.locale" :label="t('account.locale')" type="select" :options="localeOptions" :error="profile.errors.locale" />
                 <FormField v-model="profile.theme" :label="t('account.theme')" type="select" :options="themeOptions" :error="profile.errors.theme" @update:model-value="applyLocal" />
+            </div>
+            <h3 class="mt-6 text-base">{{ t('account.emergency_contact') }}</h3>
+            <div class="mt-3 grid gap-4 md:grid-cols-2">
+                <FormField v-model="profile.emergency_contact_name" :label="t('account.emergency_contact_name')" maxlength="120" autocomplete="off" :error="profile.errors.emergency_contact_name" />
+                <FormField v-model="profile.emergency_contact_phone" :label="t('account.emergency_contact_phone')" type="tel" :pattern="PHONE_PATTERN" :pattern-hint="t('validation_hint.phone')" maxlength="16" autocomplete="off" :error="profile.errors.emergency_contact_phone" />
             </div>
         </section>
 
