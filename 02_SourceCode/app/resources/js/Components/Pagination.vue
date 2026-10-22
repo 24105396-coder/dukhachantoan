@@ -3,16 +3,22 @@ import { computed } from 'vue';
 import { Link } from '@inertiajs/vue3';
 import { useT } from '@/Composables/useT';
 
-// Nhận paginator chuẩn Laravel (toArray): links[], from, to, total
+/**
+ * Phân trang chuẩn Laravel. Nhận paginator dạng phẳng (links[], from, to, total)
+ * hoặc dạng Resource (links{}, meta{links[], from, to, total}).
+ */
 const props = defineProps({
     paginator: { type: Object, default: null },
     links: { type: Array, default: null },
 });
 const { t } = useT();
 
-// Prop phân trang dạng phẳng (paginator->toArray()): không có khóa meta
-const items = computed(() => props.links || props.paginator?.links || []);
-const meta = computed(() => props.paginator || {});
+const meta = computed(() => props.paginator?.meta || props.paginator || {});
+const items = computed(() => {
+    if (props.links) return props.links;
+    if (Array.isArray(props.paginator?.links)) return props.paginator.links;
+    return Array.isArray(meta.value.links) ? meta.value.links : [];
+});
 
 // Laravel trả nhãn "&laquo; Previous" / "Next &raquo;": thay bằng chuỗi dịch
 function label(link, i) {
@@ -23,21 +29,21 @@ function label(link, i) {
 </script>
 
 <template>
-    <nav v-if="items.length > 3" class="mt-8 flex flex-col items-center gap-3" :aria-label="t('common.pagination')">
+    <nav v-if="items.length > 3" class="mt-6 flex flex-col items-center gap-3" :aria-label="t('common.pagination')">
         <p v-if="meta.total" class="text-sm text-muted">{{ t('common.showing', { from: meta.from ?? 0, to: meta.to ?? 0, total: meta.total }) }}</p>
-        <ul class="flex flex-wrap justify-center gap-1">
+        <ul class="flex flex-wrap justify-center gap-1.5">
             <li v-for="(link, i) in items" :key="i">
                 <Link
                     v-if="link.url"
                     :href="link.url"
-                    class="btn btn-sm min-w-9"
-                    :class="link.active ? 'btn-primary' : ''"
+                    class="clay-btn clay-btn-sm min-w-9"
+                    :class="link.active ? 'clay-btn-primary' : ''"
                     :aria-current="link.active ? 'page' : undefined"
                     preserve-scroll
                 >
                     {{ label(link, i) }}
                 </Link>
-                <span v-else class="btn btn-sm min-w-9" aria-disabled="true">{{ label(link, i) }}</span>
+                <span v-else class="clay-btn clay-btn-sm min-w-9" aria-disabled="true">{{ label(link, i) }}</span>
             </li>
         </ul>
     </nav>

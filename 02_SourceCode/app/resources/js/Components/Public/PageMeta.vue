@@ -30,7 +30,7 @@ const text = computed(() => {
 <template>
     <Head :title="title">
         <meta head-key="description" name="description" :content="text" />
-        <meta head-key="og:title" property="og:title" :content="title || 'DiSanSo'" />
+        <meta head-key="og:title" property="og:title" :content="title || 'DuKhachAnToan'" />
         <meta head-key="og:description" property="og:description" :content="text" />
         <meta v-if="image" head-key="og:image" property="og:image" :content="image" />
         <slot />

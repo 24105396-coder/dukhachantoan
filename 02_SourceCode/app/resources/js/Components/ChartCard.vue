@@ -23,6 +23,9 @@ const props = defineProps({
     values: { type: Array, default: () => [] },
     seriesLabel: { type: String, default: '' },
     height: { type: Number, default: 260 },
+    levels: { type: Boolean, default: false },
+    // Tên biến CSS cho từng phần tử (vd ['--level-0', '--level-4']) khi màu mang nghĩa
+    colorVars: { type: Array, default: () => [] },
 });
 const { t } = useT();
 const canvas = ref(null);
@@ -31,13 +34,14 @@ const loadFailed = ref(false);
 let observer = null;
 let Chart = null;
 
-// Màu đọc từ biến CSS để theo theme hiện tại
+// Màu đọc từ biến CSS để theo theme hiện tại; `levels` = tô theo mức cảnh báo 1–4
 function tokens() {
     const s = getComputedStyle(document.documentElement);
     const v = (n) => s.getPropertyValue(n).trim();
+    const levelPalette = [v('--level-1'), v('--level-2'), v('--level-3'), v('--level-4')];
     return {
-        text: v('--ds-text'), muted: v('--ds-muted'), border: v('--ds-border'),
-        palette: [v('--ds-primary'), v('--ds-accent'), v('--ds-info'), v('--ds-success'), v('--ds-warning'), v('--ds-danger'), v('--ds-muted')],
+        text: v('--text'), muted: v('--text-muted'), border: v('--border'),
+        palette: props.colorVars.length ? props.colorVars.map(v) : props.levels ? levelPalette : [v('--color-brand-500'), v('--level-1'), v('--level-3'), v('--level-2'), v('--level-4'), v('--color-brand-700')],
     };
 }
 
@@ -47,7 +51,8 @@ function build() {
     const c = tokens();
     const isDoughnut = props.type === 'doughnut';
     const isHbar = props.type === 'hbar';
-    const color = isDoughnut ? c.palette : props.type === 'line' ? c.palette[0] : c.palette[1];
+    const color = isDoughnut || props.levels || props.colorVars.length ? c.palette : c.palette[0];
+    Chart.defaults.font.family = getComputedStyle(document.body).fontFamily;
     chart.value = new Chart(canvas.value, {
         type: isHbar ? 'bar' : props.type,
         data: {
@@ -61,7 +66,7 @@ function build() {
                 fill: props.type === 'line',
                 tension: 0.3,
                 pointRadius: 2,
-                borderRadius: isDoughnut ? 0 : 6,
+                borderRadius: isDoughnut ? 0 : 10,
             }],
         },
         options: {
@@ -99,9 +104,9 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-    <section class="card p-4">
-        <h2 class="mb-3 font-body text-base font-bold">{{ title }}</h2>
-        <EmptyState v-if="!values.length" icon="activity" :title="t('common.no_data')" compact />
+    <section class="clay-card-sm p-4 md:p-5">
+        <h2 class="mb-3 font-display text-lg font-bold">{{ title }}</h2>
+        <EmptyState v-if="!values.length" :title="t('common.no_data')" compact />
         <p v-else-if="loadFailed" class="text-sm text-muted" role="alert">{{ t('common.chart_error') }}</p>
         <div v-else class="relative" :style="{ height: `${height}px` }">
             <canvas ref="canvas" role="img" :aria-label="title"></canvas>

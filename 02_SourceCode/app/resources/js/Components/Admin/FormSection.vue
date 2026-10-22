@@ -7,9 +7,9 @@ defineProps({
 </script>
 
 <template>
-    <section class="card p-4 md:p-5">
+    <section class="clay-card-sm p-4 md:p-6">
         <header class="mb-4">
-            <h2 class="font-body text-lg font-bold">{{ title }}</h2>
+            <h2 class="section-title text-lg">{{ title }}</h2>
             <p v-if="description" class="text-sm text-muted">{{ description }}</p>
         </header>
         <slot />

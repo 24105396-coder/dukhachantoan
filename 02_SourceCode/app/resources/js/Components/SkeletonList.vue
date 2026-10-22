@@ -1,29 +1,19 @@
 <script setup>
-import { useT } from '@/Composables/useT';
-
+/** Khung chờ khi tải danh sách: `count` thẻ giả theo lưới `cols` (1–3). */
 defineProps({
-    count: { type: Number, default: 6 },
-    variant: { type: String, default: 'card' }, // card | row
+    count: { type: Number, default: 3 },
+    cols: { type: Number, default: 3 },
+    height: { type: String, default: 'h-40' },
 });
-const { t } = useT();
+const GRID = { 1: '', 2: 'md:grid-cols-2', 3: 'md:grid-cols-2 lg:grid-cols-3' };
 </script>
 
 <template>
-    <div role="status" :aria-label="t('common.loading')">
-        <div v-if="variant === 'card'" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            <div v-for="i in count" :key="i" class="card overflow-hidden">
-                <div class="skeleton aspect-[4/3] rounded-none"></div>
-                <div class="space-y-2 p-4">
-                    <div class="skeleton h-3 w-1/3"></div>
-                    <div class="skeleton h-5 w-3/4"></div>
-                    <div class="skeleton h-3 w-full"></div>
-                    <div class="skeleton h-3 w-5/6"></div>
-                </div>
-            </div>
+    <div class="grid gap-4" :class="GRID[cols] ?? GRID[3]" aria-hidden="true">
+        <div v-for="i in count" :key="i" class="clay-card-sm space-y-3 p-5">
+            <div class="skeleton h-5 w-1/3"></div>
+            <div class="skeleton w-full" :class="height"></div>
+            <div class="skeleton h-4 w-2/3"></div>
         </div>
-        <div v-else class="space-y-2">
-            <div v-for="i in count" :key="i" class="skeleton h-12 w-full"></div>
-        </div>
-        <span class="sr-only">{{ t('common.loading') }}</span>
     </div>
 </template>

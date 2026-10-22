@@ -9,12 +9,12 @@ const { t } = useT();
 </script>
 
 <template>
-    <nav :aria-label="t('common.breadcrumb')" class="text-sm text-muted">
+    <nav v-if="items.length" :aria-label="t('common.breadcrumb')" class="text-sm text-muted">
         <ol class="flex flex-wrap items-center gap-1">
-            <li v-for="(item, i) in items" :key="i" class="flex items-center gap-1">
-                <Icon v-if="i > 0" name="chevronRight" :size="14" />
-                <Link v-if="item.href && i < items.length - 1" :href="item.href" class="hover:text-primary hover:underline">{{ item.label }}</Link>
-                <span v-else aria-current="page" class="line-clamp-1 text-text">{{ item.label }}</span>
+            <li v-for="(item, i) in items" :key="i" class="flex min-w-0 items-center gap-1">
+                <Icon v-if="i > 0" name="chevron-right" :size="14" />
+                <Link v-if="item.href && i < items.length - 1" :href="item.href" class="rounded-full px-1 font-medium hover:text-link hover:underline">{{ item.label }}</Link>
+                <span v-else aria-current="page" class="line-clamp-1 font-semibold text-fg">{{ item.label }}</span>
             </li>
         </ol>
     </nav>

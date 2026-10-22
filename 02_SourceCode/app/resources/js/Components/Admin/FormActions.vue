@@ -1,5 +1,5 @@
 <script setup>
-import { Link } from '@inertiajs/vue3';
+import Button from '@/Components/Button.vue';
 import { useT } from '@/Composables/useT';
 
 /** Thanh nút lưu/hủy dính dưới form. */
@@ -13,11 +13,11 @@ const { t } = useT();
 </script>
 
 <template>
-    <div class="sticky bottom-0 z-20 -mx-4 mt-6 flex flex-wrap items-center justify-end gap-2 border-t border-border bg-bg/95 px-4 py-3 backdrop-blur md:-mx-6 md:px-6">
+    <div class="clay-card-sm sticky bottom-20 z-20 mt-6 flex flex-wrap items-center justify-end gap-2 px-4 py-3 md:bottom-4">
         <p v-if="hasErrors" class="mr-auto text-sm text-danger" role="alert">{{ t('admin.form.has_errors') }}</p>
-        <Link :href="cancelHref" class="btn">{{ t('common.cancel') }}</Link>
-        <button type="submit" class="btn btn-primary" :disabled="processing">
+        <Button :href="cancelHref">{{ t('common.cancel') }}</Button>
+        <Button type="submit" variant="primary" :loading="processing">
             {{ processing ? t('common.saving') : t('common.save') }}
-        </button>
+        </Button>
     </div>
 </template>

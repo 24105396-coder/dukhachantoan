@@ -1,0 +1,192 @@
+<script setup>
+import { ref, computed, watch, onMounted, onBeforeUnmount, shallowRef, useId } from 'vue';
+import { router } from '@inertiajs/vue3';
+import EmptyState from '@/Components/EmptyState.vue';
+import { useT } from '@/Composables/useT';
+import { LEVELS, normalizeLevel, levelColor } from '@/Utils/levels';
+
+/**
+ * Bản đồ Leaflet + tile OpenStreetMap trong thẻ clay.
+ * - geojson: FeatureCollection(ZoneGeo) – vùng tô màu theo properties.level (0–4), popup tên + mức + liên kết url.
+ * - markers: [{ id, lat, lng, label, level?, url?, description? }] – điểm tròn màu theo mức.
+ * - legend: [{ level, label, color? }] (mặc định 5 mức) hiển thị dạng pill có chữ (không chỉ dựa màu).
+ * Leaflet nạp động (chunk vendor-leaflet) để trang không có bản đồ không phải tải.
+ */
+const props = defineProps({
+    geojson: { type: Object, default: null },
+    markers: { type: Array, default: () => [] },
+    center: { type: Object, default: null }, // { lat, lng, zoom }
+    legend: { type: Array, default: null },
+    showLegend: { type: Boolean, default: true },
+    fit: { type: Boolean, default: true },
+    heightClass: { type: String, default: 'h-[320px] md:h-[420px]' },
+    ariaLabel: { type: String, default: '' },
+    bare: { type: Boolean, default: false },
+});
+const emit = defineEmits(['select']);
+const { t } = useT();
+const uid = useId();
+
+const VIETNAM = { lat: 16.2, lng: 106.5, zoom: 5 };
+const FIT_PADDING = [24, 24];
+const MAX_FIT_ZOOM = 11;
+const TILE_URL = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
+const TILE_ATTRIBUTION = '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a>';
+
+const el = ref(null);
+const map = shallowRef(null);
+const loading = ref(true);
+const failed = ref(false);
+let L = null;
+let dataLayer = null;
+
+const features = computed(() => (Array.isArray(props.geojson?.features) ? props.geojson.features : []));
+const legendItems = computed(() => {
+    if (props.legend?.length) return props.legend.map((x) => ({ ...x, level: normalizeLevel(x.level) ?? 0 }));
+    return Object.keys(LEVELS).map((n) => ({ level: Number(n), label: t(LEVELS[n].key) }));
+});
+const DOTS = { 0: 'bg-level-0', 1: 'bg-level-1', 2: 'bg-level-2', 3: 'bg-level-3', 4: 'bg-level-4' };
+const summary = computed(() =>
+    features.value
+        .map((f) => f.properties || {})
+        .filter((p) => p.name)
+        .map((p) => ({ name: p.name, level: normalizeLevel(p.level), url: p.url })),
+);
+
+const isSafeHref = (url) => typeof url === 'string' && (/^\/(?!\/)/.test(url) || /^https?:\/\//i.test(url));
+
+/** Popup dựng bằng DOM + textContent (không chèn HTML từ dữ liệu). */
+function popupContent({ name, level, url, description }) {
+    const box = document.createElement('div');
+    box.className = 'space-y-1';
+    const title = document.createElement('strong');
+    title.className = 'block font-display text-base';
+    title.textContent = name || '';
+    box.appendChild(title);
+    const lv = normalizeLevel(level);
+    if (lv !== null) {
+        const tag = document.createElement('span');
+        tag.className = 'block text-xs font-semibold';
+        tag.textContent = `${t('map.level')}: ${t(LEVELS[lv].key)}`;
+        box.appendChild(tag);
+    }
+    if (description) {
+        const p = document.createElement('span');
+        p.className = 'block text-xs';
+        p.textContent = description;
+        box.appendChild(p);
+    }
+    if (isSafeHref(url)) {
+        const a = document.createElement('a');
+        a.href = url;
+        a.textContent = t('common.view_detail');
+        a.addEventListener('click', (e) => {
+            if (url.startsWith('/')) {
+                e.preventDefault();
+                router.visit(url);
+            }
+        });
+        box.appendChild(a);
+    }
+    return box;
+}
+
+function styleFor(feature) {
+    const color = levelColor(feature?.properties?.level);
+    return { color, weight: 2, opacity: 0.9, fillColor: color, fillOpacity: 0.28 };
+}
+
+function pointStyle(level) {
+    const color = levelColor(level);
+    return { radius: 8, color: '#FFFFFF', weight: 2, fillColor: color, fillOpacity: 0.95 };
+}
+
+function draw() {
+    if (!map.value || !L) return;
+    dataLayer?.remove();
+    dataLayer = L.featureGroup();
+    if (features.value.length) {
+        L.geoJSON({ type: 'FeatureCollection', features: features.value }, {
+            style: styleFor,
+            pointToLayer: (f, latlng) => L.circleMarker(latlng, pointStyle(f?.properties?.level)),
+            onEachFeature: (f, layer) => {
+                layer.bindPopup(() => popupContent(f.properties || {}));
+                layer.on('click', () => emit('select', f.properties || {}));
+            },
+        }).addTo(dataLayer);
+    }
+    props.markers
+        .filter((m) => Number.isFinite(Number(m.lat)) && Number.isFinite(Number(m.lng)))
+        .forEach((m) => {
+            L.circleMarker([Number(m.lat), Number(m.lng)], pointStyle(m.level ?? 0))
+                .bindPopup(() => popupContent({ name: m.label, level: m.level, url: m.url, description: m.description }))
+                .on('click', () => emit('select', m))
+                .addTo(dataLayer);
+        });
+    dataLayer.addTo(map.value);
+    focusView();
+}
+
+function focusView() {
+    const bounds = dataLayer?.getBounds?.();
+    if (props.fit && bounds?.isValid()) {
+        map.value.fitBounds(bounds, { padding: FIT_PADDING, maxZoom: MAX_FIT_ZOOM });
+        return;
+    }
+    const c = props.center || VIETNAM;
+    map.value.setView([c.lat, c.lng], c.zoom ?? VIETNAM.zoom);
+}
+
+onMounted(async () => {
+    try {
+        // CSS nạp cùng JS để chunk vendor-leaflet không bị kéo vào bundle chung của mọi trang
+        const [mod] = await Promise.all([import('leaflet'), import('leaflet/dist/leaflet.css')]);
+        L = mod.default ?? mod;
+        map.value = L.map(el.value, { scrollWheelZoom: false, zoomControl: true, attributionControl: true });
+        L.tileLayer(TILE_URL, { maxZoom: 18, attribution: TILE_ATTRIBUTION }).addTo(map.value);
+        draw();
+    } catch {
+        failed.value = true;
+    } finally {
+        loading.value = false;
+    }
+});
+
+watch(() => [props.geojson, props.markers], draw, { deep: true });
+
+onBeforeUnmount(() => {
+    map.value?.remove();
+    map.value = null;
+});
+</script>
+
+<template>
+    <section :class="bare ? '' : 'clay-card p-3 md:p-4'" :aria-labelledby="ariaLabel ? undefined : `map-h-${uid}`" :aria-label="ariaLabel || undefined">
+        <h2 v-if="!ariaLabel" :id="`map-h-${uid}`" class="sr-only">{{ t('map.title') }}</h2>
+        <div class="relative overflow-hidden rounded-[20px]" :class="heightClass">
+            <div ref="el" class="h-full w-full" :aria-label="t('map.canvas_label')" role="application"></div>
+            <div v-if="loading" class="skeleton absolute inset-0" aria-hidden="true"></div>
+            <div v-if="failed" class="absolute inset-0 flex items-center justify-center bg-soft p-4">
+                <EmptyState variant="error" :title="t('map.load_error')" :description="t('map.load_error_hint')" compact />
+            </div>
+        </div>
+
+        <ul v-if="showLegend" class="mt-3 flex flex-wrap gap-2" :aria-label="t('map.legend')">
+            <li v-for="item in legendItems" :key="item.level" class="pill">
+                <span class="h-3 w-3 rounded-full ring-2 ring-white/70" :class="DOTS[item.level]" aria-hidden="true"></span>
+                {{ item.label }}
+            </li>
+        </ul>
+
+        <!-- Bản tóm tắt dạng văn bản cho trình đọc màn hình (bản đồ canvas không đọc được) -->
+        <div class="sr-only">
+            <p>{{ t('map.summary', { n: summary.length }) }}</p>
+            <ul>
+                <li v-for="z in summary" :key="z.name">
+                    {{ z.name }}<template v-if="z.level !== null">: {{ t(LEVELS[z.level].key) }}</template>
+                </li>
+            </ul>
+        </div>
+        <slot />
+    </section>
+</template>

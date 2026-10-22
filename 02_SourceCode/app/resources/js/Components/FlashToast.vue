@@ -4,25 +4,25 @@ import { usePage } from '@inertiajs/vue3';
 import Icon from '@/Components/Icon.vue';
 import { useT } from '@/Composables/useT';
 
+/** Thông báo nổi từ flash.success / flash.error của máy chủ; tự ẩn sau 5 giây, đọc qua aria-live. */
 const page = usePage();
 const { t } = useT();
 const toasts = ref([]);
 let seq = 0;
 const timers = new Map();
-
 const AUTO_HIDE_MS = 5000;
+
+function dismiss(id) {
+    toasts.value = toasts.value.filter((x) => x.id !== id);
+    clearTimeout(timers.get(id));
+    timers.delete(id);
+}
 
 function push(type, message) {
     if (!message) return;
     const id = ++seq;
     toasts.value = [...toasts.value, { id, type, message }];
     timers.set(id, setTimeout(() => dismiss(id), AUTO_HIDE_MS));
-}
-
-function dismiss(id) {
-    toasts.value = toasts.value.filter((x) => x.id !== id);
-    clearTimeout(timers.get(id));
-    timers.delete(id);
 }
 
 watch(
@@ -38,7 +38,7 @@ onBeforeUnmount(() => timers.forEach((tm) => clearTimeout(tm)));
 </script>
 
 <template>
-    <div class="pointer-events-none fixed inset-x-0 top-20 z-[1100] flex flex-col items-center gap-2 px-4" aria-live="polite" role="status">
+    <div class="pointer-events-none fixed inset-x-0 top-24 z-[1100] flex flex-col items-center gap-2 px-4" aria-live="polite" role="status">
         <TransitionGroup
             enter-from-class="opacity-0 -translate-y-2"
             enter-active-class="transition duration-200"
@@ -48,14 +48,14 @@ onBeforeUnmount(() => timers.forEach((tm) => clearTimeout(tm)));
             <div
                 v-for="toast in toasts"
                 :key="toast.id"
-                class="card pointer-events-auto flex w-full max-w-md items-start gap-3 p-3 pr-2"
-                :class="toast.type === 'error' ? 'border-danger' : 'border-success'"
+                class="clay-card-sm pointer-events-auto flex w-full max-w-md items-start gap-3 border-2 p-3 pr-2"
+                :class="toast.type === 'error' ? 'border-level-4' : 'border-brand-400'"
             >
-                <span :class="toast.type === 'error' ? 'text-danger' : 'text-success'" class="mt-0.5">
-                    <Icon :name="toast.type === 'error' ? 'alert' : 'check'" />
+                <span class="icon-tile h-9 w-9" :class="toast.type === 'error' ? 'text-danger' : 'text-success'">
+                    <Icon :name="toast.type === 'error' ? 'circle-alert' : 'circle-check'" :size="18" />
                 </span>
-                <p class="flex-1 text-sm">{{ toast.message }}</p>
-                <button type="button" class="btn btn-ghost btn-sm btn-icon" :aria-label="t('common.close')" @click="dismiss(toast.id)">
+                <p class="flex-1 pt-1.5 text-sm font-medium">{{ toast.message }}</p>
+                <button type="button" class="clay-btn clay-btn-ghost clay-btn-sm clay-btn-icon" :aria-label="t('common.close')" @click="dismiss(toast.id)">
                     <Icon name="close" :size="16" />
                 </button>
             </div>

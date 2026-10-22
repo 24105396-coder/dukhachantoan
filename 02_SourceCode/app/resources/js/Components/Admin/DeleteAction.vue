@@ -32,8 +32,8 @@ function confirm() {
 <template>
     <button
         type="button"
-        class="btn btn-ghost btn-icon text-danger"
-        :class="small ? 'btn-sm' : ''"
+        class="clay-btn clay-btn-ghost clay-btn-icon text-danger"
+        :class="small ? 'clay-btn-sm' : ''"
         :disabled="disabled"
         :title="disabled ? disabledReason : t('common.delete')"
         :aria-label="`${t('common.delete')} ${name}`"
