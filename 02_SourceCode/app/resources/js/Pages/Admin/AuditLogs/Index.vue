@@ -59,7 +59,7 @@ function metaText(meta) {
             <template #cell-meta="{ value }">
                 <details v-if="metaText(value).length > META_PREVIEW" class="max-w-xs text-xs">
                     <summary class="cursor-pointer"><code>{{ metaText(value).slice(0, META_PREVIEW) }}…</code></summary>
-                    <pre class="mt-1 max-h-60 overflow-auto whitespace-pre-wrap break-all rounded bg-surface-2 p-2">{{ JSON.stringify(value, null, 2) }}</pre>
+                    <pre class="mt-1 max-h-60 overflow-auto whitespace-pre-wrap break-all rounded-xl bg-soft p-2">{{ JSON.stringify(value, null, 2) }}</pre>
                 </details>
                 <code v-else class="block max-w-xs break-all text-xs">{{ metaText(value) || '—' }}</code>
             </template>

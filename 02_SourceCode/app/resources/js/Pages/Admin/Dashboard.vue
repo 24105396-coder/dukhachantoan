@@ -1,83 +1,98 @@
 <script setup>
 import { computed } from 'vue';
-import { Head } from '@inertiajs/vue3';
+import { Head, usePage } from '@inertiajs/vue3';
 import PageHeader from '@/Components/PageHeader.vue';
-import StatCard from '@/Components/StatCard.vue';
+import KpiCard from '@/Components/KpiCard.vue';
 import ChartCard from '@/Components/ChartCard.vue';
-import DataTable from '@/Components/DataTable.vue';
-import Icon from '@/Components/Icon.vue';
+import MapBase from '@/Components/MapBase.vue';
+import AlertCard from '@/Components/AlertCard.vue';
+import EmptyState from '@/Components/EmptyState.vue';
+import RefreshIndicator from '@/Components/RefreshIndicator.vue';
+import NeedHelpList from '@/Components/Dashboard/NeedHelpList.vue';
+import QueueHealthCard from '@/Components/Dashboard/QueueHealthCard.vue';
+import AffectedTripsTable from '@/Components/Dashboard/AffectedTripsTable.vue';
 import { useT } from '@/Composables/useT';
 import { useFormat } from '@/Composables/useFormat';
-import { useLocaleRoute } from '@/Composables/useLocaleRoute';
+import { usePolling, DEFAULT_POLL_MS } from '@/Composables/usePolling';
+import { ALERT_LEVELS } from '@/Utils/options';
 
+/** Dashboard cơ quan hỗ trợ / quản trị: làm mới 30 giây/lần (agency chỉ thấy dữ liệu tỉnh mình – máy chủ lọc). */
 const props = defineProps({
     kpis: { type: Object, default: () => ({}) },
-    charts: { type: Object, default: () => ({}) },
-    recentAudit: { type: Array, default: () => [] },
-    analyticsUp: { type: Boolean, default: true },
+    affectedTrips: { type: Array, default: () => [] },
+    needHelp: { type: Array, default: () => [] },
+    recentAlerts: { type: Array, default: () => [] },
+    zonesGeo: { type: Object, default: null },
+    queueHealth: { type: Object, default: () => ({}) },
 });
-const { t, te } = useT();
-const { number, money, dateTime, date } = useFormat();
-const lr = useLocaleRoute();
+const page = usePage();
+const { t } = useT();
+const { number, stamp } = useFormat();
+const RELOAD_PROPS = ['kpis', 'affectedTrips', 'needHelp', 'recentAlerts', 'zonesGeo', 'queueHealth'];
+const { refresh, isRefreshing, lastRefreshedAt } = usePolling(DEFAULT_POLL_MS, RELOAD_PROPS);
 
 const k = computed(() => props.kpis || {});
-const ratio = computed(() => {
-    const r = Number(k.value.publishedRatio ?? 0);
-    return `${number(r <= 1 ? r * 100 : r, 1)}%`;
-});
+const fmt = (v) => (v === null || v === undefined ? null : number(v));
+const province = computed(() => page.props.auth?.user?.province?.name || t('admin.users.province_all'));
+
 const cards = computed(() => [
-    { label: t('admin.dashboard.sites'), value: number(k.value.sites), icon: 'landmark', tone: 'primary', hint: t('admin.dashboard.published_ratio', { ratio: ratio.value }) },
-    { label: t('admin.dashboard.artifacts_figures'), value: `${number(k.value.artifacts)} / ${number(k.value.figures)}`, icon: 'vase', tone: 'accent', hint: t('admin.dashboard.records', { n: number(k.value.records) }) },
-    { label: t('admin.dashboard.bookings30d'), value: number(k.value.bookings30d), icon: 'ticket', tone: 'info', hint: t('admin.dashboard.revenue', { amount: money(k.value.revenue30d ?? 0) }) },
-    { label: t('admin.dashboard.pending_contributions'), value: number(k.value.pendingContributions), icon: 'inbox', tone: 'success', hint: t('admin.dashboard.users', { n: number(k.value.users) }) },
+    { key: 'active_alerts', icon: 'bell-ring', tone: 'peach' },
+    { key: 'trips_in_affected_zones', icon: 'route', tone: 'lemon' },
+    { key: 'travelers_affected', icon: 'users', tone: 'sky' },
+    { key: 'checkins_need_help_open', icon: 'siren', tone: 'peach' },
+    { key: 'trips_active', icon: 'luggage', tone: 'mint' },
+    { key: 'sources_ok', icon: 'radio', tone: 'mint' },
 ]);
-
-const views = computed(() => props.charts?.viewsByDay || []);
-const byStatus = computed(() => props.charts?.bookingsByStatus || []);
-const byProvince = computed(() => props.charts?.sitesByProvince || []);
-const engines = computed(() => props.charts?.searchEngines || []);
-
-const auditColumns = computed(() => [
-    { key: 'created_at', label: t('admin.audit.time') },
-    { key: 'user', label: t('admin.audit.user') },
-    { key: 'action', label: t('admin.audit.action') },
-    { key: 'subject', label: t('admin.audit.subject') },
-]);
-const userName = (u) => (u && typeof u === 'object' ? u.name || u.email : u) || t('admin.audit.system');
-const subjectText = (s) => (s && typeof s === 'object' ? [te('subject_type', s.type), s.title || s.id].filter(Boolean).join(' – ') : s) || '—';
+const severityLabels = computed(() => ALERT_LEVELS.map((l) => t(`enums.levels.${l}`)));
+const severityValues = computed(() => {
+    const by = k.value.alerts_by_severity || {};
+    const values = ALERT_LEVELS.map((l) => Number(by[l] ?? by[String(l)] ?? 0));
+    return values.some((v) => v > 0) ? values : [];
+});
+const checkinLabels = computed(() => ['safe', 'need_help', 'unknown'].map((s) => t(`enums.checkin_status.${s}`)));
+const checkinValues = computed(() => {
+    const c = k.value.checkins_last_24h || {};
+    const values = [c.safe, c.need_help, c.unknown].map((v) => Number(v || 0));
+    return values.some((v) => v > 0) ? values : [];
+});
 </script>
 
 <template>
     <Head :title="t('admin.dashboard.title')" />
-    <PageHeader :eyebrow="t('admin.title')" :title="t('admin.dashboard.title')" :description="t('admin.dashboard.intro')">
+    <PageHeader :eyebrow="province" :title="t('admin.dashboard.title')" :description="t('admin.dashboard.intro')">
         <template #actions>
-            <a :href="lr('/quan-tri/thong-ke/xuat?type=bookings')" class="btn btn-sm"><Icon name="download" :size="16" />{{ t('admin.dashboard.export_bookings') }}</a>
-            <a :href="lr('/quan-tri/thong-ke/xuat?type=views')" class="btn btn-sm"><Icon name="download" :size="16" />{{ t('admin.dashboard.export_views') }}</a>
+            <RefreshIndicator :refreshing="isRefreshing" :last-refreshed-at="lastRefreshedAt" :interval-seconds="DEFAULT_POLL_MS / 1000" @refresh="refresh" />
         </template>
     </PageHeader>
 
-    <p v-if="!analyticsUp" class="mb-6 flex items-start gap-2 rounded-lg bg-warning-soft p-3 text-sm text-warning" role="alert">
-        <Icon name="alert" :size="18" />{{ t('admin.dashboard.analytics_down') }}
-    </p>
+    <section class="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3" :aria-label="t('dashboard.kpis')">
+        <KpiCard v-for="c in cards" :key="c.key" :label="t(`dashboard.kpi.${c.key}`)" :value="fmt(k[c.key])" :icon="c.icon" :tone="c.tone" />
+    </section>
+    <p v-if="k.last_weather_fetch" class="mt-3 text-xs text-muted">{{ t('dashboard.last_weather_fetch', { time: stamp(k.last_weather_fetch) }) }}</p>
 
-    <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-        <StatCard v-for="c in cards" :key="c.label" v-bind="c" />
+    <div class="mt-6 grid gap-4 xl:grid-cols-2">
+        <ChartCard :title="t('dashboard.alerts_by_severity')" type="bar" levels :labels="severityLabels" :values="severityValues" :series-label="t('dashboard.kpi.active_alerts')" />
+        <ChartCard :title="t('dashboard.checkins_24h')" type="doughnut" :color-vars="['--level-0', '--level-4', '--level-2']" :labels="checkinLabels" :values="checkinValues" />
     </div>
 
-    <div class="mt-6 grid gap-4 lg:grid-cols-2">
-        <ChartCard :title="t('admin.dashboard.chart_views')" type="line" :labels="views.map((x) => date(x.date, { day: '2-digit', month: '2-digit' }))" :values="views.map((x) => x.views)" :series-label="t('common.views')" />
-        <ChartCard :title="t('admin.dashboard.chart_bookings')" type="doughnut" :labels="byStatus.map((x) => x.label || te('status', x.status))" :values="byStatus.map((x) => x.count)" />
-        <ChartCard :title="t('admin.dashboard.chart_provinces')" type="hbar" :labels="byProvince.map((x) => x.name)" :values="byProvince.map((x) => x.count)" :height="320" />
-        <ChartCard :title="t('admin.dashboard.chart_engines')" type="doughnut" :labels="engines.map((x) => te('engine', x.engine))" :values="engines.map((x) => x.count)" :height="320" />
+    <div class="mt-6 grid gap-4 xl:grid-cols-[1.5fr_1fr]">
+        <MapBase :geojson="zonesGeo" bare height-class="h-[300px] md:h-[380px]" :aria-label="t('dashboard.map_title')" class="clay-card-sm p-3" />
+        <div class="grid gap-4">
+            <NeedHelpList :items="needHelp" />
+            <QueueHealthCard :queue="queueHealth" :success-rate="k.delivery_success_rate" :notifications="k.notifications_24h" />
+        </div>
     </div>
 
-    <section class="mt-6">
-        <h2 class="mb-3 font-body text-lg font-bold">{{ t('admin.dashboard.recent_audit') }}</h2>
-        <DataTable :columns="auditColumns" :rows="recentAudit" :caption="t('admin.dashboard.recent_audit')">
-            <template #cell-created_at="{ value }"><span class="whitespace-nowrap">{{ dateTime(value) }}</span></template>
-            <template #cell-user="{ value }">{{ userName(value) }}</template>
-            <template #cell-action="{ value }"><code class="text-xs">{{ value }}</code></template>
-            <template #cell-subject="{ value }">{{ subjectText(value) }}</template>
-        </DataTable>
+    <section class="mt-8 space-y-3" aria-labelledby="affected-title">
+        <h2 id="affected-title" class="section-title text-xl">{{ t('dashboard.affected_trips_title') }}</h2>
+        <AffectedTripsTable :trips="affectedTrips" />
+    </section>
+
+    <section class="mt-8 space-y-3" aria-labelledby="recent-alerts-title">
+        <h2 id="recent-alerts-title" class="section-title text-xl">{{ t('dashboard.recent_alerts_title') }}</h2>
+        <div v-if="recentAlerts.length" class="grid gap-4 md:grid-cols-2 2xl:grid-cols-3">
+            <AlertCard v-for="a in recentAlerts" :key="a.code || a.id" :alert="a" compact />
+        </div>
+        <EmptyState v-else :title="t('dashboard.recent_alerts_empty')" compact />
     </section>
 </template>

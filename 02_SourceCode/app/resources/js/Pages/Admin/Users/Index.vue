@@ -5,6 +5,7 @@ import PageHeader from '@/Components/PageHeader.vue';
 import DataTable from '@/Components/DataTable.vue';
 import FilterBar from '@/Components/FilterBar.vue';
 import Pagination from '@/Components/Pagination.vue';
+import Badge from '@/Components/Badge.vue';
 import { useT } from '@/Composables/useT';
 import { useFormat } from '@/Composables/useFormat';
 import { useLocaleRoute } from '@/Composables/useLocaleRoute';
@@ -33,6 +34,7 @@ const errors = computed(() => page.props.errors || {});
 const columns = computed(() => [
     { key: 'name', label: t('common.name') },
     { key: 'role', label: t('admin.users.role') },
+    { key: 'province', label: t('admin.users.province') },
     { key: 'is_active', label: t('admin.users.active') },
     { key: 'last_login_at', label: t('admin.users.last_login') },
     { key: 'created_at', label: t('common.created_at') },
@@ -51,19 +53,19 @@ function update(user, changes) {
 <template>
     <Head :title="t('admin.users.title')" />
     <PageHeader :eyebrow="t('admin.title')" :title="t('admin.users.title')" :description="t('admin.users.intro')" />
-    <p v-if="errors.role_id || errors.is_active" class="mb-4 rounded-lg bg-danger-soft p-3 text-sm text-danger" role="alert">{{ errors.role_id || errors.is_active }}</p>
+    <p v-if="errors.role_id || errors.is_active" class="mb-4 rounded-2xl border border-level-4 bg-level-4-soft p-3 text-sm font-semibold" role="alert">{{ errors.role_id || errors.is_active }}</p>
 
     <FilterBar :filters="filters" :fields="filterFields" class="mb-4" />
     <DataTable :columns="columns" :rows="users?.data || []" :caption="t('admin.users.title')">
         <template #cell-name="{ row }">
-            <span class="block font-semibold">{{ row.name }} <span v-if="row.id === meId" class="badge badge-info">{{ t('admin.users.you') }}</span></span>
+            <span class="block font-semibold">{{ row.name }} <Badge v-if="row.id === meId" tone="brand" size="sm">{{ t('admin.users.you') }}</Badge></span>
             <span class="block break-all text-xs text-muted">{{ row.email }}</span>
         </template>
         <template #cell-role="{ row }">
             <label :for="`role-${row.id}`" class="sr-only">{{ t('admin.users.role_for', { name: row.name }) }}</label>
             <select
                 :id="`role-${row.id}`"
-                class="input min-w-40"
+                class="clay-input min-w-40"
                 :value="roleIdOf(row.role)"
                 :disabled="row.id === meId || saving[row.id]"
                 @change="update(row, { role_id: Number($event.target.value) })"
@@ -75,7 +77,7 @@ function update(user, changes) {
             <label class="inline-flex items-center gap-2 text-sm">
                 <input
                     type="checkbox"
-                    class="h-4 w-4 accent-[var(--ds-primary)]"
+                    class="clay-checkbox"
                     :checked="!!row.is_active"
                     :disabled="row.id === meId || saving[row.id]"
                     @change="update(row, { is_active: $event.target.checked })"
@@ -83,6 +85,7 @@ function update(user, changes) {
                 {{ row.is_active ? t('admin.users.active') : t('admin.users.locked') }}
             </label>
         </template>
+        <template #cell-province="{ row }">{{ row.province?.name || (row.role === 'agency' ? t('admin.users.province_all') : '—') }}</template>
         <template #cell-last_login_at="{ value }"><span class="whitespace-nowrap">{{ value ? dateTime(value) : t('admin.users.never') }}</span></template>
         <template #cell-created_at="{ value }">{{ date(value) }}</template>
     </DataTable>
