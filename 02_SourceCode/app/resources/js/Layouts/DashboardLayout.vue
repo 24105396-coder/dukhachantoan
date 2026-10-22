@@ -62,6 +62,7 @@ const onKey = (e) => {
 
         <!-- Sidebar: thanh icon 80px (tablet) → thẻ clay 288px (desktop) -->
         <aside
+            data-print-hide
             class="clay-card fixed bottom-4 left-4 top-4 z-[1001] hidden flex-col overflow-hidden md:flex md:w-20 lg:w-72"
             :aria-label="t('dashboard.sidebar')"
         >
@@ -90,8 +91,8 @@ const onKey = (e) => {
             </div>
         </aside>
 
-        <div class="relative z-10 flex min-h-screen flex-col px-3 pb-28 pt-3 md:pb-4 md:pl-28 md:pr-4 md:pt-4 lg:pl-80">
-            <header class="mb-4 flex items-center gap-2">
+        <div class="relative z-10 flex min-h-screen flex-col px-3 pb-28 pt-3 md:pb-4 md:pl-28 md:pr-4 md:pt-4 lg:pl-80 print:p-0">
+            <header class="mb-4 flex items-center gap-2" data-print-hide>
                 <Link :href="lr('/')" class="rounded-full md:hidden" :aria-label="t('nav.home_logo')"><AppLogo compact /></Link>
                 <p v-if="user" class="hidden truncate text-sm text-muted md:block">
                     {{ t('dashboard.greeting', { name: user.name }) }}
@@ -123,7 +124,7 @@ const onKey = (e) => {
         </div>
 
         <!-- Điện thoại: thanh dưới tối đa 4 mục + nút Menu mở ngăn kéo -->
-        <nav class="clay-card fixed inset-x-3 bottom-3 z-[1001] flex items-center justify-around rounded-full p-1.5 md:hidden" :aria-label="t('dashboard.bottom_nav')">
+        <nav data-print-hide class="clay-card fixed inset-x-3 bottom-3 z-[1001] flex items-center justify-around rounded-full p-1.5 md:hidden" :aria-label="t('dashboard.bottom_nav')">
             <Link
                 v-for="item in bottomItems"
                 :key="item.key"

@@ -448,3 +448,11 @@
     }
     .blob { animation: none; }
 }
+
+/* ---------- In (hướng dẫn ứng phó, hành trình): bỏ khung điều hướng, nền trắng, không bóng ---------- */
+@media print {
+    [data-print-hide], [data-academic-footer], .blob, .leaflet-control-container { display: none !important; }
+    body { background: #FFFFFF; color: #000000; }
+    .clay-card, .clay-card-sm { box-shadow: none !important; border-color: #999999; }
+    a { text-decoration: underline; }
+}

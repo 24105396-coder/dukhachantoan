@@ -20,7 +20,7 @@ const TONES = { 0: 'bg-level-0-soft', 1: 'bg-level-1-soft', 2: 'bg-level-2-soft'
 </script>
 
 <template>
-    <div v-if="risk && level !== null" class="container-page relative z-10 mt-3">
+    <div v-if="risk && level !== null" class="container-page relative z-10 mt-3" data-print-hide>
         <div class="clay-card-sm flex flex-wrap items-center gap-x-4 gap-y-2 px-4 py-2.5 text-sm" :class="TONES[level]" role="status">
             <span class="font-semibold">{{ t('home.national_level') }}</span>
             <Badge :level="level" size="sm" />

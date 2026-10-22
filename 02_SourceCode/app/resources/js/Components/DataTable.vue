@@ -22,8 +22,8 @@ const SKELETON_ROWS = 4;
 </script>
 
 <template>
-    <div class="clay-card-sm overflow-hidden">
-        <div class="overflow-x-auto">
+    <div class="clay-card-sm relative overflow-hidden">
+        <div class="relative overflow-x-auto">
             <table class="table-clay">
                 <caption v-if="caption" class="sr-only">{{ caption }}</caption>
                 <thead>

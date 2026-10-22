@@ -42,7 +42,7 @@ const onKey = (e) => {
             {{ t('common.skip_to_content') }}
         </a>
 
-        <header class="sticky top-0 z-[1000] pt-3">
+        <header class="sticky top-0 z-[1000] pt-3" data-print-hide>
             <div class="container-page">
                 <div class="clay-card flex h-16 items-center gap-2 rounded-full px-3 md:px-4">
                     <Link :href="lr('/')" class="shrink-0 rounded-full" :aria-label="t('nav.home_logo')">

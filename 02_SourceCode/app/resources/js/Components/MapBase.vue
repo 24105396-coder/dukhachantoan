@@ -4,12 +4,18 @@ import { router } from '@inertiajs/vue3';
 import EmptyState from '@/Components/EmptyState.vue';
 import { useT } from '@/Composables/useT';
 import { LEVELS, normalizeLevel, levelColor } from '@/Utils/levels';
+import { normalizeGeometry } from '@/Utils/geo';
 
 /**
  * Bản đồ Leaflet + tile OpenStreetMap trong thẻ clay.
  * - geojson: FeatureCollection(ZoneGeo) – vùng tô màu theo properties.level (0–4), popup tên + mức + liên kết url.
  * - markers: [{ id, lat, lng, label, level?, url?, description? }] – điểm tròn màu theo mức.
  * - legend: [{ level, label, color? }] (mặc định 5 mức) hiển thị dạng pill có chữ (không chỉ dựa màu).
+ * - overlays: [{ id, geometry, level, label, url?, description? }] – phạm vi cảnh báo (GeoJSON hoặc
+ *   { type:'Circle', center, radius_km }) vẽ nét đứt theo mức.
+ * - route: [{ lat, lng }] – đường nối các chặng theo thứ tự; userLocation: { lat, lng } – vị trí của tôi.
+ * - focus: { lat, lng, zoom } – ưu tiên đặt khung nhìn vào điểm này thay vì tự khớp dữ liệu.
+ * - selected: mã vùng đang chọn (viền đậm).
  * Leaflet nạp động (chunk vendor-leaflet) để trang không có bản đồ không phải tải.
  */
 const props = defineProps({
@@ -22,8 +28,14 @@ const props = defineProps({
     heightClass: { type: String, default: 'h-[320px] md:h-[420px]' },
     ariaLabel: { type: String, default: '' },
     bare: { type: Boolean, default: false },
+    overlays: { type: Array, default: () => [] },
+    route: { type: Array, default: () => [] },
+    userLocation: { type: Object, default: null },
+    focus: { type: Object, default: null },
+    selected: { type: String, default: null },
+    scrollZoom: { type: Boolean, default: false },
 });
-const emit = defineEmits(['select']);
+const emit = defineEmits(['select', 'mapclick']);
 const { t } = useT();
 const uid = useId();
 
@@ -93,7 +105,45 @@ function popupContent({ name, level, url, description }) {
 
 function styleFor(feature) {
     const color = levelColor(feature?.properties?.level);
-    return { color, weight: 2, opacity: 0.9, fillColor: color, fillOpacity: 0.28 };
+    const isSelected = props.selected && feature?.properties?.code === props.selected;
+    return { color, weight: isSelected ? 4 : 2, opacity: 0.9, fillColor: color, fillOpacity: isSelected ? 0.45 : 0.28 };
+}
+
+function overlayStyle(level) {
+    const color = levelColor(level);
+    return { color, weight: 3, opacity: 1, dashArray: '8 6', fillColor: color, fillOpacity: 0.18 };
+}
+
+const KM_TO_M = 1000;
+
+/** Vẽ phạm vi cảnh báo: vòng tròn (L.circle) hoặc GeoJSON đa giác. */
+function drawOverlay(o) {
+    const g = normalizeGeometry(o.geometry);
+    if (!g) return;
+    const content = () => popupContent({ name: o.label, level: o.level, url: o.url, description: o.description });
+    const layer = g.kind === 'circle'
+        ? L.circle([g.center.lat, g.center.lng], { radius: g.radiusKm * KM_TO_M, ...overlayStyle(o.level) })
+        : L.geoJSON(g.data, {
+            style: () => overlayStyle(o.level),
+            pointToLayer: (f, latlng) => L.circleMarker(latlng, pointStyle(o.level)),
+        });
+    layer.bindPopup(content).on('click', () => emit('select', { type: 'alert', ...o })).addTo(dataLayer);
+}
+
+function drawRoute() {
+    const pts = props.route
+        .filter((p) => Number.isFinite(Number(p?.lat)) && Number.isFinite(Number(p?.lng)))
+        .map((p) => [Number(p.lat), Number(p.lng)]);
+    if (pts.length < 2) return;
+    L.polyline(pts, { color: levelColor(0), weight: 3, opacity: 0.85, dashArray: '2 8', lineCap: 'round' }).addTo(dataLayer);
+}
+
+function drawUser() {
+    const u = props.userLocation;
+    if (!u || !Number.isFinite(Number(u.lat)) || !Number.isFinite(Number(u.lng))) return;
+    L.circleMarker([Number(u.lat), Number(u.lng)], { radius: 9, color: '#FFFFFF', weight: 3, fillColor: levelColor(1), fillOpacity: 1 })
+        .bindPopup(() => popupContent({ name: t('map.my_location') }))
+        .addTo(dataLayer);
 }
 
 function pointStyle(level) {
@@ -123,11 +173,19 @@ function draw() {
                 .on('click', () => emit('select', m))
                 .addTo(dataLayer);
         });
+    props.overlays.forEach(drawOverlay);
+    drawRoute();
+    drawUser();
     dataLayer.addTo(map.value);
     focusView();
 }
 
 function focusView() {
+    const f = props.focus;
+    if (f && Number.isFinite(Number(f.lat)) && Number.isFinite(Number(f.lng))) {
+        map.value.setView([Number(f.lat), Number(f.lng)], f.zoom ?? MAX_FIT_ZOOM);
+        return;
+    }
     const bounds = dataLayer?.getBounds?.();
     if (props.fit && bounds?.isValid()) {
         map.value.fitBounds(bounds, { padding: FIT_PADDING, maxZoom: MAX_FIT_ZOOM });
@@ -142,8 +200,12 @@ onMounted(async () => {
         // CSS nạp cùng JS để chunk vendor-leaflet không bị kéo vào bundle chung của mọi trang
         const [mod] = await Promise.all([import('leaflet'), import('leaflet/dist/leaflet.css')]);
         L = mod.default ?? mod;
-        map.value = L.map(el.value, { scrollWheelZoom: false, zoomControl: true, attributionControl: true });
+        map.value = L.map(el.value, { scrollWheelZoom: props.scrollZoom, zoomControl: true, attributionControl: true });
         L.tileLayer(TILE_URL, { maxZoom: 18, attribution: TILE_ATTRIBUTION }).addTo(map.value);
+        // Đặt khung nhìn ban đầu trước khi vẽ: Leaflet hoãn thêm lớp (vd L.circle) khi bản đồ chưa có view
+        const c = props.center || VIETNAM;
+        map.value.setView([c.lat, c.lng], c.zoom ?? VIETNAM.zoom);
+        map.value.on('click', (e) => emit('mapclick', { lat: e.latlng.lat, lng: e.latlng.lng }));
         draw();
     } catch {
         failed.value = true;
@@ -152,7 +214,13 @@ onMounted(async () => {
     }
 });
 
-watch(() => [props.geojson, props.markers], draw, { deep: true });
+watch(() => [props.geojson, props.markers, props.overlays, props.route, props.userLocation, props.focus, props.selected], draw, { deep: true });
+
+/** Cho trang cha gọi lại khi khung chứa đổi kích thước (vd mở/đóng panel bên). */
+function invalidate() {
+    map.value?.invalidateSize();
+}
+defineExpose({ invalidate });
 
 onBeforeUnmount(() => {
     map.value?.remove();

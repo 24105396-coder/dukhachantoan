@@ -9,6 +9,8 @@ import {
     MapPinned, Megaphone, Menu, MessageSquare, Moon, Mountain, Navigation, Pause, Pencil, Phone, Play, Plus, Radio, RefreshCw,
     Route, ScrollText, Search, Send, Settings, Shield, ShieldAlert, ShieldCheck, Siren, Smartphone, Snowflake, Sparkles, Sun,
     Sunrise, Thermometer, Timer, Tornado, Trash2, TriangleAlert, Umbrella, Upload, User, UserCog, UserPlus, Users, Waves, Wind, X,
+    ArrowDown, ArrowUp, Ban, Bed, Bug, Bus, CalendarPlus, Camera, CircleX, ClipboardCheck, Copy, Crosshair, History, List,
+    LocateFixed, MapPinOff, Printer, Repeat, Share2, Ship, SquareCheck, Square, TrafficCone, UserRoundCheck, WifiOff, CircleStop,
 } from 'lucide-vue-next';
 
 /**
@@ -37,6 +39,13 @@ const ICONS = {
     thermometer: Thermometer, timer: Timer, tornado: Tornado, trash: Trash2, 'triangle-alert': TriangleAlert, alert: TriangleAlert,
     umbrella: Umbrella, upload: Upload, user: User, 'user-cog': UserCog, 'user-plus': UserPlus, users: Users, waves: Waves,
     tsunami: Waves, 'high-tide': Waves, wind: Wind, typhoon: Tornado, close: X, x: X,
+    'arrow-down': ArrowDown, 'arrow-up': ArrowUp, ban: Ban, bed: Bed, bug: Bug, bus: Bus, 'calendar-plus': CalendarPlus,
+    camera: Camera, 'circle-x': CircleX, 'clipboard-check': ClipboardCheck, copy: Copy, crosshair: Crosshair, history: History,
+    list: List, locate: LocateFixed, 'map-pin-off': MapPinOff, printer: Printer, repeat: Repeat, share: Share2, ship: Ship,
+    'square-check': SquareCheck, square: Square, 'user-check': UserRoundCheck, offline: WifiOff, stop: CircleStop,
+    // Tên icon Material trong hazard_types.json (dữ liệu hạt giống) → icon lucide tương đương
+    cyclone: Tornado, rainy: CloudRain, water: Droplets, thermostat: Thermometer, ac_unit: Snowflake, foggy: CloudFog,
+    local_fire_department: Flame, coronavirus: Bug, traffic: TrafficCone, warning: TriangleAlert,
 };
 
 const props = defineProps({
