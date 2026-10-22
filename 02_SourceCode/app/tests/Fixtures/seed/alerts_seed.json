@@ -1,0 +1,7 @@
+[
+ {"code":"AL-SIM-0001","source_code":"simulation","hazard_code":"bao","severity":4,"status":"active","is_simulated":true,
+  "zone_codes":["khanh-hoa","vinh-nha-trang"],"geometry":null,
+  "starts_at":"+0d 06:00","ends_at":"+2d 18:00","issued_at":"-1d 17:00","updated_at_source":"-0d 05:00",
+  "source_name":"Mô phỏng theo bão Yagi 9/2024","source_url":"https://nchmf.gov.vn",
+  "headline":{"vi":"[MÔ PHỎNG] Bão số 3","en":"[SIMULATION] Typhoon No. 3"},"description":{"vi":"Mô tả","en":"Description"},"instructions":{"vi":"Chỉ dẫn","en":"Instructions"}}
+]

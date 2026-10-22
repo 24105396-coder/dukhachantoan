@@ -1,0 +1,6 @@
+[
+ {"province_code":null,"zone_code":null,"contact_type":"hotline_national","phone":"113","languages":["vi"],"is_verified":true,"verified_at":"2026-10-20",
+  "source_name":"Bộ Công an","source_url":"https://bocongan.gov.vn","sort_order":1,"name":{"vi":"Công an","en":"Police"},"note":{"vi":"Miễn phí","en":"Free"}},
+ {"province_code":"KH","zone_code":"khanh-hoa","contact_type":"tourist_support","phone":"0258 3528 000","hours":"24/7","languages":["vi","en"],"is_verified":true,
+  "verified_at":"2026-10-20","source_name":"Sở Du lịch Khánh Hòa (mô phỏng)","name":{"vi":"Hỗ trợ du khách Khánh Hòa","en":"Khanh Hoa Tourist Support"}}
+]

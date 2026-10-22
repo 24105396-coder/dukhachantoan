@@ -1,0 +1,10 @@
+[
+ {"code":"khanh-hoa","zone_type":"province","province_code":"KH","parent_code":null,"name":{"vi":"Khánh Hòa","en":"Khanh Hoa"},
+  "centroid":{"lat":12.25,"lng":109.19},"radius_km":null,
+  "geometry":{"type":"Polygon","coordinates":[[[109.0,12.0],[109.4,12.0],[109.4,12.5],[109.0,12.5],[109.0,12.0]]]},
+  "source_name":"Kiểm thử","source_url":"https://gadm.org"},
+ {"code":"vinh-nha-trang","zone_type":"coast","province_code":"KH","parent_code":"khanh-hoa","name":{"vi":"Vịnh Nha Trang","en":"Nha Trang Bay"},
+  "centroid":{"lat":12.22,"lng":109.24},"radius_km":15,"geometry":null,"source_name":"Kiểm thử"},
+ {"code":"quang-ninh","zone_type":"province","province_code":"QN","parent_code":null,"name":{"vi":"Quảng Ninh","en":"Quang Ninh"},
+  "centroid":{"lat":21.0,"lng":107.3},"radius_km":60,"geometry":null,"source_name":"Kiểm thử"}
+]

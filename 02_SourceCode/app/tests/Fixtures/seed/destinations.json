@@ -1,0 +1,5 @@
+[
+ {"slug":"vinh-nha-trang","zone_code":"khanh-hoa","province_code":"KH","dest_type":"bai_bien","lat":12.24,"lng":109.20,"altitude_m":0,"is_popular":true,
+  "name":{"vi":"Vịnh Nha Trang","en":"Nha Trang Bay"},"description":{"vi":"Mô tả","en":"Description"},"safety_note":{"vi":"Mùa bão 10–12.","en":"Storm season Oct–Dec."}},
+ {"slug":"khong-co-vung","zone_code":"khong-ton-tai","province_code":"KH","dest_type":"khac","lat":12.0,"lng":109.0,"name":{"vi":"Lỗi","en":"Broken"}}
+]

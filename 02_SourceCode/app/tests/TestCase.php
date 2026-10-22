@@ -22,18 +22,19 @@ abstract class TestCase extends BaseTestCase
         return User::factory()->admin()->create();
     }
 
-    protected function manager(): User
+    /** Cơ quan hỗ trợ phụ trách tỉnh $provinceCode (null = toàn quốc). */
+    protected function agency(?string $provinceCode = 'KH'): User
     {
-        return User::factory()->manager()->create();
+        return User::factory()->agency($provinceCode)->create();
     }
 
-    protected function contributor(): User
+    protected function partner(): User
     {
-        return User::factory()->contributor()->create();
+        return User::factory()->partner()->create();
     }
 
-    protected function member(): User
+    protected function traveler(): User
     {
-        return User::factory()->member()->create();
+        return User::factory()->traveler()->create();
     }
 }

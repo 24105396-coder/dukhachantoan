@@ -1,0 +1,5 @@
+[
+ {"slug":"bao-do-bo-nam-trung-bo","hazard_code":"bao","severity":4,"zone_codes":["khanh-hoa"],"duration_hours":48,
+  "name":{"vi":"Bão đổ bộ Nam Trung Bộ","en":"Typhoon landfall in South Central Coast"},"description":{"vi":"Mô tả","en":"Description"},
+  "steps":[{"at_minute":0,"severity":2,"headline":{"vi":"Tin bão gần biển Đông","en":"Storm approaching"}},{"at_minute":10,"severity":4,"headline":{"vi":"Bão đổ bộ","en":"Landfall"}}]}
+]

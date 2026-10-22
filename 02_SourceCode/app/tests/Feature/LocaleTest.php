@@ -3,7 +3,6 @@
 namespace Tests\Feature;
 
 use App\Http\Middleware\HandleInertiaRequests;
-use App\Models\HeritageSite;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Inertia\Testing\AssertableInertia as Assert;
 use Tests\TestCase;
@@ -19,18 +18,21 @@ class LocaleTest extends TestCase
 
     public function test_unsupported_locale_returns_404(): void
     {
-        $this->get('/fr/di-san')->assertNotFound();
+        $this->get('/fr/gioi-thieu')->assertNotFound();
     }
 
     public function test_english_prefix_sets_locale_and_shared_props(): void
     {
-        $this->get('/en/di-san?type=di_tich')->assertOk()
-            ->assertInertia(fn (Assert $page) => $page->component('Sites/Index')
+        $this->get('/en/gioi-thieu?tab=sources')->assertOk()
+            ->assertInertia(fn (Assert $page) => $page->component('About')
                 ->where('locale', 'en')
                 ->where('locales.0.code', 'vi')
                 ->where('locales.1.label', 'English')
-                ->where('currentUrlOtherLocale', url('/vi/di-san').'?type=di_tich')
-                ->where('app.name', 'DiSanSo')
+                ->where('currentUrlOtherLocale', url('/vi/gioi-thieu').'?tab=sources')
+                ->where('app.name', 'DuKhachAnToan')
+                ->where('app.simulationMode', true)
+                ->where('risk.national_level', 0)
+                ->where('risk.active_alerts', 0)
                 ->where('app.courseCode', 'CSE703073')
                 ->where('app.analyticsUp', false)
                 ->has('translations')
@@ -48,20 +50,18 @@ class LocaleTest extends TestCase
         }
     }
 
-    public function test_content_is_localized_with_fallback(): void
+    public function test_translatable_content_falls_back_to_vietnamese(): void
     {
-        $site = HeritageSite::factory()->create();
-        // Xóa bản tiếng Anh: trang /en phải dự phòng về tiếng Việt thay vì lỗi
-        $site->interpretations()->where('locale', 'en')->delete();
+        $hazard = \App\Models\HazardType::create(['code' => 'bao', 'default_severity' => 3]);
+        $hazard->syncTranslations(['vi' => ['name' => 'Bão']]);
 
-        $this->get("/en/di-san/{$site->slug}")->assertOk()
-            ->assertInertia(fn (Assert $page) => $page->where('site.interpretation.locale', 'vi')
-                ->where('site.title', fn ($t) => str_starts_with($t, 'Di tích')));
+        app()->setLocale('en');
+        $this->assertSame('Bão', $hazard->fresh()->name);
     }
 
     public function test_locale_choice_is_saved_to_session_and_user(): void
     {
-        $user = $this->member();
+        $user = $this->traveler();
 
         $this->actingAs($user)->get('/en');
         $this->assertSame('en', session('locale'));

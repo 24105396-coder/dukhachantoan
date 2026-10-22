@@ -1,0 +1,6 @@
+[
+ {"slug":"ung-pho-bao","hazard_code":"bao","min_severity":3,"audience":"all","sort_order":1,"status":"published",
+  "title":{"vi":"Ứng phó khi có bão","en":"What to do in a typhoon"},"summary":{"vi":"Tóm tắt","en":"Summary"},
+  "before_steps":{"vi":["Theo dõi tin bão"],"en":["Follow forecasts"]},"during_steps":{"vi":["Ở trong nhà"],"en":["Stay indoors"]},
+  "after_steps":{"vi":["Tránh dây điện đứt"],"en":["Avoid fallen power lines"]},"sources":["Ban Chỉ đạo quốc gia về PCTT"]}
+]

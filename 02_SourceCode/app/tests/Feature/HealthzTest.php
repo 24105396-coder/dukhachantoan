@@ -15,12 +15,13 @@ class HealthzTest extends TestCase
 
         $this->getJson('/healthz')->assertOk()
             ->assertJson(['status' => 'ok', 'db' => 'ok', 'analytics' => 'down'])
-            ->assertJsonStructure(['status', 'time', 'db', 'analytics', 'version']);
+            ->assertJsonStructure(['status', 'time', 'updated_at', 'db', 'analytics', 'queue', 'last_weather_fetch', 'version'])
+            ->assertHeader('Cache-Control', 'no-store, private');
     }
 
     public function test_healthz_reports_analytics_ok_when_service_answers(): void
     {
-        Http::fake(['*/healthz' => Http::response(['status' => 'ok', 'index_size' => 10])]);
+        Http::fake(['*/healthz' => Http::response(['status' => 'ok', 'db' => 'ok', 'last_fetch' => null])]);
 
         $this->getJson('/healthz')->assertOk()->assertJson(['analytics' => 'ok']);
     }
@@ -31,6 +32,6 @@ class HealthzTest extends TestCase
         config(['database.connections.mysql.host' => '127.0.0.1', 'database.connections.mysql.port' => 1]);
         DB::purge('mysql');
 
-        $this->getJson('/healthz')->assertStatus(503)->assertJson(['status' => 'fail', 'db' => 'fail']);
+        $this->getJson('/healthz')->assertStatus(503)->assertJson(['status' => 'fail', 'db' => 'fail', 'queue' => null]);
     }
 }

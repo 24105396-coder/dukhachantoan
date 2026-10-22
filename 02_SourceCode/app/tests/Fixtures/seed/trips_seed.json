@@ -1,0 +1,8 @@
+[
+ {"code":"TR-SEED-01","owner_email":"traveler@dukhach.test","partner_email":null,"title":"Nha Trang 3 ngày","start":"+0d","end":"+2d","group_size":2,
+  "nationality":"GB","preferred_locale":"en","contact":{"name":"Alex Doe","phone":"+44 7000 000000","email":"alex@example.com"},
+  "legs":[{"zone_code":"khanh-hoa","destination_slug":"vinh-nha-trang","starts_at":"+0d 09:00","ends_at":"+1d 08:00","lodging":"Khách sạn mô phỏng","transport":"máy bay"},
+          {"zone_code":"vinh-nha-trang","starts_at":"+1d 09:00","ends_at":"+2d 18:00","transport":"tàu"}],
+  "members":[{"full_name":"Alex Doe","phone":"+44 7000 000000","nationality":"GB","age_group":"adult","is_leader":true},{"full_name":"Sam Doe","age_group":"child"}]},
+ {"code":"TR-SEED-02","owner_email":"khong-co@dukhach.test","title":"Lỗi chủ","start":"+0d","end":"+1d","legs":[]}
+]

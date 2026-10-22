@@ -25,19 +25,19 @@ class AuthSessionSecurityTest extends TestCase
 
     public function test_spoofed_x_forwarded_for_does_not_bypass_login_limiter(): void
     {
-        User::factory()->create(['email' => 'victim@disanso.test']);
+        User::factory()->create(['email' => 'victim@dukhach.test']);
 
         for ($i = 1; $i <= 5; $i++) {
-            $this->attempt('victim@disanso.test', '127.0.0.1', "10.9.9.$i")->assertStatus(422);
+            $this->attempt('victim@dukhach.test', '127.0.0.1', "10.9.9.$i")->assertStatus(422);
         }
-        $this->attempt('victim@disanso.test', '127.0.0.1', '10.9.9.99')->assertStatus(429);
+        $this->attempt('victim@dukhach.test', '127.0.0.1', '10.9.9.99')->assertStatus(429);
     }
 
     public function test_x_forwarded_for_is_not_trusted_for_client_ip(): void
     {
-        User::factory()->create(['email' => 'victim@disanso.test']);
+        User::factory()->create(['email' => 'victim@dukhach.test']);
 
-        $this->attempt('victim@disanso.test', '192.0.2.10', '10.77.0.1')->assertStatus(422);
+        $this->attempt('victim@dukhach.test', '192.0.2.10', '10.77.0.1')->assertStatus(422);
 
         $log = AuditLog::where('action', 'auth.login_failed')->latest('id')->firstOrFail();
         $this->assertSame('192.0.2.10', $log->ip);
@@ -45,14 +45,14 @@ class AuthSessionSecurityTest extends TestCase
 
     public function test_email_limiter_blocks_distributed_attempts_from_many_ips(): void
     {
-        User::factory()->create(['email' => 'victim@disanso.test']);
+        User::factory()->create(['email' => 'victim@dukhach.test']);
 
         for ($i = 1; $i <= 5; $i++) {
-            $this->attempt('Victim@Disanso.test', "198.51.100.$i")->assertStatus(422);
+            $this->attempt('Victim@Dukhach.test', "198.51.100.$i")->assertStatus(422);
         }
         // IP mới hoàn toàn, email đổi hoa/thường: vẫn bị chặn theo email đã chuẩn hóa
-        $this->attempt('VICTIM@disanso.test', '203.0.113.200')->assertStatus(429);
-        $this->attempt('other@disanso.test', '203.0.113.200')->assertStatus(422);
+        $this->attempt('VICTIM@dukhach.test', '203.0.113.200')->assertStatus(429);
+        $this->attempt('other@dukhach.test', '203.0.113.200')->assertStatus(422);
     }
 
     public function test_deactivated_user_with_open_session_is_logged_out(): void
@@ -67,14 +67,14 @@ class AuthSessionSecurityTest extends TestCase
 
     public function test_admin_locking_user_deletes_their_sessions_and_rotates_remember_token(): void
     {
-        $target = $this->member();
+        $target = $this->traveler();
         $target->forceFill(['remember_token' => 'old-token'])->save();
         $this->seedSessions($target, ['dev-a', 'dev-b']);
-        $other = $this->member();
+        $other = $this->traveler();
         $this->seedSessions($other, ['other-dev']);
 
         $this->actingAs($this->admin())->patch("/vi/quan-tri/nguoi-dung/{$target->id}", [
-            'role_id' => Role::where('code', 'member')->value('id'), 'is_active' => false,
+            'role_id' => Role::where('code', 'traveler')->value('id'), 'is_active' => false,
         ])->assertSessionHas('success');
 
         $this->assertSame(0, DB::table('sessions')->where('user_id', $target->id)->count());
