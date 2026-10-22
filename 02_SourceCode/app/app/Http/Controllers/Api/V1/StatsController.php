@@ -19,6 +19,7 @@ class StatsController extends ApiController
             'data' => $lookup->stats() + [
                 'national_level' => $summary['national_level'],
                 'national_label' => RiskService::levelLabel($summary['national_level']),
+                'alerts_by_severity' => $lookup->alertsBySeverity(),
             ],
             'updated_at' => $summary['updated_at'] ?? now()->toIso8601String(),
         ]);

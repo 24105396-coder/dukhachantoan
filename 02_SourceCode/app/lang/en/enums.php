@@ -22,4 +22,5 @@ return [
     'statuses' => ['draft' => 'Draft', 'published' => 'Published'],
     'licenses' => ['public_domain' => 'Public domain', 'cc_by' => 'CC BY', 'cc_by_sa' => 'CC BY-SA', 'cc_by_nc' => 'CC BY-NC', 'all_rights_reserved' => 'All rights reserved', 'user_upload' => 'User upload', 'simulated' => 'Simulated illustration (made by the team)'],
     'media_types' => ['image' => 'Image', 'audio' => 'Audio', 'video' => 'Video', 'document' => 'Document'],
+    'weather' => ['clear' => 'Clear sky', 'partly_cloudy' => 'Partly cloudy', 'overcast' => 'Overcast', 'fog' => 'Fog', 'drizzle' => 'Drizzle', 'rain' => 'Rain', 'heavy_rain' => 'Heavy rain', 'snow' => 'Snow', 'thunderstorm' => 'Thunderstorm'],
 ];

@@ -1,6 +1,7 @@
 <?php
 
 use App\Exceptions\ApiErrorResponse;
+use App\Exceptions\BusinessRuleException;
 use App\Exceptions\InertiaErrorPage;
 use App\Http\Controllers\HealthController;
 use App\Http\Middleware\EnsureActiveUser;
@@ -85,6 +86,15 @@ return Application::configure(basePath: dirname(__DIR__))
             }
 
             return null;
+        });
+
+        // Vi phạm quy tắc nghiệp vụ: API → 422 {message}; web → quay lại kèm lỗi + flash
+        $exceptions->render(function (BusinessRuleException $e, Request $request) {
+            if (ApiErrorResponse::applies($request) || $request->expectsJson()) {
+                return response()->json(['message' => $e->getMessage()], 422);
+            }
+
+            return back()->withErrors([$e->field => $e->getMessage()])->with('error', $e->getMessage());
         });
 
         // /api/*: luôn JSON {message} chung (404/403/405/429/500), không lộ tên lớp model

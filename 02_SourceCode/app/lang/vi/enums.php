@@ -22,4 +22,5 @@ return [
     'statuses' => ['draft' => 'Bản nháp', 'published' => 'Đã công bố'],
     'licenses' => ['public_domain' => 'Phạm vi công cộng', 'cc_by' => 'CC BY', 'cc_by_sa' => 'CC BY-SA', 'cc_by_nc' => 'CC BY-NC', 'all_rights_reserved' => 'Bảo lưu mọi quyền', 'user_upload' => 'Ảnh người dùng gửi', 'simulated' => 'Minh họa mô phỏng (do nhóm tạo)'],
     'media_types' => ['image' => 'Hình ảnh', 'audio' => 'Âm thanh', 'video' => 'Video', 'document' => 'Tài liệu'],
+    'weather' => ['clear' => 'Trời quang', 'partly_cloudy' => 'Ít mây', 'overcast' => 'Nhiều mây', 'fog' => 'Sương mù', 'drizzle' => 'Mưa phùn', 'rain' => 'Mưa', 'heavy_rain' => 'Mưa to', 'snow' => 'Tuyết', 'thunderstorm' => 'Dông'],
 ];

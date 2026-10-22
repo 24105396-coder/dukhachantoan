@@ -1,19 +1,46 @@
 {
-  "openapi": "3.0.3",
+  "openapi": "3.1.0",
   "info": {
     "title": "DuKhachAnToan API",
-    "version": "0.1.0",
-    "description": "API mở của hệ thống cảnh báo rủi ro và hỗ trợ du khách (CSE703073 ĐT-15). Giới hạn 60 yêu cầu/phút/IP. Pha 1: sức khỏe hệ thống và số liệu tổng quan; các endpoint cảnh báo, vùng, danh bạ, hướng dẫn bổ sung ở pha 2."
+    "version": "1.0.0",
+    "description": "API mở của hệ thống cảnh báo rủi ro và hỗ trợ du khách (CSE703073 ĐT-15). JSON, không cần đăng nhập, giới hạn 60 yêu cầu/phút/IP; mọi cảnh báo kèm nguồn và thời điểm cập nhật. Dữ liệu thời tiết: Open-Meteo (CC BY 4.0); ranh giới: © OpenStreetMap contributors (ODbL).",
+    "license": {
+      "name": "Sản phẩm học thuật",
+      "identifier": "CC-BY-4.0"
+    }
   },
   "servers": [
     {
       "url": "/api/v1"
     }
   ],
+  "tags": [
+    {
+      "name": "system"
+    },
+    {
+      "name": "alerts"
+    },
+    {
+      "name": "geo"
+    },
+    {
+      "name": "weather"
+    },
+    {
+      "name": "support"
+    },
+    {
+      "name": "trips"
+    }
+  ],
   "paths": {
     "/healthz": {
       "get": {
         "summary": "Tình trạng hệ thống",
+        "tags": [
+          "system"
+        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -34,10 +61,14 @@
     "/stats/overview": {
       "get": {
         "summary": "KPI công khai (không dữ liệu cá nhân)",
+        "tags": [
+          "system"
+        ],
         "parameters": [
           {
             "name": "locale",
             "in": "query",
+            "description": "Ngôn ngữ nội dung (vi mặc định).",
             "schema": {
               "type": "string",
               "enum": [
@@ -60,10 +91,716 @@
           }
         }
       }
+    },
+    "/alerts": {
+      "get": {
+        "summary": "Danh sách cảnh báo (mặc định đang hiệu lực)",
+        "tags": [
+          "alerts"
+        ],
+        "parameters": [
+          {
+            "name": "severity",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 4
+            }
+          },
+          {
+            "name": "province",
+            "in": "query",
+            "description": "Mã tỉnh, ví dụ KH",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "hazard",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "active",
+            "in": "query",
+            "description": "1 (mặc định) chỉ đang hiệu lực; 0 gồm cả đã hết hạn",
+            "schema": {
+              "type": "integer",
+              "enum": [
+                0,
+                1
+              ]
+            }
+          },
+          {
+            "name": "per_page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 50
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "locale",
+            "in": "query",
+            "description": "Ngôn ngữ nội dung (vi mặc định).",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "vi",
+                "en"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/AlertCard"
+                      }
+                    },
+                    "meta": {
+                      "$ref": "#/components/schemas/PageMeta"
+                    },
+                    "links": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Quá giới hạn tần suất",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/alerts/{code}": {
+      "get": {
+        "summary": "Chi tiết cảnh báo (không có số hành trình bị ảnh hưởng)",
+        "tags": [
+          "alerts"
+        ],
+        "parameters": [
+          {
+            "name": "code",
+            "in": "path",
+            "required": true,
+            "description": "Mã cảnh báo AL-xxxx",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "locale",
+            "in": "query",
+            "description": "Ngôn ngữ nội dung (vi mặc định).",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "vi",
+                "en"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/AlertDetail"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Không tìm thấy",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/alerts.geojson": {
+      "get": {
+        "summary": "GeoJSON cảnh báo đang hiệu lực (Circle → Point + radius_km; không có hình học → các vùng)",
+        "tags": [
+          "alerts",
+          "geo"
+        ],
+        "parameters": [
+          {
+            "name": "locale",
+            "in": "query",
+            "description": "Ngôn ngữ nội dung (vi mặc định).",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "vi",
+                "en"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/geo+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FeatureCollection"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/zones": {
+      "get": {
+        "summary": "Danh sách vùng kèm điểm rủi ro",
+        "tags": [
+          "geo"
+        ],
+        "parameters": [
+          {
+            "name": "locale",
+            "in": "query",
+            "description": "Ngôn ngữ nội dung (vi mặc định).",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "vi",
+                "en"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ZoneCard"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/zones.geojson": {
+      "get": {
+        "summary": "GeoJSON vùng tô màu theo mức rủi ro (properties: code, name, level, score, active_alerts_count, url)",
+        "tags": [
+          "geo"
+        ],
+        "parameters": [
+          {
+            "name": "locale",
+            "in": "query",
+            "description": "Ngôn ngữ nội dung (vi mặc định).",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "vi",
+                "en"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/geo+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FeatureCollection"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/zones/{code}/weather": {
+      "get": {
+        "summary": "Thời tiết hiện tại, dự báo 7 ngày (Open-Meteo, CC BY 4.0) và điểm rủi ro của vùng",
+        "tags": [
+          "weather"
+        ],
+        "parameters": [
+          {
+            "name": "code",
+            "in": "path",
+            "required": true,
+            "description": "Mã vùng, ví dụ da-nang",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "locale",
+            "in": "query",
+            "description": "Ngôn ngữ nội dung (vi mặc định).",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "vi",
+                "en"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "zone": {
+                          "type": "object",
+                          "properties": {
+                            "code": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "now": {
+                          "anyOf": [
+                            {
+                              "$ref": "#/components/schemas/WeatherNow"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "forecast": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/ForecastDay"
+                          }
+                        },
+                        "risk": {
+                          "type": [
+                            "object",
+                            "null"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Không tìm thấy",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/contacts": {
+      "get": {
+        "summary": "Danh bạ khẩn cấp (theo tỉnh + số toàn quốc)",
+        "tags": [
+          "support"
+        ],
+        "parameters": [
+          {
+            "name": "province",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "locale",
+            "in": "query",
+            "description": "Ngôn ngữ nội dung (vi mặc định).",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "vi",
+                "en"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ContactItem"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/guides": {
+      "get": {
+        "summary": "Hướng dẫn ứng phó đã xuất bản",
+        "tags": [
+          "support"
+        ],
+        "parameters": [
+          {
+            "name": "hazard",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "locale",
+            "in": "query",
+            "description": "Ngôn ngữ nội dung (vi mặc định).",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "vi",
+                "en"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/GuideCard"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/guides/{slug}": {
+      "get": {
+        "summary": "Chi tiết hướng dẫn (các bước trước – trong – sau, nguồn)",
+        "tags": [
+          "support"
+        ],
+        "parameters": [
+          {
+            "name": "slug",
+            "in": "path",
+            "required": true,
+            "description": "Slug hướng dẫn",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "locale",
+            "in": "query",
+            "description": "Ngôn ngữ nội dung (vi mặc định).",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "vi",
+                "en"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/GuideDetail"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Không tìm thấy",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/trips/shared/{token}": {
+      "get": {
+        "summary": "Trạng thái hành trình chia sẻ theo token (không lộ liên hệ)",
+        "tags": [
+          "trips"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "path",
+            "required": true,
+            "description": "share_token ngẫu nhiên 40 ký tự (tham số nhạy cảm, không phải id)",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9]{40}$"
+            }
+          },
+          {
+            "name": "locale",
+            "in": "query",
+            "description": "Ngôn ngữ nội dung (vi mặc định).",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "vi",
+                "en"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/SharedTrip"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Không tìm thấy",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/trips/shared/{token}/checkin": {
+      "post": {
+        "summary": "Báo an toàn qua liên kết chia sẻ (giới hạn 10 lần/giờ/token); need_help báo cơ quan hỗ trợ mức 4",
+        "tags": [
+          "trips"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "path",
+            "required": true,
+            "description": "share_token ngẫu nhiên 40 ký tự (tham số nhạy cảm, không phải id)",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9]{40}$"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CheckinInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Đã ghi nhận",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/CheckinItem"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Không tìm thấy",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Dữ liệu không hợp lệ",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Quá giới hạn tần suất",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
+      "Error": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      },
+      "ValidationError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "errors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
       "Health": {
         "type": "object",
         "properties": {
@@ -85,8 +822,10 @@
             ]
           },
           "queue": {
-            "type": "object",
-            "nullable": true,
+            "type": [
+              "object",
+              "null"
+            ],
             "properties": {
               "queued": {
                 "type": "integer"
@@ -103,9 +842,11 @@
             }
           },
           "last_weather_fetch": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
           },
           "updated_at": {
             "type": "string",
@@ -141,12 +882,877 @@
               },
               "national_label": {
                 "type": "string"
+              },
+              "alerts_by_severity": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "integer"
+                }
               }
             }
           },
           "updated_at": {
             "type": "string",
             "format": "date-time"
+          }
+        }
+      },
+      "Hazard": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "icon": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "color": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      },
+      "AlertCard": {
+        "type": "object",
+        "required": [
+          "code",
+          "severity",
+          "headline",
+          "source",
+          "updated_at_source"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "code": {
+            "type": "string",
+            "pattern": "^AL-"
+          },
+          "severity": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 4
+          },
+          "severity_label": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "active",
+              "updated",
+              "expired",
+              "cancelled"
+            ]
+          },
+          "hazard": {
+            "$ref": "#/components/schemas/Hazard"
+          },
+          "headline": {
+            "type": "string"
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "instructions": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "zones": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "code": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "geometry": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "description": "GeoJSON Polygon/MultiPolygon hoặc {type: Circle, center: {lat,lng}, radius_km}"
+          },
+          "starts_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "ends_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "issued_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "updated_at_source": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "source": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "url": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "attribution": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          },
+          "is_simulated": {
+            "type": "boolean"
+          },
+          "scenario": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "slug": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      },
+      "AlertDetail": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AlertCard"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "raw_payload_excerpt": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "translations_available": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "guides": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/GuideCard"
+                }
+              },
+              "contacts": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ContactItem"
+                }
+              },
+              "history": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "at": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "format": "date-time"
+                    },
+                    "by": {
+                      "type": [
+                        "object",
+                        "null"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      "ZoneCard": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "code": {
+            "type": "string"
+          },
+          "zone_type": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "province": {
+            "type": [
+              "object",
+              "null"
+            ]
+          },
+          "centroid": {
+            "type": "object",
+            "properties": {
+              "lat": {
+                "type": "number"
+              },
+              "lng": {
+                "type": "number"
+              }
+            }
+          },
+          "radius_km": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "risk": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "score": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "level": {
+                "type": "integer"
+              },
+              "computed_at": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date-time"
+              },
+              "factors": {
+                "type": [
+                  "object",
+                  "null"
+                ]
+              }
+            }
+          },
+          "active_alerts_count": {
+            "type": "integer"
+          },
+          "url": {
+            "type": "string"
+          }
+        }
+      },
+      "FeatureCollection": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "FeatureCollection"
+          },
+          "features": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "const": "Feature"
+                },
+                "geometry": {
+                  "type": "object"
+                },
+                "properties": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      },
+      "WeatherNow": {
+        "type": "object",
+        "properties": {
+          "zone": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          },
+          "observed_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "temp_c": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "apparent_c": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "humidity": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "wind_kph": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "gust_kph": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "rain_mm": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "weather_code": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "weather_label": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "icon": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string",
+            "const": "Open-Meteo"
+          },
+          "fetched_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          }
+        }
+      },
+      "ForecastDay": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "tmin_c": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "tmax_c": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "rain_mm": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "rain_prob": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "wind_max_kph": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "weather_code": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "weather_label": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "icon": {
+            "type": "string"
+          }
+        }
+      },
+      "ContactItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "contact_type": {
+            "type": "string"
+          },
+          "type_label": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "note": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "phone": {
+            "type": "string"
+          },
+          "phone_alt": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "address": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "lat": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "lng": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "hours": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "languages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "is_verified": {
+            "type": "boolean"
+          },
+          "verified_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date"
+          },
+          "source": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "url": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          },
+          "province": {
+            "type": [
+              "object",
+              "null"
+            ]
+          },
+          "zone": {
+            "type": [
+              "object",
+              "null"
+            ]
+          }
+        }
+      },
+      "GuideCard": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "summary": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "hazard": {
+            "type": [
+              "object",
+              "null"
+            ]
+          },
+          "min_severity": {
+            "type": "integer"
+          },
+          "audience": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          }
+        }
+      },
+      "GuideDetail": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/GuideCard"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "before_steps": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "during_steps": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "after_steps": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "sources": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "updated_at": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date-time"
+              },
+              "related_contacts_hint": {
+                "type": "string"
+              },
+              "is_machine_translated": {
+                "type": "boolean"
+              }
+            }
+          }
+        ]
+      },
+      "CheckinItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "safe",
+              "need_help",
+              "unknown"
+            ]
+          },
+          "lat": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "lng": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "message": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source": {
+            "type": "string",
+            "enum": [
+              "app",
+              "share_link",
+              "agency"
+            ]
+          },
+          "checked_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "alert": {
+            "type": [
+              "object",
+              "null"
+            ]
+          },
+          "user": {
+            "type": [
+              "object",
+              "null"
+            ]
+          },
+          "response_status": {
+            "type": "string",
+            "enum": [
+              "open",
+              "in_progress",
+              "closed"
+            ]
+          },
+          "response_note": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "responded_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "responder": {
+            "type": [
+              "object",
+              "null"
+            ]
+          }
+        }
+      },
+      "SharedTrip": {
+        "type": "object",
+        "description": "TripCard rút gọn (không liên hệ, không thành viên) + chặng, 3 check-in gần nhất, cảnh báo hiệu lực",
+        "properties": {
+          "code": {
+            "type": "string",
+            "pattern": "^TR-"
+          },
+          "title": {
+            "type": "string"
+          },
+          "start_date": {
+            "type": "string",
+            "format": "date"
+          },
+          "end_date": {
+            "type": "string",
+            "format": "date"
+          },
+          "status": {
+            "type": "string"
+          },
+          "risk_level": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 4
+          },
+          "legs": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "checkins": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CheckinItem"
+            }
+          },
+          "alerts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AlertCard"
+            }
+          }
+        }
+      },
+      "CheckinInput": {
+        "type": "object",
+        "required": [
+          "status"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "safe",
+              "need_help"
+            ]
+          },
+          "message": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 1000
+          },
+          "lat": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": -90,
+            "maximum": 90
+          },
+          "lng": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": -180,
+            "maximum": 180
+          },
+          "accuracy_m": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "alert_code": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      },
+      "PageMeta": {
+        "type": "object",
+        "properties": {
+          "current_page": {
+            "type": "integer"
+          },
+          "last_page": {
+            "type": "integer"
+          },
+          "per_page": {
+            "type": "integer"
+          },
+          "total": {
+            "type": "integer"
+          },
+          "locale": {
+            "type": "string"
           }
         }
       }

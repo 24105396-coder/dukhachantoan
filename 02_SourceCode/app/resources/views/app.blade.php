@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="color-scheme" content="light dark">
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
     <link rel="icon" href="/favicon.ico">
     {{-- Đặt theme trước khi render để tránh nháy màu --}}
     <script nonce="{{ Vite::cspNonce() }}">
@@ -30,8 +31,6 @@
                 document.head.appendChild(l);
                 try { localStorage.setItem('dka-fonts', '1'); } catch (e) {}
             };
-            // Tên cũ giữ tạm để app.js bản kế thừa vẫn gọi được; frontend chuyển sang dkaLoadFonts
-            window.disansoLoadFonts = window.dkaLoadFonts;
             try { if (localStorage.getItem('dka-fonts') === '1') window.dkaLoadFonts(); } catch (e) {}
         })();
     </script>
@@ -41,8 +40,9 @@
         $pageFile = $pageComponent ? "resources/js/Pages/{$pageComponent}.vue" : null;
         $layoutFile = match (true) {
             $pageComponent === null => null,
-            str_starts_with($pageComponent, 'Admin/') => 'resources/js/Layouts/AdminLayout.vue',
             str_starts_with($pageComponent, 'Auth/') => 'resources/js/Layouts/AuthLayout.vue',
+            in_array($pageComponent, ['Trips/Shared', 'Trips/SharedCheckin'], true) => 'resources/js/Layouts/PublicLayout.vue',
+            (bool) preg_match('#^(Admin|Account|Notifications|Incidents|Trips)/#', $pageComponent) => 'resources/js/Layouts/DashboardLayout.vue',
             default => 'resources/js/Layouts/PublicLayout.vue',
         };
         // Chỉ preload file có mục riêng trong manifest (layout gộp vào chunk app-ui thì không có); chế độ dev nạp mọi file

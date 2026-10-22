@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use App\Models\Notification;
+use App\Models\NotificationPreference;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
@@ -68,6 +69,15 @@ class ProfileUpdateRequest extends FormRequest
 
     public function preferenceData(): ?array
     {
-        return $this->has('preferences') ? (array) ($this->validated()['preferences'] ?? []) : null;
+        if (! $this->has('preferences')) {
+            return null;
+        }
+        $preferences = (array) ($this->validated()['preferences'] ?? []);
+        // Mức 4 (khẩn cấp) luôn gửi mọi kênh, không cho tắt
+        if (array_key_exists('channels_level4', $preferences)) {
+            $preferences['channels_level4'] = NotificationPreference::DEFAULT_CHANNELS[4];
+        }
+
+        return $preferences;
     }
 }
