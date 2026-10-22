@@ -7,6 +7,7 @@ import ChartCard from '@/Components/ChartCard.vue';
 import MapBase from '@/Components/MapBase.vue';
 import AlertCard from '@/Components/AlertCard.vue';
 import EmptyState from '@/Components/EmptyState.vue';
+import Icon from '@/Components/Icon.vue';
 import RefreshIndicator from '@/Components/RefreshIndicator.vue';
 import NeedHelpList from '@/Components/Dashboard/NeedHelpList.vue';
 import QueueHealthCard from '@/Components/Dashboard/QueueHealthCard.vue';
@@ -65,6 +66,9 @@ const checkinValues = computed(() => {
         </template>
     </PageHeader>
 
+    <p v-if="page.props.app?.analyticsUp === false" class="mb-4 flex items-start gap-2 rounded-2xl border border-level-2 bg-level-2-soft p-3 text-sm font-semibold" role="status">
+        <Icon name="triangle-alert" :size="18" class="mt-0.5" />{{ t('admin.dashboard.analytics_down') }}
+    </p>
     <section class="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3" :aria-label="t('dashboard.kpis')">
         <KpiCard v-for="c in cards" :key="c.key" :label="t(`dashboard.kpi.${c.key}`)" :value="fmt(k[c.key])" :icon="c.icon" :tone="c.tone" />
     </section>
