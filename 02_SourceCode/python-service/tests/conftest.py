@@ -1,146 +1,120 @@
-"""Fixture DataFrame mô phỏng dữ liệu đã nạp từ MySQL (không cần DB)."""
+"""Fixture dùng chung: SQLite in-memory dựng từ app.schema, dữ liệu vùng mẫu, TestClient có token."""
 from __future__ import annotations
 
-import pandas as pd
+import os
+import sys
+from datetime import datetime, timedelta
+from pathlib import Path
+
 import pytest
 
-from app.db import build_documents
-from app.search import SearchIndex
-from app.tags import TagSuggester
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+os.environ["ANALYTICS_TOKEN"] = "test-token"
+os.environ.setdefault("APP_ENV", "testing")
 
-ENTITIES = pd.DataFrame([
-    {"subject_type": "site", "subject_id": 1, "slug": "hoang-thanh-thang-long"},
-    {"subject_type": "site", "subject_id": 2, "slug": "van-mieu-quoc-tu-giam"},
-    {"subject_type": "site", "subject_id": 3, "slug": "pho-co-hoi-an"},
-    {"subject_type": "site", "subject_id": 4, "slug": "kinh-thanh-hue"},
-    {"subject_type": "artifact", "subject_id": 10, "slug": "trong-dong-ngoc-lu"},
-    {"subject_type": "figure", "subject_id": 20, "slug": "ly-thai-to"},
-])
+from fastapi.testclient import TestClient  # noqa: E402
+from sqlalchemy import create_engine, insert  # noqa: E402
+from sqlalchemy.pool import StaticPool  # noqa: E402
 
+from app import db, schema, weather  # noqa: E402
+from app.main import app  # noqa: E402
+from app.timeutil import now_local  # noqa: E402
 
-def _i(stype, sid, locale, depth, title, summary, body):
-    return {"subject_type": stype, "subject_id": sid, "locale": locale, "depth": depth,
-            "title": title, "summary": summary, "body": body}
+TOKEN = "test-token"
 
 
-INTERPRETATIONS = pd.DataFrame([
-    _i("site", 1, "vi", 1, "Hoàng thành Thăng Long", "Trung tâm quyền lực của các triều đại Việt Nam.",
-       "Khu di tích Hoàng thành Thăng Long ở Hà Nội được UNESCO ghi danh năm 2010, gồm khu khảo cổ 18 Hoàng Diệu."),
-    _i("site", 1, "vi", 2, "Hoàng thành Thăng Long – kiến trúc cung đình", "Các lớp kiến trúc chồng xếp.",
-       "Các tầng văn hóa từ thời Đại La, Lý, Trần, Lê chồng lên nhau tại Thăng Long."),
-    _i("site", 1, "en", 1, "Imperial Citadel of Thang Long", "Seat of power of Vietnamese dynasties.",
-       "The Imperial Citadel of Thang Long in Hanoi was inscribed by UNESCO in 2010."),
-    _i("site", 2, "vi", 1, "Văn Miếu – Quốc Tử Giám", "Trường đại học đầu tiên của Việt Nam.",
-       "Văn Miếu thờ Khổng Tử, có 82 bia tiến sĩ ghi danh người đỗ đạt các khoa thi."),
-    _i("site", 2, "en", 1, "Temple of Literature", "Vietnam's first national university.",
-       "The temple honours Confucius and keeps 82 doctoral steles."),
-    _i("site", 3, "vi", 1, "Phố cổ Hội An", "Thương cảng cổ bên sông Thu Bồn.",
-       "Hội An lưu giữ nhà cổ, chùa Cầu và hội quán của thương nhân Hoa, Nhật."),
-    _i("site", 4, "vi", 1, "Kinh thành Huế", "Kinh đô triều Nguyễn.",
-       "Kinh thành Huế với Đại Nội, Tử Cấm Thành và hệ thống lăng tẩm của các vua Nguyễn."),
-    _i("artifact", 10, "vi", 1, "Trống đồng Ngọc Lũ", "Bảo vật quốc gia thuộc văn hóa Đông Sơn.",
-       "Trống đồng Ngọc Lũ được đúc bằng đồng, mặt trống trang trí hình chim Lạc và người giã gạo."),
-    _i("figure", 20, "vi", 1, "Lý Thái Tổ", "Vị vua sáng lập triều Lý.",
-       "Năm 1010 Lý Công Uẩn ban Chiếu dời đô từ Hoa Lư ra Đại La, đổi tên thành Thăng Long."),
-])
-
-TAGS = pd.DataFrame([
-    {"tag_id": 1, "slug": "di-san-the-gioi", "locale": "vi", "name": "Di sản thế giới",
-     "description": "Được UNESCO ghi danh là di sản văn hóa của nhân loại."},
-    {"tag_id": 1, "slug": "di-san-the-gioi", "locale": "en", "name": "World Heritage",
-     "description": "Inscribed by UNESCO as heritage of humanity."},
-    {"tag_id": 2, "slug": "kinh-do-co", "locale": "vi", "name": "Kinh đô cổ",
-     "description": "Các kinh thành và trung tâm quyền lực trong lịch sử Việt Nam."},
-    {"tag_id": 3, "slug": "kien-truc-cung-dinh", "locale": "vi", "name": "Kiến trúc cung đình",
-     "description": "Cung điện, lăng tẩm và công trình hoàng gia."},
-    {"tag_id": 4, "slug": "khao-co-hoc", "locale": "vi", "name": "Khảo cổ học",
-     "description": "Di chỉ và hiện vật được phát hiện qua khai quật khảo cổ."},
-    {"tag_id": 5, "slug": "nho-giao", "locale": "vi", "name": "Nho giáo",
-     "description": "Đạo Khổng, khoa cử và giáo dục truyền thống."},
-    {"tag_id": 6, "slug": "do-dong", "locale": "vi", "name": "Đồ đồng",
-     "description": "Hiện vật đúc bằng đồng như trống đồng, thạp đồng."},
-])
-
-TAGGABLES = pd.DataFrame([
-    {"tag_id": 1, "taggable_type": "site", "taggable_id": 1},
-    {"tag_id": 2, "taggable_type": "site", "taggable_id": 1},
-    {"tag_id": 4, "taggable_type": "site", "taggable_id": 1},
-    {"tag_id": 5, "taggable_type": "site", "taggable_id": 2},
-    {"tag_id": 2, "taggable_type": "site", "taggable_id": 4},
-    {"tag_id": 3, "taggable_type": "site", "taggable_id": 4},
-    {"tag_id": 1, "taggable_type": "site", "taggable_id": 3},
-    {"tag_id": 6, "taggable_type": "artifact", "taggable_id": 10},
-    {"tag_id": 2, "taggable_type": "figure", "taggable_id": 20},
-])
+def square(lat_min: float, lat_max: float, lng_min: float, lng_max: float) -> dict:
+    ring = [[lng_min, lat_min], [lng_max, lat_min], [lng_max, lat_max], [lng_min, lat_max], [lng_min, lat_min]]
+    return {"type": "Polygon", "coordinates": [ring]}
 
 
-@pytest.fixture(scope="session")
-def documents() -> pd.DataFrame:
-    return build_documents(ENTITIES, INTERPRETATIONS, TAGGABLES, TAGS)
+class Seeder:
+    """Chèn bản ghi nhanh, trả id; mặc định created_at/updated_at = now."""
 
+    def __init__(self, engine):
+        self.engine = engine
+        self.now = now_local()
 
-@pytest.fixture(scope="session")
-def index(documents) -> SearchIndex:
-    return SearchIndex.build(documents)
+    def add(self, table, **values) -> int:
+        cols = table.c.keys()
+        if "created_at" in cols:
+            values.setdefault("created_at", self.now)
+            values.setdefault("updated_at", self.now)
+        with self.engine.begin() as conn:
+            res = conn.execute(insert(table).values(**values))
+            return res.inserted_primary_key[0] if res.inserted_primary_key else None
 
+    def base_geo(self) -> dict:
+        """Hai tỉnh, vùng con, vùng tròn và điểm đến dùng cho đa số test."""
+        ids = {
+            "p_kh": self.add(schema.provinces, code="KHA", name="Khánh Hòa", name_en="Khanh Hoa", lat=12.25,
+                             lng=109.19),
+            "p_lc": self.add(schema.provinces, code="LCA", name="Lào Cai", name_en="Lao Cai", lat=22.48,
+                             lng=103.97),
+        }
+        ids["z_kh"] = self.add(schema.zones, code="khanh-hoa", zone_type="province", province_id=ids["p_kh"],
+                               name="Khánh Hòa", name_en="Khanh Hoa", geometry=square(11.8, 12.9, 108.6, 109.5),
+                               centroid_lat=12.25, centroid_lng=109.05, is_active=True)
+        ids["z_nt"] = self.add(schema.zones, code="nha-trang", zone_type="urban", province_id=ids["p_kh"],
+                               parent_id=ids["z_kh"], name="Nha Trang", name_en="Nha Trang",
+                               geometry=square(12.15, 12.32, 109.1, 109.25), centroid_lat=12.24,
+                               centroid_lng=109.19, is_active=True)
+        ids["z_lc"] = self.add(schema.zones, code="lao-cai", zone_type="province", province_id=ids["p_lc"],
+                               name="Lào Cai", name_en="Lao Cai", geometry=square(21.8, 22.9, 103.5, 104.6),
+                               centroid_lat=22.3, centroid_lng=104.0, is_active=True)
+        ids["z_pq"] = self.add(schema.zones, code="phu-quoc", zone_type="island", name="Phú Quốc",
+                               name_en="Phu Quoc", centroid_lat=10.22, centroid_lng=103.96, radius_km=30,
+                               is_active=True)
+        ids["d_vinpearl"] = self.add(schema.destinations, slug="dao-hon-tre", zone_id=ids["z_nt"],
+                                     province_id=ids["p_kh"], dest_type="dao", lat=12.21, lng=109.24)
+        return ids
 
-@pytest.fixture(scope="session")
-def suggester(index) -> TagSuggester:
-    return TagSuggester.build(index, TAGS)
+    def trip(self, status: str = "active", code: str = "TR-0001") -> int:
+        today = self.now.date()
+        return self.add(schema.trips, code=code, user_id=1, title="Du lịch", start_date=today,
+                        end_date=today + timedelta(days=5), status=status)
 
+    def leg(self, trip_id: int, order: int, start: datetime, hours: int = 24, **kw) -> int:
+        return self.add(schema.trip_legs, trip_id=trip_id, leg_order=order, starts_at=start,
+                        ends_at=start + timedelta(hours=hours), title=f"Chặng {order}", **kw)
 
-def _clean_tables() -> dict[str, pd.DataFrame]:
-    """Bộ dữ liệu sạch: mọi phép kiểm phải ra 0."""
-    return {
-        "heritage_sites": pd.DataFrame([
-            {"id": 1, "slug": "hoang-thanh-thang-long", "status": "published", "lat": 21.0341, "lng": 105.8372,
-             "period_id": 3, "province_id": 1},
-            {"id": 2, "slug": "pho-co-hoi-an", "status": "published", "lat": 15.8801, "lng": 108.3380,
-             "period_id": 4, "province_id": 2},
-        ]),
-        "artifacts": pd.DataFrame([
-            {"id": 10, "slug": "trong-dong-ngoc-lu", "status": "published", "period_id": 1, "site_id": 1},
-        ]),
-        "historical_figures": pd.DataFrame([
-            {"id": 20, "slug": "ly-thai-to", "status": "published", "period_id": 3, "province_id": 1},
-        ]),
-        "interpretations": pd.DataFrame([
-            {"id": n, "subject_type": t, "subject_id": s, "locale": loc, "depth_level": 1, "title": "x",
-             "is_machine_translated": 0, "reviewed_by": None}
-            for n, (t, s, loc) in enumerate(
-                [(t, s, loc) for t, s in (("site", 1), ("site", 2), ("artifact", 10), ("figure", 20))
-                 for loc in ("vi", "en")], start=1)
-        ]),
-        "media_assets": pd.DataFrame([
-            {"id": 1, "subject_type": "site", "subject_id": 1, "media_type": "image", "license": "cc_by_sa",
-             "source_name": "Wikimedia Commons", "source_url": "https://commons.wikimedia.org/"},
-        ]),
-        "periods": pd.DataFrame([
-            {"id": 1, "code": "hung_vuong", "start_year": -700, "end_year": -179, "sort_order": 1},
-            {"id": 3, "code": "ly", "start_year": 1009, "end_year": 1225, "sort_order": 3},
-            {"id": 4, "code": "le_so", "start_year": 1428, "end_year": None, "sort_order": 4},
-        ]),
-        "timeline_events": pd.DataFrame([
-            {"id": 1, "site_id": 1, "figure_id": None, "period_id": 3, "event_year": 1010, "end_year": None},
-            {"id": 2, "site_id": 2, "figure_id": None, "period_id": None, "event_year": 1999, "end_year": None},
-        ]),
-        "tour_routes": pd.DataFrame([{"id": 1, "slug": "ha-noi-ngan-nam", "status": "published"}]),
-        "tour_route_stops": pd.DataFrame([{"id": 1, "route_id": 1, "stop_order": 1, "site_id": 1}]),
-        "tour_slots": pd.DataFrame([
-            {"id": 1, "route_id": 1, "starts_at": "2026-11-01 08:00:00", "capacity": 20, "booked_count": 20},
-        ]),
-        "provinces": pd.DataFrame([
-            {"id": 1, "code": "HN", "name": "Hà Nội", "name_en": "Hanoi", "region": "bac"},
-            {"id": 2, "code": "DN", "name": "Đà Nẵng", "name_en": "Da Nang", "region": "trung"},
-            {"id": 3, "code": "HCM", "name": "TP. Hồ Chí Minh", "name_en": "Ho Chi Minh City", "region": "nam"},
-        ]),
-        "period_translations": pd.DataFrame([
-            {"period_id": 3, "locale": "vi", "name": "Nhà Lý"},
-            {"period_id": 3, "locale": "en", "name": "Ly dynasty"},
-        ]),
-    }
+    def alert(self, code: str = "AL-0001", severity: int = 3, status: str = "active", zone_ids=(), **kw) -> int:
+        kw.setdefault("starts_at", self.now - timedelta(hours=1))
+        kw.setdefault("ends_at", self.now + timedelta(days=2))
+        kw.setdefault("issued_at", self.now - timedelta(hours=1))
+        kw.setdefault("source_name", "Trung tâm Dự báo KTTV Quốc gia")
+        aid = self.add(schema.alerts, code=code, severity=severity, status=status, **kw)
+        for zid in zone_ids:
+            self.add(schema.alert_zones, alert_id=aid, zone_id=zid)
+        return aid
 
 
 @pytest.fixture
-def clean_tables() -> dict[str, pd.DataFrame]:
-    return _clean_tables()
+def engine():
+    eng = create_engine("sqlite://", poolclass=StaticPool, connect_args={"check_same_thread": False})
+    schema.metadata.create_all(eng)
+    db.use_engine(eng)
+    weather.CACHE.clear()
+    weather.STATUS["last_fetch"] = None
+    yield eng
+    db.use_engine(None)
+    weather.CACHE.clear()
+    weather.STATUS["last_fetch"] = None
+
+
+@pytest.fixture
+def seed(engine) -> Seeder:
+    return Seeder(engine)
+
+
+@pytest.fixture
+def client(engine):
+    with TestClient(app, headers={"X-Analytics-Token": TOKEN}) as c:
+        yield c
+
+
+@pytest.fixture
+def anon_client(engine):
+    with TestClient(app) as c:
+        yield c

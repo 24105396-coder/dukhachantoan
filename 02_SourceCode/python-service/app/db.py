@@ -1,159 +1,84 @@
-"""Kết nối MySQL (SQLAlchemy + PyMySQL) và nạp dữ liệu thành DataFrame."""
+"""Kết nối MySQL (SQLAlchemy + PyMySQL) qua env DB_*; cho phép thay engine khi kiểm thử."""
 from __future__ import annotations
 
+import json
 import os
-from functools import lru_cache
+from collections.abc import Iterable, Sequence
 
-import pandas as pd
-from sqlalchemy import URL, create_engine, text
-from sqlalchemy.engine import Engine
+from sqlalchemy import URL, Table, create_engine, text
+from sqlalchemy.dialects import mysql, sqlite
+from sqlalchemy.engine import Connection, Engine
 
-from .search import DOCUMENT_COLUMNS
-
-# Dữ liệu cũ có thể lưu tên lớp thay vì alias morph; quy về alias để thống nhất.
-MORPH_ALIASES = {
-    "App\\Models\\HeritageSite": "site",
-    "App\\Models\\Artifact": "artifact",
-    "App\\Models\\HistoricalFigure": "figure",
-    "App\\Models\\TourRoute": "route",
-}
-SOFT_DELETE_TABLES = frozenset({"heritage_sites", "artifacts", "historical_figures", "tour_routes"})
-
-# Danh sách trắng bảng/cột: tên định danh không bao giờ lấy từ đầu vào người dùng.
-TABLE_COLUMNS: dict[str, tuple[str, ...]] = {
-    "heritage_sites": ("id", "slug", "status", "lat", "lng", "period_id", "province_id"),
-    "artifacts": ("id", "slug", "status", "period_id", "site_id"),
-    "historical_figures": ("id", "slug", "status", "period_id", "province_id"),
-    "interpretations": ("id", "subject_type", "subject_id", "locale", "depth_level", "title",
-                        "is_machine_translated", "reviewed_by"),
-    "media_assets": ("id", "subject_type", "subject_id", "media_type", "license", "source_name", "source_url"),
-    "timeline_events": ("id", "site_id", "figure_id", "period_id", "event_year", "end_year"),
-    "periods": ("id", "code", "start_year", "end_year", "sort_order"),
-    "period_translations": ("period_id", "locale", "name"),
-    "provinces": ("id", "code", "name", "name_en", "region"),
-    "tour_routes": ("id", "slug", "status"),
-    "tour_route_stops": ("id", "route_id", "stop_order", "site_id"),
-    "tour_slots": ("id", "route_id", "starts_at", "capacity", "booked_count"),
-}
-QUALITY_TABLES = (
-    "heritage_sites", "artifacts", "historical_figures", "interpretations", "media_assets",
-    "timeline_events", "periods", "tour_routes", "tour_route_stops", "tour_slots",
-)
-STATS_TABLES = (
-    "heritage_sites", "artifacts", "historical_figures", "interpretations", "media_assets",
-    "provinces", "periods", "period_translations",
-)
-
-PUBLISHED_ENTITIES_SQL = """
-SELECT 'site' AS subject_type, id AS subject_id, slug FROM heritage_sites
- WHERE status = 'published' AND deleted_at IS NULL
-UNION ALL
-SELECT 'artifact', id, slug FROM artifacts WHERE status = 'published' AND deleted_at IS NULL
-UNION ALL
-SELECT 'figure', id, slug FROM historical_figures WHERE status = 'published' AND deleted_at IS NULL
-"""
-INTERPRETATIONS_SQL = """
-SELECT subject_type, subject_id, locale, depth_level AS depth, title, summary, body
-  FROM interpretations
-"""
-TAGS_SQL = """
-SELECT t.id AS tag_id, t.slug, tt.locale, tt.name, tt.description
-  FROM tags t JOIN tag_translations tt ON tt.tag_id = t.id
- ORDER BY t.id, tt.locale
-"""
-TAGGABLES_SQL = "SELECT tag_id, taggable_type, taggable_id FROM taggables"
+_STATE: dict[str, Engine | None] = {"engine": None}
 
 
-def database_url() -> URL:
+def database_url() -> URL | str:
+    """DB_URL (vd. sqlite:///x.db) ưu tiên; mặc định MySQL theo DB_HOST/DB_PORT/..."""
+    if os.getenv("DB_URL"):
+        return os.environ["DB_URL"]
     return URL.create(
         "mysql+pymysql",
-        username=os.getenv("DB_USERNAME", "disanso"),
+        username=os.getenv("DB_USERNAME", "dukhach"),
         password=os.getenv("DB_PASSWORD", ""),
         host=os.getenv("DB_HOST", "127.0.0.1"),
         port=int(os.getenv("DB_PORT", "3306")),
-        database=os.getenv("DB_DATABASE", "disanso"),
+        database=os.getenv("DB_DATABASE", "dukhach"),
         query={"charset": "utf8mb4"},
     )
 
 
-@lru_cache(maxsize=1)
 def get_engine() -> Engine:
-    return create_engine(
-        database_url(), pool_pre_ping=True, pool_recycle=1800,
-        connect_args={"connect_timeout": 5},
-    )
+    engine = _STATE["engine"]
+    if engine is None:
+        url = database_url()
+        is_mysql = str(url).startswith("mysql")
+        engine = create_engine(
+            url, pool_pre_ping=True, pool_recycle=1800,
+            connect_args={"connect_timeout": 3} if is_mysql else {},
+        )
+        _STATE["engine"] = engine
+    return engine
 
 
-def _read(engine: Engine, sql: str) -> pd.DataFrame:
-    with engine.connect() as conn:
-        return pd.read_sql(text(sql), conn)
+def use_engine(engine: Engine | None) -> None:
+    """Thay engine (kiểm thử) hoặc đặt None để tạo lại từ env."""
+    _STATE["engine"] = engine
 
 
-def normalize_morph(series: pd.Series) -> pd.Series:
-    return series.astype(str).map(lambda v: MORPH_ALIASES.get(v, v))
+def ping() -> bool:
+    try:
+        with get_engine().connect() as conn:
+            conn.execute(text("SELECT 1"))
+        return True
+    except Exception:  # DB chưa lên: dịch vụ vẫn chạy, healthz báo db=down
+        return False
 
 
-def build_documents(entities: pd.DataFrame, interpretations: pd.DataFrame,
-                    taggables: pd.DataFrame, tags: pd.DataFrame) -> pd.DataFrame:
-    """Ghép diễn giải của thực thể đã công bố với tên thẻ theo cùng locale (thuần pandas)."""
-    if entities.empty or interpretations.empty:
-        return pd.DataFrame(columns=DOCUMENT_COLUMNS + ["tag_ids"])
-    interp = interpretations.assign(subject_type=normalize_morph(interpretations["subject_type"]))
-    docs = interp.merge(entities, on=["subject_type", "subject_id"], how="inner")
-    tag_rows = _tag_rows(taggables, tags)
-    docs = docs.merge(tag_rows, on=["subject_type", "subject_id", "locale"], how="left")
-    docs = docs.assign(
-        tags_text=docs["tags_text"].fillna(""),
-        tag_ids=docs["tag_ids"].map(lambda v: v if isinstance(v, list) else []),
-        summary=docs["summary"].fillna(""),
-        body=docs["body"].fillna(""),
-    )
-    return docs[DOCUMENT_COLUMNS + ["tag_ids"]].reset_index(drop=True)
+def upsert(conn: Connection, table: Table, rows: Sequence[dict], keys: Iterable[str],
+           update_cols: Iterable[str]) -> int:
+    """INSERT … ON DUPLICATE KEY UPDATE (MySQL) / ON CONFLICT DO UPDATE (SQLite)."""
+    if not rows:
+        return 0
+    keys, update_cols = list(keys), list(update_cols)
+    dialect = conn.dialect.name
+    if dialect == "mysql":
+        stmt = mysql.insert(table).values(list(rows))
+        stmt = stmt.on_duplicate_key_update({c: stmt.inserted[c] for c in update_cols})
+    elif dialect == "sqlite":
+        stmt = sqlite.insert(table).values(list(rows))
+        stmt = stmt.on_conflict_do_update(index_elements=keys, set_={c: stmt.excluded[c] for c in update_cols})
+    else:  # pragma: no cover - chỉ hỗ trợ hai hệ trên
+        raise RuntimeError(f"Dialect {dialect} chưa hỗ trợ upsert")
+    conn.execute(stmt)
+    return len(rows)
 
 
-def _tag_rows(taggables: pd.DataFrame, tags: pd.DataFrame) -> pd.DataFrame:
-    """Mỗi (subject, locale) → chuỗi tên thẻ + danh sách tag_id."""
-    cols = ["subject_type", "subject_id", "locale", "tags_text", "tag_ids"]
-    if taggables.empty or tags.empty:
-        return pd.DataFrame(columns=cols)
-    tg = taggables.assign(subject_type=normalize_morph(taggables["taggable_type"]),
-                          subject_id=taggables["taggable_id"])
-    joined = tg.merge(tags[["tag_id", "locale", "name"]], on="tag_id", how="inner")
-    grouped = joined.groupby(["subject_type", "subject_id", "locale"])
-    return grouped.agg(tags_text=("name", " ".join), tag_ids=("tag_id", lambda s: sorted(int(x) for x in s))
-                       ).reset_index()[cols]
-
-
-def load_tags(engine: Engine | None = None) -> pd.DataFrame:
-    return _read(engine or get_engine(), TAGS_SQL)
-
-
-def load_documents(engine: Engine | None = None) -> pd.DataFrame:
-    """Tài liệu tìm kiếm: (subject_type, subject_id, slug, locale, depth, title, summary, body, tags_text)."""
-    eng = engine or get_engine()
-    return build_documents(
-        _read(eng, PUBLISHED_ENTITIES_SQL), _read(eng, INTERPRETATIONS_SQL),
-        _read(eng, TAGGABLES_SQL), load_tags(eng),
-    )
-
-
-def load_tables(names: tuple[str, ...], engine: Engine | None = None) -> dict[str, pd.DataFrame]:
-    """Nạp các bảng trong danh sách trắng, bỏ bản ghi đã xóa mềm."""
-    eng = engine or get_engine()
-    out: dict[str, pd.DataFrame] = {}
-    for name in names:
-        columns = TABLE_COLUMNS[name]
-        where = " WHERE deleted_at IS NULL" if name in SOFT_DELETE_TABLES else ""
-        df = _read(eng, f"SELECT {', '.join(columns)} FROM {name}{where}")
-        if "subject_type" in df.columns:
-            df = df.assign(subject_type=normalize_morph(df["subject_type"]))
-        out[name] = df
-    return out
-
-
-def load_quality_tables(engine: Engine | None = None) -> dict[str, pd.DataFrame]:
-    return load_tables(QUALITY_TABLES, engine)
-
-
-def load_stats_tables(engine: Engine | None = None) -> dict[str, pd.DataFrame]:
-    return load_tables(STATS_TABLES, engine)
+def load_json(value):
+    """Cột JSON có thể về dạng chuỗi (MySQL qua text(), dữ liệu mã hóa kép) hoặc dict."""
+    for _ in range(2):
+        if isinstance(value, (str, bytes)):
+            try:
+                value = json.loads(value)
+            except ValueError:
+                return None
+    return value
