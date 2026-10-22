@@ -36,8 +36,8 @@ if not exist ".env" (
     echo  [OK] Da tao .env tu .env.example ^(gia tri mo phong cho moi truong hoc tap^).
 )
 
-rem --- 3. Doc cong web tu .env (mac dinh 8080) -------------------------
-set "PORT=8080"
+rem --- 3. Doc cong web tu .env (mac dinh 8081) -------------------------
+set "PORT=8081"
 for /f "usebackq eol=# tokens=1,* delims==" %%a in (".env") do (
     if /i "%%a"=="APP_FORWARD_PORT" if not "%%b"=="" set "PORT=%%b"
 )

@@ -1,5 +1,6 @@
 #!/bin/bash
-# Entrypoint: wait for MySQL, run migrations, seed once, cache config, start Apache.
+# Entrypoint DuKhachAnToan: wait for MySQL, run migrations, seed once, cache config,
+# start scheduler + queue worker in background, start Apache.
 set -e
 cd /var/www/html
 
@@ -26,16 +27,6 @@ if [ -z "$APP_KEY" ]; then
   export APP_KEY="$(cat $KEY_FILE)"
 fi
 
-# 1b. Khóa HMAC cổng thanh toán sandbox: thiếu hoặc còn giá trị mẫu công khai → sinh ngẫu nhiên 32 byte một lần, lưu trong volume
-SECRET_FILE=storage/app/.payment_secret
-if [ -z "$PAYMENT_SANDBOX_SECRET" ] || [ "$PAYMENT_SANDBOX_SECRET" = "sandbox-secret-change-me" ]; then
-  if [ ! -s "$SECRET_FILE" ]; then
-    run_as_www sh -c "umask 077; php -r 'echo bin2hex(random_bytes(32)).PHP_EOL;' > $SECRET_FILE"
-    echo "[entrypoint] generated PAYMENT_SANDBOX_SECRET in $SECRET_FILE"
-  fi
-  export PAYMENT_SANDBOX_SECRET="$(cat $SECRET_FILE)"
-fi
-
 # 2. Wait for the database (max ~2 minutes)
 echo "[entrypoint] waiting for database ${DB_HOST}:${DB_PORT:-3306} ..."
 for i in $(seq 1 60); do
@@ -50,49 +41,41 @@ done
 # 3. Migrate and seed (seed only when the roles table is empty)
 run_as_www php artisan migrate --force
 if [ "$(run_as_www php artisan app:is-seeded)" != "yes" ]; then
-  echo "[entrypoint] seeding sample heritage data ..."
+  echo "[entrypoint] seeding sample data (roles, provinces, accounts, hazards, zones, alerts, trips) ..."
   run_as_www php artisan db:seed --force
 fi
-# 3a. Ảnh bìa thật từ Wikimedia Commons theo database/data/media_external.json (idempotent, cập nhật cả CSDL đã seed trước)
-run_as_www php artisan app:import-external-media || true
-# 3c. Vẽ lại SVG minh họa theo mẫu hiện hành (phông chữ, màu) cho CSDL đã seed từ trước
-run_as_www php artisan app:render-illustrations || true
-# 3b. Dựng lại chỉ mục tìm kiếm của analytics ngay sau seed (analytics có thể đã đánh chỉ mục khi seed còn dở).
-#     Thử tối đa 10 lần cách 3 giây vì analytics có thể lên sau; thất bại không chặn khởi động.
-reindex_analytics() {
-  url="${ANALYTICS_URL:-http://analytics:8001}"
-  url="${url%/}/reindex"
-  for i in $(seq 1 10); do
-    if command -v curl >/dev/null 2>&1; then
-      result=$(curl -fsS -m 60 -X POST -H "X-Analytics-Token: ${ANALYTICS_TOKEN}" -H "Accept: application/json" "$url" 2>&1) && {
-        echo "[entrypoint] analytics reindex: $result"; return 0; }
-    else
-      result=$(php -r '$ctx=stream_context_create(["http"=>["method"=>"POST","timeout"=>60,"header"=>"X-Analytics-Token: ".getenv("ANALYTICS_TOKEN")."\r\nAccept: application/json\r\nContent-Length: 0\r\n"]]); $r=@file_get_contents($argv[1],false,$ctx); if($r===false){fwrite(STDERR,"request failed");exit(1);} echo $r;' "$url" 2>&1) && {
-        echo "[entrypoint] analytics reindex: $result"; return 0; }
-    fi
-    sleep 3
-  done
-  echo "[entrypoint] analytics reindex: failed after 10 attempts ($result) - search uses MySQL fallback until next scheduled reindex"
-  return 0
-}
-reindex_analytics || true
 
 # public/storage symlink nằm ngoài storage/ nên tạo bằng root là đủ
 php artisan storage:link >/dev/null 2>&1 || true
 run_as_www php artisan optimize:clear >/dev/null
 run_as_www php artisan optimize >/dev/null
 
-# 4. Lịch nền (thay cron): sao lưu ngay khi khởi động rồi chạy schedule:run mỗi phút
-#    (app:expire-holds mỗi phút, app:backup-db 02:00 hằng ngày, ghi storage/logs/backup.log)
-if [ "${BACKUP_ENABLED:-true}" = "true" ]; then
+# 4. Tiến trình nền (thay supervisord/cron), mỗi tiến trình tự khởi động lại nếu thoát:
+#    - schedule:work: app:dispatch-notifications mỗi phút, app:match-alerts 5', app:expire-alerts 10',
+#      app:fetch-weather 30', app:backup-db 02:00 → storage/logs/scheduler.log
+#    - queue:work database: job nặng (đối sánh sau phát hành) → storage/logs/queue.log
+#    Tắt bằng BACKGROUND_WORKERS=false (vd. khi chạy worker ở dịch vụ riêng trên PaaS).
+keep_running() {
+  name="$1"; shift
+  log="storage/logs/$name.log"
   (
-    run_as_www sh -c 'php artisan app:backup-db >> storage/logs/backup.log 2>&1' || true
     while true; do
-      sleep 60
-      # Giới hạn scheduler.log ~1 MB để không phình volume
-      run_as_www sh -c 'f=storage/logs/scheduler.log; [ "$(stat -c%s "$f" 2>/dev/null || echo 0)" -gt 1048576 ] && : > "$f"; php artisan schedule:run >> "$f" 2>&1' || true
+      # Giới hạn tệp log ~5 MB để không phình volume
+      [ "$(stat -c%s "$log" 2>/dev/null || echo 0)" -gt 5242880 ] && : > "$log"
+      echo "[$(date '+%F %T')] start $name" >> "$log"
+      run_as_www "$@" >> "$log" 2>&1 || true
+      echo "[$(date '+%F %T')] $name exited, restarting in 5s" >> "$log"
+      sleep 5
     done
   ) &
+}
+if [ "${BACKGROUND_WORKERS:-true}" = "true" ]; then
+  if [ "${BACKUP_ENABLED:-true}" = "true" ]; then
+    (run_as_www sh -c 'php artisan app:backup-db >> storage/logs/backup.log 2>&1' || true) &
+  fi
+  keep_running scheduler php artisan schedule:work
+  keep_running queue php artisan queue:work database --tries=1 --sleep=3 --max-time=3600
+  echo "[entrypoint] background workers started (scheduler, queue)"
 fi
 
 # Lần cuối bảo đảm mọi tệp sinh ra ở trên thuộc www-data

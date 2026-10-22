@@ -1,7 +1,8 @@
 name: dukhach
-# Nền tảng số hóa và diễn giải di sản văn hóa đa ngữ (DuKhachAnToan) – CSE703073 ĐT-04
+# Hệ thống cảnh báo rủi ro và hỗ trợ du khách theo thời gian thực (DuKhachAnToan) – CSE703073 ĐT-15
 # Chạy: docker compose up --build   (lần đầu ~5-10 phút để tải image và build)
-# Web:  http://localhost:8080   Python: http://127.0.0.1:8001/healthz (docs chỉ khi APP_ENV=local)   MySQL: 127.0.0.1:3307
+# Web:  http://localhost:8081   Python: http://127.0.0.1:8002/healthz (docs chỉ khi APP_ENV=local)   MySQL: 127.0.0.1:3308
+# Container app chạy Apache + scheduler (schedule:work) + hàng đợi (queue:work database) trong nền.
 services:
   db:
     image: mysql:8.0
@@ -47,7 +48,7 @@ services:
       APP_NAME: DuKhachAnToan
       APP_ENV: ${APP_ENV:-production}
       APP_DEBUG: ${APP_DEBUG:-false}
-      APP_URL: ${APP_URL:-http://localhost:8080}
+      APP_URL: ${APP_URL:-http://localhost:8081}
       APP_KEY: ${APP_KEY:-}
       APP_LOCALE: vi
       APP_FALLBACK_LOCALE: en
@@ -68,10 +69,12 @@ services:
       QUEUE_CONNECTION: database
       ANALYTICS_URL: http://analytics:8001
       ANALYTICS_TOKEN: ${ANALYTICS_TOKEN:-dev-analytics-token}
-      PAYMENT_GATEWAY: sandbox
-      PAYMENT_SANDBOX_SECRET: ${PAYMENT_SANDBOX_SECRET:-}   # rỗng = entrypoint tự sinh và lưu trong volume
-      BOOKING_HOLD_MINUTES: 10
-      MAP_PROVIDER: ${MAP_PROVIDER:-google}   # bản đồ nền: google | osm
+      ANALYTICS_TIMEOUT: ${ANALYTICS_TIMEOUT:-3}
+      MAIL_MAILER: log                         # email ghi vào nhật ký, không gửi thật
+      SIMULATION_MODE: ${SIMULATION_MODE:-true}
+      SMS_SIM_FAIL_RATE: ${SMS_SIM_FAIL_RATE:-0.1}   # SMS mô phỏng thất bại ngẫu nhiên để chứng minh thử lại
+      BACKGROUND_WORKERS: ${BACKGROUND_WORKERS:-true}
+      MAP_PROVIDER: ${MAP_PROVIDER:-osm}   # bản đồ nền: osm | google
       SEED_DEMO_PASSWORD: ${SEED_DEMO_PASSWORD:-DuKhach@2026}
       TRUSTED_PROXIES: ${TRUSTED_PROXIES:-}   # đặt "*" chỉ khi chạy sau proxy của PaaS (Railway/Render)
     ports:

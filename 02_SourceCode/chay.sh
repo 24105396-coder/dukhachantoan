@@ -13,7 +13,7 @@ if [ ! -f .env ]; then
   echo "[OK] Đã tạo .env từ .env.example (giá trị mô phỏng cho môi trường học tập)."
 fi
 PORT=$(grep -E '^APP_FORWARD_PORT=' .env | tail -n1 | cut -d= -f2)
-PORT=${PORT:-8080}
+PORT=${PORT:-8081}
 URL="http://localhost:$PORT"
 
 echo "[1/3] Đang dựng image và khởi động 3 dịch vụ (db, analytics, app). Lần đầu khoảng 5–10 phút..."
