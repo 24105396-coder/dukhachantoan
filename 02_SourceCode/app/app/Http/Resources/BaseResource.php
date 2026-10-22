@@ -11,8 +11,6 @@ use Illuminate\Http\Resources\Json\JsonResource;
  */
 abstract class BaseResource extends JsonResource
 {
-    use Concerns\FormatsHeritage;
-
     public static function one(mixed $model): ?array
     {
         return $model ? (new static($model))->resolve(request()) : null;

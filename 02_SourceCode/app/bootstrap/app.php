@@ -10,7 +10,6 @@ use App\Http\Middleware\HandleInertiaRequests;
 use App\Http\Middleware\SecurityHeaders;
 use App\Http\Middleware\SetLocale;
 use App\Services\AccessDeniedLogger;
-use App\Services\Payment\PaymentException;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
@@ -62,20 +61,9 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->redirectGuestsTo(fn (Request $request) => localized_route('login', [
             'locale' => in_array($request->segment(1), SetLocale::SUPPORTED, true) ? $request->segment(1) : app()->getLocale(),
         ]));
-        $middleware->redirectUsersTo(fn (Request $request) => localized_route('account.dashboard'));
+        $middleware->redirectUsersTo(fn (Request $request) => localized_route($request->user()?->homeRouteName() ?? 'home'));
     })
     ->withExceptions(function (Exceptions $exceptions): void {
-        // Chữ ký callback thanh toán sai → 400, không tiết lộ chi tiết
-        $exceptions->render(function (PaymentException $e, Request $request) {
-            if ($e->getCode() === 400) {
-                return $request->expectsJson()
-                    ? response()->json(['message' => $e->getMessage()], 400)
-                    : response($e->getMessage(), 400);
-            }
-
-            return null;
-        });
-
         // Quá số lần đăng nhập: báo lỗi ngay trên ô email thay vì trang 429 trống
         $exceptions->render(function (ThrottleRequestsException $e, Request $request) {
             if ($request->routeIs('login.store') && ! $request->expectsJson()) {

@@ -9,7 +9,7 @@ use Symfony\Component\Process\Process;
 
 /**
  * Sao lưu CSDL MySQL bằng mysqldump vào storage/app/backups, giữ lại N bản gần nhất.
- * Khôi phục: mysql -u... -p... disanso < storage/app/backups/<file>.sql
+ * Khôi phục: mysql -u... -p... dukhach < storage/app/backups/<file>.sql
  */
 class BackupDatabase extends Command
 {
@@ -38,7 +38,7 @@ class BackupDatabase extends Command
             mkdir($dir, self::DIR_MODE, true);
         }
         chmod($dir, self::DIR_MODE);
-        $file = $dir.'/disanso_'.now()->format('Ymd_His').'.sql';
+        $file = $dir.'/dukhach_'.now()->format('Ymd_His').'.sql';
         $cfg = config('database.connections.mysql');
 
         $process = new Process([
@@ -68,7 +68,7 @@ class BackupDatabase extends Command
     /** Chỉ giữ N bản mới nhất; siết quyền cả các bản cũ tạo trước bản vá (0666/0644). */
     private function rotate(string $dir): void
     {
-        $files = glob($dir.'/disanso_*.sql') ?: [];
+        $files = glob($dir.'/dukhach_*.sql') ?: [];
         rsort($files);
         foreach (array_slice($files, (int) $this->option('keep')) as $old) {
             unlink($old);

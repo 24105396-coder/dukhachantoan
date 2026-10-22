@@ -10,7 +10,7 @@
     <script nonce="{{ Vite::cspNonce() }}">
         (function () {
             try {
-                var t = localStorage.getItem('disanso-theme');
+                var t = localStorage.getItem('dka-theme');
                 if (t !== 'light' && t !== 'dark') {
                     t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
                 }
@@ -21,16 +21,18 @@
         // nếu đã từng tải (font nằm trong cache) thì nạp ngay để tránh nháy font
         (function () {
             var href = @json(Vite::asset('resources/css/fonts.css'));
-            window.disansoLoadFonts = function () {
-                if (window.disansoFontsLoaded) return;
-                window.disansoFontsLoaded = true;
+            window.dkaLoadFonts = function () {
+                if (window.dkaFontsLoaded) return;
+                window.dkaFontsLoaded = true;
                 var l = document.createElement('link');
                 l.rel = 'stylesheet';
                 l.href = href;
                 document.head.appendChild(l);
-                try { localStorage.setItem('disanso-fonts', '1'); } catch (e) {}
+                try { localStorage.setItem('dka-fonts', '1'); } catch (e) {}
             };
-            try { if (localStorage.getItem('disanso-fonts') === '1') window.disansoLoadFonts(); } catch (e) {}
+            // Tên cũ giữ tạm để app.js bản kế thừa vẫn gọi được; frontend chuyển sang dkaLoadFonts
+            window.disansoLoadFonts = window.dkaLoadFonts;
+            try { if (localStorage.getItem('dka-fonts') === '1') window.dkaLoadFonts(); } catch (e) {}
         })();
     </script>
     {{-- Preload chunk của trang hiện tại để không phải chờ app.js mới biết cần tải gì --}}
@@ -54,7 +56,7 @@
     {{-- Mô tả mặc định phía máy chủ cho trình thu thập không chạy JS; PageMeta.vue (head-key="description") thay thế sau khi tải --}}
     @php
         $pageProps = $page['props'] ?? [];
-        $metaDescription = collect(['site.summary', 'artifact.summary', 'figure.summary', 'route.description', 'tag.description'])
+        $metaDescription = collect(['alert.description', 'guide.summary', 'trip.title'])
             ->map(fn ($k) => data_get($pageProps, $k))
             ->first(fn ($v) => is_string($v) && trim($v) !== '');
         $metaDescription = \Illuminate\Support\Str::limit(trim(preg_replace('/\s+/', ' ', strip_tags($metaDescription ?? __('meta.default_description')))), 160);

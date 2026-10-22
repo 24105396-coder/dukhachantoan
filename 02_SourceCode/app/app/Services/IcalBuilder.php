@@ -2,44 +2,53 @@
 
 namespace App\Services;
 
-use App\Models\TourRoute;
-use Illuminate\Support\Collection;
+use App\Models\Trip;
+use App\Models\TripLeg;
 
-/** Xuất lịch khung giờ tuyến tham quan theo chuẩn iCalendar (RFC 5545). */
+/** Xuất các chặng hành trình theo chuẩn iCalendar (RFC 5545). */
 class IcalBuilder
 {
-    public function route(TourRoute $route, Collection $slots): string
+    public function trip(Trip $trip): string
     {
-        $name = $route->name;
-        $url = localized_route('tours.show', ['route' => $route->slug]);
+        $trip->loadMissing('legs.zone', 'legs.destination.translations');
         $lines = [
             'BEGIN:VCALENDAR',
             'VERSION:2.0',
-            'PRODID:-//DiSanSo//Tour Slots//VI',
+            'PRODID:-//DuKhachAnToan//Trip Legs//VI',
             'CALSCALE:GREGORIAN',
             'METHOD:PUBLISH',
-            'X-WR-CALNAME:'.$this->escape($name),
+            'X-WR-CALNAME:'.$this->escape($trip->title),
         ];
 
-        foreach ($slots as $slot) {
-            $lines = array_merge($lines, [
-                'BEGIN:VEVENT',
-                'UID:slot-'.$slot->id.'@disanso',
-                'DTSTAMP:'.now()->utc()->format('Ymd\THis\Z'),
-                'DTSTART:'.$slot->starts_at->copy()->utc()->format('Ymd\THis\Z'),
-                'DTEND:'.$slot->ends_at->copy()->utc()->format('Ymd\THis\Z'),
-                'SUMMARY:'.$this->escape($name),
-                'DESCRIPTION:'.$this->escape(__('messages.ical.description', [
-                    'available' => $slot->available, 'capacity' => $slot->capacity, 'guide' => $slot->guide_name ?? '-',
-                ])),
-                'URL:'.$url,
-                'STATUS:'.($slot->status === 'cancelled' ? 'CANCELLED' : 'CONFIRMED'),
-                'END:VEVENT',
-            ]);
+        foreach ($trip->legs as $leg) {
+            if ($leg->starts_at === null) {
+                continue;
+            }
+            $lines = array_merge($lines, $this->event($trip, $leg));
         }
         $lines[] = 'END:VCALENDAR';
 
         return implode("\r\n", array_map(fn ($l) => $this->fold($l), $lines))."\r\n";
+    }
+
+    private function event(Trip $trip, TripLeg $leg): array
+    {
+        $end = $leg->ends_at ?? $leg->starts_at->copy()->addHour();
+        $place = $leg->destination?->name ?? $leg->zone?->localizedName() ?? '';
+        $summary = $leg->title ?: $place;
+
+        return array_filter([
+            'BEGIN:VEVENT',
+            'UID:leg-'.$leg->id.'-'.$trip->code.'@dukhach',
+            'DTSTAMP:'.now()->utc()->format('Ymd\THis\Z'),
+            'DTSTART:'.$leg->starts_at->copy()->utc()->format('Ymd\THis\Z'),
+            'DTEND:'.$end->copy()->utc()->format('Ymd\THis\Z'),
+            'SUMMARY:'.$this->escape($summary),
+            'LOCATION:'.$this->escape($place),
+            $leg->note ? 'DESCRIPTION:'.$this->escape($leg->note) : null,
+            'STATUS:'.($trip->status === Trip::STATUS_CANCELLED ? 'CANCELLED' : 'CONFIRMED'),
+            'END:VEVENT',
+        ]);
     }
 
     private function escape(string $text): string

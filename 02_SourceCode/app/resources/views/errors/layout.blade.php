@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ $code }} – DiSanSo</title>
+    <title>{{ $code }} – DuKhachAnToan</title>
     <style>
         :root { --bg:#FBF6EC; --surface:#FFFFFF; --text:#2B1D14; --muted:#6B5546; --primary:#9B2C2C; --border:#E6D9C3; }
         @media (prefers-color-scheme: dark) { :root { --bg:#141210; --surface:#1F1B17; --text:#EDE6D6; --muted:#B8AE9C; --primary:#E07A5F; --border:#3A332C; } }

@@ -3,8 +3,10 @@
 namespace App\Http\Middleware;
 
 use App\Services\AnalyticsClient;
+use App\Services\RiskService;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
+use Throwable;
 
 class HandleInertiaRequests extends Middleware
 {
@@ -19,7 +21,7 @@ class HandleInertiaRequests extends Middleware
         return array_merge(parent::share($request), [
             'auth' => fn () => ['user' => $this->sharedUser($request)],
             'locale' => fn () => app()->getLocale(),
-            'locales' => fn () => collect(config('disanso.locales'))
+            'locales' => fn () => collect(config('dukhach.locales'))
                 ->map(fn ($label, $code) => ['code' => $code, 'label' => $label])->values()->all(),
             'translations' => fn () => self::translations(app()->getLocale()),
             'flash' => fn () => [
@@ -27,24 +29,26 @@ class HandleInertiaRequests extends Middleware
                 'error' => $request->session()->get('error'),
             ],
             'app' => fn () => [
-                'name' => 'DiSanSo',
-                'course' => config('disanso.academic.course'),
-                'courseCode' => config('disanso.academic.course_code'),
-                'team' => config('disanso.academic.team'),
+                'name' => 'DuKhachAnToan',
+                'course' => config('dukhach.academic.course'),
+                'courseCode' => config('dukhach.academic.course_code'),
+                'team' => config('dukhach.academic.team'),
                 'notice' => __('messages.app.notice'),
                 'analyticsUp' => app(AnalyticsClient::class)->isUp(),
+                'simulationMode' => (bool) config('dukhach.simulation_mode'),
             ],
+            'risk' => fn () => app(RiskService::class)->nationalSummary(),
             'map' => fn () => ['provider' => self::mapProvider()],
             'currentUrlOtherLocale' => fn () => self::otherLocaleUrl($request),
         ]);
     }
 
-    /** Nhà cung cấp bản đồ nền; giá trị lạ trong env quy về google để frontend không phải xử lý. */
+    /** Nhà cung cấp bản đồ nền; giá trị lạ trong env quy về osm. */
     public static function mapProvider(): string
     {
-        $provider = strtolower((string) config('disanso.map.provider', 'google'));
+        $provider = strtolower((string) config('dukhach.map.provider', 'osm'));
 
-        return in_array($provider, ['google', 'osm'], true) ? $provider : 'google';
+        return in_array($provider, ['google', 'osm'], true) ? $provider : 'osm';
     }
 
     private function sharedUser(Request $request): ?array
@@ -53,7 +57,7 @@ class HandleInertiaRequests extends Middleware
         if (! $user) {
             return null;
         }
-        $user->loadMissing('role');
+        $user->loadMissing('role', 'province');
 
         return [
             'id' => $user->id,
@@ -64,7 +68,20 @@ class HandleInertiaRequests extends Middleware
             'role' => $user->role?->code,
             'locale' => $user->locale,
             'theme' => $user->theme,
+            'province' => $user->province?->brief(),
+            'unread_notifications' => $this->unreadCount($user),
         ];
+    }
+
+    private function unreadCount($user): int
+    {
+        try {
+            return $user->unreadNotifications()->count();
+        } catch (Throwable $e) {
+            report($e);
+
+            return 0;
+        }
     }
 
     /** Đọc lang/{locale}.json do frontend quản lý; thiếu tệp thì trả mảng rỗng. */

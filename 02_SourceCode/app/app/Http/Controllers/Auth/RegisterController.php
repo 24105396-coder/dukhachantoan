@@ -22,17 +22,18 @@ class RegisterController extends Controller
     public function store(RegisterRequest $request, AuditLogger $audit): RedirectResponse
     {
         $data = $request->validated();
-        $roleId = Role::query()->where('code', Role::MEMBER)->value('id')
-            ?? Role::create(['code' => Role::MEMBER, 'name' => 'Thành viên'])->id;
+        $roleId = Role::query()->where('code', Role::TRAVELER)->value('id')
+            ?? Role::create(['code' => Role::TRAVELER, 'name' => 'Du khách'])->id;
 
-        // Vai trò luôn là member; không nhận role từ đầu vào người dùng
+        // Vai trò luôn là traveler; không nhận role từ đầu vào người dùng
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => $data['password'],
             'phone' => $data['phone'] ?? null,
+            'nationality' => isset($data['nationality']) ? strtoupper($data['nationality']) : null,
             'role_id' => $roleId,
-            'locale' => app()->getLocale(),
+            'locale' => $data['preferred_locale'] ?? app()->getLocale(),
         ]);
 
         Auth::login($user);
@@ -40,6 +41,6 @@ class RegisterController extends Controller
         $user->forceFill(['last_login_at' => now()])->saveQuietly();
         $audit->log('auth.register', $user, [], $user);
 
-        return redirect(localized_route('account.dashboard'))->with('success', __('messages.auth.registered'));
+        return redirect(localized_route('account.edit', ['locale' => $user->locale]))->with('success', __('messages.auth.registered'));
     }
 }

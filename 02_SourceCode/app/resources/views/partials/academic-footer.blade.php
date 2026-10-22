@@ -3,9 +3,9 @@
      vì layout Vue đã có chân trang riêng (AppFooter). --}}
 <footer id="static-footer" class="ssr-academic-footer" data-academic-footer>
     <p>
-        <span>{{ __('footer.course') }}: <strong>{{ config('disanso.academic.course', 'Lập trình ứng dụng web trong du lịch 2') }}</strong></span>
-        · <span>{{ __('footer.course_code') }}: <strong>{{ config('disanso.academic.course_code', 'CSE703073') }}</strong></span>
-        · <span>{{ __('footer.team') }}: <strong>{{ config('disanso.academic.team', 'DiSanSo') }}</strong></span>
+        <span>{{ __('footer.course') }}: <strong>{{ config('dukhach.academic.course', 'Lập trình ứng dụng web trong du lịch 2') }}</strong></span>
+        · <span>{{ __('footer.course_code') }}: <strong>{{ config('dukhach.academic.course_code', 'CSE703073') }}</strong></span>
+        · <span>{{ __('footer.team') }}: <strong>{{ config('dukhach.academic.team', 'DuKhachAnToan') }}</strong></span>
     </p>
     <p>{{ __('messages.app.notice') }}</p>
 </footer>

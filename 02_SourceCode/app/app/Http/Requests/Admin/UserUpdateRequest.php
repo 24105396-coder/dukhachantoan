@@ -16,6 +16,8 @@ class UserUpdateRequest extends FormRequest
         return [
             'role_id' => ['required', 'integer', 'exists:roles,id'],
             'is_active' => ['required', 'boolean'],
+            // Tỉnh phụ trách của cơ quan hỗ trợ; rỗng = toàn quốc
+            'province_code' => ['nullable', 'string', 'exists:provinces,code'],
         ];
     }
 }

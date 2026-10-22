@@ -11,6 +11,7 @@ use Throwable;
 /**
  * Gọi dịch vụ Python nội bộ. Mọi lỗi/timeout trả null để tầng trên dùng phương án dự phòng.
  * Trạng thái up/down được nhớ 60 giây để không chờ timeout ở mỗi yêu cầu.
+ * Lệnh nền (lấy thời tiết, tính rủi ro) gọi thẳng send() với timeout dài, không qua bộ nhớ "down".
  */
 class AnalyticsClient
 {
@@ -23,43 +24,49 @@ class AnalyticsClient
         });
     }
 
-    public function search(string $q, string $locale, int $limit = 20, ?array $types = null): ?array
+    /** Trạng thái chi tiết của dịch vụ Python: {status, db, last_fetch} hoặc null khi tắt. */
+    public function health(): ?array
     {
-        $body = array_filter(['q' => $q, 'locale' => $locale, 'limit' => $limit, 'types' => $types], fn ($v) => $v !== null);
-        $data = $this->call('post', '/search', $body);
-
-        return is_array($data['results'] ?? null) ? $data : null;
+        return $this->call('get', '/healthz');
     }
 
-    public function suggestTags(string $text, string $locale, int $limit = 5): ?array
+    /** Lấy thời tiết Open-Meteo cho các vùng (rỗng = mọi vùng). Gọi nền nên cho timeout dài hơn. */
+    public function refreshWeather(array $zoneCodes = [], float $timeout = 60): ?array
     {
-        $data = $this->call('post', '/suggest-tags', ['text' => $text, 'locale' => $locale, 'limit' => $limit]);
-
-        return is_array($data['suggestions'] ?? null) ? $data['suggestions'] : null;
+        return $this->send('post', '/weather/refresh', array_filter(['zone_codes' => $zoneCodes]), $timeout);
     }
 
-    public function qualityReport(): ?array
+    /** Tính lại risk_scores mọi vùng: [{zone_code, score, level}]. */
+    public function computeRisk(float $timeout = 30): ?array
     {
-        $data = $this->call('get', '/quality-report');
+        return $this->send('post', '/risk/compute', [], $timeout);
+    }
 
-        return is_array($data['checks'] ?? null) ? $data : null;
+    /** Sinh cảnh báo nháp từ ngưỡng thời tiết. */
+    public function deriveAlerts(float $timeout = 30): ?array
+    {
+        return $this->send('post', '/weather/derive-alerts', [], $timeout);
+    }
+
+    /** Đối sánh không gian một cảnh báo với các chặng: {matches: [...]}; null → dùng dự phòng PHP. */
+    public function match(int $alertId): ?array
+    {
+        $data = $this->call('post', '/match', ['alert_id' => $alertId]);
+
+        return is_array($data['matches'] ?? null) ? $data : null;
+    }
+
+    /** Điểm nào nằm trong hình học: {inside: [id]}; null → dùng App\Support\Geo. */
+    public function geoContains(array $geometry, array $points): ?array
+    {
+        $data = $this->call('post', '/geo/contains', ['geometry' => $geometry, 'points' => $points]);
+
+        return is_array($data['inside'] ?? null) ? $data['inside'] : null;
     }
 
     public function stats(): ?array
     {
         return $this->call('get', '/stats/overview');
-    }
-
-    /**
-     * Dựng lại chỉ mục tìm kiếm của dịch vụ Python. Gọi thẳng (không qua bộ nhớ trạng thái "down")
-     * với timeout dài hơn vì dựng chỉ mục đọc toàn bộ bản diễn giải.
-     */
-    public function reindex(float $timeout = 30): ?array
-    {
-        $data = $this->send('post', '/reindex', [], $timeout);
-        Cache::put(self::STATUS_KEY, $data !== null, $this->ttl());
-
-        return $data;
     }
 
     /** Bỏ qua cuộc gọi nếu vừa biết dịch vụ đang tắt. */
@@ -97,17 +104,17 @@ class AnalyticsClient
 
     private function client(?float $timeout = null): PendingRequest
     {
-        $timeout ??= (float) config('disanso.analytics.timeout', 2);
+        $timeout ??= (float) config('dukhach.analytics.timeout', 3);
 
-        return Http::baseUrl(rtrim((string) config('disanso.analytics.url'), '/'))
+        return Http::baseUrl(rtrim((string) config('dukhach.analytics.url'), '/'))
             ->timeout($timeout)
             ->connectTimeout($timeout)
             ->acceptJson()
-            ->withHeaders(['X-Analytics-Token' => (string) config('disanso.analytics.token')]);
+            ->withHeaders(['X-Analytics-Token' => (string) config('dukhach.analytics.token')]);
     }
 
     private function ttl(): int
     {
-        return (int) config('disanso.analytics.status_ttl', 60);
+        return (int) config('dukhach.analytics.status_ttl', 60);
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\UserUpdateRequest;
+use App\Models\Province;
 use App\Models\Role;
 use App\Models\User;
 use App\Services\AuditLogger;
@@ -20,7 +21,7 @@ class UserController extends Controller
         $this->authorize('manage-users');
         $filters = $this->filters($request, ['q', 'role']);
 
-        $users = User::query()->with('role')
+        $users = User::query()->with('role', 'province')
             ->when($filters['role'], fn ($q, $v) => $q->whereHas('role', fn ($r) => $r->where('code', $v)))
             ->when($filters['q'], function ($q, $v) {
                 $like = like_contains($v);
@@ -34,6 +35,7 @@ class UserController extends Controller
                 'role' => $u->role?->code,
                 'role_id' => $u->role_id,
                 'organization' => $u->organization,
+                'province' => $u->province?->brief(),
                 'is_active' => (bool) $u->is_active,
                 'last_login_at' => $u->last_login_at?->toIso8601String(),
                 'created_at' => $u->created_at?->toIso8601String(),
@@ -43,6 +45,7 @@ class UserController extends Controller
             'users' => $users->toArray(),
             'roles' => Role::query()->orderBy('id')->get()
                 ->map(fn ($r) => ['id' => $r->id, 'code' => $r->code, 'name' => __('enums.roles.'.$r->code)])->all(),
+            'provinces' => Province::query()->orderBy('name')->get()->map(fn (Province $p) => $p->brief())->all(),
             'filters' => $filters,
         ]);
     }
@@ -58,8 +61,14 @@ class UserController extends Controller
             return back()->withErrors(['role_id' => __('messages.admin.cannot_demote_self')])->with('error', __('messages.admin.cannot_demote_self'));
         }
 
-        $before = ['role_id' => $user->role_id, 'is_active' => $user->is_active];
-        $user->forceFill(['role_id' => $newRole->id, 'is_active' => (bool) $data['is_active']])->save();
+        $before = ['role_id' => $user->role_id, 'is_active' => $user->is_active, 'province_id' => $user->province_id];
+        $provinceId = ! empty($data['province_code']) ? Province::query()->where('code', $data['province_code'])->value('id') : null;
+        $user->forceFill([
+            'role_id' => $newRole->id,
+            'is_active' => (bool) $data['is_active'],
+            // Chỉ cơ quan hỗ trợ có phạm vi tỉnh
+            'province_id' => $newRole->code === Role::AGENCY ? $provinceId : null,
+        ])->save();
         if ($before['is_active'] && ! $user->is_active) {
             $revoker->revokeAll($user); // khóa tài khoản → mọi phiên đang mở bị hủy ngay
         }

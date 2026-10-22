@@ -47,7 +47,7 @@ class LoginController extends Controller
         $this->audit->log('auth.login', $user, [], $user);
         Log::info('Đăng nhập thành công', ['user_id' => $user->id, 'role' => $user->role?->code, 'ip' => $request->ip()]);
 
-        return redirect()->intended(localized_route('account.dashboard', ['locale' => $user->locale ?: app()->getLocale()]))
+        return redirect()->intended(localized_route($user->homeRouteName(), ['locale' => $user->locale ?: app()->getLocale()]))
             ->with('success', __('messages.auth.logged_in', ['name' => $user->name]));
     }
 

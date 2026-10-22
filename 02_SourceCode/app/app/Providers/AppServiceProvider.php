@@ -2,33 +2,32 @@
 
 namespace App\Providers;
 
-use App\Models\Artifact;
-use App\Models\Booking;
-use App\Models\Contribution;
-use App\Models\HeritageSite;
-use App\Models\HistoricalFigure;
-use App\Models\Interpretation;
+use App\Models\Alert;
+use App\Models\AlertMatch;
+use App\Models\AlertSource;
+use App\Models\AlertTranslation;
+use App\Models\Destination;
+use App\Models\DestinationTranslation;
+use App\Models\EmergencyContact;
+use App\Models\EmergencyContactTranslation;
+use App\Models\HazardType;
+use App\Models\HazardTypeTranslation;
+use App\Models\IncidentReport;
 use App\Models\MediaAsset;
-use App\Models\MediaCaption;
-use App\Models\Period;
-use App\Models\PeriodTranslation;
+use App\Models\Notification;
 use App\Models\Province;
-use App\Models\Payment;
-use App\Models\Tag;
-use App\Models\TagTranslation;
-use App\Models\TimelineEvent;
-use App\Models\TimelineEventTranslation;
-use App\Models\TourRoute;
-use App\Models\TourRouteStop;
-use App\Models\TourRouteTranslation;
-use App\Models\TourSlot;
+use App\Models\ResponseGuide;
+use App\Models\ResponseGuideTranslation;
+use App\Models\SafetyCheckin;
+use App\Models\SimulationRun;
+use App\Models\SimulationScenario;
+use App\Models\Trip;
+use App\Models\TripLeg;
 use App\Models\User;
+use App\Models\Zone;
 use App\Observers\FlushPageCache;
-use App\Policies\BookingPolicy;
-use App\Policies\ContributionPolicy;
-use App\Policies\TourRoutePolicy;
-use App\Services\Payment\PaymentGateway;
-use App\Services\Payment\SandboxGateway;
+use App\Services\PageCache;
+use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Http\Request;
@@ -41,74 +40,58 @@ use Illuminate\Support\Str;
 
 class AppServiceProvider extends ServiceProvider
 {
-    /** Giá trị mẫu từng nằm trong kho mã, không bao giờ được dùng làm khóa thật. */
-    public const INSECURE_PAYMENT_SECRETS = ['sandbox-secret-change-me', 'changeme', 'secret'];
+    /** Alias morph theo dka-conventions; cột *_type lưu alias ngắn, không lộ tên lớp. */
+    public const MORPH_MAP = [
+        'zone' => Zone::class,
+        'destination' => Destination::class,
+        'trip' => Trip::class,
+        'leg' => TripLeg::class,
+        'alert' => Alert::class,
+        'match' => AlertMatch::class,
+        'notification' => Notification::class,
+        'checkin' => SafetyCheckin::class,
+        'incident' => IncidentReport::class,
+        'contact' => EmergencyContact::class,
+        'guide' => ResponseGuide::class,
+        'scenario' => SimulationScenario::class,
+        'user' => User::class,
+        // Bổ sung cho nhật ký kiểm toán (subject của audit_logs): nguồn dữ liệu, lần chạy mô phỏng, tệp
+        'source' => AlertSource::class,
+        'run' => SimulationRun::class,
+        'media' => MediaAsset::class,
+    ];
 
     public function register(): void
     {
-        // Chỉ cổng mô phỏng được hiện thực; cấu hình cổng khác thì không bind (route sandbox cũng tắt)
-        if (config('disanso.payment.gateway') === 'sandbox') {
-            $this->app->bind(PaymentGateway::class, SandboxGateway::class);
-        }
-        // Bảng periods nhỏ, nạp một lần cho mỗi request/lệnh seed
-        $this->app->scoped(\App\Services\PeriodResolver::class);
-        $this->app->singleton(\App\Services\PageCache::class);
+        $this->app->singleton(PageCache::class);
     }
 
     public function boot(): void
     {
-        // Cột *_type lưu alias ngắn thay vì tên lớp, tránh lộ cấu trúc mã và gọn dữ liệu
-        Relation::enforceMorphMap([
-            'site' => HeritageSite::class,
-            'artifact' => Artifact::class,
-            'figure' => HistoricalFigure::class,
-            'route' => TourRoute::class,
-            'user' => User::class,
-            // Alias bổ sung cho nhật ký kiểm toán và tệp đa phương tiện
-            'booking' => Booking::class,
-            'payment' => Payment::class,
-            'contribution' => Contribution::class,
-            'tag' => Tag::class,
-            'media' => MediaAsset::class,
-            'slot' => TourSlot::class,
-        ]);
+        Relation::enforceMorphMap(self::MORPH_MAP);
 
         // Resource tự bọc "data" chỉ ở API; Inertia nhận mảng phẳng
         JsonResource::withoutWrapping();
 
-        $this->ensurePaymentSecret();
+        // Liên kết đặt lại mật khẩu theo ngôn ngữ của người dùng
+        ResetPassword::createUrlUsing(fn (User $user, string $token) => localized_route('password.reset', [
+            'locale' => $user->locale ?: 'vi', 'token' => $token, 'email' => $user->email,
+        ]));
 
         $this->registerAuthorization();
         $this->registerRateLimiters();
         $this->registerPageCacheInvalidation();
 
-        // Không dùng Vite::prefetch: nó tải trước mọi chunk động (model-viewer, Chart.js, trang quản trị)
-        // sau sự kiện load, làm chậm LCP mobile; Inertia tự nạp chunk trang kế tiếp khi điều hướng.
         Vite::useCspNonce();
     }
 
-    /** Production + cổng sandbox mà khóa HMAC rỗng hoặc còn giá trị mẫu công khai → dừng ngay. */
-    public function ensurePaymentSecret(): void
-    {
-        // package:discover chạy lúc build image (composer dump-autoload), khi chưa có biến môi trường runtime
-        if (! $this->app->isProduction() || config('disanso.payment.gateway') !== 'sandbox'
-            || $this->app->runningConsoleCommand('package:discover')) {
-            return;
-        }
-        $secret = (string) config('disanso.payment.sandbox_secret');
-        if ($secret === '' || in_array($secret, self::INSECURE_PAYMENT_SECRETS, true)) {
-            throw new \RuntimeException('PAYMENT_SANDBOX_SECRET must be set to a random value in production.');
-        }
-    }
-
-    /** Mọi model hiển thị trên trang công khai đã đệm: lưu/xóa → tăng phiên bản PageCache. */
+    /** Dữ liệu hiển thị trên trang công khai đã đệm: lưu/xóa → tăng phiên bản PageCache. */
     private function registerPageCacheInvalidation(): void
     {
         foreach ([
-            HeritageSite::class, Artifact::class, HistoricalFigure::class, Interpretation::class,
-            MediaAsset::class, MediaCaption::class, Tag::class, TagTranslation::class,
-            TourRoute::class, TourRouteTranslation::class, TourRouteStop::class, TourSlot::class,
-            TimelineEvent::class, TimelineEventTranslation::class, Period::class, PeriodTranslation::class, Province::class,
+            Zone::class, Destination::class, DestinationTranslation::class, HazardType::class, HazardTypeTranslation::class,
+            Alert::class, AlertTranslation::class, EmergencyContact::class, EmergencyContactTranslation::class,
+            ResponseGuide::class, ResponseGuideTranslation::class, Province::class, AlertSource::class,
         ] as $model) {
             $model::observe(FlushPageCache::class);
         }
@@ -116,19 +99,16 @@ class AppServiceProvider extends ServiceProvider
 
     private function registerAuthorization(): void
     {
-        Gate::policy(TourRoute::class, TourRoutePolicy::class);
-        Gate::policy(Booking::class, BookingPolicy::class);
-        Gate::policy(Contribution::class, ContributionPolicy::class);
-
-        Gate::define('manage-content', fn (User $user) => $user->isStaff());
+        Gate::define('access-admin', fn (User $user) => $user->isStaff());
         Gate::define('manage-users', fn (User $user) => $user->isAdmin());
         Gate::define('view-audit', fn (User $user) => $user->isAdmin());
+        Gate::define('manage-backup', fn (User $user) => $user->isAdmin());
+        Gate::define('run-simulation', fn (User $user) => $user->isAdmin());
     }
 
     private function registerRateLimiters(): void
     {
         // Chống dò mật khẩu: 5 lần/phút cho mỗi cặp email + IP, thêm 5 lần/phút theo riêng email
-        // (độc lập IP) để đổi IP/X-Forwarded-For không vượt được giới hạn.
         RateLimiter::for('login', function (Request $request) {
             $email = Str::lower(trim((string) $request->input('email')));
 
@@ -139,5 +119,9 @@ class AppServiceProvider extends ServiceProvider
         });
 
         RateLimiter::for('api', fn (Request $request) => Limit::perMinute(60)->by($request->ip()));
+
+        // Báo an toàn qua liên kết chia sẻ (không đăng nhập): 10 lần/giờ cho mỗi token
+        RateLimiter::for('checkin-token', fn (Request $request) => Limit::perHour(10)
+            ->by('checkin:'.substr(hash('sha256', (string) $request->route('token')), 0, 16)));
     }
 }

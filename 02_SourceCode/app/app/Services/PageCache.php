@@ -8,10 +8,10 @@ use Illuminate\Support\Facades\Cache;
 
 /**
  * Bộ đệm ngắn (mặc định 60 s) cho dữ liệu trang công khai không phụ thuộc người dùng
- * (trang chủ, danh sách di sản không lọc, chi tiết di sản, danh mục lọc) để giảm truy vấn khi tải cao.
+ * (trang chủ, bản đồ vùng, danh bạ, hướng dẫn) để giảm truy vấn khi tải cao.
  *
  * Khóa gồm phiên bản nội dung + locale + scheme/host (URL tuyệt đối trong dữ liệu); mọi thay đổi nội dung
- * (observer FlushPageCache, HeritageWriter) tăng phiên bản → toàn bộ khóa cũ tự hết hiệu lực, không cần Cache::flush
+ * (observer FlushPageCache) tăng phiên bản → toàn bộ khóa cũ tự hết hiệu lực, không cần Cache::flush
  * (flush sẽ xóa cả bộ đếm rate limit). TTL ≤ 0 tắt bộ đệm.
  */
 class PageCache
@@ -45,7 +45,7 @@ class PageCache
 
     public function ttl(): int
     {
-        return (int) config('disanso.page_cache.ttl', 60);
+        return (int) config('dukhach.page_cache.ttl', 60);
     }
 
     private function key(string $key): string
@@ -59,6 +59,6 @@ class PageCache
 
     private function store(): Repository
     {
-        return Cache::store(config('disanso.page_cache.store') ?: null);
+        return Cache::store(config('dukhach.page_cache.store') ?: null);
     }
 }

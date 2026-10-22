@@ -13,17 +13,16 @@ use Illuminate\Support\Str;
 final class UploadPolicy
 {
     public const TYPES = [
+        // Ảnh minh họa hướng dẫn/vùng và ảnh sự cố du khách gửi
         'image' => ['extensions' => 'jpg,jpeg,png,webp', 'mimetypes' => ['image/jpeg' => 'jpg', 'image/png' => 'png', 'image/webp' => 'webp']],
-        'audio' => ['extensions' => 'mp3', 'mimetypes' => ['audio/mpeg' => 'mp3']],
-        // finfo không nhận diện glTF nhị phân → kiểm magic bytes "glTF" thay cho mimetypes
-        'model3d' => ['extensions' => 'glb', 'mimetypes' => null, 'magic' => 'glTF', 'fixed' => 'glb'],
         'document' => ['extensions' => 'pdf', 'mimetypes' => ['application/pdf' => 'pdf']],
-        // Tệp đính kèm đóng góp của thành viên (lưu disk private)
-        'attachment' => ['extensions' => 'jpg,jpeg,png,pdf', 'mimetypes' => ['image/jpeg' => 'jpg', 'image/png' => 'png', 'application/pdf' => 'pdf']],
     ];
 
-    /** Loại media quản trị viên được tải lên thư viện (attachment chỉ dành cho đóng góp). */
-    public const MEDIA_TYPES = ['image', 'audio', 'model3d', 'document'];
+    /** Loại media quản trị viên được tải lên thư viện. */
+    public const MEDIA_TYPES = ['image', 'document'];
+
+    /** Dung lượng tối đa ảnh sự cố (KB). */
+    public const INCIDENT_PHOTO_MAX_KB = 5120;
 
     /** Luật validate cho trường tệp của loại media (loại lạ → luật của ảnh, chặt nhất). */
     public static function rules(string $type): array
