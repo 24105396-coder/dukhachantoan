@@ -10,7 +10,7 @@ const VENDOR_GROUPS = [
     ['vendor-inertia', ['/node_modules/@inertiajs/', '/node_modules/axios/', '/node_modules/qs/', '/node_modules/es-toolkit/', '/node_modules/nprogress/']],
     ['vendor-leaflet', ['/node_modules/leaflet/']],
     ['vendor-chart', ['/node_modules/chart.js/', '/node_modules/@kurkle/']],
-    ['vendor-model-viewer', ['/node_modules/@google/model-viewer/', '/node_modules/three/', '/node_modules/lit', '/node_modules/@lit/', '/node_modules/@monogrid/']],
+    ['vendor-icons', ['/node_modules/lucide-vue-next/']],
 ];
 
 // Component/composable dùng chung của khu công khai gộp một chunk: Apache phục vụ HTTP/1.1 (6 kết nối),
@@ -36,8 +36,6 @@ export default defineConfig({
         vue({
             template: {
                 transformAssetUrls: { base: null, includeAbsolute: false },
-                // model-viewer là custom element (nạp động từ gói npm), không phải component Vue
-                compilerOptions: { isCustomElement: (tag) => tag === 'model-viewer' },
             },
         }),
         tailwindcss(),
@@ -48,8 +46,8 @@ export default defineConfig({
         },
     },
     build: {
-        // model-viewer gồm cả three.js (~1 MB) nhưng chỉ nạp ở trang hiện vật có mô hình 3D
-        chunkSizeWarningLimit: 1200,
+        // Chunk lớn nhất là Leaflet/Chart.js (~200 KB), đều nạp động theo trang
+        chunkSizeWarningLimit: 500,
         rollupOptions: {
             output: {
                 manualChunks: vendorChunk,
