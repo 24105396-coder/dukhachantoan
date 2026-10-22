@@ -35,6 +35,8 @@ class ScenarioSeeder extends Seeder
                     'name' => $row['name'] ?? null,
                     'description' => $row['description'] ?? null,
                     'steps' => $row['steps'] ?? [],
+                    'source_name' => $row['source_name'] ?? null,
+                    'source_url' => $row['source_url'] ?? null,
                 ],
             ]);
             $scenario->status ??= 'ready';

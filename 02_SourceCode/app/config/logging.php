@@ -59,6 +59,15 @@ return [
             'ignore_exceptions' => false,
         ],
 
+        // Nhật ký nghiệp vụ: thông báo thất bại, phát cảnh báo, mô phỏng (storage/logs/nghiepvu-YYYY-MM-DD.log)
+        'nghiepvu' => [
+            'driver' => 'daily',
+            'path' => storage_path('logs/nghiepvu.log'),
+            'level' => env('LOG_LEVEL', 'debug'),
+            'days' => (int) env('LOG_DAILY_DAYS', 14),
+            'replace_placeholders' => true,
+        ],
+
         'single' => [
             'driver' => 'single',
             'path' => storage_path('logs/laravel.log'),

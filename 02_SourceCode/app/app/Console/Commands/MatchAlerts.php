@@ -2,20 +2,29 @@
 
 namespace App\Console\Commands;
 
+use App\Models\Alert;
+use App\Services\MatchingService;
+use App\Services\NotificationService;
 use Illuminate\Console\Command;
 
-/**
- * Đối sánh cảnh báo đang hiệu lực với chặng hành trình chưa đối sánh (lịch: mỗi 5 phút).
- * Pha 1: lệnh khung để scheduler chạy không lỗi; nghiệp vụ hiện thực ở pha 2.
- */
+/** Đối sánh mọi cảnh báo đang hiệu lực với hành trình (kể cả hành trình mới) và xếp thông báo cho đối sánh mới. */
 class MatchAlerts extends Command
 {
-    protected $signature = 'app:match-alerts';
-    protected $description = 'Đối sánh cảnh báo đang hiệu lực với chặng hành trình chưa đối sánh (lịch: mỗi 5 phút).';
+    protected $signature = 'app:match-alerts {--alert= : Chỉ đối sánh một mã cảnh báo}';
+    protected $description = 'Đối sánh cảnh báo đang hiệu lực với hành trình và xếp thông báo (lịch: mỗi 5 phút).';
 
-    public function handle(): int
+    public function handle(MatchingService $matching, NotificationService $notifications): int
     {
-        $this->line(now()->toDateTimeString().' app:match-alerts: chưa hiện thực (pha 2).');
+        $alerts = Alert::query()->live()->with('zones')
+            ->when($this->option('alert'), fn ($q, $code) => $q->where('code', $code))->orderByDesc('severity')->get();
+        $matches = 0;
+        $queued = 0;
+        foreach ($alerts as $alert) {
+            $new = $matching->matchAlert($alert);
+            $matches += $new->count();
+            $queued += $notifications->enqueueMatches($new);
+        }
+        $this->line(sprintf('%s app:match-alerts alerts=%d new_matches=%d notifications=%d', now()->toDateTimeString(), $alerts->count(), $matches, $queued));
 
         return self::SUCCESS;
     }

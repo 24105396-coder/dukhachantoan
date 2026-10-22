@@ -2,20 +2,18 @@
 
 namespace App\Console\Commands;
 
+use App\Services\AlertService;
 use Illuminate\Console\Command;
 
-/**
- * Chuyển cảnh báo quá ends_at sang expired (lịch: mỗi 10 phút).
- * Pha 1: lệnh khung để scheduler chạy không lỗi; nghiệp vụ hiện thực ở pha 2.
- */
+/** Cảnh báo quá ends_at → expired, hủy thông báo đang xếp hàng (lịch: mỗi 10 phút). */
 class ExpireAlerts extends Command
 {
     protected $signature = 'app:expire-alerts';
-    protected $description = 'Chuyển cảnh báo quá ends_at sang expired (lịch: mỗi 10 phút).';
+    protected $description = 'Chuyển cảnh báo quá hạn sang expired (lịch: mỗi 10 phút).';
 
-    public function handle(): int
+    public function handle(AlertService $alerts): int
     {
-        $this->line(now()->toDateTimeString().' app:expire-alerts: chưa hiện thực (pha 2).');
+        $this->line(sprintf('%s app:expire-alerts expired=%d', now()->toDateTimeString(), $alerts->expireDue()));
 
         return self::SUCCESS;
     }

@@ -31,6 +31,21 @@ return [
         // SMS mô phỏng thất bại ngẫu nhiên để chứng minh cơ chế thử lại; 0 = luôn thành công
         'sms_fail_rate' => (float) env('SMS_SIM_FAIL_RATE', 0.1),
         'dispatch_batch' => (int) env('NOTIFY_DISPATCH_BATCH', 100),
+        // Bản tin gộp mức 1 gửi lúc giờ này hằng ngày (email/SMS)
+        'digest_hour' => (int) env('NOTIFY_DIGEST_HOUR', 7),
+        // Thông báo kẹt ở trạng thái "sending" quá số phút này (worker chết) được đưa lại hàng đợi
+        'stale_sending_minutes' => 10,
+    ],
+
+    // 5 vùng du lịch hiển thị thời tiết trên trang chủ
+    'weather' => [
+        'highlight_zones' => ['ha-noi', 'vinh-ha-long', 'da-nang', 'vinh-nha-trang', 'phu-quoc'],
+        'default_zone' => 'ha-noi',
+    ],
+
+    // Mô phỏng: bước có at_minute > 0 chạy trễ bằng job (realtime) hoặc tạo ngay với starts_at lệch (instant)
+    'simulation' => [
+        'default_mode' => env('SIMULATION_MODE_RUN', 'realtime'),
     ],
 
     // Bản đồ nền: osm (OpenStreetMap, dữ liệu mở, mặc định) hoặc google
