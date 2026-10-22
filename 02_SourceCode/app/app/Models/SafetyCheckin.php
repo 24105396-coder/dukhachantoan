@@ -59,4 +59,10 @@ class SafetyCheckin extends Model
     {
         return $this->hasMany(Notification::class, 'checkin_id');
     }
+
+    /** Check-in của hành trình đi qua tỉnh. */
+    public function scopeInProvince($query, int $provinceId)
+    {
+        return $query->whereHas('trip', fn ($t) => $t->inProvince($provinceId));
+    }
 }

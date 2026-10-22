@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Concerns\HasMedia;
+use App\Models\Concerns\ResolvesByIdOrKey;
 use App\Models\Concerns\Translatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -10,7 +11,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 /** Hướng dẫn ứng phó đa ngữ theo loại rủi ro và mức tối thiểu (F7). */
 class ResponseGuide extends Model
 {
-    use HasMedia, Translatable;
+    use HasMedia, ResolvesByIdOrKey, Translatable;
 
     public const AUDIENCES = ['all', 'international', 'elderly', 'family'];
     public const STATUSES = ['draft', 'published'];

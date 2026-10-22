@@ -60,4 +60,18 @@ class LookupService
         return Zone::query()->active()->with('province')->orderBy('name')->get()
             ->map(fn (Zone $z) => $z->brief() + ['province' => $z->province?->brief()])->values()->all();
     }
+
+    /** Số cảnh báo đang hiệu lực theo mức {1..4}. */
+    public function alertsBySeverity(): array
+    {
+        try {
+            $counts = Alert::query()->live()->selectRaw('severity, COUNT(*) AS total')->groupBy('severity')->pluck('total', 'severity');
+
+            return collect([1, 2, 3, 4])->mapWithKeys(fn ($s) => [$s => (int) ($counts[$s] ?? 0)])->all();
+        } catch (Throwable $e) {
+            report($e);
+
+            return [1 => 0, 2 => 0, 3 => 0, 4 => 0];
+        }
+    }
 }

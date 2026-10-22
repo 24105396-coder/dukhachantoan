@@ -26,4 +26,16 @@ abstract class BaseResource extends JsonResource
     {
         return $paginator->through(fn ($m) => static::one($m))->toArray();
     }
+
+    /** Ngày giờ ISO 8601 có múi giờ (null giữ nguyên). */
+    protected static function iso(mixed $value): ?string
+    {
+        return $value?->toIso8601String();
+    }
+
+    /** Khoảng cách km 1 chữ số thập phân. */
+    protected static function km(mixed $value): ?float
+    {
+        return $value === null ? null : round((float) $value, 1);
+    }
 }

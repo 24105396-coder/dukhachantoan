@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
 /**
@@ -112,6 +114,11 @@ class Trip extends Model
         return $this->hasMany(SafetyCheckin::class);
     }
 
+    public function latestCheckin(): HasOne
+    {
+        return $this->hasOne(SafetyCheckin::class)->latestOfMany('checked_at');
+    }
+
     public function notifications(): HasMany
     {
         return $this->hasMany(Notification::class);
@@ -131,5 +138,50 @@ class Trip extends Model
     public function isEditable(): bool
     {
         return in_array($this->status, [self::STATUS_DRAFT, self::STATUS_ACTIVE], true);
+    }
+
+    /** Nạp đủ dữ liệu cho TripCard: chặng (vùng, điểm đến), chủ, đơn vị lữ hành, check-in mới nhất, số cảnh báo hiệu lực. */
+    public function scopeWithCardData($query)
+    {
+        return $query->with([
+            'user:id,name', 'partner:id,name,organization', 'latestCheckin.alert.translations', 'latestCheckin.user:id,name',
+            'latestCheckin.responder:id,name', 'legs.zone.province', 'legs.destination.translations', 'legs.destination.zone',
+            'legs.destination.province',
+        ])->withCount(['matches as active_alerts_count' => fn ($q) => $q
+            ->select(DB::raw('COUNT(DISTINCT alert_matches.alert_id)'))
+            ->where('alert_matches.status', '!=', AlertMatch::STATUS_RESOLVED)
+            ->whereHas('alert', fn ($a) => $a->live())]);
+    }
+
+    /** Hành trình có chặng thuộc tỉnh (theo vùng của chặng). */
+    public function scopeInProvince($query, int $provinceId)
+    {
+        return $query->whereHas('legs.zone', fn ($z) => $z->where('province_id', $provinceId));
+    }
+
+    /** Phạm vi xem theo vai trò: admin mọi chuyến; agency tỉnh mình; partner chuyến mình đăng ký; du khách chuyến của mình. */
+    public function scopeVisibleTo($query, User $user)
+    {
+        if ($user->isAdmin()) {
+            return $query;
+        }
+        if ($user->isAgency()) {
+            return $user->province_id ? $query->inProvince($user->province_id) : $query;
+        }
+
+        return $query->where(fn ($q) => $q->where('user_id', $user->id)->orWhere('partner_id', $user->id));
+    }
+
+    /** Chủ hành trình hoặc đơn vị lữ hành đăng ký. */
+    public function isManagedBy(User $user): bool
+    {
+        return $this->user_id === $user->id || ($this->partner_id !== null && $this->partner_id === $user->id);
+    }
+
+    /** Id các tỉnh mà hành trình đi qua. */
+    public function provinceIds(): array
+    {
+        return $this->legs()->reorder()->join('zones', 'zones.id', '=', 'trip_legs.zone_id')
+            ->whereNotNull('zones.province_id')->distinct()->pluck('zones.province_id')->map(fn ($id) => (int) $id)->all();
     }
 }

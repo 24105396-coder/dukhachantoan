@@ -158,4 +158,16 @@ class Alert extends Model
     {
         return __('enums.severity.'.(self::SEVERITIES[$severity] ?? 'info'));
     }
+
+    /** Cảnh báo có vùng thuộc tỉnh. */
+    public function scopeInProvince($query, int $provinceId)
+    {
+        return $query->whereHas('zones', fn ($z) => $z->where('province_id', $provinceId));
+    }
+
+    /** Sắp xếp: mức cao trước, mới cập nhật trước. */
+    public function scopeMostSevere($query)
+    {
+        return $query->orderByDesc('severity')->orderByDesc('updated_at_source')->orderByDesc('id');
+    }
 }
