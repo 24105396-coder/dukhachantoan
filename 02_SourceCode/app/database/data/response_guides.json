@@ -1,0 +1,1460 @@
+[
+ {
+  "slug": "ung-pho-bao",
+  "hazard_code": "bao",
+  "min_severity": 3,
+  "audience": "all",
+  "sort_order": 1,
+  "status": "published",
+  "title": {
+   "vi": "Ứng phó khi có bão",
+   "en": "What to do in a typhoon"
+  },
+  "summary": {
+   "vi": "Bão gây gió giật mạnh, mưa lớn, nước dâng. Du khách cần theo dõi bản tin, ở yên trong nơi trú an toàn và không ra biển.",
+   "en": "Typhoons bring violent gusts, heavy rain and storm surge. Follow official bulletins, shelter indoors and stay off the sea."
+  },
+  "before_steps": {
+   "vi": [
+    "Theo dõi bản tin của Trung tâm Dự báo KTTV quốc gia và thông báo của chính quyền địa phương.",
+    "Hỏi lễ tân nơi lưu trú về phương án trú bão và điểm sơ tán gần nhất.",
+    "Sạc đầy điện thoại, sạc dự phòng; chuẩn bị đèn pin, nước uống, đồ ăn khô cho 2–3 ngày.",
+    "Cất giấy tờ, hộ chiếu vào túi chống nước.",
+    "Hoãn chuyến đi biển, đảo, đèo núi trong vùng dự báo bão đi qua.",
+    "Báo lịch trình cho người thân hoặc công ty lữ hành."
+   ],
+   "en": [
+    "Follow bulletins from the National Centre for Hydro-Meteorological Forecasting and local authorities.",
+    "Ask your hotel about its storm plan and the nearest evacuation point.",
+    "Charge your phone and power bank; keep a torch, water and dry food for 2–3 days.",
+    "Put your passport and documents in a waterproof bag.",
+    "Postpone sea, island and mountain-pass trips in the forecast storm path.",
+    "Share your itinerary with family or your tour operator."
+   ]
+  },
+  "during_steps": {
+   "vi": [
+    "Ở trong nhà kiên cố, tránh xa cửa kính, cửa sổ.",
+    "Không ra ngoài khi gió đang mạnh; tâm bão đi qua có thể lặng gió tạm thời rồi gió mạnh trở lại.",
+    "Tránh xa bờ biển, cửa sông vì nước dâng và sóng lớn.",
+    "Ngắt điện các thiết bị nếu nước bắt đầu tràn vào phòng.",
+    "Làm theo hướng dẫn sơ tán của chính quyền ngay khi được yêu cầu."
+   ],
+   "en": [
+    "Stay inside a solid building, away from glass doors and windows.",
+    "Do not go out while winds are strong. The calm eye may pass, then winds return.",
+    "Keep away from beaches and river mouths because of surge and high waves.",
+    "Switch off electrical devices if water starts entering the room.",
+    "Evacuate immediately when authorities tell you to."
+   ]
+  },
+  "after_steps": {
+   "vi": [
+    "Chờ thông báo bão đã tan hoặc đi qua hẳn rồi mới ra ngoài.",
+    "Tránh dây điện đứt, cây đổ, biển quảng cáo hư hỏng.",
+    "Không đi qua đường ngập, ngầm tràn.",
+    "Báo an toàn cho người thân và trên ứng dụng (nút \"Tôi an toàn\").",
+    "Kiểm tra lại lịch bay, tàu xe trước khi di chuyển tiếp."
+   ],
+   "en": [
+    "Wait for the official all-clear before going outside.",
+    "Avoid fallen power lines, trees and damaged billboards.",
+    "Do not walk or drive through flooded roads or spillways.",
+    "Tell your family you are safe and tap \"I am safe\" in the app.",
+    "Check flights, trains and buses before continuing your journey."
+   ]
+  },
+  "sources": [
+   "Văn phòng thường trực Ban Chỉ đạo quốc gia về phòng chống thiên tai – Tài liệu kỹ năng ứng phó thiên tai (phongchongthientai.mard.gov.vn)",
+   "Quyết định 18/2021/QĐ-TTg về dự báo, cảnh báo, truyền tin thiên tai và cấp độ rủi ro thiên tai",
+   "IFRC – Public awareness and public education for disaster risk reduction: key messages"
+  ]
+ },
+ {
+  "slug": "bao-tren-dao-va-ven-bien",
+  "hazard_code": "bao",
+  "min_severity": 2,
+  "audience": "international",
+  "sort_order": 2,
+  "status": "published",
+  "title": {
+   "vi": "Khi đang ở đảo hoặc ven biển và có tin bão",
+   "en": "On an island or the coast when a typhoon is coming"
+  },
+  "summary": {
+   "vi": "Khi có tin bão, tàu khách và ca nô ra đảo sẽ dừng chạy. Du khách quốc tế nên rời đảo sớm hoặc chuẩn bị ở lại an toàn vài ngày.",
+   "en": "When a typhoon is forecast, ferries and speedboats stop. International visitors should leave islands early or prepare to stay safely for several days."
+  },
+  "before_steps": {
+   "vi": [
+    "Kiểm tra lịch tàu về đất liền ngay khi có tin áp thấp, bão trên Biển Đông.",
+    "Liên hệ công ty lữ hành hoặc khách sạn để đổi vé về sớm.",
+    "Mua bảo hiểm du lịch có điều khoản thiên tai.",
+    "Chuẩn bị tiền mặt vì máy ATM có thể mất điện.",
+    "Ghi lại số đại sứ quán, lãnh sự quán của nước mình."
+   ],
+   "en": [
+    "Check return ferry schedules as soon as a depression or typhoon is reported in the East Sea.",
+    "Ask your tour operator or hotel to move your ticket earlier.",
+    "Buy travel insurance that covers natural disasters.",
+    "Carry cash because ATMs may lose power.",
+    "Save your embassy or consulate number."
+   ]
+  },
+  "during_steps": {
+   "vi": [
+    "Nếu không kịp rời đảo, ở lại nơi lưu trú kiên cố theo chỉ dẫn của chính quyền đảo.",
+    "Không tắm biển, không đi thuyền, không ra mũi đá, bến cảng.",
+    "Giữ điện thoại để nhận tin nhắn cảnh báo; hạn chế dùng để tiết kiệm pin.",
+    "Đi cùng người trong đoàn, không tách nhóm."
+   ],
+   "en": [
+    "If you cannot leave, stay in a solid building as island officials advise.",
+    "Do not swim, take boats, or go onto rocks and piers.",
+    "Keep your phone for warning messages and save battery.",
+    "Stay with your group; do not split up."
+   ]
+  },
+  "after_steps": {
+   "vi": [
+    "Chỉ rời đảo khi tàu được phép chạy lại.",
+    "Thông báo cho đại sứ quán nếu bị mắc kẹt quá dự kiến hoặc cần hỗ trợ.",
+    "Báo an toàn trên ứng dụng để cơ quan hỗ trợ du khách nắm tình hình.",
+    "Giữ hóa đơn, giấy tờ để làm thủ tục bảo hiểm."
+   ],
+   "en": [
+    "Leave only when ferries are officially allowed to run again.",
+    "Contact your embassy if you are stranded longer than planned or need help.",
+    "Check in as safe in the app so tourist support knows your status.",
+    "Keep receipts for insurance claims."
+   ]
+  },
+  "sources": [
+   "Văn phòng thường trực Ban Chỉ đạo quốc gia về phòng chống thiên tai – Tài liệu kỹ năng ứng phó thiên tai (phongchongthientai.mard.gov.vn)",
+   "IFRC – Public awareness and public education for disaster risk reduction: key messages",
+   "Bộ Ngoại giao – Cổng thông tin bảo hộ công dân và hỗ trợ người nước ngoài"
+  ]
+ },
+ {
+  "slug": "ung-pho-ap-thap-nhiet-doi",
+  "hazard_code": "ap_thap",
+  "min_severity": 2,
+  "audience": "all",
+  "sort_order": 3,
+  "status": "published",
+  "title": {
+   "vi": "Khi có áp thấp nhiệt đới",
+   "en": "When a tropical depression is forecast"
+  },
+  "summary": {
+   "vi": "Áp thấp nhiệt đới có thể mạnh lên thành bão và gây mưa rất lớn. Chủ động điều chỉnh lịch trình ven biển.",
+   "en": "A tropical depression can become a typhoon and bring very heavy rain. Adjust coastal plans early."
+  },
+  "before_steps": {
+   "vi": [
+    "Theo dõi tin dự báo cập nhật mỗi 3–6 giờ.",
+    "Xem lại lịch trình đi biển, đảo, đèo trong 2–3 ngày tới.",
+    "Chuẩn bị áo mưa, giày chống trơn, túi chống nước.",
+    "Lưu số khẩn cấp 112, 113, 114, 115."
+   ],
+   "en": [
+    "Follow forecasts updated every 3–6 hours.",
+    "Review sea, island and mountain-pass plans for the next 2–3 days.",
+    "Pack raincoats, non-slip shoes and waterproof bags.",
+    "Save emergency numbers 112, 113, 114 and 115."
+   ]
+  },
+  "during_steps": {
+   "vi": [
+    "Không ra khơi, không tắm biển khi có cờ cấm.",
+    "Tránh khu vực trũng thấp, ven sông suối khi mưa lớn.",
+    "Di chuyển chậm, bật đèn khi mưa to, tầm nhìn kém.",
+    "Chuẩn bị chuyển sang phương án ứng phó bão nếu áp thấp mạnh lên."
+   ],
+   "en": [
+    "Do not go to sea or swim when red flags are up.",
+    "Avoid low-lying areas and riverbanks during heavy rain.",
+    "Drive slowly with lights on in heavy rain.",
+    "Switch to your typhoon plan if the depression strengthens."
+   ]
+  },
+  "after_steps": {
+   "vi": [
+    "Kiểm tra thông tin đường sá trước khi đi tiếp.",
+    "Cẩn thận sạt lở trên đường đèo sau mưa.",
+    "Báo an toàn trên ứng dụng.",
+    "Đánh giá lại lịch trình với công ty lữ hành."
+   ],
+   "en": [
+    "Check road conditions before moving on.",
+    "Watch for landslides on mountain roads after rain.",
+    "Check in as safe in the app.",
+    "Review your plans with your tour operator."
+   ]
+  },
+  "sources": [
+   "Văn phòng thường trực Ban Chỉ đạo quốc gia về phòng chống thiên tai – Tài liệu kỹ năng ứng phó thiên tai (phongchongthientai.mard.gov.vn)",
+   "Quyết định 18/2021/QĐ-TTg về dự báo, cảnh báo, truyền tin thiên tai và cấp độ rủi ro thiên tai"
+  ]
+ },
+ {
+  "slug": "ung-pho-mua-lon-ngap-do-thi",
+  "hazard_code": "mua_lon",
+  "min_severity": 2,
+  "audience": "all",
+  "sort_order": 4,
+  "status": "published",
+  "title": {
+   "vi": "Mưa lớn, ngập úng đô thị",
+   "en": "Heavy rain and urban flooding"
+  },
+  "summary": {
+   "vi": "Mưa lớn có thể làm ngập đường phố chỉ trong 30–60 phút. Không lội qua nước chảy xiết, tránh hố ga và dây điện.",
+   "en": "Heavy rain can flood streets within 30–60 minutes. Never wade through fast water; avoid open drains and power lines."
+  },
+  "before_steps": {
+   "vi": [
+    "Xem dự báo mưa trên ứng dụng trước khi ra ngoài.",
+    "Chọn nơi ở không nằm ở tầng hầm hoặc khu trũng.",
+    "Mang áo mưa, túi chống nước cho điện thoại.",
+    "Lưu trước tuyến đường thay thế."
+   ],
+   "en": [
+    "Check the rain forecast in the app before going out.",
+    "Avoid basement rooms and low-lying accommodation.",
+    "Carry a raincoat and a waterproof phone pouch.",
+    "Plan an alternative route."
+   ]
+  },
+  "during_steps": {
+   "vi": [
+    "Vào trú trong tòa nhà chắc chắn, không trú dưới cây to, cột điện, biển quảng cáo.",
+    "Không lội qua chỗ nước ngập trên đầu gối hoặc chảy xiết.",
+    "Tránh xa nắp cống, hố ga có thể bị bật mở.",
+    "Không đi xe máy qua đoạn ngập sâu.",
+    "Nếu thấy dây điện rơi xuống nước, tránh xa và gọi 114."
+   ],
+   "en": [
+    "Shelter in a solid building, not under large trees, power poles or billboards.",
+    "Do not wade through water above your knees or flowing fast.",
+    "Keep away from manholes; covers may be lifted.",
+    "Do not ride a motorbike through deep water.",
+    "If a power line falls into water, keep away and call 114."
+   ]
+  },
+  "after_steps": {
+   "vi": [
+    "Chờ nước rút mới di chuyển.",
+    "Rửa tay, chân bằng xà phòng sau khi tiếp xúc nước ngập.",
+    "Kiểm tra lịch tàu xe, chuyến bay có thể bị chậm.",
+    "Báo sự cố (cây đổ, đường hỏng) qua ứng dụng để giúp người khác."
+   ],
+   "en": [
+    "Wait for water to recede before moving.",
+    "Wash hands and feet with soap after contact with floodwater.",
+    "Check for delayed buses, trains and flights.",
+    "Report hazards such as fallen trees through the app to help others."
+   ]
+  },
+  "sources": [
+   "Văn phòng thường trực Ban Chỉ đạo quốc gia về phòng chống thiên tai – Tài liệu kỹ năng ứng phó thiên tai (phongchongthientai.mard.gov.vn)",
+   "Ready.gov (FEMA) – Hướng dẫn chuẩn bị ứng phó theo loại thảm họa"
+  ]
+ },
+ {
+  "slug": "ung-pho-lu-ngap-lut",
+  "hazard_code": "lu",
+  "min_severity": 3,
+  "audience": "all",
+  "sort_order": 5,
+  "status": "published",
+  "title": {
+   "vi": "Ứng phó lũ, ngập lụt",
+   "en": "What to do in a flood"
+  },
+  "summary": {
+   "vi": "Lũ ở miền Trung thường lên nhanh trong đêm. Di chuyển lên cao sớm, không đi qua dòng nước chảy.",
+   "en": "Floods in central Viet Nam often rise quickly at night. Move to higher ground early and never cross moving water."
+  },
+  "before_steps": {
+   "vi": [
+    "Hỏi nơi lưu trú về mức ngập lịch sử và tầng cao an toàn.",
+    "Chuyển hành lý, giấy tờ lên tầng cao hoặc túi chống nước.",
+    "Chuẩn bị nước sạch, thức ăn, thuốc, đèn pin.",
+    "Đổi lịch tham quan phố cổ, làng ven sông khi có cảnh báo lũ.",
+    "Biết đường đến điểm sơ tán gần nhất."
+   ],
+   "en": [
+    "Ask your hotel about past flood levels and the safe upper floors.",
+    "Move luggage and documents upstairs or into waterproof bags.",
+    "Keep clean water, food, medicine and a torch ready.",
+    "Reschedule visits to old towns and riverside villages during flood warnings.",
+    "Know the route to the nearest evacuation point."
+   ]
+  },
+  "during_steps": {
+   "vi": [
+    "Lên tầng cao ngay khi nước bắt đầu dâng.",
+    "Không lội, không bơi, không lái xe qua dòng nước chảy; 15 cm nước chảy xiết có thể làm ngã người.",
+    "Ngắt điện nếu nước vào nhà.",
+    "Nếu bị mắc kẹt, gọi 112 hoặc 114 và báo \"Cần hỗ trợ\" trên ứng dụng kèm vị trí.",
+    "Dùng vật nổi (can nhựa, áo phao) khi buộc phải di chuyển."
+   ],
+   "en": [
+    "Go upstairs as soon as water starts rising.",
+    "Do not walk, swim or drive through moving water; 15 cm of fast water can knock you down.",
+    "Switch off the power if water enters the building.",
+    "If trapped, call 112 or 114 and tap \"Need help\" in the app with your location.",
+    "Use floating objects such as plastic cans or life jackets if you must move."
+   ]
+  },
+  "after_steps": {
+   "vi": [
+    "Chỉ trở lại tầng thấp khi chính quyền thông báo an toàn.",
+    "Không dùng thiết bị điện đã ngập nước.",
+    "Ăn chín, uống sôi; rửa tay thường xuyên.",
+    "Cẩn thận rắn, vật sắc nhọn trong bùn.",
+    "Báo an toàn cho người thân và trên ứng dụng."
+   ],
+   "en": [
+    "Return to lower floors only when authorities say it is safe.",
+    "Do not use electrical appliances that were under water.",
+    "Eat cooked food, drink boiled or bottled water and wash hands often.",
+    "Watch for snakes and sharp objects in the mud.",
+    "Tell family you are safe and check in on the app."
+   ]
+  },
+  "sources": [
+   "Văn phòng thường trực Ban Chỉ đạo quốc gia về phòng chống thiên tai – Tài liệu kỹ năng ứng phó thiên tai (phongchongthientai.mard.gov.vn)",
+   "IFRC – Public awareness and public education for disaster risk reduction: key messages",
+   "Ready.gov (FEMA) – Hướng dẫn chuẩn bị ứng phó theo loại thảm họa"
+  ]
+ },
+ {
+  "slug": "lu-cho-nguoi-cao-tuoi-va-gia-dinh",
+  "hazard_code": "lu",
+  "min_severity": 3,
+  "audience": "family",
+  "sort_order": 6,
+  "status": "published",
+  "title": {
+   "vi": "Lũ: lưu ý cho gia đình có trẻ nhỏ và người cao tuổi",
+   "en": "Floods: advice for families with children and older people"
+  },
+  "summary": {
+   "vi": "Trẻ em và người cao tuổi dễ gặp nguy hiểm nhất khi lũ. Sơ tán sớm, giữ thuốc men và không để trẻ chơi gần nước.",
+   "en": "Children and older people face the highest flood risk. Evacuate early, keep medicines and keep children away from water."
+  },
+  "before_steps": {
+   "vi": [
+    "Mang đủ thuốc điều trị thường ngày cho ít nhất 5 ngày.",
+    "Chuẩn bị áo phao vừa cỡ cho trẻ.",
+    "Ghi tên, số điện thoại người thân vào giấy bỏ túi cho trẻ.",
+    "Chọn nơi ở có thang máy hoặc tầng cao dễ tiếp cận."
+   ],
+   "en": [
+    "Bring at least 5 days of regular medicines.",
+    "Pack a properly sized life jacket for each child.",
+    "Put a card with name and parent phone number in each child's pocket.",
+    "Choose lodging with lifts or easy access to upper floors."
+   ]
+  },
+  "during_steps": {
+   "vi": [
+    "Sơ tán ngay khi có khuyến cáo, không chờ nước lên.",
+    "Luôn có người lớn trông trẻ, không cho trẻ lội nước.",
+    "Giữ ấm cho người già, tránh bị nhiễm lạnh.",
+    "Báo \"Cần hỗ trợ\" trên ứng dụng nếu có người cần thuốc hoặc cấp cứu."
+   ],
+   "en": [
+    "Evacuate as soon as advised; do not wait for water to rise.",
+    "Always have an adult watching children; no playing in water.",
+    "Keep older people warm and dry.",
+    "Tap \"Need help\" in the app if someone needs medicine or urgent care."
+   ]
+  },
+  "after_steps": {
+   "vi": [
+    "Theo dõi sức khỏe: sốt, tiêu chảy, vết thương nhiễm trùng.",
+    "Rửa sạch tay chân trẻ sau khi tiếp xúc nước bẩn.",
+    "Đưa đến cơ sở y tế nếu có dấu hiệu bất thường.",
+    "Báo an toàn cho cả đoàn trên ứng dụng."
+   ],
+   "en": [
+    "Watch for fever, diarrhoea or infected wounds.",
+    "Wash children's hands and feet after contact with dirty water.",
+    "Visit a clinic if anyone feels unwell.",
+    "Check in the whole group as safe in the app."
+   ]
+  },
+  "sources": [
+   "Văn phòng thường trực Ban Chỉ đạo quốc gia về phòng chống thiên tai – Tài liệu kỹ năng ứng phó thiên tai (phongchongthientai.mard.gov.vn)",
+   "IFRC – Public awareness and public education for disaster risk reduction: key messages",
+   "UNICEF – Hướng dẫn an toàn cho trẻ em trong thiên tai"
+  ]
+ },
+ {
+  "slug": "ung-pho-lu-quet",
+  "hazard_code": "lu_quet",
+  "min_severity": 4,
+  "audience": "all",
+  "sort_order": 7,
+  "status": "published",
+  "title": {
+   "vi": "Lũ quét ở vùng núi",
+   "en": "Flash floods in the mountains"
+  },
+  "summary": {
+   "vi": "Lũ quét đến rất nhanh sau mưa lớn ở thượng nguồn, kể cả khi nơi bạn đứng không mưa. Rời xa suối ngay khi nước đục, dâng nhanh hoặc có tiếng ầm ầm.",
+   "en": "Flash floods arrive fast after heavy rain upstream, even if it is not raining where you are. Leave streams at once if water turns muddy, rises or roars."
+  },
+  "before_steps": {
+   "vi": [
+    "Không cắm trại, nghỉ đêm sát bờ suối, khe núi trong mùa mưa (tháng 6–9 ở Tây Bắc).",
+    "Hỏi người dân, kiểm lâm về đường an toàn và điểm cao gần nhất.",
+    "Hoãn trekking khi có cảnh báo mưa lớn.",
+    "Thuê hướng dẫn viên địa phương cho các cung đường hẻo lánh."
+   ],
+   "en": [
+    "Do not camp or sleep next to streams or ravines in the rainy season (Jun–Sep in the North-West).",
+    "Ask locals or rangers about safe routes and the nearest high ground.",
+    "Postpone treks when heavy rain is forecast.",
+    "Hire a local guide for remote routes."
+   ]
+  },
+  "during_steps": {
+   "vi": [
+    "Leo ngay lên chỗ cao, tránh xa lòng suối, không quay lại lấy đồ.",
+    "Không vượt suối, ngầm tràn khi nước đang lên.",
+    "Nếu xe bị nước cuốn, rời xe và lên chỗ cao.",
+    "Gọi 112 và bấm \"Cần hỗ trợ\" trên ứng dụng khi có thể."
+   ],
+   "en": [
+    "Climb to higher ground at once, away from the stream bed. Do not go back for belongings.",
+    "Never cross a stream or flooded ford while water is rising.",
+    "If your vehicle is swept, leave it and climb up.",
+    "Call 112 and tap \"Need help\" in the app when you can."
+   ]
+  },
+  "after_steps": {
+   "vi": [
+    "Chờ nước rút hẳn, có thể có đợt lũ thứ hai.",
+    "Tránh sườn đồi dễ sạt sau lũ.",
+    "Báo an toàn, báo vị trí cho đoàn và cơ quan hỗ trợ.",
+    "Báo sự cố đường bị cắt qua ứng dụng."
+   ],
+   "en": [
+    "Wait until water fully recedes; a second surge can follow.",
+    "Avoid slopes that may slide after the flood.",
+    "Report your safety and position to your group and support agencies.",
+    "Report cut roads through the app."
+   ]
+  },
+  "sources": [
+   "Văn phòng thường trực Ban Chỉ đạo quốc gia về phòng chống thiên tai – Tài liệu kỹ năng ứng phó thiên tai (phongchongthientai.mard.gov.vn)",
+   "Quyết định 18/2021/QĐ-TTg về dự báo, cảnh báo, truyền tin thiên tai và cấp độ rủi ro thiên tai",
+   "IFRC – Public awareness and public education for disaster risk reduction: key messages"
+  ]
+ },
+ {
+  "slug": "ung-pho-sat-lo-dat",
+  "hazard_code": "sat_lo",
+  "min_severity": 3,
+  "audience": "all",
+  "sort_order": 8,
+  "status": "published",
+  "title": {
+   "vi": "Sạt lở đất trên đèo và đường núi",
+   "en": "Landslides on passes and mountain roads"
+  },
+  "summary": {
+   "vi": "Sạt lở thường xảy ra trong và sau mưa kéo dài. Tránh đi đèo ban đêm, quan sát dấu hiệu nứt đất, đá lăn.",
+   "en": "Landslides occur during and after prolonged rain. Avoid mountain passes at night and watch for cracks and falling rocks."
+  },
+  "before_steps": {
+   "vi": [
+    "Xem cảnh báo sạt lở và tình trạng đường trước khi đi đèo.",
+    "Không đi đèo trong đêm mưa.",
+    "Đổ đầy xăng, mang theo nước, đồ ăn phòng khi bị kẹt đường.",
+    "Báo lộ trình cho người thân."
+   ],
+   "en": [
+    "Check landslide warnings and road status before crossing passes.",
+    "Do not drive mountain passes at night in rain.",
+    "Fill up the tank and carry water and snacks in case the road is blocked.",
+    "Share your route with family."
+   ]
+  },
+  "during_steps": {
+   "vi": [
+    "Quan sát dấu hiệu: đá sỏi rơi, nước chảy đục bất thường, tiếng nứt, cây nghiêng.",
+    "Thấy dấu hiệu thì dừng lại, quay đầu hoặc di chuyển nhanh ra khỏi đoạn nguy hiểm.",
+    "Không dừng đỗ dưới taluy cao, vách đá.",
+    "Nếu bị kẹt, đứng xa chân dốc và gọi 112."
+   ],
+   "en": [
+    "Watch for signs: falling pebbles, sudden muddy water, cracking sounds, tilting trees.",
+    "If you see them, stop and turn back or move quickly out of the danger zone.",
+    "Do not park below high cuttings or cliffs.",
+    "If stuck, stand away from the slope base and call 112."
+   ]
+  },
+  "after_steps": {
+   "vi": [
+    "Không đến xem hiện trường sạt lở.",
+    "Đi theo hướng dẫn phân luồng của lực lượng chức năng.",
+    "Báo sự cố trên ứng dụng để cảnh báo người khác.",
+    "Báo an toàn cho đoàn."
+   ],
+   "en": [
+    "Do not go to look at the landslide site.",
+    "Follow police detour instructions.",
+    "Report the incident in the app to warn others.",
+    "Check in as safe with your group."
+   ]
+  },
+  "sources": [
+   "Văn phòng thường trực Ban Chỉ đạo quốc gia về phòng chống thiên tai – Tài liệu kỹ năng ứng phó thiên tai (phongchongthientai.mard.gov.vn)",
+   "IFRC – Public awareness and public education for disaster risk reduction: key messages"
+  ]
+ },
+ {
+  "slug": "song-lon-va-tam-bien-an-toan",
+  "hazard_code": "song_lon",
+  "min_severity": 2,
+  "audience": "international",
+  "sort_order": 9,
+  "status": "published",
+  "title": {
+   "vi": "Sóng lớn và tắm biển an toàn",
+   "en": "High waves and safe swimming"
+  },
+  "summary": {
+   "vi": "Sóng lớn và dòng chảy xa bờ (dòng rip) là nguyên nhân đuối nước thường gặp ở bãi biển. Chỉ tắm ở khu có cứu hộ.",
+   "en": "High waves and rip currents cause many drownings at beaches. Swim only where lifeguards are on duty."
+  },
+  "before_steps": {
+   "vi": [
+    "Tìm hiểu ý nghĩa cờ trên bãi biển: cờ đỏ là cấm tắm.",
+    "Chọn khu tắm có chòi cứu hộ, phao cứu sinh.",
+    "Không uống rượu bia trước khi bơi.",
+    "Không cho trẻ tắm biển khi không có người lớn kèm."
+   ],
+   "en": [
+    "Learn the beach flags: red means no swimming.",
+    "Choose areas with a lifeguard tower and rescue buoys.",
+    "Do not drink alcohol before swimming.",
+    "Never let children swim without an adult."
+   ]
+  },
+  "during_steps": {
+   "vi": [
+    "Nếu bị dòng rip kéo ra xa, đừng bơi ngược vào bờ; bơi song song bờ rồi mới vào.",
+    "Giơ tay, kêu cứu để cứu hộ thấy bạn.",
+    "Không lao ra cứu người đuối nước nếu không có phao; ném vật nổi và gọi cứu hộ.",
+    "Lên bờ ngay khi có dông, sấm sét."
+   ],
+   "en": [
+    "If a rip current pulls you out, do not fight it; swim parallel to the shore, then back in.",
+    "Raise your arm and shout so lifeguards can see you.",
+    "Do not swim out to rescue someone without a float; throw something that floats and call lifeguards.",
+    "Leave the water at once if thunder is heard."
+   ]
+  },
+  "after_steps": {
+   "vi": [
+    "Theo dõi sức khỏe nếu bị sặc nước nhiều (khó thở, ho kéo dài).",
+    "Báo cứu hộ về khu vực có dòng rip bạn gặp.",
+    "Gọi 115 nếu có người ngạt nước.",
+    "Báo sự cố qua ứng dụng."
+   ],
+   "en": [
+    "Seek medical help if you inhaled water (breathing trouble, persistent cough).",
+    "Tell lifeguards where you met the rip current.",
+    "Call 115 for anyone who nearly drowned.",
+    "Report the incident in the app."
+   ]
+  },
+  "sources": [
+   "IFRC – Public awareness and public education for disaster risk reduction: key messages",
+   "Hội Chữ thập đỏ Việt Nam – Phòng chống đuối nước",
+   "WHO – Drowning (fact sheet)"
+  ]
+ },
+ {
+  "slug": "trieu-cuong-do-thi",
+  "hazard_code": "trieu_cuong",
+  "min_severity": 2,
+  "audience": "all",
+  "sort_order": 10,
+  "status": "published",
+  "title": {
+   "vi": "Triều cường ở TP.HCM và đồng bằng",
+   "en": "King tides in Ho Chi Minh City and the delta"
+  },
+  "summary": {
+   "vi": "Triều cường đỉnh thường vào sáng sớm và chiều tối các tháng 9–12. Tránh các tuyến đường ven sông, kênh trong khung giờ triều lên.",
+   "en": "King tides peak in early morning and evening from September to December. Avoid riverside and canal roads at peak times."
+  },
+  "before_steps": {
+   "vi": [
+    "Xem lịch triều cường do đài KTTV khu vực Nam Bộ công bố.",
+    "Tránh đặt chỗ ở tầng trệt sát kênh rạch vào mùa triều.",
+    "Lên lịch di chuyển ra sân bay sớm hơn giờ triều đỉnh.",
+    "Mang dép chống trơn, túi chống nước."
+   ],
+   "en": [
+    "Check tide tables from the Southern Regional Hydro-Meteorological Centre.",
+    "Avoid ground-floor rooms next to canals in tide season.",
+    "Leave for the airport well before peak tide.",
+    "Wear non-slip sandals and carry a waterproof bag."
+   ]
+  },
+  "during_steps": {
+   "vi": [
+    "Không đi xe máy qua đoạn ngập sâu, dễ chết máy và té ngã.",
+    "Tránh nắp cống, mép kênh không có lan can.",
+    "Nếu triều cường gặp mưa lớn, ở yên trong nhà cho tới khi nước rút.",
+    "Theo dõi thông báo phân luồng giao thông."
+   ],
+   "en": [
+    "Do not ride through deep water; engines stall and riders fall.",
+    "Keep away from drains and unfenced canal edges.",
+    "If a king tide coincides with heavy rain, stay indoors until water drops.",
+    "Follow traffic diversion notices."
+   ]
+  },
+  "after_steps": {
+   "vi": [
+    "Rửa sạch tay chân sau khi lội nước.",
+    "Kiểm tra chuyến bay, xe có bị hoãn.",
+    "Báo đoạn đường ngập qua ứng dụng.",
+    "Báo an toàn cho đoàn."
+   ],
+   "en": [
+    "Wash hands and feet after walking in floodwater.",
+    "Check flights and transport for delays.",
+    "Report flooded streets in the app.",
+    "Check in as safe with your group."
+   ]
+  },
+  "sources": [
+   "Văn phòng thường trực Ban Chỉ đạo quốc gia về phòng chống thiên tai – Tài liệu kỹ năng ứng phó thiên tai (phongchongthientai.mard.gov.vn)",
+   "Đài Khí tượng thủy văn khu vực Nam Bộ – Bản tin triều cường",
+   "Ready.gov (FEMA) – Hướng dẫn chuẩn bị ứng phó theo loại thảm họa"
+  ]
+ },
+ {
+  "slug": "ung-pho-nang-nong",
+  "hazard_code": "nang_nong",
+  "min_severity": 2,
+  "audience": "all",
+  "sort_order": 11,
+  "status": "published",
+  "title": {
+   "vi": "Ứng phó nắng nóng",
+   "en": "Coping with extreme heat"
+  },
+  "summary": {
+   "vi": "Nắng nóng từ 37°C gây say nắng, mất nước. Tránh hoạt động ngoài trời 11–15 giờ, uống nước thường xuyên.",
+   "en": "Heat above 37°C causes heatstroke and dehydration. Avoid outdoor activity from 11:00 to 15:00 and drink water often."
+  },
+  "before_steps": {
+   "vi": [
+    "Lên lịch tham quan ngoài trời vào sáng sớm và chiều muộn.",
+    "Mang mũ rộng vành, kem chống nắng, áo sáng màu.",
+    "Mang theo nước và muối bù điện giải.",
+    "Hỏi bác sĩ nếu đang dùng thuốc tim mạch, lợi tiểu."
+   ],
+   "en": [
+    "Plan outdoor visits for early morning and late afternoon.",
+    "Wear a wide-brimmed hat, sunscreen and light-coloured clothes.",
+    "Carry water and oral rehydration salts.",
+    "Ask a doctor if you take heart or diuretic medicines."
+   ]
+  },
+  "during_steps": {
+   "vi": [
+    "Uống nước đều đặn kể cả khi chưa khát, hạn chế rượu bia, cà phê.",
+    "Nghỉ trong bóng râm hoặc phòng có điều hòa mỗi 1–2 giờ.",
+    "Nhận biết say nắng: đau đầu, chóng mặt, buồn nôn, da nóng đỏ, lú lẫn.",
+    "Có dấu hiệu say nắng: đưa vào chỗ mát, nới quần áo, chườm mát, gọi 115."
+   ],
+   "en": [
+    "Drink regularly even if not thirsty; limit alcohol and coffee.",
+    "Rest in shade or air-conditioning every 1–2 hours.",
+    "Know heatstroke signs: headache, dizziness, nausea, hot red skin, confusion.",
+    "For heatstroke: move to a cool place, loosen clothing, cool the body and call 115."
+   ]
+  },
+  "after_steps": {
+   "vi": [
+    "Tiếp tục bù nước và nghỉ ngơi.",
+    "Theo dõi người cao tuổi, trẻ nhỏ trong đoàn.",
+    "Không để trẻ em, vật nuôi trong xe đóng kín.",
+    "Báo \"Cần hỗ trợ\" nếu có người mệt nặng."
+   ],
+   "en": [
+    "Keep rehydrating and resting.",
+    "Check on older people and children in your group.",
+    "Never leave children or pets in a closed car.",
+    "Tap \"Need help\" if someone is seriously unwell."
+   ]
+  },
+  "sources": [
+   "WHO – Heat and health (fact sheet)",
+   "Bộ Y tế – Khuyến cáo phòng chống tác hại của nắng nóng",
+   "CDC – Extreme heat"
+  ]
+ },
+ {
+  "slug": "nang-nong-cho-nguoi-cao-tuoi",
+  "hazard_code": "nang_nong",
+  "min_severity": 3,
+  "audience": "elderly",
+  "sort_order": 12,
+  "status": "published",
+  "title": {
+   "vi": "Nắng nóng: lưu ý cho người cao tuổi",
+   "en": "Heat: advice for older travellers"
+  },
+  "summary": {
+   "vi": "Người cao tuổi khó cảm nhận khát và dễ bị sốc nhiệt. Rút ngắn lịch trình, ưu tiên nơi có điều hòa.",
+   "en": "Older people feel thirst less and are prone to heat illness. Shorten the programme and prefer air-conditioned places."
+  },
+  "before_steps": {
+   "vi": [
+    "Mang đủ thuốc và đơn thuốc, kể cả bản tiếng Anh.",
+    "Chọn tour có xe điều hòa, thời gian đi bộ ngắn.",
+    "Đặt lịch nhắc uống nước mỗi giờ.",
+    "Lưu số bệnh viện gần nơi lưu trú."
+   ],
+   "en": [
+    "Bring all medicines and prescriptions, including an English copy.",
+    "Choose tours with air-conditioned transport and short walks.",
+    "Set hourly reminders to drink water.",
+    "Save the number of the hospital nearest to your hotel."
+   ]
+  },
+  "during_steps": {
+   "vi": [
+    "Nghỉ trưa trong phòng mát từ 11–15 giờ.",
+    "Đo huyết áp, theo dõi dấu hiệu mệt, khó thở.",
+    "Không leo núi, leo bậc dài khi trời nắng gắt.",
+    "Gọi 115 ngay khi có lú lẫn, ngất, đau ngực."
+   ],
+   "en": [
+    "Rest indoors in a cool room between 11:00 and 15:00.",
+    "Check blood pressure and watch for fatigue or breathlessness.",
+    "Avoid long climbs and steps in strong sun.",
+    "Call 115 immediately for confusion, fainting or chest pain."
+   ]
+  },
+  "after_steps": {
+   "vi": [
+    "Ăn nhẹ, nhiều trái cây, rau.",
+    "Tiếp tục theo dõi sức khỏe 24 giờ sau khi mệt do nóng.",
+    "Báo an toàn cho người thân.",
+    "Điều chỉnh lịch trình những ngày nóng tiếp theo."
+   ],
+   "en": [
+    "Eat light meals with fruit and vegetables.",
+    "Keep monitoring health for 24 hours after heat exhaustion.",
+    "Tell family you are safe.",
+    "Adjust plans for the following hot days."
+   ]
+  },
+  "sources": [
+   "WHO – Heat and health (fact sheet)",
+   "Bộ Y tế – Khuyến cáo phòng chống tác hại của nắng nóng"
+  ]
+ },
+ {
+  "slug": "ret-dam-ret-hai-vung-nui",
+  "hazard_code": "ret_dam",
+  "min_severity": 2,
+  "audience": "all",
+  "sort_order": 13,
+  "status": "published",
+  "title": {
+   "vi": "Rét đậm, rét hại và băng giá vùng núi",
+   "en": "Severe cold and frost in the mountains"
+  },
+  "summary": {
+   "vi": "Sa Pa, Mẫu Sơn, đèo Ô Quy Hồ có thể xuống dưới 0°C vào mùa đông. Mặc đủ ấm, cẩn thận đường đóng băng.",
+   "en": "Sa Pa, Mau Son and O Quy Ho Pass can drop below 0°C in winter. Dress warmly and beware of icy roads."
+  },
+  "before_steps": {
+   "vi": [
+    "Mang áo khoác giữ nhiệt, găng tay, mũ len, tất dày.",
+    "Kiểm tra dự báo nhiệt độ và cảnh báo băng giá.",
+    "Hỏi tình trạng đường đèo trước khi đi.",
+    "Không dùng than sưởi trong phòng kín."
+   ],
+   "en": [
+    "Pack a thermal jacket, gloves, a wool hat and thick socks.",
+    "Check temperature forecasts and frost warnings.",
+    "Ask about mountain-pass conditions before travelling.",
+    "Never use charcoal heaters in a closed room."
+   ]
+  },
+  "during_steps": {
+   "vi": [
+    "Mặc nhiều lớp, giữ khô người.",
+    "Đi chậm, không phanh gấp trên mặt đường đóng băng.",
+    "Nhận biết hạ thân nhiệt: run mạnh, nói lắp, lơ mơ.",
+    "Có dấu hiệu hạ thân nhiệt: đưa vào chỗ ấm, ủ ấm, uống nước ấm, gọi 115."
+   ],
+   "en": [
+    "Wear several layers and stay dry.",
+    "Drive slowly and avoid sudden braking on icy roads.",
+    "Know hypothermia signs: strong shivering, slurred speech, drowsiness.",
+    "For hypothermia: move indoors, warm the person, give warm drinks and call 115."
+   ]
+  },
+  "after_steps": {
+   "vi": [
+    "Theo dõi người già, trẻ nhỏ.",
+    "Mở hé cửa thông gió nếu dùng thiết bị sưởi.",
+    "Báo sự cố đường đóng băng qua ứng dụng.",
+    "Báo an toàn cho đoàn."
+   ],
+   "en": [
+    "Check on older people and children.",
+    "Ventilate rooms when using heaters.",
+    "Report icy roads in the app.",
+    "Check in as safe with your group."
+   ]
+  },
+  "sources": [
+   "Văn phòng thường trực Ban Chỉ đạo quốc gia về phòng chống thiên tai – Tài liệu kỹ năng ứng phó thiên tai (phongchongthientai.mard.gov.vn)",
+   "Bộ Y tế – Hướng dẫn phòng chống rét cho người dân",
+   "Ready.gov (FEMA) – Hướng dẫn chuẩn bị ứng phó theo loại thảm họa"
+  ]
+ },
+ {
+  "slug": "suong-mu-giao-thong",
+  "hazard_code": "suong_mu",
+  "min_severity": 1,
+  "audience": "all",
+  "sort_order": 14,
+  "status": "published",
+  "title": {
+   "vi": "Sương mù dày đặc khi di chuyển",
+   "en": "Dense fog when travelling"
+  },
+  "summary": {
+   "vi": "Sương mù làm tầm nhìn dưới 200 m trên đèo và cao tốc, chuyến bay có thể bị hoãn. Đi chậm, bật đèn sương mù.",
+   "en": "Fog can cut visibility below 200 m on passes and expressways and delay flights. Slow down and use fog lights."
+  },
+  "before_steps": {
+   "vi": [
+    "Xem dự báo sương mù buổi sáng.",
+    "Dời giờ khởi hành sau 9 giờ nếu đi đèo.",
+    "Theo dõi thông báo của hãng bay.",
+    "Kiểm tra đèn xe."
+   ],
+   "en": [
+    "Check morning fog forecasts.",
+    "Start mountain drives after 09:00 if possible.",
+    "Follow airline notices.",
+    "Check vehicle lights."
+   ]
+  },
+  "during_steps": {
+   "vi": [
+    "Bật đèn chiếu gần, đèn sương mù; không bật đèn pha.",
+    "Giảm tốc độ, giữ khoảng cách xa.",
+    "Không vượt xe trong sương mù.",
+    "Nếu không nhìn thấy đường, dừng ở chỗ an toàn ngoài làn đường, bật đèn cảnh báo."
+   ],
+   "en": [
+    "Use low beams and fog lights, not high beams.",
+    "Slow down and keep a long distance.",
+    "Do not overtake in fog.",
+    "If you cannot see the road, pull over safely and turn on hazard lights."
+   ]
+  },
+  "after_steps": {
+   "vi": [
+    "Tiếp tục di chuyển khi sương tan.",
+    "Kiểm tra lại giờ bay mới.",
+    "Báo sự cố giao thông qua ứng dụng.",
+    "Báo an toàn cho đoàn."
+   ],
+   "en": [
+    "Continue when the fog lifts.",
+    "Confirm new flight times.",
+    "Report traffic incidents in the app.",
+    "Check in as safe with your group."
+   ]
+  },
+  "sources": [
+   "Ready.gov (FEMA) – Hướng dẫn chuẩn bị ứng phó theo loại thảm họa",
+   "Cục Cảnh sát giao thông – Khuyến cáo lái xe khi sương mù"
+  ]
+ },
+ {
+  "slug": "dong-set-loc-mua-da",
+  "hazard_code": "dong_set",
+  "min_severity": 2,
+  "audience": "all",
+  "sort_order": 15,
+  "status": "published",
+  "title": {
+   "vi": "Dông, sét, lốc và mưa đá",
+   "en": "Thunderstorms, lightning and hail"
+  },
+  "summary": {
+   "vi": "Dông sét hình thành nhanh vào chiều tối mùa hè. Nghe tiếng sấm là đã ở trong tầm sét đánh, hãy vào nơi trú ngay.",
+   "en": "Thunderstorms build quickly on summer afternoons. If you hear thunder you are within lightning range — take shelter now."
+  },
+  "before_steps": {
+   "vi": [
+    "Xem dự báo dông trước khi lên núi, ra biển, chơi golf.",
+    "Xác định trước nơi trú gần nhất.",
+    "Không đi bộ đường dài trên đỉnh, sống núi vào buổi chiều mùa mưa.",
+    "Lưu số 112, 115."
+   ],
+   "en": [
+    "Check thunderstorm forecasts before hiking, boating or golfing.",
+    "Identify the nearest shelter in advance.",
+    "Avoid ridge hikes on rainy-season afternoons.",
+    "Save 112 and 115."
+   ]
+  },
+  "during_steps": {
+   "vi": [
+    "Vào nhà kiên cố hoặc ô tô kín mui.",
+    "Rời khỏi mặt nước, bãi biển, đỉnh đồi, cây đơn độc.",
+    "Không dùng ô có cán kim loại, không đứng gần cột điện.",
+    "Nếu ở ngoài trời không có chỗ trú: ngồi xổm, khép chân, cúi đầu, giảm tiếp xúc mặt đất."
+   ],
+   "en": [
+    "Get inside a solid building or a hard-top car.",
+    "Leave water, beaches, hilltops and lone trees.",
+    "Do not use metal umbrellas or stand near poles.",
+    "If caught outdoors: crouch with feet together, head down, minimising ground contact."
+   ]
+  },
+  "after_steps": {
+   "vi": [
+    "Chờ 30 phút sau tiếng sấm cuối mới ra ngoài.",
+    "Sơ cứu người bị sét đánh (không nhiễm điện), gọi 115.",
+    "Báo cây đổ, mái tôn bay qua ứng dụng.",
+    "Báo an toàn cho đoàn."
+   ],
+   "en": [
+    "Wait 30 minutes after the last thunder before going out.",
+    "Give first aid to lightning victims (they carry no charge) and call 115.",
+    "Report fallen trees or roofs in the app.",
+    "Check in as safe with your group."
+   ]
+  },
+  "sources": [
+   "Văn phòng thường trực Ban Chỉ đạo quốc gia về phòng chống thiên tai – Tài liệu kỹ năng ứng phó thiên tai (phongchongthientai.mard.gov.vn)",
+   "Ready.gov (FEMA) – Hướng dẫn chuẩn bị ứng phó theo loại thảm họa",
+   "WMO – Lightning safety"
+  ]
+ },
+ {
+  "slug": "chay-rung-va-khoi",
+  "hazard_code": "chay_rung",
+  "min_severity": 3,
+  "audience": "all",
+  "sort_order": 16,
+  "status": "published",
+  "title": {
+   "vi": "Cháy rừng và khói",
+   "en": "Forest fires and smoke"
+  },
+  "summary": {
+   "vi": "Mùa khô (tháng 3–7 ở miền Trung, 12–4 ở Nam Bộ) có nguy cơ cháy rừng cao. Không đốt lửa, rời khu vực ngược hướng gió khi thấy khói.",
+   "en": "Dry seasons (Mar–Jul in the centre, Dec–Apr in the south) carry high forest fire danger. Never light fires; leave upwind if you see smoke."
+  },
+  "before_steps": {
+   "vi": [
+    "Xem cấp dự báo cháy rừng do Kiểm lâm công bố.",
+    "Không mang theo bật lửa vào rừng đặc dụng khi cấm.",
+    "Đi theo tuyến có kiểm lâm, hướng dẫn viên.",
+    "Báo lộ trình trekking cho nơi lưu trú."
+   ],
+   "en": [
+    "Check the fire danger level published by the Forest Protection Department.",
+    "Do not bring lighters into protected forests when banned.",
+    "Use routes with rangers or guides.",
+    "Tell your hotel your trekking route."
+   ]
+  },
+  "during_steps": {
+   "vi": [
+    "Thấy khói, lửa: di chuyển ngược hướng gió, xuống thấp, ra khu đất trống, đường lớn.",
+    "Che mũi miệng bằng khăn ướt.",
+    "Gọi 114 hoặc kiểm lâm, nêu rõ vị trí.",
+    "Không cố dập đám cháy lớn."
+   ],
+   "en": [
+    "If you see smoke or flames, move upwind and downhill to open ground or a wide road.",
+    "Cover nose and mouth with a wet cloth.",
+    "Call 114 or rangers with your exact location.",
+    "Do not try to fight a large fire."
+   ]
+  },
+  "after_steps": {
+   "vi": [
+    "Tránh khu vực vừa cháy vì cây có thể đổ.",
+    "Người có bệnh hô hấp nên ở trong nhà khi còn khói.",
+    "Báo sự cố qua ứng dụng.",
+    "Báo an toàn cho đoàn."
+   ],
+   "en": [
+    "Avoid burned areas where trees may fall.",
+    "People with breathing problems should stay indoors while smoke remains.",
+    "Report the incident in the app.",
+    "Check in as safe with your group."
+   ]
+  },
+  "sources": [
+   "Cục Kiểm lâm – Cấp dự báo cháy rừng",
+   "IFRC – Public awareness and public education for disaster risk reduction: key messages",
+   "Ready.gov (FEMA) – Hướng dẫn chuẩn bị ứng phó theo loại thảm họa"
+  ]
+ },
+ {
+  "slug": "phong-sot-xuat-huyet",
+  "hazard_code": "dich_benh",
+  "min_severity": 2,
+  "audience": "international",
+  "sort_order": 17,
+  "status": "published",
+  "title": {
+   "vi": "Phòng sốt xuất huyết",
+   "en": "Preventing dengue fever"
+  },
+  "summary": {
+   "vi": "Sốt xuất huyết do muỗi vằn truyền, bùng phát mạnh mùa mưa. Phòng muỗi đốt cả ban ngày, đi khám khi sốt cao.",
+   "en": "Dengue is spread by Aedes mosquitoes and peaks in the rainy season. Avoid bites day and night; see a doctor for high fever."
+  },
+  "before_steps": {
+   "vi": [
+    "Mang kem, xịt chống muỗi có DEET hoặc picaridin.",
+    "Chọn phòng có lưới chống muỗi hoặc điều hòa.",
+    "Mặc áo dài tay, quần dài khi ra vườn, công viên.",
+    "Tìm hiểu cơ sở y tế gần nơi lưu trú."
+   ],
+   "en": [
+    "Bring repellent containing DEET or picaridin.",
+    "Choose rooms with screens or air-conditioning.",
+    "Wear long sleeves and trousers in gardens and parks.",
+    "Find the nearest clinic to your hotel."
+   ]
+  },
+  "during_steps": {
+   "vi": [
+    "Bôi chống muỗi nhiều lần trong ngày, nhất là sáng sớm và chiều tối.",
+    "Sốt cao đột ngột, đau đầu, đau sau hốc mắt: đi khám ngay.",
+    "Không tự dùng aspirin, ibuprofen; chỉ dùng paracetamol theo hướng dẫn.",
+    "Uống nhiều nước, oresol."
+   ],
+   "en": [
+    "Reapply repellent through the day, especially early morning and late afternoon.",
+    "Sudden high fever, headache or pain behind the eyes: see a doctor at once.",
+    "Do not take aspirin or ibuprofen; use paracetamol only as advised.",
+    "Drink plenty of fluids and rehydration salts."
+   ]
+  },
+  "after_steps": {
+   "vi": [
+    "Theo dõi dấu hiệu nặng ngày 3–7: chảy máu cam, chân răng, đau bụng, nôn nhiều.",
+    "Có dấu hiệu nặng, gọi 115.",
+    "Tránh để muỗi đốt để không lây cho người khác.",
+    "Báo tình trạng cho công ty lữ hành, bảo hiểm."
+   ],
+   "en": [
+    "Watch for warning signs on days 3–7: nose or gum bleeding, belly pain, repeated vomiting.",
+    "Call 115 for any warning sign.",
+    "Avoid bites so you do not spread the virus.",
+    "Inform your tour operator and insurer."
+   ]
+  },
+  "sources": [
+   "WHO – Dengue and severe dengue (fact sheet)",
+   "Bộ Y tế – Hướng dẫn phòng chống sốt xuất huyết Dengue",
+   "CDC – Dengue: travellers"
+  ]
+ },
+ {
+  "slug": "ngo-doc-thuc-pham",
+  "hazard_code": "dich_benh",
+  "min_severity": 2,
+  "audience": "all",
+  "sort_order": 18,
+  "status": "published",
+  "title": {
+   "vi": "Ngộ độc thực phẩm khi du lịch",
+   "en": "Food poisoning while travelling"
+  },
+  "summary": {
+   "vi": "Ăn uống ở nơi đông người và thức ăn đường phố có nguy cơ ngộ độc. Chọn quán sạch, ăn chín, uống nước đóng chai.",
+   "en": "Crowded venues and street food carry food poisoning risk. Pick clean places, eat cooked food and drink bottled water."
+  },
+  "before_steps": {
+   "vi": [
+    "Chọn quán đông khách, đồ ăn nấu chín và còn nóng.",
+    "Uống nước đóng chai, hạn chế đá không rõ nguồn.",
+    "Mang oresol, thuốc men cơ bản.",
+    "Báo dị ứng thực phẩm cho nhà hàng."
+   ],
+   "en": [
+    "Pick busy places serving freshly cooked, hot food.",
+    "Drink bottled water; limit ice of unknown origin.",
+    "Pack rehydration salts and basic medicines.",
+    "Tell restaurants about food allergies."
+   ]
+  },
+  "during_steps": {
+   "vi": [
+    "Nôn, tiêu chảy: bù nước bằng oresol từng ngụm nhỏ.",
+    "Có máu trong phân, sốt cao, lơ mơ, khó thở: gọi 115.",
+    "Nhiều người cùng bị sau một bữa ăn: báo y tế và giữ lại mẫu thức ăn.",
+    "Không tự dùng kháng sinh."
+   ],
+   "en": [
+    "For vomiting or diarrhoea, sip rehydration salts.",
+    "Blood in stool, high fever, drowsiness or breathing trouble: call 115.",
+    "If several people fall ill after one meal, alert health services and keep food samples.",
+    "Do not self-medicate with antibiotics."
+   ]
+  },
+  "after_steps": {
+   "vi": [
+    "Ăn nhẹ, dễ tiêu trong 1–2 ngày.",
+    "Báo sự cố qua ứng dụng để cơ quan y tế kiểm tra.",
+    "Lưu hóa đơn để làm bảo hiểm.",
+    "Báo tình trạng cho đoàn."
+   ],
+   "en": [
+    "Eat light, simple food for 1–2 days.",
+    "Report the incident in the app so health officials can check.",
+    "Keep receipts for insurance.",
+    "Update your group on your condition."
+   ]
+  },
+  "sources": [
+   "WHO – Food safety (fact sheet) và Five keys to safer food",
+   "Bộ Y tế – Cục An toàn thực phẩm: khuyến cáo phòng ngộ độc"
+  ]
+ },
+ {
+  "slug": "an-toan-le-hoi-dong-nguoi",
+  "hazard_code": "an_ninh",
+  "min_severity": 2,
+  "audience": "all",
+  "sort_order": 19,
+  "status": "published",
+  "title": {
+   "vi": "An toàn tại lễ hội và nơi đông người",
+   "en": "Safety at festivals and crowded events"
+  },
+  "summary": {
+   "vi": "Lễ hội, bắn pháo hoa, đêm giao thừa thu hút hàng chục nghìn người. Đề phòng chen lấn, móc túi, lạc người thân.",
+   "en": "Festivals, fireworks and New Year's Eve draw tens of thousands. Beware of crushes, pickpockets and getting separated."
+  },
+  "before_steps": {
+   "vi": [
+    "Thống nhất điểm hẹn nếu lạc nhau.",
+    "Mang ít tiền mặt, cất ví, điện thoại ở túi trước, có khóa.",
+    "Ghi số điện thoại người lớn vào tay hoặc vòng cho trẻ.",
+    "Tìm hiểu lối thoát, chốt y tế, công an tại khu lễ hội."
+   ],
+   "en": [
+    "Agree on a meeting point in case you get separated.",
+    "Carry little cash; keep wallet and phone in a zipped front pocket.",
+    "Write a parent's phone number on a child's wristband.",
+    "Note exits, first-aid points and police posts."
+   ]
+  },
+  "during_steps": {
+   "vi": [
+    "Đứng ở rìa đám đông, tránh lan can, cầu hẹp.",
+    "Khi bị xô đẩy, giữ hai tay trước ngực, đi theo hướng dòng người chéo ra ngoài.",
+    "Nếu ngã, cuộn người, che đầu, cố đứng dậy nhanh.",
+    "Gặp sự cố, báo ngay công an tại chỗ hoặc gọi 113."
+   ],
+   "en": [
+    "Stay at the edge of crowds; avoid railings and narrow bridges.",
+    "If pushed, keep arms in front of your chest and move diagonally out with the flow.",
+    "If you fall, curl up, protect your head and get up quickly.",
+    "Report problems to police on site or call 113."
+   ]
+  },
+  "after_steps": {
+   "vi": [
+    "Kiểm tra đủ thành viên trong đoàn.",
+    "Báo mất đồ tại công an phường gần nhất, xin giấy xác nhận.",
+    "Báo sự cố qua ứng dụng.",
+    "Báo an toàn cho đoàn."
+   ],
+   "en": [
+    "Count everyone in your group.",
+    "Report lost items at the nearest ward police station and get a report.",
+    "Report the incident in the app.",
+    "Check in as safe with your group."
+   ]
+  },
+  "sources": [
+   "Bộ Công an – Khuyến cáo phòng ngừa lừa đảo, trộm cắp",
+   "IFRC – Public awareness and public education for disaster risk reduction: key messages",
+   "WHO – Mass gatherings and health"
+  ]
+ },
+ {
+  "slug": "phong-lua-dao-trom-cap",
+  "hazard_code": "an_ninh",
+  "min_severity": 1,
+  "audience": "international",
+  "sort_order": 20,
+  "status": "published",
+  "title": {
+   "vi": "Phòng lừa đảo và trộm cắp với du khách",
+   "en": "Avoiding scams and theft"
+  },
+  "summary": {
+   "vi": "Một số hình thức thường gặp: giật đồ khi đi bộ, taxi không đồng hồ, đổi tiền sai, tin nhắn mạo danh. Cảnh giác và chỉ dùng dịch vụ uy tín.",
+   "en": "Common risks include bag snatching, unmetered taxis, money-changing tricks and impersonation messages. Stay alert and use reputable services."
+  },
+  "before_steps": {
+   "vi": [
+    "Dùng ứng dụng gọi xe hoặc hãng taxi lớn.",
+    "Đổi tiền tại ngân hàng, quầy được cấp phép.",
+    "Chụp hộ chiếu, thị thực, lưu bản sao điện tử.",
+    "Không công khai lịch trình chi tiết trên mạng xã hội."
+   ],
+   "en": [
+    "Use ride-hailing apps or major taxi firms.",
+    "Exchange money at banks or licensed counters.",
+    "Photograph your passport and visa and keep digital copies.",
+    "Do not post detailed plans publicly on social media."
+   ]
+  },
+  "during_steps": {
+   "vi": [
+    "Đeo túi phía trong lề đường, không cầm điện thoại sát mép đường.",
+    "Không cung cấp mã OTP, mật khẩu cho bất kỳ ai.",
+    "Hỏi giá trước khi dùng dịch vụ.",
+    "Bị đe dọa hoặc cướp giật: không giằng co, gọi 113."
+   ],
+   "en": [
+    "Carry bags on the side away from traffic; do not hold phones at the kerb.",
+    "Never share OTP codes or passwords.",
+    "Ask the price before using a service.",
+    "If threatened or robbed, do not resist; call 113."
+   ]
+  },
+  "after_steps": {
+   "vi": [
+    "Trình báo công an nơi xảy ra vụ việc.",
+    "Khóa thẻ ngân hàng, SIM bị mất.",
+    "Liên hệ đại sứ quán nếu mất hộ chiếu.",
+    "Phản ánh cuộc gọi, tin nhắn lừa đảo tới tổng đài 156."
+   ],
+   "en": [
+    "Report to police where it happened.",
+    "Block lost bank cards and SIM.",
+    "Contact your embassy if your passport is lost.",
+    "Report scam calls and messages to hotline 156."
+   ]
+  },
+  "sources": [
+   "Bộ Công an – Khuyến cáo phòng ngừa lừa đảo, trộm cắp",
+   "Bộ Ngoại giao – Cổng thông tin bảo hộ công dân và hỗ trợ người nước ngoài"
+  ]
+ },
+ {
+  "slug": "gian-doan-giao-thong",
+  "hazard_code": "giao_thong",
+  "min_severity": 1,
+  "audience": "all",
+  "sort_order": 21,
+  "status": "published",
+  "title": {
+   "vi": "Gián đoạn giao thông, hủy chuyến",
+   "en": "Transport disruption and cancellations"
+  },
+  "summary": {
+   "vi": "Thời tiết xấu, sạt lở hay sự cố có thể làm đóng đường, hủy chuyến bay, tàu. Theo dõi thông báo và có phương án dự phòng.",
+   "en": "Bad weather, landslides or incidents can close roads and cancel flights or ferries. Follow notices and have a back-up plan."
+  },
+  "before_steps": {
+   "vi": [
+    "Đăng ký nhận thông báo của hãng bay, nhà xe.",
+    "Để thời gian dự phòng giữa chặng nội địa và chuyến bay quốc tế.",
+    "Lưu số tổng đài hãng vận chuyển.",
+    "Mua vé có thể đổi trả."
+   ],
+   "en": [
+    "Sign up for airline and bus operator alerts.",
+    "Leave buffer time between domestic legs and international flights.",
+    "Save carriers' hotline numbers.",
+    "Buy changeable tickets."
+   ]
+  },
+  "during_steps": {
+   "vi": [
+    "Làm theo hướng dẫn phân luồng của cảnh sát giao thông.",
+    "Không cố vượt qua barie, đoạn đường bị phong tỏa.",
+    "Liên hệ hãng để đổi chuyến, xin xác nhận trễ chuyến cho bảo hiểm.",
+    "Cập nhật lịch trình trên ứng dụng để nhận cảnh báo đúng chặng."
+   ],
+   "en": [
+    "Follow traffic police diversions.",
+    "Never pass barriers or closed roads.",
+    "Contact the carrier to rebook and get a delay certificate for insurance.",
+    "Update your itinerary in the app to get alerts for the right leg."
+   ]
+  },
+  "after_steps": {
+   "vi": [
+    "Kiểm tra lại đặt phòng, tour bị ảnh hưởng.",
+    "Báo đoạn đường hỏng qua ứng dụng.",
+    "Báo an toàn cho người thân.",
+    "Lưu chứng từ chi phí phát sinh."
+   ],
+   "en": [
+    "Re-check affected hotel and tour bookings.",
+    "Report damaged roads in the app.",
+    "Tell family you are safe.",
+    "Keep receipts for extra costs."
+   ]
+  },
+  "sources": [
+   "Cục Cảnh sát giao thông – Thông báo phân luồng",
+   "Cục Hàng không Việt Nam – Quyền lợi hành khách khi chậm, hủy chuyến"
+  ]
+ },
+ {
+  "slug": "ung-pho-dong-dat",
+  "hazard_code": "dong_dat",
+  "min_severity": 2,
+  "audience": "all",
+  "sort_order": 22,
+  "status": "published",
+  "title": {
+   "vi": "Ứng phó động đất",
+   "en": "What to do in an earthquake"
+  },
+  "summary": {
+   "vi": "Động đất ở Việt Nam thường nhỏ đến trung bình (Tây Bắc, Kon Tum). Khi rung lắc: Cúi xuống – Che chắn – Bám chặt.",
+   "en": "Earthquakes in Viet Nam are usually small to moderate (North-West, Kon Tum). During shaking: Drop, Cover, Hold on."
+  },
+  "before_steps": {
+   "vi": [
+    "Xác định chỗ trú an toàn trong phòng: gầm bàn chắc chắn, góc tường trong.",
+    "Không đặt đồ nặng trên cao gần giường.",
+    "Biết lối thoát hiểm của tòa nhà.",
+    "Lưu số 112, 114."
+   ],
+   "en": [
+    "Identify safe spots in your room: under a sturdy table, by an inner wall.",
+    "Keep heavy objects off high shelves near the bed.",
+    "Know your building's exits.",
+    "Save 112 and 114."
+   ]
+  },
+  "during_steps": {
+   "vi": [
+    "Cúi xuống, chui dưới bàn chắc, che đầu cổ, bám chặt cho tới khi hết rung.",
+    "Tránh xa cửa kính, đồ treo.",
+    "Không dùng thang máy, không chạy ra ngoài khi đang rung.",
+    "Nếu ở ngoài trời, tránh xa tòa nhà, cột điện, vách núi."
+   ],
+   "en": [
+    "Drop, take cover under a sturdy table, protect head and neck, hold on until shaking stops.",
+    "Stay away from glass and hanging objects.",
+    "Do not use lifts or run outside while shaking.",
+    "If outdoors, move away from buildings, poles and cliffs."
+   ]
+  },
+  "after_steps": {
+   "vi": [
+    "Ra khỏi tòa nhà bằng cầu thang bộ khi hết rung.",
+    "Cẩn thận dư chấn và sạt lở ở vùng núi.",
+    "Kiểm tra rò rỉ gas, điện.",
+    "Báo an toàn trên ứng dụng."
+   ],
+   "en": [
+    "Leave the building by stairs after shaking stops.",
+    "Expect aftershocks and landslides in mountains.",
+    "Check for gas or electrical leaks.",
+    "Check in as safe in the app."
+   ]
+  },
+  "sources": [
+   "Ready.gov (FEMA) – Hướng dẫn chuẩn bị ứng phó theo loại thảm họa",
+   "IFRC – Public awareness and public education for disaster risk reduction: key messages",
+   "Viện Vật lý địa cầu – Trung tâm Báo tin động đất và cảnh báo sóng thần"
+  ]
+ },
+ {
+  "slug": "su-co-moi-truong-o-nhiem-khong-khi",
+  "hazard_code": "khac",
+  "min_severity": 1,
+  "audience": "all",
+  "sort_order": 23,
+  "status": "published",
+  "title": {
+   "vi": "Ô nhiễm không khí và sự cố khác",
+   "en": "Air pollution and other incidents"
+  },
+  "summary": {
+   "vi": "Hà Nội và một số đô thị có ngày chất lượng không khí kém (AQI trên 150), nhất là mùa đông. Hạn chế vận động ngoài trời, đeo khẩu trang lọc bụi.",
+   "en": "Hanoi and some cities have poor air quality days (AQI above 150), especially in winter. Limit outdoor exercise and wear a particulate mask."
+  },
+  "before_steps": {
+   "vi": [
+    "Theo dõi chỉ số AQI hằng ngày.",
+    "Mang khẩu trang lọc bụi mịn đạt chuẩn.",
+    "Người có bệnh hen, tim mạch mang đủ thuốc.",
+    "Chọn phòng có máy lọc không khí nếu có thể."
+   ],
+   "en": [
+    "Check the daily AQI.",
+    "Carry a certified particulate mask.",
+    "People with asthma or heart disease should bring their medicines.",
+    "Choose rooms with air purifiers if possible."
+   ]
+  },
+  "during_steps": {
+   "vi": [
+    "Hạn chế chạy bộ, đạp xe ngoài trời khi AQI cao.",
+    "Đóng cửa sổ vào giờ cao điểm giao thông.",
+    "Khó thở, tức ngực: nghỉ ngơi, dùng thuốc, gọi 115 nếu nặng.",
+    "Theo dõi thông báo mất điện, sự cố môi trường của địa phương."
+   ],
+   "en": [
+    "Avoid outdoor running or cycling when AQI is high.",
+    "Close windows during rush hours.",
+    "For breathlessness or chest tightness, rest, use medicine and call 115 if severe.",
+    "Follow local notices on power cuts or environmental incidents."
+   ]
+  },
+  "after_steps": {
+   "vi": [
+    "Uống đủ nước, rửa mặt, súc họng khi về.",
+    "Điều chỉnh lịch tham quan sang điểm trong nhà.",
+    "Báo sự cố qua ứng dụng nếu phát hiện cháy, khói bất thường.",
+    "Báo an toàn cho đoàn."
+   ],
+   "en": [
+    "Drink water and rinse your face and throat when back indoors.",
+    "Switch to indoor attractions.",
+    "Report unusual fires or smoke in the app.",
+    "Check in as safe with your group."
+   ]
+  },
+  "sources": [
+   "WHO – Ambient (outdoor) air pollution (fact sheet)",
+   "Bộ Tài nguyên và Môi trường – Hệ thống quan trắc chất lượng không khí"
+  ]
+ }
+]

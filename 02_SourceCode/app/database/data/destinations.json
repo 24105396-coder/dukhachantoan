@@ -1,0 +1,2664 @@
+[
+ {
+  "slug": "pho-co-ha-noi",
+  "zone_code": "ha-noi",
+  "province_code": "HN",
+  "dest_type": "do_thi",
+  "lat": 21.034,
+  "lng": 105.85,
+  "altitude_m": 10,
+  "is_popular": true,
+  "name": {
+   "vi": "Phố cổ Hà Nội",
+   "en": "Hanoi Old Quarter"
+  },
+  "description": {
+   "vi": "Khu 36 phố phường buôn bán truyền thống bên hồ Hoàn Kiếm.",
+   "en": "Historic trading streets next to Hoan Kiem Lake."
+  },
+  "safety_note": {
+   "vi": "Mưa lớn mùa hè gây ngập cục bộ; nắng nóng tháng 5–7 trên 37°C; giữ đồ cá nhân ở nơi đông người.",
+   "en": "Summer downpours cause local flooding; May–Jul heat above 37°C. Watch your belongings in crowds."
+  }
+ },
+ {
+  "slug": "ho-hoan-kiem",
+  "zone_code": "ha-noi",
+  "province_code": "HN",
+  "dest_type": "di_tich",
+  "lat": 21.0287,
+  "lng": 105.8524,
+  "altitude_m": 10,
+  "is_popular": true,
+  "name": {
+   "vi": "Hồ Hoàn Kiếm",
+   "en": "Hoan Kiem Lake"
+  },
+  "description": {
+   "vi": "Hồ trung tâm Hà Nội với đền Ngọc Sơn, phố đi bộ cuối tuần.",
+   "en": "Central lake with Ngoc Son Temple and a weekend walking street."
+  },
+  "safety_note": {
+   "vi": "Mưa lớn mùa hè gây ngập cục bộ; nắng nóng tháng 5–7 trên 37°C; giữ đồ cá nhân ở nơi đông người.",
+   "en": "Summer downpours cause local flooding; May–Jul heat above 37°C. Watch your belongings in crowds."
+  }
+ },
+ {
+  "slug": "van-mieu-quoc-tu-giam",
+  "zone_code": "ha-noi",
+  "province_code": "HN",
+  "dest_type": "di_tich",
+  "lat": 21.0293,
+  "lng": 105.8355,
+  "altitude_m": 10,
+  "is_popular": true,
+  "name": {
+   "vi": "Văn Miếu – Quốc Tử Giám",
+   "en": "Temple of Literature"
+  },
+  "description": {
+   "vi": "Quần thể thờ Khổng Tử và trường học cổ, có các bia tiến sĩ.",
+   "en": "Confucian temple and old university with doctoral stelae."
+  },
+  "safety_note": {
+   "vi": "Mưa lớn mùa hè gây ngập cục bộ; nắng nóng tháng 5–7 trên 37°C; giữ đồ cá nhân ở nơi đông người.",
+   "en": "Summer downpours cause local flooding; May–Jul heat above 37°C. Watch your belongings in crowds."
+  }
+ },
+ {
+  "slug": "lang-chu-tich-ho-chi-minh",
+  "zone_code": "ha-noi",
+  "province_code": "HN",
+  "dest_type": "di_tich",
+  "lat": 21.0368,
+  "lng": 105.8346,
+  "altitude_m": 10,
+  "is_popular": true,
+  "name": {
+   "vi": "Lăng Chủ tịch Hồ Chí Minh",
+   "en": "Ho Chi Minh Mausoleum"
+  },
+  "description": {
+   "vi": "Công trình tưởng niệm tại quảng trường Ba Đình.",
+   "en": "Memorial on Ba Dinh Square."
+  },
+  "safety_note": {
+   "vi": "Mưa lớn mùa hè gây ngập cục bộ; nắng nóng tháng 5–7 trên 37°C; giữ đồ cá nhân ở nơi đông người.",
+   "en": "Summer downpours cause local flooding; May–Jul heat above 37°C. Watch your belongings in crowds."
+  }
+ },
+ {
+  "slug": "chua-huong",
+  "zone_code": "ha-noi",
+  "province_code": "HN",
+  "dest_type": "di_tich",
+  "lat": 20.618,
+  "lng": 105.747,
+  "altitude_m": 20,
+  "is_popular": true,
+  "name": {
+   "vi": "Chùa Hương",
+   "en": "Perfume Pagoda"
+  },
+  "description": {
+   "vi": "Quần thể chùa động trong núi đá vôi, đi thuyền theo suối Yến.",
+   "en": "Pagoda and cave complex in limestone hills, reached by boat along Yen Stream."
+  },
+  "safety_note": {
+   "vi": "Mùa lễ hội đầu năm rất đông, nguy cơ chen lấn, móc túi; đi theo nhóm, hẹn điểm tập kết.",
+   "en": "Spring festival season is very crowded with risk of crushes and pickpockets. Stay in groups and set a meeting point."
+  }
+ },
+ {
+  "slug": "vuon-quoc-gia-ba-vi",
+  "zone_code": "ha-noi",
+  "province_code": "HN",
+  "dest_type": "vuon_quoc_gia",
+  "lat": 21.075,
+  "lng": 105.37,
+  "altitude_m": 400,
+  "is_popular": false,
+  "name": {
+   "vi": "Vườn quốc gia Ba Vì",
+   "en": "Ba Vi National Park"
+  },
+  "description": {
+   "vi": "Rừng núi phía tây Hà Nội, đỉnh Vua cao khoảng 1.300 m.",
+   "en": "Forested mountain west of Hanoi; King Peak is about 1,300 m high."
+  },
+  "safety_note": {
+   "vi": "Mùa khô có nguy cơ cháy rừng, không đốt lửa; mùa mưa có vắt và đường lầy, đi cùng kiểm lâm.",
+   "en": "Dry season brings fire risk, no open fires. Rainy season has leeches and muddy trails; trek with rangers."
+  }
+ },
+ {
+  "slug": "san-bay-noi-bai",
+  "zone_code": "ha-noi",
+  "province_code": "HN",
+  "dest_type": "san_bay",
+  "lat": 21.2187,
+  "lng": 105.8042,
+  "altitude_m": 12,
+  "is_popular": true,
+  "name": {
+   "vi": "Sân bay quốc tế Nội Bài",
+   "en": "Noi Bai International Airport"
+  },
+  "description": {
+   "vi": "Cửa ngõ hàng không chính của miền Bắc.",
+   "en": "Main international gateway to northern Viet Nam."
+  },
+  "safety_note": {
+   "vi": "Chuyến bay có thể hoãn, hủy khi bão hoặc sương mù; theo dõi thông báo của hãng bay.",
+   "en": "Flights may be delayed or cancelled by typhoons or fog. Check your airline notices."
+  }
+ },
+ {
+  "slug": "dao-cat-ba",
+  "zone_code": "hai-phong",
+  "province_code": "HP",
+  "dest_type": "dao",
+  "lat": 20.727,
+  "lng": 107.048,
+  "altitude_m": 5,
+  "is_popular": true,
+  "name": {
+   "vi": "Đảo Cát Bà",
+   "en": "Cat Ba Island"
+  },
+  "description": {
+   "vi": "Đảo lớn nhất quần đảo Cát Bà, giáp vịnh Lan Hạ.",
+   "en": "Largest island of the Cat Ba archipelago, next to Lan Ha Bay."
+  },
+  "safety_note": {
+   "vi": "Tàu, ca nô có thể dừng chạy khi gió cấp 6 trở lên; dự phòng 1–2 ngày, mang thuốc men cá nhân.",
+   "en": "Ferries and speedboats stop when winds reach force 6. Allow 1–2 spare days and bring personal medicine."
+  }
+ },
+ {
+  "slug": "bien-do-son",
+  "zone_code": "hai-phong",
+  "province_code": "HP",
+  "dest_type": "bai_bien",
+  "lat": 20.71,
+  "lng": 106.79,
+  "altitude_m": 3,
+  "is_popular": false,
+  "name": {
+   "vi": "Biển Đồ Sơn",
+   "en": "Do Son Beach"
+  },
+  "description": {
+   "vi": "Bãi biển nghỉ dưỡng gần trung tâm Hải Phòng.",
+   "en": "Resort beach near central Hai Phong."
+  },
+  "safety_note": {
+   "vi": "Mùa bão chính tháng 7–10; khi có tin bão, tàu du lịch tạm dừng, không ra biển.",
+   "en": "Main storm season Jul–Oct. Boats stop running when a typhoon is forecast; do not go to sea."
+  }
+ },
+ {
+  "slug": "vinh-ha-long",
+  "zone_code": "quang-ninh",
+  "province_code": "QN",
+  "dest_type": "dao",
+  "lat": 20.9101,
+  "lng": 107.1839,
+  "altitude_m": 0,
+  "is_popular": true,
+  "name": {
+   "vi": "Vịnh Hạ Long",
+   "en": "Ha Long Bay"
+  },
+  "description": {
+   "vi": "Di sản thiên nhiên thế giới với gần 2.000 đảo đá vôi.",
+   "en": "World Heritage bay with nearly 2,000 limestone islands."
+  },
+  "safety_note": {
+   "vi": "Tàu, ca nô có thể dừng chạy khi gió cấp 6 trở lên; dự phòng 1–2 ngày, mang thuốc men cá nhân.",
+   "en": "Ferries and speedboats stop when winds reach force 6. Allow 1–2 spare days and bring personal medicine."
+  }
+ },
+ {
+  "slug": "cang-tau-tuan-chau",
+  "zone_code": "quang-ninh",
+  "province_code": "QN",
+  "dest_type": "ben_cang",
+  "lat": 20.93,
+  "lng": 106.99,
+  "altitude_m": 2,
+  "is_popular": true,
+  "name": {
+   "vi": "Cảng tàu khách quốc tế Tuần Châu",
+   "en": "Tuan Chau International Passenger Port"
+  },
+  "description": {
+   "vi": "Bến xuất phát chính của tàu tham quan vịnh Hạ Long.",
+   "en": "Main departure pier for Ha Long Bay cruises."
+  },
+  "safety_note": {
+   "vi": "Tàu, ca nô có thể dừng chạy khi gió cấp 6 trở lên; dự phòng 1–2 ngày, mang thuốc men cá nhân.",
+   "en": "Ferries and speedboats stop when winds reach force 6. Allow 1–2 spare days and bring personal medicine."
+  }
+ },
+ {
+  "slug": "dao-co-to",
+  "zone_code": "quang-ninh",
+  "province_code": "QN",
+  "dest_type": "dao",
+  "lat": 20.98,
+  "lng": 107.77,
+  "altitude_m": 5,
+  "is_popular": false,
+  "name": {
+   "vi": "Đảo Cô Tô",
+   "en": "Co To Island"
+  },
+  "description": {
+   "vi": "Huyện đảo xa bờ, đi bằng tàu cao tốc từ Vân Đồn.",
+   "en": "Offshore island district reached by speedboat from Van Don."
+  },
+  "safety_note": {
+   "vi": "Tàu, ca nô có thể dừng chạy khi gió cấp 6 trở lên; dự phòng 1–2 ngày, mang thuốc men cá nhân.",
+   "en": "Ferries and speedboats stop when winds reach force 6. Allow 1–2 spare days and bring personal medicine."
+  }
+ },
+ {
+  "slug": "yen-tu",
+  "zone_code": "quang-ninh",
+  "province_code": "QN",
+  "dest_type": "nui",
+  "lat": 21.157,
+  "lng": 106.718,
+  "altitude_m": 1068,
+  "is_popular": true,
+  "name": {
+   "vi": "Yên Tử",
+   "en": "Yen Tu Mountain"
+  },
+  "description": {
+   "vi": "Núi thiêng gắn với Thiền phái Trúc Lâm, có cáp treo lên chùa Đồng.",
+   "en": "Sacred mountain of the Truc Lam Zen school, with a cable car to Dong Pagoda."
+  },
+  "safety_note": {
+   "vi": "Mùa lễ hội đầu năm rất đông, nguy cơ chen lấn, móc túi; đi theo nhóm, hẹn điểm tập kết.",
+   "en": "Spring festival season is very crowded with risk of crushes and pickpockets. Stay in groups and set a meeting point."
+  }
+ },
+ {
+  "slug": "cua-khau-mong-cai",
+  "zone_code": "quang-ninh",
+  "province_code": "QN",
+  "dest_type": "cua_khau",
+  "lat": 21.535,
+  "lng": 107.965,
+  "altitude_m": 5,
+  "is_popular": false,
+  "name": {
+   "vi": "Cửa khẩu quốc tế Móng Cái",
+   "en": "Mong Cai International Border Gate"
+  },
+  "description": {
+   "vi": "Cửa khẩu đường bộ với Trung Quốc tại Móng Cái.",
+   "en": "Road border crossing with China at Mong Cai."
+  },
+  "safety_note": {
+   "vi": "Mang hộ chiếu, thị thực hợp lệ; cửa khẩu có thể đóng tạm thời khi dịch bệnh hoặc thời tiết xấu.",
+   "en": "Carry a valid passport and visa; the gate may close temporarily during outbreaks or bad weather."
+  }
+ },
+ {
+  "slug": "san-bay-van-don",
+  "zone_code": "quang-ninh",
+  "province_code": "QN",
+  "dest_type": "san_bay",
+  "lat": 21.1178,
+  "lng": 107.4142,
+  "altitude_m": 8,
+  "is_popular": false,
+  "name": {
+   "vi": "Sân bay quốc tế Vân Đồn",
+   "en": "Van Don International Airport"
+  },
+  "description": {
+   "vi": "Sân bay phục vụ khu vực Hạ Long, Vân Đồn.",
+   "en": "Airport serving Ha Long and Van Don."
+  },
+  "safety_note": {
+   "vi": "Chuyến bay có thể hoãn, hủy khi bão hoặc sương mù; theo dõi thông báo của hãng bay.",
+   "en": "Flights may be delayed or cancelled by typhoons or fog. Check your airline notices."
+  }
+ },
+ {
+  "slug": "hoi-lim",
+  "zone_code": "bac-ninh",
+  "province_code": "BN",
+  "dest_type": "di_tich",
+  "lat": 21.141,
+  "lng": 106.02,
+  "altitude_m": 10,
+  "is_popular": false,
+  "name": {
+   "vi": "Đồi Lim – Hội Lim",
+   "en": "Lim Hill (Lim Festival)"
+  },
+  "description": {
+   "vi": "Nơi diễn ra hội Lim với hát quan họ đầu xuân.",
+   "en": "Venue of the spring Lim Festival with Quan ho folk singing."
+  },
+  "safety_note": {
+   "vi": "Mùa lễ hội đầu năm rất đông, nguy cơ chen lấn, móc túi; đi theo nhóm, hẹn điểm tập kết.",
+   "en": "Spring festival season is very crowded with risk of crushes and pickpockets. Stay in groups and set a meeting point."
+  }
+ },
+ {
+  "slug": "pho-hien",
+  "zone_code": "hung-yen",
+  "province_code": "HY",
+  "dest_type": "di_tich",
+  "lat": 20.6517,
+  "lng": 106.057,
+  "altitude_m": 5,
+  "is_popular": false,
+  "name": {
+   "vi": "Phố Hiến",
+   "en": "Pho Hien"
+  },
+  "description": {
+   "vi": "Thương cảng cổ ven sông Hồng với đền chùa cổ.",
+   "en": "Old river port on the Red River with ancient temples."
+  },
+  "safety_note": {
+   "vi": "Mưa lớn mùa hè gây ngập cục bộ; nắng nóng tháng 5–7 trên 37°C; giữ đồ cá nhân ở nơi đông người.",
+   "en": "Summer downpours cause local flooding; May–Jul heat above 37°C. Watch your belongings in crowds."
+  }
+ },
+ {
+  "slug": "trang-an",
+  "zone_code": "ninh-binh",
+  "province_code": "NB",
+  "dest_type": "di_tich",
+  "lat": 20.253,
+  "lng": 105.897,
+  "altitude_m": 5,
+  "is_popular": true,
+  "name": {
+   "vi": "Quần thể danh thắng Tràng An",
+   "en": "Trang An Landscape Complex"
+  },
+  "description": {
+   "vi": "Di sản hỗn hợp thế giới, đi thuyền qua hang động đá vôi.",
+   "en": "Mixed World Heritage site; boat trips through limestone caves."
+  },
+  "safety_note": {
+   "vi": "Tham quan hang, sông ngầm chỉ khi có hướng dẫn viên; khu vực đóng cửa khi mưa lũ tháng 9–11.",
+   "en": "Visit caves and underground rivers only with a licensed guide; sites close during Sep–Nov floods."
+  }
+ },
+ {
+  "slug": "tam-coc-bich-dong",
+  "zone_code": "ninh-binh",
+  "province_code": "NB",
+  "dest_type": "khac",
+  "lat": 20.216,
+  "lng": 105.937,
+  "altitude_m": 5,
+  "is_popular": true,
+  "name": {
+   "vi": "Tam Cốc – Bích Động",
+   "en": "Tam Coc – Bich Dong"
+  },
+  "description": {
+   "vi": "Sông Ngô Đồng len qua ba hang, đồng lúa giữa núi đá.",
+   "en": "Ngo Dong River flowing through three caves amid rice fields."
+  },
+  "safety_note": {
+   "vi": "Tham quan hang, sông ngầm chỉ khi có hướng dẫn viên; khu vực đóng cửa khi mưa lũ tháng 9–11.",
+   "en": "Visit caves and underground rivers only with a licensed guide; sites close during Sep–Nov floods."
+  }
+ },
+ {
+  "slug": "chua-bai-dinh",
+  "zone_code": "ninh-binh",
+  "province_code": "NB",
+  "dest_type": "di_tich",
+  "lat": 20.2747,
+  "lng": 105.8638,
+  "altitude_m": 20,
+  "is_popular": true,
+  "name": {
+   "vi": "Chùa Bái Đính",
+   "en": "Bai Dinh Pagoda"
+  },
+  "description": {
+   "vi": "Quần thể chùa lớn trên sườn núi, đông khách dịp đầu năm.",
+   "en": "Large hillside pagoda complex, crowded at New Year."
+  },
+  "safety_note": {
+   "vi": "Mùa lễ hội đầu năm rất đông, nguy cơ chen lấn, móc túi; đi theo nhóm, hẹn điểm tập kết.",
+   "en": "Spring festival season is very crowded with risk of crushes and pickpockets. Stay in groups and set a meeting point."
+  }
+ },
+ {
+  "slug": "hang-mua",
+  "zone_code": "ninh-binh",
+  "province_code": "NB",
+  "dest_type": "nui",
+  "lat": 20.229,
+  "lng": 105.938,
+  "altitude_m": 150,
+  "is_popular": true,
+  "name": {
+   "vi": "Hang Múa",
+   "en": "Mua Cave viewpoint"
+  },
+  "description": {
+   "vi": "Điểm ngắm cảnh với gần 500 bậc đá lên đỉnh núi.",
+   "en": "Viewpoint with nearly 500 stone steps to the summit."
+  },
+  "safety_note": {
+   "vi": "Mùa mưa tháng 5–10 có dông sét, đường dốc trơn; ban đêm lạnh, mang áo ấm.",
+   "en": "Rainy season May–Oct brings thunderstorms and slippery slopes; nights are cold, bring warm clothes."
+  }
+ },
+ {
+  "slug": "vuon-quoc-gia-cuc-phuong",
+  "zone_code": "ninh-binh",
+  "province_code": "NB",
+  "dest_type": "vuon_quoc_gia",
+  "lat": 20.35,
+  "lng": 105.6,
+  "altitude_m": 300,
+  "is_popular": false,
+  "name": {
+   "vi": "Vườn quốc gia Cúc Phương",
+   "en": "Cuc Phuong National Park"
+  },
+  "description": {
+   "vi": "Vườn quốc gia đầu tiên của Việt Nam, rừng nguyên sinh trên núi đá vôi.",
+   "en": "Viet Nam's first national park, primary forest on limestone."
+  },
+  "safety_note": {
+   "vi": "Mùa khô có nguy cơ cháy rừng, không đốt lửa; mùa mưa có vắt và đường lầy, đi cùng kiểm lâm.",
+   "en": "Dry season brings fire risk, no open fires. Rainy season has leeches and muddy trails; trek with rangers."
+  }
+ },
+ {
+  "slug": "chua-tam-chuc",
+  "zone_code": "ninh-binh",
+  "province_code": "NB",
+  "dest_type": "di_tich",
+  "lat": 20.545,
+  "lng": 105.835,
+  "altitude_m": 5,
+  "is_popular": false,
+  "name": {
+   "vi": "Chùa Tam Chúc",
+   "en": "Tam Chuc Pagoda"
+  },
+  "description": {
+   "vi": "Quần thể chùa bên hồ ở Kim Bảng (Hà Nam cũ).",
+   "en": "Lakeside pagoda complex in Kim Bang (former Ha Nam province)."
+  },
+  "safety_note": {
+   "vi": "Mùa lễ hội đầu năm rất đông, nguy cơ chen lấn, móc túi; đi theo nhóm, hẹn điểm tập kết.",
+   "en": "Spring festival season is very crowded with risk of crushes and pickpockets. Stay in groups and set a meeting point."
+  }
+ },
+ {
+  "slug": "den-hung",
+  "zone_code": "phu-tho",
+  "province_code": "PT",
+  "dest_type": "di_tich",
+  "lat": 21.37,
+  "lng": 105.324,
+  "altitude_m": 175,
+  "is_popular": true,
+  "name": {
+   "vi": "Khu di tích lịch sử Đền Hùng",
+   "en": "Hung Kings Temple"
+  },
+  "description": {
+   "vi": "Nơi thờ các Vua Hùng trên núi Nghĩa Lĩnh, lễ hội tháng 3 âm lịch.",
+   "en": "Shrine of the Hung Kings on Nghia Linh Mountain; festival in the 3rd lunar month."
+  },
+  "safety_note": {
+   "vi": "Mùa lễ hội đầu năm rất đông, nguy cơ chen lấn, móc túi; đi theo nhóm, hẹn điểm tập kết.",
+   "en": "Spring festival season is very crowded with risk of crushes and pickpockets. Stay in groups and set a meeting point."
+  }
+ },
+ {
+  "slug": "tam-dao",
+  "zone_code": "phu-tho",
+  "province_code": "PT",
+  "dest_type": "nui",
+  "lat": 21.456,
+  "lng": 105.645,
+  "altitude_m": 900,
+  "is_popular": true,
+  "name": {
+   "vi": "Thị trấn nghỉ mát Tam Đảo",
+   "en": "Tam Dao hill station"
+  },
+  "description": {
+   "vi": "Khu nghỉ mát trên núi (Vĩnh Phúc cũ), mát mẻ quanh năm.",
+   "en": "Mountain resort (former Vinh Phuc province), cool all year."
+  },
+  "safety_note": {
+   "vi": "Mùa mưa tháng 5–10 có dông sét, đường dốc trơn; ban đêm lạnh, mang áo ấm.",
+   "en": "Rainy season May–Oct brings thunderstorms and slippery slopes; nights are cold, bring warm clothes."
+  }
+ },
+ {
+  "slug": "mai-chau",
+  "zone_code": "phu-tho",
+  "province_code": "PT",
+  "dest_type": "khac",
+  "lat": 20.663,
+  "lng": 105.082,
+  "altitude_m": 400,
+  "is_popular": true,
+  "name": {
+   "vi": "Thung lũng Mai Châu",
+   "en": "Mai Chau Valley"
+  },
+  "description": {
+   "vi": "Bản làng người Thái giữa thung lũng lúa (Hòa Bình cũ).",
+   "en": "Thai ethnic villages in a rice valley (former Hoa Binh province)."
+  },
+  "safety_note": {
+   "vi": "Mưa lớn tháng 6–9 gây lũ quét, sạt lở trên đèo; mùa đông rét đậm, có thể có băng giá. Không đi đèo đêm khi mưa.",
+   "en": "Heavy rain Jun–Sep causes flash floods and landslides on passes; winters are bitterly cold with frost. Avoid mountain roads at night in rain."
+  }
+ },
+ {
+  "slug": "ho-nui-coc",
+  "zone_code": "thai-nguyen",
+  "province_code": "TN",
+  "dest_type": "khac",
+  "lat": 21.58,
+  "lng": 105.73,
+  "altitude_m": 50,
+  "is_popular": false,
+  "name": {
+   "vi": "Hồ Núi Cốc",
+   "en": "Nui Coc Lake"
+  },
+  "description": {
+   "vi": "Hồ nhân tạo lớn giữa đồi chè Thái Nguyên.",
+   "en": "Large reservoir among tea hills of Thai Nguyen."
+  },
+  "safety_note": {
+   "vi": "Mùa mưa tháng 5–10 có dông sét, đường dốc trơn; ban đêm lạnh, mang áo ấm.",
+   "en": "Rainy season May–Oct brings thunderstorms and slippery slopes; nights are cold, bring warm clothes."
+  }
+ },
+ {
+  "slug": "ho-ba-be",
+  "zone_code": "thai-nguyen",
+  "province_code": "TN",
+  "dest_type": "vuon_quoc_gia",
+  "lat": 22.41,
+  "lng": 105.62,
+  "altitude_m": 145,
+  "is_popular": true,
+  "name": {
+   "vi": "Hồ Ba Bể",
+   "en": "Ba Be Lake"
+  },
+  "description": {
+   "vi": "Hồ nước ngọt tự nhiên lớn trong vườn quốc gia (Bắc Kạn cũ).",
+   "en": "Large natural freshwater lake in a national park (former Bac Kan province)."
+  },
+  "safety_note": {
+   "vi": "Mưa lớn tháng 6–9 gây lũ quét, sạt lở trên đèo; mùa đông rét đậm, có thể có băng giá. Không đi đèo đêm khi mưa.",
+   "en": "Heavy rain Jun–Sep causes flash floods and landslides on passes; winters are bitterly cold with frost. Avoid mountain roads at night in rain."
+  }
+ },
+ {
+  "slug": "thanh-pho-ha-giang",
+  "zone_code": "tuyen-quang",
+  "province_code": "TQ",
+  "dest_type": "do_thi",
+  "lat": 22.8233,
+  "lng": 104.9836,
+  "altitude_m": 120,
+  "is_popular": true,
+  "name": {
+   "vi": "Hà Giang (điểm đầu cung đường vòng cung)",
+   "en": "Ha Giang town (start of the Ha Giang Loop)"
+  },
+  "description": {
+   "vi": "Điểm xuất phát cung đường đèo nổi tiếng (Hà Giang cũ).",
+   "en": "Starting point of the famous mountain loop (former Ha Giang province)."
+  },
+  "safety_note": {
+   "vi": "Mưa lớn tháng 6–9 gây lũ quét, sạt lở trên đèo; mùa đông rét đậm, có thể có băng giá. Không đi đèo đêm khi mưa.",
+   "en": "Heavy rain Jun–Sep causes flash floods and landslides on passes; winters are bitterly cold with frost. Avoid mountain roads at night in rain."
+  }
+ },
+ {
+  "slug": "deo-ma-pi-leng",
+  "zone_code": "tuyen-quang",
+  "province_code": "TQ",
+  "dest_type": "nui",
+  "lat": 23.25,
+  "lng": 105.4,
+  "altitude_m": 1200,
+  "is_popular": true,
+  "name": {
+   "vi": "Đèo Mã Pì Lèng",
+   "en": "Ma Pi Leng Pass"
+  },
+  "description": {
+   "vi": "Con đèo hiểm trở bên hẻm sông Nho Quế.",
+   "en": "Dramatic pass above the Nho Que River canyon."
+  },
+  "safety_note": {
+   "vi": "Mưa lớn tháng 6–9 gây lũ quét, sạt lở trên đèo; mùa đông rét đậm, có thể có băng giá. Không đi đèo đêm khi mưa.",
+   "en": "Heavy rain Jun–Sep causes flash floods and landslides on passes; winters are bitterly cold with frost. Avoid mountain roads at night in rain."
+  }
+ },
+ {
+  "slug": "pho-co-dong-van",
+  "zone_code": "tuyen-quang",
+  "province_code": "TQ",
+  "dest_type": "do_thi",
+  "lat": 23.278,
+  "lng": 105.362,
+  "altitude_m": 1000,
+  "is_popular": true,
+  "name": {
+   "vi": "Phố cổ Đồng Văn",
+   "en": "Dong Van Old Quarter"
+  },
+  "description": {
+   "vi": "Phố cổ trên cao nguyên đá Đồng Văn.",
+   "en": "Old town on the Dong Van Karst Plateau."
+  },
+  "safety_note": {
+   "vi": "Mưa lớn tháng 6–9 gây lũ quét, sạt lở trên đèo; mùa đông rét đậm, có thể có băng giá. Không đi đèo đêm khi mưa.",
+   "en": "Heavy rain Jun–Sep causes flash floods and landslides on passes; winters are bitterly cold with frost. Avoid mountain roads at night in rain."
+  }
+ },
+ {
+  "slug": "cot-co-lung-cu",
+  "zone_code": "tuyen-quang",
+  "province_code": "TQ",
+  "dest_type": "di_tich",
+  "lat": 23.364,
+  "lng": 105.316,
+  "altitude_m": 1470,
+  "is_popular": true,
+  "name": {
+   "vi": "Cột cờ Lũng Cú",
+   "en": "Lung Cu Flag Tower"
+  },
+  "description": {
+   "vi": "Cột cờ gần điểm cực Bắc Tổ quốc.",
+   "en": "Flag tower near the northernmost point of Viet Nam."
+  },
+  "safety_note": {
+   "vi": "Mưa lớn tháng 6–9 gây lũ quét, sạt lở trên đèo; mùa đông rét đậm, có thể có băng giá. Không đi đèo đêm khi mưa.",
+   "en": "Heavy rain Jun–Sep causes flash floods and landslides on passes; winters are bitterly cold with frost. Avoid mountain roads at night in rain."
+  }
+ },
+ {
+  "slug": "tan-trao",
+  "zone_code": "tuyen-quang",
+  "province_code": "TQ",
+  "dest_type": "di_tich",
+  "lat": 21.79,
+  "lng": 105.42,
+  "altitude_m": 100,
+  "is_popular": false,
+  "name": {
+   "vi": "Khu di tích Tân Trào",
+   "en": "Tan Trao Historical Site"
+  },
+  "description": {
+   "vi": "Di tích lịch sử cách mạng ở Sơn Dương.",
+   "en": "Revolutionary historical site in Son Duong."
+  },
+  "safety_note": {
+   "vi": "Mùa mưa tháng 5–10 có dông sét, đường dốc trơn; ban đêm lạnh, mang áo ấm.",
+   "en": "Rainy season May–Oct brings thunderstorms and slippery slopes; nights are cold, bring warm clothes."
+  }
+ },
+ {
+  "slug": "sa-pa",
+  "zone_code": "lao-cai",
+  "province_code": "LC",
+  "dest_type": "do_thi",
+  "lat": 22.3364,
+  "lng": 103.8438,
+  "altitude_m": 1500,
+  "is_popular": true,
+  "name": {
+   "vi": "Sa Pa",
+   "en": "Sa Pa"
+  },
+  "description": {
+   "vi": "Thị xã du lịch vùng cao, trekking qua bản làng và ruộng bậc thang.",
+   "en": "Highland resort town; trekking through villages and terraced fields."
+  },
+  "safety_note": {
+   "vi": "Mưa lớn tháng 6–9 gây lũ quét, sạt lở trên đèo; mùa đông rét đậm, có thể có băng giá. Không đi đèo đêm khi mưa.",
+   "en": "Heavy rain Jun–Sep causes flash floods and landslides on passes; winters are bitterly cold with frost. Avoid mountain roads at night in rain."
+  }
+ },
+ {
+  "slug": "dinh-fansipan",
+  "zone_code": "lao-cai",
+  "province_code": "LC",
+  "dest_type": "nui",
+  "lat": 22.3033,
+  "lng": 103.775,
+  "altitude_m": 3143,
+  "is_popular": true,
+  "name": {
+   "vi": "Đỉnh Fansipan",
+   "en": "Fansipan Peak"
+  },
+  "description": {
+   "vi": "Đỉnh núi cao nhất Đông Dương, có cáp treo.",
+   "en": "Highest peak in Indochina, served by a cable car."
+  },
+  "safety_note": {
+   "vi": "Mưa lớn tháng 6–9 gây lũ quét, sạt lở trên đèo; mùa đông rét đậm, có thể có băng giá. Không đi đèo đêm khi mưa.",
+   "en": "Heavy rain Jun–Sep causes flash floods and landslides on passes; winters are bitterly cold with frost. Avoid mountain roads at night in rain."
+  }
+ },
+ {
+  "slug": "deo-o-quy-ho",
+  "zone_code": "lao-cai",
+  "province_code": "LC",
+  "dest_type": "nui",
+  "lat": 22.36,
+  "lng": 103.78,
+  "altitude_m": 1900,
+  "is_popular": true,
+  "name": {
+   "vi": "Đèo Ô Quy Hồ",
+   "en": "O Quy Ho Pass"
+  },
+  "description": {
+   "vi": "Một trong những đèo dài và cao nhất miền Bắc, nối Lào Cai – Lai Châu.",
+   "en": "One of the longest, highest passes in the north, linking Lao Cai and Lai Chau."
+  },
+  "safety_note": {
+   "vi": "Mưa lớn tháng 6–9 gây lũ quét, sạt lở trên đèo; mùa đông rét đậm, có thể có băng giá. Không đi đèo đêm khi mưa.",
+   "en": "Heavy rain Jun–Sep causes flash floods and landslides on passes; winters are bitterly cold with frost. Avoid mountain roads at night in rain."
+  }
+ },
+ {
+  "slug": "bac-ha",
+  "zone_code": "lao-cai",
+  "province_code": "LC",
+  "dest_type": "khac",
+  "lat": 22.539,
+  "lng": 104.289,
+  "altitude_m": 900,
+  "is_popular": false,
+  "name": {
+   "vi": "Chợ phiên Bắc Hà",
+   "en": "Bac Ha Market"
+  },
+  "description": {
+   "vi": "Chợ phiên Chủ nhật của đồng bào vùng cao.",
+   "en": "Sunday market of highland ethnic communities."
+  },
+  "safety_note": {
+   "vi": "Mưa lớn tháng 6–9 gây lũ quét, sạt lở trên đèo; mùa đông rét đậm, có thể có băng giá. Không đi đèo đêm khi mưa.",
+   "en": "Heavy rain Jun–Sep causes flash floods and landslides on passes; winters are bitterly cold with frost. Avoid mountain roads at night in rain."
+  }
+ },
+ {
+  "slug": "cua-khau-lao-cai",
+  "zone_code": "lao-cai",
+  "province_code": "LC",
+  "dest_type": "cua_khau",
+  "lat": 22.505,
+  "lng": 103.965,
+  "altitude_m": 80,
+  "is_popular": false,
+  "name": {
+   "vi": "Cửa khẩu quốc tế Lào Cai",
+   "en": "Lao Cai International Border Gate"
+  },
+  "description": {
+   "vi": "Cửa khẩu đường bộ, đường sắt với Trung Quốc.",
+   "en": "Road and rail border crossing with China."
+  },
+  "safety_note": {
+   "vi": "Mang hộ chiếu, thị thực hợp lệ; cửa khẩu có thể đóng tạm thời khi dịch bệnh hoặc thời tiết xấu.",
+   "en": "Carry a valid passport and visa; the gate may close temporarily during outbreaks or bad weather."
+  }
+ },
+ {
+  "slug": "mu-cang-chai",
+  "zone_code": "lao-cai",
+  "province_code": "LC",
+  "dest_type": "khac",
+  "lat": 21.853,
+  "lng": 104.088,
+  "altitude_m": 950,
+  "is_popular": true,
+  "name": {
+   "vi": "Ruộng bậc thang Mù Cang Chải",
+   "en": "Mu Cang Chai rice terraces"
+  },
+  "description": {
+   "vi": "Ruộng bậc thang (Yên Bái cũ), đẹp nhất tháng 9–10.",
+   "en": "Rice terraces (former Yen Bai province), best in Sep–Oct."
+  },
+  "safety_note": {
+   "vi": "Mưa lớn tháng 6–9 gây lũ quét, sạt lở trên đèo; mùa đông rét đậm, có thể có băng giá. Không đi đèo đêm khi mưa.",
+   "en": "Heavy rain Jun–Sep causes flash floods and landslides on passes; winters are bitterly cold with frost. Avoid mountain roads at night in rain."
+  }
+ },
+ {
+  "slug": "thanh-pho-lai-chau",
+  "zone_code": "lai-chau",
+  "province_code": "LCH",
+  "dest_type": "do_thi",
+  "lat": 22.3964,
+  "lng": 103.4582,
+  "altitude_m": 900,
+  "is_popular": false,
+  "name": {
+   "vi": "Thành phố Lai Châu",
+   "en": "Lai Chau city"
+  },
+  "description": {
+   "vi": "Trung tâm tỉnh, điểm dừng trên tuyến vòng cung Tây Bắc.",
+   "en": "Provincial centre and stop on the North-West loop."
+  },
+  "safety_note": {
+   "vi": "Mưa lớn tháng 6–9 gây lũ quét, sạt lở trên đèo; mùa đông rét đậm, có thể có băng giá. Không đi đèo đêm khi mưa.",
+   "en": "Heavy rain Jun–Sep causes flash floods and landslides on passes; winters are bitterly cold with frost. Avoid mountain roads at night in rain."
+  }
+ },
+ {
+  "slug": "di-tich-dien-bien-phu",
+  "zone_code": "dien-bien",
+  "province_code": "DB",
+  "dest_type": "di_tich",
+  "lat": 21.386,
+  "lng": 103.02,
+  "altitude_m": 480,
+  "is_popular": true,
+  "name": {
+   "vi": "Di tích chiến trường Điện Biên Phủ",
+   "en": "Dien Bien Phu Battlefield"
+  },
+  "description": {
+   "vi": "Đồi A1, hầm Đờ Cát và bảo tàng chiến thắng.",
+   "en": "Hill A1, De Castries bunker and the victory museum."
+  },
+  "safety_note": {
+   "vi": "Mưa lớn tháng 6–9 gây lũ quét, sạt lở trên đèo; mùa đông rét đậm, có thể có băng giá. Không đi đèo đêm khi mưa.",
+   "en": "Heavy rain Jun–Sep causes flash floods and landslides on passes; winters are bitterly cold with frost. Avoid mountain roads at night in rain."
+  }
+ },
+ {
+  "slug": "moc-chau",
+  "zone_code": "son-la",
+  "province_code": "SL",
+  "dest_type": "nui",
+  "lat": 20.847,
+  "lng": 104.634,
+  "altitude_m": 1050,
+  "is_popular": true,
+  "name": {
+   "vi": "Cao nguyên Mộc Châu",
+   "en": "Moc Chau Plateau"
+  },
+  "description": {
+   "vi": "Cao nguyên đồi chè, mùa hoa mận, hoa cải.",
+   "en": "Plateau of tea hills and plum and mustard blossoms."
+  },
+  "safety_note": {
+   "vi": "Mưa lớn tháng 6–9 gây lũ quét, sạt lở trên đèo; mùa đông rét đậm, có thể có băng giá. Không đi đèo đêm khi mưa.",
+   "en": "Heavy rain Jun–Sep causes flash floods and landslides on passes; winters are bitterly cold with frost. Avoid mountain roads at night in rain."
+  }
+ },
+ {
+  "slug": "mau-son",
+  "zone_code": "lang-son",
+  "province_code": "LS",
+  "dest_type": "nui",
+  "lat": 21.856,
+  "lng": 106.96,
+  "altitude_m": 1400,
+  "is_popular": false,
+  "name": {
+   "vi": "Khu du lịch Mẫu Sơn",
+   "en": "Mau Son Mountain"
+  },
+  "description": {
+   "vi": "Núi cao, mùa đông đôi khi có băng tuyết.",
+   "en": "High mountain where ice and snow sometimes appear in winter."
+  },
+  "safety_note": {
+   "vi": "Mưa lớn tháng 6–9 gây lũ quét, sạt lở trên đèo; mùa đông rét đậm, có thể có băng giá. Không đi đèo đêm khi mưa.",
+   "en": "Heavy rain Jun–Sep causes flash floods and landslides on passes; winters are bitterly cold with frost. Avoid mountain roads at night in rain."
+  }
+ },
+ {
+  "slug": "cua-khau-huu-nghi",
+  "zone_code": "lang-son",
+  "province_code": "LS",
+  "dest_type": "cua_khau",
+  "lat": 21.97,
+  "lng": 106.705,
+  "altitude_m": 250,
+  "is_popular": false,
+  "name": {
+   "vi": "Cửa khẩu quốc tế Hữu Nghị",
+   "en": "Huu Nghi International Border Gate"
+  },
+  "description": {
+   "vi": "Cửa khẩu đường bộ lớn với Trung Quốc.",
+   "en": "Major road border crossing with China."
+  },
+  "safety_note": {
+   "vi": "Mang hộ chiếu, thị thực hợp lệ; cửa khẩu có thể đóng tạm thời khi dịch bệnh hoặc thời tiết xấu.",
+   "en": "Carry a valid passport and visa; the gate may close temporarily during outbreaks or bad weather."
+  }
+ },
+ {
+  "slug": "thac-ban-gioc",
+  "zone_code": "cao-bang",
+  "province_code": "CB",
+  "dest_type": "khac",
+  "lat": 22.855,
+  "lng": 106.724,
+  "altitude_m": 350,
+  "is_popular": true,
+  "name": {
+   "vi": "Thác Bản Giốc",
+   "en": "Ban Gioc Waterfall"
+  },
+  "description": {
+   "vi": "Thác nước lớn trên sông Quây Sơn, biên giới Việt – Trung.",
+   "en": "Large waterfall on the Quay Son River at the Viet Nam–China border."
+  },
+  "safety_note": {
+   "vi": "Mưa lớn tháng 6–9 gây lũ quét, sạt lở trên đèo; mùa đông rét đậm, có thể có băng giá. Không đi đèo đêm khi mưa.",
+   "en": "Heavy rain Jun–Sep causes flash floods and landslides on passes; winters are bitterly cold with frost. Avoid mountain roads at night in rain."
+  }
+ },
+ {
+  "slug": "pac-bo",
+  "zone_code": "cao-bang",
+  "province_code": "CB",
+  "dest_type": "di_tich",
+  "lat": 22.981,
+  "lng": 106.05,
+  "altitude_m": 400,
+  "is_popular": false,
+  "name": {
+   "vi": "Khu di tích Pác Bó",
+   "en": "Pac Bo Historical Site"
+  },
+  "description": {
+   "vi": "Hang Cốc Bó, suối Lê-nin, núi Các Mác.",
+   "en": "Coc Bo Cave, Lenin Stream and Karl Marx Mountain."
+  },
+  "safety_note": {
+   "vi": "Mưa lớn tháng 6–9 gây lũ quét, sạt lở trên đèo; mùa đông rét đậm, có thể có băng giá. Không đi đèo đêm khi mưa.",
+   "en": "Heavy rain Jun–Sep causes flash floods and landslides on passes; winters are bitterly cold with frost. Avoid mountain roads at night in rain."
+  }
+ },
+ {
+  "slug": "bien-sam-son",
+  "zone_code": "thanh-hoa",
+  "province_code": "TH",
+  "dest_type": "bai_bien",
+  "lat": 19.75,
+  "lng": 105.905,
+  "altitude_m": 2,
+  "is_popular": true,
+  "name": {
+   "vi": "Biển Sầm Sơn",
+   "en": "Sam Son Beach"
+  },
+  "description": {
+   "vi": "Bãi biển đông khách nhất Bắc Trung Bộ vào mùa hè.",
+   "en": "Busiest summer beach in the North Central region."
+  },
+  "safety_note": {
+   "vi": "Mùa bão chính tháng 7–10; khi có tin bão, tàu du lịch tạm dừng, không ra biển.",
+   "en": "Main storm season Jul–Oct. Boats stop running when a typhoon is forecast; do not go to sea."
+  }
+ },
+ {
+  "slug": "thanh-nha-ho",
+  "zone_code": "thanh-hoa",
+  "province_code": "TH",
+  "dest_type": "di_tich",
+  "lat": 20.077,
+  "lng": 105.605,
+  "altitude_m": 15,
+  "is_popular": false,
+  "name": {
+   "vi": "Thành nhà Hồ",
+   "en": "Citadel of the Ho Dynasty"
+  },
+  "description": {
+   "vi": "Di sản văn hóa thế giới, thành đá thế kỷ 14.",
+   "en": "World Heritage stone citadel from the 14th century."
+  },
+  "safety_note": {
+   "vi": "Mùa mưa tháng 5–10 có dông sét, đường dốc trơn; ban đêm lạnh, mang áo ấm.",
+   "en": "Rainy season May–Oct brings thunderstorms and slippery slopes; nights are cold, bring warm clothes."
+  }
+ },
+ {
+  "slug": "pu-luong",
+  "zone_code": "thanh-hoa",
+  "province_code": "TH",
+  "dest_type": "vuon_quoc_gia",
+  "lat": 20.45,
+  "lng": 105.2,
+  "altitude_m": 600,
+  "is_popular": true,
+  "name": {
+   "vi": "Khu bảo tồn thiên nhiên Pù Luông",
+   "en": "Pu Luong Nature Reserve"
+  },
+  "description": {
+   "vi": "Ruộng bậc thang, bản người Thái, trekking.",
+   "en": "Terraced fields, Thai villages and trekking trails."
+  },
+  "safety_note": {
+   "vi": "Mưa lớn tháng 6–9 gây lũ quét, sạt lở trên đèo; mùa đông rét đậm, có thể có băng giá. Không đi đèo đêm khi mưa.",
+   "en": "Heavy rain Jun–Sep causes flash floods and landslides on passes; winters are bitterly cold with frost. Avoid mountain roads at night in rain."
+  }
+ },
+ {
+  "slug": "bien-cua-lo",
+  "zone_code": "nghe-an",
+  "province_code": "NA",
+  "dest_type": "bai_bien",
+  "lat": 18.81,
+  "lng": 105.72,
+  "altitude_m": 2,
+  "is_popular": true,
+  "name": {
+   "vi": "Biển Cửa Lò",
+   "en": "Cua Lo Beach"
+  },
+  "description": {
+   "vi": "Bãi biển du lịch gần thành phố Vinh.",
+   "en": "Resort beach near Vinh city."
+  },
+  "safety_note": {
+   "vi": "Mùa bão chính tháng 7–10; khi có tin bão, tàu du lịch tạm dừng, không ra biển.",
+   "en": "Main storm season Jul–Oct. Boats stop running when a typhoon is forecast; do not go to sea."
+  }
+ },
+ {
+  "slug": "lang-sen-kim-lien",
+  "zone_code": "nghe-an",
+  "province_code": "NA",
+  "dest_type": "di_tich",
+  "lat": 18.7,
+  "lng": 105.55,
+  "altitude_m": 15,
+  "is_popular": false,
+  "name": {
+   "vi": "Khu di tích Kim Liên",
+   "en": "Kim Lien Relic Site"
+  },
+  "description": {
+   "vi": "Quê nội, quê ngoại Chủ tịch Hồ Chí Minh.",
+   "en": "Birthplace villages of President Ho Chi Minh."
+  },
+  "safety_note": {
+   "vi": "Mùa bão chính tháng 7–10; khi có tin bão, tàu du lịch tạm dừng, không ra biển.",
+   "en": "Main storm season Jul–Oct. Boats stop running when a typhoon is forecast; do not go to sea."
+  }
+ },
+ {
+  "slug": "bien-thien-cam",
+  "zone_code": "ha-tinh",
+  "province_code": "HT",
+  "dest_type": "bai_bien",
+  "lat": 18.26,
+  "lng": 106.11,
+  "altitude_m": 2,
+  "is_popular": false,
+  "name": {
+   "vi": "Biển Thiên Cầm",
+   "en": "Thien Cam Beach"
+  },
+  "description": {
+   "vi": "Bãi biển dưới chân núi Thiên Cầm.",
+   "en": "Beach at the foot of Thien Cam Mountain."
+  },
+  "safety_note": {
+   "vi": "Mùa bão chính tháng 7–10; khi có tin bão, tàu du lịch tạm dừng, không ra biển.",
+   "en": "Main storm season Jul–Oct. Boats stop running when a typhoon is forecast; do not go to sea."
+  }
+ },
+ {
+  "slug": "phong-nha-ke-bang",
+  "zone_code": "quang-tri",
+  "province_code": "QT",
+  "dest_type": "vuon_quoc_gia",
+  "lat": 17.59,
+  "lng": 106.283,
+  "altitude_m": 50,
+  "is_popular": true,
+  "name": {
+   "vi": "Vườn quốc gia Phong Nha – Kẻ Bàng",
+   "en": "Phong Nha – Ke Bang National Park"
+  },
+  "description": {
+   "vi": "Di sản thiên nhiên thế giới, hệ thống hang động (Quảng Bình cũ).",
+   "en": "World Heritage cave system (former Quang Binh province)."
+  },
+  "safety_note": {
+   "vi": "Tham quan hang, sông ngầm chỉ khi có hướng dẫn viên; khu vực đóng cửa khi mưa lũ tháng 9–11.",
+   "en": "Visit caves and underground rivers only with a licensed guide; sites close during Sep–Nov floods."
+  }
+ },
+ {
+  "slug": "hang-son-doong",
+  "zone_code": "quang-tri",
+  "province_code": "QT",
+  "dest_type": "vuon_quoc_gia",
+  "lat": 17.457,
+  "lng": 106.287,
+  "altitude_m": 300,
+  "is_popular": false,
+  "name": {
+   "vi": "Hang Sơn Đoòng",
+   "en": "Son Doong Cave"
+  },
+  "description": {
+   "vi": "Hang động tự nhiên rất lớn, chỉ tham quan theo tour thám hiểm cấp phép.",
+   "en": "Giant cave visited only on licensed expedition tours."
+  },
+  "safety_note": {
+   "vi": "Tham quan hang, sông ngầm chỉ khi có hướng dẫn viên; khu vực đóng cửa khi mưa lũ tháng 9–11.",
+   "en": "Visit caves and underground rivers only with a licensed guide; sites close during Sep–Nov floods."
+  }
+ },
+ {
+  "slug": "bien-nhat-le",
+  "zone_code": "quang-tri",
+  "province_code": "QT",
+  "dest_type": "bai_bien",
+  "lat": 17.48,
+  "lng": 106.63,
+  "altitude_m": 2,
+  "is_popular": false,
+  "name": {
+   "vi": "Biển Nhật Lệ",
+   "en": "Nhat Le Beach"
+  },
+  "description": {
+   "vi": "Bãi biển của thành phố Đồng Hới.",
+   "en": "Beach of Dong Hoi city."
+  },
+  "safety_note": {
+   "vi": "Mùa mưa bão tháng 9–12, sóng lớn và dòng rip; chỉ tắm ở khu có cứu hộ, cắm cờ.",
+   "en": "Storm and rain season Sep–Dec, with high waves and rip currents. Swim only at lifeguarded, flagged areas."
+  }
+ },
+ {
+  "slug": "thanh-co-quang-tri",
+  "zone_code": "quang-tri",
+  "province_code": "QT",
+  "dest_type": "di_tich",
+  "lat": 16.752,
+  "lng": 107.186,
+  "altitude_m": 10,
+  "is_popular": false,
+  "name": {
+   "vi": "Thành cổ Quảng Trị",
+   "en": "Quang Tri Citadel"
+  },
+  "description": {
+   "vi": "Di tích tưởng niệm cuộc chiến 81 ngày đêm năm 1972.",
+   "en": "Memorial of the 81-day battle of 1972."
+  },
+  "safety_note": {
+   "vi": "Mùa lũ tháng 10–11 có thể ngập sâu nội thành; theo dõi tin lũ và hạn chế đi lại khi có cảnh báo.",
+   "en": "Flood season Oct–Nov can deeply flood the city centre. Follow flood bulletins and limit travel during warnings."
+  }
+ },
+ {
+  "slug": "dia-dao-vinh-moc",
+  "zone_code": "quang-tri",
+  "province_code": "QT",
+  "dest_type": "di_tich",
+  "lat": 17.064,
+  "lng": 107.111,
+  "altitude_m": 20,
+  "is_popular": false,
+  "name": {
+   "vi": "Địa đạo Vịnh Mốc",
+   "en": "Vinh Moc Tunnels"
+  },
+  "description": {
+   "vi": "Làng hầm ngầm ven biển thời chiến tranh.",
+   "en": "Wartime underground village by the sea."
+  },
+  "safety_note": {
+   "vi": "Mùa mưa bão tháng 9–12, sóng lớn và dòng rip; chỉ tắm ở khu có cứu hộ, cắm cờ.",
+   "en": "Storm and rain season Sep–Dec, with high waves and rip currents. Swim only at lifeguarded, flagged areas."
+  }
+ },
+ {
+  "slug": "cua-khau-lao-bao",
+  "zone_code": "quang-tri",
+  "province_code": "QT",
+  "dest_type": "cua_khau",
+  "lat": 16.623,
+  "lng": 106.605,
+  "altitude_m": 150,
+  "is_popular": false,
+  "name": {
+   "vi": "Cửa khẩu quốc tế Lao Bảo",
+   "en": "Lao Bao International Border Gate"
+  },
+  "description": {
+   "vi": "Cửa khẩu đường bộ với Lào trên tuyến hành lang Đông – Tây.",
+   "en": "Road border with Laos on the East–West corridor."
+  },
+  "safety_note": {
+   "vi": "Mang hộ chiếu, thị thực hợp lệ; cửa khẩu có thể đóng tạm thời khi dịch bệnh hoặc thời tiết xấu.",
+   "en": "Carry a valid passport and visa; the gate may close temporarily during outbreaks or bad weather."
+  }
+ },
+ {
+  "slug": "dai-noi-hue",
+  "zone_code": "hue",
+  "province_code": "HUE",
+  "dest_type": "di_tich",
+  "lat": 16.469,
+  "lng": 107.577,
+  "altitude_m": 5,
+  "is_popular": true,
+  "name": {
+   "vi": "Đại Nội Huế",
+   "en": "Imperial City of Hue"
+  },
+  "description": {
+   "vi": "Hoàng thành triều Nguyễn, thuộc Quần thể di tích Cố đô Huế.",
+   "en": "Nguyen dynasty imperial city, part of the Hue Monuments."
+  },
+  "safety_note": {
+   "vi": "Mùa lũ tháng 10–11 có thể ngập sâu nội thành; theo dõi tin lũ và hạn chế đi lại khi có cảnh báo.",
+   "en": "Flood season Oct–Nov can deeply flood the city centre. Follow flood bulletins and limit travel during warnings."
+  }
+ },
+ {
+  "slug": "chua-thien-mu",
+  "zone_code": "hue",
+  "province_code": "HUE",
+  "dest_type": "di_tich",
+  "lat": 16.453,
+  "lng": 107.545,
+  "altitude_m": 15,
+  "is_popular": true,
+  "name": {
+   "vi": "Chùa Thiên Mụ",
+   "en": "Thien Mu Pagoda"
+  },
+  "description": {
+   "vi": "Ngôi chùa cổ bên bờ sông Hương.",
+   "en": "Old pagoda on the Perfume River."
+  },
+  "safety_note": {
+   "vi": "Mùa lũ tháng 10–11 có thể ngập sâu nội thành; theo dõi tin lũ và hạn chế đi lại khi có cảnh báo.",
+   "en": "Flood season Oct–Nov can deeply flood the city centre. Follow flood bulletins and limit travel during warnings."
+  }
+ },
+ {
+  "slug": "lang-tu-duc",
+  "zone_code": "hue",
+  "province_code": "HUE",
+  "dest_type": "di_tich",
+  "lat": 16.433,
+  "lng": 107.566,
+  "altitude_m": 15,
+  "is_popular": false,
+  "name": {
+   "vi": "Lăng Tự Đức",
+   "en": "Tomb of Tu Duc"
+  },
+  "description": {
+   "vi": "Lăng tẩm vua Tự Đức giữa rừng thông.",
+   "en": "Royal tomb of Emperor Tu Duc among pine trees."
+  },
+  "safety_note": {
+   "vi": "Mùa lũ tháng 10–11 có thể ngập sâu nội thành; theo dõi tin lũ và hạn chế đi lại khi có cảnh báo.",
+   "en": "Flood season Oct–Nov can deeply flood the city centre. Follow flood bulletins and limit travel during warnings."
+  }
+ },
+ {
+  "slug": "bien-lang-co",
+  "zone_code": "hue",
+  "province_code": "HUE",
+  "dest_type": "bai_bien",
+  "lat": 16.25,
+  "lng": 108.07,
+  "altitude_m": 2,
+  "is_popular": true,
+  "name": {
+   "vi": "Vịnh Lăng Cô",
+   "en": "Lang Co Bay"
+  },
+  "description": {
+   "vi": "Vịnh biển dưới chân đèo Hải Vân.",
+   "en": "Bay at the foot of Hai Van Pass."
+  },
+  "safety_note": {
+   "vi": "Mùa mưa bão tháng 9–12, sóng lớn và dòng rip; chỉ tắm ở khu có cứu hộ, cắm cờ.",
+   "en": "Storm and rain season Sep–Dec, with high waves and rip currents. Swim only at lifeguarded, flagged areas."
+  }
+ },
+ {
+  "slug": "vuon-quoc-gia-bach-ma",
+  "zone_code": "hue",
+  "province_code": "HUE",
+  "dest_type": "vuon_quoc_gia",
+  "lat": 16.2,
+  "lng": 107.86,
+  "altitude_m": 1000,
+  "is_popular": false,
+  "name": {
+   "vi": "Vườn quốc gia Bạch Mã",
+   "en": "Bach Ma National Park"
+  },
+  "description": {
+   "vi": "Rừng mưa nhiệt đới, đỉnh Bạch Mã khoảng 1.450 m.",
+   "en": "Tropical rainforest; Bach Ma Peak about 1,450 m."
+  },
+  "safety_note": {
+   "vi": "Mưa lớn tháng 9–12 dễ sạt lở, chia cắt đường; sương mù buổi sáng, đi chậm trên đèo.",
+   "en": "Heavy rain Sep–Dec often triggers landslides that cut roads; morning fog, drive slowly on passes."
+  }
+ },
+ {
+  "slug": "san-bay-phu-bai",
+  "zone_code": "hue",
+  "province_code": "HUE",
+  "dest_type": "san_bay",
+  "lat": 16.401,
+  "lng": 107.703,
+  "altitude_m": 15,
+  "is_popular": false,
+  "name": {
+   "vi": "Sân bay quốc tế Phú Bài",
+   "en": "Phu Bai International Airport"
+  },
+  "description": {
+   "vi": "Sân bay phục vụ thành phố Huế.",
+   "en": "Airport serving Hue."
+  },
+  "safety_note": {
+   "vi": "Chuyến bay có thể hoãn, hủy khi bão hoặc sương mù; theo dõi thông báo của hãng bay.",
+   "en": "Flights may be delayed or cancelled by typhoons or fog. Check your airline notices."
+  }
+ },
+ {
+  "slug": "bai-bien-my-khe",
+  "zone_code": "da-nang",
+  "province_code": "DN",
+  "dest_type": "bai_bien",
+  "lat": 16.06,
+  "lng": 108.247,
+  "altitude_m": 2,
+  "is_popular": true,
+  "name": {
+   "vi": "Bãi biển Mỹ Khê",
+   "en": "My Khe Beach"
+  },
+  "description": {
+   "vi": "Bãi biển đô thị dài của Đà Nẵng.",
+   "en": "Long urban beach of Da Nang."
+  },
+  "safety_note": {
+   "vi": "Mùa mưa bão tháng 9–12, sóng lớn và dòng rip; chỉ tắm ở khu có cứu hộ, cắm cờ.",
+   "en": "Storm and rain season Sep–Dec, with high waves and rip currents. Swim only at lifeguarded, flagged areas."
+  }
+ },
+ {
+  "slug": "ba-na-hills",
+  "zone_code": "da-nang",
+  "province_code": "DN",
+  "dest_type": "nui",
+  "lat": 15.995,
+  "lng": 107.996,
+  "altitude_m": 1400,
+  "is_popular": true,
+  "name": {
+   "vi": "Bà Nà Hills",
+   "en": "Ba Na Hills"
+  },
+  "description": {
+   "vi": "Khu du lịch trên núi Chúa, có Cầu Vàng và cáp treo.",
+   "en": "Mountain resort on Chua Mountain with the Golden Bridge and cable cars."
+  },
+  "safety_note": {
+   "vi": "Mưa lớn tháng 9–12 dễ sạt lở, chia cắt đường; sương mù buổi sáng, đi chậm trên đèo.",
+   "en": "Heavy rain Sep–Dec often triggers landslides that cut roads; morning fog, drive slowly on passes."
+  }
+ },
+ {
+  "slug": "ban-dao-son-tra",
+  "zone_code": "da-nang",
+  "province_code": "DN",
+  "dest_type": "nui",
+  "lat": 16.12,
+  "lng": 108.27,
+  "altitude_m": 300,
+  "is_popular": true,
+  "name": {
+   "vi": "Bán đảo Sơn Trà",
+   "en": "Son Tra Peninsula"
+  },
+  "description": {
+   "vi": "Rừng nguyên sinh ven biển, chùa Linh Ứng.",
+   "en": "Coastal forest reserve with Linh Ung Pagoda."
+  },
+  "safety_note": {
+   "vi": "Mưa lớn tháng 9–12 dễ sạt lở, chia cắt đường; sương mù buổi sáng, đi chậm trên đèo.",
+   "en": "Heavy rain Sep–Dec often triggers landslides that cut roads; morning fog, drive slowly on passes."
+  }
+ },
+ {
+  "slug": "deo-hai-van",
+  "zone_code": "da-nang",
+  "province_code": "DN",
+  "dest_type": "nui",
+  "lat": 16.185,
+  "lng": 108.145,
+  "altitude_m": 496,
+  "is_popular": true,
+  "name": {
+   "vi": "Đèo Hải Vân",
+   "en": "Hai Van Pass"
+  },
+  "description": {
+   "vi": "Đèo ven biển nổi tiếng giữa Huế và Đà Nẵng.",
+   "en": "Famous coastal pass between Hue and Da Nang."
+  },
+  "safety_note": {
+   "vi": "Mưa lớn tháng 9–12 dễ sạt lở, chia cắt đường; sương mù buổi sáng, đi chậm trên đèo.",
+   "en": "Heavy rain Sep–Dec often triggers landslides that cut roads; morning fog, drive slowly on passes."
+  }
+ },
+ {
+  "slug": "ngu-hanh-son",
+  "zone_code": "da-nang",
+  "province_code": "DN",
+  "dest_type": "di_tich",
+  "lat": 16.004,
+  "lng": 108.264,
+  "altitude_m": 100,
+  "is_popular": false,
+  "name": {
+   "vi": "Ngũ Hành Sơn",
+   "en": "Marble Mountains"
+  },
+  "description": {
+   "vi": "Năm ngọn núi đá vôi có hang động, chùa chiền.",
+   "en": "Five limestone hills with caves and pagodas."
+  },
+  "safety_note": {
+   "vi": "Mùa mưa bão tháng 9–12, sóng lớn và dòng rip; chỉ tắm ở khu có cứu hộ, cắm cờ.",
+   "en": "Storm and rain season Sep–Dec, with high waves and rip currents. Swim only at lifeguarded, flagged areas."
+  }
+ },
+ {
+  "slug": "pho-co-hoi-an",
+  "zone_code": "da-nang",
+  "province_code": "DN",
+  "dest_type": "do_thi",
+  "lat": 15.877,
+  "lng": 108.326,
+  "altitude_m": 3,
+  "is_popular": true,
+  "name": {
+   "vi": "Phố cổ Hội An",
+   "en": "Hoi An Ancient Town"
+  },
+  "description": {
+   "vi": "Di sản thế giới bên sông Thu Bồn (Quảng Nam cũ), thường ngập mùa lũ.",
+   "en": "World Heritage town on the Thu Bon River (former Quang Nam), often flooded in flood season."
+  },
+  "safety_note": {
+   "vi": "Mùa lũ tháng 10–11 có thể ngập sâu nội thành; theo dõi tin lũ và hạn chế đi lại khi có cảnh báo.",
+   "en": "Flood season Oct–Nov can deeply flood the city centre. Follow flood bulletins and limit travel during warnings."
+  }
+ },
+ {
+  "slug": "cu-lao-cham",
+  "zone_code": "da-nang",
+  "province_code": "DN",
+  "dest_type": "dao",
+  "lat": 15.953,
+  "lng": 108.513,
+  "altitude_m": 5,
+  "is_popular": true,
+  "name": {
+   "vi": "Cù Lao Chàm",
+   "en": "Cham Islands"
+  },
+  "description": {
+   "vi": "Khu dự trữ sinh quyển ngoài khơi Hội An.",
+   "en": "Biosphere reserve islands off Hoi An."
+  },
+  "safety_note": {
+   "vi": "Tàu, ca nô có thể dừng chạy khi gió cấp 6 trở lên; dự phòng 1–2 ngày, mang thuốc men cá nhân.",
+   "en": "Ferries and speedboats stop when winds reach force 6. Allow 1–2 spare days and bring personal medicine."
+  }
+ },
+ {
+  "slug": "thanh-dia-my-son",
+  "zone_code": "da-nang",
+  "province_code": "DN",
+  "dest_type": "di_tich",
+  "lat": 15.764,
+  "lng": 108.124,
+  "altitude_m": 80,
+  "is_popular": true,
+  "name": {
+   "vi": "Thánh địa Mỹ Sơn",
+   "en": "My Son Sanctuary"
+  },
+  "description": {
+   "vi": "Quần thể đền tháp Chăm, di sản thế giới.",
+   "en": "World Heritage complex of Cham temple towers."
+  },
+  "safety_note": {
+   "vi": "Mưa lớn tháng 9–12 dễ sạt lở, chia cắt đường; sương mù buổi sáng, đi chậm trên đèo.",
+   "en": "Heavy rain Sep–Dec often triggers landslides that cut roads; morning fog, drive slowly on passes."
+  }
+ },
+ {
+  "slug": "san-bay-da-nang",
+  "zone_code": "da-nang",
+  "province_code": "DN",
+  "dest_type": "san_bay",
+  "lat": 16.0439,
+  "lng": 108.1994,
+  "altitude_m": 10,
+  "is_popular": true,
+  "name": {
+   "vi": "Sân bay quốc tế Đà Nẵng",
+   "en": "Da Nang International Airport"
+  },
+  "description": {
+   "vi": "Sân bay lớn nhất miền Trung.",
+   "en": "Largest airport in central Viet Nam."
+  },
+  "safety_note": {
+   "vi": "Chuyến bay có thể hoãn, hủy khi bão hoặc sương mù; theo dõi thông báo của hãng bay.",
+   "en": "Flights may be delayed or cancelled by typhoons or fog. Check your airline notices."
+  }
+ },
+ {
+  "slug": "dao-ly-son",
+  "zone_code": "quang-ngai",
+  "province_code": "QNG",
+  "dest_type": "dao",
+  "lat": 15.38,
+  "lng": 109.12,
+  "altitude_m": 10,
+  "is_popular": true,
+  "name": {
+   "vi": "Đảo Lý Sơn",
+   "en": "Ly Son Island"
+  },
+  "description": {
+   "vi": "Đảo núi lửa, đi tàu cao tốc từ cảng Sa Kỳ.",
+   "en": "Volcanic island reached by speedboat from Sa Ky port."
+  },
+  "safety_note": {
+   "vi": "Tàu, ca nô có thể dừng chạy khi gió cấp 6 trở lên; dự phòng 1–2 ngày, mang thuốc men cá nhân.",
+   "en": "Ferries and speedboats stop when winds reach force 6. Allow 1–2 spare days and bring personal medicine."
+  }
+ },
+ {
+  "slug": "mang-den",
+  "zone_code": "quang-ngai",
+  "province_code": "QNG",
+  "dest_type": "nui",
+  "lat": 14.6,
+  "lng": 108.3,
+  "altitude_m": 1100,
+  "is_popular": false,
+  "name": {
+   "vi": "Măng Đen",
+   "en": "Mang Den"
+  },
+  "description": {
+   "vi": "Vùng cao nguyên mát mẻ (Kon Tum cũ).",
+   "en": "Cool highland area (former Kon Tum province)."
+  },
+  "safety_note": {
+   "vi": "Mùa mưa tháng 5–10 có dông sét, đường dốc trơn; ban đêm lạnh, mang áo ấm.",
+   "en": "Rainy season May–Oct brings thunderstorms and slippery slopes; nights are cold, bring warm clothes."
+  }
+ },
+ {
+  "slug": "nha-tho-go-kon-tum",
+  "zone_code": "quang-ngai",
+  "province_code": "QNG",
+  "dest_type": "di_tich",
+  "lat": 14.35,
+  "lng": 108.005,
+  "altitude_m": 520,
+  "is_popular": false,
+  "name": {
+   "vi": "Nhà thờ gỗ Kon Tum",
+   "en": "Kon Tum Wooden Church"
+  },
+  "description": {
+   "vi": "Nhà thờ gỗ kiến trúc Roman kết hợp nhà rông.",
+   "en": "Wooden church blending Romanesque and Central Highlands styles."
+  },
+  "safety_note": {
+   "vi": "Mùa mưa tháng 5–10 có dông sét, đường dốc trơn; ban đêm lạnh, mang áo ấm.",
+   "en": "Rainy season May–Oct brings thunderstorms and slippery slopes; nights are cold, bring warm clothes."
+  }
+ },
+ {
+  "slug": "bien-quy-nhon",
+  "zone_code": "gia-lai",
+  "province_code": "GL",
+  "dest_type": "bai_bien",
+  "lat": 13.76,
+  "lng": 109.22,
+  "altitude_m": 2,
+  "is_popular": true,
+  "name": {
+   "vi": "Biển Quy Nhơn",
+   "en": "Quy Nhon Beach"
+  },
+  "description": {
+   "vi": "Bãi biển thành phố Quy Nhơn (Bình Định cũ).",
+   "en": "City beach of Quy Nhon (former Binh Dinh)."
+  },
+  "safety_note": {
+   "vi": "Mùa mưa bão tháng 9–12, sóng lớn và dòng rip; chỉ tắm ở khu có cứu hộ, cắm cờ.",
+   "en": "Storm and rain season Sep–Dec, with high waves and rip currents. Swim only at lifeguarded, flagged areas."
+  }
+ },
+ {
+  "slug": "ky-co-eo-gio",
+  "zone_code": "gia-lai",
+  "province_code": "GL",
+  "dest_type": "bai_bien",
+  "lat": 13.82,
+  "lng": 109.28,
+  "altitude_m": 5,
+  "is_popular": true,
+  "name": {
+   "vi": "Kỳ Co – Eo Gió",
+   "en": "Ky Co – Eo Gio"
+  },
+  "description": {
+   "vi": "Bãi biển và mỏm đá ngắm cảnh ở bán đảo Phương Mai.",
+   "en": "Beach and cliff viewpoint on the Phuong Mai peninsula."
+  },
+  "safety_note": {
+   "vi": "Mùa mưa bão tháng 9–12, sóng lớn và dòng rip; chỉ tắm ở khu có cứu hộ, cắm cờ.",
+   "en": "Storm and rain season Sep–Dec, with high waves and rip currents. Swim only at lifeguarded, flagged areas."
+  }
+ },
+ {
+  "slug": "bien-ho-pleiku",
+  "zone_code": "gia-lai",
+  "province_code": "GL",
+  "dest_type": "khac",
+  "lat": 14.05,
+  "lng": 108.0,
+  "altitude_m": 800,
+  "is_popular": false,
+  "name": {
+   "vi": "Biển Hồ (hồ T'Nưng)",
+   "en": "Bien Ho Lake (T'Nung Lake)"
+  },
+  "description": {
+   "vi": "Hồ trên miệng núi lửa cổ gần Pleiku.",
+   "en": "Lake in an old volcanic crater near Pleiku."
+  },
+  "safety_note": {
+   "vi": "Mùa mưa tháng 5–10 có dông sét, đường dốc trơn; ban đêm lạnh, mang áo ấm.",
+   "en": "Rainy season May–Oct brings thunderstorms and slippery slopes; nights are cold, bring warm clothes."
+  }
+ },
+ {
+  "slug": "buon-ma-thuot",
+  "zone_code": "dak-lak",
+  "province_code": "DL",
+  "dest_type": "do_thi",
+  "lat": 12.6667,
+  "lng": 108.05,
+  "altitude_m": 500,
+  "is_popular": false,
+  "name": {
+   "vi": "Buôn Ma Thuột",
+   "en": "Buon Ma Thuot"
+  },
+  "description": {
+   "vi": "Thủ phủ cà phê Tây Nguyên.",
+   "en": "Coffee capital of the Central Highlands."
+  },
+  "safety_note": {
+   "vi": "Mùa mưa tháng 5–10 có dông sét, đường dốc trơn; ban đêm lạnh, mang áo ấm.",
+   "en": "Rainy season May–Oct brings thunderstorms and slippery slopes; nights are cold, bring warm clothes."
+  }
+ },
+ {
+  "slug": "buon-don",
+  "zone_code": "dak-lak",
+  "province_code": "DL",
+  "dest_type": "khac",
+  "lat": 12.88,
+  "lng": 107.78,
+  "altitude_m": 200,
+  "is_popular": false,
+  "name": {
+   "vi": "Buôn Đôn",
+   "en": "Buon Don"
+  },
+  "description": {
+   "vi": "Bản làng bên sông Sêrêpốk, cầu treo, rừng khộp.",
+   "en": "Village on the Serepok River with rope bridges and dry forest."
+  },
+  "safety_note": {
+   "vi": "Mùa khô có nguy cơ cháy rừng, không đốt lửa; mùa mưa có vắt và đường lầy, đi cùng kiểm lâm.",
+   "en": "Dry season brings fire risk, no open fires. Rainy season has leeches and muddy trails; trek with rangers."
+  }
+ },
+ {
+  "slug": "ghenh-da-dia",
+  "zone_code": "dak-lak",
+  "province_code": "DL",
+  "dest_type": "khac",
+  "lat": 13.355,
+  "lng": 109.295,
+  "altitude_m": 2,
+  "is_popular": true,
+  "name": {
+   "vi": "Gành Đá Đĩa",
+   "en": "Ganh Da Dia"
+  },
+  "description": {
+   "vi": "Bãi đá bazan hình lăng trụ ven biển (Phú Yên cũ).",
+   "en": "Coastal columnar basalt formation (former Phu Yen)."
+  },
+  "safety_note": {
+   "vi": "Mùa mưa bão tháng 9–12, sóng lớn và dòng rip; chỉ tắm ở khu có cứu hộ, cắm cờ.",
+   "en": "Storm and rain season Sep–Dec, with high waves and rip currents. Swim only at lifeguarded, flagged areas."
+  }
+ },
+ {
+  "slug": "vinh-nha-trang",
+  "zone_code": "khanh-hoa",
+  "province_code": "KH",
+  "dest_type": "bai_bien",
+  "lat": 12.22,
+  "lng": 109.23,
+  "altitude_m": 0,
+  "is_popular": true,
+  "name": {
+   "vi": "Vịnh Nha Trang",
+   "en": "Nha Trang Bay"
+  },
+  "description": {
+   "vi": "Vịnh biển với nhiều đảo, điểm lặn biển nổi tiếng.",
+   "en": "Island-dotted bay famous for diving."
+  },
+  "safety_note": {
+   "vi": "Mùa mưa bão tháng 9–12, sóng lớn và dòng rip; chỉ tắm ở khu có cứu hộ, cắm cờ.",
+   "en": "Storm and rain season Sep–Dec, with high waves and rip currents. Swim only at lifeguarded, flagged areas."
+  }
+ },
+ {
+  "slug": "thap-ba-po-nagar",
+  "zone_code": "khanh-hoa",
+  "province_code": "KH",
+  "dest_type": "di_tich",
+  "lat": 12.265,
+  "lng": 109.196,
+  "altitude_m": 15,
+  "is_popular": false,
+  "name": {
+   "vi": "Tháp Bà Ponagar",
+   "en": "Po Nagar Cham Towers"
+  },
+  "description": {
+   "vi": "Tháp Chăm trên đồi Cù Lao bên sông Cái.",
+   "en": "Cham towers on a hill by the Cai River."
+  },
+  "safety_note": {
+   "vi": "Mùa mưa bão tháng 9–12, sóng lớn và dòng rip; chỉ tắm ở khu có cứu hộ, cắm cờ.",
+   "en": "Storm and rain season Sep–Dec, with high waves and rip currents. Swim only at lifeguarded, flagged areas."
+  }
+ },
+ {
+  "slug": "vinh-vinh-hy",
+  "zone_code": "khanh-hoa",
+  "province_code": "KH",
+  "dest_type": "bai_bien",
+  "lat": 11.72,
+  "lng": 109.2,
+  "altitude_m": 2,
+  "is_popular": false,
+  "name": {
+   "vi": "Vịnh Vĩnh Hy",
+   "en": "Vinh Hy Bay"
+  },
+  "description": {
+   "vi": "Vịnh biển trong vườn quốc gia Núi Chúa (Ninh Thuận cũ).",
+   "en": "Bay inside Nui Chua National Park (former Ninh Thuan)."
+  },
+  "safety_note": {
+   "vi": "Mùa mưa tháng 5–11 có dông lốc; gió mùa Tây Nam làm biển động, chú ý cờ cấm tắm.",
+   "en": "Rainy season May–Nov brings sudden squalls; south-west monsoon makes the sea rough. Obey no-swimming flags."
+  }
+ },
+ {
+  "slug": "san-bay-cam-ranh",
+  "zone_code": "khanh-hoa",
+  "province_code": "KH",
+  "dest_type": "san_bay",
+  "lat": 11.9982,
+  "lng": 109.2194,
+  "altitude_m": 10,
+  "is_popular": true,
+  "name": {
+   "vi": "Sân bay quốc tế Cam Ranh",
+   "en": "Cam Ranh International Airport"
+  },
+  "description": {
+   "vi": "Sân bay phục vụ Nha Trang.",
+   "en": "Airport serving Nha Trang."
+  },
+  "safety_note": {
+   "vi": "Chuyến bay có thể hoãn, hủy khi bão hoặc sương mù; theo dõi thông báo của hãng bay.",
+   "en": "Flights may be delayed or cancelled by typhoons or fog. Check your airline notices."
+  }
+ },
+ {
+  "slug": "ho-xuan-huong-da-lat",
+  "zone_code": "lam-dong",
+  "province_code": "LD",
+  "dest_type": "do_thi",
+  "lat": 11.942,
+  "lng": 108.44,
+  "altitude_m": 1500,
+  "is_popular": true,
+  "name": {
+   "vi": "Hồ Xuân Hương – Đà Lạt",
+   "en": "Xuan Huong Lake – Da Lat"
+  },
+  "description": {
+   "vi": "Trung tâm thành phố cao nguyên Đà Lạt.",
+   "en": "Centre of the highland city of Da Lat."
+  },
+  "safety_note": {
+   "vi": "Mùa mưa tháng 5–10 có dông sét, đường dốc trơn; ban đêm lạnh, mang áo ấm.",
+   "en": "Rainy season May–Oct brings thunderstorms and slippery slopes; nights are cold, bring warm clothes."
+  }
+ },
+ {
+  "slug": "dinh-langbiang",
+  "zone_code": "lam-dong",
+  "province_code": "LD",
+  "dest_type": "nui",
+  "lat": 12.047,
+  "lng": 108.44,
+  "altitude_m": 2167,
+  "is_popular": true,
+  "name": {
+   "vi": "Đỉnh Lang Biang",
+   "en": "Lang Biang Peak"
+  },
+  "description": {
+   "vi": "Núi cao trên 2.100 m phía bắc Đà Lạt.",
+   "en": "Mountain over 2,100 m north of Da Lat."
+  },
+  "safety_note": {
+   "vi": "Mùa mưa tháng 5–10 có dông sét, đường dốc trơn; ban đêm lạnh, mang áo ấm.",
+   "en": "Rainy season May–Oct brings thunderstorms and slippery slopes; nights are cold, bring warm clothes."
+  }
+ },
+ {
+  "slug": "thac-datanla",
+  "zone_code": "lam-dong",
+  "province_code": "LD",
+  "dest_type": "khac",
+  "lat": 11.9,
+  "lng": 108.45,
+  "altitude_m": 1300,
+  "is_popular": false,
+  "name": {
+   "vi": "Thác Datanla",
+   "en": "Datanla Waterfall"
+  },
+  "description": {
+   "vi": "Thác nước có máng trượt và đu dây.",
+   "en": "Waterfall with an alpine coaster and canyoning."
+  },
+  "safety_note": {
+   "vi": "Mùa mưa tháng 5–10 có dông sét, đường dốc trơn; ban đêm lạnh, mang áo ấm.",
+   "en": "Rainy season May–Oct brings thunderstorms and slippery slopes; nights are cold, bring warm clothes."
+  }
+ },
+ {
+  "slug": "ho-ta-dung",
+  "zone_code": "lam-dong",
+  "province_code": "LD",
+  "dest_type": "khac",
+  "lat": 11.88,
+  "lng": 107.95,
+  "altitude_m": 700,
+  "is_popular": false,
+  "name": {
+   "vi": "Hồ Tà Đùng",
+   "en": "Ta Dung Lake"
+  },
+  "description": {
+   "vi": "Hồ thủy điện nhiều đảo (Đắk Nông cũ).",
+   "en": "Hydropower lake with many islets (former Dak Nong)."
+  },
+  "safety_note": {
+   "vi": "Mùa mưa tháng 5–10 có dông sét, đường dốc trơn; ban đêm lạnh, mang áo ấm.",
+   "en": "Rainy season May–Oct brings thunderstorms and slippery slopes; nights are cold, bring warm clothes."
+  }
+ },
+ {
+  "slug": "mui-ne",
+  "zone_code": "lam-dong",
+  "province_code": "LD",
+  "dest_type": "bai_bien",
+  "lat": 10.933,
+  "lng": 108.287,
+  "altitude_m": 2,
+  "is_popular": true,
+  "name": {
+   "vi": "Mũi Né",
+   "en": "Mui Ne"
+  },
+  "description": {
+   "vi": "Bãi biển, đồi cát và lướt ván diều (Bình Thuận cũ).",
+   "en": "Beaches, sand dunes and kitesurfing (former Binh Thuan)."
+  },
+  "safety_note": {
+   "vi": "Mùa mưa tháng 5–11 có dông lốc; gió mùa Tây Nam làm biển động, chú ý cờ cấm tắm.",
+   "en": "Rainy season May–Nov brings sudden squalls; south-west monsoon makes the sea rough. Obey no-swimming flags."
+  }
+ },
+ {
+  "slug": "dao-phu-quy",
+  "zone_code": "lam-dong",
+  "province_code": "LD",
+  "dest_type": "dao",
+  "lat": 10.52,
+  "lng": 108.93,
+  "altitude_m": 10,
+  "is_popular": false,
+  "name": {
+   "vi": "Đảo Phú Quý",
+   "en": "Phu Quy Island"
+  },
+  "description": {
+   "vi": "Huyện đảo xa bờ, đi tàu từ Phan Thiết.",
+   "en": "Offshore island reached by boat from Phan Thiet."
+  },
+  "safety_note": {
+   "vi": "Tàu, ca nô có thể dừng chạy khi gió cấp 6 trở lên; dự phòng 1–2 ngày, mang thuốc men cá nhân.",
+   "en": "Ferries and speedboats stop when winds reach force 6. Allow 1–2 spare days and bring personal medicine."
+  }
+ },
+ {
+  "slug": "cho-ben-thanh",
+  "zone_code": "ho-chi-minh",
+  "province_code": "HCM",
+  "dest_type": "do_thi",
+  "lat": 10.7725,
+  "lng": 106.698,
+  "altitude_m": 5,
+  "is_popular": true,
+  "name": {
+   "vi": "Chợ Bến Thành",
+   "en": "Ben Thanh Market"
+  },
+  "description": {
+   "vi": "Chợ biểu tượng của trung tâm TP.HCM.",
+   "en": "Iconic market in central Ho Chi Minh City."
+  },
+  "safety_note": {
+   "vi": "Triều cường tháng 9–12 và mưa chiều gây ngập đường; nắng nóng tháng 3–5; cẩn thận giật đồ.",
+   "en": "King tides Sep–Dec and afternoon storms flood streets; hot season Mar–May. Beware of bag snatching."
+  }
+ },
+ {
+  "slug": "dinh-doc-lap",
+  "zone_code": "ho-chi-minh",
+  "province_code": "HCM",
+  "dest_type": "di_tich",
+  "lat": 10.777,
+  "lng": 106.6955,
+  "altitude_m": 5,
+  "is_popular": true,
+  "name": {
+   "vi": "Dinh Độc Lập",
+   "en": "Independence Palace"
+  },
+  "description": {
+   "vi": "Di tích lịch sử tại Quận 1 cũ.",
+   "en": "Historic palace in former District 1."
+  },
+  "safety_note": {
+   "vi": "Triều cường tháng 9–12 và mưa chiều gây ngập đường; nắng nóng tháng 3–5; cẩn thận giật đồ.",
+   "en": "King tides Sep–Dec and afternoon storms flood streets; hot season Mar–May. Beware of bag snatching."
+  }
+ },
+ {
+  "slug": "dia-dao-cu-chi",
+  "zone_code": "ho-chi-minh",
+  "province_code": "HCM",
+  "dest_type": "di_tich",
+  "lat": 11.143,
+  "lng": 106.464,
+  "altitude_m": 10,
+  "is_popular": true,
+  "name": {
+   "vi": "Địa đạo Củ Chi",
+   "en": "Cu Chi Tunnels"
+  },
+  "description": {
+   "vi": "Hệ thống địa đạo thời chiến ở Củ Chi.",
+   "en": "Wartime tunnel network in Cu Chi."
+  },
+  "safety_note": {
+   "vi": "Triều cường tháng 9–12 và mưa chiều gây ngập đường; nắng nóng tháng 3–5; cẩn thận giật đồ.",
+   "en": "King tides Sep–Dec and afternoon storms flood streets; hot season Mar–May. Beware of bag snatching."
+  }
+ },
+ {
+  "slug": "rung-sac-can-gio",
+  "zone_code": "ho-chi-minh",
+  "province_code": "HCM",
+  "dest_type": "vuon_quoc_gia",
+  "lat": 10.41,
+  "lng": 106.95,
+  "altitude_m": 1,
+  "is_popular": false,
+  "name": {
+   "vi": "Rừng ngập mặn Cần Giờ",
+   "en": "Can Gio Mangrove Forest"
+  },
+  "description": {
+   "vi": "Khu dự trữ sinh quyển rừng ngập mặn.",
+   "en": "Mangrove biosphere reserve."
+  },
+  "safety_note": {
+   "vi": "Mùa nước nổi tháng 8–11; đi thuyền luôn mặc áo phao; triều cường cuối năm gây ngập ven sông.",
+   "en": "Flood season Aug–Nov; always wear a life jacket on boats. Year-end king tides flood riverbanks."
+  }
+ },
+ {
+  "slug": "bai-sau-vung-tau",
+  "zone_code": "ho-chi-minh",
+  "province_code": "HCM",
+  "dest_type": "bai_bien",
+  "lat": 10.346,
+  "lng": 107.096,
+  "altitude_m": 2,
+  "is_popular": true,
+  "name": {
+   "vi": "Bãi Sau Vũng Tàu",
+   "en": "Vung Tau Back Beach"
+  },
+  "description": {
+   "vi": "Bãi tắm chính của Vũng Tàu (Bà Rịa – Vũng Tàu cũ).",
+   "en": "Main beach of Vung Tau (former Ba Ria – Vung Tau)."
+  },
+  "safety_note": {
+   "vi": "Mùa mưa tháng 5–11 có dông lốc; gió mùa Tây Nam làm biển động, chú ý cờ cấm tắm.",
+   "en": "Rainy season May–Nov brings sudden squalls; south-west monsoon makes the sea rough. Obey no-swimming flags."
+  }
+ },
+ {
+  "slug": "con-dao",
+  "zone_code": "ho-chi-minh",
+  "province_code": "HCM",
+  "dest_type": "dao",
+  "lat": 8.683,
+  "lng": 106.607,
+  "altitude_m": 5,
+  "is_popular": true,
+  "name": {
+   "vi": "Côn Đảo",
+   "en": "Con Dao Islands"
+  },
+  "description": {
+   "vi": "Quần đảo có vườn quốc gia và di tích nhà tù.",
+   "en": "Archipelago with a national park and prison relics."
+  },
+  "safety_note": {
+   "vi": "Tàu, ca nô có thể dừng chạy khi gió cấp 6 trở lên; dự phòng 1–2 ngày, mang thuốc men cá nhân.",
+   "en": "Ferries and speedboats stop when winds reach force 6. Allow 1–2 spare days and bring personal medicine."
+  }
+ },
+ {
+  "slug": "san-bay-tan-son-nhat",
+  "zone_code": "ho-chi-minh",
+  "province_code": "HCM",
+  "dest_type": "san_bay",
+  "lat": 10.8188,
+  "lng": 106.6519,
+  "altitude_m": 10,
+  "is_popular": true,
+  "name": {
+   "vi": "Sân bay quốc tế Tân Sơn Nhất",
+   "en": "Tan Son Nhat International Airport"
+  },
+  "description": {
+   "vi": "Sân bay bận rộn nhất Việt Nam.",
+   "en": "Viet Nam's busiest airport."
+  },
+  "safety_note": {
+   "vi": "Chuyến bay có thể hoãn, hủy khi bão hoặc sương mù; theo dõi thông báo của hãng bay.",
+   "en": "Flights may be delayed or cancelled by typhoons or fog. Check your airline notices."
+  }
+ },
+ {
+  "slug": "vuon-quoc-gia-cat-tien",
+  "zone_code": "dong-nai",
+  "province_code": "DNA",
+  "dest_type": "vuon_quoc_gia",
+  "lat": 11.43,
+  "lng": 107.43,
+  "altitude_m": 150,
+  "is_popular": true,
+  "name": {
+   "vi": "Vườn quốc gia Cát Tiên",
+   "en": "Cat Tien National Park"
+  },
+  "description": {
+   "vi": "Rừng nhiệt đới đất thấp, khu bảo tồn sinh quyển.",
+   "en": "Lowland tropical forest and biosphere reserve."
+  },
+  "safety_note": {
+   "vi": "Mùa khô có nguy cơ cháy rừng, không đốt lửa; mùa mưa có vắt và đường lầy, đi cùng kiểm lâm.",
+   "en": "Dry season brings fire risk, no open fires. Rainy season has leeches and muddy trails; trek with rangers."
+  }
+ },
+ {
+  "slug": "nui-ba-den",
+  "zone_code": "tay-ninh",
+  "province_code": "TNI",
+  "dest_type": "nui",
+  "lat": 11.38,
+  "lng": 106.17,
+  "altitude_m": 986,
+  "is_popular": true,
+  "name": {
+   "vi": "Núi Bà Đen",
+   "en": "Ba Den Mountain"
+  },
+  "description": {
+   "vi": "Ngọn núi cao nhất Nam Bộ, có cáp treo và lễ hội xuân.",
+   "en": "Highest mountain in the south, with cable cars and a spring festival."
+  },
+  "safety_note": {
+   "vi": "Mùa lễ hội đầu năm rất đông, nguy cơ chen lấn, móc túi; đi theo nhóm, hẹn điểm tập kết.",
+   "en": "Spring festival season is very crowded with risk of crushes and pickpockets. Stay in groups and set a meeting point."
+  }
+ },
+ {
+  "slug": "toa-thanh-tay-ninh",
+  "zone_code": "tay-ninh",
+  "province_code": "TNI",
+  "dest_type": "di_tich",
+  "lat": 11.32,
+  "lng": 106.13,
+  "altitude_m": 20,
+  "is_popular": false,
+  "name": {
+   "vi": "Tòa Thánh Tây Ninh",
+   "en": "Cao Dai Holy See"
+  },
+  "description": {
+   "vi": "Trung tâm đạo Cao Đài.",
+   "en": "Headquarters of the Cao Dai religion."
+  },
+  "safety_note": {
+   "vi": "Triều cường tháng 9–12 và mưa chiều gây ngập đường; nắng nóng tháng 3–5; cẩn thận giật đồ.",
+   "en": "King tides Sep–Dec and afternoon storms flood streets; hot season Mar–May. Beware of bag snatching."
+  }
+ },
+ {
+  "slug": "lang-hoa-sa-dec",
+  "zone_code": "dong-thap",
+  "province_code": "DT",
+  "dest_type": "khac",
+  "lat": 10.3,
+  "lng": 105.76,
+  "altitude_m": 2,
+  "is_popular": false,
+  "name": {
+   "vi": "Làng hoa Sa Đéc",
+   "en": "Sa Dec Flower Village"
+  },
+  "description": {
+   "vi": "Làng trồng hoa kiểng lớn của miền Tây.",
+   "en": "Large ornamental flower village in the Mekong Delta."
+  },
+  "safety_note": {
+   "vi": "Mùa nước nổi tháng 8–11; đi thuyền luôn mặc áo phao; triều cường cuối năm gây ngập ven sông.",
+   "en": "Flood season Aug–Nov; always wear a life jacket on boats. Year-end king tides flood riverbanks."
+  }
+ },
+ {
+  "slug": "vuon-quoc-gia-tram-chim",
+  "zone_code": "dong-thap",
+  "province_code": "DT",
+  "dest_type": "vuon_quoc_gia",
+  "lat": 10.7,
+  "lng": 105.55,
+  "altitude_m": 2,
+  "is_popular": false,
+  "name": {
+   "vi": "Vườn quốc gia Tràm Chim",
+   "en": "Tram Chim National Park"
+  },
+  "description": {
+   "vi": "Đất ngập nước Đồng Tháp Mười, nơi có sếu đầu đỏ.",
+   "en": "Dong Thap Muoi wetland, home of sarus cranes."
+  },
+  "safety_note": {
+   "vi": "Mùa nước nổi tháng 8–11; đi thuyền luôn mặc áo phao; triều cường cuối năm gây ngập ven sông.",
+   "en": "Flood season Aug–Nov; always wear a life jacket on boats. Year-end king tides flood riverbanks."
+  }
+ },
+ {
+  "slug": "cho-noi-cai-be",
+  "zone_code": "dong-thap",
+  "province_code": "DT",
+  "dest_type": "khac",
+  "lat": 10.33,
+  "lng": 106.03,
+  "altitude_m": 2,
+  "is_popular": false,
+  "name": {
+   "vi": "Chợ nổi Cái Bè",
+   "en": "Cai Be Floating Market"
+  },
+  "description": {
+   "vi": "Chợ nổi trên sông Tiền (Tiền Giang cũ).",
+   "en": "Floating market on the Tien River (former Tien Giang)."
+  },
+  "safety_note": {
+   "vi": "Mùa nước nổi tháng 8–11; đi thuyền luôn mặc áo phao; triều cường cuối năm gây ngập ven sông.",
+   "en": "Flood season Aug–Nov; always wear a life jacket on boats. Year-end king tides flood riverbanks."
+  }
+ },
+ {
+  "slug": "cu-lao-thoi-son",
+  "zone_code": "dong-thap",
+  "province_code": "DT",
+  "dest_type": "khac",
+  "lat": 10.34,
+  "lng": 106.34,
+  "altitude_m": 2,
+  "is_popular": true,
+  "name": {
+   "vi": "Cù lao Thới Sơn",
+   "en": "Thoi Son Islet"
+  },
+  "description": {
+   "vi": "Cồn trên sông Tiền với vườn trái cây, đờn ca tài tử.",
+   "en": "River islet with orchards and folk music."
+  },
+  "safety_note": {
+   "vi": "Mùa nước nổi tháng 8–11; đi thuyền luôn mặc áo phao; triều cường cuối năm gây ngập ven sông.",
+   "en": "Flood season Aug–Nov; always wear a life jacket on boats. Year-end king tides flood riverbanks."
+  }
+ },
+ {
+  "slug": "cu-lao-an-binh",
+  "zone_code": "vinh-long",
+  "province_code": "VL",
+  "dest_type": "khac",
+  "lat": 10.27,
+  "lng": 105.97,
+  "altitude_m": 2,
+  "is_popular": false,
+  "name": {
+   "vi": "Cù lao An Bình",
+   "en": "An Binh Islet"
+  },
+  "description": {
+   "vi": "Cù lao vườn trái cây đối diện thành phố Vĩnh Long.",
+   "en": "Fruit orchard islet opposite Vinh Long city."
+  },
+  "safety_note": {
+   "vi": "Mùa nước nổi tháng 8–11; đi thuyền luôn mặc áo phao; triều cường cuối năm gây ngập ven sông.",
+   "en": "Flood season Aug–Nov; always wear a life jacket on boats. Year-end king tides flood riverbanks."
+  }
+ },
+ {
+  "slug": "con-phung-ben-tre",
+  "zone_code": "vinh-long",
+  "province_code": "VL",
+  "dest_type": "khac",
+  "lat": 10.32,
+  "lng": 106.35,
+  "altitude_m": 2,
+  "is_popular": false,
+  "name": {
+   "vi": "Cồn Phụng",
+   "en": "Phung Islet"
+  },
+  "description": {
+   "vi": "Cồn trên sông Tiền thuộc Bến Tre cũ, làng kẹo dừa.",
+   "en": "Islet on the Tien River (former Ben Tre), coconut candy village."
+  },
+  "safety_note": {
+   "vi": "Mùa nước nổi tháng 8–11; đi thuyền luôn mặc áo phao; triều cường cuối năm gây ngập ven sông.",
+   "en": "Flood season Aug–Nov; always wear a life jacket on boats. Year-end king tides flood riverbanks."
+  }
+ },
+ {
+  "slug": "bien-ba-dong",
+  "zone_code": "vinh-long",
+  "province_code": "VL",
+  "dest_type": "bai_bien",
+  "lat": 9.66,
+  "lng": 106.55,
+  "altitude_m": 2,
+  "is_popular": false,
+  "name": {
+   "vi": "Biển Ba Động",
+   "en": "Ba Dong Beach"
+  },
+  "description": {
+   "vi": "Bãi biển của Trà Vinh cũ.",
+   "en": "Beach of former Tra Vinh province."
+  },
+  "safety_note": {
+   "vi": "Mùa mưa tháng 5–11 có dông lốc; gió mùa Tây Nam làm biển động, chú ý cờ cấm tắm.",
+   "en": "Rainy season May–Nov brings sudden squalls; south-west monsoon makes the sea rough. Obey no-swimming flags."
+  }
+ },
+ {
+  "slug": "cho-noi-cai-rang",
+  "zone_code": "can-tho",
+  "province_code": "CT",
+  "dest_type": "khac",
+  "lat": 10.004,
+  "lng": 105.748,
+  "altitude_m": 2,
+  "is_popular": true,
+  "name": {
+   "vi": "Chợ nổi Cái Răng",
+   "en": "Cai Rang Floating Market"
+  },
+  "description": {
+   "vi": "Chợ nổi lớn nhất miền Tây, họp sáng sớm.",
+   "en": "Largest floating market in the delta, busiest at dawn."
+  },
+  "safety_note": {
+   "vi": "Mùa nước nổi tháng 8–11; đi thuyền luôn mặc áo phao; triều cường cuối năm gây ngập ven sông.",
+   "en": "Flood season Aug–Nov; always wear a life jacket on boats. Year-end king tides flood riverbanks."
+  }
+ },
+ {
+  "slug": "ben-ninh-kieu",
+  "zone_code": "can-tho",
+  "province_code": "CT",
+  "dest_type": "do_thi",
+  "lat": 10.035,
+  "lng": 105.788,
+  "altitude_m": 2,
+  "is_popular": true,
+  "name": {
+   "vi": "Bến Ninh Kiều",
+   "en": "Ninh Kieu Wharf"
+  },
+  "description": {
+   "vi": "Bến sông và công viên trung tâm Cần Thơ.",
+   "en": "Riverside wharf and park in central Can Tho."
+  },
+  "safety_note": {
+   "vi": "Mùa nước nổi tháng 8–11; đi thuyền luôn mặc áo phao; triều cường cuối năm gây ngập ven sông.",
+   "en": "Flood season Aug–Nov; always wear a life jacket on boats. Year-end king tides flood riverbanks."
+  }
+ },
+ {
+  "slug": "san-bay-can-tho",
+  "zone_code": "can-tho",
+  "province_code": "CT",
+  "dest_type": "san_bay",
+  "lat": 10.0851,
+  "lng": 105.7119,
+  "altitude_m": 3,
+  "is_popular": false,
+  "name": {
+   "vi": "Sân bay quốc tế Cần Thơ",
+   "en": "Can Tho International Airport"
+  },
+  "description": {
+   "vi": "Sân bay chính của đồng bằng sông Cửu Long.",
+   "en": "Main airport of the Mekong Delta."
+  },
+  "safety_note": {
+   "vi": "Chuyến bay có thể hoãn, hủy khi bão hoặc sương mù; theo dõi thông báo của hãng bay.",
+   "en": "Flights may be delayed or cancelled by typhoons or fog. Check your airline notices."
+  }
+ },
+ {
+  "slug": "nui-sam-chau-doc",
+  "zone_code": "an-giang",
+  "province_code": "AG",
+  "dest_type": "di_tich",
+  "lat": 10.68,
+  "lng": 105.08,
+  "altitude_m": 230,
+  "is_popular": true,
+  "name": {
+   "vi": "Núi Sam – Miếu Bà Chúa Xứ",
+   "en": "Sam Mountain – Ba Chua Xu Temple"
+  },
+  "description": {
+   "vi": "Trung tâm tín ngưỡng ở Châu Đốc, lễ hội tháng 4 âm lịch rất đông.",
+   "en": "Pilgrimage centre in Chau Doc; very crowded festival in the 4th lunar month."
+  },
+  "safety_note": {
+   "vi": "Mùa lễ hội đầu năm rất đông, nguy cơ chen lấn, móc túi; đi theo nhóm, hẹn điểm tập kết.",
+   "en": "Spring festival season is very crowded with risk of crushes and pickpockets. Stay in groups and set a meeting point."
+  }
+ },
+ {
+  "slug": "rung-tram-tra-su",
+  "zone_code": "an-giang",
+  "province_code": "AG",
+  "dest_type": "vuon_quoc_gia",
+  "lat": 10.58,
+  "lng": 105.05,
+  "altitude_m": 2,
+  "is_popular": true,
+  "name": {
+   "vi": "Rừng tràm Trà Sư",
+   "en": "Tra Su Cajuput Forest"
+  },
+  "description": {
+   "vi": "Rừng ngập nước, đi xuồng xem chim.",
+   "en": "Flooded forest explored by small boat."
+  },
+  "safety_note": {
+   "vi": "Mùa nước nổi tháng 8–11; đi thuyền luôn mặc áo phao; triều cường cuối năm gây ngập ven sông.",
+   "en": "Flood season Aug–Nov; always wear a life jacket on boats. Year-end king tides flood riverbanks."
+  }
+ },
+ {
+  "slug": "ha-tien",
+  "zone_code": "an-giang",
+  "province_code": "AG",
+  "dest_type": "do_thi",
+  "lat": 10.38,
+  "lng": 104.48,
+  "altitude_m": 3,
+  "is_popular": false,
+  "name": {
+   "vi": "Hà Tiên",
+   "en": "Ha Tien"
+  },
+  "description": {
+   "vi": "Thành phố biển gần biên giới Campuchia (Kiên Giang cũ).",
+   "en": "Coastal town near Cambodia (former Kien Giang)."
+  },
+  "safety_note": {
+   "vi": "Mùa mưa tháng 5–11 có dông lốc; gió mùa Tây Nam làm biển động, chú ý cờ cấm tắm.",
+   "en": "Rainy season May–Nov brings sudden squalls; south-west monsoon makes the sea rough. Obey no-swimming flags."
+  }
+ },
+ {
+  "slug": "phu-quoc-duong-dong",
+  "zone_code": "an-giang",
+  "province_code": "AG",
+  "dest_type": "dao",
+  "lat": 10.216,
+  "lng": 103.96,
+  "altitude_m": 5,
+  "is_popular": true,
+  "name": {
+   "vi": "Phú Quốc – Dương Đông",
+   "en": "Phu Quoc – Duong Dong"
+  },
+  "description": {
+   "vi": "Trung tâm đảo Phú Quốc (Kiên Giang cũ).",
+   "en": "Main town of Phu Quoc Island (former Kien Giang)."
+  },
+  "safety_note": {
+   "vi": "Tàu, ca nô có thể dừng chạy khi gió cấp 6 trở lên; dự phòng 1–2 ngày, mang thuốc men cá nhân.",
+   "en": "Ferries and speedboats stop when winds reach force 6. Allow 1–2 spare days and bring personal medicine."
+  }
+ },
+ {
+  "slug": "phu-quoc-bai-sao",
+  "zone_code": "an-giang",
+  "province_code": "AG",
+  "dest_type": "bai_bien",
+  "lat": 10.054,
+  "lng": 104.036,
+  "altitude_m": 2,
+  "is_popular": true,
+  "name": {
+   "vi": "Bãi Sao Phú Quốc",
+   "en": "Sao Beach, Phu Quoc"
+  },
+  "description": {
+   "vi": "Bãi cát trắng phía nam đảo.",
+   "en": "White-sand beach in the south of the island."
+  },
+  "safety_note": {
+   "vi": "Tàu, ca nô có thể dừng chạy khi gió cấp 6 trở lên; dự phòng 1–2 ngày, mang thuốc men cá nhân.",
+   "en": "Ferries and speedboats stop when winds reach force 6. Allow 1–2 spare days and bring personal medicine."
+  }
+ },
+ {
+  "slug": "san-bay-phu-quoc",
+  "zone_code": "an-giang",
+  "province_code": "AG",
+  "dest_type": "san_bay",
+  "lat": 10.1698,
+  "lng": 103.9931,
+  "altitude_m": 5,
+  "is_popular": true,
+  "name": {
+   "vi": "Sân bay quốc tế Phú Quốc",
+   "en": "Phu Quoc International Airport"
+  },
+  "description": {
+   "vi": "Sân bay của đảo Phú Quốc.",
+   "en": "Airport of Phu Quoc Island."
+  },
+  "safety_note": {
+   "vi": "Chuyến bay có thể hoãn, hủy khi bão hoặc sương mù; theo dõi thông báo của hãng bay.",
+   "en": "Flights may be delayed or cancelled by typhoons or fog. Check your airline notices."
+  }
+ },
+ {
+  "slug": "mui-ca-mau",
+  "zone_code": "ca-mau",
+  "province_code": "CM",
+  "dest_type": "khac",
+  "lat": 8.605,
+  "lng": 104.725,
+  "altitude_m": 1,
+  "is_popular": true,
+  "name": {
+   "vi": "Mũi Cà Mau",
+   "en": "Ca Mau Cape"
+  },
+  "description": {
+   "vi": "Điểm cực Nam đất liền, rừng đước ven biển.",
+   "en": "Southernmost point of the mainland, with coastal mangroves."
+  },
+  "safety_note": {
+   "vi": "Mùa nước nổi tháng 8–11; đi thuyền luôn mặc áo phao; triều cường cuối năm gây ngập ven sông.",
+   "en": "Flood season Aug–Nov; always wear a life jacket on boats. Year-end king tides flood riverbanks."
+  }
+ },
+ {
+  "slug": "u-minh-ha",
+  "zone_code": "ca-mau",
+  "province_code": "CM",
+  "dest_type": "vuon_quoc_gia",
+  "lat": 9.23,
+  "lng": 104.93,
+  "altitude_m": 1,
+  "is_popular": false,
+  "name": {
+   "vi": "Vườn quốc gia U Minh Hạ",
+   "en": "U Minh Ha National Park"
+  },
+  "description": {
+   "vi": "Rừng tràm trên đất than bùn, nguy cơ cháy mùa khô.",
+   "en": "Cajuput forest on peat, fire-prone in the dry season."
+  },
+  "safety_note": {
+   "vi": "Mùa khô có nguy cơ cháy rừng, không đốt lửa; mùa mưa có vắt và đường lầy, đi cùng kiểm lâm.",
+   "en": "Dry season brings fire risk, no open fires. Rainy season has leeches and muddy trails; trek with rangers."
+  }
+ },
+ {
+  "slug": "canh-dong-dien-gio-bac-lieu",
+  "zone_code": "ca-mau",
+  "province_code": "CM",
+  "dest_type": "khac",
+  "lat": 9.22,
+  "lng": 105.8,
+  "altitude_m": 1,
+  "is_popular": false,
+  "name": {
+   "vi": "Cánh đồng điện gió Bạc Liêu",
+   "en": "Bac Lieu Wind Farm"
+  },
+  "description": {
+   "vi": "Hàng trụ điện gió ven biển (Bạc Liêu cũ).",
+   "en": "Coastal wind turbines (former Bac Lieu)."
+  },
+  "safety_note": {
+   "vi": "Mùa mưa tháng 5–11 có dông lốc; gió mùa Tây Nam làm biển động, chú ý cờ cấm tắm.",
+   "en": "Rainy season May–Nov brings sudden squalls; south-west monsoon makes the sea rough. Obey no-swimming flags."
+  }
+ }
+]

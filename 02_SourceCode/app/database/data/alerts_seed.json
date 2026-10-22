@@ -1,0 +1,1984 @@
+[
+ {
+  "code": "AL-SIM-0001",
+  "source_code": "simulation",
+  "hazard_code": "bao",
+  "severity": 4,
+  "status": "active",
+  "is_simulated": true,
+  "zone_codes": [
+   "quang-ninh",
+   "hai-phong",
+   "vinh-ha-long",
+   "cat-ba-lan-ha"
+  ],
+  "geometry": null,
+  "starts_at": "-0d 06:00",
+  "ends_at": "+2d 18:00",
+  "issued_at": "-1d 17:00",
+  "updated_at_source": "-0d 05:00",
+  "source_name": "Mô phỏng theo bão Yagi 9/2024 (nguồn: Trung tâm Dự báo KTTV quốc gia)",
+  "source_url": "https://nchmf.gov.vn",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Bão mạnh tiến vào vùng biển Quảng Ninh – Hải Phòng",
+   "en": "[SIMULATION] Strong typhoon approaching Quang Ninh – Hai Phong"
+  },
+  "description": {
+   "vi": "Bão mạnh trên vịnh Bắc Bộ, dự kiến ảnh hưởng trực tiếp Quảng Ninh, Hải Phòng trong 24–36 giờ tới; gió vùng gần tâm cấp 12–13, giật trên cấp 15; mưa 200–300 mm; nước dâng ven biển.",
+   "en": "A strong typhoon in the Gulf of Tonkin will hit Quang Ninh and Hai Phong within 24–36 hours. Winds near the centre force 12–13, gusts above force 15; 200–300 mm of rain; storm surge on the coast."
+  },
+  "instructions": {
+   "vi": "Hủy mọi chuyến tham quan vịnh và đảo. Ở trong nhà kiên cố, tránh xa cửa kính. Sạc đầy điện thoại, chuẩn bị nước và đồ ăn 2–3 ngày. Làm theo hướng dẫn sơ tán của chính quyền.",
+   "en": "Cancel all bay and island trips. Stay inside a solid building away from windows. Charge your phone and keep water and food for 2–3 days. Follow evacuation orders."
+  }
+ },
+ {
+  "code": "AL-SIM-0002",
+  "source_code": "simulation",
+  "hazard_code": "song_lon",
+  "severity": 3,
+  "status": "active",
+  "is_simulated": true,
+  "zone_codes": [
+   "vinh-ha-long",
+   "cat-ba-lan-ha"
+  ],
+  "geometry": {
+   "type": "Polygon",
+   "coordinates": [
+    [
+     [
+      106.95,
+      20.7
+     ],
+     [
+      107.45,
+      20.7
+     ],
+     [
+      107.45,
+      21.05
+     ],
+     [
+      106.95,
+      21.05
+     ],
+     [
+      106.95,
+      20.7
+     ]
+    ]
+   ]
+  },
+  "starts_at": "-0d 00:00",
+  "ends_at": "+2d 23:00",
+  "issued_at": "-1d 15:00",
+  "updated_at_source": "-0d 05:00",
+  "source_name": "Mô phỏng theo thông báo tạm dừng tàu du lịch của Quảng Ninh, Hải Phòng (bão Yagi 9/2024)",
+  "source_url": "https://nchmf.gov.vn",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Tạm dừng tàu du lịch trên vịnh Hạ Long – Lan Hạ",
+   "en": "[SIMULATION] Cruise boats suspended in Ha Long – Lan Ha Bay"
+  },
+  "description": {
+   "vi": "Biển động mạnh, sóng cao 3–5 m; cơ quan chức năng tạm dừng cấp phép tàu du lịch, tàu khách ra đảo cho tới khi có thông báo mới.",
+   "en": "Very rough sea with 3–5 m waves. Authorities have stopped tour boats and passenger ferries until further notice."
+  },
+  "instructions": {
+   "vi": "Không lên tàu, ca nô ra vịnh. Liên hệ công ty lữ hành để đổi lịch. Khách đang ở đảo ở yên trong nơi lưu trú.",
+   "en": "Do not board boats into the bay. Contact your tour operator to reschedule. If on an island, stay at your lodging."
+  }
+ },
+ {
+  "code": "AL-SIM-0003",
+  "source_code": "simulation",
+  "hazard_code": "mua_lon",
+  "severity": 2,
+  "status": "active",
+  "is_simulated": true,
+  "zone_codes": [
+   "ha-noi",
+   "noi-do-ha-noi"
+  ],
+  "geometry": null,
+  "starts_at": "+0d 12:00",
+  "ends_at": "+1d 23:00",
+  "issued_at": "-0d 04:30",
+  "updated_at_source": "-0d 04:30",
+  "source_name": "Mô phỏng theo bản tin mưa lớn Bắc Bộ (nguồn: Trung tâm Dự báo KTTV quốc gia)",
+  "source_url": "https://nchmf.gov.vn",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Mưa to đến rất to ở Hà Nội, nguy cơ ngập đô thị",
+   "en": "[SIMULATION] Heavy to very heavy rain in Hanoi, risk of urban flooding"
+  },
+  "description": {
+   "vi": "Từ trưa nay đến hết ngày mai Hà Nội có mưa to, lượng 80–150 mm, có nơi trên 200 mm; nhiều tuyến phố nội đô có thể ngập 20–40 cm.",
+   "en": "From midday today to the end of tomorrow, Hanoi expects 80–150 mm of rain, locally over 200 mm. Many inner-city streets may flood 20–40 cm."
+  },
+  "instructions": {
+   "vi": "Hạn chế đi xe máy qua đường ngập. Tránh hầm chui, hố ga. Dự phòng thêm thời gian ra sân bay Nội Bài.",
+   "en": "Avoid riding through flooded streets. Stay away from underpasses and drains. Allow extra time to Noi Bai Airport."
+  }
+ },
+ {
+  "code": "AL-SIM-0004",
+  "source_code": "simulation",
+  "hazard_code": "lu_quet",
+  "severity": 4,
+  "status": "active",
+  "is_simulated": true,
+  "zone_codes": [
+   "lao-cai",
+   "sa-pa-fansipan"
+  ],
+  "geometry": {
+   "type": "Circle",
+   "center": {
+    "lat": 22.3,
+    "lng": 103.95
+   },
+   "radius_km": 40
+  },
+  "starts_at": "+0d 18:00",
+  "ends_at": "+2d 12:00",
+  "issued_at": "-0d 05:00",
+  "updated_at_source": "-0d 05:00",
+  "source_name": "Mô phỏng theo cảnh báo lũ quét, sạt lở tháng 9/2024 tại Lào Cai (nguồn: Trung tâm Dự báo KTTV quốc gia)",
+  "source_url": "https://nchmf.gov.vn",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Nguy cơ rất cao lũ quét, sạt lở đất tại Lào Cai",
+   "en": "[SIMULATION] Very high risk of flash floods and landslides in Lao Cai"
+  },
+  "description": {
+   "vi": "Mưa lớn kéo dài, lượng 150–250 mm trong 48 giờ; nguy cơ lũ quét trên sông suối nhỏ và sạt lở đất ở Sa Pa, Bát Xát, Bảo Yên, Văn Bàn.",
+   "en": "Prolonged heavy rain of 150–250 mm in 48 hours. Flash floods in small streams and landslides are likely in Sa Pa, Bat Xat, Bao Yen and Van Ban."
+  },
+  "instructions": {
+   "vi": "Hủy trekking, không ở lại homestay sát suối. Không đi đèo ban đêm. Gặp nước suối dâng nhanh, đục: lên chỗ cao ngay. Gọi 112 khi gặp nạn.",
+   "en": "Cancel treks; do not stay in homestays by streams. Avoid mountain roads at night. If a stream rises fast or turns muddy, climb to high ground now. Call 112 in an emergency."
+  }
+ },
+ {
+  "code": "AL-SIM-0005",
+  "source_code": "simulation",
+  "hazard_code": "sat_lo",
+  "severity": 3,
+  "status": "active",
+  "is_simulated": true,
+  "zone_codes": [
+   "deo-o-quy-ho",
+   "lai-chau"
+  ],
+  "geometry": null,
+  "starts_at": "+0d 18:00",
+  "ends_at": "+2d 12:00",
+  "issued_at": "-0d 05:00",
+  "updated_at_source": "-0d 05:00",
+  "source_name": "Mô phỏng theo cảnh báo sạt lở vùng núi Tây Bắc (nguồn: Trung tâm Dự báo KTTV quốc gia)",
+  "source_url": "https://nchmf.gov.vn",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Cảnh báo sạt lở trên đèo Ô Quy Hồ (QL4D)",
+   "en": "[SIMULATION] Landslide warning on O Quy Ho Pass (Highway 4D)"
+  },
+  "description": {
+   "vi": "Đất đá có thể sạt xuống mặt đường QL4D đoạn Sa Pa – Tam Đường; có thể phân luồng hoặc tạm cấm xe ban đêm.",
+   "en": "Rocks and soil may fall onto Highway 4D between Sa Pa and Tam Duong. Traffic may be diverted or banned at night."
+  },
+  "instructions": {
+   "vi": "Không đi đèo khi trời mưa hoặc ban đêm. Không dừng đỗ dưới taluy cao. Theo dõi thông báo phân luồng.",
+   "en": "Do not cross the pass in rain or at night. Do not stop below steep cuttings. Follow diversion notices."
+  }
+ },
+ {
+  "code": "AL-SIM-0006",
+  "source_code": "simulation",
+  "hazard_code": "lu",
+  "severity": 4,
+  "status": "active",
+  "is_simulated": true,
+  "zone_codes": [
+   "hue",
+   "kinh-thanh-hue"
+  ],
+  "geometry": null,
+  "starts_at": "+0d 12:00",
+  "ends_at": "+3d 12:00",
+  "issued_at": "-0d 03:00",
+  "updated_at_source": "-0d 06:00",
+  "source_name": "Mô phỏng theo đợt lũ lớn miền Trung tháng 10/2020 (nguồn: Trung tâm Dự báo KTTV quốc gia)",
+  "source_url": "https://nchmf.gov.vn",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Lũ trên sông Hương, sông Bồ lên báo động 3",
+   "en": "[SIMULATION] Floods on the Huong and Bo rivers reach alarm level 3"
+  },
+  "description": {
+   "vi": "Mưa rất to 300–500 mm; lũ sông Hương, sông Bồ lên mức báo động 3 và có thể vượt; ngập sâu vùng trũng thành phố Huế, các tuyến ven sông.",
+   "en": "Very heavy rain of 300–500 mm. The Huong and Bo rivers will reach and may exceed alarm level 3, deeply flooding low parts of Hue and riverside roads."
+  },
+  "instructions": {
+   "vi": "Tạm dừng tham quan lăng tẩm ven sông và đi thuyền trên sông Hương. Chuyển hành lý lên tầng cao. Không lội qua đường ngập. Theo dõi hướng dẫn sơ tán.",
+   "en": "Suspend visits to riverside tombs and Perfume River boat trips. Move luggage upstairs. Do not wade through floodwater. Follow evacuation advice."
+  }
+ },
+ {
+  "code": "AL-SIM-0007",
+  "source_code": "simulation",
+  "hazard_code": "lu",
+  "severity": 3,
+  "status": "active",
+  "is_simulated": true,
+  "zone_codes": [
+   "pho-co-hoi-an",
+   "da-nang"
+  ],
+  "geometry": null,
+  "starts_at": "+1d 00:00",
+  "ends_at": "+3d 12:00",
+  "issued_at": "-0d 05:00",
+  "updated_at_source": "-0d 05:00",
+  "source_name": "Mô phỏng theo lũ sông Thu Bồn tháng 10/2020 (nguồn: Trung tâm Dự báo KTTV quốc gia)",
+  "source_url": "https://nchmf.gov.vn",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Lũ sông Thu Bồn, nguy cơ ngập phố cổ Hội An",
+   "en": "[SIMULATION] Thu Bon River flood, Hoi An Ancient Town may flood"
+  },
+  "description": {
+   "vi": "Lũ hạ lưu sông Thu Bồn dự kiến lên báo động 2–3; nước có thể tràn vào các tuyến phố Bạch Đằng, Nguyễn Thái Học, sâu 0,5–1 m.",
+   "en": "The lower Thu Bon River is forecast to reach alarm level 2–3. Water may flood Bach Dang and Nguyen Thai Hoc streets 0.5–1 m deep."
+  },
+  "instructions": {
+   "vi": "Không đi thuyền thả đèn trên sông. Chọn nơi ở ngoài vùng trũng. Theo dõi thông báo của chính quyền Hội An.",
+   "en": "Do not take lantern boats on the river. Stay outside low-lying areas. Follow Hoi An authority notices."
+  }
+ },
+ {
+  "code": "AL-SIM-0008",
+  "source_code": "simulation",
+  "hazard_code": "mua_lon",
+  "severity": 3,
+  "status": "active",
+  "is_simulated": true,
+  "zone_codes": [
+   "da-nang",
+   "ven-bien-da-nang"
+  ],
+  "geometry": null,
+  "starts_at": "+0d 15:00",
+  "ends_at": "+1d 18:00",
+  "issued_at": "-0d 05:00",
+  "updated_at_source": "-0d 05:00",
+  "source_name": "Mô phỏng theo đợt mưa cực lớn tại Đà Nẵng ngày 14–15/10/2022 (nguồn: Trung tâm Dự báo KTTV quốc gia)",
+  "source_url": "https://nchmf.gov.vn",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Mưa rất to tại Đà Nẵng, nhiều tuyến đường có thể ngập sâu",
+   "en": "[SIMULATION] Very heavy rain in Da Nang, many roads may flood deeply"
+  },
+  "description": {
+   "vi": "Mưa rất to tập trung trong 6–12 giờ, lượng có thể vượt 300 mm; nguy cơ ngập sâu tại các quận trung tâm, sạt lở ở bán đảo Sơn Trà.",
+   "en": "Very heavy rain concentrated over 6–12 hours, possibly above 300 mm. Deep flooding likely in central districts and landslides on Son Tra peninsula."
+  },
+  "instructions": {
+   "vi": "Hạn chế ra đường từ chiều nay. Không đi lên Sơn Trà, Bà Nà khi mưa to. Đỗ xe ở nơi cao. Theo dõi thông báo của thành phố.",
+   "en": "Limit travel from this afternoon. Do not drive up Son Tra or Ba Na in heavy rain. Park on high ground. Follow city notices."
+  }
+ },
+ {
+  "code": "AL-SIM-0009",
+  "source_code": "simulation",
+  "hazard_code": "sat_lo",
+  "severity": 3,
+  "status": "active",
+  "is_simulated": true,
+  "zone_codes": [
+   "deo-hai-van"
+  ],
+  "geometry": null,
+  "starts_at": "+0d 15:00",
+  "ends_at": "+2d 12:00",
+  "issued_at": "-0d 05:00",
+  "updated_at_source": "-0d 05:00",
+  "source_name": "Mô phỏng theo cảnh báo sạt lở đèo Hải Vân mùa mưa (nguồn: Trung tâm Dự báo KTTV quốc gia)",
+  "source_url": "https://nchmf.gov.vn",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Nguy cơ sạt lở trên đèo Hải Vân",
+   "en": "[SIMULATION] Landslide risk on Hai Van Pass"
+  },
+  "description": {
+   "vi": "Mưa lớn làm tăng nguy cơ đá lăn, sạt taluy trên đèo Hải Vân; khuyến nghị xe khách và xe du lịch đi qua hầm Hải Vân.",
+   "en": "Heavy rain raises the risk of rockfall on Hai Van Pass. Coaches and tourist vehicles should use the Hai Van Tunnel."
+  },
+  "instructions": {
+   "vi": "Không đi xe máy qua đèo khi mưa. Không dừng chụp ảnh ở khúc cua có vách đá. Dùng hầm Hải Vân.",
+   "en": "Do not ride over the pass in rain. Do not stop for photos at cliff bends. Use the Hai Van Tunnel."
+  }
+ },
+ {
+  "code": "AL-SIM-0010",
+  "source_code": "simulation",
+  "hazard_code": "ap_thap",
+  "severity": 2,
+  "status": "active",
+  "is_simulated": true,
+  "zone_codes": [
+   "khanh-hoa",
+   "vinh-nha-trang",
+   "dak-lak"
+  ],
+  "geometry": null,
+  "starts_at": "+1d 00:00",
+  "ends_at": "+3d 23:00",
+  "issued_at": "-0d 04:00",
+  "updated_at_source": "-0d 04:00",
+  "source_name": "Mô phỏng theo bản tin áp thấp nhiệt đới trên Biển Đông (nguồn: Trung tâm Dự báo KTTV quốc gia)",
+  "source_url": "https://nchmf.gov.vn",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Áp thấp nhiệt đới trên Biển Đông có thể mạnh lên thành bão",
+   "en": "[SIMULATION] Tropical depression in the East Sea may become a typhoon"
+  },
+  "description": {
+   "vi": "Áp thấp nhiệt đới cách bờ biển Khánh Hòa khoảng 400 km, gió cấp 6–7; trong 48 giờ tới có thể mạnh lên thành bão và gây mưa lớn Nam Trung Bộ.",
+   "en": "A tropical depression about 400 km off the Khanh Hoa coast has force 6–7 winds. It may become a typhoon within 48 hours and bring heavy rain to the South Central coast."
+  },
+  "instructions": {
+   "vi": "Xem lại lịch đi đảo, lặn biển trong 3 ngày tới. Theo dõi cập nhật mỗi 6 giờ. Chuẩn bị phương án về sớm.",
+   "en": "Review island and diving plans for the next 3 days. Check updates every 6 hours. Prepare to return early."
+  }
+ },
+ {
+  "code": "AL-SIM-0011",
+  "source_code": "simulation",
+  "hazard_code": "trieu_cuong",
+  "severity": 2,
+  "status": "active",
+  "is_simulated": true,
+  "zone_codes": [
+   "noi-thanh-tp-hcm",
+   "ho-chi-minh"
+  ],
+  "geometry": null,
+  "starts_at": "+0d 16:00",
+  "ends_at": "+3d 20:00",
+  "issued_at": "-0d 06:00",
+  "updated_at_source": "-0d 06:00",
+  "source_name": "Mô phỏng theo bản tin triều cường cuối năm (nguồn: Đài KTTV khu vực Nam Bộ)",
+  "source_url": "https://nchmf.gov.vn",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Triều cường đạt đỉnh chiều tối tại TP.HCM",
+   "en": "[SIMULATION] King tide peaks in the evening in Ho Chi Minh City"
+  },
+  "description": {
+   "vi": "Đỉnh triều tại trạm Phú An dự báo xấp xỉ báo động 3 vào khoảng 17–19 giờ các ngày tới; ngập các tuyến ven kênh, vùng trũng.",
+   "en": "Peak tide at Phu An station is forecast near alarm level 3 around 17:00–19:00 in the coming days, flooding canal-side streets and low areas."
+  },
+  "instructions": {
+   "vi": "Tránh đường ven kênh Tàu Hủ, Thanh Đa, Bình Quới vào giờ triều đỉnh. Đi sân bay sớm hơn 1 giờ. Không đi xe máy qua chỗ ngập sâu.",
+   "en": "Avoid canal-side roads such as Tau Hu, Thanh Da and Binh Quoi at peak tide. Leave for the airport an hour earlier. Do not ride through deep water."
+  }
+ },
+ {
+  "code": "AL-SIM-0012",
+  "source_code": "simulation",
+  "hazard_code": "mua_lon",
+  "severity": 2,
+  "status": "active",
+  "is_simulated": true,
+  "zone_codes": [
+   "ho-chi-minh"
+  ],
+  "geometry": null,
+  "starts_at": "+0d 14:00",
+  "ends_at": "+0d 20:00",
+  "issued_at": "-0d 10:00",
+  "updated_at_source": "-0d 10:00",
+  "source_name": "Mô phỏng theo bản tin dông, mưa lớn Nam Bộ (nguồn: Đài KTTV khu vực Nam Bộ)",
+  "source_url": "https://nchmf.gov.vn",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Mưa dông chiều tối kèm triều cường tại TP.HCM",
+   "en": "[SIMULATION] Evening thunderstorms with king tide in Ho Chi Minh City"
+  },
+  "description": {
+   "vi": "Chiều tối có mưa rào và dông, lượng 40–80 mm trong 2–3 giờ, trùng giờ triều cường làm tăng nguy cơ ngập.",
+   "en": "Evening showers and thunderstorms with 40–80 mm in 2–3 hours, coinciding with the king tide, will increase flooding."
+  },
+  "instructions": {
+   "vi": "Hoàn tất tham quan ngoài trời trước 15 giờ. Tránh trú dưới cây to. Dùng xe ô tô thay vì xe máy khi đường ngập.",
+   "en": "Finish outdoor visits before 15:00. Do not shelter under large trees. Use cars rather than motorbikes on flooded roads."
+  }
+ },
+ {
+  "code": "AL-SIM-0013",
+  "source_code": "simulation",
+  "hazard_code": "song_lon",
+  "severity": 3,
+  "status": "active",
+  "is_simulated": true,
+  "zone_codes": [
+   "phu-quoc",
+   "an-giang"
+  ],
+  "geometry": null,
+  "starts_at": "+0d 06:00",
+  "ends_at": "+2d 18:00",
+  "issued_at": "-1d 20:00",
+  "updated_at_source": "-0d 05:00",
+  "source_name": "Mô phỏng theo cảnh báo gió mạnh, sóng lớn vùng biển Tây Nam (nguồn: Trung tâm Dự báo KTTV quốc gia)",
+  "source_url": "https://nchmf.gov.vn",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Gió mạnh, sóng lớn vùng biển Phú Quốc",
+   "en": "[SIMULATION] Strong winds and high waves around Phu Quoc"
+  },
+  "description": {
+   "vi": "Vùng biển từ Cà Mau đến Kiên Giang (cũ) gió Tây Nam cấp 6, giật cấp 7–8, sóng cao 2–3 m; tàu cao tốc Rạch Giá – Phú Quốc có thể tạm ngừng.",
+   "en": "South-west winds force 6, gusting 7–8, with 2–3 m waves from Ca Mau to former Kien Giang. Rach Gia – Phu Quoc fast ferries may be suspended."
+  },
+  "instructions": {
+   "vi": "Không tắm biển ở bờ Tây đảo. Không đi tour cano câu cá, lặn ngắm san hô. Kiểm tra lịch tàu và chuyến bay về đất liền.",
+   "en": "Do not swim on the west coast of the island. Skip speedboat fishing and snorkelling tours. Check ferry and flight schedules."
+  }
+ },
+ {
+  "code": "AL-SIM-0014",
+  "source_code": "simulation",
+  "hazard_code": "song_lon",
+  "severity": 2,
+  "status": "active",
+  "is_simulated": true,
+  "zone_codes": [
+   "con-dao",
+   "vung-tau-ven-bien"
+  ],
+  "geometry": null,
+  "starts_at": "+2d 00:00",
+  "ends_at": "+4d 23:00",
+  "issued_at": "-0d 06:00",
+  "updated_at_source": "-0d 06:00",
+  "source_name": "Mô phỏng theo cảnh báo gió mạnh trên biển Nam Bộ (nguồn: Trung tâm Dự báo KTTV quốc gia)",
+  "source_url": "https://nchmf.gov.vn",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Biển động vùng Côn Đảo – Vũng Tàu",
+   "en": "[SIMULATION] Rough sea around Con Dao – Vung Tau"
+  },
+  "description": {
+   "vi": "Gió cấp 5–6, sóng cao 2–2,5 m; tàu khách Vũng Tàu – Côn Đảo có thể điều chỉnh lịch chạy.",
+   "en": "Winds force 5–6, waves 2–2.5 m. Vung Tau – Con Dao passenger ships may change schedules."
+  },
+  "instructions": {
+   "vi": "Chỉ tắm ở khu vực có cứu hộ. Kiểm tra lịch tàu trước khi ra bến. Mang thuốc chống say sóng.",
+   "en": "Swim only at lifeguarded areas. Check ship schedules before going to the port. Bring seasickness tablets."
+  }
+ },
+ {
+  "code": "AL-SIM-0015",
+  "source_code": "simulation",
+  "hazard_code": "dong_set",
+  "severity": 2,
+  "status": "active",
+  "is_simulated": true,
+  "zone_codes": [
+   "da-lat-langbiang",
+   "lam-dong"
+  ],
+  "geometry": null,
+  "starts_at": "+0d 13:00",
+  "ends_at": "+1d 19:00",
+  "issued_at": "-0d 07:00",
+  "updated_at_source": "-0d 07:00",
+  "source_name": "Mô phỏng theo cảnh báo dông sét Tây Nguyên (nguồn: Đài KTTV khu vực Tây Nguyên)",
+  "source_url": "https://nchmf.gov.vn",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Dông, sét và mưa đá cục bộ ở Đà Lạt",
+   "en": "[SIMULATION] Thunderstorms, lightning and local hail in Da Lat"
+  },
+  "description": {
+   "vi": "Chiều tối có dông mạnh, sét, gió giật cấp 6–7, có nơi mưa đá; đường đèo Prenn, Mimosa trơn trượt.",
+   "en": "Strong evening thunderstorms with lightning, gusts force 6–7 and local hail. Prenn and Mimosa passes will be slippery."
+  },
+  "instructions": {
+   "vi": "Xuống núi Lang Biang trước 14 giờ. Không đứng dưới cây đơn độc, không chèo thuyền trên hồ khi có sấm. Lái xe chậm trên đèo.",
+   "en": "Come down Lang Biang before 14:00. Avoid lone trees and boating on lakes when thunder sounds. Drive slowly on passes."
+  }
+ },
+ {
+  "code": "AL-SIM-0016",
+  "source_code": "simulation",
+  "hazard_code": "suong_mu",
+  "severity": 1,
+  "status": "active",
+  "is_simulated": true,
+  "zone_codes": [
+   "cao-nguyen-da-dong-van",
+   "tuyen-quang"
+  ],
+  "geometry": null,
+  "starts_at": "+1d 04:00",
+  "ends_at": "+1d 10:00",
+  "issued_at": "-0d 15:00",
+  "updated_at_source": "-0d 15:00",
+  "source_name": "Mô phỏng theo bản tin sương mù vùng núi phía Bắc (nguồn: Trung tâm Dự báo KTTV quốc gia)",
+  "source_url": "https://nchmf.gov.vn",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Sương mù dày sáng sớm trên cao nguyên đá Đồng Văn",
+   "en": "[SIMULATION] Dense early-morning fog on the Dong Van Karst Plateau"
+  },
+  "description": {
+   "vi": "Sáng sớm có sương mù dày, tầm nhìn dưới 100 m trên đèo Mã Pì Lèng và các cung đường vòng cung Hà Giang.",
+   "en": "Dense morning fog will reduce visibility below 100 m on Ma Pi Leng Pass and the Ha Giang loop roads."
+  },
+  "instructions": {
+   "vi": "Khởi hành sau 9 giờ. Bật đèn chiếu gần, đi chậm, không vượt. Dừng ở chỗ an toàn nếu không thấy đường.",
+   "en": "Start after 09:00. Use low beams, drive slowly and do not overtake. Pull over safely if you cannot see the road."
+  }
+ },
+ {
+  "code": "AL-SIM-0017",
+  "source_code": "simulation",
+  "hazard_code": "an_ninh",
+  "severity": 2,
+  "status": "active",
+  "is_simulated": true,
+  "zone_codes": [
+   "noi-do-ha-noi"
+  ],
+  "geometry": null,
+  "starts_at": "+0d 17:00",
+  "ends_at": "+3d 23:00",
+  "issued_at": "-0d 08:00",
+  "updated_at_source": "-0d 08:00",
+  "source_name": "Mô phỏng khuyến cáo an ninh trật tự tại phố đi bộ (nguồn: Công an thành phố Hà Nội – khuyến cáo chung)",
+  "source_url": "https://congan.hanoi.gov.vn",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Đông người tại phố đi bộ Hồ Gươm, đề phòng móc túi",
+   "en": "[SIMULATION] Crowds at Hoan Kiem walking street – beware of pickpockets"
+  },
+  "description": {
+   "vi": "Dịp cuối tuần và sự kiện văn hóa, khu phố đi bộ Hồ Gươm và phố cổ rất đông; ghi nhận một số trường hợp móc túi, giật điện thoại.",
+   "en": "During weekends and cultural events, the Hoan Kiem walking street and Old Quarter are very crowded; pickpocketing and phone snatching have been reported."
+  },
+  "instructions": {
+   "vi": "Giữ ví, điện thoại ở túi trước có khóa. Hẹn điểm tập trung nếu lạc nhau. Báo ngay công an tại chốt hoặc gọi 113.",
+   "en": "Keep wallets and phones in zipped front pockets. Agree a meeting point. Report incidents to police posts or call 113."
+  }
+ },
+ {
+  "code": "AL-SIM-0018",
+  "source_code": "simulation",
+  "hazard_code": "dich_benh",
+  "severity": 2,
+  "status": "active",
+  "is_simulated": true,
+  "zone_codes": [
+   "ha-noi"
+  ],
+  "geometry": null,
+  "starts_at": "-2d 00:00",
+  "ends_at": "+3d 23:00",
+  "issued_at": "-2d 09:00",
+  "updated_at_source": "-0d 09:00",
+  "source_name": "Mô phỏng theo khuyến cáo phòng chống sốt xuất huyết mùa mưa (nguồn: Sở Y tế Hà Nội, WHO)",
+  "source_url": "https://www.who.int/news-room/fact-sheets/detail/dengue-and-severe-dengue",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Sốt xuất huyết gia tăng tại Hà Nội",
+   "en": "[SIMULATION] Dengue cases rising in Hanoi"
+  },
+  "description": {
+   "vi": "Số ca sốt xuất huyết tăng cao vào cuối mùa mưa, tập trung ở các quận nội thành đông dân.",
+   "en": "Dengue cases are increasing at the end of the rainy season, mainly in densely populated inner districts."
+  },
+  "instructions": {
+   "vi": "Dùng kem chống muỗi cả ngày. Mặc áo dài tay. Sốt cao đột ngột hãy đi khám ngay, không tự dùng aspirin.",
+   "en": "Use repellent throughout the day. Wear long sleeves. See a doctor for sudden high fever; do not take aspirin."
+  }
+ },
+ {
+  "code": "AL-SIM-0019",
+  "source_code": "simulation",
+  "hazard_code": "giao_thong",
+  "severity": 2,
+  "status": "active",
+  "is_simulated": true,
+  "zone_codes": [
+   "trang-an-tam-coc",
+   "ninh-binh"
+  ],
+  "geometry": null,
+  "starts_at": "+0d 06:00",
+  "ends_at": "+2d 12:00",
+  "issued_at": "-0d 05:30",
+  "updated_at_source": "-0d 05:30",
+  "source_name": "Mô phỏng thông báo tạm dừng đò Tràng An – Tam Cốc khi nước lên (nguồn: Ban Quản lý Quần thể danh thắng Tràng An – mô phỏng)",
+  "source_url": "https://trangandanhthang.vn",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Tạm dừng đi thuyền tham quan Tràng An, Tam Cốc",
+   "en": "[SIMULATION] Boat tours in Trang An and Tam Coc suspended"
+  },
+  "description": {
+   "vi": "Mực nước sông Sào Khê, Ngô Đồng dâng cao do mưa lớn; các tuyến thuyền xuyên hang tạm dừng để đảm bảo an toàn.",
+   "en": "Water levels on the Sao Khe and Ngo Dong rivers have risen after heavy rain; cave boat routes are suspended for safety."
+  },
+  "instructions": {
+   "vi": "Đổi sang tham quan chùa Bái Đính, cố đô Hoa Lư. Theo dõi thông báo mở lại. Không tự ý thuê đò tư nhân.",
+   "en": "Switch to Bai Dinh Pagoda or the Hoa Lu ancient capital. Watch for reopening notices. Do not hire unofficial boats."
+  }
+ },
+ {
+  "code": "AL-SIM-0020",
+  "source_code": "simulation",
+  "hazard_code": "lu",
+  "severity": 3,
+  "status": "active",
+  "is_simulated": true,
+  "zone_codes": [
+   "phong-nha-ke-bang",
+   "quang-tri"
+  ],
+  "geometry": null,
+  "starts_at": "+0d 12:00",
+  "ends_at": "+3d 12:00",
+  "issued_at": "-0d 06:00",
+  "updated_at_source": "-0d 06:00",
+  "source_name": "Mô phỏng theo lũ sông Gianh, sông Son tháng 10/2020 (nguồn: Trung tâm Dự báo KTTV quốc gia)",
+  "source_url": "https://nchmf.gov.vn",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Lũ sông Son, tạm đóng cửa tham quan hang động Phong Nha",
+   "en": "[SIMULATION] Son River flood, Phong Nha caves closed"
+  },
+  "description": {
+   "vi": "Lũ sông Son lên nhanh, bến thuyền Phong Nha ngập; các tuyến tham quan động Phong Nha, hang Tối, sông Chày tạm dừng.",
+   "en": "The Son River is rising fast and Phong Nha boat pier is flooded. Tours to Phong Nha Cave, Dark Cave and Chay River are suspended."
+  },
+  "instructions": {
+   "vi": "Không tự đi xuyên rừng, khám phá hang. Ở lại nơi lưu trú trên cao. Kiểm tra đường Hồ Chí Minh nhánh Tây trước khi đi.",
+   "en": "Do not trek or explore caves on your own. Stay at lodging on higher ground. Check the western Ho Chi Minh Road before travelling."
+  }
+ },
+ {
+  "code": "AL-SIM-0021",
+  "source_code": "simulation",
+  "hazard_code": "dong_dat",
+  "severity": 1,
+  "status": "active",
+  "is_simulated": true,
+  "zone_codes": [
+   "quang-ngai"
+  ],
+  "geometry": null,
+  "starts_at": "-0d 08:00",
+  "ends_at": "+1d 08:00",
+  "issued_at": "-0d 08:40",
+  "updated_at_source": "-0d 08:40",
+  "source_name": "Mô phỏng theo bản tin động đất Kon Plông 2024 (nguồn: Viện Các khoa học Trái đất – Trung tâm Báo tin động đất và cảnh báo sóng thần)",
+  "source_url": "https://igp-vast.vn",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Động đất nhỏ tại Kon Plông, khu vực Măng Đen",
+   "en": "[SIMULATION] Minor earthquake at Kon Plong near Mang Den"
+  },
+  "description": {
+   "vi": "Trận động đất độ lớn khoảng 3,5 tại Kon Plông (Kon Tum cũ); rung lắc nhẹ, chưa ghi nhận thiệt hại. Có thể có dư chấn nhỏ.",
+   "en": "An earthquake of about magnitude 3.5 struck Kon Plong (former Kon Tum). Light shaking, no damage reported. Small aftershocks are possible."
+  },
+  "instructions": {
+   "vi": "Nếu rung lắc: Cúi xuống – Che chắn – Bám chặt. Tránh vách taluy, mỏm đá. Kiểm tra nơi ở sau rung lắc.",
+   "en": "If shaking starts: Drop, Cover, Hold on. Keep away from cuttings and rock outcrops. Check your lodging afterwards."
+  }
+ },
+ {
+  "code": "AL-SIM-0022",
+  "source_code": "simulation",
+  "hazard_code": "song_lon",
+  "severity": 3,
+  "status": "expired",
+  "is_simulated": true,
+  "zone_codes": [
+   "quang-ninh",
+   "hai-phong",
+   "vinh-ha-long",
+   "cat-ba-lan-ha"
+  ],
+  "geometry": null,
+  "starts_at": "2024-09-05T10:00:00+07:00",
+  "ends_at": "2024-09-08T18:00:00+07:00",
+  "issued_at": "2024-09-05T10:00:00+07:00",
+  "updated_at_source": "2024-09-05T10:00:00+07:00",
+  "source_name": "Mô phỏng theo bão số 3 (Yagi) 9/2024 (nguồn: Trung tâm Dự báo KTTV quốc gia; Wikipedia – Typhoon Yagi)",
+  "source_url": "https://en.wikipedia.org/wiki/Typhoon_Yagi",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Bão số 3 (Yagi) gây gió mạnh, sóng lớn trên vịnh Bắc Bộ",
+   "en": "[SIMULATION] Typhoon Yagi brings strong winds and high waves to the Gulf of Tonkin"
+  },
+  "description": {
+   "vi": "Bão Yagi (bão số 3) đi vào vịnh Bắc Bộ; vùng biển Quảng Ninh – Hải Phòng gió rất mạnh, sóng cao nhiều mét, biển động dữ dội.",
+   "en": "Typhoon Yagi (No. 3) entered the Gulf of Tonkin; the Quang Ninh – Hai Phong sea area had very strong winds, waves several metres high and dangerous seas."
+  },
+  "instructions": {
+   "vi": "Tàu du lịch, tàu khách ra đảo dừng hoạt động. Du khách trên đảo Cát Bà, Cô Tô vào bờ hoặc ở lại nơi trú an toàn. Theo dõi tin bão.",
+   "en": "Tour boats and island ferries stopped. Visitors on Cat Ba or Co To returned or stayed in safe shelters. Follow storm bulletins."
+  }
+ },
+ {
+  "code": "AL-SIM-0023",
+  "source_code": "simulation",
+  "hazard_code": "bao",
+  "severity": 4,
+  "status": "expired",
+  "is_simulated": true,
+  "zone_codes": [
+   "quang-ninh",
+   "hai-phong",
+   "hung-yen",
+   "ninh-binh",
+   "ha-noi"
+  ],
+  "geometry": null,
+  "starts_at": "2024-09-07T06:00:00+07:00",
+  "ends_at": "2024-09-08T12:00:00+07:00",
+  "issued_at": "2024-09-07T06:00:00+07:00",
+  "updated_at_source": "2024-09-07T06:00:00+07:00",
+  "source_name": "Mô phỏng theo bão số 3 (Yagi) 9/2024 (nguồn: Trung tâm Dự báo KTTV quốc gia; Wikipedia – Typhoon Yagi)",
+  "source_url": "https://en.wikipedia.org/wiki/Typhoon_Yagi",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Bão số 3 (Yagi) đổ bộ Quảng Ninh – Hải Phòng",
+   "en": "[SIMULATION] Typhoon Yagi makes landfall in Quang Ninh – Hai Phong"
+  },
+  "description": {
+   "vi": "Ngày 7/9/2024 bão Yagi đổ bộ vào vùng ven biển Hải Phòng – Quảng Ninh với cường độ rất mạnh, gió giật mạnh trên diện rộng tới Hà Nội và đồng bằng Bắc Bộ, cây đổ, mất điện nhiều nơi.",
+   "en": "On 7 September 2024 Typhoon Yagi made landfall on the Hai Phong – Quang Ninh coast with very strong intensity, bringing damaging gusts as far as Hanoi and the Red River Delta, with fallen trees and power cuts."
+  },
+  "instructions": {
+   "vi": "Ở trong nhà kiên cố, tránh xa cửa kính. Không ra đường khi gió mạnh. Chuẩn bị nước, đèn pin. Chỉ ra ngoài khi có thông báo bão đã qua.",
+   "en": "Stay inside solid buildings away from windows. Do not go out in strong winds. Keep water and a torch. Go out only after the all-clear."
+  }
+ },
+ {
+  "code": "AL-SIM-0024",
+  "source_code": "simulation",
+  "hazard_code": "giao_thong",
+  "severity": 2,
+  "status": "expired",
+  "is_simulated": true,
+  "zone_codes": [
+   "ha-noi",
+   "quang-ninh",
+   "hai-phong"
+  ],
+  "geometry": null,
+  "starts_at": "2024-09-07T05:00:00+07:00",
+  "ends_at": "2024-09-08T06:00:00+07:00",
+  "issued_at": "2024-09-07T05:00:00+07:00",
+  "updated_at_source": "2024-09-07T05:00:00+07:00",
+  "source_name": "Mô phỏng theo bão số 3 (Yagi) 9/2024 (nguồn: Trung tâm Dự báo KTTV quốc gia; Wikipedia – Typhoon Yagi)",
+  "source_url": "https://en.wikipedia.org/wiki/Typhoon_Yagi",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Tạm đóng một số sân bay miền Bắc do bão Yagi",
+   "en": "[SIMULATION] Several northern airports temporarily closed due to Typhoon Yagi"
+  },
+  "description": {
+   "vi": "Do ảnh hưởng của bão Yagi, nhà chức trách hàng không tạm dừng khai thác một số sân bay miền Bắc trong ngày 7/9/2024; nhiều chuyến bay bị hủy, hoãn.",
+   "en": "Due to Typhoon Yagi, aviation authorities temporarily stopped operations at several northern airports on 7 September 2024; many flights were cancelled or delayed."
+  },
+  "instructions": {
+   "vi": "Liên hệ hãng bay trước khi ra sân bay. Giữ xác nhận hủy chuyến để làm bảo hiểm. Không di chuyển trong lúc bão đổ bộ.",
+   "en": "Contact your airline before going to the airport. Keep cancellation notices for insurance. Do not travel during landfall."
+  }
+ },
+ {
+  "code": "AL-SIM-0025",
+  "source_code": "simulation",
+  "hazard_code": "giao_thong",
+  "severity": 2,
+  "status": "expired",
+  "is_simulated": true,
+  "zone_codes": [
+   "vinh-ha-long"
+  ],
+  "geometry": null,
+  "starts_at": "2024-09-06T12:00:00+07:00",
+  "ends_at": "2024-09-09T12:00:00+07:00",
+  "issued_at": "2024-09-06T12:00:00+07:00",
+  "updated_at_source": "2024-09-06T12:00:00+07:00",
+  "source_name": "Mô phỏng theo bão số 3 (Yagi) 9/2024 (nguồn: Trung tâm Dự báo KTTV quốc gia; Wikipedia – Typhoon Yagi)",
+  "source_url": "https://en.wikipedia.org/wiki/Typhoon_Yagi",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Dừng cấp phép tàu tham quan vịnh Hạ Long",
+   "en": "[SIMULATION] Ha Long Bay cruises halted"
+  },
+  "description": {
+   "vi": "Quảng Ninh tạm dừng cấp phép cho tàu du lịch ra vịnh Hạ Long, Bái Tử Long trước và trong thời gian bão Yagi ảnh hưởng.",
+   "en": "Quang Ninh stopped permits for tour boats in Ha Long and Bai Tu Long bays before and during Typhoon Yagi."
+  },
+  "instructions": {
+   "vi": "Đổi lịch tham quan vịnh. Khách lưu trú qua đêm trên tàu được đưa vào bờ. Theo dõi thông báo mở lại.",
+   "en": "Reschedule bay tours. Overnight cruise guests were brought ashore. Watch for reopening notices."
+  }
+ },
+ {
+  "code": "AL-SIM-0026",
+  "source_code": "simulation",
+  "hazard_code": "mua_lon",
+  "severity": 3,
+  "status": "expired",
+  "is_simulated": true,
+  "zone_codes": [
+   "lao-cai",
+   "tuyen-quang",
+   "thai-nguyen",
+   "cao-bang",
+   "phu-tho",
+   "son-la"
+  ],
+  "geometry": null,
+  "starts_at": "2024-09-08T06:00:00+07:00",
+  "ends_at": "2024-09-11T18:00:00+07:00",
+  "issued_at": "2024-09-08T06:00:00+07:00",
+  "updated_at_source": "2024-09-08T06:00:00+07:00",
+  "source_name": "Mô phỏng theo bão số 3 (Yagi) 9/2024 (nguồn: Trung tâm Dự báo KTTV quốc gia; Wikipedia – Typhoon Yagi)",
+  "source_url": "https://en.wikipedia.org/wiki/Typhoon_Yagi",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Mưa rất lớn ở trung du và miền núi Bắc Bộ sau bão Yagi",
+   "en": "[SIMULATION] Very heavy rain in northern midlands and mountains after Typhoon Yagi"
+  },
+  "description": {
+   "vi": "Hoàn lưu bão Yagi gây mưa rất lớn, phổ biến 400–600 mm, có nơi gần 800 mm tại Lào Cai, Yên Bái, Thái Nguyên (cũ); nhiều sông lên nhanh.",
+   "en": "Typhoon Yagi's remnants brought very heavy rain, widely 400–600 mm and nearly 800 mm in places in Lao Cai, Yen Bai and Thai Nguyen (former provinces); rivers rose quickly."
+  },
+  "instructions": {
+   "vi": "Hoãn mọi chuyến đi vùng núi. Không ở gần sông suối, taluy. Theo dõi thông báo sơ tán của địa phương.",
+   "en": "Postpone all mountain trips. Keep away from streams and slopes. Follow local evacuation notices."
+  }
+ },
+ {
+  "code": "AL-SIM-0027",
+  "source_code": "simulation",
+  "hazard_code": "lu_quet",
+  "severity": 4,
+  "status": "expired",
+  "is_simulated": true,
+  "zone_codes": [
+   "lao-cai"
+  ],
+  "geometry": null,
+  "starts_at": "2024-09-09T12:00:00+07:00",
+  "ends_at": "2024-09-12T12:00:00+07:00",
+  "issued_at": "2024-09-09T12:00:00+07:00",
+  "updated_at_source": "2024-09-09T12:00:00+07:00",
+  "source_name": "Mô phỏng theo bão số 3 (Yagi) 9/2024 (nguồn: Trung tâm Dự báo KTTV quốc gia; Wikipedia – Typhoon Yagi)",
+  "source_url": "https://en.wikipedia.org/wiki/Typhoon_Yagi",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Lũ quét, sạt lở nghiêm trọng tại Lào Cai",
+   "en": "[SIMULATION] Severe flash floods and landslides in Lao Cai"
+  },
+  "description": {
+   "vi": "Mưa lớn sau bão Yagi gây lũ quét và sạt lở đất nghiêm trọng tại nhiều xã của Lào Cai, trong đó có thôn Làng Nủ (Bảo Yên) ngày 10/9/2024; nhiều tuyến đường bị chia cắt.",
+   "en": "Heavy rain after Typhoon Yagi caused severe flash floods and landslides in many communes of Lao Cai, including Lang Nu village (Bao Yen) on 10 September 2024; many roads were cut."
+  },
+  "instructions": {
+   "vi": "Rời khỏi khu vực ven suối, chân đồi. Không quay lại khu sạt lở. Gọi 112 khi cần cứu hộ. Báo an toàn cho người thân.",
+   "en": "Leave streamside and hill-foot areas. Do not return to landslide sites. Call 112 for rescue. Tell family you are safe."
+  }
+ },
+ {
+  "code": "AL-SIM-0028",
+  "source_code": "simulation",
+  "hazard_code": "lu",
+  "severity": 4,
+  "status": "expired",
+  "is_simulated": true,
+  "zone_codes": [
+   "lao-cai",
+   "mu-cang-chai"
+  ],
+  "geometry": null,
+  "starts_at": "2024-09-09T06:00:00+07:00",
+  "ends_at": "2024-09-12T18:00:00+07:00",
+  "issued_at": "2024-09-09T06:00:00+07:00",
+  "updated_at_source": "2024-09-09T06:00:00+07:00",
+  "source_name": "Mô phỏng theo bão số 3 (Yagi) 9/2024 (nguồn: Trung tâm Dự báo KTTV quốc gia; Wikipedia – Typhoon Yagi)",
+  "source_url": "https://en.wikipedia.org/wiki/Typhoon_Yagi",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Lũ lớn sông Thao, ngập sâu thành phố Lào Cai và Yên Bái",
+   "en": "[SIMULATION] Major Thao River flood inundates Lao Cai and Yen Bai cities"
+  },
+  "description": {
+   "vi": "Lũ sông Thao lên rất cao trong các ngày 9–11/9/2024, gây ngập sâu thành phố Lào Cai và thành phố Yên Bái (cũ).",
+   "en": "The Thao River rose very high on 9–11 September 2024, deeply flooding Lao Cai city and former Yen Bai city."
+  },
+  "instructions": {
+   "vi": "Di chuyển lên tầng cao. Không lội qua dòng chảy. Ngắt điện khi nước vào nhà. Làm theo hướng dẫn sơ tán.",
+   "en": "Move upstairs. Do not wade through flowing water. Switch off power if water enters. Follow evacuation orders."
+  }
+ },
+ {
+  "code": "AL-SIM-0029",
+  "source_code": "simulation",
+  "hazard_code": "lu",
+  "severity": 4,
+  "status": "expired",
+  "is_simulated": true,
+  "zone_codes": [
+   "thai-nguyen"
+  ],
+  "geometry": null,
+  "starts_at": "2024-09-09T12:00:00+07:00",
+  "ends_at": "2024-09-12T12:00:00+07:00",
+  "issued_at": "2024-09-09T12:00:00+07:00",
+  "updated_at_source": "2024-09-09T12:00:00+07:00",
+  "source_name": "Mô phỏng theo bão số 3 (Yagi) 9/2024 (nguồn: Trung tâm Dự báo KTTV quốc gia; Wikipedia – Typhoon Yagi)",
+  "source_url": "https://en.wikipedia.org/wiki/Typhoon_Yagi",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Lũ lớn sông Cầu, ngập sâu thành phố Thái Nguyên",
+   "en": "[SIMULATION] Major Cau River flood in Thai Nguyen city"
+  },
+  "description": {
+   "vi": "Lũ sông Cầu dâng cao sau bão Yagi gây ngập sâu nhiều khu vực thành phố Thái Nguyên trong các ngày 9–11/9/2024.",
+   "en": "The Cau River rose sharply after Typhoon Yagi, deeply flooding parts of Thai Nguyen city on 9–11 September 2024."
+  },
+  "instructions": {
+   "vi": "Tránh khu ven sông Cầu. Không đi qua cầu tràn. Chuyển đồ đạc lên cao. Chờ thông báo an toàn.",
+   "en": "Avoid Cau River banks. Do not cross spillways. Move belongings up. Wait for the all-clear."
+  }
+ },
+ {
+  "code": "AL-SIM-0030",
+  "source_code": "simulation",
+  "hazard_code": "lu",
+  "severity": 3,
+  "status": "expired",
+  "is_simulated": true,
+  "zone_codes": [
+   "ha-noi"
+  ],
+  "geometry": null,
+  "starts_at": "2024-09-10T06:00:00+07:00",
+  "ends_at": "2024-09-13T18:00:00+07:00",
+  "issued_at": "2024-09-10T06:00:00+07:00",
+  "updated_at_source": "2024-09-10T06:00:00+07:00",
+  "source_name": "Mô phỏng theo bão số 3 (Yagi) 9/2024 (nguồn: Trung tâm Dự báo KTTV quốc gia; Wikipedia – Typhoon Yagi)",
+  "source_url": "https://en.wikipedia.org/wiki/Typhoon_Yagi",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Lũ sông Hồng tại Hà Nội lên cao",
+   "en": "[SIMULATION] Red River rises in Hanoi"
+  },
+  "description": {
+   "vi": "Mực nước sông Hồng tại Hà Nội lên cao trong các ngày 10–12/9/2024, ngập các khu dân cư ngoài đê và bãi giữa; một số khu vực phải sơ tán.",
+   "en": "The Red River in Hanoi rose high on 10–12 September 2024, flooding areas outside the dykes and river islands; some residents were evacuated."
+  },
+  "instructions": {
+   "vi": "Không đến bãi giữa sông Hồng, chợ ven đê. Tránh đường ven đê khi có phân luồng. Theo dõi thông báo của thành phố.",
+   "en": "Avoid the Red River islands and dyke-side markets. Avoid dyke roads during diversions. Follow city notices."
+  }
+ },
+ {
+  "code": "AL-SIM-0031",
+  "source_code": "simulation",
+  "hazard_code": "giao_thong",
+  "severity": 3,
+  "status": "expired",
+  "is_simulated": true,
+  "zone_codes": [
+   "phu-tho"
+  ],
+  "geometry": null,
+  "starts_at": "2024-09-09T10:00:00+07:00",
+  "ends_at": "2024-09-15T18:00:00+07:00",
+  "issued_at": "2024-09-09T10:00:00+07:00",
+  "updated_at_source": "2024-09-09T10:00:00+07:00",
+  "source_name": "Mô phỏng theo bão số 3 (Yagi) 9/2024 (nguồn: Trung tâm Dự báo KTTV quốc gia; Wikipedia – Typhoon Yagi)",
+  "source_url": "https://en.wikipedia.org/wiki/Typhoon_Yagi",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Sập cầu Phong Châu, cấm lưu thông qua khu vực",
+   "en": "[SIMULATION] Phong Chau Bridge collapse – area closed"
+  },
+  "description": {
+   "vi": "Ngày 9/9/2024 cầu Phong Châu bắc qua sông Hồng (Phú Thọ) bị sập khi nước lũ lên cao; giao thông qua khu vực phải phân luồng.",
+   "en": "On 9 September 2024 the Phong Chau Bridge over the Red River (Phu Tho) collapsed during high floodwater; traffic was diverted."
+  },
+  "instructions": {
+   "vi": "Đi theo tuyến phân luồng. Không dừng xem tại hiện trường. Kiểm tra tình trạng cầu, đường trước khi đi trong mùa lũ.",
+   "en": "Follow diversions. Do not stop to look at the site. Check bridge and road status before travelling in flood season."
+  }
+ },
+ {
+  "code": "AL-SIM-0032",
+  "source_code": "simulation",
+  "hazard_code": "lu",
+  "severity": 4,
+  "status": "expired",
+  "is_simulated": true,
+  "zone_codes": [
+   "quang-tri",
+   "hue"
+  ],
+  "geometry": null,
+  "starts_at": "2020-10-07T06:00:00+07:00",
+  "ends_at": "2020-10-13T18:00:00+07:00",
+  "issued_at": "2020-10-07T06:00:00+07:00",
+  "updated_at_source": "2020-10-07T06:00:00+07:00",
+  "source_name": "Mô phỏng theo chuỗi mưa lũ miền Trung 10–11/2020 (nguồn: Trung tâm Dự báo KTTV quốc gia; Wikipedia – 2020 Central Vietnam floods)",
+  "source_url": "https://en.wikipedia.org/wiki/2020_Central_Vietnam_floods",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Mưa lũ lớn ở Quảng Trị – Thừa Thiên Huế",
+   "en": "[SIMULATION] Major rain and floods in Quang Tri – Thua Thien Hue"
+  },
+  "description": {
+   "vi": "Đầu tháng 10/2020, mưa rất lớn kéo dài gây lũ lớn trên các sông Quảng Trị, Thừa Thiên Huế (cũ); nhiều vùng trũng ngập sâu, giao thông chia cắt.",
+   "en": "In early October 2020, prolonged very heavy rain caused major floods on rivers in Quang Tri and former Thua Thien Hue; low areas were deeply flooded and roads cut."
+  },
+  "instructions": {
+   "vi": "Không đi qua vùng ngập. Lên tầng cao. Chuẩn bị nước, đồ ăn. Theo dõi hướng dẫn sơ tán.",
+   "en": "Avoid flooded areas. Move upstairs. Keep water and food. Follow evacuation advice."
+  }
+ },
+ {
+  "code": "AL-SIM-0033",
+  "source_code": "simulation",
+  "hazard_code": "sat_lo",
+  "severity": 4,
+  "status": "expired",
+  "is_simulated": true,
+  "zone_codes": [
+   "hue"
+  ],
+  "geometry": null,
+  "starts_at": "2020-10-11T20:00:00+07:00",
+  "ends_at": "2020-10-16T18:00:00+07:00",
+  "issued_at": "2020-10-11T20:00:00+07:00",
+  "updated_at_source": "2020-10-11T20:00:00+07:00",
+  "source_name": "Mô phỏng theo chuỗi mưa lũ miền Trung 10–11/2020 (nguồn: Trung tâm Dự báo KTTV quốc gia; Wikipedia – 2020 Central Vietnam floods)",
+  "source_url": "https://en.wikipedia.org/wiki/2020_Central_Vietnam_floods",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Sạt lở nghiêm trọng khu vực thủy điện Rào Trăng 3",
+   "en": "[SIMULATION] Severe landslide at Rao Trang 3 hydropower area"
+  },
+  "description": {
+   "vi": "Đêm 11/10/2020 mưa lớn gây sạt lở tại khu vực thủy điện Rào Trăng 3, huyện Phong Điền (cũ); tuyến đường vào khu vực bị cô lập.",
+   "en": "On the night of 11 October 2020 heavy rain triggered a landslide at Rao Trang 3 hydropower plant in former Phong Dien district; access roads were cut."
+  },
+  "instructions": {
+   "vi": "Không vào khu vực rừng núi phía tây Huế. Tránh đường có taluy cao. Làm theo hướng dẫn của lực lượng cứu hộ.",
+   "en": "Do not enter forest and mountain areas west of Hue. Avoid roads below steep slopes. Follow rescue teams' instructions."
+  }
+ },
+ {
+  "code": "AL-SIM-0034",
+  "source_code": "simulation",
+  "hazard_code": "lu",
+  "severity": 4,
+  "status": "expired",
+  "is_simulated": true,
+  "zone_codes": [
+   "quang-tri",
+   "phong-nha-ke-bang"
+  ],
+  "geometry": null,
+  "starts_at": "2020-10-16T12:00:00+07:00",
+  "ends_at": "2020-10-21T18:00:00+07:00",
+  "issued_at": "2020-10-16T12:00:00+07:00",
+  "updated_at_source": "2020-10-16T12:00:00+07:00",
+  "source_name": "Mô phỏng theo chuỗi mưa lũ miền Trung 10–11/2020 (nguồn: Trung tâm Dự báo KTTV quốc gia; Wikipedia – 2020 Central Vietnam floods)",
+  "source_url": "https://en.wikipedia.org/wiki/2020_Central_Vietnam_floods",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Lũ đặc biệt lớn tại Quảng Bình (cũ)",
+   "en": "[SIMULATION] Exceptional flood in former Quang Binh"
+  },
+  "description": {
+   "vi": "Giữa tháng 10/2020 lũ trên sông Kiến Giang, sông Gianh lên rất cao, nhiều nơi ở Lệ Thủy, Quảng Ninh (Quảng Bình cũ) ngập sâu; khu du lịch Phong Nha tạm đóng.",
+   "en": "In mid-October 2020 the Kien Giang and Gianh rivers rose very high, deeply flooding Le Thuy and Quang Ninh districts (former Quang Binh); Phong Nha tourism sites closed."
+  },
+  "instructions": {
+   "vi": "Hủy tour hang động. Ở lại nơi lưu trú trên cao. Không đi qua đường ngập. Gọi 112 khi cần cứu hộ.",
+   "en": "Cancel cave tours. Stay at lodging on high ground. Do not cross flooded roads. Call 112 for rescue."
+  }
+ },
+ {
+  "code": "AL-SIM-0035",
+  "source_code": "simulation",
+  "hazard_code": "bao",
+  "severity": 4,
+  "status": "expired",
+  "is_simulated": true,
+  "zone_codes": [
+   "da-nang",
+   "quang-ngai",
+   "cu-lao-cham",
+   "dao-ly-son",
+   "pho-co-hoi-an"
+  ],
+  "geometry": null,
+  "starts_at": "2020-10-27T06:00:00+07:00",
+  "ends_at": "2020-10-29T12:00:00+07:00",
+  "issued_at": "2020-10-27T06:00:00+07:00",
+  "updated_at_source": "2020-10-27T06:00:00+07:00",
+  "source_name": "Mô phỏng theo bão số 9 (Molave) 10/2020 (nguồn: Trung tâm Dự báo KTTV quốc gia; Wikipedia – Typhoon Molave)",
+  "source_url": "https://en.wikipedia.org/wiki/Typhoon_Molave",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Bão số 9 (Molave) đổ bộ Quảng Nam – Quảng Ngãi",
+   "en": "[SIMULATION] Typhoon Molave makes landfall in Quang Nam – Quang Ngai"
+  },
+  "description": {
+   "vi": "Bão Molave đổ bộ vào vùng ven biển Quảng Ngãi sáng 28/10/2020 với cường độ mạnh, gió giật rất mạnh từ Đà Nẵng đến Quảng Ngãi, đảo Lý Sơn chịu ảnh hưởng trực tiếp.",
+   "en": "Typhoon Molave made landfall on the Quang Ngai coast on the morning of 28 October 2020 with strong intensity; very strong gusts hit Da Nang to Quang Ngai, and Ly Son Island was directly affected."
+  },
+  "instructions": {
+   "vi": "Rời đảo Lý Sơn, Cù Lao Chàm trước khi tàu ngừng chạy. Ở trong nhà kiên cố. Tránh xa bờ biển. Chờ thông báo bão tan.",
+   "en": "Leave Ly Son and Cham Islands before ferries stop. Stay in solid buildings. Keep away from the coast. Wait for the all-clear."
+  }
+ },
+ {
+  "code": "AL-SIM-0036",
+  "source_code": "simulation",
+  "hazard_code": "sat_lo",
+  "severity": 4,
+  "status": "expired",
+  "is_simulated": true,
+  "zone_codes": [
+   "da-nang"
+  ],
+  "geometry": null,
+  "starts_at": "2020-10-28T12:00:00+07:00",
+  "ends_at": "2020-11-02T18:00:00+07:00",
+  "issued_at": "2020-10-28T12:00:00+07:00",
+  "updated_at_source": "2020-10-28T12:00:00+07:00",
+  "source_name": "Mô phỏng theo sạt lở Trà Leng, Nam Trà My 10/2020 (nguồn: Wikipedia – 2020 Central Vietnam floods; báo Lao Động)",
+  "source_url": "https://en.wikipedia.org/wiki/2020_Central_Vietnam_floods",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Sạt lở đất nghiêm trọng ở vùng núi Nam Trà My",
+   "en": "[SIMULATION] Severe landslides in Nam Tra My mountains"
+  },
+  "description": {
+   "vi": "Ngày 28/10/2020 mưa lớn do bão Molave gây sạt lở đất nghiêm trọng tại xã Trà Leng, huyện Nam Trà My (Quảng Nam cũ).",
+   "en": "On 28 October 2020 heavy rain from Typhoon Molave caused severe landslides in Tra Leng commune, Nam Tra My district (former Quang Nam)."
+  },
+  "instructions": {
+   "vi": "Không đến các huyện miền núi phía tây khi có mưa lớn. Tránh đường đèo. Theo dõi thông báo của chính quyền.",
+   "en": "Do not visit western mountain districts during heavy rain. Avoid mountain passes. Follow official notices."
+  }
+ },
+ {
+  "code": "AL-SIM-0037",
+  "source_code": "simulation",
+  "hazard_code": "lu",
+  "severity": 3,
+  "status": "expired",
+  "is_simulated": true,
+  "zone_codes": [
+   "pho-co-hoi-an"
+  ],
+  "geometry": null,
+  "starts_at": "2020-10-29T06:00:00+07:00",
+  "ends_at": "2020-10-31T18:00:00+07:00",
+  "issued_at": "2020-10-29T06:00:00+07:00",
+  "updated_at_source": "2020-10-29T06:00:00+07:00",
+  "source_name": "Mô phỏng theo chuỗi mưa lũ miền Trung 10–11/2020 (nguồn: Trung tâm Dự báo KTTV quốc gia; Wikipedia – 2020 Central Vietnam floods)",
+  "source_url": "https://en.wikipedia.org/wiki/2020_Central_Vietnam_floods",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Lũ sông Thu Bồn gây ngập phố cổ Hội An",
+   "en": "[SIMULATION] Thu Bon River flood inundates Hoi An Ancient Town"
+  },
+  "description": {
+   "vi": "Sau bão Molave, lũ sông Thu Bồn lên cao làm ngập nhiều tuyến phố trong khu phố cổ Hội An.",
+   "en": "After Typhoon Molave the Thu Bon River rose and flooded many streets in Hoi An Ancient Town."
+  },
+  "instructions": {
+   "vi": "Không đi thuyền trên sông. Di chuyển hành lý lên cao. Chỉ dùng thuyền của lực lượng chức năng khi cần.",
+   "en": "Do not take river boats. Move luggage upstairs. Use only official boats if needed."
+  }
+ },
+ {
+  "code": "AL-SIM-0038",
+  "source_code": "simulation",
+  "hazard_code": "bao",
+  "severity": 4,
+  "status": "expired",
+  "is_simulated": true,
+  "zone_codes": [
+   "quang-tri",
+   "hue"
+  ],
+  "geometry": null,
+  "starts_at": "2020-11-14T06:00:00+07:00",
+  "ends_at": "2020-11-15T18:00:00+07:00",
+  "issued_at": "2020-11-14T06:00:00+07:00",
+  "updated_at_source": "2020-11-14T06:00:00+07:00",
+  "source_name": "Mô phỏng theo bão số 13 (Vamco) 11/2020 (nguồn: Trung tâm Dự báo KTTV quốc gia; Wikipedia – Typhoon Vamco)",
+  "source_url": "https://en.wikipedia.org/wiki/Typhoon_Vamco",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Bão số 13 (Vamco) đổ bộ Quảng Bình – Thừa Thiên Huế",
+   "en": "[SIMULATION] Typhoon Vamco makes landfall in Quang Binh – Thua Thien Hue"
+  },
+  "description": {
+   "vi": "Bão Vamco đổ bộ vùng ven biển Quảng Bình – Thừa Thiên Huế (cũ) ngày 15/11/2020, gây gió mạnh và mưa lớn; trạm Tân Mỹ ghi nhận gió giật mạnh.",
+   "en": "Typhoon Vamco made landfall on the Quang Binh – former Thua Thien Hue coast on 15 November 2020, bringing strong winds and heavy rain."
+  },
+  "instructions": {
+   "vi": "Ở trong nhà, tránh xa cửa kính. Không ra biển, cửa sông. Chuẩn bị đèn pin, nước uống.",
+   "en": "Stay indoors away from windows. Keep away from the sea and river mouths. Keep a torch and water ready."
+  }
+ },
+ {
+  "code": "AL-SIM-0039",
+  "source_code": "simulation",
+  "hazard_code": "bao",
+  "severity": 4,
+  "status": "expired",
+  "is_simulated": true,
+  "zone_codes": [
+   "da-nang",
+   "pho-co-hoi-an",
+   "ven-bien-da-nang"
+  ],
+  "geometry": null,
+  "starts_at": "2022-09-27T06:00:00+07:00",
+  "ends_at": "2022-09-28T18:00:00+07:00",
+  "issued_at": "2022-09-27T06:00:00+07:00",
+  "updated_at_source": "2022-09-27T06:00:00+07:00",
+  "source_name": "Mô phỏng theo bão số 4 (Noru) 9/2022 (nguồn: Trung tâm Dự báo KTTV quốc gia; Wikipedia – Typhoon Noru)",
+  "source_url": "https://en.wikipedia.org/wiki/Typhoon_Noru",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Bão số 4 (Noru) đổ bộ Đà Nẵng – Quảng Nam",
+   "en": "[SIMULATION] Typhoon Noru makes landfall in Da Nang – Quang Nam"
+  },
+  "description": {
+   "vi": "Bão Noru đổ bộ vùng ven biển Đà Nẵng – Quảng Nam (cũ) rạng sáng 28/9/2022; trước đó thành phố yêu cầu người dân và du khách hạn chế ra đường.",
+   "en": "Typhoon Noru made landfall on the Da Nang – former Quang Nam coast early on 28 September 2022; the city had asked residents and visitors to stay off the streets."
+  },
+  "instructions": {
+   "vi": "Tuân thủ lệnh hạn chế ra đường. Ở trong khách sạn kiên cố. Không ra bãi biển. Chờ thông báo bão tan.",
+   "en": "Obey stay-at-home orders. Remain in a solid hotel. Keep off the beach. Wait for the all-clear."
+  }
+ },
+ {
+  "code": "AL-SIM-0040",
+  "source_code": "simulation",
+  "hazard_code": "mua_lon",
+  "severity": 4,
+  "status": "expired",
+  "is_simulated": true,
+  "zone_codes": [
+   "da-nang",
+   "ven-bien-da-nang"
+  ],
+  "geometry": null,
+  "starts_at": "2022-10-14T12:00:00+07:00",
+  "ends_at": "2022-10-15T18:00:00+07:00",
+  "issued_at": "2022-10-14T12:00:00+07:00",
+  "updated_at_source": "2022-10-14T12:00:00+07:00",
+  "source_name": "Mô phỏng theo đợt mưa cực lớn Đà Nẵng 14–15/10/2022 (nguồn: Trung tâm Dự báo KTTV quốc gia; VnExpress)",
+  "source_url": "https://vnexpress.net",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Mưa cực lớn gây ngập sâu diện rộng ở Đà Nẵng",
+   "en": "[SIMULATION] Extreme rain causes widespread deep flooding in Da Nang"
+  },
+  "description": {
+   "vi": "Chiều và đêm 14/10/2022 Đà Nẵng có mưa cực lớn trong thời gian ngắn, nhiều tuyến phố trung tâm ngập sâu, giao thông tê liệt.",
+   "en": "On the afternoon and night of 14 October 2022 Da Nang had extreme short-duration rain; many central streets flooded deeply and traffic stopped."
+  },
+  "instructions": {
+   "vi": "Không ra đường khi mưa lớn. Đỗ xe ở nơi cao. Tránh hầm chui. Theo dõi thông báo của thành phố.",
+   "en": "Stay off the streets during heavy rain. Park on high ground. Avoid underpasses. Follow city notices."
+  }
+ },
+ {
+  "code": "AL-SIM-0041",
+  "source_code": "simulation",
+  "hazard_code": "bao",
+  "severity": 3,
+  "status": "expired",
+  "is_simulated": true,
+  "zone_codes": [
+   "hue",
+   "da-nang"
+  ],
+  "geometry": null,
+  "starts_at": "2024-10-26T06:00:00+07:00",
+  "ends_at": "2024-10-28T12:00:00+07:00",
+  "issued_at": "2024-10-26T06:00:00+07:00",
+  "updated_at_source": "2024-10-26T06:00:00+07:00",
+  "source_name": "Mô phỏng theo bão số 6 (Trami) 10/2024 (nguồn: Trung tâm Dự báo KTTV quốc gia; Wikipedia – Tropical Storm Trami)",
+  "source_url": "https://en.wikipedia.org/wiki/Tropical_Storm_Trami",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Bão số 6 (Trami) đổ bộ Thừa Thiên Huế – Đà Nẵng",
+   "en": "[SIMULATION] Tropical Storm Trami makes landfall in Thua Thien Hue – Da Nang"
+  },
+  "description": {
+   "vi": "Bão Trami đổ bộ vùng ven biển Thừa Thiên Huế (cũ) – Đà Nẵng khoảng 10 giờ ngày 27/10/2024, gây mưa lớn; bão suy yếu nhanh khi vào đất liền.",
+   "en": "Tropical Storm Trami made landfall on the former Thua Thien Hue – Da Nang coast around 10:00 on 27 October 2024, bringing heavy rain before weakening quickly inland."
+  },
+  "instructions": {
+   "vi": "Hạn chế đi lại. Không tắm biển. Tránh đường đèo Hải Vân, Bạch Mã khi mưa lớn.",
+   "en": "Limit travel. Do not swim. Avoid Hai Van and Bach Ma roads in heavy rain."
+  }
+ },
+ {
+  "code": "AL-SIM-0042",
+  "source_code": "simulation",
+  "hazard_code": "bao",
+  "severity": 4,
+  "status": "expired",
+  "is_simulated": true,
+  "zone_codes": [
+   "nghe-an",
+   "ha-tinh",
+   "thanh-hoa"
+  ],
+  "geometry": null,
+  "starts_at": "2025-08-24T06:00:00+07:00",
+  "ends_at": "2025-08-26T12:00:00+07:00",
+  "issued_at": "2025-08-24T06:00:00+07:00",
+  "updated_at_source": "2025-08-24T06:00:00+07:00",
+  "source_name": "Mô phỏng theo bão số 5 (Kajiki) 8/2025 (nguồn: Trung tâm Dự báo KTTV quốc gia; Wikipedia – Typhoon Kajiki (2025))",
+  "source_url": "https://en.wikipedia.org/wiki/Typhoon_Kajiki_(2025)",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Bão số 5 (Kajiki) đổ bộ Nghệ An – Hà Tĩnh",
+   "en": "[SIMULATION] Typhoon Kajiki makes landfall in Nghe An – Ha Tinh"
+  },
+  "description": {
+   "vi": "Bão Kajiki đổ bộ vùng ven biển Nghệ An – Hà Tĩnh khoảng 18 giờ ngày 25/8/2025; các bãi biển Cửa Lò, Sầm Sơn, Thiên Cầm yêu cầu du khách rời bãi tắm.",
+   "en": "Typhoon Kajiki made landfall on the Nghe An – Ha Tinh coast around 18:00 on 25 August 2025; Cua Lo, Sam Son and Thien Cam beaches were cleared of visitors."
+  },
+  "instructions": {
+   "vi": "Rời bãi biển, vào nơi trú kiên cố. Không ra biển. Theo dõi lệnh sơ tán. Chuẩn bị nước, đèn pin.",
+   "en": "Leave the beach for a solid shelter. Do not go to sea. Follow evacuation orders. Keep water and a torch."
+  }
+ },
+ {
+  "code": "AL-SIM-0043",
+  "source_code": "simulation",
+  "hazard_code": "bao",
+  "severity": 4,
+  "status": "expired",
+  "is_simulated": true,
+  "zone_codes": [
+   "ha-tinh",
+   "quang-tri",
+   "nghe-an"
+  ],
+  "geometry": null,
+  "starts_at": "2025-09-28T06:00:00+07:00",
+  "ends_at": "2025-09-30T12:00:00+07:00",
+  "issued_at": "2025-09-28T06:00:00+07:00",
+  "updated_at_source": "2025-09-28T06:00:00+07:00",
+  "source_name": "Mô phỏng theo bão số 10 (Bualoi) 9/2025 (nguồn: Trung tâm Dự báo KTTV quốc gia; Wikipedia – Typhoon Bualoi)",
+  "source_url": "https://en.wikipedia.org/wiki/Typhoon_Bualoi",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Bão số 10 (Bualoi) đổ bộ Hà Tĩnh",
+   "en": "[SIMULATION] Typhoon Bualoi makes landfall in Ha Tinh"
+  },
+  "description": {
+   "vi": "Bão Bualoi đổ bộ vào Hà Tĩnh ngày 29/9/2025 sau khi mạnh lên trên Biển Đông, gây gió mạnh và mưa lớn ở Bắc Trung Bộ.",
+   "en": "Typhoon Bualoi made landfall in Ha Tinh on 29 September 2025 after strengthening over the East Sea, bringing strong winds and heavy rain to the North Central region."
+  },
+  "instructions": {
+   "vi": "Ở trong nhà kiên cố. Không đi lại trên quốc lộ ven biển khi bão đổ bộ. Chuẩn bị cho mưa lũ sau bão.",
+   "en": "Stay in solid buildings. Do not travel on coastal highways during landfall. Prepare for floods after the storm."
+  }
+ },
+ {
+  "code": "AL-SIM-0044",
+  "source_code": "simulation",
+  "hazard_code": "bao",
+  "severity": 4,
+  "status": "expired",
+  "is_simulated": true,
+  "zone_codes": [
+   "ha-tinh",
+   "quang-tri"
+  ],
+  "geometry": null,
+  "starts_at": "2017-09-14T06:00:00+07:00",
+  "ends_at": "2017-09-16T12:00:00+07:00",
+  "issued_at": "2017-09-14T06:00:00+07:00",
+  "updated_at_source": "2017-09-14T06:00:00+07:00",
+  "source_name": "Mô phỏng theo bão số 10 (Doksuri) 9/2017 (nguồn: Trung tâm Dự báo KTTV quốc gia; Wikipedia – Typhoon Doksuri (2017))",
+  "source_url": "https://en.wikipedia.org/wiki/Typhoon_Doksuri_(2017)",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Bão số 10 (Doksuri) đổ bộ Hà Tĩnh – Quảng Bình",
+   "en": "[SIMULATION] Typhoon Doksuri makes landfall in Ha Tinh – Quang Binh"
+  },
+  "description": {
+   "vi": "Bão Doksuri đổ bộ vùng ven biển Hà Tĩnh – Quảng Bình (cũ) ngày 15/9/2017 với gió mạnh, gây hư hại nhà cửa, cây cối diện rộng.",
+   "en": "Typhoon Doksuri made landfall on the Ha Tinh – former Quang Binh coast on 15 September 2017 with strong winds, damaging homes and trees widely."
+  },
+  "instructions": {
+   "vi": "Không ra biển. Ở trong nơi trú kiên cố. Tránh dây điện đứt sau bão.",
+   "en": "Do not go to sea. Stay in solid shelter. Avoid fallen power lines after the storm."
+  }
+ },
+ {
+  "code": "AL-SIM-0045",
+  "source_code": "simulation",
+  "hazard_code": "bao",
+  "severity": 4,
+  "status": "expired",
+  "is_simulated": true,
+  "zone_codes": [
+   "khanh-hoa",
+   "vinh-nha-trang",
+   "dak-lak"
+  ],
+  "geometry": null,
+  "starts_at": "2017-11-03T06:00:00+07:00",
+  "ends_at": "2017-11-05T12:00:00+07:00",
+  "issued_at": "2017-11-03T06:00:00+07:00",
+  "updated_at_source": "2017-11-03T06:00:00+07:00",
+  "source_name": "Mô phỏng theo bão số 12 (Damrey) 11/2017 (nguồn: Trung tâm Dự báo KTTV quốc gia; Wikipedia – Typhoon Damrey (2017))",
+  "source_url": "https://en.wikipedia.org/wiki/Typhoon_Damrey_(2017)",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Bão số 12 (Damrey) đổ bộ Khánh Hòa",
+   "en": "[SIMULATION] Typhoon Damrey makes landfall in Khanh Hoa"
+  },
+  "description": {
+   "vi": "Bão Damrey đổ bộ vào Khánh Hòa ngày 4/11/2017, gió rất mạnh ở Nha Trang, Vạn Ninh và Phú Yên (cũ); mưa lớn gây lũ ở Nam Trung Bộ.",
+   "en": "Typhoon Damrey made landfall in Khanh Hoa on 4 November 2017 with very strong winds in Nha Trang, Van Ninh and former Phu Yen; heavy rain caused floods in the South Central region."
+  },
+  "instructions": {
+   "vi": "Không đi đảo, lặn biển. Ở trong khách sạn kiên cố. Tránh xa cửa kính. Chờ thông báo bão tan.",
+   "en": "No island or diving trips. Stay in a solid hotel away from windows. Wait for the all-clear."
+  }
+ },
+ {
+  "code": "AL-SIM-0046",
+  "source_code": "simulation",
+  "hazard_code": "mua_lon",
+  "severity": 3,
+  "status": "expired",
+  "is_simulated": true,
+  "zone_codes": [
+   "ho-chi-minh",
+   "noi-thanh-tp-hcm",
+   "vung-tau-ven-bien"
+  ],
+  "geometry": null,
+  "starts_at": "2018-11-24T12:00:00+07:00",
+  "ends_at": "2018-11-26T18:00:00+07:00",
+  "issued_at": "2018-11-24T12:00:00+07:00",
+  "updated_at_source": "2018-11-24T12:00:00+07:00",
+  "source_name": "Mô phỏng theo bão số 9 (Usagi) 11/2018 (nguồn: Đài KTTV khu vực Nam Bộ; Wikipedia – Tropical Storm Usagi (2018))",
+  "source_url": "https://en.wikipedia.org/wiki/Tropical_Storm_Usagi_(2018)",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Bão Usagi gây mưa lớn, ngập nặng TP.HCM",
+   "en": "[SIMULATION] Storm Usagi brings heavy rain and severe flooding to Ho Chi Minh City"
+  },
+  "description": {
+   "vi": "Bão Usagi đổ bộ Vũng Tàu ngày 25/11/2018; mưa lớn kết hợp triều cường làm nhiều tuyến đường TP.HCM ngập sâu, cây đổ.",
+   "en": "Usagi made landfall at Vung Tau on 25 November 2018; heavy rain plus high tide deeply flooded many Ho Chi Minh City streets and toppled trees."
+  },
+  "instructions": {
+   "vi": "Hạn chế ra đường. Không trú dưới cây to. Tránh đi xe máy qua chỗ ngập sâu.",
+   "en": "Limit travel. Do not shelter under large trees. Avoid riding through deep water."
+  }
+ },
+ {
+  "code": "AL-SIM-0047",
+  "source_code": "simulation",
+  "hazard_code": "lu_quet",
+  "severity": 4,
+  "status": "expired",
+  "is_simulated": true,
+  "zone_codes": [
+   "mu-cang-chai",
+   "lao-cai"
+  ],
+  "geometry": null,
+  "starts_at": "2017-08-03T00:00:00+07:00",
+  "ends_at": "2017-08-05T18:00:00+07:00",
+  "issued_at": "2017-08-03T00:00:00+07:00",
+  "updated_at_source": "2017-08-03T00:00:00+07:00",
+  "source_name": "Mô phỏng theo lũ quét Mù Cang Chải 8/2017 (nguồn: Trung tâm Dự báo KTTV quốc gia; VnExpress)",
+  "source_url": "https://vnexpress.net",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Lũ quét tại Mù Cang Chải",
+   "en": "[SIMULATION] Flash flood in Mu Cang Chai"
+  },
+  "description": {
+   "vi": "Rạng sáng 3/8/2017 mưa lớn gây lũ quét tại huyện Mù Cang Chải (Yên Bái cũ), cuốn trôi nhà cửa, chia cắt quốc lộ 32.",
+   "en": "Early on 3 August 2017 heavy rain caused a flash flood in Mu Cang Chai district (former Yen Bai), washing away houses and cutting Highway 32."
+  },
+  "instructions": {
+   "vi": "Không ngủ lại sát suối. Lên chỗ cao khi nghe tiếng nước lớn. Không đi QL32 khi có cảnh báo.",
+   "en": "Do not sleep next to streams. Climb up at the sound of rushing water. Avoid Highway 32 during warnings."
+  }
+ },
+ {
+  "code": "AL-SIM-0048",
+  "source_code": "simulation",
+  "hazard_code": "lu_quet",
+  "severity": 4,
+  "status": "expired",
+  "is_simulated": true,
+  "zone_codes": [
+   "son-la"
+  ],
+  "geometry": null,
+  "starts_at": "2017-08-02T18:00:00+07:00",
+  "ends_at": "2017-08-05T18:00:00+07:00",
+  "issued_at": "2017-08-02T18:00:00+07:00",
+  "updated_at_source": "2017-08-02T18:00:00+07:00",
+  "source_name": "Mô phỏng theo lũ quét Sơn La 8/2017 (nguồn: Trung tâm Dự báo KTTV quốc gia; VnExpress)",
+  "source_url": "https://vnexpress.net",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Lũ quét, lũ ống tại Sơn La",
+   "en": "[SIMULATION] Flash floods in Son La"
+  },
+  "description": {
+   "vi": "Đầu tháng 8/2017 mưa lớn gây lũ quét, lũ ống tại một số huyện của Sơn La, trong đó có Mường La; nhiều tuyến đường bị sạt lở.",
+   "en": "In early August 2017 heavy rain caused flash floods in several Son La districts including Muong La; many roads were damaged by landslides."
+  },
+  "instructions": {
+   "vi": "Hủy chuyến đi các bản vùng sâu. Tránh xa sông suối. Theo dõi thông báo của địa phương.",
+   "en": "Cancel trips to remote villages. Keep away from streams. Follow local notices."
+  }
+ },
+ {
+  "code": "AL-SIM-0049",
+  "source_code": "simulation",
+  "hazard_code": "sat_lo",
+  "severity": 4,
+  "status": "expired",
+  "is_simulated": true,
+  "zone_codes": [
+   "phu-tho"
+  ],
+  "geometry": null,
+  "starts_at": "2017-10-10T12:00:00+07:00",
+  "ends_at": "2017-10-16T18:00:00+07:00",
+  "issued_at": "2017-10-10T12:00:00+07:00",
+  "updated_at_source": "2017-10-10T12:00:00+07:00",
+  "source_name": "Mô phỏng theo mưa lũ, sạt lở Hòa Bình 10/2017 (nguồn: Trung tâm Dự báo KTTV quốc gia; VnExpress)",
+  "source_url": "https://vnexpress.net",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Mưa lũ, sạt lở nghiêm trọng tại Hòa Bình (cũ)",
+   "en": "[SIMULATION] Severe floods and landslides in former Hoa Binh"
+  },
+  "description": {
+   "vi": "Giữa tháng 10/2017 mưa lớn diện rộng ở Bắc Bộ gây lũ và sạt lở đất nghiêm trọng tại nhiều huyện của Hòa Bình (cũ); hồ Hòa Bình phải mở cửa xả.",
+   "en": "In mid-October 2017 widespread heavy rain caused floods and serious landslides in several districts of former Hoa Binh; Hoa Binh reservoir opened spillways."
+  },
+  "instructions": {
+   "vi": "Hoãn chuyến đi Mai Châu, Tân Lạc. Không đi đường đèo khi mưa. Tránh hạ du hồ thủy điện.",
+   "en": "Postpone trips to Mai Chau and Tan Lac. Avoid mountain passes in rain. Keep away from areas below the dam."
+  }
+ },
+ {
+  "code": "AL-SIM-0050",
+  "source_code": "simulation",
+  "hazard_code": "sat_lo",
+  "severity": 4,
+  "status": "expired",
+  "is_simulated": true,
+  "zone_codes": [
+   "lam-dong"
+  ],
+  "geometry": null,
+  "starts_at": "2023-07-30T16:00:00+07:00",
+  "ends_at": "2023-08-05T18:00:00+07:00",
+  "issued_at": "2023-07-30T16:00:00+07:00",
+  "updated_at_source": "2023-07-30T16:00:00+07:00",
+  "source_name": "Mô phỏng theo sạt lở đèo Bảo Lộc 7/2023 (nguồn: VnExpress; Sở GTVT Lâm Đồng)",
+  "source_url": "https://vnexpress.net",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Sạt lở đèo Bảo Lộc, cấm xe qua đèo",
+   "en": "[SIMULATION] Bao Loc Pass landslide – pass closed"
+  },
+  "description": {
+   "vi": "Chiều 30/7/2023 mưa lớn gây sạt lở taluy dương trên đèo Bảo Lộc (QL20), lực lượng chức năng phong tỏa đèo và phân luồng.",
+   "en": "On the afternoon of 30 July 2023 heavy rain caused a slope collapse on Bao Loc Pass (Highway 20); authorities closed the pass and diverted traffic."
+  },
+  "instructions": {
+   "vi": "Đi Đà Lạt theo tuyến phân luồng của cơ quan chức năng. Không đi đèo khi mưa lớn. Kiểm tra tình trạng đường trước khi khởi hành.",
+   "en": "Reach Da Lat by the official detour. Do not cross passes in heavy rain. Check road status before leaving."
+  }
+ },
+ {
+  "code": "AL-SIM-0051",
+  "source_code": "simulation",
+  "hazard_code": "nang_nong",
+  "severity": 4,
+  "status": "expired",
+  "is_simulated": true,
+  "zone_codes": [
+   "nghe-an"
+  ],
+  "geometry": null,
+  "starts_at": "2023-05-06T10:00:00+07:00",
+  "ends_at": "2023-05-08T18:00:00+07:00",
+  "issued_at": "2023-05-06T10:00:00+07:00",
+  "updated_at_source": "2023-05-06T10:00:00+07:00",
+  "source_name": "Mô phỏng theo nắng nóng kỷ lục tháng 5/2023 (nguồn: Trung tâm Dự báo KTTV quốc gia; VnExpress)",
+  "source_url": "https://vnexpress.net",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Nắng nóng đặc biệt gay gắt, Tương Dương lập kỷ lục 44,2°C",
+   "en": "[SIMULATION] Extreme heat – Tuong Duong sets 44.2°C record"
+  },
+  "description": {
+   "vi": "Ngày 7/5/2023 trạm Tương Dương (Nghệ An) đo được 44,2°C, cao nhất trong lịch sử quan trắc ở Việt Nam; Bắc Trung Bộ nắng nóng đặc biệt gay gắt.",
+   "en": "On 7 May 2023 Tuong Duong station (Nghe An) recorded 44.2°C, the highest temperature ever measured in Viet Nam; the North Central region had extreme heat."
+  },
+  "instructions": {
+   "vi": "Không hoạt động ngoài trời 10–16 giờ. Uống nước liên tục. Theo dõi dấu hiệu say nắng, gọi 115 khi cần.",
+   "en": "No outdoor activity 10:00–16:00. Drink water constantly. Watch for heatstroke and call 115 if needed."
+  }
+ },
+ {
+  "code": "AL-SIM-0052",
+  "source_code": "simulation",
+  "hazard_code": "nang_nong",
+  "severity": 3,
+  "status": "expired",
+  "is_simulated": true,
+  "zone_codes": [
+   "ho-chi-minh",
+   "dong-nai",
+   "tay-ninh"
+  ],
+  "geometry": null,
+  "starts_at": "2024-04-20T10:00:00+07:00",
+  "ends_at": "2024-04-30T18:00:00+07:00",
+  "issued_at": "2024-04-20T10:00:00+07:00",
+  "updated_at_source": "2024-04-20T10:00:00+07:00",
+  "source_name": "Mô phỏng theo đợt nắng nóng Nam Bộ tháng 4/2024 (nguồn: Đài KTTV khu vực Nam Bộ)",
+  "source_url": "https://nchmf.gov.vn",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Nắng nóng gay gắt kéo dài ở Đông Nam Bộ",
+   "en": "[SIMULATION] Prolonged severe heat in the South-East"
+  },
+  "description": {
+   "vi": "Cuối tháng 4/2024 Đông Nam Bộ nắng nóng gay gắt kéo dài, nhiệt độ cao nhất phổ biến 36–38°C, có nơi trên 39°C; chỉ số UV rất cao.",
+   "en": "In late April 2024 the South-East had prolonged severe heat with highs of 36–38°C, locally above 39°C, and very high UV."
+  },
+  "instructions": {
+   "vi": "Tham quan ngoài trời trước 10 giờ hoặc sau 16 giờ. Uống nhiều nước, đội mũ. Theo dõi sức khỏe người già, trẻ nhỏ.",
+   "en": "Visit outdoors before 10:00 or after 16:00. Drink plenty and wear a hat. Watch older people and children."
+  }
+ },
+ {
+  "code": "AL-SIM-0053",
+  "source_code": "simulation",
+  "hazard_code": "nang_nong",
+  "severity": 3,
+  "status": "expired",
+  "is_simulated": true,
+  "zone_codes": [
+   "ha-noi"
+  ],
+  "geometry": null,
+  "starts_at": "2023-06-01T10:00:00+07:00",
+  "ends_at": "2023-06-05T18:00:00+07:00",
+  "issued_at": "2023-06-01T10:00:00+07:00",
+  "updated_at_source": "2023-06-01T10:00:00+07:00",
+  "source_name": "Mô phỏng theo đợt nắng nóng Bắc Bộ đầu tháng 6/2023 (nguồn: Trung tâm Dự báo KTTV quốc gia)",
+  "source_url": "https://nchmf.gov.vn",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Nắng nóng gay gắt ở Hà Nội",
+   "en": "[SIMULATION] Severe heat in Hanoi"
+  },
+  "description": {
+   "vi": "Đầu tháng 6/2023 Bắc Bộ có nắng nóng gay gắt, Hà Nội nhiệt độ cao nhất phổ biến 37–39°C, nhu cầu điện tăng cao.",
+   "en": "In early June 2023 northern Viet Nam had severe heat; Hanoi highs were 37–39°C and power demand surged."
+  },
+  "instructions": {
+   "vi": "Hạn chế đi bộ tham quan buổi trưa. Uống đủ nước. Nghỉ trong phòng mát.",
+   "en": "Avoid walking tours at midday. Drink enough water. Rest in cool rooms."
+  }
+ },
+ {
+  "code": "AL-SIM-0054",
+  "source_code": "simulation",
+  "hazard_code": "chay_rung",
+  "severity": 4,
+  "status": "expired",
+  "is_simulated": true,
+  "zone_codes": [
+   "an-giang"
+  ],
+  "geometry": null,
+  "starts_at": "2016-03-21T12:00:00+07:00",
+  "ends_at": "2016-03-28T18:00:00+07:00",
+  "issued_at": "2016-03-21T12:00:00+07:00",
+  "updated_at_source": "2016-03-21T12:00:00+07:00",
+  "source_name": "Mô phỏng theo cháy rừng U Minh Thượng 3/2016 (nguồn: Cục Kiểm lâm; VnExpress)",
+  "source_url": "https://vnexpress.net",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Cháy rừng tại Vườn quốc gia U Minh Thượng",
+   "en": "[SIMULATION] Forest fire in U Minh Thuong National Park"
+  },
+  "description": {
+   "vi": "Cuối tháng 3/2016, trong đợt khô hạn kéo dài, cháy rừng bùng phát tại Vườn quốc gia U Minh Thượng (Kiên Giang cũ); khói lan rộng.",
+   "en": "In late March 2016, during a long drought, forest fires broke out in U Minh Thuong National Park (former Kien Giang); smoke spread widely."
+  },
+  "instructions": {
+   "vi": "Không vào khu rừng tràm. Tránh vùng khói. Không đốt lửa. Báo ngay 114 khi thấy cháy.",
+   "en": "Do not enter the cajuput forest. Avoid smoke. No fires. Call 114 if you see flames."
+  }
+ },
+ {
+  "code": "AL-SIM-0055",
+  "source_code": "simulation",
+  "hazard_code": "chay_rung",
+  "severity": 4,
+  "status": "expired",
+  "is_simulated": true,
+  "zone_codes": [
+   "ha-tinh"
+  ],
+  "geometry": null,
+  "starts_at": "2019-06-28T14:00:00+07:00",
+  "ends_at": "2019-07-02T18:00:00+07:00",
+  "issued_at": "2019-06-28T14:00:00+07:00",
+  "updated_at_source": "2019-06-28T14:00:00+07:00",
+  "source_name": "Mô phỏng theo cháy rừng núi Hồng Lĩnh 6/2019 (nguồn: Cục Kiểm lâm; VnExpress)",
+  "source_url": "https://vnexpress.net",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Cháy rừng trên dãy núi Hồng Lĩnh",
+   "en": "[SIMULATION] Forest fire on the Hong Linh range"
+  },
+  "description": {
+   "vi": "Cuối tháng 6/2019, trong đợt nắng nóng gay gắt, cháy rừng xảy ra trên dãy Hồng Lĩnh (Hà Tĩnh), lửa lan nhanh do gió Tây khô nóng.",
+   "en": "In late June 2019, during severe heat, a forest fire broke out on the Hong Linh range (Ha Tinh) and spread fast in hot dry westerly winds."
+  },
+  "instructions": {
+   "vi": "Tránh khu vực núi Hồng Lĩnh. Đóng cửa sổ khi có khói. Người có bệnh hô hấp ở trong nhà.",
+   "en": "Avoid the Hong Linh hills. Close windows in smoke. People with breathing problems should stay indoors."
+  }
+ },
+ {
+  "code": "AL-SIM-0056",
+  "source_code": "simulation",
+  "hazard_code": "ret_dam",
+  "severity": 4,
+  "status": "expired",
+  "is_simulated": true,
+  "zone_codes": [
+   "lao-cai",
+   "sa-pa-fansipan",
+   "lang-son"
+  ],
+  "geometry": null,
+  "starts_at": "2016-01-23T12:00:00+07:00",
+  "ends_at": "2016-01-27T18:00:00+07:00",
+  "issued_at": "2016-01-23T12:00:00+07:00",
+  "updated_at_source": "2016-01-23T12:00:00+07:00",
+  "source_name": "Mô phỏng theo đợt rét lịch sử tháng 1/2016 (nguồn: Trung tâm Dự báo KTTV quốc gia; Wikipedia – January 2016 East Asia cold wave)",
+  "source_url": "https://en.wikipedia.org/wiki/January_2016_East_Asia_cold_wave",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Rét hại, băng giá và tuyết rơi ở Sa Pa, Mẫu Sơn",
+   "en": "[SIMULATION] Damaging cold, frost and snow in Sa Pa and Mau Son"
+  },
+  "description": {
+   "vi": "Ngày 24–25/1/2016 đợt không khí lạnh rất mạnh gây rét hại, tuyết rơi ở Sa Pa, Bát Xát, Mẫu Sơn; nhiệt độ ở Sa Pa xuống khoảng −4°C, đường đèo đóng băng.",
+   "en": "On 24–25 January 2016 a very strong cold surge brought damaging cold and snow to Sa Pa, Bat Xat and Mau Son; Sa Pa fell to about −4°C and passes iced over."
+  },
+  "instructions": {
+   "vi": "Mặc nhiều lớp áo ấm. Không đi đèo Ô Quy Hồ, Mẫu Sơn khi đường đóng băng. Không đốt than trong phòng kín.",
+   "en": "Wear many warm layers. Avoid O Quy Ho and Mau Son roads when icy. Never burn charcoal in closed rooms."
+  }
+ },
+ {
+  "code": "AL-SIM-0057",
+  "source_code": "simulation",
+  "hazard_code": "dong_dat",
+  "severity": 2,
+  "status": "expired",
+  "is_simulated": true,
+  "zone_codes": [
+   "quang-ngai"
+  ],
+  "geometry": null,
+  "starts_at": "2024-07-28T08:30:00+07:00",
+  "ends_at": "2024-07-29T08:30:00+07:00",
+  "issued_at": "2024-07-28T08:30:00+07:00",
+  "updated_at_source": "2024-07-28T08:30:00+07:00",
+  "source_name": "Mô phỏng theo động đất Kon Plông 28/7/2024 (nguồn: Viện Các khoa học Trái đất – Trung tâm Báo tin động đất và cảnh báo sóng thần)",
+  "source_url": "https://igp-vast.vn",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Động đất độ lớn 5,0 tại Kon Plông",
+   "en": "[SIMULATION] Magnitude 5.0 earthquake at Kon Plong"
+  },
+  "description": {
+   "vi": "Sáng 28/7/2024 động đất độ lớn khoảng 5,0 xảy ra tại Kon Plông (Kon Tum cũ), rung lắc cảm nhận rõ ở Kon Tum và một số tỉnh lân cận.",
+   "en": "On the morning of 28 July 2024 an earthquake of about magnitude 5.0 struck Kon Plong (former Kon Tum), felt clearly in Kon Tum and nearby provinces."
+  },
+  "instructions": {
+   "vi": "Khi rung lắc: Cúi xuống – Che chắn – Bám chặt. Sau đó ra khỏi nhà bằng cầu thang bộ. Tránh vách núi, taluy.",
+   "en": "During shaking: Drop, Cover, Hold on. Then leave by the stairs. Avoid cliffs and steep cuttings."
+  }
+ },
+ {
+  "code": "AL-SIM-0058",
+  "source_code": "simulation",
+  "hazard_code": "dich_benh",
+  "severity": 2,
+  "status": "expired",
+  "is_simulated": true,
+  "zone_codes": [
+   "ha-noi"
+  ],
+  "geometry": null,
+  "starts_at": "2017-08-10T08:00:00+07:00",
+  "ends_at": "2017-09-30T18:00:00+07:00",
+  "issued_at": "2017-08-10T08:00:00+07:00",
+  "updated_at_source": "2017-08-10T08:00:00+07:00",
+  "source_name": "Mô phỏng theo dịch sốt xuất huyết Hà Nội 2017 (nguồn: Bộ Y tế; WHO Viet Nam)",
+  "source_url": "https://www.who.int/vietnam",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Dịch sốt xuất huyết bùng phát tại Hà Nội",
+   "en": "[SIMULATION] Dengue outbreak in Hanoi"
+  },
+  "description": {
+   "vi": "Tháng 8–9/2017 Hà Nội ghi nhận số ca sốt xuất huyết tăng rất cao, nhiều bệnh viện quá tải.",
+   "en": "In August–September 2017 Hanoi recorded a very sharp rise in dengue cases; many hospitals were overloaded."
+  },
+  "instructions": {
+   "vi": "Chống muỗi đốt cả ngày. Sốt cao đi khám ngay. Không tự dùng aspirin.",
+   "en": "Prevent bites all day. See a doctor for high fever. Do not take aspirin."
+  }
+ },
+ {
+  "code": "AL-SIM-0059",
+  "source_code": "simulation",
+  "hazard_code": "an_ninh",
+  "severity": 2,
+  "status": "expired",
+  "is_simulated": true,
+  "zone_codes": [
+   "ha-noi"
+  ],
+  "geometry": null,
+  "starts_at": "2024-02-15T05:00:00+07:00",
+  "ends_at": "2024-02-18T22:00:00+07:00",
+  "issued_at": "2024-02-15T05:00:00+07:00",
+  "updated_at_source": "2024-02-15T05:00:00+07:00",
+  "source_name": "Mô phỏng khuyến cáo khai hội chùa Hương 2024 (nguồn: Ban Tổ chức lễ hội chùa Hương; Công an TP Hà Nội)",
+  "source_url": "https://congan.hanoi.gov.vn",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Khai hội chùa Hương, khách rất đông",
+   "en": "[SIMULATION] Perfume Pagoda Festival opening – very crowded"
+  },
+  "description": {
+   "vi": "Lễ hội chùa Hương khai mạc mùng 6 Tết (15/2/2024), lượng khách rất lớn dồn về bến Yến, khu cáp treo; nguy cơ chen lấn, móc túi.",
+   "en": "The Perfume Pagoda Festival opened on the 6th day of Tet (15 February 2024); huge crowds gathered at Yen pier and the cable car, with risk of crushes and pickpocketing."
+  },
+  "instructions": {
+   "vi": "Đi sớm, tránh ngày khai hội. Mặc áo phao khi đi đò. Giữ đồ cá nhân cẩn thận. Hẹn điểm tập trung.",
+   "en": "Go early and avoid the opening day. Wear a life jacket on boats. Guard your belongings. Set a meeting point."
+  }
+ },
+ {
+  "code": "AL-SIM-0060",
+  "source_code": "simulation",
+  "hazard_code": "an_ninh",
+  "severity": 2,
+  "status": "expired",
+  "is_simulated": true,
+  "zone_codes": [
+   "phu-tho"
+  ],
+  "geometry": null,
+  "starts_at": "2024-04-17T05:00:00+07:00",
+  "ends_at": "2024-04-18T22:00:00+07:00",
+  "issued_at": "2024-04-17T05:00:00+07:00",
+  "updated_at_source": "2024-04-17T05:00:00+07:00",
+  "source_name": "Mô phỏng khuyến cáo Giỗ Tổ Hùng Vương 2024 (nguồn: Ban Tổ chức lễ hội Đền Hùng; Công an tỉnh Phú Thọ)",
+  "source_url": "https://phutho.gov.vn",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Lễ hội Đền Hùng, khách hành hương rất đông",
+   "en": "[SIMULATION] Hung Kings Temple Festival – very large crowds"
+  },
+  "description": {
+   "vi": "Ngày chính hội Giỗ Tổ Hùng Vương 10/3 âm lịch (18/4/2024) hàng trăm nghìn lượt khách về Khu di tích Đền Hùng; nắng nóng và đông người.",
+   "en": "On the main day of the Hung Kings Festival, 10th day of the 3rd lunar month (18 April 2024), hundreds of thousands of pilgrims visited the Hung Temple site in heat and crowds."
+  },
+  "instructions": {
+   "vi": "Mang nước, mũ. Tránh chen lên đền Thượng giờ cao điểm. Giữ trẻ em bên cạnh. Gặp sự cố gọi 113, 115.",
+   "en": "Bring water and a hat. Avoid pushing up to the Upper Temple at peak times. Keep children close. Call 113 or 115 if needed."
+  }
+ },
+ {
+  "code": "AL-SIM-0061",
+  "source_code": "simulation",
+  "hazard_code": "an_ninh",
+  "severity": 2,
+  "status": "expired",
+  "is_simulated": true,
+  "zone_codes": [
+   "an-giang"
+  ],
+  "geometry": null,
+  "starts_at": "2024-05-30T05:00:00+07:00",
+  "ends_at": "2024-06-03T22:00:00+07:00",
+  "issued_at": "2024-05-30T05:00:00+07:00",
+  "updated_at_source": "2024-05-30T05:00:00+07:00",
+  "source_name": "Mô phỏng khuyến cáo lễ hội Vía Bà Chúa Xứ núi Sam 2024 (nguồn: Ban Quản lý Khu du lịch quốc gia núi Sam)",
+  "source_url": "https://angiang.gov.vn",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Lễ hội Vía Bà Chúa Xứ núi Sam rất đông khách",
+   "en": "[SIMULATION] Ba Chua Xu Festival at Sam Mountain – very crowded"
+  },
+  "description": {
+   "vi": "Lễ hội Vía Bà Chúa Xứ núi Sam (23–27/4 âm lịch, tức 30/5–3/6/2024) thu hút lượng khách hành hương rất lớn về Châu Đốc.",
+   "en": "The Ba Chua Xu Festival at Sam Mountain (23rd–27th of the 4th lunar month, 30 May–3 June 2024) drew very large crowds of pilgrims to Chau Doc."
+  },
+  "instructions": {
+   "vi": "Cảnh giác với chèo kéo, ép giá, móc túi. Đi theo nhóm. Mang nước, tránh nắng.",
+   "en": "Watch out for touts, overcharging and pickpockets. Stay in groups. Bring water and avoid the sun."
+  }
+ },
+ {
+  "code": "AL-SIM-0062",
+  "source_code": "simulation",
+  "hazard_code": "an_ninh",
+  "severity": 2,
+  "status": "expired",
+  "is_simulated": true,
+  "zone_codes": [
+   "noi-thanh-tp-hcm"
+  ],
+  "geometry": null,
+  "starts_at": "2023-12-31T18:00:00+07:00",
+  "ends_at": "2024-01-01T02:00:00+07:00",
+  "issued_at": "2023-12-31T18:00:00+07:00",
+  "updated_at_source": "2023-12-31T18:00:00+07:00",
+  "source_name": "Mô phỏng khuyến cáo đêm giao thừa phố đi bộ Nguyễn Huệ (nguồn: Công an TP.HCM – khuyến cáo chung)",
+  "source_url": "https://congan.hochiminhcity.gov.vn",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Đêm giao thừa: phố đi bộ Nguyễn Huệ quá tải",
+   "en": "[SIMULATION] New Year's Eve: Nguyen Hue walking street overcrowded"
+  },
+  "description": {
+   "vi": "Đêm 31/12/2023 rất đông người đổ về phố đi bộ Nguyễn Huệ và khu vực trung tâm đón năm mới; nhiều tuyến đường cấm xe.",
+   "en": "On the night of 31 December 2023 huge crowds gathered on Nguyen Hue walking street and the city centre; many roads were closed to traffic."
+  },
+  "instructions": {
+   "vi": "Hẹn điểm tập trung. Giữ đồ cá nhân. Đi theo hướng dẫn của lực lượng chức năng khi giải tán.",
+   "en": "Agree a meeting point. Guard belongings. Follow officials' directions when leaving."
+  }
+ },
+ {
+  "code": "AL-SIM-0063",
+  "source_code": "simulation",
+  "hazard_code": "giao_thong",
+  "severity": 1,
+  "status": "expired",
+  "is_simulated": true,
+  "zone_codes": [
+   "ven-bien-da-nang"
+  ],
+  "geometry": null,
+  "starts_at": "2023-06-10T17:00:00+07:00",
+  "ends_at": "2023-06-10T23:30:00+07:00",
+  "issued_at": "2023-06-10T17:00:00+07:00",
+  "updated_at_source": "2023-06-10T17:00:00+07:00",
+  "source_name": "Mô phỏng thông báo phân luồng lễ hội pháo hoa quốc tế Đà Nẵng 2023 (nguồn: Công an TP Đà Nẵng)",
+  "source_url": "https://danang.gov.vn",
+  "headline": {
+   "vi": "[MÔ PHỎNG] Cấm đường khu vực sông Hàn đêm pháo hoa",
+   "en": "[SIMULATION] Roads closed around the Han River on fireworks night"
+  },
+  "description": {
+   "vi": "Đêm khai mạc Lễ hội pháo hoa quốc tế Đà Nẵng (10/6/2023), các tuyến đường ven sông Hàn cấm phương tiện, khách rất đông.",
+   "en": "On the opening night of the Da Nang International Fireworks Festival (10 June 2023), riverside roads along the Han River were closed and crowds were very large."
+  },
+  "instructions": {
+   "vi": "Đi bộ hoặc taxi tới gần khu vực. Tránh chen lấn trên cầu. Hẹn điểm gặp sau khi tan.",
+   "en": "Walk or take a taxi to nearby. Avoid crowding on bridges. Set a meeting point for afterwards."
+  }
+ }
+]

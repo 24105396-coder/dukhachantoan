@@ -1,0 +1,453 @@
+[
+ {
+  "slug": "bao-do-bo-bac-trung-bo",
+  "hazard_code": "bao",
+  "severity": 4,
+  "zone_codes": [
+   "nghe-an",
+   "ha-tinh",
+   "quang-tri"
+  ],
+  "duration_hours": 48,
+  "source_name": "Kịch bản mô phỏng dựa trên diễn biến bão Kajiki (8/2025) và Bualoi (9/2025) – Trung tâm Dự báo KTTV quốc gia",
+  "source_url": "https://nchmf.gov.vn",
+  "name": {
+   "vi": "Bão mạnh đổ bộ Bắc Trung Bộ",
+   "en": "Strong typhoon landfall in North Central Viet Nam"
+  },
+  "description": {
+   "vi": "Bão hình thành trên Biển Đông, mạnh lên và đổ bộ Nghệ An – Hà Tĩnh – Quảng Trị; kiểm tra luồng đối sánh hành trình ven biển, thông báo nhiều mức và check-in an toàn.",
+   "en": "A typhoon forms in the East Sea, strengthens and hits Nghe An – Ha Tinh – Quang Tri. Tests coastal trip matching, multi-level notifications and safety check-ins."
+  },
+  "steps": [
+   {
+    "at_minute": 0,
+    "severity": 2,
+    "hazard_code": "ap_thap",
+    "zone_codes": [
+     "nghe-an",
+     "ha-tinh",
+     "quang-tri"
+    ],
+    "headline": {
+     "vi": "[MÔ PHỎNG] Áp thấp nhiệt đới trên Biển Đông có thể mạnh lên thành bão",
+     "en": "[SIMULATION] Tropical depression in the East Sea may become a typhoon"
+    },
+    "description": {
+     "vi": "Áp thấp nhiệt đới cách bờ Bắc Trung Bộ khoảng 600 km, gió cấp 6–7, di chuyển hướng Tây Tây Bắc.",
+     "en": "A tropical depression about 600 km off the North Central coast, force 6–7 winds, moving west-north-west."
+    },
+    "instructions": {
+     "vi": "Theo dõi bản tin. Xem lại lịch đi biển trong 3 ngày tới.",
+     "en": "Follow bulletins. Review beach and sea plans for the next 3 days."
+    }
+   },
+   {
+    "at_minute": 10,
+    "severity": 3,
+    "hazard_code": "bao",
+    "zone_codes": [
+     "nghe-an",
+     "ha-tinh",
+     "quang-tri"
+    ],
+    "headline": {
+     "vi": "[MÔ PHỎNG] Bão mạnh lên, dự kiến đổ bộ trong 24 giờ",
+     "en": "[SIMULATION] Typhoon strengthening, landfall expected within 24 hours"
+    },
+    "description": {
+     "vi": "Bão mạnh cấp 11–12, giật cấp 14; dự kiến đổ bộ Nghệ An – Quảng Trị chiều tối mai. Cấm biển từ 12 giờ.",
+     "en": "Typhoon force 11–12, gusts 14, expected to hit Nghe An – Quang Tri tomorrow evening. Sea ban from 12:00."
+    },
+    "instructions": {
+     "vi": "Rời bãi biển Cửa Lò, Thiên Cầm, Nhật Lệ. Chuẩn bị đồ dùng thiết yếu 2–3 ngày. Đổi lịch trình về phía Bắc hoặc Nam.",
+     "en": "Leave Cua Lo, Thien Cam and Nhat Le beaches. Prepare supplies for 2–3 days. Shift plans north or south."
+    }
+   },
+   {
+    "at_minute": 20,
+    "severity": 4,
+    "hazard_code": "bao",
+    "zone_codes": [
+     "nghe-an",
+     "ha-tinh",
+     "quang-tri"
+    ],
+    "headline": {
+     "vi": "[MÔ PHỎNG] KHẨN CẤP: Bão đổ bộ Nghệ An – Hà Tĩnh – Quảng Trị",
+     "en": "[SIMULATION] EMERGENCY: Typhoon making landfall in Nghe An – Ha Tinh – Quang Tri"
+    },
+    "description": {
+     "vi": "Tâm bão đang đi vào đất liền, gió giật cấp 14–15, nước dâng 1–2 m ven biển. Rủi ro thiên tai cấp 4.",
+     "en": "The eye is moving inland with gusts force 14–15 and 1–2 m storm surge. Disaster risk level 4."
+    },
+    "instructions": {
+     "vi": "Ở yên trong nơi trú kiên cố. Không ra ngoài. Bấm \"Tôi an toàn\" hoặc \"Cần hỗ trợ\" trên ứng dụng. Gọi 112 khi gặp nạn.",
+     "en": "Stay in solid shelter. Do not go out. Tap \"I am safe\" or \"Need help\" in the app. Call 112 in an emergency."
+    }
+   },
+   {
+    "at_minute": 30,
+    "severity": 3,
+    "hazard_code": "lu",
+    "zone_codes": [
+     "ha-tinh",
+     "quang-tri"
+    ],
+    "headline": {
+     "vi": "[MÔ PHỎNG] Mưa lũ sau bão, nguy cơ ngập sâu vùng trũng",
+     "en": "[SIMULATION] Post-typhoon floods, deep flooding in low areas"
+    },
+    "description": {
+     "vi": "Hoàn lưu bão gây mưa 200–400 mm; lũ sông Gianh, Kiến Giang, Ngàn Phố lên báo động 3.",
+     "en": "Typhoon remnants bring 200–400 mm; the Gianh, Kien Giang and Ngan Pho rivers reach alarm level 3."
+    },
+    "instructions": {
+     "vi": "Không đi qua đường ngập, ngầm tràn. Lên tầng cao. Theo dõi hướng dẫn sơ tán.",
+     "en": "Do not cross flooded roads or spillways. Move upstairs. Follow evacuation advice."
+    }
+   }
+  ]
+ },
+ {
+  "slug": "lu-quet-tay-bac",
+  "hazard_code": "lu_quet",
+  "severity": 4,
+  "zone_codes": [
+   "lao-cai",
+   "lai-chau",
+   "sa-pa-fansipan",
+   "deo-o-quy-ho"
+  ],
+  "duration_hours": 36,
+  "source_name": "Kịch bản mô phỏng dựa trên lũ quét Mù Cang Chải (8/2017) và Lào Cai (9/2024) – Trung tâm Dự báo KTTV quốc gia",
+  "source_url": "https://nchmf.gov.vn",
+  "name": {
+   "vi": "Lũ quét, sạt lở Tây Bắc",
+   "en": "Flash floods and landslides in the North-West"
+  },
+  "description": {
+   "vi": "Mưa lớn kéo dài ở Lào Cai – Lai Châu dẫn tới lũ quét và sạt lở trên cung Sa Pa – Ô Quy Hồ; kiểm tra cảnh báo dạng vòng tròn và đối sánh theo hình học.",
+   "en": "Prolonged heavy rain in Lao Cai – Lai Chau leads to flash floods and landslides on the Sa Pa – O Quy Ho route. Tests circle-shaped alerts and geometry matching."
+  },
+  "steps": [
+   {
+    "at_minute": 0,
+    "severity": 2,
+    "hazard_code": "mua_lon",
+    "zone_codes": [
+     "lao-cai",
+     "lai-chau"
+    ],
+    "headline": {
+     "vi": "[MÔ PHỎNG] Mưa to ở vùng núi Lào Cai – Lai Châu",
+     "en": "[SIMULATION] Heavy rain in Lao Cai – Lai Chau mountains"
+    },
+    "description": {
+     "vi": "Mưa 50–100 mm trong 24 giờ tới, có nơi trên 150 mm.",
+     "en": "50–100 mm of rain in the next 24 hours, locally over 150 mm."
+    },
+    "instructions": {
+     "vi": "Theo dõi dự báo. Cân nhắc hoãn trekking đường dài.",
+     "en": "Follow forecasts. Consider postponing long treks."
+    }
+   },
+   {
+    "at_minute": 10,
+    "severity": 3,
+    "hazard_code": "sat_lo",
+    "zone_codes": [
+     "deo-o-quy-ho",
+     "lai-chau"
+    ],
+    "headline": {
+     "vi": "[MÔ PHỎNG] Cảnh báo sạt lở đèo Ô Quy Hồ",
+     "en": "[SIMULATION] Landslide warning on O Quy Ho Pass"
+    },
+    "description": {
+     "vi": "Đất đá sạt xuống QL4D tại một số điểm, xe chỉ đi được một làn.",
+     "en": "Rocks have fallen onto Highway 4D at several points; one lane only."
+    },
+    "instructions": {
+     "vi": "Không đi đèo ban đêm. Không dừng dưới taluy. Đi theo hướng dẫn phân luồng.",
+     "en": "Do not cross at night. Do not stop below slopes. Follow diversions."
+    }
+   },
+   {
+    "at_minute": 20,
+    "severity": 4,
+    "hazard_code": "lu_quet",
+    "zone_codes": [
+     "sa-pa-fansipan",
+     "lao-cai"
+    ],
+    "headline": {
+     "vi": "[MÔ PHỎNG] KHẨN CẤP: Lũ quét trên các suối quanh Sa Pa",
+     "en": "[SIMULATION] EMERGENCY: Flash floods on streams around Sa Pa"
+    },
+    "description": {
+     "vi": "Nước suối Mường Hoa và các suối nhánh dâng nhanh, cuốn theo bùn đá; nguy cơ lũ quét rất cao trong 6 giờ tới.",
+     "en": "Muong Hoa and tributary streams are rising fast with mud and rocks; very high flash flood risk in the next 6 hours."
+    },
+    "instructions": {
+     "vi": "Rời ngay khu vực ven suối, lên chỗ cao. Không vượt suối. Bấm \"Cần hỗ trợ\" và gọi 112 nếu bị mắc kẹt.",
+     "en": "Leave streamside areas now and climb higher. Do not cross streams. Tap \"Need help\" and call 112 if trapped."
+    }
+   }
+  ]
+ },
+ {
+  "slug": "nang-nong-nam-bo",
+  "hazard_code": "nang_nong",
+  "severity": 3,
+  "zone_codes": [
+   "ho-chi-minh",
+   "dong-nai",
+   "tay-ninh"
+  ],
+  "duration_hours": 72,
+  "source_name": "Kịch bản mô phỏng dựa trên đợt nắng nóng Nam Bộ tháng 4/2024 – Đài KTTV khu vực Nam Bộ",
+  "source_url": "https://nchmf.gov.vn",
+  "name": {
+   "vi": "Nắng nóng gay gắt Nam Bộ",
+   "en": "Severe heat in the South"
+  },
+  "description": {
+   "vi": "Nắng nóng tăng dần từ 35°C lên trên 39°C ở TP.HCM, Đồng Nai, Tây Ninh; kiểm tra gộp thông báo mức 1 theo ngày và nâng mức.",
+   "en": "Heat rises from 35°C to above 39°C in Ho Chi Minh City, Dong Nai and Tay Ninh. Tests daily digest for level 1 and escalation."
+  },
+  "steps": [
+   {
+    "at_minute": 0,
+    "severity": 1,
+    "hazard_code": "nang_nong",
+    "zone_codes": [
+     "ho-chi-minh",
+     "dong-nai",
+     "tay-ninh"
+    ],
+    "headline": {
+     "vi": "[MÔ PHỎNG] Nắng nóng ở Đông Nam Bộ",
+     "en": "[SIMULATION] Hot weather in the South-East"
+    },
+    "description": {
+     "vi": "Nhiệt độ cao nhất 35–36°C, chỉ số UV cao.",
+     "en": "Highs of 35–36°C with high UV."
+    },
+    "instructions": {
+     "vi": "Uống đủ nước, đội mũ khi ra ngoài.",
+     "en": "Drink enough water and wear a hat outside."
+    }
+   },
+   {
+    "at_minute": 10,
+    "severity": 2,
+    "hazard_code": "nang_nong",
+    "zone_codes": [
+     "ho-chi-minh",
+     "dong-nai",
+     "tay-ninh"
+    ],
+    "headline": {
+     "vi": "[MÔ PHỎNG] Nắng nóng gay gắt 37–38°C",
+     "en": "[SIMULATION] Severe heat of 37–38°C"
+    },
+    "description": {
+     "vi": "Nắng nóng gay gắt, độ ẩm thấp, chỉ số UV rất cao.",
+     "en": "Severe heat, low humidity and very high UV."
+    },
+    "instructions": {
+     "vi": "Tránh hoạt động ngoài trời 11–15 giờ. Leo núi Bà Đen trước 9 giờ.",
+     "en": "Avoid outdoor activity 11:00–15:00. Climb Ba Den before 09:00."
+    }
+   },
+   {
+    "at_minute": 20,
+    "severity": 3,
+    "hazard_code": "nang_nong",
+    "zone_codes": [
+     "ho-chi-minh",
+     "tay-ninh"
+    ],
+    "headline": {
+     "vi": "[MÔ PHỎNG] Nắng nóng đặc biệt gay gắt trên 39°C",
+     "en": "[SIMULATION] Extreme heat above 39°C"
+    },
+    "description": {
+     "vi": "Nhiệt độ cao nhất 39–40°C; nguy cơ say nắng, sốc nhiệt cao, nhất là với người cao tuổi.",
+     "en": "Highs of 39–40°C; high risk of heatstroke, especially for older people."
+    },
+    "instructions": {
+     "vi": "Hủy tham quan ngoài trời buổi trưa. Theo dõi người cao tuổi, trẻ nhỏ. Gọi 115 khi có dấu hiệu say nắng.",
+     "en": "Cancel midday outdoor visits. Watch older people and children. Call 115 for heatstroke signs."
+    }
+   }
+  ]
+ },
+ {
+  "slug": "trieu-cuong-tp-hcm",
+  "hazard_code": "trieu_cuong",
+  "severity": 3,
+  "zone_codes": [
+   "ho-chi-minh",
+   "noi-thanh-tp-hcm"
+  ],
+  "duration_hours": 24,
+  "source_name": "Kịch bản mô phỏng dựa trên bản tin triều cường và bão Usagi (11/2018) – Đài KTTV khu vực Nam Bộ",
+  "source_url": "https://nchmf.gov.vn",
+  "name": {
+   "vi": "Triều cường kết hợp mưa lớn tại TP.HCM",
+   "en": "King tide with heavy rain in Ho Chi Minh City"
+  },
+  "description": {
+   "vi": "Triều cường đạt đỉnh trùng mưa lớn chiều tối gây ngập nội thành; kiểm tra cảnh báo vùng đô thị và nhắc lại giờ ra sân bay.",
+   "en": "Peak tide coincides with heavy evening rain, flooding the inner city. Tests urban-zone alerts and airport reminders."
+  },
+  "steps": [
+   {
+    "at_minute": 0,
+    "severity": 1,
+    "hazard_code": "trieu_cuong",
+    "zone_codes": [
+     "noi-thanh-tp-hcm"
+    ],
+    "headline": {
+     "vi": "[MÔ PHỎNG] Triều cường lên cao chiều tối",
+     "en": "[SIMULATION] High tide this evening"
+    },
+    "description": {
+     "vi": "Đỉnh triều trạm Phú An dự báo xấp xỉ báo động 2 lúc 17–18 giờ.",
+     "en": "Peak tide at Phu An forecast near alarm level 2 at 17:00–18:00."
+    },
+    "instructions": {
+     "vi": "Tránh đường ven kênh giờ triều đỉnh.",
+     "en": "Avoid canal-side roads at peak tide."
+    }
+   },
+   {
+    "at_minute": 10,
+    "severity": 2,
+    "hazard_code": "mua_lon",
+    "zone_codes": [
+     "ho-chi-minh"
+    ],
+    "headline": {
+     "vi": "[MÔ PHỎNG] Mưa dông lớn trùng triều cường",
+     "en": "[SIMULATION] Heavy thunderstorm during high tide"
+    },
+    "description": {
+     "vi": "Mưa 50–80 mm trong 2 giờ trùng đỉnh triều; nhiều tuyến đường bắt đầu ngập.",
+     "en": "50–80 mm of rain in 2 hours at peak tide; many roads starting to flood."
+    },
+    "instructions": {
+     "vi": "Không đi xe máy qua chỗ ngập. Ra sân bay Tân Sơn Nhất sớm hơn 1–2 giờ.",
+     "en": "Do not ride through flooded roads. Leave for Tan Son Nhat Airport 1–2 hours early."
+    }
+   },
+   {
+    "at_minute": 20,
+    "severity": 3,
+    "hazard_code": "trieu_cuong",
+    "zone_codes": [
+     "noi-thanh-tp-hcm",
+     "ho-chi-minh"
+    ],
+    "headline": {
+     "vi": "[MÔ PHỎNG] Ngập sâu diện rộng nội thành TP.HCM",
+     "en": "[SIMULATION] Widespread deep flooding in inner Ho Chi Minh City"
+    },
+    "description": {
+     "vi": "Đỉnh triều vượt báo động 3 kết hợp mưa lớn; nhiều tuyến phố ngập 30–50 cm, giao thông ùn tắc kéo dài.",
+     "en": "Tide above alarm level 3 plus heavy rain; many streets under 30–50 cm of water and long traffic jams."
+    },
+    "instructions": {
+     "vi": "Ở lại nơi lưu trú tới khi nước rút. Tránh nắp cống, dây điện. Bấm \"Tôi an toàn\" trên ứng dụng.",
+     "en": "Stay at your lodging until water recedes. Avoid drains and power lines. Tap \"I am safe\" in the app."
+    }
+   }
+  ]
+ },
+ {
+  "slug": "su-co-an-ninh-le-hoi",
+  "hazard_code": "an_ninh",
+  "severity": 3,
+  "zone_codes": [
+   "ha-noi",
+   "noi-do-ha-noi"
+  ],
+  "duration_hours": 8,
+  "source_name": "Kịch bản mô phỏng sự cố đám đông tại lễ hội (giả định) – tham khảo khuyến cáo của Bộ Công an",
+  "source_url": "https://bocongan.gov.vn",
+  "name": {
+   "vi": "Sự cố an ninh tại lễ hội đông người",
+   "en": "Security incident at a crowded festival"
+  },
+  "description": {
+   "vi": "Đám đông quá tải tại khu phố đi bộ Hồ Gươm đêm sự kiện, có sự cố chen lấn; kiểm tra thông báo khẩn tới du khách trong nội đô và phản hồi check-in của cơ quan.",
+   "en": "Overcrowding at the Hoan Kiem walking street during an event leads to a crush. Tests urgent alerts to visitors in inner Hanoi and agency check-in responses."
+  },
+  "steps": [
+   {
+    "at_minute": 0,
+    "severity": 1,
+    "hazard_code": "an_ninh",
+    "zone_codes": [
+     "noi-do-ha-noi"
+    ],
+    "headline": {
+     "vi": "[MÔ PHỎNG] Khu phố đi bộ Hồ Gươm rất đông",
+     "en": "[SIMULATION] Hoan Kiem walking street very crowded"
+    },
+    "description": {
+     "vi": "Lượng khách tăng nhanh trước giờ bắn pháo hoa; một số phố cấm xe.",
+     "en": "Crowds are building quickly before the fireworks; some streets are closed to vehicles."
+    },
+    "instructions": {
+     "vi": "Hẹn điểm tập trung. Giữ đồ cá nhân.",
+     "en": "Agree a meeting point. Guard your belongings."
+    }
+   },
+   {
+    "at_minute": 10,
+    "severity": 2,
+    "hazard_code": "an_ninh",
+    "zone_codes": [
+     "noi-do-ha-noi"
+    ],
+    "headline": {
+     "vi": "[MÔ PHỎNG] Quá tải cục bộ quanh tháp Hòa Phong",
+     "en": "[SIMULATION] Local overcrowding near Hoa Phong Tower"
+    },
+    "description": {
+     "vi": "Mật độ người rất cao quanh tháp Hòa Phong và phố Đinh Tiên Hoàng; xuất hiện chen lấn.",
+     "en": "Very high crowd density near Hoa Phong Tower and Dinh Tien Hoang Street; pushing reported."
+    },
+    "instructions": {
+     "vi": "Di chuyển ra rìa đám đông. Không đi vào khu đã quá tải. Giữ trẻ em sát bên.",
+     "en": "Move to the edge of the crowd. Do not enter overcrowded areas. Keep children close."
+    }
+   },
+   {
+    "at_minute": 20,
+    "severity": 3,
+    "hazard_code": "an_ninh",
+    "zone_codes": [
+     "noi-do-ha-noi",
+     "ha-noi"
+    ],
+    "headline": {
+     "vi": "[MÔ PHỎNG] Sự cố chen lấn, lực lượng chức năng phong tỏa khu vực",
+     "en": "[SIMULATION] Crowd crush – area sealed off by authorities"
+    },
+    "description": {
+     "vi": "Đã xảy ra sự cố chen lấn tại phố Đinh Tiên Hoàng; công an phong tỏa khu vực, tổ chức giải tỏa theo các hướng Tràng Tiền, Hàng Khay.",
+     "en": "A crowd crush occurred on Dinh Tien Hoang Street; police sealed off the area and are clearing crowds towards Trang Tien and Hang Khay."
+    },
+    "instructions": {
+     "vi": "Rời khu vực theo hướng dẫn của công an. Bấm \"Tôi an toàn\" hoặc \"Cần hỗ trợ\". Gọi 113, 115 khi cần.",
+     "en": "Leave as directed by police. Tap \"I am safe\" or \"Need help\". Call 113 or 115 if needed."
+    }
+   }
+  ]
+ }
+]

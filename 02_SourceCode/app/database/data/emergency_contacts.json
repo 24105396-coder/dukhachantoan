@@ -1,0 +1,4204 @@
+[
+ {
+  "province_code": "HN",
+  "zone_code": "ha-noi",
+  "contact_type": "police",
+  "phone": "113",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 1,
+  "name": {
+   "vi": "Công an Hà Nội (gọi 113)",
+   "en": "Police – Hanoi (dial 113)"
+  },
+  "note": {
+   "vi": "Số khẩn cấp công an, miễn phí, tự chuyển về công an địa phương nơi gọi.",
+   "en": "Free police emergency number, routed to the local police where you call from."
+  }
+ },
+ {
+  "province_code": "HN",
+  "zone_code": "ha-noi",
+  "contact_type": "fire",
+  "phone": "114",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 2,
+  "name": {
+   "vi": "Cứu nạn, cứu hộ và PCCC Hà Nội (gọi 114)",
+   "en": "Fire and rescue – Hanoi (dial 114)"
+  },
+  "note": {
+   "vi": "Báo cháy, cứu nạn cứu hộ (đuối nước, mắc kẹt, sập đổ).",
+   "en": "Fire, rescue from drowning, entrapment or collapse."
+  }
+ },
+ {
+  "province_code": "HN",
+  "zone_code": "ha-noi",
+  "contact_type": "ambulance",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 3,
+  "name": {
+   "vi": "Cấp cứu y tế Hà Nội (gọi 115)",
+   "en": "Ambulance – Hanoi (dial 115)"
+  },
+  "note": {
+   "vi": "Cấp cứu y tế; nói rõ địa chỉ, tình trạng người bệnh. Người nước ngoài nên nhờ người địa phương hỗ trợ ngôn ngữ.",
+   "en": "Medical emergency. State the address and the patient's condition; ask a local for language help if needed."
+  }
+ },
+ {
+  "province_code": "HN",
+  "zone_code": "ha-noi",
+  "contact_type": "rescue",
+  "phone": "112",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 4,
+  "name": {
+   "vi": "Tìm kiếm cứu nạn Hà Nội (gọi 112)",
+   "en": "Search and rescue – Hanoi (dial 112)"
+  },
+  "note": {
+   "vi": "Số tìm kiếm cứu nạn quốc gia, dùng khi gặp thiên tai, lạc trong rừng, sự cố trên biển.",
+   "en": "National search-and-rescue number for disasters, getting lost in forests or incidents at sea."
+  }
+ },
+ {
+  "province_code": "HP",
+  "zone_code": "hai-phong",
+  "contact_type": "police",
+  "phone": "113",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 1,
+  "name": {
+   "vi": "Công an Hải Phòng (gọi 113)",
+   "en": "Police – Hai Phong (dial 113)"
+  },
+  "note": {
+   "vi": "Số khẩn cấp công an, miễn phí, tự chuyển về công an địa phương nơi gọi.",
+   "en": "Free police emergency number, routed to the local police where you call from."
+  }
+ },
+ {
+  "province_code": "HP",
+  "zone_code": "hai-phong",
+  "contact_type": "fire",
+  "phone": "114",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 2,
+  "name": {
+   "vi": "Cứu nạn, cứu hộ và PCCC Hải Phòng (gọi 114)",
+   "en": "Fire and rescue – Hai Phong (dial 114)"
+  },
+  "note": {
+   "vi": "Báo cháy, cứu nạn cứu hộ (đuối nước, mắc kẹt, sập đổ).",
+   "en": "Fire, rescue from drowning, entrapment or collapse."
+  }
+ },
+ {
+  "province_code": "HP",
+  "zone_code": "hai-phong",
+  "contact_type": "ambulance",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 3,
+  "name": {
+   "vi": "Cấp cứu y tế Hải Phòng (gọi 115)",
+   "en": "Ambulance – Hai Phong (dial 115)"
+  },
+  "note": {
+   "vi": "Cấp cứu y tế; nói rõ địa chỉ, tình trạng người bệnh. Người nước ngoài nên nhờ người địa phương hỗ trợ ngôn ngữ.",
+   "en": "Medical emergency. State the address and the patient's condition; ask a local for language help if needed."
+  }
+ },
+ {
+  "province_code": "HP",
+  "zone_code": "hai-phong",
+  "contact_type": "rescue",
+  "phone": "112",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 4,
+  "name": {
+   "vi": "Tìm kiếm cứu nạn Hải Phòng (gọi 112)",
+   "en": "Search and rescue – Hai Phong (dial 112)"
+  },
+  "note": {
+   "vi": "Số tìm kiếm cứu nạn quốc gia, dùng khi gặp thiên tai, lạc trong rừng, sự cố trên biển.",
+   "en": "National search-and-rescue number for disasters, getting lost in forests or incidents at sea."
+  }
+ },
+ {
+  "province_code": "QN",
+  "zone_code": "quang-ninh",
+  "contact_type": "police",
+  "phone": "113",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 1,
+  "name": {
+   "vi": "Công an Quảng Ninh (gọi 113)",
+   "en": "Police – Quang Ninh (dial 113)"
+  },
+  "note": {
+   "vi": "Số khẩn cấp công an, miễn phí, tự chuyển về công an địa phương nơi gọi.",
+   "en": "Free police emergency number, routed to the local police where you call from."
+  }
+ },
+ {
+  "province_code": "QN",
+  "zone_code": "quang-ninh",
+  "contact_type": "fire",
+  "phone": "114",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 2,
+  "name": {
+   "vi": "Cứu nạn, cứu hộ và PCCC Quảng Ninh (gọi 114)",
+   "en": "Fire and rescue – Quang Ninh (dial 114)"
+  },
+  "note": {
+   "vi": "Báo cháy, cứu nạn cứu hộ (đuối nước, mắc kẹt, sập đổ).",
+   "en": "Fire, rescue from drowning, entrapment or collapse."
+  }
+ },
+ {
+  "province_code": "QN",
+  "zone_code": "quang-ninh",
+  "contact_type": "ambulance",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 3,
+  "name": {
+   "vi": "Cấp cứu y tế Quảng Ninh (gọi 115)",
+   "en": "Ambulance – Quang Ninh (dial 115)"
+  },
+  "note": {
+   "vi": "Cấp cứu y tế; nói rõ địa chỉ, tình trạng người bệnh. Người nước ngoài nên nhờ người địa phương hỗ trợ ngôn ngữ.",
+   "en": "Medical emergency. State the address and the patient's condition; ask a local for language help if needed."
+  }
+ },
+ {
+  "province_code": "QN",
+  "zone_code": "quang-ninh",
+  "contact_type": "rescue",
+  "phone": "112",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 4,
+  "name": {
+   "vi": "Tìm kiếm cứu nạn Quảng Ninh (gọi 112)",
+   "en": "Search and rescue – Quang Ninh (dial 112)"
+  },
+  "note": {
+   "vi": "Số tìm kiếm cứu nạn quốc gia, dùng khi gặp thiên tai, lạc trong rừng, sự cố trên biển.",
+   "en": "National search-and-rescue number for disasters, getting lost in forests or incidents at sea."
+  }
+ },
+ {
+  "province_code": "BN",
+  "zone_code": "bac-ninh",
+  "contact_type": "police",
+  "phone": "113",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 1,
+  "name": {
+   "vi": "Công an Bắc Ninh (gọi 113)",
+   "en": "Police – Bac Ninh (dial 113)"
+  },
+  "note": {
+   "vi": "Số khẩn cấp công an, miễn phí, tự chuyển về công an địa phương nơi gọi.",
+   "en": "Free police emergency number, routed to the local police where you call from."
+  }
+ },
+ {
+  "province_code": "BN",
+  "zone_code": "bac-ninh",
+  "contact_type": "fire",
+  "phone": "114",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 2,
+  "name": {
+   "vi": "Cứu nạn, cứu hộ và PCCC Bắc Ninh (gọi 114)",
+   "en": "Fire and rescue – Bac Ninh (dial 114)"
+  },
+  "note": {
+   "vi": "Báo cháy, cứu nạn cứu hộ (đuối nước, mắc kẹt, sập đổ).",
+   "en": "Fire, rescue from drowning, entrapment or collapse."
+  }
+ },
+ {
+  "province_code": "BN",
+  "zone_code": "bac-ninh",
+  "contact_type": "ambulance",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 3,
+  "name": {
+   "vi": "Cấp cứu y tế Bắc Ninh (gọi 115)",
+   "en": "Ambulance – Bac Ninh (dial 115)"
+  },
+  "note": {
+   "vi": "Cấp cứu y tế; nói rõ địa chỉ, tình trạng người bệnh. Người nước ngoài nên nhờ người địa phương hỗ trợ ngôn ngữ.",
+   "en": "Medical emergency. State the address and the patient's condition; ask a local for language help if needed."
+  }
+ },
+ {
+  "province_code": "BN",
+  "zone_code": "bac-ninh",
+  "contact_type": "rescue",
+  "phone": "112",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 4,
+  "name": {
+   "vi": "Tìm kiếm cứu nạn Bắc Ninh (gọi 112)",
+   "en": "Search and rescue – Bac Ninh (dial 112)"
+  },
+  "note": {
+   "vi": "Số tìm kiếm cứu nạn quốc gia, dùng khi gặp thiên tai, lạc trong rừng, sự cố trên biển.",
+   "en": "National search-and-rescue number for disasters, getting lost in forests or incidents at sea."
+  }
+ },
+ {
+  "province_code": "HY",
+  "zone_code": "hung-yen",
+  "contact_type": "police",
+  "phone": "113",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 1,
+  "name": {
+   "vi": "Công an Hưng Yên (gọi 113)",
+   "en": "Police – Hung Yen (dial 113)"
+  },
+  "note": {
+   "vi": "Số khẩn cấp công an, miễn phí, tự chuyển về công an địa phương nơi gọi.",
+   "en": "Free police emergency number, routed to the local police where you call from."
+  }
+ },
+ {
+  "province_code": "HY",
+  "zone_code": "hung-yen",
+  "contact_type": "fire",
+  "phone": "114",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 2,
+  "name": {
+   "vi": "Cứu nạn, cứu hộ và PCCC Hưng Yên (gọi 114)",
+   "en": "Fire and rescue – Hung Yen (dial 114)"
+  },
+  "note": {
+   "vi": "Báo cháy, cứu nạn cứu hộ (đuối nước, mắc kẹt, sập đổ).",
+   "en": "Fire, rescue from drowning, entrapment or collapse."
+  }
+ },
+ {
+  "province_code": "HY",
+  "zone_code": "hung-yen",
+  "contact_type": "ambulance",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 3,
+  "name": {
+   "vi": "Cấp cứu y tế Hưng Yên (gọi 115)",
+   "en": "Ambulance – Hung Yen (dial 115)"
+  },
+  "note": {
+   "vi": "Cấp cứu y tế; nói rõ địa chỉ, tình trạng người bệnh. Người nước ngoài nên nhờ người địa phương hỗ trợ ngôn ngữ.",
+   "en": "Medical emergency. State the address and the patient's condition; ask a local for language help if needed."
+  }
+ },
+ {
+  "province_code": "HY",
+  "zone_code": "hung-yen",
+  "contact_type": "rescue",
+  "phone": "112",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 4,
+  "name": {
+   "vi": "Tìm kiếm cứu nạn Hưng Yên (gọi 112)",
+   "en": "Search and rescue – Hung Yen (dial 112)"
+  },
+  "note": {
+   "vi": "Số tìm kiếm cứu nạn quốc gia, dùng khi gặp thiên tai, lạc trong rừng, sự cố trên biển.",
+   "en": "National search-and-rescue number for disasters, getting lost in forests or incidents at sea."
+  }
+ },
+ {
+  "province_code": "NB",
+  "zone_code": "ninh-binh",
+  "contact_type": "police",
+  "phone": "113",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 1,
+  "name": {
+   "vi": "Công an Ninh Bình (gọi 113)",
+   "en": "Police – Ninh Binh (dial 113)"
+  },
+  "note": {
+   "vi": "Số khẩn cấp công an, miễn phí, tự chuyển về công an địa phương nơi gọi.",
+   "en": "Free police emergency number, routed to the local police where you call from."
+  }
+ },
+ {
+  "province_code": "NB",
+  "zone_code": "ninh-binh",
+  "contact_type": "fire",
+  "phone": "114",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 2,
+  "name": {
+   "vi": "Cứu nạn, cứu hộ và PCCC Ninh Bình (gọi 114)",
+   "en": "Fire and rescue – Ninh Binh (dial 114)"
+  },
+  "note": {
+   "vi": "Báo cháy, cứu nạn cứu hộ (đuối nước, mắc kẹt, sập đổ).",
+   "en": "Fire, rescue from drowning, entrapment or collapse."
+  }
+ },
+ {
+  "province_code": "NB",
+  "zone_code": "ninh-binh",
+  "contact_type": "ambulance",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 3,
+  "name": {
+   "vi": "Cấp cứu y tế Ninh Bình (gọi 115)",
+   "en": "Ambulance – Ninh Binh (dial 115)"
+  },
+  "note": {
+   "vi": "Cấp cứu y tế; nói rõ địa chỉ, tình trạng người bệnh. Người nước ngoài nên nhờ người địa phương hỗ trợ ngôn ngữ.",
+   "en": "Medical emergency. State the address and the patient's condition; ask a local for language help if needed."
+  }
+ },
+ {
+  "province_code": "NB",
+  "zone_code": "ninh-binh",
+  "contact_type": "rescue",
+  "phone": "112",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 4,
+  "name": {
+   "vi": "Tìm kiếm cứu nạn Ninh Bình (gọi 112)",
+   "en": "Search and rescue – Ninh Binh (dial 112)"
+  },
+  "note": {
+   "vi": "Số tìm kiếm cứu nạn quốc gia, dùng khi gặp thiên tai, lạc trong rừng, sự cố trên biển.",
+   "en": "National search-and-rescue number for disasters, getting lost in forests or incidents at sea."
+  }
+ },
+ {
+  "province_code": "PT",
+  "zone_code": "phu-tho",
+  "contact_type": "police",
+  "phone": "113",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 1,
+  "name": {
+   "vi": "Công an Phú Thọ (gọi 113)",
+   "en": "Police – Phu Tho (dial 113)"
+  },
+  "note": {
+   "vi": "Số khẩn cấp công an, miễn phí, tự chuyển về công an địa phương nơi gọi.",
+   "en": "Free police emergency number, routed to the local police where you call from."
+  }
+ },
+ {
+  "province_code": "PT",
+  "zone_code": "phu-tho",
+  "contact_type": "fire",
+  "phone": "114",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 2,
+  "name": {
+   "vi": "Cứu nạn, cứu hộ và PCCC Phú Thọ (gọi 114)",
+   "en": "Fire and rescue – Phu Tho (dial 114)"
+  },
+  "note": {
+   "vi": "Báo cháy, cứu nạn cứu hộ (đuối nước, mắc kẹt, sập đổ).",
+   "en": "Fire, rescue from drowning, entrapment or collapse."
+  }
+ },
+ {
+  "province_code": "PT",
+  "zone_code": "phu-tho",
+  "contact_type": "ambulance",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 3,
+  "name": {
+   "vi": "Cấp cứu y tế Phú Thọ (gọi 115)",
+   "en": "Ambulance – Phu Tho (dial 115)"
+  },
+  "note": {
+   "vi": "Cấp cứu y tế; nói rõ địa chỉ, tình trạng người bệnh. Người nước ngoài nên nhờ người địa phương hỗ trợ ngôn ngữ.",
+   "en": "Medical emergency. State the address and the patient's condition; ask a local for language help if needed."
+  }
+ },
+ {
+  "province_code": "PT",
+  "zone_code": "phu-tho",
+  "contact_type": "rescue",
+  "phone": "112",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 4,
+  "name": {
+   "vi": "Tìm kiếm cứu nạn Phú Thọ (gọi 112)",
+   "en": "Search and rescue – Phu Tho (dial 112)"
+  },
+  "note": {
+   "vi": "Số tìm kiếm cứu nạn quốc gia, dùng khi gặp thiên tai, lạc trong rừng, sự cố trên biển.",
+   "en": "National search-and-rescue number for disasters, getting lost in forests or incidents at sea."
+  }
+ },
+ {
+  "province_code": "TN",
+  "zone_code": "thai-nguyen",
+  "contact_type": "police",
+  "phone": "113",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 1,
+  "name": {
+   "vi": "Công an Thái Nguyên (gọi 113)",
+   "en": "Police – Thai Nguyen (dial 113)"
+  },
+  "note": {
+   "vi": "Số khẩn cấp công an, miễn phí, tự chuyển về công an địa phương nơi gọi.",
+   "en": "Free police emergency number, routed to the local police where you call from."
+  }
+ },
+ {
+  "province_code": "TN",
+  "zone_code": "thai-nguyen",
+  "contact_type": "fire",
+  "phone": "114",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 2,
+  "name": {
+   "vi": "Cứu nạn, cứu hộ và PCCC Thái Nguyên (gọi 114)",
+   "en": "Fire and rescue – Thai Nguyen (dial 114)"
+  },
+  "note": {
+   "vi": "Báo cháy, cứu nạn cứu hộ (đuối nước, mắc kẹt, sập đổ).",
+   "en": "Fire, rescue from drowning, entrapment or collapse."
+  }
+ },
+ {
+  "province_code": "TN",
+  "zone_code": "thai-nguyen",
+  "contact_type": "ambulance",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 3,
+  "name": {
+   "vi": "Cấp cứu y tế Thái Nguyên (gọi 115)",
+   "en": "Ambulance – Thai Nguyen (dial 115)"
+  },
+  "note": {
+   "vi": "Cấp cứu y tế; nói rõ địa chỉ, tình trạng người bệnh. Người nước ngoài nên nhờ người địa phương hỗ trợ ngôn ngữ.",
+   "en": "Medical emergency. State the address and the patient's condition; ask a local for language help if needed."
+  }
+ },
+ {
+  "province_code": "TN",
+  "zone_code": "thai-nguyen",
+  "contact_type": "rescue",
+  "phone": "112",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 4,
+  "name": {
+   "vi": "Tìm kiếm cứu nạn Thái Nguyên (gọi 112)",
+   "en": "Search and rescue – Thai Nguyen (dial 112)"
+  },
+  "note": {
+   "vi": "Số tìm kiếm cứu nạn quốc gia, dùng khi gặp thiên tai, lạc trong rừng, sự cố trên biển.",
+   "en": "National search-and-rescue number for disasters, getting lost in forests or incidents at sea."
+  }
+ },
+ {
+  "province_code": "TQ",
+  "zone_code": "tuyen-quang",
+  "contact_type": "police",
+  "phone": "113",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 1,
+  "name": {
+   "vi": "Công an Tuyên Quang (gọi 113)",
+   "en": "Police – Tuyen Quang (dial 113)"
+  },
+  "note": {
+   "vi": "Số khẩn cấp công an, miễn phí, tự chuyển về công an địa phương nơi gọi.",
+   "en": "Free police emergency number, routed to the local police where you call from."
+  }
+ },
+ {
+  "province_code": "TQ",
+  "zone_code": "tuyen-quang",
+  "contact_type": "fire",
+  "phone": "114",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 2,
+  "name": {
+   "vi": "Cứu nạn, cứu hộ và PCCC Tuyên Quang (gọi 114)",
+   "en": "Fire and rescue – Tuyen Quang (dial 114)"
+  },
+  "note": {
+   "vi": "Báo cháy, cứu nạn cứu hộ (đuối nước, mắc kẹt, sập đổ).",
+   "en": "Fire, rescue from drowning, entrapment or collapse."
+  }
+ },
+ {
+  "province_code": "TQ",
+  "zone_code": "tuyen-quang",
+  "contact_type": "ambulance",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 3,
+  "name": {
+   "vi": "Cấp cứu y tế Tuyên Quang (gọi 115)",
+   "en": "Ambulance – Tuyen Quang (dial 115)"
+  },
+  "note": {
+   "vi": "Cấp cứu y tế; nói rõ địa chỉ, tình trạng người bệnh. Người nước ngoài nên nhờ người địa phương hỗ trợ ngôn ngữ.",
+   "en": "Medical emergency. State the address and the patient's condition; ask a local for language help if needed."
+  }
+ },
+ {
+  "province_code": "TQ",
+  "zone_code": "tuyen-quang",
+  "contact_type": "rescue",
+  "phone": "112",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 4,
+  "name": {
+   "vi": "Tìm kiếm cứu nạn Tuyên Quang (gọi 112)",
+   "en": "Search and rescue – Tuyen Quang (dial 112)"
+  },
+  "note": {
+   "vi": "Số tìm kiếm cứu nạn quốc gia, dùng khi gặp thiên tai, lạc trong rừng, sự cố trên biển.",
+   "en": "National search-and-rescue number for disasters, getting lost in forests or incidents at sea."
+  }
+ },
+ {
+  "province_code": "LC",
+  "zone_code": "lao-cai",
+  "contact_type": "police",
+  "phone": "113",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 1,
+  "name": {
+   "vi": "Công an Lào Cai (gọi 113)",
+   "en": "Police – Lao Cai (dial 113)"
+  },
+  "note": {
+   "vi": "Số khẩn cấp công an, miễn phí, tự chuyển về công an địa phương nơi gọi.",
+   "en": "Free police emergency number, routed to the local police where you call from."
+  }
+ },
+ {
+  "province_code": "LC",
+  "zone_code": "lao-cai",
+  "contact_type": "fire",
+  "phone": "114",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 2,
+  "name": {
+   "vi": "Cứu nạn, cứu hộ và PCCC Lào Cai (gọi 114)",
+   "en": "Fire and rescue – Lao Cai (dial 114)"
+  },
+  "note": {
+   "vi": "Báo cháy, cứu nạn cứu hộ (đuối nước, mắc kẹt, sập đổ).",
+   "en": "Fire, rescue from drowning, entrapment or collapse."
+  }
+ },
+ {
+  "province_code": "LC",
+  "zone_code": "lao-cai",
+  "contact_type": "ambulance",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 3,
+  "name": {
+   "vi": "Cấp cứu y tế Lào Cai (gọi 115)",
+   "en": "Ambulance – Lao Cai (dial 115)"
+  },
+  "note": {
+   "vi": "Cấp cứu y tế; nói rõ địa chỉ, tình trạng người bệnh. Người nước ngoài nên nhờ người địa phương hỗ trợ ngôn ngữ.",
+   "en": "Medical emergency. State the address and the patient's condition; ask a local for language help if needed."
+  }
+ },
+ {
+  "province_code": "LC",
+  "zone_code": "lao-cai",
+  "contact_type": "rescue",
+  "phone": "112",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 4,
+  "name": {
+   "vi": "Tìm kiếm cứu nạn Lào Cai (gọi 112)",
+   "en": "Search and rescue – Lao Cai (dial 112)"
+  },
+  "note": {
+   "vi": "Số tìm kiếm cứu nạn quốc gia, dùng khi gặp thiên tai, lạc trong rừng, sự cố trên biển.",
+   "en": "National search-and-rescue number for disasters, getting lost in forests or incidents at sea."
+  }
+ },
+ {
+  "province_code": "LCH",
+  "zone_code": "lai-chau",
+  "contact_type": "police",
+  "phone": "113",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 1,
+  "name": {
+   "vi": "Công an Lai Châu (gọi 113)",
+   "en": "Police – Lai Chau (dial 113)"
+  },
+  "note": {
+   "vi": "Số khẩn cấp công an, miễn phí, tự chuyển về công an địa phương nơi gọi.",
+   "en": "Free police emergency number, routed to the local police where you call from."
+  }
+ },
+ {
+  "province_code": "LCH",
+  "zone_code": "lai-chau",
+  "contact_type": "fire",
+  "phone": "114",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 2,
+  "name": {
+   "vi": "Cứu nạn, cứu hộ và PCCC Lai Châu (gọi 114)",
+   "en": "Fire and rescue – Lai Chau (dial 114)"
+  },
+  "note": {
+   "vi": "Báo cháy, cứu nạn cứu hộ (đuối nước, mắc kẹt, sập đổ).",
+   "en": "Fire, rescue from drowning, entrapment or collapse."
+  }
+ },
+ {
+  "province_code": "LCH",
+  "zone_code": "lai-chau",
+  "contact_type": "ambulance",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 3,
+  "name": {
+   "vi": "Cấp cứu y tế Lai Châu (gọi 115)",
+   "en": "Ambulance – Lai Chau (dial 115)"
+  },
+  "note": {
+   "vi": "Cấp cứu y tế; nói rõ địa chỉ, tình trạng người bệnh. Người nước ngoài nên nhờ người địa phương hỗ trợ ngôn ngữ.",
+   "en": "Medical emergency. State the address and the patient's condition; ask a local for language help if needed."
+  }
+ },
+ {
+  "province_code": "LCH",
+  "zone_code": "lai-chau",
+  "contact_type": "rescue",
+  "phone": "112",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 4,
+  "name": {
+   "vi": "Tìm kiếm cứu nạn Lai Châu (gọi 112)",
+   "en": "Search and rescue – Lai Chau (dial 112)"
+  },
+  "note": {
+   "vi": "Số tìm kiếm cứu nạn quốc gia, dùng khi gặp thiên tai, lạc trong rừng, sự cố trên biển.",
+   "en": "National search-and-rescue number for disasters, getting lost in forests or incidents at sea."
+  }
+ },
+ {
+  "province_code": "DB",
+  "zone_code": "dien-bien",
+  "contact_type": "police",
+  "phone": "113",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 1,
+  "name": {
+   "vi": "Công an Điện Biên (gọi 113)",
+   "en": "Police – Dien Bien (dial 113)"
+  },
+  "note": {
+   "vi": "Số khẩn cấp công an, miễn phí, tự chuyển về công an địa phương nơi gọi.",
+   "en": "Free police emergency number, routed to the local police where you call from."
+  }
+ },
+ {
+  "province_code": "DB",
+  "zone_code": "dien-bien",
+  "contact_type": "fire",
+  "phone": "114",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 2,
+  "name": {
+   "vi": "Cứu nạn, cứu hộ và PCCC Điện Biên (gọi 114)",
+   "en": "Fire and rescue – Dien Bien (dial 114)"
+  },
+  "note": {
+   "vi": "Báo cháy, cứu nạn cứu hộ (đuối nước, mắc kẹt, sập đổ).",
+   "en": "Fire, rescue from drowning, entrapment or collapse."
+  }
+ },
+ {
+  "province_code": "DB",
+  "zone_code": "dien-bien",
+  "contact_type": "ambulance",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 3,
+  "name": {
+   "vi": "Cấp cứu y tế Điện Biên (gọi 115)",
+   "en": "Ambulance – Dien Bien (dial 115)"
+  },
+  "note": {
+   "vi": "Cấp cứu y tế; nói rõ địa chỉ, tình trạng người bệnh. Người nước ngoài nên nhờ người địa phương hỗ trợ ngôn ngữ.",
+   "en": "Medical emergency. State the address and the patient's condition; ask a local for language help if needed."
+  }
+ },
+ {
+  "province_code": "DB",
+  "zone_code": "dien-bien",
+  "contact_type": "rescue",
+  "phone": "112",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 4,
+  "name": {
+   "vi": "Tìm kiếm cứu nạn Điện Biên (gọi 112)",
+   "en": "Search and rescue – Dien Bien (dial 112)"
+  },
+  "note": {
+   "vi": "Số tìm kiếm cứu nạn quốc gia, dùng khi gặp thiên tai, lạc trong rừng, sự cố trên biển.",
+   "en": "National search-and-rescue number for disasters, getting lost in forests or incidents at sea."
+  }
+ },
+ {
+  "province_code": "SL",
+  "zone_code": "son-la",
+  "contact_type": "police",
+  "phone": "113",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 1,
+  "name": {
+   "vi": "Công an Sơn La (gọi 113)",
+   "en": "Police – Son La (dial 113)"
+  },
+  "note": {
+   "vi": "Số khẩn cấp công an, miễn phí, tự chuyển về công an địa phương nơi gọi.",
+   "en": "Free police emergency number, routed to the local police where you call from."
+  }
+ },
+ {
+  "province_code": "SL",
+  "zone_code": "son-la",
+  "contact_type": "fire",
+  "phone": "114",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 2,
+  "name": {
+   "vi": "Cứu nạn, cứu hộ và PCCC Sơn La (gọi 114)",
+   "en": "Fire and rescue – Son La (dial 114)"
+  },
+  "note": {
+   "vi": "Báo cháy, cứu nạn cứu hộ (đuối nước, mắc kẹt, sập đổ).",
+   "en": "Fire, rescue from drowning, entrapment or collapse."
+  }
+ },
+ {
+  "province_code": "SL",
+  "zone_code": "son-la",
+  "contact_type": "ambulance",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 3,
+  "name": {
+   "vi": "Cấp cứu y tế Sơn La (gọi 115)",
+   "en": "Ambulance – Son La (dial 115)"
+  },
+  "note": {
+   "vi": "Cấp cứu y tế; nói rõ địa chỉ, tình trạng người bệnh. Người nước ngoài nên nhờ người địa phương hỗ trợ ngôn ngữ.",
+   "en": "Medical emergency. State the address and the patient's condition; ask a local for language help if needed."
+  }
+ },
+ {
+  "province_code": "SL",
+  "zone_code": "son-la",
+  "contact_type": "rescue",
+  "phone": "112",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 4,
+  "name": {
+   "vi": "Tìm kiếm cứu nạn Sơn La (gọi 112)",
+   "en": "Search and rescue – Son La (dial 112)"
+  },
+  "note": {
+   "vi": "Số tìm kiếm cứu nạn quốc gia, dùng khi gặp thiên tai, lạc trong rừng, sự cố trên biển.",
+   "en": "National search-and-rescue number for disasters, getting lost in forests or incidents at sea."
+  }
+ },
+ {
+  "province_code": "LS",
+  "zone_code": "lang-son",
+  "contact_type": "police",
+  "phone": "113",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 1,
+  "name": {
+   "vi": "Công an Lạng Sơn (gọi 113)",
+   "en": "Police – Lang Son (dial 113)"
+  },
+  "note": {
+   "vi": "Số khẩn cấp công an, miễn phí, tự chuyển về công an địa phương nơi gọi.",
+   "en": "Free police emergency number, routed to the local police where you call from."
+  }
+ },
+ {
+  "province_code": "LS",
+  "zone_code": "lang-son",
+  "contact_type": "fire",
+  "phone": "114",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 2,
+  "name": {
+   "vi": "Cứu nạn, cứu hộ và PCCC Lạng Sơn (gọi 114)",
+   "en": "Fire and rescue – Lang Son (dial 114)"
+  },
+  "note": {
+   "vi": "Báo cháy, cứu nạn cứu hộ (đuối nước, mắc kẹt, sập đổ).",
+   "en": "Fire, rescue from drowning, entrapment or collapse."
+  }
+ },
+ {
+  "province_code": "LS",
+  "zone_code": "lang-son",
+  "contact_type": "ambulance",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 3,
+  "name": {
+   "vi": "Cấp cứu y tế Lạng Sơn (gọi 115)",
+   "en": "Ambulance – Lang Son (dial 115)"
+  },
+  "note": {
+   "vi": "Cấp cứu y tế; nói rõ địa chỉ, tình trạng người bệnh. Người nước ngoài nên nhờ người địa phương hỗ trợ ngôn ngữ.",
+   "en": "Medical emergency. State the address and the patient's condition; ask a local for language help if needed."
+  }
+ },
+ {
+  "province_code": "LS",
+  "zone_code": "lang-son",
+  "contact_type": "rescue",
+  "phone": "112",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 4,
+  "name": {
+   "vi": "Tìm kiếm cứu nạn Lạng Sơn (gọi 112)",
+   "en": "Search and rescue – Lang Son (dial 112)"
+  },
+  "note": {
+   "vi": "Số tìm kiếm cứu nạn quốc gia, dùng khi gặp thiên tai, lạc trong rừng, sự cố trên biển.",
+   "en": "National search-and-rescue number for disasters, getting lost in forests or incidents at sea."
+  }
+ },
+ {
+  "province_code": "CB",
+  "zone_code": "cao-bang",
+  "contact_type": "police",
+  "phone": "113",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 1,
+  "name": {
+   "vi": "Công an Cao Bằng (gọi 113)",
+   "en": "Police – Cao Bang (dial 113)"
+  },
+  "note": {
+   "vi": "Số khẩn cấp công an, miễn phí, tự chuyển về công an địa phương nơi gọi.",
+   "en": "Free police emergency number, routed to the local police where you call from."
+  }
+ },
+ {
+  "province_code": "CB",
+  "zone_code": "cao-bang",
+  "contact_type": "fire",
+  "phone": "114",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 2,
+  "name": {
+   "vi": "Cứu nạn, cứu hộ và PCCC Cao Bằng (gọi 114)",
+   "en": "Fire and rescue – Cao Bang (dial 114)"
+  },
+  "note": {
+   "vi": "Báo cháy, cứu nạn cứu hộ (đuối nước, mắc kẹt, sập đổ).",
+   "en": "Fire, rescue from drowning, entrapment or collapse."
+  }
+ },
+ {
+  "province_code": "CB",
+  "zone_code": "cao-bang",
+  "contact_type": "ambulance",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 3,
+  "name": {
+   "vi": "Cấp cứu y tế Cao Bằng (gọi 115)",
+   "en": "Ambulance – Cao Bang (dial 115)"
+  },
+  "note": {
+   "vi": "Cấp cứu y tế; nói rõ địa chỉ, tình trạng người bệnh. Người nước ngoài nên nhờ người địa phương hỗ trợ ngôn ngữ.",
+   "en": "Medical emergency. State the address and the patient's condition; ask a local for language help if needed."
+  }
+ },
+ {
+  "province_code": "CB",
+  "zone_code": "cao-bang",
+  "contact_type": "rescue",
+  "phone": "112",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 4,
+  "name": {
+   "vi": "Tìm kiếm cứu nạn Cao Bằng (gọi 112)",
+   "en": "Search and rescue – Cao Bang (dial 112)"
+  },
+  "note": {
+   "vi": "Số tìm kiếm cứu nạn quốc gia, dùng khi gặp thiên tai, lạc trong rừng, sự cố trên biển.",
+   "en": "National search-and-rescue number for disasters, getting lost in forests or incidents at sea."
+  }
+ },
+ {
+  "province_code": "TH",
+  "zone_code": "thanh-hoa",
+  "contact_type": "police",
+  "phone": "113",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 1,
+  "name": {
+   "vi": "Công an Thanh Hóa (gọi 113)",
+   "en": "Police – Thanh Hoa (dial 113)"
+  },
+  "note": {
+   "vi": "Số khẩn cấp công an, miễn phí, tự chuyển về công an địa phương nơi gọi.",
+   "en": "Free police emergency number, routed to the local police where you call from."
+  }
+ },
+ {
+  "province_code": "TH",
+  "zone_code": "thanh-hoa",
+  "contact_type": "fire",
+  "phone": "114",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 2,
+  "name": {
+   "vi": "Cứu nạn, cứu hộ và PCCC Thanh Hóa (gọi 114)",
+   "en": "Fire and rescue – Thanh Hoa (dial 114)"
+  },
+  "note": {
+   "vi": "Báo cháy, cứu nạn cứu hộ (đuối nước, mắc kẹt, sập đổ).",
+   "en": "Fire, rescue from drowning, entrapment or collapse."
+  }
+ },
+ {
+  "province_code": "TH",
+  "zone_code": "thanh-hoa",
+  "contact_type": "ambulance",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 3,
+  "name": {
+   "vi": "Cấp cứu y tế Thanh Hóa (gọi 115)",
+   "en": "Ambulance – Thanh Hoa (dial 115)"
+  },
+  "note": {
+   "vi": "Cấp cứu y tế; nói rõ địa chỉ, tình trạng người bệnh. Người nước ngoài nên nhờ người địa phương hỗ trợ ngôn ngữ.",
+   "en": "Medical emergency. State the address and the patient's condition; ask a local for language help if needed."
+  }
+ },
+ {
+  "province_code": "TH",
+  "zone_code": "thanh-hoa",
+  "contact_type": "rescue",
+  "phone": "112",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 4,
+  "name": {
+   "vi": "Tìm kiếm cứu nạn Thanh Hóa (gọi 112)",
+   "en": "Search and rescue – Thanh Hoa (dial 112)"
+  },
+  "note": {
+   "vi": "Số tìm kiếm cứu nạn quốc gia, dùng khi gặp thiên tai, lạc trong rừng, sự cố trên biển.",
+   "en": "National search-and-rescue number for disasters, getting lost in forests or incidents at sea."
+  }
+ },
+ {
+  "province_code": "NA",
+  "zone_code": "nghe-an",
+  "contact_type": "police",
+  "phone": "113",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 1,
+  "name": {
+   "vi": "Công an Nghệ An (gọi 113)",
+   "en": "Police – Nghe An (dial 113)"
+  },
+  "note": {
+   "vi": "Số khẩn cấp công an, miễn phí, tự chuyển về công an địa phương nơi gọi.",
+   "en": "Free police emergency number, routed to the local police where you call from."
+  }
+ },
+ {
+  "province_code": "NA",
+  "zone_code": "nghe-an",
+  "contact_type": "fire",
+  "phone": "114",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 2,
+  "name": {
+   "vi": "Cứu nạn, cứu hộ và PCCC Nghệ An (gọi 114)",
+   "en": "Fire and rescue – Nghe An (dial 114)"
+  },
+  "note": {
+   "vi": "Báo cháy, cứu nạn cứu hộ (đuối nước, mắc kẹt, sập đổ).",
+   "en": "Fire, rescue from drowning, entrapment or collapse."
+  }
+ },
+ {
+  "province_code": "NA",
+  "zone_code": "nghe-an",
+  "contact_type": "ambulance",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 3,
+  "name": {
+   "vi": "Cấp cứu y tế Nghệ An (gọi 115)",
+   "en": "Ambulance – Nghe An (dial 115)"
+  },
+  "note": {
+   "vi": "Cấp cứu y tế; nói rõ địa chỉ, tình trạng người bệnh. Người nước ngoài nên nhờ người địa phương hỗ trợ ngôn ngữ.",
+   "en": "Medical emergency. State the address and the patient's condition; ask a local for language help if needed."
+  }
+ },
+ {
+  "province_code": "NA",
+  "zone_code": "nghe-an",
+  "contact_type": "rescue",
+  "phone": "112",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 4,
+  "name": {
+   "vi": "Tìm kiếm cứu nạn Nghệ An (gọi 112)",
+   "en": "Search and rescue – Nghe An (dial 112)"
+  },
+  "note": {
+   "vi": "Số tìm kiếm cứu nạn quốc gia, dùng khi gặp thiên tai, lạc trong rừng, sự cố trên biển.",
+   "en": "National search-and-rescue number for disasters, getting lost in forests or incidents at sea."
+  }
+ },
+ {
+  "province_code": "HT",
+  "zone_code": "ha-tinh",
+  "contact_type": "police",
+  "phone": "113",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 1,
+  "name": {
+   "vi": "Công an Hà Tĩnh (gọi 113)",
+   "en": "Police – Ha Tinh (dial 113)"
+  },
+  "note": {
+   "vi": "Số khẩn cấp công an, miễn phí, tự chuyển về công an địa phương nơi gọi.",
+   "en": "Free police emergency number, routed to the local police where you call from."
+  }
+ },
+ {
+  "province_code": "HT",
+  "zone_code": "ha-tinh",
+  "contact_type": "fire",
+  "phone": "114",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 2,
+  "name": {
+   "vi": "Cứu nạn, cứu hộ và PCCC Hà Tĩnh (gọi 114)",
+   "en": "Fire and rescue – Ha Tinh (dial 114)"
+  },
+  "note": {
+   "vi": "Báo cháy, cứu nạn cứu hộ (đuối nước, mắc kẹt, sập đổ).",
+   "en": "Fire, rescue from drowning, entrapment or collapse."
+  }
+ },
+ {
+  "province_code": "HT",
+  "zone_code": "ha-tinh",
+  "contact_type": "ambulance",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 3,
+  "name": {
+   "vi": "Cấp cứu y tế Hà Tĩnh (gọi 115)",
+   "en": "Ambulance – Ha Tinh (dial 115)"
+  },
+  "note": {
+   "vi": "Cấp cứu y tế; nói rõ địa chỉ, tình trạng người bệnh. Người nước ngoài nên nhờ người địa phương hỗ trợ ngôn ngữ.",
+   "en": "Medical emergency. State the address and the patient's condition; ask a local for language help if needed."
+  }
+ },
+ {
+  "province_code": "HT",
+  "zone_code": "ha-tinh",
+  "contact_type": "rescue",
+  "phone": "112",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 4,
+  "name": {
+   "vi": "Tìm kiếm cứu nạn Hà Tĩnh (gọi 112)",
+   "en": "Search and rescue – Ha Tinh (dial 112)"
+  },
+  "note": {
+   "vi": "Số tìm kiếm cứu nạn quốc gia, dùng khi gặp thiên tai, lạc trong rừng, sự cố trên biển.",
+   "en": "National search-and-rescue number for disasters, getting lost in forests or incidents at sea."
+  }
+ },
+ {
+  "province_code": "QT",
+  "zone_code": "quang-tri",
+  "contact_type": "police",
+  "phone": "113",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 1,
+  "name": {
+   "vi": "Công an Quảng Trị (gọi 113)",
+   "en": "Police – Quang Tri (dial 113)"
+  },
+  "note": {
+   "vi": "Số khẩn cấp công an, miễn phí, tự chuyển về công an địa phương nơi gọi.",
+   "en": "Free police emergency number, routed to the local police where you call from."
+  }
+ },
+ {
+  "province_code": "QT",
+  "zone_code": "quang-tri",
+  "contact_type": "fire",
+  "phone": "114",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 2,
+  "name": {
+   "vi": "Cứu nạn, cứu hộ và PCCC Quảng Trị (gọi 114)",
+   "en": "Fire and rescue – Quang Tri (dial 114)"
+  },
+  "note": {
+   "vi": "Báo cháy, cứu nạn cứu hộ (đuối nước, mắc kẹt, sập đổ).",
+   "en": "Fire, rescue from drowning, entrapment or collapse."
+  }
+ },
+ {
+  "province_code": "QT",
+  "zone_code": "quang-tri",
+  "contact_type": "ambulance",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 3,
+  "name": {
+   "vi": "Cấp cứu y tế Quảng Trị (gọi 115)",
+   "en": "Ambulance – Quang Tri (dial 115)"
+  },
+  "note": {
+   "vi": "Cấp cứu y tế; nói rõ địa chỉ, tình trạng người bệnh. Người nước ngoài nên nhờ người địa phương hỗ trợ ngôn ngữ.",
+   "en": "Medical emergency. State the address and the patient's condition; ask a local for language help if needed."
+  }
+ },
+ {
+  "province_code": "QT",
+  "zone_code": "quang-tri",
+  "contact_type": "rescue",
+  "phone": "112",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 4,
+  "name": {
+   "vi": "Tìm kiếm cứu nạn Quảng Trị (gọi 112)",
+   "en": "Search and rescue – Quang Tri (dial 112)"
+  },
+  "note": {
+   "vi": "Số tìm kiếm cứu nạn quốc gia, dùng khi gặp thiên tai, lạc trong rừng, sự cố trên biển.",
+   "en": "National search-and-rescue number for disasters, getting lost in forests or incidents at sea."
+  }
+ },
+ {
+  "province_code": "HUE",
+  "zone_code": "hue",
+  "contact_type": "police",
+  "phone": "113",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 1,
+  "name": {
+   "vi": "Công an Huế (gọi 113)",
+   "en": "Police – Hue (dial 113)"
+  },
+  "note": {
+   "vi": "Số khẩn cấp công an, miễn phí, tự chuyển về công an địa phương nơi gọi.",
+   "en": "Free police emergency number, routed to the local police where you call from."
+  }
+ },
+ {
+  "province_code": "HUE",
+  "zone_code": "hue",
+  "contact_type": "fire",
+  "phone": "114",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 2,
+  "name": {
+   "vi": "Cứu nạn, cứu hộ và PCCC Huế (gọi 114)",
+   "en": "Fire and rescue – Hue (dial 114)"
+  },
+  "note": {
+   "vi": "Báo cháy, cứu nạn cứu hộ (đuối nước, mắc kẹt, sập đổ).",
+   "en": "Fire, rescue from drowning, entrapment or collapse."
+  }
+ },
+ {
+  "province_code": "HUE",
+  "zone_code": "hue",
+  "contact_type": "ambulance",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 3,
+  "name": {
+   "vi": "Cấp cứu y tế Huế (gọi 115)",
+   "en": "Ambulance – Hue (dial 115)"
+  },
+  "note": {
+   "vi": "Cấp cứu y tế; nói rõ địa chỉ, tình trạng người bệnh. Người nước ngoài nên nhờ người địa phương hỗ trợ ngôn ngữ.",
+   "en": "Medical emergency. State the address and the patient's condition; ask a local for language help if needed."
+  }
+ },
+ {
+  "province_code": "HUE",
+  "zone_code": "hue",
+  "contact_type": "rescue",
+  "phone": "112",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 4,
+  "name": {
+   "vi": "Tìm kiếm cứu nạn Huế (gọi 112)",
+   "en": "Search and rescue – Hue (dial 112)"
+  },
+  "note": {
+   "vi": "Số tìm kiếm cứu nạn quốc gia, dùng khi gặp thiên tai, lạc trong rừng, sự cố trên biển.",
+   "en": "National search-and-rescue number for disasters, getting lost in forests or incidents at sea."
+  }
+ },
+ {
+  "province_code": "DN",
+  "zone_code": "da-nang",
+  "contact_type": "police",
+  "phone": "113",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 1,
+  "name": {
+   "vi": "Công an Đà Nẵng (gọi 113)",
+   "en": "Police – Da Nang (dial 113)"
+  },
+  "note": {
+   "vi": "Số khẩn cấp công an, miễn phí, tự chuyển về công an địa phương nơi gọi.",
+   "en": "Free police emergency number, routed to the local police where you call from."
+  }
+ },
+ {
+  "province_code": "DN",
+  "zone_code": "da-nang",
+  "contact_type": "fire",
+  "phone": "114",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 2,
+  "name": {
+   "vi": "Cứu nạn, cứu hộ và PCCC Đà Nẵng (gọi 114)",
+   "en": "Fire and rescue – Da Nang (dial 114)"
+  },
+  "note": {
+   "vi": "Báo cháy, cứu nạn cứu hộ (đuối nước, mắc kẹt, sập đổ).",
+   "en": "Fire, rescue from drowning, entrapment or collapse."
+  }
+ },
+ {
+  "province_code": "DN",
+  "zone_code": "da-nang",
+  "contact_type": "ambulance",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 3,
+  "name": {
+   "vi": "Cấp cứu y tế Đà Nẵng (gọi 115)",
+   "en": "Ambulance – Da Nang (dial 115)"
+  },
+  "note": {
+   "vi": "Cấp cứu y tế; nói rõ địa chỉ, tình trạng người bệnh. Người nước ngoài nên nhờ người địa phương hỗ trợ ngôn ngữ.",
+   "en": "Medical emergency. State the address and the patient's condition; ask a local for language help if needed."
+  }
+ },
+ {
+  "province_code": "DN",
+  "zone_code": "da-nang",
+  "contact_type": "rescue",
+  "phone": "112",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 4,
+  "name": {
+   "vi": "Tìm kiếm cứu nạn Đà Nẵng (gọi 112)",
+   "en": "Search and rescue – Da Nang (dial 112)"
+  },
+  "note": {
+   "vi": "Số tìm kiếm cứu nạn quốc gia, dùng khi gặp thiên tai, lạc trong rừng, sự cố trên biển.",
+   "en": "National search-and-rescue number for disasters, getting lost in forests or incidents at sea."
+  }
+ },
+ {
+  "province_code": "QNG",
+  "zone_code": "quang-ngai",
+  "contact_type": "police",
+  "phone": "113",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 1,
+  "name": {
+   "vi": "Công an Quảng Ngãi (gọi 113)",
+   "en": "Police – Quang Ngai (dial 113)"
+  },
+  "note": {
+   "vi": "Số khẩn cấp công an, miễn phí, tự chuyển về công an địa phương nơi gọi.",
+   "en": "Free police emergency number, routed to the local police where you call from."
+  }
+ },
+ {
+  "province_code": "QNG",
+  "zone_code": "quang-ngai",
+  "contact_type": "fire",
+  "phone": "114",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 2,
+  "name": {
+   "vi": "Cứu nạn, cứu hộ và PCCC Quảng Ngãi (gọi 114)",
+   "en": "Fire and rescue – Quang Ngai (dial 114)"
+  },
+  "note": {
+   "vi": "Báo cháy, cứu nạn cứu hộ (đuối nước, mắc kẹt, sập đổ).",
+   "en": "Fire, rescue from drowning, entrapment or collapse."
+  }
+ },
+ {
+  "province_code": "QNG",
+  "zone_code": "quang-ngai",
+  "contact_type": "ambulance",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 3,
+  "name": {
+   "vi": "Cấp cứu y tế Quảng Ngãi (gọi 115)",
+   "en": "Ambulance – Quang Ngai (dial 115)"
+  },
+  "note": {
+   "vi": "Cấp cứu y tế; nói rõ địa chỉ, tình trạng người bệnh. Người nước ngoài nên nhờ người địa phương hỗ trợ ngôn ngữ.",
+   "en": "Medical emergency. State the address and the patient's condition; ask a local for language help if needed."
+  }
+ },
+ {
+  "province_code": "QNG",
+  "zone_code": "quang-ngai",
+  "contact_type": "rescue",
+  "phone": "112",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 4,
+  "name": {
+   "vi": "Tìm kiếm cứu nạn Quảng Ngãi (gọi 112)",
+   "en": "Search and rescue – Quang Ngai (dial 112)"
+  },
+  "note": {
+   "vi": "Số tìm kiếm cứu nạn quốc gia, dùng khi gặp thiên tai, lạc trong rừng, sự cố trên biển.",
+   "en": "National search-and-rescue number for disasters, getting lost in forests or incidents at sea."
+  }
+ },
+ {
+  "province_code": "GL",
+  "zone_code": "gia-lai",
+  "contact_type": "police",
+  "phone": "113",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 1,
+  "name": {
+   "vi": "Công an Gia Lai (gọi 113)",
+   "en": "Police – Gia Lai (dial 113)"
+  },
+  "note": {
+   "vi": "Số khẩn cấp công an, miễn phí, tự chuyển về công an địa phương nơi gọi.",
+   "en": "Free police emergency number, routed to the local police where you call from."
+  }
+ },
+ {
+  "province_code": "GL",
+  "zone_code": "gia-lai",
+  "contact_type": "fire",
+  "phone": "114",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 2,
+  "name": {
+   "vi": "Cứu nạn, cứu hộ và PCCC Gia Lai (gọi 114)",
+   "en": "Fire and rescue – Gia Lai (dial 114)"
+  },
+  "note": {
+   "vi": "Báo cháy, cứu nạn cứu hộ (đuối nước, mắc kẹt, sập đổ).",
+   "en": "Fire, rescue from drowning, entrapment or collapse."
+  }
+ },
+ {
+  "province_code": "GL",
+  "zone_code": "gia-lai",
+  "contact_type": "ambulance",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 3,
+  "name": {
+   "vi": "Cấp cứu y tế Gia Lai (gọi 115)",
+   "en": "Ambulance – Gia Lai (dial 115)"
+  },
+  "note": {
+   "vi": "Cấp cứu y tế; nói rõ địa chỉ, tình trạng người bệnh. Người nước ngoài nên nhờ người địa phương hỗ trợ ngôn ngữ.",
+   "en": "Medical emergency. State the address and the patient's condition; ask a local for language help if needed."
+  }
+ },
+ {
+  "province_code": "GL",
+  "zone_code": "gia-lai",
+  "contact_type": "rescue",
+  "phone": "112",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 4,
+  "name": {
+   "vi": "Tìm kiếm cứu nạn Gia Lai (gọi 112)",
+   "en": "Search and rescue – Gia Lai (dial 112)"
+  },
+  "note": {
+   "vi": "Số tìm kiếm cứu nạn quốc gia, dùng khi gặp thiên tai, lạc trong rừng, sự cố trên biển.",
+   "en": "National search-and-rescue number for disasters, getting lost in forests or incidents at sea."
+  }
+ },
+ {
+  "province_code": "DL",
+  "zone_code": "dak-lak",
+  "contact_type": "police",
+  "phone": "113",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 1,
+  "name": {
+   "vi": "Công an Đắk Lắk (gọi 113)",
+   "en": "Police – Dak Lak (dial 113)"
+  },
+  "note": {
+   "vi": "Số khẩn cấp công an, miễn phí, tự chuyển về công an địa phương nơi gọi.",
+   "en": "Free police emergency number, routed to the local police where you call from."
+  }
+ },
+ {
+  "province_code": "DL",
+  "zone_code": "dak-lak",
+  "contact_type": "fire",
+  "phone": "114",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 2,
+  "name": {
+   "vi": "Cứu nạn, cứu hộ và PCCC Đắk Lắk (gọi 114)",
+   "en": "Fire and rescue – Dak Lak (dial 114)"
+  },
+  "note": {
+   "vi": "Báo cháy, cứu nạn cứu hộ (đuối nước, mắc kẹt, sập đổ).",
+   "en": "Fire, rescue from drowning, entrapment or collapse."
+  }
+ },
+ {
+  "province_code": "DL",
+  "zone_code": "dak-lak",
+  "contact_type": "ambulance",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 3,
+  "name": {
+   "vi": "Cấp cứu y tế Đắk Lắk (gọi 115)",
+   "en": "Ambulance – Dak Lak (dial 115)"
+  },
+  "note": {
+   "vi": "Cấp cứu y tế; nói rõ địa chỉ, tình trạng người bệnh. Người nước ngoài nên nhờ người địa phương hỗ trợ ngôn ngữ.",
+   "en": "Medical emergency. State the address and the patient's condition; ask a local for language help if needed."
+  }
+ },
+ {
+  "province_code": "DL",
+  "zone_code": "dak-lak",
+  "contact_type": "rescue",
+  "phone": "112",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 4,
+  "name": {
+   "vi": "Tìm kiếm cứu nạn Đắk Lắk (gọi 112)",
+   "en": "Search and rescue – Dak Lak (dial 112)"
+  },
+  "note": {
+   "vi": "Số tìm kiếm cứu nạn quốc gia, dùng khi gặp thiên tai, lạc trong rừng, sự cố trên biển.",
+   "en": "National search-and-rescue number for disasters, getting lost in forests or incidents at sea."
+  }
+ },
+ {
+  "province_code": "KH",
+  "zone_code": "khanh-hoa",
+  "contact_type": "police",
+  "phone": "113",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 1,
+  "name": {
+   "vi": "Công an Khánh Hòa (gọi 113)",
+   "en": "Police – Khanh Hoa (dial 113)"
+  },
+  "note": {
+   "vi": "Số khẩn cấp công an, miễn phí, tự chuyển về công an địa phương nơi gọi.",
+   "en": "Free police emergency number, routed to the local police where you call from."
+  }
+ },
+ {
+  "province_code": "KH",
+  "zone_code": "khanh-hoa",
+  "contact_type": "fire",
+  "phone": "114",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 2,
+  "name": {
+   "vi": "Cứu nạn, cứu hộ và PCCC Khánh Hòa (gọi 114)",
+   "en": "Fire and rescue – Khanh Hoa (dial 114)"
+  },
+  "note": {
+   "vi": "Báo cháy, cứu nạn cứu hộ (đuối nước, mắc kẹt, sập đổ).",
+   "en": "Fire, rescue from drowning, entrapment or collapse."
+  }
+ },
+ {
+  "province_code": "KH",
+  "zone_code": "khanh-hoa",
+  "contact_type": "ambulance",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 3,
+  "name": {
+   "vi": "Cấp cứu y tế Khánh Hòa (gọi 115)",
+   "en": "Ambulance – Khanh Hoa (dial 115)"
+  },
+  "note": {
+   "vi": "Cấp cứu y tế; nói rõ địa chỉ, tình trạng người bệnh. Người nước ngoài nên nhờ người địa phương hỗ trợ ngôn ngữ.",
+   "en": "Medical emergency. State the address and the patient's condition; ask a local for language help if needed."
+  }
+ },
+ {
+  "province_code": "KH",
+  "zone_code": "khanh-hoa",
+  "contact_type": "rescue",
+  "phone": "112",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 4,
+  "name": {
+   "vi": "Tìm kiếm cứu nạn Khánh Hòa (gọi 112)",
+   "en": "Search and rescue – Khanh Hoa (dial 112)"
+  },
+  "note": {
+   "vi": "Số tìm kiếm cứu nạn quốc gia, dùng khi gặp thiên tai, lạc trong rừng, sự cố trên biển.",
+   "en": "National search-and-rescue number for disasters, getting lost in forests or incidents at sea."
+  }
+ },
+ {
+  "province_code": "LD",
+  "zone_code": "lam-dong",
+  "contact_type": "police",
+  "phone": "113",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 1,
+  "name": {
+   "vi": "Công an Lâm Đồng (gọi 113)",
+   "en": "Police – Lam Dong (dial 113)"
+  },
+  "note": {
+   "vi": "Số khẩn cấp công an, miễn phí, tự chuyển về công an địa phương nơi gọi.",
+   "en": "Free police emergency number, routed to the local police where you call from."
+  }
+ },
+ {
+  "province_code": "LD",
+  "zone_code": "lam-dong",
+  "contact_type": "fire",
+  "phone": "114",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 2,
+  "name": {
+   "vi": "Cứu nạn, cứu hộ và PCCC Lâm Đồng (gọi 114)",
+   "en": "Fire and rescue – Lam Dong (dial 114)"
+  },
+  "note": {
+   "vi": "Báo cháy, cứu nạn cứu hộ (đuối nước, mắc kẹt, sập đổ).",
+   "en": "Fire, rescue from drowning, entrapment or collapse."
+  }
+ },
+ {
+  "province_code": "LD",
+  "zone_code": "lam-dong",
+  "contact_type": "ambulance",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 3,
+  "name": {
+   "vi": "Cấp cứu y tế Lâm Đồng (gọi 115)",
+   "en": "Ambulance – Lam Dong (dial 115)"
+  },
+  "note": {
+   "vi": "Cấp cứu y tế; nói rõ địa chỉ, tình trạng người bệnh. Người nước ngoài nên nhờ người địa phương hỗ trợ ngôn ngữ.",
+   "en": "Medical emergency. State the address and the patient's condition; ask a local for language help if needed."
+  }
+ },
+ {
+  "province_code": "LD",
+  "zone_code": "lam-dong",
+  "contact_type": "rescue",
+  "phone": "112",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 4,
+  "name": {
+   "vi": "Tìm kiếm cứu nạn Lâm Đồng (gọi 112)",
+   "en": "Search and rescue – Lam Dong (dial 112)"
+  },
+  "note": {
+   "vi": "Số tìm kiếm cứu nạn quốc gia, dùng khi gặp thiên tai, lạc trong rừng, sự cố trên biển.",
+   "en": "National search-and-rescue number for disasters, getting lost in forests or incidents at sea."
+  }
+ },
+ {
+  "province_code": "HCM",
+  "zone_code": "ho-chi-minh",
+  "contact_type": "police",
+  "phone": "113",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 1,
+  "name": {
+   "vi": "Công an Thành phố Hồ Chí Minh (gọi 113)",
+   "en": "Police – Ho Chi Minh City (dial 113)"
+  },
+  "note": {
+   "vi": "Số khẩn cấp công an, miễn phí, tự chuyển về công an địa phương nơi gọi.",
+   "en": "Free police emergency number, routed to the local police where you call from."
+  }
+ },
+ {
+  "province_code": "HCM",
+  "zone_code": "ho-chi-minh",
+  "contact_type": "fire",
+  "phone": "114",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 2,
+  "name": {
+   "vi": "Cứu nạn, cứu hộ và PCCC Thành phố Hồ Chí Minh (gọi 114)",
+   "en": "Fire and rescue – Ho Chi Minh City (dial 114)"
+  },
+  "note": {
+   "vi": "Báo cháy, cứu nạn cứu hộ (đuối nước, mắc kẹt, sập đổ).",
+   "en": "Fire, rescue from drowning, entrapment or collapse."
+  }
+ },
+ {
+  "province_code": "HCM",
+  "zone_code": "ho-chi-minh",
+  "contact_type": "ambulance",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 3,
+  "name": {
+   "vi": "Cấp cứu y tế Thành phố Hồ Chí Minh (gọi 115)",
+   "en": "Ambulance – Ho Chi Minh City (dial 115)"
+  },
+  "note": {
+   "vi": "Cấp cứu y tế; nói rõ địa chỉ, tình trạng người bệnh. Người nước ngoài nên nhờ người địa phương hỗ trợ ngôn ngữ.",
+   "en": "Medical emergency. State the address and the patient's condition; ask a local for language help if needed."
+  }
+ },
+ {
+  "province_code": "HCM",
+  "zone_code": "ho-chi-minh",
+  "contact_type": "rescue",
+  "phone": "112",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 4,
+  "name": {
+   "vi": "Tìm kiếm cứu nạn Thành phố Hồ Chí Minh (gọi 112)",
+   "en": "Search and rescue – Ho Chi Minh City (dial 112)"
+  },
+  "note": {
+   "vi": "Số tìm kiếm cứu nạn quốc gia, dùng khi gặp thiên tai, lạc trong rừng, sự cố trên biển.",
+   "en": "National search-and-rescue number for disasters, getting lost in forests or incidents at sea."
+  }
+ },
+ {
+  "province_code": "DNA",
+  "zone_code": "dong-nai",
+  "contact_type": "police",
+  "phone": "113",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 1,
+  "name": {
+   "vi": "Công an Đồng Nai (gọi 113)",
+   "en": "Police – Dong Nai (dial 113)"
+  },
+  "note": {
+   "vi": "Số khẩn cấp công an, miễn phí, tự chuyển về công an địa phương nơi gọi.",
+   "en": "Free police emergency number, routed to the local police where you call from."
+  }
+ },
+ {
+  "province_code": "DNA",
+  "zone_code": "dong-nai",
+  "contact_type": "fire",
+  "phone": "114",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 2,
+  "name": {
+   "vi": "Cứu nạn, cứu hộ và PCCC Đồng Nai (gọi 114)",
+   "en": "Fire and rescue – Dong Nai (dial 114)"
+  },
+  "note": {
+   "vi": "Báo cháy, cứu nạn cứu hộ (đuối nước, mắc kẹt, sập đổ).",
+   "en": "Fire, rescue from drowning, entrapment or collapse."
+  }
+ },
+ {
+  "province_code": "DNA",
+  "zone_code": "dong-nai",
+  "contact_type": "ambulance",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 3,
+  "name": {
+   "vi": "Cấp cứu y tế Đồng Nai (gọi 115)",
+   "en": "Ambulance – Dong Nai (dial 115)"
+  },
+  "note": {
+   "vi": "Cấp cứu y tế; nói rõ địa chỉ, tình trạng người bệnh. Người nước ngoài nên nhờ người địa phương hỗ trợ ngôn ngữ.",
+   "en": "Medical emergency. State the address and the patient's condition; ask a local for language help if needed."
+  }
+ },
+ {
+  "province_code": "DNA",
+  "zone_code": "dong-nai",
+  "contact_type": "rescue",
+  "phone": "112",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 4,
+  "name": {
+   "vi": "Tìm kiếm cứu nạn Đồng Nai (gọi 112)",
+   "en": "Search and rescue – Dong Nai (dial 112)"
+  },
+  "note": {
+   "vi": "Số tìm kiếm cứu nạn quốc gia, dùng khi gặp thiên tai, lạc trong rừng, sự cố trên biển.",
+   "en": "National search-and-rescue number for disasters, getting lost in forests or incidents at sea."
+  }
+ },
+ {
+  "province_code": "TNI",
+  "zone_code": "tay-ninh",
+  "contact_type": "police",
+  "phone": "113",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 1,
+  "name": {
+   "vi": "Công an Tây Ninh (gọi 113)",
+   "en": "Police – Tay Ninh (dial 113)"
+  },
+  "note": {
+   "vi": "Số khẩn cấp công an, miễn phí, tự chuyển về công an địa phương nơi gọi.",
+   "en": "Free police emergency number, routed to the local police where you call from."
+  }
+ },
+ {
+  "province_code": "TNI",
+  "zone_code": "tay-ninh",
+  "contact_type": "fire",
+  "phone": "114",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 2,
+  "name": {
+   "vi": "Cứu nạn, cứu hộ và PCCC Tây Ninh (gọi 114)",
+   "en": "Fire and rescue – Tay Ninh (dial 114)"
+  },
+  "note": {
+   "vi": "Báo cháy, cứu nạn cứu hộ (đuối nước, mắc kẹt, sập đổ).",
+   "en": "Fire, rescue from drowning, entrapment or collapse."
+  }
+ },
+ {
+  "province_code": "TNI",
+  "zone_code": "tay-ninh",
+  "contact_type": "ambulance",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 3,
+  "name": {
+   "vi": "Cấp cứu y tế Tây Ninh (gọi 115)",
+   "en": "Ambulance – Tay Ninh (dial 115)"
+  },
+  "note": {
+   "vi": "Cấp cứu y tế; nói rõ địa chỉ, tình trạng người bệnh. Người nước ngoài nên nhờ người địa phương hỗ trợ ngôn ngữ.",
+   "en": "Medical emergency. State the address and the patient's condition; ask a local for language help if needed."
+  }
+ },
+ {
+  "province_code": "TNI",
+  "zone_code": "tay-ninh",
+  "contact_type": "rescue",
+  "phone": "112",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 4,
+  "name": {
+   "vi": "Tìm kiếm cứu nạn Tây Ninh (gọi 112)",
+   "en": "Search and rescue – Tay Ninh (dial 112)"
+  },
+  "note": {
+   "vi": "Số tìm kiếm cứu nạn quốc gia, dùng khi gặp thiên tai, lạc trong rừng, sự cố trên biển.",
+   "en": "National search-and-rescue number for disasters, getting lost in forests or incidents at sea."
+  }
+ },
+ {
+  "province_code": "DT",
+  "zone_code": "dong-thap",
+  "contact_type": "police",
+  "phone": "113",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 1,
+  "name": {
+   "vi": "Công an Đồng Tháp (gọi 113)",
+   "en": "Police – Dong Thap (dial 113)"
+  },
+  "note": {
+   "vi": "Số khẩn cấp công an, miễn phí, tự chuyển về công an địa phương nơi gọi.",
+   "en": "Free police emergency number, routed to the local police where you call from."
+  }
+ },
+ {
+  "province_code": "DT",
+  "zone_code": "dong-thap",
+  "contact_type": "fire",
+  "phone": "114",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 2,
+  "name": {
+   "vi": "Cứu nạn, cứu hộ và PCCC Đồng Tháp (gọi 114)",
+   "en": "Fire and rescue – Dong Thap (dial 114)"
+  },
+  "note": {
+   "vi": "Báo cháy, cứu nạn cứu hộ (đuối nước, mắc kẹt, sập đổ).",
+   "en": "Fire, rescue from drowning, entrapment or collapse."
+  }
+ },
+ {
+  "province_code": "DT",
+  "zone_code": "dong-thap",
+  "contact_type": "ambulance",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 3,
+  "name": {
+   "vi": "Cấp cứu y tế Đồng Tháp (gọi 115)",
+   "en": "Ambulance – Dong Thap (dial 115)"
+  },
+  "note": {
+   "vi": "Cấp cứu y tế; nói rõ địa chỉ, tình trạng người bệnh. Người nước ngoài nên nhờ người địa phương hỗ trợ ngôn ngữ.",
+   "en": "Medical emergency. State the address and the patient's condition; ask a local for language help if needed."
+  }
+ },
+ {
+  "province_code": "DT",
+  "zone_code": "dong-thap",
+  "contact_type": "rescue",
+  "phone": "112",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 4,
+  "name": {
+   "vi": "Tìm kiếm cứu nạn Đồng Tháp (gọi 112)",
+   "en": "Search and rescue – Dong Thap (dial 112)"
+  },
+  "note": {
+   "vi": "Số tìm kiếm cứu nạn quốc gia, dùng khi gặp thiên tai, lạc trong rừng, sự cố trên biển.",
+   "en": "National search-and-rescue number for disasters, getting lost in forests or incidents at sea."
+  }
+ },
+ {
+  "province_code": "VL",
+  "zone_code": "vinh-long",
+  "contact_type": "police",
+  "phone": "113",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 1,
+  "name": {
+   "vi": "Công an Vĩnh Long (gọi 113)",
+   "en": "Police – Vinh Long (dial 113)"
+  },
+  "note": {
+   "vi": "Số khẩn cấp công an, miễn phí, tự chuyển về công an địa phương nơi gọi.",
+   "en": "Free police emergency number, routed to the local police where you call from."
+  }
+ },
+ {
+  "province_code": "VL",
+  "zone_code": "vinh-long",
+  "contact_type": "fire",
+  "phone": "114",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 2,
+  "name": {
+   "vi": "Cứu nạn, cứu hộ và PCCC Vĩnh Long (gọi 114)",
+   "en": "Fire and rescue – Vinh Long (dial 114)"
+  },
+  "note": {
+   "vi": "Báo cháy, cứu nạn cứu hộ (đuối nước, mắc kẹt, sập đổ).",
+   "en": "Fire, rescue from drowning, entrapment or collapse."
+  }
+ },
+ {
+  "province_code": "VL",
+  "zone_code": "vinh-long",
+  "contact_type": "ambulance",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 3,
+  "name": {
+   "vi": "Cấp cứu y tế Vĩnh Long (gọi 115)",
+   "en": "Ambulance – Vinh Long (dial 115)"
+  },
+  "note": {
+   "vi": "Cấp cứu y tế; nói rõ địa chỉ, tình trạng người bệnh. Người nước ngoài nên nhờ người địa phương hỗ trợ ngôn ngữ.",
+   "en": "Medical emergency. State the address and the patient's condition; ask a local for language help if needed."
+  }
+ },
+ {
+  "province_code": "VL",
+  "zone_code": "vinh-long",
+  "contact_type": "rescue",
+  "phone": "112",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 4,
+  "name": {
+   "vi": "Tìm kiếm cứu nạn Vĩnh Long (gọi 112)",
+   "en": "Search and rescue – Vinh Long (dial 112)"
+  },
+  "note": {
+   "vi": "Số tìm kiếm cứu nạn quốc gia, dùng khi gặp thiên tai, lạc trong rừng, sự cố trên biển.",
+   "en": "National search-and-rescue number for disasters, getting lost in forests or incidents at sea."
+  }
+ },
+ {
+  "province_code": "CT",
+  "zone_code": "can-tho",
+  "contact_type": "police",
+  "phone": "113",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 1,
+  "name": {
+   "vi": "Công an Cần Thơ (gọi 113)",
+   "en": "Police – Can Tho (dial 113)"
+  },
+  "note": {
+   "vi": "Số khẩn cấp công an, miễn phí, tự chuyển về công an địa phương nơi gọi.",
+   "en": "Free police emergency number, routed to the local police where you call from."
+  }
+ },
+ {
+  "province_code": "CT",
+  "zone_code": "can-tho",
+  "contact_type": "fire",
+  "phone": "114",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 2,
+  "name": {
+   "vi": "Cứu nạn, cứu hộ và PCCC Cần Thơ (gọi 114)",
+   "en": "Fire and rescue – Can Tho (dial 114)"
+  },
+  "note": {
+   "vi": "Báo cháy, cứu nạn cứu hộ (đuối nước, mắc kẹt, sập đổ).",
+   "en": "Fire, rescue from drowning, entrapment or collapse."
+  }
+ },
+ {
+  "province_code": "CT",
+  "zone_code": "can-tho",
+  "contact_type": "ambulance",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 3,
+  "name": {
+   "vi": "Cấp cứu y tế Cần Thơ (gọi 115)",
+   "en": "Ambulance – Can Tho (dial 115)"
+  },
+  "note": {
+   "vi": "Cấp cứu y tế; nói rõ địa chỉ, tình trạng người bệnh. Người nước ngoài nên nhờ người địa phương hỗ trợ ngôn ngữ.",
+   "en": "Medical emergency. State the address and the patient's condition; ask a local for language help if needed."
+  }
+ },
+ {
+  "province_code": "CT",
+  "zone_code": "can-tho",
+  "contact_type": "rescue",
+  "phone": "112",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 4,
+  "name": {
+   "vi": "Tìm kiếm cứu nạn Cần Thơ (gọi 112)",
+   "en": "Search and rescue – Can Tho (dial 112)"
+  },
+  "note": {
+   "vi": "Số tìm kiếm cứu nạn quốc gia, dùng khi gặp thiên tai, lạc trong rừng, sự cố trên biển.",
+   "en": "National search-and-rescue number for disasters, getting lost in forests or incidents at sea."
+  }
+ },
+ {
+  "province_code": "AG",
+  "zone_code": "an-giang",
+  "contact_type": "police",
+  "phone": "113",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 1,
+  "name": {
+   "vi": "Công an An Giang (gọi 113)",
+   "en": "Police – An Giang (dial 113)"
+  },
+  "note": {
+   "vi": "Số khẩn cấp công an, miễn phí, tự chuyển về công an địa phương nơi gọi.",
+   "en": "Free police emergency number, routed to the local police where you call from."
+  }
+ },
+ {
+  "province_code": "AG",
+  "zone_code": "an-giang",
+  "contact_type": "fire",
+  "phone": "114",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 2,
+  "name": {
+   "vi": "Cứu nạn, cứu hộ và PCCC An Giang (gọi 114)",
+   "en": "Fire and rescue – An Giang (dial 114)"
+  },
+  "note": {
+   "vi": "Báo cháy, cứu nạn cứu hộ (đuối nước, mắc kẹt, sập đổ).",
+   "en": "Fire, rescue from drowning, entrapment or collapse."
+  }
+ },
+ {
+  "province_code": "AG",
+  "zone_code": "an-giang",
+  "contact_type": "ambulance",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 3,
+  "name": {
+   "vi": "Cấp cứu y tế An Giang (gọi 115)",
+   "en": "Ambulance – An Giang (dial 115)"
+  },
+  "note": {
+   "vi": "Cấp cứu y tế; nói rõ địa chỉ, tình trạng người bệnh. Người nước ngoài nên nhờ người địa phương hỗ trợ ngôn ngữ.",
+   "en": "Medical emergency. State the address and the patient's condition; ask a local for language help if needed."
+  }
+ },
+ {
+  "province_code": "AG",
+  "zone_code": "an-giang",
+  "contact_type": "rescue",
+  "phone": "112",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 4,
+  "name": {
+   "vi": "Tìm kiếm cứu nạn An Giang (gọi 112)",
+   "en": "Search and rescue – An Giang (dial 112)"
+  },
+  "note": {
+   "vi": "Số tìm kiếm cứu nạn quốc gia, dùng khi gặp thiên tai, lạc trong rừng, sự cố trên biển.",
+   "en": "National search-and-rescue number for disasters, getting lost in forests or incidents at sea."
+  }
+ },
+ {
+  "province_code": "CM",
+  "zone_code": "ca-mau",
+  "contact_type": "police",
+  "phone": "113",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 1,
+  "name": {
+   "vi": "Công an Cà Mau (gọi 113)",
+   "en": "Police – Ca Mau (dial 113)"
+  },
+  "note": {
+   "vi": "Số khẩn cấp công an, miễn phí, tự chuyển về công an địa phương nơi gọi.",
+   "en": "Free police emergency number, routed to the local police where you call from."
+  }
+ },
+ {
+  "province_code": "CM",
+  "zone_code": "ca-mau",
+  "contact_type": "fire",
+  "phone": "114",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 2,
+  "name": {
+   "vi": "Cứu nạn, cứu hộ và PCCC Cà Mau (gọi 114)",
+   "en": "Fire and rescue – Ca Mau (dial 114)"
+  },
+  "note": {
+   "vi": "Báo cháy, cứu nạn cứu hộ (đuối nước, mắc kẹt, sập đổ).",
+   "en": "Fire, rescue from drowning, entrapment or collapse."
+  }
+ },
+ {
+  "province_code": "CM",
+  "zone_code": "ca-mau",
+  "contact_type": "ambulance",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 3,
+  "name": {
+   "vi": "Cấp cứu y tế Cà Mau (gọi 115)",
+   "en": "Ambulance – Ca Mau (dial 115)"
+  },
+  "note": {
+   "vi": "Cấp cứu y tế; nói rõ địa chỉ, tình trạng người bệnh. Người nước ngoài nên nhờ người địa phương hỗ trợ ngôn ngữ.",
+   "en": "Medical emergency. State the address and the patient's condition; ask a local for language help if needed."
+  }
+ },
+ {
+  "province_code": "CM",
+  "zone_code": "ca-mau",
+  "contact_type": "rescue",
+  "phone": "112",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 4,
+  "name": {
+   "vi": "Tìm kiếm cứu nạn Cà Mau (gọi 112)",
+   "en": "Search and rescue – Ca Mau (dial 112)"
+  },
+  "note": {
+   "vi": "Số tìm kiếm cứu nạn quốc gia, dùng khi gặp thiên tai, lạc trong rừng, sự cố trên biển.",
+   "en": "National search-and-rescue number for disasters, getting lost in forests or incidents at sea."
+  }
+ },
+ {
+  "province_code": "DN",
+  "zone_code": "da-nang",
+  "contact_type": "tourist_support",
+  "phone": "0236 3550 111",
+  "phone_alt": null,
+  "address": "108 Bạch Đằng, Đà Nẵng",
+  "lat": 16.07,
+  "lng": 108.224,
+  "hours": "Giờ hành chính và cao điểm du lịch",
+  "languages": [
+   "vi",
+   "en"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Trung tâm Hỗ trợ du khách Đà Nẵng – danangfantasticity.com",
+  "source_url": "https://danangfantasticity.com/en/trung-tam-ho-tro-du-khach-da-nang-san-sang-phuc-vu-du-khach-mua-cao-diem",
+  "sort_order": 5,
+  "name": {
+   "vi": "Trung tâm Hỗ trợ du khách Đà Nẵng",
+   "en": "Da Nang Tourist Support Center"
+  },
+  "note": {
+   "vi": "Tiếp nhận phản ánh, hỗ trợ du khách; có quầy tại sân bay Đà Nẵng. Đường dây nóng nhắn nhanh *8899 (theo tổng đài 1022 Đà Nẵng).",
+   "en": "Handles tourist complaints and assistance; desks at Da Nang airport. Short hotline *8899 (Da Nang 1022 service)."
+  }
+ },
+ {
+  "province_code": null,
+  "zone_code": null,
+  "contact_type": "hotline_national",
+  "phone": "113",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 1,
+  "name": {
+   "vi": "Cảnh sát (Công an) – toàn quốc",
+   "en": "Police – nationwide"
+  },
+  "note": {
+   "vi": "Gọi miễn phí từ mọi điện thoại.",
+   "en": "Free from any phone."
+  }
+ },
+ {
+  "province_code": null,
+  "zone_code": null,
+  "contact_type": "hotline_national",
+  "phone": "114",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 2,
+  "name": {
+   "vi": "Cứu nạn, cứu hộ, phòng cháy chữa cháy – toàn quốc",
+   "en": "Fire and rescue – nationwide"
+  },
+  "note": {
+   "vi": "Gọi miễn phí từ mọi điện thoại.",
+   "en": "Free from any phone."
+  }
+ },
+ {
+  "province_code": null,
+  "zone_code": null,
+  "contact_type": "hotline_national",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 3,
+  "name": {
+   "vi": "Cấp cứu y tế – toàn quốc",
+   "en": "Ambulance – nationwide"
+  },
+  "note": {
+   "vi": "Gọi miễn phí từ mọi điện thoại.",
+   "en": "Free from any phone."
+  }
+ },
+ {
+  "province_code": null,
+  "zone_code": null,
+  "contact_type": "hotline_national",
+  "phone": "112",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 4,
+  "name": {
+   "vi": "Tìm kiếm cứu nạn – toàn quốc",
+   "en": "Search and rescue – nationwide"
+  },
+  "note": {
+   "vi": "Dùng khi gặp thiên tai, sự cố trên biển, trên núi.",
+   "en": "For disasters and incidents at sea or in the mountains."
+  }
+ },
+ {
+  "province_code": null,
+  "zone_code": null,
+  "contact_type": "hotline_national",
+  "phone": "111",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 5,
+  "name": {
+   "vi": "Tổng đài quốc gia bảo vệ trẻ em",
+   "en": "National child protection hotline"
+  },
+  "note": {
+   "vi": "Tiếp nhận thông tin trẻ em bị xâm hại, mua bán người.",
+   "en": "Reports of child abuse and human trafficking."
+  }
+ },
+ {
+  "province_code": null,
+  "zone_code": null,
+  "contact_type": "hotline_national",
+  "phone": "156",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số dịch vụ khẩn cấp); Wikipedia – Telephone numbers in Vietnam",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 6,
+  "name": {
+   "vi": "Tổng đài phản ánh cuộc gọi, tin nhắn lừa đảo",
+   "en": "Scam call and message reporting line"
+  },
+  "note": {
+   "vi": "Phản ánh cuộc gọi, tin nhắn rác hoặc có dấu hiệu lừa đảo.",
+   "en": "Report spam or suspected scam calls and messages."
+  }
+ },
+ {
+  "province_code": null,
+  "zone_code": null,
+  "contact_type": "hotline_national",
+  "phone": "1900 9095",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": false,
+  "verified_at": null,
+  "source_name": "Chưa xác minh – cần đối chiếu cổng thông tin chính thức",
+  "source_url": "https://moh.gov.vn",
+  "sort_order": 7,
+  "name": {
+   "vi": "Đường dây nóng Bộ Y tế",
+   "en": "Ministry of Health hotline"
+  },
+  "note": {
+   "vi": "Số theo thông tin công bố thời kỳ COVID-19; cần xác minh lại trước khi đưa vào vận hành.",
+   "en": "Number published during COVID-19; re-verify before production use."
+  }
+ },
+ {
+  "province_code": null,
+  "zone_code": null,
+  "contact_type": "hotline_national",
+  "phone": "1800 1234",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": false,
+  "verified_at": null,
+  "source_name": "Chưa xác minh – cần đối chiếu cổng thông tin chính thức",
+  "source_url": "https://vietnamtourism.gov.vn",
+  "sort_order": 8,
+  "name": {
+   "vi": "Đường dây nóng hỗ trợ du khách (Cục Du lịch Quốc gia Việt Nam)",
+   "en": "Tourist hotline (Viet Nam National Authority of Tourism)"
+  },
+  "note": {
+   "vi": "Số trong tài liệu yêu cầu dự án, chưa đối chiếu được với nguồn chính thức; khuyến nghị gọi 112/113 khi khẩn cấp.",
+   "en": "Number from the project brief, not yet checked against an official source. In an emergency call 112/113."
+  }
+ },
+ {
+  "province_code": "HN",
+  "zone_code": "ha-noi",
+  "contact_type": "embassy",
+  "phone": "+84 24 3774 0100",
+  "phone_alt": null,
+  "address": "8 Đào Tấn, Giảng Võ, Hà Nội",
+  "lat": 21.033,
+  "lng": 105.809,
+  "hours": "Giờ hành chính",
+  "languages": [
+   "en",
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Website Đại sứ quán Australia tại Việt Nam",
+  "source_url": "https://vietnam.embassy.gov.au/",
+  "sort_order": 11,
+  "name": {
+   "vi": "Đại sứ quán Australia tại Hà Nội",
+   "en": "Embassy of Australia, Hanoi"
+  },
+  "note": {
+   "vi": "Hỗ trợ lãnh sự cho công dân nước mình: mất hộ chiếu, tai nạn, bị bắt giữ.",
+   "en": "Consular help for its nationals: lost passport, accident, arrest."
+  }
+ },
+ {
+  "province_code": "HN",
+  "zone_code": "ha-noi",
+  "contact_type": "embassy",
+  "phone": "+84 24 3734 5000",
+  "phone_alt": null,
+  "address": "Tầng 22, Tháp 1, Capital Place, 29 Liễu Giai, Hà Nội",
+  "lat": 21.037,
+  "lng": 105.815,
+  "hours": "Giờ hành chính",
+  "languages": [
+   "en",
+   "fr",
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Government of Canada – travel.gc.ca",
+  "source_url": "https://travel.gc.ca/assistance/embassies-consulates/vietnam",
+  "sort_order": 12,
+  "name": {
+   "vi": "Đại sứ quán Canada tại Hà Nội",
+   "en": "Embassy of Canada, Hanoi"
+  },
+  "note": {
+   "vi": "Hỗ trợ lãnh sự cho công dân nước mình: mất hộ chiếu, tai nạn, bị bắt giữ.",
+   "en": "Consular help for its nationals: lost passport, accident, arrest."
+  }
+ },
+ {
+  "province_code": "HCM",
+  "zone_code": "ho-chi-minh",
+  "contact_type": "embassy",
+  "phone": "+84 28 3827 9899",
+  "phone_alt": null,
+  "address": "Tầng 9, The Metropolitan, 235 Đồng Khởi, TP.HCM",
+  "lat": 10.778,
+  "lng": 106.704,
+  "hours": "Giờ hành chính",
+  "languages": [
+   "en",
+   "fr",
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Government of Canada – travel.gc.ca",
+  "source_url": "https://travel.gc.ca/assistance/embassies-consulates/vietnam",
+  "sort_order": 13,
+  "name": {
+   "vi": "Tổng Lãnh sự quán Canada tại TP.HCM",
+   "en": "Consulate General of Canada, Ho Chi Minh City"
+  },
+  "note": {
+   "vi": "Hỗ trợ lãnh sự cho công dân nước mình: mất hộ chiếu, tai nạn, bị bắt giữ.",
+   "en": "Consular help for its nationals: lost passport, accident, arrest."
+  }
+ },
+ {
+  "province_code": "HN",
+  "zone_code": "ha-noi",
+  "contact_type": "embassy",
+  "phone": "+84 24 3267 3335",
+  "phone_alt": "+84 936 342 598",
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "Giờ hành chính",
+  "languages": [
+   "de",
+   "en",
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-22",
+  "source_name": "Website Đại sứ quán Đức tại Việt Nam (vietnam.diplo.de)",
+  "source_url": "https://vietnam.diplo.de/vn-de",
+  "sort_order": 14,
+  "name": {
+   "vi": "Đại sứ quán Đức tại Hà Nội",
+   "en": "Embassy of Germany, Hanoi"
+  },
+  "note": {
+   "vi": "Hỗ trợ lãnh sự cho công dân nước mình: mất hộ chiếu, tai nạn, bị bắt giữ. Số khẩn cấp ngoài giờ: +84 936 342 598.",
+   "en": "Consular help for its nationals: lost passport, accident, arrest. After-hours emergency: +84 936 342 598."
+  }
+ },
+ {
+  "province_code": "HN",
+  "zone_code": "ha-noi",
+  "contact_type": "embassy",
+  "phone": "+84 24 3850 5000",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "Giờ hành chính",
+  "languages": [
+   "en",
+   "vi"
+  ],
+  "is_verified": false,
+  "verified_at": null,
+  "source_name": "Website Đại sứ quán Hoa Kỳ (không truy cập được khi xác minh 22/10/2026)",
+  "source_url": "https://vn.usembassy.gov/",
+  "sort_order": 15,
+  "name": {
+   "vi": "Đại sứ quán Hoa Kỳ tại Hà Nội",
+   "en": "U.S. Embassy Hanoi"
+  },
+  "note": {
+   "vi": "Hỗ trợ lãnh sự cho công dân nước mình: mất hộ chiếu, tai nạn, bị bắt giữ. Số chưa đối chiếu được với nguồn chính thức, hãy kiểm tra lại trên website.",
+   "en": "Consular help for its nationals: lost passport, accident, arrest. Number not yet verified against the official site; please double-check."
+  }
+ },
+ {
+  "province_code": "HCM",
+  "zone_code": "ho-chi-minh",
+  "contact_type": "embassy",
+  "phone": "+84 28 3520 4200",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "Giờ hành chính",
+  "languages": [
+   "en",
+   "vi"
+  ],
+  "is_verified": false,
+  "verified_at": null,
+  "source_name": "Website Đại sứ quán Hoa Kỳ (không truy cập được khi xác minh 22/10/2026)",
+  "source_url": "https://vn.usembassy.gov/",
+  "sort_order": 16,
+  "name": {
+   "vi": "Tổng Lãnh sự quán Hoa Kỳ tại TP.HCM",
+   "en": "U.S. Consulate General Ho Chi Minh City"
+  },
+  "note": {
+   "vi": "Hỗ trợ lãnh sự cho công dân nước mình: mất hộ chiếu, tai nạn, bị bắt giữ. Số chưa đối chiếu được với nguồn chính thức, hãy kiểm tra lại trên website.",
+   "en": "Consular help for its nationals: lost passport, accident, arrest. Number not yet verified against the official site; please double-check."
+  }
+ },
+ {
+  "province_code": "HN",
+  "zone_code": "ha-noi",
+  "contact_type": "embassy",
+  "phone": "+84 24 3936 0500",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "Giờ hành chính",
+  "languages": [
+   "en",
+   "vi"
+  ],
+  "is_verified": false,
+  "verified_at": null,
+  "source_name": "GOV.UK – British Embassy Hanoi (trang không nêu số, chưa đối chiếu)",
+  "source_url": "https://www.gov.uk/world/organisations/british-embassy-hanoi",
+  "sort_order": 17,
+  "name": {
+   "vi": "Đại sứ quán Anh tại Hà Nội",
+   "en": "British Embassy Hanoi"
+  },
+  "note": {
+   "vi": "Hỗ trợ lãnh sự cho công dân nước mình: mất hộ chiếu, tai nạn, bị bắt giữ. Số chưa đối chiếu được với nguồn chính thức, hãy kiểm tra lại trên website.",
+   "en": "Consular help for its nationals: lost passport, accident, arrest. Number not yet verified against the official site; please double-check."
+  }
+ },
+ {
+  "province_code": "HN",
+  "zone_code": "ha-noi",
+  "contact_type": "embassy",
+  "phone": "+84 24 3846 3000",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "Giờ hành chính",
+  "languages": [
+   "ja",
+   "en",
+   "vi"
+  ],
+  "is_verified": false,
+  "verified_at": null,
+  "source_name": "Website Đại sứ quán Nhật Bản (không truy cập được khi xác minh 22/10/2026)",
+  "source_url": "https://www.vn.emb-japan.go.jp/",
+  "sort_order": 18,
+  "name": {
+   "vi": "Đại sứ quán Nhật Bản tại Hà Nội",
+   "en": "Embassy of Japan, Hanoi"
+  },
+  "note": {
+   "vi": "Hỗ trợ lãnh sự cho công dân nước mình: mất hộ chiếu, tai nạn, bị bắt giữ. Số chưa đối chiếu được với nguồn chính thức, hãy kiểm tra lại trên website.",
+   "en": "Consular help for its nationals: lost passport, accident, arrest. Number not yet verified against the official site; please double-check."
+  }
+ },
+ {
+  "province_code": "HN",
+  "zone_code": "ha-noi",
+  "contact_type": "embassy",
+  "phone": "+84 24 3831 5110",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "Giờ hành chính",
+  "languages": [
+   "ko",
+   "en",
+   "vi"
+  ],
+  "is_verified": false,
+  "verified_at": null,
+  "source_name": "Website Bộ Ngoại giao Hàn Quốc (không truy cập được khi xác minh 22/10/2026)",
+  "source_url": "https://overseas.mofa.go.kr/vn-ko/index.do",
+  "sort_order": 19,
+  "name": {
+   "vi": "Đại sứ quán Hàn Quốc tại Hà Nội",
+   "en": "Embassy of the Republic of Korea, Hanoi"
+  },
+  "note": {
+   "vi": "Hỗ trợ lãnh sự cho công dân nước mình: mất hộ chiếu, tai nạn, bị bắt giữ. Số chưa đối chiếu được với nguồn chính thức, hãy kiểm tra lại trên website.",
+   "en": "Consular help for its nationals: lost passport, accident, arrest. Number not yet verified against the official site; please double-check."
+  }
+ },
+ {
+  "province_code": "HN",
+  "zone_code": "ha-noi",
+  "contact_type": "embassy",
+  "phone": "+84 24 3944 5700",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "Giờ hành chính",
+  "languages": [
+   "fr",
+   "en",
+   "vi"
+  ],
+  "is_verified": false,
+  "verified_at": null,
+  "source_name": "Website Đại sứ quán Pháp (trang chủ không nêu số, chưa đối chiếu)",
+  "source_url": "https://vn.ambafrance.org/",
+  "sort_order": 20,
+  "name": {
+   "vi": "Đại sứ quán Pháp tại Hà Nội",
+   "en": "Embassy of France, Hanoi"
+  },
+  "note": {
+   "vi": "Hỗ trợ lãnh sự cho công dân nước mình: mất hộ chiếu, tai nạn, bị bắt giữ. Số chưa đối chiếu được với nguồn chính thức, hãy kiểm tra lại trên website.",
+   "en": "Consular help for its nationals: lost passport, accident, arrest. Number not yet verified against the official site; please double-check."
+  }
+ }
+]

@@ -1,0 +1,2207 @@
+[
+ {
+  "code": "TR-SEED-01",
+  "owner_email": "traveler@dukhach.test",
+  "partner_email": null,
+  "title": "Hà Nội – Hạ Long – Cát Bà 4 ngày",
+  "start": "+0d",
+  "end": "+3d",
+  "status": "active",
+  "group_size": 2,
+  "nationality": "GB",
+  "preferred_locale": "en",
+  "contact": {
+   "name": "Alex Doe",
+   "phone": "+44 7000 000001",
+   "email": "alex.doe@example.com"
+  },
+  "legs": [
+   {
+    "zone_code": "ha-noi",
+    "destination_slug": "pho-co-ha-noi",
+    "starts_at": "+0d 09:00",
+    "ends_at": "+1d 08:00",
+    "lodging": "Khách sạn mô phỏng phố cổ",
+    "transport": "taxi",
+    "note": null
+   },
+   {
+    "zone_code": "quang-ninh",
+    "destination_slug": "vinh-ha-long",
+    "starts_at": "+1d 11:00",
+    "ends_at": "+2d 10:00",
+    "lodging": "Du thuyền mô phỏng",
+    "transport": "xe limousine",
+    "note": null
+   },
+   {
+    "zone_code": "hai-phong",
+    "destination_slug": "dao-cat-ba",
+    "starts_at": "+2d 13:00",
+    "ends_at": "+3d 10:00",
+    "lodging": "Khách sạn mô phỏng Cát Bà",
+    "transport": "tàu cao tốc",
+    "note": null
+   },
+   {
+    "zone_code": "ha-noi",
+    "destination_slug": "san-bay-noi-bai",
+    "starts_at": "+3d 14:00",
+    "ends_at": "+3d 18:00",
+    "lodging": null,
+    "transport": "xe limousine",
+    "note": null
+   }
+  ],
+  "members": [
+   {
+    "full_name": "Alex Doe",
+    "phone": "+44 7000 000001",
+    "nationality": "GB",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": true
+   },
+   {
+    "full_name": "Jamie Doe",
+    "phone": "+44 7000 000002",
+    "nationality": "GB",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": false
+   }
+  ]
+ },
+ {
+  "code": "TR-SEED-02",
+  "owner_email": "traveler@dukhach.test",
+  "partner_email": null,
+  "title": "Phú Quốc nghỉ dưỡng 4 ngày",
+  "start": "+4d",
+  "end": "+7d",
+  "status": "active",
+  "group_size": 2,
+  "nationality": "GB",
+  "preferred_locale": "en",
+  "contact": {
+   "name": "Alex Doe",
+   "phone": "+44 7000 000001",
+   "email": "alex.doe@example.com"
+  },
+  "legs": [
+   {
+    "zone_code": "an-giang",
+    "destination_slug": "san-bay-phu-quoc",
+    "starts_at": "+4d 10:00",
+    "ends_at": "+4d 12:00",
+    "lodging": null,
+    "transport": "máy bay",
+    "note": null
+   },
+   {
+    "zone_code": "an-giang",
+    "destination_slug": "phu-quoc-duong-dong",
+    "starts_at": "+4d 13:00",
+    "ends_at": "+6d 10:00",
+    "lodging": "Khách sạn mô phỏng Dương Đông",
+    "transport": "taxi",
+    "note": null
+   },
+   {
+    "zone_code": "an-giang",
+    "destination_slug": "phu-quoc-bai-sao",
+    "starts_at": "+6d 11:00",
+    "ends_at": "+7d 10:00",
+    "lodging": "Resort mô phỏng Bãi Sao",
+    "transport": "xe máy thuê",
+    "note": null
+   }
+  ],
+  "members": [
+   {
+    "full_name": "Alex Doe",
+    "phone": "+44 7000 000001",
+    "nationality": "GB",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": true
+   },
+   {
+    "full_name": "Jamie Doe",
+    "phone": "+44 7000 000002",
+    "nationality": "GB",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": false
+   }
+  ]
+ },
+ {
+  "code": "TR-SEED-03",
+  "owner_email": "traveler@dukhach.test",
+  "partner_email": null,
+  "title": "Huế – Hội An 5 ngày",
+  "start": "-12d",
+  "end": "-8d",
+  "status": "completed",
+  "group_size": 2,
+  "nationality": "GB",
+  "preferred_locale": "en",
+  "contact": {
+   "name": "Alex Doe",
+   "phone": "+44 7000 000001",
+   "email": "alex.doe@example.com"
+  },
+  "legs": [
+   {
+    "zone_code": "hue",
+    "destination_slug": "dai-noi-hue",
+    "starts_at": "-12d 10:00",
+    "ends_at": "-10d 08:00",
+    "lodging": "Khách sạn mô phỏng Huế",
+    "transport": "tàu hỏa",
+    "note": null
+   },
+   {
+    "zone_code": "da-nang",
+    "destination_slug": "deo-hai-van",
+    "starts_at": "-10d 09:00",
+    "ends_at": "-10d 12:00",
+    "lodging": null,
+    "transport": "xe máy có hướng dẫn",
+    "note": null
+   },
+   {
+    "zone_code": "da-nang",
+    "destination_slug": "pho-co-hoi-an",
+    "starts_at": "-10d 14:00",
+    "ends_at": "-8d 10:00",
+    "lodging": "Khách sạn mô phỏng Hội An",
+    "transport": "ô tô",
+    "note": null
+   }
+  ],
+  "members": [
+   {
+    "full_name": "Alex Doe",
+    "phone": "+44 7000 000001",
+    "nationality": "GB",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": true
+   },
+   {
+    "full_name": "Jamie Doe",
+    "phone": "+44 7000 000002",
+    "nationality": "GB",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": false
+   }
+  ]
+ },
+ {
+  "code": "TR-SEED-04",
+  "owner_email": "traveler@dukhach.test",
+  "partner_email": null,
+  "title": "Sa Pa trekking 3 ngày",
+  "start": "+9d",
+  "end": "+11d",
+  "status": "active",
+  "group_size": 2,
+  "nationality": "GB",
+  "preferred_locale": "en",
+  "contact": {
+   "name": "Alex Doe",
+   "phone": "+44 7000 000001",
+   "email": "alex.doe@example.com"
+  },
+  "legs": [
+   {
+    "zone_code": "lao-cai",
+    "destination_slug": "sa-pa",
+    "starts_at": "+9d 07:00",
+    "ends_at": "+11d 08:00",
+    "lodging": "Homestay mô phỏng Tả Van",
+    "transport": "xe khách giường nằm",
+    "note": null
+   },
+   {
+    "zone_code": "lao-cai",
+    "destination_slug": "dinh-fansipan",
+    "starts_at": "+11d 09:00",
+    "ends_at": "+11d 16:00",
+    "lodging": null,
+    "transport": "cáp treo",
+    "note": null
+   },
+   {
+    "zone_code": "lao-cai",
+    "destination_slug": "cua-khau-lao-cai",
+    "starts_at": "+11d 18:00",
+    "ends_at": "+11d 21:00",
+    "lodging": null,
+    "transport": "xe khách",
+    "note": null
+   }
+  ],
+  "members": [
+   {
+    "full_name": "Alex Doe",
+    "phone": "+44 7000 000001",
+    "nationality": "GB",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": true
+   },
+   {
+    "full_name": "Jamie Doe",
+    "phone": "+44 7000 000002",
+    "nationality": "GB",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": false
+   }
+  ]
+ },
+ {
+  "code": "TR-SEED-05",
+  "owner_email": "traveler@dukhach.test",
+  "partner_email": null,
+  "title": "TP.HCM – Cần Thơ (bản nháp)",
+  "start": "+14d",
+  "end": "+16d",
+  "status": "draft",
+  "group_size": 2,
+  "nationality": "GB",
+  "preferred_locale": "en",
+  "contact": {
+   "name": "Alex Doe",
+   "phone": "+44 7000 000001",
+   "email": "alex.doe@example.com"
+  },
+  "legs": [
+   {
+    "zone_code": "ho-chi-minh",
+    "destination_slug": "cho-ben-thanh",
+    "starts_at": "+14d 10:00",
+    "ends_at": "+15d 08:00",
+    "lodging": "Khách sạn mô phỏng Quận 1",
+    "transport": "taxi",
+    "note": null
+   },
+   {
+    "zone_code": "can-tho",
+    "destination_slug": "cho-noi-cai-rang",
+    "starts_at": "+15d 12:00",
+    "ends_at": "+16d 10:00",
+    "lodging": "Khách sạn mô phỏng Ninh Kiều",
+    "transport": "xe khách",
+    "note": null
+   }
+  ],
+  "members": [
+   {
+    "full_name": "Alex Doe",
+    "phone": "+44 7000 000001",
+    "nationality": "GB",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": true
+   },
+   {
+    "full_name": "Jamie Doe",
+    "phone": "+44 7000 000002",
+    "nationality": "GB",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": false
+   }
+  ]
+ },
+ {
+  "code": "TR-SEED-06",
+  "owner_email": "traveler1@dukhach.test",
+  "partner_email": null,
+  "title": "Đà Nẵng – Hội An 4 ngày",
+  "start": "+0d",
+  "end": "+3d",
+  "status": "active",
+  "group_size": 3,
+  "nationality": "VN",
+  "preferred_locale": "vi",
+  "contact": {
+   "name": "Nguyễn Văn An",
+   "phone": "0912 000 011",
+   "email": "nguyen.van.an@example.com"
+  },
+  "legs": [
+   {
+    "zone_code": "da-nang",
+    "destination_slug": "san-bay-da-nang",
+    "starts_at": "+0d 08:00",
+    "ends_at": "+0d 10:00",
+    "lodging": null,
+    "transport": "máy bay",
+    "note": null
+   },
+   {
+    "zone_code": "da-nang",
+    "destination_slug": "bai-bien-my-khe",
+    "starts_at": "+0d 11:00",
+    "ends_at": "+1d 09:00",
+    "lodging": "Khách sạn mô phỏng Mỹ Khê",
+    "transport": "taxi",
+    "note": null
+   },
+   {
+    "zone_code": "da-nang",
+    "destination_slug": "deo-hai-van",
+    "starts_at": "+1d 10:00",
+    "ends_at": "+1d 15:00",
+    "lodging": null,
+    "transport": "ô tô thuê",
+    "note": null
+   },
+   {
+    "zone_code": "da-nang",
+    "destination_slug": "pho-co-hoi-an",
+    "starts_at": "+1d 17:00",
+    "ends_at": "+3d 10:00",
+    "lodging": "Khách sạn mô phỏng Hội An",
+    "transport": "ô tô thuê",
+    "note": null
+   }
+  ],
+  "members": [
+   {
+    "full_name": "Nguyễn Văn An",
+    "phone": "0912 000 011",
+    "nationality": "VN",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": true
+   },
+   {
+    "full_name": "Lê Thị Hoa",
+    "phone": "0912 000 012",
+    "nationality": "VN",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": false
+   },
+   {
+    "full_name": "Nguyễn Minh Khôi",
+    "phone": "0912 000 013",
+    "nationality": "VN",
+    "age_group": "child",
+    "special_needs": null,
+    "is_leader": false
+   }
+  ]
+ },
+ {
+  "code": "TR-SEED-07",
+  "owner_email": "traveler1@dukhach.test",
+  "partner_email": null,
+  "title": "Huế 3 ngày mùa thu",
+  "start": "+4d",
+  "end": "+6d",
+  "status": "active",
+  "group_size": 2,
+  "nationality": "VN",
+  "preferred_locale": "vi",
+  "contact": {
+   "name": "Nguyễn Văn An",
+   "phone": "0912 000 011",
+   "email": "nguyen.van.an@example.com"
+  },
+  "legs": [
+   {
+    "zone_code": "hue",
+    "destination_slug": "dai-noi-hue",
+    "starts_at": "+4d 09:00",
+    "ends_at": "+5d 08:00",
+    "lodging": "Khách sạn mô phỏng sông Hương",
+    "transport": "tàu hỏa",
+    "note": null
+   },
+   {
+    "zone_code": "hue",
+    "destination_slug": "chua-thien-mu",
+    "starts_at": "+5d 09:00",
+    "ends_at": "+5d 12:00",
+    "lodging": null,
+    "transport": "thuyền rồng",
+    "note": null
+   },
+   {
+    "zone_code": "hue",
+    "destination_slug": "bien-lang-co",
+    "starts_at": "+5d 14:00",
+    "ends_at": "+6d 10:00",
+    "lodging": "Khách sạn mô phỏng Lăng Cô",
+    "transport": "ô tô",
+    "note": null
+   }
+  ],
+  "members": [
+   {
+    "full_name": "Nguyễn Văn An",
+    "phone": "0912 000 011",
+    "nationality": "VN",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": true
+   },
+   {
+    "full_name": "Lê Thị Hoa",
+    "phone": "0912 000 012",
+    "nationality": "VN",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": false
+   }
+  ]
+ },
+ {
+  "code": "TR-SEED-08",
+  "owner_email": "traveler1@dukhach.test",
+  "partner_email": null,
+  "title": "Hà Giang vòng cung 4 ngày",
+  "start": "+7d",
+  "end": "+10d",
+  "status": "active",
+  "group_size": 2,
+  "nationality": "VN",
+  "preferred_locale": "vi",
+  "contact": {
+   "name": "Nguyễn Văn An",
+   "phone": "0912 000 011",
+   "email": "nguyen.van.an@example.com"
+  },
+  "legs": [
+   {
+    "zone_code": "tuyen-quang",
+    "destination_slug": "thanh-pho-ha-giang",
+    "starts_at": "+7d 06:00",
+    "ends_at": "+8d 07:00",
+    "lodging": "Homestay mô phỏng Hà Giang",
+    "transport": "xe khách",
+    "note": null
+   },
+   {
+    "zone_code": "tuyen-quang",
+    "destination_slug": "deo-ma-pi-leng",
+    "starts_at": "+8d 08:00",
+    "ends_at": "+8d 12:00",
+    "lodging": null,
+    "transport": "xe máy",
+    "note": null
+   },
+   {
+    "zone_code": "tuyen-quang",
+    "destination_slug": "pho-co-dong-van",
+    "starts_at": "+8d 13:00",
+    "ends_at": "+9d 07:00",
+    "lodging": "Homestay mô phỏng Đồng Văn",
+    "transport": "xe máy",
+    "note": null
+   },
+   {
+    "zone_code": "tuyen-quang",
+    "destination_slug": "cot-co-lung-cu",
+    "starts_at": "+9d 08:00",
+    "ends_at": "+10d 12:00",
+    "lodging": null,
+    "transport": "xe máy",
+    "note": null
+   }
+  ],
+  "members": [
+   {
+    "full_name": "Nguyễn Văn An",
+    "phone": "0912 000 011",
+    "nationality": "VN",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": true
+   },
+   {
+    "full_name": "Lê Thị Hoa",
+    "phone": "0912 000 012",
+    "nationality": "VN",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": false
+   }
+  ]
+ },
+ {
+  "code": "TR-SEED-09",
+  "owner_email": "traveler1@dukhach.test",
+  "partner_email": null,
+  "title": "Ninh Bình cuối tuần",
+  "start": "-20d",
+  "end": "-18d",
+  "status": "completed",
+  "group_size": 3,
+  "nationality": "VN",
+  "preferred_locale": "vi",
+  "contact": {
+   "name": "Nguyễn Văn An",
+   "phone": "0912 000 011",
+   "email": "nguyen.van.an@example.com"
+  },
+  "legs": [
+   {
+    "zone_code": "ninh-binh",
+    "destination_slug": "trang-an",
+    "starts_at": "-20d 08:00",
+    "ends_at": "-19d 08:00",
+    "lodging": "Khách sạn mô phỏng Tràng An",
+    "transport": "ô tô",
+    "note": null
+   },
+   {
+    "zone_code": "ninh-binh",
+    "destination_slug": "chua-bai-dinh",
+    "starts_at": "-19d 09:00",
+    "ends_at": "-18d 12:00",
+    "lodging": null,
+    "transport": "ô tô",
+    "note": null
+   }
+  ],
+  "members": [
+   {
+    "full_name": "Nguyễn Văn An",
+    "phone": "0912 000 011",
+    "nationality": "VN",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": true
+   },
+   {
+    "full_name": "Lê Thị Hoa",
+    "phone": "0912 000 012",
+    "nationality": "VN",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": false
+   },
+   {
+    "full_name": "Nguyễn Minh Khôi",
+    "phone": "0912 000 013",
+    "nationality": "VN",
+    "age_group": "child",
+    "special_needs": null,
+    "is_leader": false
+   }
+  ]
+ },
+ {
+  "code": "TR-SEED-10",
+  "owner_email": "traveler2@dukhach.test",
+  "partner_email": null,
+  "title": "Sa Pa – Lai Châu 4 days",
+  "start": "+0d",
+  "end": "+3d",
+  "status": "active",
+  "group_size": 2,
+  "nationality": "DE",
+  "preferred_locale": "en",
+  "contact": {
+   "name": "Emma Schmidt",
+   "phone": "+49 1500 0000021",
+   "email": "emma.schmidt@example.com"
+  },
+  "legs": [
+   {
+    "zone_code": "lao-cai",
+    "destination_slug": "sa-pa",
+    "starts_at": "+0d 06:00",
+    "ends_at": "+1d 08:00",
+    "lodging": "Homestay mô phỏng Cát Cát",
+    "transport": "night train + bus",
+    "note": null
+   },
+   {
+    "zone_code": "lao-cai",
+    "destination_slug": "dinh-fansipan",
+    "starts_at": "+1d 09:00",
+    "ends_at": "+1d 16:00",
+    "lodging": null,
+    "transport": "cable car",
+    "note": null
+   },
+   {
+    "zone_code": "lao-cai",
+    "destination_slug": "deo-o-quy-ho",
+    "starts_at": "+2d 08:00",
+    "ends_at": "+2d 12:00",
+    "lodging": null,
+    "transport": "motorbike tour",
+    "note": null
+   },
+   {
+    "zone_code": "lai-chau",
+    "destination_slug": "thanh-pho-lai-chau",
+    "starts_at": "+2d 14:00",
+    "ends_at": "+3d 10:00",
+    "lodging": "Khách sạn mô phỏng Lai Châu",
+    "transport": "motorbike tour",
+    "note": null
+   }
+  ],
+  "members": [
+   {
+    "full_name": "Emma Schmidt",
+    "phone": "+49 1500 0000021",
+    "nationality": "DE",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": true
+   },
+   {
+    "full_name": "Lukas Schmidt",
+    "phone": "+49 1500 0000022",
+    "nationality": "DE",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": false
+   }
+  ]
+ },
+ {
+  "code": "TR-SEED-11",
+  "owner_email": "traveler2@dukhach.test",
+  "partner_email": null,
+  "title": "Hanoi – Ninh Binh 3 days",
+  "start": "+4d",
+  "end": "+6d",
+  "status": "active",
+  "group_size": 2,
+  "nationality": "DE",
+  "preferred_locale": "en",
+  "contact": {
+   "name": "Emma Schmidt",
+   "phone": "+49 1500 0000021",
+   "email": "emma.schmidt@example.com"
+  },
+  "legs": [
+   {
+    "zone_code": "ha-noi",
+    "destination_slug": "ho-hoan-kiem",
+    "starts_at": "+4d 09:00",
+    "ends_at": "+5d 07:00",
+    "lodging": "Khách sạn mô phỏng Hoàn Kiếm",
+    "transport": "taxi",
+    "note": null
+   },
+   {
+    "zone_code": "ninh-binh",
+    "destination_slug": "trang-an",
+    "starts_at": "+5d 09:00",
+    "ends_at": "+6d 08:00",
+    "lodging": "Khách sạn mô phỏng Tam Cốc",
+    "transport": "bus",
+    "note": null
+   },
+   {
+    "zone_code": "ninh-binh",
+    "destination_slug": "tam-coc-bich-dong",
+    "starts_at": "+6d 09:00",
+    "ends_at": "+6d 17:00",
+    "lodging": null,
+    "transport": "bicycle",
+    "note": null
+   }
+  ],
+  "members": [
+   {
+    "full_name": "Emma Schmidt",
+    "phone": "+49 1500 0000021",
+    "nationality": "DE",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": true
+   },
+   {
+    "full_name": "Lukas Schmidt",
+    "phone": "+49 1500 0000022",
+    "nationality": "DE",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": false
+   }
+  ]
+ },
+ {
+  "code": "TR-SEED-12",
+  "owner_email": "traveler2@dukhach.test",
+  "partner_email": null,
+  "title": "Mekong Delta 4 days",
+  "start": "+10d",
+  "end": "+13d",
+  "status": "active",
+  "group_size": 2,
+  "nationality": "DE",
+  "preferred_locale": "en",
+  "contact": {
+   "name": "Emma Schmidt",
+   "phone": "+49 1500 0000021",
+   "email": "emma.schmidt@example.com"
+  },
+  "legs": [
+   {
+    "zone_code": "dong-thap",
+    "destination_slug": "cu-lao-thoi-son",
+    "starts_at": "+10d 09:00",
+    "ends_at": "+11d 04:30",
+    "lodging": "Homestay mô phỏng Thới Sơn",
+    "transport": "bus",
+    "note": null
+   },
+   {
+    "zone_code": "can-tho",
+    "destination_slug": "cho-noi-cai-rang",
+    "starts_at": "+11d 05:30",
+    "ends_at": "+12d 08:00",
+    "lodging": "Khách sạn mô phỏng Cần Thơ",
+    "transport": "boat",
+    "note": null
+   },
+   {
+    "zone_code": "an-giang",
+    "destination_slug": "nui-sam-chau-doc",
+    "starts_at": "+12d 12:00",
+    "ends_at": "+13d 12:00",
+    "lodging": "Khách sạn mô phỏng Châu Đốc",
+    "transport": "bus",
+    "note": null
+   }
+  ],
+  "members": [
+   {
+    "full_name": "Emma Schmidt",
+    "phone": "+49 1500 0000021",
+    "nationality": "DE",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": true
+   },
+   {
+    "full_name": "Lukas Schmidt",
+    "phone": "+49 1500 0000022",
+    "nationality": "DE",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": false
+   }
+  ]
+ },
+ {
+  "code": "TR-SEED-13",
+  "owner_email": "traveler2@dukhach.test",
+  "partner_email": null,
+  "title": "Da Lat getaway",
+  "start": "-30d",
+  "end": "-27d",
+  "status": "completed",
+  "group_size": 2,
+  "nationality": "DE",
+  "preferred_locale": "en",
+  "contact": {
+   "name": "Emma Schmidt",
+   "phone": "+49 1500 0000021",
+   "email": "emma.schmidt@example.com"
+  },
+  "legs": [
+   {
+    "zone_code": "lam-dong",
+    "destination_slug": "ho-xuan-huong-da-lat",
+    "starts_at": "-30d 10:00",
+    "ends_at": "-28d 10:00",
+    "lodging": "Khách sạn mô phỏng Đà Lạt",
+    "transport": "plane",
+    "note": null
+   },
+   {
+    "zone_code": "lam-dong",
+    "destination_slug": "thac-datanla",
+    "starts_at": "-28d 11:00",
+    "ends_at": "-27d 12:00",
+    "lodging": null,
+    "transport": "taxi",
+    "note": null
+   }
+  ],
+  "members": [
+   {
+    "full_name": "Emma Schmidt",
+    "phone": "+49 1500 0000021",
+    "nationality": "DE",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": true
+   },
+   {
+    "full_name": "Lukas Schmidt",
+    "phone": "+49 1500 0000022",
+    "nationality": "DE",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": false
+   }
+  ]
+ },
+ {
+  "code": "TR-SEED-14",
+  "owner_email": "traveler3@dukhach.test",
+  "partner_email": null,
+  "title": "Nha Trang beach 4 days",
+  "start": "+2d",
+  "end": "+5d",
+  "status": "active",
+  "group_size": 3,
+  "nationality": "JP",
+  "preferred_locale": "en",
+  "contact": {
+   "name": "Kenji Tanaka",
+   "phone": "+81 90 0000 0031",
+   "email": "kenji.tanaka@example.com"
+  },
+  "legs": [
+   {
+    "zone_code": "khanh-hoa",
+    "destination_slug": "san-bay-cam-ranh",
+    "starts_at": "+2d 13:00",
+    "ends_at": "+2d 15:00",
+    "lodging": null,
+    "transport": "plane",
+    "note": null
+   },
+   {
+    "zone_code": "khanh-hoa",
+    "destination_slug": "vinh-nha-trang",
+    "starts_at": "+2d 16:00",
+    "ends_at": "+4d 10:00",
+    "lodging": "Khách sạn mô phỏng Trần Phú",
+    "transport": "taxi",
+    "note": null
+   },
+   {
+    "zone_code": "khanh-hoa",
+    "destination_slug": "thap-ba-po-nagar",
+    "starts_at": "+4d 11:00",
+    "ends_at": "+5d 10:00",
+    "lodging": "Khách sạn mô phỏng Trần Phú",
+    "transport": "taxi",
+    "note": null
+   }
+  ],
+  "members": [
+   {
+    "full_name": "Kenji Tanaka",
+    "phone": "+81 90 0000 0031",
+    "nationality": "JP",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": true
+   },
+   {
+    "full_name": "Yui Tanaka",
+    "phone": "+81 90 0000 0032",
+    "nationality": "JP",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": false
+   },
+   {
+    "full_name": "Haruto Tanaka",
+    "phone": "+81 90 0000 0033",
+    "nationality": "JP",
+    "age_group": "child",
+    "special_needs": null,
+    "is_leader": false
+   }
+  ]
+ },
+ {
+  "code": "TR-SEED-15",
+  "owner_email": "traveler3@dukhach.test",
+  "partner_email": null,
+  "title": "Da Lat – Mui Ne 4 days",
+  "start": "+6d",
+  "end": "+9d",
+  "status": "active",
+  "group_size": 3,
+  "nationality": "JP",
+  "preferred_locale": "en",
+  "contact": {
+   "name": "Kenji Tanaka",
+   "phone": "+81 90 0000 0031",
+   "email": "kenji.tanaka@example.com"
+  },
+  "legs": [
+   {
+    "zone_code": "lam-dong",
+    "destination_slug": "ho-xuan-huong-da-lat",
+    "starts_at": "+6d 10:00",
+    "ends_at": "+7d 08:00",
+    "lodging": "Khách sạn mô phỏng Đà Lạt",
+    "transport": "plane",
+    "note": null
+   },
+   {
+    "zone_code": "lam-dong",
+    "destination_slug": "dinh-langbiang",
+    "starts_at": "+7d 09:00",
+    "ends_at": "+7d 15:00",
+    "lodging": null,
+    "transport": "jeep",
+    "note": null
+   },
+   {
+    "zone_code": "lam-dong",
+    "destination_slug": "mui-ne",
+    "starts_at": "+7d 19:00",
+    "ends_at": "+9d 10:00",
+    "lodging": "Resort mô phỏng Mũi Né",
+    "transport": "bus",
+    "note": null
+   }
+  ],
+  "members": [
+   {
+    "full_name": "Kenji Tanaka",
+    "phone": "+81 90 0000 0031",
+    "nationality": "JP",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": true
+   },
+   {
+    "full_name": "Yui Tanaka",
+    "phone": "+81 90 0000 0032",
+    "nationality": "JP",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": false
+   },
+   {
+    "full_name": "Haruto Tanaka",
+    "phone": "+81 90 0000 0033",
+    "nationality": "JP",
+    "age_group": "child",
+    "special_needs": null,
+    "is_leader": false
+   }
+  ]
+ },
+ {
+  "code": "TR-SEED-16",
+  "owner_email": "traveler3@dukhach.test",
+  "partner_email": null,
+  "title": "Phong Nha caves 3 days",
+  "start": "+0d",
+  "end": "+2d",
+  "status": "active",
+  "group_size": 2,
+  "nationality": "JP",
+  "preferred_locale": "en",
+  "contact": {
+   "name": "Kenji Tanaka",
+   "phone": "+81 90 0000 0031",
+   "email": "kenji.tanaka@example.com"
+  },
+  "legs": [
+   {
+    "zone_code": "quang-tri",
+    "destination_slug": "bien-nhat-le",
+    "starts_at": "+0d 10:00",
+    "ends_at": "+1d 07:00",
+    "lodging": "Khách sạn mô phỏng Đồng Hới",
+    "transport": "train",
+    "note": null
+   },
+   {
+    "zone_code": "quang-tri",
+    "destination_slug": "phong-nha-ke-bang",
+    "starts_at": "+1d 09:00",
+    "ends_at": "+2d 08:00",
+    "lodging": "Homestay mô phỏng Phong Nha",
+    "transport": "car",
+    "note": null
+   }
+  ],
+  "members": [
+   {
+    "full_name": "Kenji Tanaka",
+    "phone": "+81 90 0000 0031",
+    "nationality": "JP",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": true
+   },
+   {
+    "full_name": "Yui Tanaka",
+    "phone": "+81 90 0000 0032",
+    "nationality": "JP",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": false
+   }
+  ]
+ },
+ {
+  "code": "TR-SEED-17",
+  "owner_email": "traveler3@dukhach.test",
+  "partner_email": null,
+  "title": "Hanoi food tour (cancelled)",
+  "start": "+15d",
+  "end": "+17d",
+  "status": "cancelled",
+  "group_size": 3,
+  "nationality": "JP",
+  "preferred_locale": "en",
+  "contact": {
+   "name": "Kenji Tanaka",
+   "phone": "+81 90 0000 0031",
+   "email": "kenji.tanaka@example.com"
+  },
+  "legs": [
+   {
+    "zone_code": "ha-noi",
+    "destination_slug": "pho-co-ha-noi",
+    "starts_at": "+15d 10:00",
+    "ends_at": "+17d 10:00",
+    "lodging": "Khách sạn mô phỏng phố cổ",
+    "transport": "taxi",
+    "note": null
+   }
+  ],
+  "members": [
+   {
+    "full_name": "Kenji Tanaka",
+    "phone": "+81 90 0000 0031",
+    "nationality": "JP",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": true
+   },
+   {
+    "full_name": "Yui Tanaka",
+    "phone": "+81 90 0000 0032",
+    "nationality": "JP",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": false
+   },
+   {
+    "full_name": "Haruto Tanaka",
+    "phone": "+81 90 0000 0033",
+    "nationality": "JP",
+    "age_group": "child",
+    "special_needs": null,
+    "is_leader": false
+   }
+  ]
+ },
+ {
+  "code": "TR-SEED-18",
+  "owner_email": "traveler4@dukhach.test",
+  "partner_email": null,
+  "title": "TP.HCM 3 ngày",
+  "start": "+0d",
+  "end": "+2d",
+  "status": "active",
+  "group_size": 2,
+  "nationality": "VN",
+  "preferred_locale": "vi",
+  "contact": {
+   "name": "Trần Thị Bình",
+   "phone": "0903 000 041",
+   "email": "tran.thi.binh@example.com"
+  },
+  "legs": [
+   {
+    "zone_code": "ho-chi-minh",
+    "destination_slug": "san-bay-tan-son-nhat",
+    "starts_at": "+0d 08:00",
+    "ends_at": "+0d 10:00",
+    "lodging": null,
+    "transport": "máy bay",
+    "note": null
+   },
+   {
+    "zone_code": "ho-chi-minh",
+    "destination_slug": "cho-ben-thanh",
+    "starts_at": "+0d 11:00",
+    "ends_at": "+1d 08:00",
+    "lodging": "Khách sạn mô phỏng Quận 1",
+    "transport": "taxi",
+    "note": null
+   },
+   {
+    "zone_code": "ho-chi-minh",
+    "destination_slug": "dinh-doc-lap",
+    "starts_at": "+1d 09:00",
+    "ends_at": "+1d 12:00",
+    "lodging": null,
+    "transport": "taxi",
+    "note": null
+   },
+   {
+    "zone_code": "ho-chi-minh",
+    "destination_slug": "dia-dao-cu-chi",
+    "starts_at": "+1d 13:00",
+    "ends_at": "+2d 12:00",
+    "lodging": "Khách sạn mô phỏng Củ Chi",
+    "transport": "ô tô",
+    "note": null
+   }
+  ],
+  "members": [
+   {
+    "full_name": "Trần Thị Bình",
+    "phone": "0903 000 041",
+    "nationality": "VN",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": true
+   },
+   {
+    "full_name": "Trần Văn Cường",
+    "phone": "0903 000 042",
+    "nationality": "VN",
+    "age_group": "senior",
+    "special_needs": "Tăng huyết áp, đi lại chậm",
+    "is_leader": false
+   }
+  ]
+ },
+ {
+  "code": "TR-SEED-19",
+  "owner_email": "traveler4@dukhach.test",
+  "partner_email": null,
+  "title": "Vũng Tàu – Côn Đảo 4 ngày",
+  "start": "+3d",
+  "end": "+6d",
+  "status": "active",
+  "group_size": 2,
+  "nationality": "VN",
+  "preferred_locale": "vi",
+  "contact": {
+   "name": "Trần Thị Bình",
+   "phone": "0903 000 041",
+   "email": "tran.thi.binh@example.com"
+  },
+  "legs": [
+   {
+    "zone_code": "ho-chi-minh",
+    "destination_slug": "bai-sau-vung-tau",
+    "starts_at": "+3d 10:00",
+    "ends_at": "+4d 08:00",
+    "lodging": "Khách sạn mô phỏng Bãi Sau",
+    "transport": "tàu cao tốc",
+    "note": null
+   },
+   {
+    "zone_code": "ho-chi-minh",
+    "destination_slug": "con-dao",
+    "starts_at": "+4d 12:00",
+    "ends_at": "+6d 10:00",
+    "lodging": "Khách sạn mô phỏng Côn Sơn",
+    "transport": "máy bay",
+    "note": null
+   }
+  ],
+  "members": [
+   {
+    "full_name": "Trần Thị Bình",
+    "phone": "0903 000 041",
+    "nationality": "VN",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": true
+   },
+   {
+    "full_name": "Trần Văn Cường",
+    "phone": "0903 000 042",
+    "nationality": "VN",
+    "age_group": "senior",
+    "special_needs": "Tăng huyết áp, đi lại chậm",
+    "is_leader": false
+   }
+  ]
+ },
+ {
+  "code": "TR-SEED-20",
+  "owner_email": "traveler4@dukhach.test",
+  "partner_email": null,
+  "title": "Cần Thơ chợ nổi",
+  "start": "+8d",
+  "end": "+9d",
+  "status": "active",
+  "group_size": 2,
+  "nationality": "VN",
+  "preferred_locale": "vi",
+  "contact": {
+   "name": "Trần Thị Bình",
+   "phone": "0903 000 041",
+   "email": "tran.thi.binh@example.com"
+  },
+  "legs": [
+   {
+    "zone_code": "can-tho",
+    "destination_slug": "ben-ninh-kieu",
+    "starts_at": "+8d 15:00",
+    "ends_at": "+9d 05:00",
+    "lodging": "Khách sạn mô phỏng Ninh Kiều",
+    "transport": "xe khách",
+    "note": null
+   },
+   {
+    "zone_code": "can-tho",
+    "destination_slug": "cho-noi-cai-rang",
+    "starts_at": "+9d 05:30",
+    "ends_at": "+9d 12:00",
+    "lodging": null,
+    "transport": "thuyền",
+    "note": null
+   }
+  ],
+  "members": [
+   {
+    "full_name": "Trần Thị Bình",
+    "phone": "0903 000 041",
+    "nationality": "VN",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": true
+   },
+   {
+    "full_name": "Trần Văn Cường",
+    "phone": "0903 000 042",
+    "nationality": "VN",
+    "age_group": "senior",
+    "special_needs": "Tăng huyết áp, đi lại chậm",
+    "is_leader": false
+   }
+  ]
+ },
+ {
+  "code": "TR-SEED-21",
+  "owner_email": "traveler4@dukhach.test",
+  "partner_email": null,
+  "title": "Tây Ninh – núi Bà Đen",
+  "start": "-40d",
+  "end": "-38d",
+  "status": "completed",
+  "group_size": 2,
+  "nationality": "VN",
+  "preferred_locale": "vi",
+  "contact": {
+   "name": "Trần Thị Bình",
+   "phone": "0903 000 041",
+   "email": "tran.thi.binh@example.com"
+  },
+  "legs": [
+   {
+    "zone_code": "tay-ninh",
+    "destination_slug": "nui-ba-den",
+    "starts_at": "-40d 08:00",
+    "ends_at": "-39d 10:00",
+    "lodging": "Khách sạn mô phỏng Tây Ninh",
+    "transport": "ô tô",
+    "note": null
+   },
+   {
+    "zone_code": "tay-ninh",
+    "destination_slug": "toa-thanh-tay-ninh",
+    "starts_at": "-39d 11:00",
+    "ends_at": "-38d 12:00",
+    "lodging": null,
+    "transport": "ô tô",
+    "note": null
+   }
+  ],
+  "members": [
+   {
+    "full_name": "Trần Thị Bình",
+    "phone": "0903 000 041",
+    "nationality": "VN",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": true
+   },
+   {
+    "full_name": "Trần Văn Cường",
+    "phone": "0903 000 042",
+    "nationality": "VN",
+    "age_group": "senior",
+    "special_needs": "Tăng huyết áp, đi lại chậm",
+    "is_leader": false
+   }
+  ]
+ },
+ {
+  "code": "TR-SEED-22",
+  "owner_email": "traveler5@dukhach.test",
+  "partner_email": null,
+  "title": "Hanoi city break 3 days",
+  "start": "+0d",
+  "end": "+2d",
+  "status": "active",
+  "group_size": 1,
+  "nationality": "US",
+  "preferred_locale": "en",
+  "contact": {
+   "name": "Sarah Johnson",
+   "phone": "+1 202 555 0151",
+   "email": "sarah.johnson@example.com"
+  },
+  "legs": [
+   {
+    "zone_code": "ha-noi",
+    "destination_slug": "pho-co-ha-noi",
+    "starts_at": "+0d 14:00",
+    "ends_at": "+1d 08:00",
+    "lodging": "Khách sạn mô phỏng Hàng Bạc",
+    "transport": "taxi",
+    "note": null
+   },
+   {
+    "zone_code": "ha-noi",
+    "destination_slug": "van-mieu-quoc-tu-giam",
+    "starts_at": "+1d 09:00",
+    "ends_at": "+1d 12:00",
+    "lodging": null,
+    "transport": "walking",
+    "note": null
+   },
+   {
+    "zone_code": "ha-noi",
+    "destination_slug": "lang-chu-tich-ho-chi-minh",
+    "starts_at": "+1d 13:00",
+    "ends_at": "+2d 12:00",
+    "lodging": "Khách sạn mô phỏng Hàng Bạc",
+    "transport": "walking",
+    "note": null
+   }
+  ],
+  "members": [
+   {
+    "full_name": "Sarah Johnson",
+    "phone": "+1 202 555 0151",
+    "nationality": "US",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": true
+   }
+  ]
+ },
+ {
+  "code": "TR-SEED-23",
+  "owner_email": "traveler5@dukhach.test",
+  "partner_email": null,
+  "title": "Ha Long overnight cruise",
+  "start": "+2d",
+  "end": "+3d",
+  "status": "active",
+  "group_size": 1,
+  "nationality": "US",
+  "preferred_locale": "en",
+  "contact": {
+   "name": "Sarah Johnson",
+   "phone": "+1 202 555 0151",
+   "email": "sarah.johnson@example.com"
+  },
+  "legs": [
+   {
+    "zone_code": "quang-ninh",
+    "destination_slug": "cang-tau-tuan-chau",
+    "starts_at": "+2d 13:00",
+    "ends_at": "+2d 15:00",
+    "lodging": null,
+    "transport": "shuttle bus",
+    "note": null
+   },
+   {
+    "zone_code": "quang-ninh",
+    "destination_slug": "vinh-ha-long",
+    "starts_at": "+2d 15:00",
+    "ends_at": "+3d 11:00",
+    "lodging": "Du thuyền mô phỏng",
+    "transport": "cruise",
+    "note": null
+   }
+  ],
+  "members": [
+   {
+    "full_name": "Sarah Johnson",
+    "phone": "+1 202 555 0151",
+    "nationality": "US",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": true
+   }
+  ]
+ },
+ {
+  "code": "TR-SEED-24",
+  "owner_email": "traveler5@dukhach.test",
+  "partner_email": null,
+  "title": "Da Nang – Ba Na 3 days",
+  "start": "+4d",
+  "end": "+6d",
+  "status": "active",
+  "group_size": 1,
+  "nationality": "US",
+  "preferred_locale": "en",
+  "contact": {
+   "name": "Sarah Johnson",
+   "phone": "+1 202 555 0151",
+   "email": "sarah.johnson@example.com"
+  },
+  "legs": [
+   {
+    "zone_code": "da-nang",
+    "destination_slug": "ba-na-hills",
+    "starts_at": "+4d 09:00",
+    "ends_at": "+5d 10:00",
+    "lodging": "Khách sạn mô phỏng Bà Nà",
+    "transport": "car",
+    "note": null
+   },
+   {
+    "zone_code": "da-nang",
+    "destination_slug": "ban-dao-son-tra",
+    "starts_at": "+5d 12:00",
+    "ends_at": "+6d 10:00",
+    "lodging": "Khách sạn mô phỏng Sơn Trà",
+    "transport": "car",
+    "note": null
+   }
+  ],
+  "members": [
+   {
+    "full_name": "Sarah Johnson",
+    "phone": "+1 202 555 0151",
+    "nationality": "US",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": true
+   }
+  ]
+ },
+ {
+  "code": "TR-SEED-25",
+  "owner_email": "traveler5@dukhach.test",
+  "partner_email": null,
+  "title": "Hue imperial city",
+  "start": "+8d",
+  "end": "+10d",
+  "status": "active",
+  "group_size": 1,
+  "nationality": "US",
+  "preferred_locale": "en",
+  "contact": {
+   "name": "Sarah Johnson",
+   "phone": "+1 202 555 0151",
+   "email": "sarah.johnson@example.com"
+  },
+  "legs": [
+   {
+    "zone_code": "hue",
+    "destination_slug": "dai-noi-hue",
+    "starts_at": "+8d 10:00",
+    "ends_at": "+9d 09:00",
+    "lodging": "Khách sạn mô phỏng Huế",
+    "transport": "train",
+    "note": null
+   },
+   {
+    "zone_code": "hue",
+    "destination_slug": "lang-tu-duc",
+    "starts_at": "+9d 10:00",
+    "ends_at": "+10d 10:00",
+    "lodging": "Khách sạn mô phỏng Huế",
+    "transport": "bicycle",
+    "note": null
+   }
+  ],
+  "members": [
+   {
+    "full_name": "Sarah Johnson",
+    "phone": "+1 202 555 0151",
+    "nationality": "US",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": true
+   }
+  ]
+ },
+ {
+  "code": "TR-SEED-26",
+  "owner_email": "traveler6@dukhach.test",
+  "partner_email": null,
+  "title": "Da Nang beach 4 days",
+  "start": "+3d",
+  "end": "+6d",
+  "status": "active",
+  "group_size": 2,
+  "nationality": "KR",
+  "preferred_locale": "en",
+  "contact": {
+   "name": "Lee Min-jun",
+   "phone": "+82 10 0000 0061",
+   "email": "lee.minjun@example.com"
+  },
+  "legs": [
+   {
+    "zone_code": "da-nang",
+    "destination_slug": "bai-bien-my-khe",
+    "starts_at": "+3d 10:00",
+    "ends_at": "+4d 09:00",
+    "lodging": "Khách sạn mô phỏng Võ Nguyên Giáp",
+    "transport": "taxi",
+    "note": null
+   },
+   {
+    "zone_code": "da-nang",
+    "destination_slug": "ngu-hanh-son",
+    "starts_at": "+4d 10:00",
+    "ends_at": "+4d 14:00",
+    "lodging": null,
+    "transport": "taxi",
+    "note": null
+   },
+   {
+    "zone_code": "da-nang",
+    "destination_slug": "cu-lao-cham",
+    "starts_at": "+5d 08:00",
+    "ends_at": "+5d 16:00",
+    "lodging": null,
+    "transport": "speedboat",
+    "note": null
+   },
+   {
+    "zone_code": "da-nang",
+    "destination_slug": "pho-co-hoi-an",
+    "starts_at": "+5d 17:00",
+    "ends_at": "+6d 12:00",
+    "lodging": "Khách sạn mô phỏng Hội An",
+    "transport": "taxi",
+    "note": null
+   }
+  ],
+  "members": [
+   {
+    "full_name": "Lee Min-jun",
+    "phone": "+82 10 0000 0061",
+    "nationality": "KR",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": true
+   },
+   {
+    "full_name": "Park Ji-woo",
+    "phone": "+82 10 0000 0062",
+    "nationality": "KR",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": false
+   }
+  ]
+ },
+ {
+  "code": "TR-SEED-27",
+  "owner_email": "traveler6@dukhach.test",
+  "partner_email": null,
+  "title": "Phu Quoc island 4 days",
+  "start": "+7d",
+  "end": "+10d",
+  "status": "active",
+  "group_size": 2,
+  "nationality": "KR",
+  "preferred_locale": "en",
+  "contact": {
+   "name": "Lee Min-jun",
+   "phone": "+82 10 0000 0061",
+   "email": "lee.minjun@example.com"
+  },
+  "legs": [
+   {
+    "zone_code": "an-giang",
+    "destination_slug": "san-bay-phu-quoc",
+    "starts_at": "+7d 11:00",
+    "ends_at": "+7d 13:00",
+    "lodging": null,
+    "transport": "plane",
+    "note": null
+   },
+   {
+    "zone_code": "an-giang",
+    "destination_slug": "phu-quoc-bai-sao",
+    "starts_at": "+7d 14:00",
+    "ends_at": "+9d 10:00",
+    "lodging": "Resort mô phỏng Bãi Sao",
+    "transport": "taxi",
+    "note": null
+   },
+   {
+    "zone_code": "an-giang",
+    "destination_slug": "phu-quoc-duong-dong",
+    "starts_at": "+9d 11:00",
+    "ends_at": "+10d 12:00",
+    "lodging": "Khách sạn mô phỏng Dương Đông",
+    "transport": "taxi",
+    "note": null
+   }
+  ],
+  "members": [
+   {
+    "full_name": "Lee Min-jun",
+    "phone": "+82 10 0000 0061",
+    "nationality": "KR",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": true
+   },
+   {
+    "full_name": "Park Ji-woo",
+    "phone": "+82 10 0000 0062",
+    "nationality": "KR",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": false
+   }
+  ]
+ },
+ {
+  "code": "TR-SEED-28",
+  "owner_email": "traveler6@dukhach.test",
+  "partner_email": null,
+  "title": "Kon Tum – Mang Den highlands",
+  "start": "+0d",
+  "end": "+2d",
+  "status": "active",
+  "group_size": 2,
+  "nationality": "KR",
+  "preferred_locale": "en",
+  "contact": {
+   "name": "Lee Min-jun",
+   "phone": "+82 10 0000 0061",
+   "email": "lee.minjun@example.com"
+  },
+  "legs": [
+   {
+    "zone_code": "quang-ngai",
+    "destination_slug": "nha-tho-go-kon-tum",
+    "starts_at": "+0d 09:00",
+    "ends_at": "+1d 08:00",
+    "lodging": "Khách sạn mô phỏng Kon Tum",
+    "transport": "bus",
+    "note": null
+   },
+   {
+    "zone_code": "quang-ngai",
+    "destination_slug": "mang-den",
+    "starts_at": "+1d 10:00",
+    "ends_at": "+2d 12:00",
+    "lodging": "Homestay mô phỏng Măng Đen",
+    "transport": "car",
+    "note": null
+   }
+  ],
+  "members": [
+   {
+    "full_name": "Lee Min-jun",
+    "phone": "+82 10 0000 0061",
+    "nationality": "KR",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": true
+   },
+   {
+    "full_name": "Park Ji-woo",
+    "phone": "+82 10 0000 0062",
+    "nationality": "KR",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": false
+   }
+  ]
+ },
+ {
+  "code": "TR-SEED-29",
+  "owner_email": "traveler6@dukhach.test",
+  "partner_email": null,
+  "title": "Mui Ne dunes",
+  "start": "-15d",
+  "end": "-12d",
+  "status": "completed",
+  "group_size": 2,
+  "nationality": "KR",
+  "preferred_locale": "en",
+  "contact": {
+   "name": "Lee Min-jun",
+   "phone": "+82 10 0000 0061",
+   "email": "lee.minjun@example.com"
+  },
+  "legs": [
+   {
+    "zone_code": "lam-dong",
+    "destination_slug": "mui-ne",
+    "starts_at": "-15d 12:00",
+    "ends_at": "-12d 10:00",
+    "lodging": "Resort mô phỏng Mũi Né",
+    "transport": "bus",
+    "note": null
+   }
+  ],
+  "members": [
+   {
+    "full_name": "Lee Min-jun",
+    "phone": "+82 10 0000 0061",
+    "nationality": "KR",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": true
+   },
+   {
+    "full_name": "Park Ji-woo",
+    "phone": "+82 10 0000 0062",
+    "nationality": "KR",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": false
+   }
+  ]
+ },
+ {
+  "code": "TR-SEED-30",
+  "owner_email": "partner@dukhach.test",
+  "partner_email": "partner@dukhach.test",
+  "title": "Đoàn 18 khách: Hà Nội – Sa Pa 5 ngày",
+  "start": "-1d",
+  "end": "+3d",
+  "status": "active",
+  "group_size": 18,
+  "nationality": "VN",
+  "preferred_locale": "vi",
+  "contact": {
+   "name": "Phạm Quốc Dũng (HDV)",
+   "phone": "0988 000 051",
+   "email": "dieuhanh@example.com"
+  },
+  "legs": [
+   {
+    "zone_code": "ha-noi",
+    "destination_slug": "ho-hoan-kiem",
+    "starts_at": "-1d 08:00",
+    "ends_at": "+0d 06:00",
+    "lodging": "Khách sạn mô phỏng Hoàn Kiếm",
+    "transport": "xe 29 chỗ",
+    "note": null
+   },
+   {
+    "zone_code": "lao-cai",
+    "destination_slug": "sa-pa",
+    "starts_at": "+0d 12:00",
+    "ends_at": "+2d 08:00",
+    "lodging": "Khách sạn mô phỏng Sa Pa",
+    "transport": "xe 29 chỗ",
+    "note": null
+   },
+   {
+    "zone_code": "lao-cai",
+    "destination_slug": "deo-o-quy-ho",
+    "starts_at": "+2d 09:00",
+    "ends_at": "+2d 13:00",
+    "lodging": null,
+    "transport": "xe 29 chỗ",
+    "note": null
+   },
+   {
+    "zone_code": "lao-cai",
+    "destination_slug": "bac-ha",
+    "starts_at": "+3d 07:00",
+    "ends_at": "+3d 15:00",
+    "lodging": null,
+    "transport": "xe 29 chỗ",
+    "note": null
+   }
+  ],
+  "members": [
+   {
+    "full_name": "Phạm Quốc Dũng",
+    "phone": "0988 000 051",
+    "nationality": "VN",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": true
+   },
+   {
+    "full_name": "Đỗ Thị Lan",
+    "phone": "0988 000 052",
+    "nationality": "VN",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": false
+   },
+   {
+    "full_name": "Vũ Văn Hải",
+    "phone": "0988 000 053",
+    "nationality": "VN",
+    "age_group": "senior",
+    "special_needs": null,
+    "is_leader": false
+   },
+   {
+    "full_name": "Hoàng Thị Mai",
+    "phone": "0988 000 054",
+    "nationality": "VN",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": false
+   }
+  ]
+ },
+ {
+  "code": "TR-SEED-31",
+  "owner_email": "partner@dukhach.test",
+  "partner_email": "partner@dukhach.test",
+  "title": "Đoàn 25 khách: Huế – Đà Nẵng – Hội An 6 ngày",
+  "start": "+0d",
+  "end": "+5d",
+  "status": "active",
+  "group_size": 25,
+  "nationality": "VN",
+  "preferred_locale": "vi",
+  "contact": {
+   "name": "Phạm Quốc Dũng (HDV)",
+   "phone": "0988 000 051",
+   "email": "dieuhanh@example.com"
+  },
+  "legs": [
+   {
+    "zone_code": "hue",
+    "destination_slug": "dai-noi-hue",
+    "starts_at": "+0d 09:00",
+    "ends_at": "+1d 08:00",
+    "lodging": "Khách sạn mô phỏng Huế",
+    "transport": "xe 45 chỗ",
+    "note": null
+   },
+   {
+    "zone_code": "hue",
+    "destination_slug": "vuon-quoc-gia-bach-ma",
+    "starts_at": "+1d 09:00",
+    "ends_at": "+1d 16:00",
+    "lodging": null,
+    "transport": "xe 45 chỗ",
+    "note": null
+   },
+   {
+    "zone_code": "da-nang",
+    "destination_slug": "bai-bien-my-khe",
+    "starts_at": "+1d 18:00",
+    "ends_at": "+3d 08:00",
+    "lodging": "Khách sạn mô phỏng Đà Nẵng",
+    "transport": "xe 45 chỗ",
+    "note": null
+   },
+   {
+    "zone_code": "da-nang",
+    "destination_slug": "thanh-dia-my-son",
+    "starts_at": "+3d 09:00",
+    "ends_at": "+3d 14:00",
+    "lodging": null,
+    "transport": "xe 45 chỗ",
+    "note": null
+   },
+   {
+    "zone_code": "da-nang",
+    "destination_slug": "pho-co-hoi-an",
+    "starts_at": "+3d 15:00",
+    "ends_at": "+5d 10:00",
+    "lodging": "Khách sạn mô phỏng Hội An",
+    "transport": "xe 45 chỗ",
+    "note": null
+   }
+  ],
+  "members": [
+   {
+    "full_name": "Phạm Quốc Dũng",
+    "phone": "0988 000 051",
+    "nationality": "VN",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": true
+   },
+   {
+    "full_name": "Bùi Thị Thu",
+    "phone": "0988 000 055",
+    "nationality": "VN",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": false
+   },
+   {
+    "full_name": "Ngô Văn Tâm",
+    "phone": "0988 000 056",
+    "nationality": "VN",
+    "age_group": "senior",
+    "special_needs": null,
+    "is_leader": false
+   },
+   {
+    "full_name": "Đinh Thị Ngọc",
+    "phone": "0988 000 057",
+    "nationality": "VN",
+    "age_group": "child",
+    "special_needs": null,
+    "is_leader": false
+   }
+  ]
+ },
+ {
+  "code": "TR-SEED-32",
+  "owner_email": "partner@dukhach.test",
+  "partner_email": "partner@dukhach.test",
+  "title": "Tour group 30 pax: Ha Long – Cat Ba",
+  "start": "+1d",
+  "end": "+3d",
+  "status": "active",
+  "group_size": 30,
+  "nationality": "AU",
+  "preferred_locale": "en",
+  "contact": {
+   "name": "Olivia Brown (tour leader)",
+   "phone": "+61 400 000 071",
+   "email": "olivia.brown@example.com"
+  },
+  "legs": [
+   {
+    "zone_code": "quang-ninh",
+    "destination_slug": "vinh-ha-long",
+    "starts_at": "+1d 10:00",
+    "ends_at": "+2d 10:00",
+    "lodging": "Du thuyền mô phỏng",
+    "transport": "coach + cruise",
+    "note": null
+   },
+   {
+    "zone_code": "hai-phong",
+    "destination_slug": "dao-cat-ba",
+    "starts_at": "+2d 12:00",
+    "ends_at": "+3d 10:00",
+    "lodging": "Khách sạn mô phỏng Cát Bà",
+    "transport": "ferry",
+    "note": null
+   },
+   {
+    "zone_code": "hai-phong",
+    "destination_slug": "bien-do-son",
+    "starts_at": "+3d 12:00",
+    "ends_at": "+3d 18:00",
+    "lodging": null,
+    "transport": "coach",
+    "note": null
+   }
+  ],
+  "members": [
+   {
+    "full_name": "Olivia Brown",
+    "phone": "+61 400 000 071",
+    "nationality": "AU",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": true
+   },
+   {
+    "full_name": "Noah Wilson",
+    "phone": "+61 400 000 072",
+    "nationality": "AU",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": false
+   },
+   {
+    "full_name": "Mia Taylor",
+    "phone": "+61 400 000 073",
+    "nationality": "AU",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": false
+   }
+  ]
+ },
+ {
+  "code": "TR-SEED-33",
+  "owner_email": "partner@dukhach.test",
+  "partner_email": "partner@dukhach.test",
+  "title": "Đoàn 20 khách: Cần Thơ – Châu Đốc – Hà Tiên – Phú Quốc",
+  "start": "+0d",
+  "end": "+4d",
+  "status": "active",
+  "group_size": 20,
+  "nationality": "VN",
+  "preferred_locale": "vi",
+  "contact": {
+   "name": "Phạm Quốc Dũng (HDV)",
+   "phone": "0988 000 051",
+   "email": "dieuhanh@example.com"
+  },
+  "legs": [
+   {
+    "zone_code": "can-tho",
+    "destination_slug": "ben-ninh-kieu",
+    "starts_at": "+0d 10:00",
+    "ends_at": "+1d 05:00",
+    "lodging": "Khách sạn mô phỏng Cần Thơ",
+    "transport": "xe 29 chỗ",
+    "note": null
+   },
+   {
+    "zone_code": "an-giang",
+    "destination_slug": "nui-sam-chau-doc",
+    "starts_at": "+1d 10:00",
+    "ends_at": "+2d 08:00",
+    "lodging": "Khách sạn mô phỏng Châu Đốc",
+    "transport": "xe 29 chỗ",
+    "note": null
+   },
+   {
+    "zone_code": "an-giang",
+    "destination_slug": "rung-tram-tra-su",
+    "starts_at": "+2d 09:00",
+    "ends_at": "+2d 13:00",
+    "lodging": null,
+    "transport": "xuồng",
+    "note": null
+   },
+   {
+    "zone_code": "an-giang",
+    "destination_slug": "ha-tien",
+    "starts_at": "+2d 16:00",
+    "ends_at": "+3d 07:00",
+    "lodging": "Khách sạn mô phỏng Hà Tiên",
+    "transport": "xe 29 chỗ",
+    "note": null
+   },
+   {
+    "zone_code": "an-giang",
+    "destination_slug": "phu-quoc-duong-dong",
+    "starts_at": "+3d 10:00",
+    "ends_at": "+4d 12:00",
+    "lodging": "Khách sạn mô phỏng Dương Đông",
+    "transport": "tàu cao tốc",
+    "note": null
+   }
+  ],
+  "members": [
+   {
+    "full_name": "Phạm Quốc Dũng",
+    "phone": "0988 000 051",
+    "nationality": "VN",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": true
+   },
+   {
+    "full_name": "Lý Văn Phúc",
+    "phone": "0988 000 058",
+    "nationality": "VN",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": false
+   },
+   {
+    "full_name": "Tạ Thị Kim",
+    "phone": "0988 000 059",
+    "nationality": "VN",
+    "age_group": "senior",
+    "special_needs": null,
+    "is_leader": false
+   }
+  ]
+ },
+ {
+  "code": "TR-SEED-34",
+  "owner_email": "partner@dukhach.test",
+  "partner_email": "partner@dukhach.test",
+  "title": "Tour group 12 pax: Ha Giang loop",
+  "start": "+7d",
+  "end": "+11d",
+  "status": "active",
+  "group_size": 12,
+  "nationality": "FR",
+  "preferred_locale": "en",
+  "contact": {
+   "name": "Camille Martin (tour leader)",
+   "phone": "+33 6 00 00 00 81",
+   "email": "camille.martin@example.com"
+  },
+  "legs": [
+   {
+    "zone_code": "tuyen-quang",
+    "destination_slug": "thanh-pho-ha-giang",
+    "starts_at": "+7d 06:00",
+    "ends_at": "+8d 07:00",
+    "lodging": "Homestay mô phỏng Hà Giang",
+    "transport": "jeep",
+    "note": null
+   },
+   {
+    "zone_code": "tuyen-quang",
+    "destination_slug": "pho-co-dong-van",
+    "starts_at": "+8d 15:00",
+    "ends_at": "+10d 07:00",
+    "lodging": "Homestay mô phỏng Đồng Văn",
+    "transport": "jeep",
+    "note": null
+   },
+   {
+    "zone_code": "tuyen-quang",
+    "destination_slug": "deo-ma-pi-leng",
+    "starts_at": "+10d 08:00",
+    "ends_at": "+10d 12:00",
+    "lodging": null,
+    "transport": "jeep",
+    "note": null
+   },
+   {
+    "zone_code": "tuyen-quang",
+    "destination_slug": "cot-co-lung-cu",
+    "starts_at": "+10d 14:00",
+    "ends_at": "+11d 10:00",
+    "lodging": null,
+    "transport": "jeep",
+    "note": null
+   }
+  ],
+  "members": [
+   {
+    "full_name": "Camille Martin",
+    "phone": "+33 6 00 00 00 81",
+    "nationality": "FR",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": true
+   },
+   {
+    "full_name": "Lucas Bernard",
+    "phone": "+33 6 00 00 00 82",
+    "nationality": "FR",
+    "age_group": "adult",
+    "special_needs": null,
+    "is_leader": false
+   }
+  ]
+ }
+]
