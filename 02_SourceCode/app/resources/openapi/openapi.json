@@ -1,0 +1,2024 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "DiSanSo Open Data API",
+    "version": "1.0.0",
+    "description": "API mở (chỉ đọc) của nền tảng số hóa và diễn giải di sản văn hóa đa ngữ DiSanSo (CSE703073 ĐT-04). Không cần xác thực; giới hạn 60 yêu cầu/phút/IP; CORS *. Nội dung trả về đã địa phương hóa theo tham số `locale`.",
+    "license": {
+      "name": "CC BY 4.0 (dữ liệu mô tả)",
+      "url": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8080",
+      "description": "Docker Compose cục bộ"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Heritage"
+    },
+    {
+      "name": "Discovery"
+    },
+    {
+      "name": "Tours"
+    },
+    {
+      "name": "Payments"
+    },
+    {
+      "name": "System"
+    }
+  ],
+  "paths": {
+    "/api/v1/sites": {
+      "get": {
+        "tags": [
+          "Heritage"
+        ],
+        "summary": "Danh sách di sản",
+        "parameters": [
+          {
+            "name": "locale",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "vi",
+                "en"
+              ],
+              "default": "vi"
+            },
+            "description": "Ngôn ngữ nội dung / content language"
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "maxLength": 100
+            }
+          },
+          {
+            "name": "province",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Mã tỉnh (vd. HN)"
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "di_tich",
+                "danh_thang",
+                "di_san_phi_vat_the",
+                "bao_tang",
+                "lang_nghe"
+              ]
+            }
+          },
+          {
+            "name": "level",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "unesco",
+                "quoc_gia_dac_biet",
+                "quoc_gia",
+                "cap_tinh",
+                "chua_xep_hang"
+              ]
+            }
+          },
+          {
+            "name": "period",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "tag",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "popular",
+                "newest",
+                "year"
+              ]
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          {
+            "name": "per_page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 50,
+              "default": 20
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/SiteCard"
+                      }
+                    },
+                    "meta": {
+                      "$ref": "#/components/schemas/PageMeta"
+                    },
+                    "links": {
+                      "$ref": "#/components/schemas/PageLinks"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/api/v1/sites/{slug}": {
+      "get": {
+        "tags": [
+          "Heritage"
+        ],
+        "summary": "Chi tiết di sản (kèm JSON-LD schema.org)",
+        "parameters": [
+          {
+            "name": "slug",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "locale",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "vi",
+                "en"
+              ],
+              "default": "vi"
+            },
+            "description": "Ngôn ngữ nội dung / content language"
+          },
+          {
+            "name": "depth",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "enum": [
+                1,
+                2,
+                3
+              ],
+              "default": 1
+            },
+            "description": "1 phổ thông, 2 chuyên sâu, 3 học thuật"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/SiteDetail"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        }
+      }
+    },
+    "/api/v1/artifacts": {
+      "get": {
+        "tags": [
+          "Heritage"
+        ],
+        "summary": "Danh sách hiện vật",
+        "parameters": [
+          {
+            "name": "locale",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "vi",
+                "en"
+              ],
+              "default": "vi"
+            },
+            "description": "Ngôn ngữ nội dung / content language"
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "maxLength": 100
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "site",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "slug di sản"
+          },
+          {
+            "name": "treasure",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "period",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          {
+            "name": "per_page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 50,
+              "default": 20
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ArtifactCard"
+                      }
+                    },
+                    "meta": {
+                      "$ref": "#/components/schemas/PageMeta"
+                    },
+                    "links": {
+                      "$ref": "#/components/schemas/PageLinks"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/api/v1/artifacts/{slug}": {
+      "get": {
+        "tags": [
+          "Heritage"
+        ],
+        "summary": "Chi tiết hiện vật",
+        "parameters": [
+          {
+            "name": "slug",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "locale",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "vi",
+                "en"
+              ],
+              "default": "vi"
+            },
+            "description": "Ngôn ngữ nội dung / content language"
+          },
+          {
+            "name": "depth",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "enum": [
+                1,
+                2,
+                3
+              ],
+              "default": 1
+            },
+            "description": "1 phổ thông, 2 chuyên sâu, 3 học thuật"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/ArtifactDetail"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        }
+      }
+    },
+    "/api/v1/figures": {
+      "get": {
+        "tags": [
+          "Heritage"
+        ],
+        "summary": "Danh sách nhân vật lịch sử",
+        "parameters": [
+          {
+            "name": "locale",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "vi",
+                "en"
+              ],
+              "default": "vi"
+            },
+            "description": "Ngôn ngữ nội dung / content language"
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "maxLength": 100
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "period",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          {
+            "name": "per_page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 50,
+              "default": 20
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/FigureCard"
+                      }
+                    },
+                    "meta": {
+                      "$ref": "#/components/schemas/PageMeta"
+                    },
+                    "links": {
+                      "$ref": "#/components/schemas/PageLinks"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/api/v1/figures/{slug}": {
+      "get": {
+        "tags": [
+          "Heritage"
+        ],
+        "summary": "Chi tiết nhân vật",
+        "parameters": [
+          {
+            "name": "slug",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "locale",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "vi",
+                "en"
+              ],
+              "default": "vi"
+            },
+            "description": "Ngôn ngữ nội dung / content language"
+          },
+          {
+            "name": "depth",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "enum": [
+                1,
+                2,
+                3
+              ],
+              "default": 1
+            },
+            "description": "1 phổ thông, 2 chuyên sâu, 3 học thuật"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/FigureDetail"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        }
+      }
+    },
+    "/api/v1/geojson/sites": {
+      "get": {
+        "tags": [
+          "Discovery"
+        ],
+        "summary": "GeoJSON FeatureCollection các di sản",
+        "parameters": [
+          {
+            "name": "locale",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "vi",
+                "en"
+              ],
+              "default": "vi"
+            },
+            "description": "Ngôn ngữ nội dung / content language"
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "level",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "province",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "GeoJSON",
+            "content": {
+              "application/geo+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FeatureCollection"
+                }
+              }
+            }
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/api/v1/timeline": {
+      "get": {
+        "tags": [
+          "Discovery"
+        ],
+        "summary": "Dòng thời gian sự kiện",
+        "parameters": [
+          {
+            "name": "locale",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "vi",
+                "en"
+              ],
+              "default": "vi"
+            },
+            "description": "Ngôn ngữ nội dung / content language"
+          },
+          {
+            "name": "from",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "to",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "period",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TimelineItem"
+                  }
+                }
+              }
+            }
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/api/v1/tags": {
+      "get": {
+        "tags": [
+          "Discovery"
+        ],
+        "summary": "Danh sách thẻ chủ đề",
+        "parameters": [
+          {
+            "name": "locale",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "vi",
+                "en"
+              ],
+              "default": "vi"
+            },
+            "description": "Ngôn ngữ nội dung / content language"
+          },
+          {
+            "name": "group",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "chu_de",
+                "loai_hinh",
+                "ton_giao",
+                "phong_cach",
+                "vat_lieu",
+                "thoi_ky",
+                "vung_mien"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TagItem"
+                  }
+                }
+              }
+            }
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/api/v1/search": {
+      "get": {
+        "tags": [
+          "Discovery"
+        ],
+        "summary": "Tìm kiếm ngữ nghĩa (TF-IDF Python), tự động dự phòng FULLTEXT MySQL",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "maxLength": 100
+            },
+            "required": true
+          },
+          {
+            "name": "locale",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "vi",
+                "en"
+              ],
+              "default": "vi"
+            },
+            "description": "Ngôn ngữ nội dung / content language"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "engine": {
+                      "type": "string",
+                      "enum": [
+                        "semantic",
+                        "fallback"
+                      ]
+                    },
+                    "took_ms": {
+                      "type": "integer"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/SearchHit"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/api/v1/ical/routes/{slug}.ics": {
+      "get": {
+        "tags": [
+          "Tours"
+        ],
+        "summary": "Lịch khung giờ sắp tới của tuyến (iCalendar)",
+        "parameters": [
+          {
+            "name": "slug",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "locale",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "vi",
+                "en"
+              ],
+              "default": "vi"
+            },
+            "description": "Ngôn ngữ nội dung / content language"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "text/calendar",
+            "content": {
+              "text/calendar": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        }
+      }
+    },
+    "/api/v1/payments/sandbox/ipn": {
+      "post": {
+        "tags": [
+          "Payments"
+        ],
+        "summary": "IPN của cổng thanh toán mô phỏng (server-to-server)",
+        "description": "Chữ ký = HMAC-SHA256(secret, http_build_query(ksort(payload))) với RFC3986. Chữ ký sai hoặc số tiền lệch → 400. Gọi lặp lại là idempotent.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SandboxIpn"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Đã xử lý",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "txn_ref": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "string",
+                      "enum": [
+                        "initiated",
+                        "succeeded",
+                        "failed",
+                        "cancelled",
+                        "refunded"
+                      ]
+                    },
+                    "booking_status": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Chữ ký không hợp lệ / giao dịch không tồn tại / số tiền lệch"
+          },
+          "422": {
+            "description": "Thiếu trường bắt buộc"
+          }
+        }
+      }
+    },
+    "/api/v1/openapi.json": {
+      "get": {
+        "tags": [
+          "System"
+        ],
+        "summary": "Đặc tả OpenAPI này",
+        "responses": {
+          "200": {
+            "description": "OpenAPI 3.1"
+          }
+        }
+      }
+    },
+    "/healthz": {
+      "get": {
+        "tags": [
+          "System"
+        ],
+        "summary": "Kiểm tra sức khỏe hệ thống",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Health"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "CSDL lỗi",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Health"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "NotFound": {
+        "description": "Không tìm thấy hoặc chưa công bố"
+      },
+      "TooManyRequests": {
+        "description": "Vượt giới hạn 60 yêu cầu/phút"
+      }
+    },
+    "schemas": {
+      "PageMeta": {
+        "type": "object",
+        "properties": {
+          "current_page": {
+            "type": "integer"
+          },
+          "last_page": {
+            "type": "integer"
+          },
+          "per_page": {
+            "type": "integer"
+          },
+          "total": {
+            "type": "integer"
+          },
+          "locale": {
+            "type": "string"
+          }
+        }
+      },
+      "PageLinks": {
+        "type": "object",
+        "properties": {
+          "first": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "last": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "prev": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "next": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      },
+      "NamedRef": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "Cover": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "url": {
+            "type": "string"
+          },
+          "caption": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "license": {
+            "type": "string"
+          },
+          "source_name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      },
+      "TagRef": {
+        "type": "object",
+        "properties": {
+          "slug": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "group": {
+            "type": "string"
+          }
+        }
+      },
+      "Interpretation": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "depth_level": {
+            "type": "integer"
+          },
+          "locale": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "summary": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "body_html": {
+            "type": "string",
+            "description": "HTML đã lọc (Markdown → HTML, danh sách thẻ trắng)"
+          },
+          "sources": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "version": {
+            "type": "integer"
+          },
+          "updated_at": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      },
+      "MediaItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "url": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "media_type": {
+            "type": "string",
+            "enum": [
+              "image",
+              "audio",
+              "video",
+              "model3d",
+              "document"
+            ]
+          },
+          "caption": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "license": {
+            "type": "string"
+          },
+          "license_label": {
+            "type": "string"
+          },
+          "source_name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source_url": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "author": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "rights_holder": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "captured_at": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "provenance_note": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "is_cover": {
+            "type": "boolean"
+          },
+          "width": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "height": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "locale": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "chỉ audio"
+          },
+          "duration_sec": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "transcript": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "file",
+              "tts"
+            ],
+            "description": "tts: đọc transcript bằng Web Speech API"
+          }
+        }
+      },
+      "MediaGroups": {
+        "type": "object",
+        "properties": {
+          "images": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MediaItem"
+            }
+          },
+          "audios": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MediaItem"
+            }
+          },
+          "models": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MediaItem"
+            }
+          }
+        }
+      },
+      "SiteCard": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "summary": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "site_type": {
+            "type": "string"
+          },
+          "recognition_level": {
+            "type": "string"
+          },
+          "province": {
+            "$ref": "#/components/schemas/NamedRef"
+          },
+          "period": {
+            "$ref": "#/components/schemas/NamedRef"
+          },
+          "lat": {
+            "type": "number"
+          },
+          "lng": {
+            "type": "number"
+          },
+          "cover": {
+            "$ref": "#/components/schemas/Cover"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TagRef"
+            }
+          },
+          "year_built": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "url": {
+            "type": "string"
+          }
+        }
+      },
+      "SiteDetail": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/SiteCard"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "address": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "visiting_hours": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "ticket_price_vnd": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "website": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "year_recognized": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "view_count": {
+                "type": "integer"
+              },
+              "interpretation": {
+                "$ref": "#/components/schemas/Interpretation"
+              },
+              "available_depths": {
+                "type": "array",
+                "items": {
+                  "type": "integer"
+                }
+              },
+              "media": {
+                "$ref": "#/components/schemas/MediaGroups"
+              },
+              "figures": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "slug": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "figure_type": {
+                      "type": "string"
+                    },
+                    "relation_type": {
+                      "type": "string"
+                    },
+                    "birth_year": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ]
+                    },
+                    "death_year": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ]
+                    },
+                    "portrait": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "url": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "artifacts": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ArtifactCard"
+                }
+              },
+              "events": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/TimelineItem"
+                }
+              },
+              "routes": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "slug": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "duration_minutes": {
+                      "type": "integer"
+                    },
+                    "price_vnd": {
+                      "type": "integer"
+                    },
+                    "url": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "jsonld": {
+                "type": "object",
+                "description": "schema.org TouristAttraction | Museum"
+              }
+            }
+          }
+        ]
+      },
+      "ArtifactCard": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "summary": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "artifact_type": {
+            "type": "string"
+          },
+          "material": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "year_from": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "year_to": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "is_national_treasure": {
+            "type": "boolean"
+          },
+          "site": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "slug": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              }
+            }
+          },
+          "cover": {
+            "$ref": "#/components/schemas/Cover"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TagRef"
+            }
+          },
+          "url": {
+            "type": "string"
+          }
+        }
+      },
+      "ArtifactDetail": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/ArtifactCard"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "inventory_code": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "height_cm": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "width_cm": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "depth_cm": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "weight_kg": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "model3d_url": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "period": {
+                "$ref": "#/components/schemas/NamedRef"
+              },
+              "interpretation": {
+                "$ref": "#/components/schemas/Interpretation"
+              },
+              "available_depths": {
+                "type": "array",
+                "items": {
+                  "type": "integer"
+                }
+              },
+              "media": {
+                "$ref": "#/components/schemas/MediaGroups"
+              },
+              "events": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/TimelineItem"
+                }
+              },
+              "view_count": {
+                "type": "integer"
+              },
+              "jsonld": {
+                "type": "object",
+                "description": "schema.org VisualArtwork"
+              }
+            }
+          }
+        ]
+      },
+      "FigureCard": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "summary": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "figure_type": {
+            "type": "string"
+          },
+          "birth_year": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "death_year": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "period": {
+            "$ref": "#/components/schemas/NamedRef"
+          },
+          "province": {
+            "$ref": "#/components/schemas/NamedRef"
+          },
+          "portrait": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TagRef"
+            }
+          },
+          "url": {
+            "type": "string"
+          }
+        }
+      },
+      "FigureDetail": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/FigureCard"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "interpretation": {
+                "$ref": "#/components/schemas/Interpretation"
+              },
+              "available_depths": {
+                "type": "array",
+                "items": {
+                  "type": "integer"
+                }
+              },
+              "media": {
+                "$ref": "#/components/schemas/MediaGroups"
+              },
+              "sites": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "slug": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "relation_type": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "events": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/TimelineItem"
+                }
+              },
+              "view_count": {
+                "type": "integer"
+              },
+              "jsonld": {
+                "type": "object",
+                "description": "schema.org Person"
+              }
+            }
+          }
+        ]
+      },
+      "TimelineItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "year": {
+            "type": "integer"
+          },
+          "month": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "day": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "end_year": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "event_type": {
+            "type": "string"
+          },
+          "importance": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "subject": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "site",
+                  "figure"
+                ]
+              },
+              "slug": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              }
+            }
+          },
+          "period": {
+            "$ref": "#/components/schemas/NamedRef"
+          }
+        }
+      },
+      "TagItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "group": {
+            "type": "string"
+          },
+          "usage_count": {
+            "type": "integer"
+          },
+          "url": {
+            "type": "string"
+          }
+        }
+      },
+      "SearchHit": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "site",
+              "artifact",
+              "figure"
+            ]
+          },
+          "slug": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "summary": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "score": {
+            "type": "number"
+          },
+          "matched_terms": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "cover": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "url": {
+            "type": "string"
+          }
+        }
+      },
+      "FeatureCollection": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "const": "FeatureCollection"
+          },
+          "features": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "const": "Feature"
+                },
+                "geometry": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "const": "Point"
+                    },
+                    "coordinates": {
+                      "type": "array",
+                      "items": {
+                        "type": "number"
+                      },
+                      "minItems": 2,
+                      "maxItems": 2,
+                      "description": "[lng, lat]"
+                    }
+                  }
+                },
+                "properties": {
+                  "type": "object",
+                  "properties": {
+                    "slug": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "summary": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "site_type": {
+                      "type": "string"
+                    },
+                    "recognition_level": {
+                      "type": "string"
+                    },
+                    "province": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "province_code": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "url": {
+                      "type": "string"
+                    },
+                    "cover": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "SandboxIpn": {
+        "type": "object",
+        "required": [
+          "txn_ref",
+          "amount",
+          "outcome",
+          "signature"
+        ],
+        "properties": {
+          "txn_ref": {
+            "type": "string",
+            "example": "SB-261018093000-ABC123"
+          },
+          "amount": {
+            "type": "integer",
+            "example": 400000
+          },
+          "currency": {
+            "type": "string",
+            "example": "VND"
+          },
+          "outcome": {
+            "type": "string",
+            "enum": [
+              "success",
+              "fail",
+              "cancel"
+            ]
+          },
+          "response_code": {
+            "type": "string",
+            "example": "00"
+          },
+          "pay_date": {
+            "type": "string",
+            "example": "20261018093000"
+          },
+          "nonce": {
+            "type": "string"
+          },
+          "signature": {
+            "type": "string",
+            "description": "hex HMAC-SHA256, 64 ký tự"
+          }
+        }
+      },
+      "Health": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "ok",
+              "fail"
+            ]
+          },
+          "time": {
+            "type": "string"
+          },
+          "db": {
+            "type": "string",
+            "enum": [
+              "ok",
+              "fail"
+            ]
+          },
+          "analytics": {
+            "type": "string",
+            "enum": [
+              "ok",
+              "down"
+            ]
+          },
+          "version": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

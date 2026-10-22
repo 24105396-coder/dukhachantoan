@@ -1,0 +1,11 @@
+/*
+ * Font tự host (thay Google Fonts chặn hiển thị). Vite băm tên file; @fontsource dùng font-display: swap
+ * và unicode-range nên trình duyệt chỉ tải tập ký tự trang cần (latin, latin-ext, vietnamese).
+ * File này KHÔNG gắn vào <head>: app.blade.php nạp nó sau lần vẽ đầu tiên (lần truy cập sau nạp ngay),
+ * để ~250 KB font không tranh băng thông với JS/ảnh trên đường găng LCP.
+ */
+@import '@fontsource/be-vietnam-pro/400.css';
+@import '@fontsource/be-vietnam-pro/500.css';
+@import '@fontsource/be-vietnam-pro/600.css';
+@import '@fontsource/be-vietnam-pro/700.css';
+@import '@fontsource-variable/playfair-display/wght.css';

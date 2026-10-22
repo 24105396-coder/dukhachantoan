@@ -1,0 +1,91 @@
+name: dukhach
+# Nền tảng số hóa và diễn giải di sản văn hóa đa ngữ (DuKhachAnToan) – CSE703073 ĐT-04
+# Chạy: docker compose up --build   (lần đầu ~5-10 phút để tải image và build)
+# Web:  http://localhost:8080   Python: http://127.0.0.1:8001/healthz (docs chỉ khi APP_ENV=local)   MySQL: 127.0.0.1:3307
+services:
+  db:
+    image: mysql:8.0
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE:-dukhach}
+      MYSQL_USER: ${DB_USERNAME:-dukhach}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-dukhach_secret}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-root_secret}
+      TZ: Asia/Ho_Chi_Minh
+    ports:
+      - "127.0.0.1:${DB_FORWARD_PORT:-3308}:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./db-init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${DB_ROOT_PASSWORD:-root_secret}"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+
+  analytics:
+    build: ./python-service
+    environment:
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_DATABASE: ${DB_DATABASE:-dukhach}
+      DB_USERNAME: ${DB_USERNAME:-dukhach}
+      DB_PASSWORD: ${DB_PASSWORD:-dukhach_secret}
+      ANALYTICS_TOKEN: ${ANALYTICS_TOKEN:-dev-analytics-token}   # đổi trong .env khi triển khai thật
+      APP_ENV: ${APP_ENV:-production}
+    ports:
+      - "127.0.0.1:${ANALYTICS_FORWARD_PORT:-8002}:8001"   # chỉ máy cục bộ, Laravel gọi qua mạng docker
+    depends_on:
+      db:
+        condition: service_healthy
+
+  app:
+    build:
+      context: ./app
+      dockerfile: docker/Dockerfile
+    environment:
+      APP_NAME: DuKhachAnToan
+      APP_ENV: ${APP_ENV:-production}
+      APP_DEBUG: ${APP_DEBUG:-false}
+      APP_URL: ${APP_URL:-http://localhost:8080}
+      APP_KEY: ${APP_KEY:-}
+      APP_LOCALE: vi
+      APP_FALLBACK_LOCALE: en
+      LOG_CHANNEL: stack
+      LOG_LEVEL: ${LOG_LEVEL:-info}
+      LOG_STACK: ${LOG_STACK:-daily}          # nhật ký tách theo ngày: storage/logs/laravel-YYYY-MM-DD.log
+      LOG_DAILY_DAYS: ${LOG_DAILY_DAYS:-14}   # số ngày giữ tệp nhật ký
+      DB_CONNECTION: mysql
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_DATABASE: ${DB_DATABASE:-dukhach}
+      DB_USERNAME: ${DB_USERNAME:-dukhach}
+      DB_PASSWORD: ${DB_PASSWORD:-dukhach_secret}
+      SESSION_DRIVER: database
+      SESSION_LIFETIME: 120
+      SESSION_SECURE_COOKIE: ${SESSION_SECURE_COOKIE:-false}
+      CACHE_STORE: database
+      QUEUE_CONNECTION: database
+      ANALYTICS_URL: http://analytics:8001
+      ANALYTICS_TOKEN: ${ANALYTICS_TOKEN:-dev-analytics-token}
+      PAYMENT_GATEWAY: sandbox
+      PAYMENT_SANDBOX_SECRET: ${PAYMENT_SANDBOX_SECRET:-}   # rỗng = entrypoint tự sinh và lưu trong volume
+      BOOKING_HOLD_MINUTES: 10
+      MAP_PROVIDER: ${MAP_PROVIDER:-google}   # bản đồ nền: google | osm
+      SEED_DEMO_PASSWORD: ${SEED_DEMO_PASSWORD:-DuKhach@2026}
+      TRUSTED_PROXIES: ${TRUSTED_PROXIES:-}   # đặt "*" chỉ khi chạy sau proxy của PaaS (Railway/Render)
+    ports:
+      - "${APP_FORWARD_PORT:-8081}:80"
+    volumes:
+      - app_storage:/var/www/html/storage/app
+      - app_logs:/var/www/html/storage/logs
+    depends_on:
+      db:
+        condition: service_healthy
+      analytics:
+        condition: service_started
+
+volumes:
+  db_data:
+  app_storage:
+  app_logs:

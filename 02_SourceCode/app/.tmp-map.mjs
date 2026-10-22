@@ -1,0 +1,11 @@
+import { chromium } from 'playwright';
+const b = await chromium.launch(); const p = await b.newPage({ viewport: { width: 1280, height: 800 } });
+const errs = []; p.on('console', m => { if (m.type() === 'error') errs.push(m.text().slice(0, 160)); }); p.on('pageerror', e => errs.push('PAGEERROR ' + e.message.slice(0, 160)));
+const failed = []; p.on('requestfailed', r => failed.push(r.url().slice(0, 120)));
+await p.goto('https://web-production-54822.up.railway.app/vi/ban-do', { waitUntil: 'networkidle', timeout: 60000 });
+await p.waitForTimeout(3000);
+const tiles = await p.$$eval('img.leaflet-tile', els => els.length);
+const markers = await p.$$eval('.leaflet-marker-icon, .leaflet-marker-pane *', els => els.length);
+console.log('tiles', tiles, 'markers', markers, 'errors', JSON.stringify(errs.slice(0, 5)), 'failed', JSON.stringify(failed.slice(0, 5)));
+await p.screenshot({ path: '/home/nguyen/Work_space/job/phenika/_workspace/_shots/live-map.png' });
+await b.close();

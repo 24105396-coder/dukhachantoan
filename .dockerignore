@@ -1,0 +1,13 @@
+# Ngữ cảnh build gốc kho cho Dockerfile trong 02_SourceCode/deploy (Railway nối GitHub): bỏ mọi thứ không cần build
+.git
+*.zip
+02_SourceCode/app/node_modules
+02_SourceCode/app/vendor
+02_SourceCode/app/public/build
+02_SourceCode/app/storage/app/public
+02_SourceCode/app/storage/logs
+02_SourceCode/app/tests/e2e/report
+02_SourceCode/app/playwright-report
+02_SourceCode/app/.env
+02_SourceCode/.env
+**/__pycache__

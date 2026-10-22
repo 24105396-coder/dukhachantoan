@@ -1,0 +1,30 @@
+#!/bin/sh
+# Kiểm tra thông điệp commit theo Conventional Commits.
+# Bật hook: git config core.hooksPath .githooks
+msg_file="$1"
+# Dòng đầu tiên không phải chú thích (git bỏ các dòng bắt đầu bằng #)
+subject=$(grep -v '^#' "$msg_file" | sed -n '/[^[:space:]]/{p;q;}')
+
+# Commit merge/revert/fixup do git sinh tự động được bỏ qua
+case "$subject" in
+  "Merge "*|"Revert "*|"fixup! "*|"squash! "*) exit 0 ;;
+esac
+
+pattern='^(feat|fix|docs|refactor|test|chore|perf|ci|style|build)(\([a-z0-9_-]+\))?!?: .{1,100}$'
+if printf '%s\n' "$subject" | grep -Eq "$pattern"; then
+  exit 0
+fi
+
+cat >&2 <<HELP
+[commit-msg] Thông điệp commit không đúng Conventional Commits:
+  "$subject"
+
+Định dạng: <loại>(<phạm vi>)?: <mô tả 1-100 ký tự>
+  loại     : feat | fix | docs | refactor | test | chore | perf | ci | style | build
+  phạm vi  : tùy chọn, chữ thường/số/-/_ ; thêm ! trước dấu : nếu thay đổi phá vỡ tương thích
+Ví dụ:
+  feat(booking): giữ chỗ bằng khóa hàng tour_slots
+  fix: sửa lỗi hiển thị bản đồ ở khổ nhỏ
+  docs(readme): bổ sung hướng dẫn cài đặt
+HELP
+exit 1

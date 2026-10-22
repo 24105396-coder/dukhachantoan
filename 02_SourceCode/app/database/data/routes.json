@@ -1,0 +1,165 @@
+[
+ {
+  "slug": "dau-an-thang-long", "province": "HN", "theme_tag": "kinh-do-co",
+  "duration_minutes": 480, "distance_km": 9.5, "difficulty": "de", "price_vnd": 450000, "default_capacity": 20,
+  "stops": [
+   {"site": "hoang-thanh-thang-long", "dwell_minutes": 100, "note": "Vào từ cổng 19C Hoàng Diệu, xem khu khảo cổ 18 Hoàng Diệu và Đoan Môn"},
+   {"site": "chua-mot-cot", "dwell_minutes": 30, "note": "Đi bộ khoảng 1 km qua khu Ba Đình"},
+   {"site": "van-mieu-quoc-tu-giam", "dwell_minutes": 80, "note": "Dừng ở khu bia tiến sĩ và Khuê Văn Các"},
+   {"site": "nha-tu-hoa-lo", "dwell_minutes": 60, "note": "Nên dùng thuyết minh tự động tại chỗ"},
+   {"site": "bao-tang-lich-su-quoc-gia", "dwell_minutes": 90, "note": "Kết thúc ở khu trưng bày thời Lý – Trần, nghỉ thứ Hai"}
+  ],
+  "vi": {
+   "name": "Dấu ấn Thăng Long – Hà Nội",
+   "description": "Tuyến một ngày đi qua hơn một nghìn năm lịch sử kinh đô, từ khi Lý Thái Tổ dời đô ra thành Đại La năm 1010. Buổi sáng dành cho Hoàng thành Thăng Long, nơi các lớp nền móng cung điện Lý, Trần, Lê chồng lên nhau trong hố khảo cổ 18 Hoàng Diệu, rồi đi bộ sang chùa Một Cột dựng năm 1049. Trước bữa trưa, đoàn thăm Văn Miếu (1070) và Quốc Tử Giám (1076) với 82 bia tiến sĩ. Buổi chiều chuyển sang thời cận đại tại nhà tù Hỏa Lò do người Pháp xây cuối thế kỷ 19, và khép lại ở Bảo tàng Lịch sử Quốc gia, nơi lưu giữ trống đồng, bảo vật và hiện vật các triều đại. Quãng đường giữa các điểm ngắn, chủ yếu đi xe điện hoặc đi bộ, phù hợp gia đình và học sinh.",
+   "highlights": "- Hố khảo cổ 18 Hoàng Diệu với nền móng kiến trúc từ thế kỷ 7 đến thế kỷ 19\n- 82 bia tiến sĩ thời Lê – Mạc tại Văn Miếu, di sản tư liệu thế giới\n- Chùa Một Cột, biểu tượng kiến trúc Phật giáo thời Lý\n- Câu chuyện tù chính trị tại nhà tù Hỏa Lò\n- Trưng bày hiện vật Đông Sơn và các triều đại tại Bảo tàng Lịch sử Quốc gia"
+  },
+  "en": {
+   "name": "Footprints of Thang Long – Hanoi",
+   "description": "A one-day walk through more than a thousand years of the capital, starting from 1010 when Ly Thai To moved the court to Dai La. The morning is spent at the Imperial Citadel of Thang Long, where foundations of Ly, Tran and Le palaces lie layered in the excavation at 18 Hoang Dieu, followed by a short walk to the One Pillar Pagoda, first built in 1049. Before lunch the group visits the Temple of Literature (1070) and the Imperial Academy (1076) with its 82 doctoral steles. The afternoon turns to the colonial era at Hoa Lo Prison, built by the French in the late 19th century, and ends at the National Museum of History, home to bronze drums and dynastic treasures. Distances are short and covered on foot or by electric cart, suitable for families and students.",
+   "highlights": "- The 18 Hoang Dieu excavation with foundations from the 7th to the 19th century\n- 82 doctoral steles of the Le and Mac dynasties, a Memory of the World record\n- One Pillar Pagoda, an emblem of Ly-dynasty Buddhist architecture\n- Stories of political prisoners at Hoa Lo Prison\n- Dong Son bronzes and dynastic objects at the National Museum of History"
+  }
+ },
+ {
+  "slug": "phat-giao-kinh-bac", "province": "BN", "theme_tag": "phat-giao",
+  "duration_minutes": 540, "distance_km": 75, "difficulty": "vua", "price_vnd": 550000, "default_capacity": 20,
+  "stops": [
+   {"site": "chua-dau", "dwell_minutes": 70, "note": "Xuất phát sớm từ Hà Nội, khoảng 30 km"},
+   {"site": "chua-but-thap", "dwell_minutes": 80, "note": "Xem tượng Quan Âm nghìn mắt nghìn tay và tháp Báo Nghiêm"},
+   {"site": "chua-phat-tich", "dwell_minutes": 70, "note": "Leo bậc đá lên sườn núi Phật Tích, nên đi giày thể thao"},
+   {"site": "den-do", "dwell_minutes": 60, "note": "Đền thờ tám vị vua Lý tại Đình Bảng, Từ Sơn"},
+   {"site": "quan-ho-bac-ninh", "dwell_minutes": 60, "note": "Nghe liền anh liền chị hát quan họ trước khi về Hà Nội"}
+  ],
+  "vi": {
+   "name": "Phật giáo Kinh Bắc",
+   "description": "Kinh Bắc là nơi Phật giáo du nhập sớm vào Việt Nam qua trung tâm Luy Lâu từ những thế kỷ đầu Công nguyên. Tuyến bắt đầu tại chùa Dâu ở Thuận Thành, trung tâm của hệ thống thờ Tứ Pháp, rồi sang chùa Bút Tháp với tượng Quan Âm nghìn mắt nghìn tay tạc năm 1656 và tháp đá Báo Nghiêm. Buổi chiều, đoàn lên chùa Phật Tích ở Tiên Du, nơi còn pho tượng A Di Đà bằng đá thời Lý, rồi xuống đền Đô ở Đình Bảng, nơi thờ tám vị vua nhà Lý xuất thân từ vùng đất này. Hành trình kết thúc bằng một canh hát quan họ, di sản phi vật thể được UNESCO ghi danh năm 2009. Tuyến phù hợp với người quan tâm đến điêu khắc, kiến trúc chùa và lịch sử Phật giáo Bắc Bộ.",
+   "highlights": "- Trung tâm Phật giáo Luy Lâu và tín ngưỡng Tứ Pháp tại chùa Dâu\n- Tượng Quan Âm nghìn mắt nghìn tay (1656), bảo vật quốc gia tại chùa Bút Tháp\n- Tượng A Di Đà đá thời Lý trên núi Phật Tích\n- Đền Đô, nơi thờ tám vị vua Lý\n- Canh hát quan họ cuối ngày"
+  },
+  "en": {
+   "name": "Buddhist Kinh Bac",
+   "description": "Kinh Bac is where Buddhism first took root in Vietnam, through the Luy Lau centre in the early centuries CE. The route starts at Dau Pagoda in Thuan Thanh, heart of the Four Dharma cult, then moves to But Thap Pagoda with its thousand-eyed, thousand-armed Avalokitesvara carved in 1656 and the stone Bao Nghiem stupa. In the afternoon the group climbs to Phat Tich Pagoda in Tien Du, which keeps a Ly-dynasty stone Amitabha, before descending to Do Temple in Dinh Bang, dedicated to the eight Ly kings who came from this area. The day closes with a session of quan ho singing, inscribed by UNESCO in 2009. The route suits visitors interested in sculpture, pagoda architecture and the history of northern Vietnamese Buddhism.",
+   "highlights": "- The Luy Lau Buddhist centre and the Four Dharma cult at Dau Pagoda\n- The 1656 thousand-armed Avalokitesvara, a national treasure at But Thap\n- A Ly-dynasty stone Amitabha on Phat Tich hill\n- Do Temple, shrine of the eight Ly kings\n- An evening of quan ho folk singing"
+  }
+ },
+ {
+  "slug": "co-do-hoa-lu-trang-an", "province": "NB", "theme_tag": "kinh-do-co",
+  "duration_minutes": 600, "distance_km": 95, "difficulty": "vua", "price_vnd": 750000, "default_capacity": 20,
+  "stops": [
+   {"site": "trang-an-hoa-lu", "dwell_minutes": 180, "note": "Thăm đền vua Đinh, vua Lê rồi đi thuyền Tràng An khoảng 2 giờ"},
+   {"site": "nha-tho-phat-diem", "dwell_minutes": 75, "note": "Ăn mặc lịch sự, giữ yên lặng trong giờ lễ"},
+   {"site": "phu-day-tho-mau", "dwell_minutes": 60, "note": "Quần thể thờ Mẫu Liễu Hạnh ở Vụ Bản, Nam Định cũ"},
+   {"site": "den-tran-nam-dinh", "dwell_minutes": 60, "note": "Kết thúc tại đền Thiên Trường và đền Cố Trạch"}
+  ],
+  "vi": {
+   "name": "Cố đô Hoa Lư – Tràng An và đất Thiên Trường",
+   "description": "Tuyến một ngày nối hai trung tâm quyền lực của Đại Việt trước và sau khi định đô ở Thăng Long. Buổi sáng dành cho Hoa Lư, kinh đô của nhà Đinh và Tiền Lê từ năm 968 đến 1010, với đền thờ vua Đinh Tiên Hoàng và vua Lê Đại Hành, sau đó đi thuyền qua các hang xuyên thủy trong quần thể Tràng An, di sản hỗn hợp được UNESCO ghi danh năm 2014. Buổi chiều đoàn ghé nhà thờ đá Phát Diệm, công trình kết hợp kiến trúc Á Đông và Công giáo do linh mục Trần Lục xây dựng cuối thế kỷ 19, rồi sang Phủ Dầy, trung tâm tín ngưỡng thờ Mẫu, và kết thúc ở đền Trần, quê hương của vương triều Trần trên đất Thiên Trường.",
+   "highlights": "- Đền vua Đinh, vua Lê trong kinh đô Hoa Lư\n- Đi thuyền qua hang động karst Tràng An, di sản thế giới\n- Nhà thờ chính tòa Phát Diệm xây bằng đá và gỗ lim\n- Phủ Dầy và thực hành thờ Mẫu Tam phủ\n- Đền Trần, nơi diễn ra lễ khai ấn đầu xuân"
+  },
+  "en": {
+   "name": "Hoa Lu – Trang An and the Thien Truong land",
+   "description": "A one-day route linking two power centres of Dai Viet before and after the capital settled at Thang Long. The morning is spent at Hoa Lu, capital of the Dinh and Early Le dynasties from 968 to 1010, with the temples of Dinh Tien Hoang and Le Dai Hanh, followed by a boat trip through the water caves of the Trang An complex, a mixed World Heritage site inscribed in 2014. In the afternoon the group stops at Phat Diem stone cathedral, a blend of East Asian and Catholic architecture built by Father Tran Luc in the late 19th century, then visits Phu Day, a centre of Mother Goddess worship, and ends at the Tran Temple, ancestral home of the Tran dynasty in Thien Truong.",
+   "highlights": "- Temples of kings Dinh and Le in the Hoa Lu capital\n- Boat trip through the karst caves of Trang An, a World Heritage site\n- Phat Diem Cathedral, built of stone and ironwood\n- Phu Day and the practice of Mother Goddess worship\n- Tran Temple, venue of the spring seal-opening ceremony"
+  }
+ },
+ {
+  "slug": "huong-ve-dat-to", "province": "PT", "theme_tag": "tin-nguong-dan-gian",
+  "duration_minutes": 660, "distance_km": 210, "difficulty": "vua", "price_vnd": 850000, "default_capacity": 25,
+  "stops": [
+   {"site": "co-loa", "dwell_minutes": 75, "note": "Xem dấu tích các vòng thành đất và đền thờ An Dương Vương"},
+   {"site": "hoi-giong", "dwell_minutes": 60, "note": "Thăm đền Sóc, Sóc Sơn – nơi Thánh Gióng bay về trời theo truyền thuyết"},
+   {"site": "den-hung", "dwell_minutes": 150, "note": "Leo khoảng 500 bậc lên đền Thượng; mùa Giỗ Tổ rất đông"},
+   {"site": "lang-co-duong-lam", "dwell_minutes": 90, "note": "Dừng trên đường về, thăm nhà cổ đá ong và đình Mông Phụ"}
+  ],
+  "vi": {
+   "name": "Hướng về đất Tổ",
+   "description": "Tuyến về nguồn dành cho người muốn hiểu thời dựng nước và truyền thống thờ phụng tổ tiên của người Việt. Xuất phát từ Hà Nội, đoàn thăm thành Cổ Loa của An Dương Vương với các vòng thành đất uốn lượn, rồi đến đền Sóc ở Sóc Sơn, nơi gắn với hội Gióng được UNESCO ghi danh năm 2010. Trọng tâm của ngày là khu di tích Đền Hùng trên núi Nghĩa Lĩnh, Phú Thọ, nơi thực hành tín ngưỡng thờ cúng Hùng Vương, di sản văn hóa phi vật thể đại diện của nhân loại từ năm 2012. Trên đường về, đoàn ghé làng cổ Đường Lâm ở Sơn Tây, quê hương của Phùng Hưng và Ngô Quyền, với những ngôi nhà và tường đá ong hàng trăm năm tuổi. Tuyến dài, nên chuẩn bị giày đi bộ và nước uống.",
+   "highlights": "- Thành Cổ Loa và truyền thuyết nỏ thần An Dương Vương\n- Đền Sóc, một trong hai trung tâm của hội Gióng\n- Đền Hạ, đền Trung, đền Thượng và lăng Hùng Vương trên núi Nghĩa Lĩnh\n- Làng cổ Đường Lâm với nhà đá ong và đình Mông Phụ\n- Đền thờ Phùng Hưng và lăng Ngô Quyền tại Đường Lâm"
+  },
+  "en": {
+   "name": "Back to the Ancestral Land",
+   "description": "A route to the roots of Vietnamese statehood and ancestor worship. Leaving Hanoi, the group first visits Co Loa, the citadel of An Duong Vuong with its winding earthen ramparts, then Soc Temple in Soc Son, linked to the Giong festival inscribed by UNESCO in 2010. The core of the day is the Hung Temple complex on Nghia Linh hill in Phu Tho, where the worship of the Hung Kings has been recognised as Intangible Cultural Heritage of Humanity since 2012. On the way back the group stops at Duong Lam ancient village in Son Tay, home of Phung Hung and Ngo Quyen, known for its centuries-old laterite houses and walls. The day is long, so walking shoes and water are recommended.",
+   "highlights": "- Co Loa citadel and the legend of An Duong Vuong's magic crossbow\n- Soc Temple, one of the two centres of the Giong festival\n- The Lower, Middle and Upper temples and the Hung King tomb on Nghia Linh hill\n- Duong Lam village with laterite houses and Mong Phu communal house\n- Shrines of Phung Hung and the tomb of Ngo Quyen in Duong Lam"
+  }
+ },
+ {
+  "slug": "di-san-co-do-hue", "province": "HUE", "theme_tag": "kien-truc-cung-dinh",
+  "duration_minutes": 540, "distance_km": 28, "difficulty": "de", "price_vnd": 650000, "default_capacity": 20,
+  "stops": [
+   {"site": "quan-the-di-tich-co-do-hue", "dwell_minutes": 180, "note": "Vào Đại Nội qua Ngọ Môn, thăm điện Thái Hòa và Thế Miếu"},
+   {"site": "chua-thien-mu", "dwell_minutes": 60, "note": "Có thể đi thuyền rồng trên sông Hương từ bến Tòa Khâm"},
+   {"site": "lang-khai-dinh", "dwell_minutes": 75, "note": "Khoảng 127 bậc lên Thiên Định cung"},
+   {"site": "nha-nhac-cung-dinh-hue", "dwell_minutes": 60, "note": "Xem biểu diễn nhã nhạc tại Duyệt Thị Đường, kiểm tra lịch trước"}
+  ],
+  "vi": {
+   "name": "Di sản Cố đô Huế",
+   "description": "Tuyến một ngày giới thiệu kinh đô của triều Nguyễn từ 1802 đến 1945, quần thể được UNESCO ghi danh năm 1993. Buổi sáng dành cho Đại Nội: đi qua Ngọ Môn, điện Thái Hòa, Thế Miếu với Cửu đỉnh đúc thời Minh Mạng, và các cung điện đang được phục hồi. Sau đó đoàn theo sông Hương lên chùa Thiên Mụ do chúa Nguyễn Hoàng dựng năm 1601, có tháp Phước Duyên bảy tầng xây thời Thiệu Trị. Buổi chiều thăm lăng Khải Định, công trình xây từ 1920 đến 1931 kết hợp bê tông, đá và khảm sành sứ, phản ánh giao thoa Đông – Tây. Ngày kết thúc bằng một buổi nhã nhạc cung đình, loại hình âm nhạc được UNESCO công nhận năm 2003.",
+   "highlights": "- Ngọ Môn, điện Thái Hòa và Cửu đỉnh trong Đại Nội\n- Chùa Thiên Mụ và tháp Phước Duyên bên sông Hương\n- Thiên Định cung khảm sành sứ tại lăng Khải Định\n- Biểu diễn nhã nhạc cung đình Huế\n- Kiến trúc Nguyễn thế kỷ 19 qua ba loại công trình: cung điện, chùa, lăng"
+  },
+  "en": {
+   "name": "Heritage of the Hue Imperial City",
+   "description": "A one-day route through the Nguyen capital of 1802–1945, inscribed by UNESCO in 1993. The morning covers the Imperial City: the Noon Gate, Thai Hoa Palace, the The Mieu temple with the Nine Dynastic Urns cast under Minh Mang, and palaces now under restoration. The group then follows the Perfume River to Thien Mu Pagoda, founded by Lord Nguyen Hoang in 1601, whose seven-storey Phuoc Duyen tower dates from the Thieu Tri reign. In the afternoon the group visits the tomb of Khai Dinh, built between 1920 and 1931 in concrete, stone and ceramic mosaic, a clear mix of Eastern and Western forms. The day ends with a performance of Nha nhac court music, proclaimed by UNESCO in 2003.",
+   "highlights": "- The Noon Gate, Thai Hoa Palace and the Nine Urns\n- Thien Mu Pagoda and the Phuoc Duyen tower on the Perfume River\n- The ceramic-mosaic Thien Dinh hall in Khai Dinh's tomb\n- A live Nha nhac court music performance\n- 19th-century Nguyen architecture across palace, pagoda and tomb"
+  }
+ },
+ {
+  "slug": "con-duong-di-san-cham", "province": "DN", "theme_tag": "van-hoa-cham",
+  "duration_minutes": 600, "distance_km": 140, "difficulty": "vua", "price_vnd": 850000, "default_capacity": 20,
+  "stops": [
+   {"site": "bao-tang-dieu-khac-cham", "dwell_minutes": 90, "note": "Xem đài thờ Trà Kiệu và hiện vật Mỹ Sơn trước khi đến di tích"},
+   {"site": "thanh-dia-my-son", "dwell_minutes": 150, "note": "Khoảng 70 km, nên đến trước 10 giờ để tránh nắng"},
+   {"site": "ngu-hanh-son", "dwell_minutes": 75, "note": "Thăm động Huyền Không và làng đá Non Nước"},
+   {"site": "pho-co-hoi-an", "dwell_minutes": 120, "note": "Kết thúc buổi tối trong phố cổ"}
+  ],
+  "vi": {
+   "name": "Con đường di sản Chăm",
+   "description": "Tuyến một ngày giúp du khách hiểu nền văn minh Champa từng phát triển dọc duyên hải miền Trung. Buổi sáng bắt đầu ở Bảo tàng Điêu khắc Chăm Đà Nẵng, mở cửa từ năm 1919, nơi trưng bày đài thờ Trà Kiệu và nhiều tác phẩm đá từ Mỹ Sơn. Sau đó đoàn đến Thánh địa Mỹ Sơn ở Duy Xuyên (Quảng Nam cũ), thung lũng có hơn 70 công trình đền tháp xây từ khoảng thế kỷ 7 đến thế kỷ 13, được UNESCO ghi danh năm 1999. Buổi chiều đoàn trở về qua Ngũ Hành Sơn với các hang động núi đá cẩm thạch và làng nghề đá Non Nước, rồi kết thúc ở phố cổ Hội An, thương cảng mà trước người Việt từng thuộc vùng ảnh hưởng của Champa.",
+   "highlights": "- Đài thờ Trà Kiệu và điêu khắc đá tại Bảo tàng Điêu khắc Chăm\n- Các nhóm tháp gạch Mỹ Sơn và kỹ thuật xây gần như không mạch vữa\n- Hang động và làng đá Non Nước ở Ngũ Hành Sơn\n- Phố cổ Hội An, di sản thế giới từ năm 1999\n- So sánh kiến trúc Chăm với kiến trúc Việt, Hoa, Nhật trong một ngày"
+  },
+  "en": {
+   "name": "The Cham Heritage Trail",
+   "description": "A one-day route introducing the Champa civilisation that once flourished along the central coast. It starts at the Da Nang Museum of Cham Sculpture, open since 1919, which displays the Tra Kieu altar and many stone works from My Son. The group then travels to the My Son Sanctuary in Duy Xuyen (former Quang Nam province), a valley with more than 70 temple structures built from about the 7th to the 13th century and inscribed by UNESCO in 1999. In the afternoon the route returns via the Marble Mountains, with their caves and the Non Nuoc stone-carving village, and ends in Hoi An Ancient Town, a port whose area lay within Champa's sphere before Vietnamese settlement.",
+   "highlights": "- The Tra Kieu altar and stone sculpture at the Museum of Cham Sculpture\n- The brick tower groups of My Son and their near-mortarless masonry\n- Caves and the Non Nuoc stone village at the Marble Mountains\n- Hoi An Ancient Town, World Heritage since 1999\n- Cham, Vietnamese, Chinese and Japanese architecture compared in one day"
+  }
+ },
+ {
+  "slug": "hanh-trinh-ve-nguon-nghe-tinh", "province": "NA", "theme_tag": "danh-nhan",
+  "duration_minutes": 960, "distance_km": 270, "difficulty": "kho", "price_vnd": 900000, "default_capacity": 25,
+  "stops": [
+   {"site": "thanh-nha-ho", "dwell_minutes": 60, "note": "Ngày 1: xuất phát sớm, xem cổng Nam bằng đá khối"},
+   {"site": "lam-kinh", "dwell_minutes": 90, "note": "Ngày 1: thăm điện Lam Kinh và bia Vĩnh Lăng, nghỉ đêm tại Vinh"},
+   {"site": "kim-lien", "dwell_minutes": 120, "note": "Ngày 2: thăm làng Sen và làng Hoàng Trù, cách Vinh khoảng 14 km"},
+   {"site": "nga-ba-dong-loc", "dwell_minutes": 75, "note": "Ngày 2: dâng hương tại khu mộ 10 nữ thanh niên xung phong"}
+  ],
+  "vi": {
+   "name": "Hành trình về nguồn xứ Nghệ",
+   "description": "Tuyến hai ngày đi dọc dải đất Thanh – Nghệ – Tĩnh, nơi gắn với nhiều bước ngoặt của lịch sử dân tộc. Ngày đầu, đoàn thăm Thành nhà Hồ xây năm 1397 bằng những khối đá lớn, di sản thế giới từ năm 2011, rồi đến Lam Kinh ở Thọ Xuân, quê hương của Lê Lợi và nơi đặt lăng các vua Lê sơ. Đoàn nghỉ đêm tại thành phố Vinh. Ngày thứ hai dành cho khu di tích Kim Liên ở Nam Đàn, gồm làng Sen quê nội và làng Hoàng Trù quê ngoại của Chủ tịch Hồ Chí Minh, nơi còn những ngôi nhà tranh gắn với tuổi thơ của Người. Hành trình kết thúc tại Ngã ba Đồng Lộc (Hà Tĩnh), nơi mười nữ thanh niên xung phong hy sinh ngày 24 tháng 7 năm 1968 khi giữ tuyến đường tiếp viện.",
+   "highlights": "- Cổng thành đá khối của Thành nhà Hồ, di sản thế giới\n- Điện Lam Kinh và bia Vĩnh Lăng thời Lê sơ\n- Làng Sen và làng Hoàng Trù, quê hương Chủ tịch Hồ Chí Minh\n- Khu mộ 10 nữ thanh niên xung phong tại Ngã ba Đồng Lộc\n- Nghỉ đêm tại Vinh, thưởng thức dân ca ví, giặm Nghệ Tĩnh"
+  },
+  "en": {
+   "name": "Back to the Roots of Nghe Tinh",
+   "description": "A two-day route along the Thanh Hoa – Nghe An – Ha Tinh corridor, linked to many turning points in Vietnamese history. On day one the group visits the Citadel of the Ho Dynasty, built in 1397 from huge stone blocks and inscribed as World Heritage in 2011, then Lam Kinh in Tho Xuan, the home of Le Loi and burial ground of the Early Le kings, before an overnight stay in Vinh. Day two is devoted to the Kim Lien relic site in Nam Dan, with Sen village and Hoang Tru village, the paternal and maternal homes of President Ho Chi Minh, where the thatched houses of his childhood are preserved. The route ends at Dong Loc Junction in Ha Tinh, where ten young volunteers were killed on 24 July 1968 while keeping a supply road open.",
+   "highlights": "- The stone-block gates of the Ho Citadel, a World Heritage site\n- Lam Kinh palace and the Vinh Lang stele of the Early Le\n- Sen and Hoang Tru villages, the home of Ho Chi Minh\n- The graves of the ten young volunteers at Dong Loc Junction\n- An evening of vi and giam folk songs of Nghe Tinh in Vinh"
+  }
+ },
+ {
+  "slug": "sai-gon-ky-uc", "province": "HCM", "theme_tag": "chien-tranh-cach-mang",
+  "duration_minutes": 600, "distance_km": 95, "difficulty": "vua", "price_vnd": 650000, "default_capacity": 20,
+  "stops": [
+   {"site": "ben-nha-rong", "dwell_minutes": 60, "note": "Khu lưu niệm nơi Nguyễn Tất Thành rời Sài Gòn năm 1911"},
+   {"site": "dinh-doc-lap", "dwell_minutes": 90, "note": "Xem tầng hầm chỉ huy và hai xe tăng trong khuôn viên"},
+   {"site": "lang-ong-ba-chieu", "dwell_minutes": 50, "note": "Lăng Tả quân Lê Văn Duyệt ở Bình Thạnh"},
+   {"site": "dia-dao-cu-chi", "dwell_minutes": 150, "note": "Khoảng 60 km; mặc quần áo gọn để chui thử đoạn địa đạo"},
+   {"site": "don-ca-tai-tu", "dwell_minutes": 60, "note": "Buổi tối nghe đờn ca tài tử Nam Bộ"}
+  ],
+  "vi": {
+   "name": "Sài Gòn ký ức",
+   "description": "Tuyến một ngày kể lại hơn hai thế kỷ của Sài Gòn – Gia Định qua năm điểm dừng. Buổi sáng bắt đầu ở Bến Nhà Rồng, tòa nhà xây năm 1863 bên sông Sài Gòn, nơi Nguyễn Tất Thành xuống tàu ra đi ngày 5 tháng 6 năm 1911. Tiếp theo là Dinh Độc Lập, công trình do kiến trúc sư Ngô Viết Thụ thiết kế, khánh thành năm 1966 và gắn với sự kiện trưa 30 tháng 4 năm 1975. Trước bữa trưa, đoàn ghé lăng Ông Bà Chiểu, nơi thờ Tả quân Lê Văn Duyệt, vị tổng trấn Gia Định thời Gia Long và Minh Mạng. Buổi chiều đoàn lên Củ Chi thăm hệ thống địa đạo dài khoảng 250 km. Ngày khép lại bằng đờn ca tài tử, loại hình âm nhạc Nam Bộ được UNESCO ghi danh năm 2013.",
+   "highlights": "- Bến Nhà Rồng và câu chuyện ra đi tìm đường cứu nước năm 1911\n- Dinh Độc Lập với tầng hầm chỉ huy và phòng làm việc nguyên trạng\n- Lăng Ông Bà Chiểu và lịch sử tổng trấn Gia Định\n- Trải nghiệm một đoạn địa đạo Củ Chi\n- Đêm đờn ca tài tử Nam Bộ"
+  },
+  "en": {
+   "name": "Saigon Memories",
+   "description": "A one-day route telling more than two centuries of Saigon – Gia Dinh through five stops. The morning begins at Nha Rong Wharf, a building of 1863 on the Saigon River, where Nguyen Tat Thanh boarded a ship and left the country on 5 June 1911. Next is Independence Palace, designed by architect Ngo Viet Thu, completed in 1966 and tied to the events of noon on 30 April 1975. Before lunch the group visits Le Van Duyet's tomb-shrine at Ba Chieu, honouring the Gia Dinh governor under Gia Long and Minh Mang. In the afternoon the route heads to Cu Chi and its tunnel network of about 250 km. The day ends with don ca tai tu, the southern chamber music inscribed by UNESCO in 2013.",
+   "highlights": "- Nha Rong Wharf and Nguyen Tat Thanh's departure in 1911\n- Independence Palace with its command bunker and preserved offices\n- Le Van Duyet's shrine and the history of Gia Dinh\n- Crawling through a section of the Cu Chi tunnels\n- An evening of southern don ca tai tu music"
+  }
+ }
+]

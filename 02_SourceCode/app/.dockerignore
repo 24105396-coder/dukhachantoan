@@ -1,0 +1,12 @@
+node_modules
+vendor
+public/build
+public/storage
+storage/app/public/*
+storage/logs/*
+storage/framework/cache/*
+storage/framework/sessions/*
+storage/framework/views/*
+tests/e2e/report
+.env
+.git
