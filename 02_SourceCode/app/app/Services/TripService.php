@@ -8,7 +8,7 @@ use App\Models\Destination;
 use App\Models\Trip;
 use App\Models\User;
 use App\Models\Zone;
-use Illuminate\Support\Carbon;
+use App\Support\LocalTime;
 use Illuminate\Support\Facades\DB;
 
 /**
@@ -145,8 +145,8 @@ class TripService
                 'zone_id' => $zone->id,
                 'destination_id' => $destination?->id,
                 'title' => $leg['title'] ?? null,
-                'starts_at' => Carbon::parse($leg['starts_at']),
-                'ends_at' => Carbon::parse($leg['ends_at']),
+                'starts_at' => LocalTime::parse($leg['starts_at']),
+                'ends_at' => LocalTime::parse($leg['ends_at']),
                 'lodging' => $leg['lodging'] ?? null,
                 'transport' => $leg['transport'] ?? null,
                 'note' => $leg['note'] ?? null,

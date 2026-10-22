@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use App\Models\Trip;
 use App\Models\TripMember;
+use App\Support\LocalTime;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Carbon;
 use Illuminate\Validation\Rule;
@@ -75,7 +76,7 @@ class TripRequest extends FormRequest
         $tripStart = Carbon::parse($this->input('start_date'))->startOfDay();
         $tripEnd = Carbon::parse($this->input('end_date'))->endOfDay();
         $legs = collect($this->input('legs', []))->map(fn ($leg, $i) => [
-            'i' => $i, 'start' => Carbon::parse($leg['starts_at']), 'end' => Carbon::parse($leg['ends_at']),
+            'i' => $i, 'start' => LocalTime::parse((string) $leg['starts_at']), 'end' => LocalTime::parse((string) $leg['ends_at']),
         ]);
         foreach ($legs as $leg) {
             if ($leg['end']->lte($leg['start'])) {

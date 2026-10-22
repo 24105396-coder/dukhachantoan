@@ -9,6 +9,7 @@ use App\Models\AlertSource;
 use App\Models\HazardType;
 use App\Models\User;
 use App\Models\Zone;
+use App\Support\LocalTime;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
@@ -189,8 +190,8 @@ class AlertService
         $map = [
             'severity' => fn ($v) => max(1, min(4, (int) $v)),
             'geometry' => fn ($v) => is_array($v) && $v !== [] ? $v : null,
-            'starts_at' => fn ($v) => $v ?: null,
-            'ends_at' => fn ($v) => $v ?: null,
+            'starts_at' => fn ($v) => $v ? LocalTime::parse((string) $v) : null,
+            'ends_at' => fn ($v) => $v ? LocalTime::parse((string) $v) : null,
             'source_name' => fn ($v) => $v,
             'source_url' => fn ($v) => $v ?: null,
         ];
