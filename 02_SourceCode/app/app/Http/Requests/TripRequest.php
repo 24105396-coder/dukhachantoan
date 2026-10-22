@@ -53,6 +53,7 @@ class TripRequest extends FormRequest
             'legs.*.lat' => ['nullable', 'numeric', 'between:-90,90'],
             'legs.*.lng' => ['nullable', 'numeric', 'between:-180,180'],
             'members' => ['nullable', 'array', 'max:'.self::MAX_MEMBERS],
+            'members.*.id' => ['nullable', 'integer'],
             'members.*.full_name' => ['required', 'string', 'max:120'],
             'members.*.phone' => ['nullable', 'string', 'regex:'.self::PHONE_REGEX],
             'members.*.nationality' => ['nullable', 'string', 'max:60'],

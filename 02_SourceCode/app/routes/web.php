@@ -94,6 +94,12 @@ Route::prefix('{locale}')->where(['locale' => 'vi|en'])->middleware('locale')->g
         Route::get('canh-bao/{alert}/sua', [Admin\AlertController::class, 'edit'])->name('alerts.edit');
         Route::put('canh-bao/{alert}/sua', [Admin\AlertController::class, 'update'])->name('alerts.update');
         Route::post('canh-bao/{alert}/trang-thai', [Admin\AlertController::class, 'transition'])->name('alerts.transition');
+        // URL hành động frontend gọi (frontend_backend_2): tạo/sửa không hậu tố, nút trạng thái riêng
+        Route::post('canh-bao', [Admin\AlertController::class, 'store'])->name('alerts.store.short');
+        Route::put('canh-bao/{alert}', [Admin\AlertController::class, 'update'])->name('alerts.update.short');
+        Route::post('canh-bao/{alert}/phat-hanh', [Admin\AlertController::class, 'publish'])->name('alerts.publish');
+        Route::post('canh-bao/{alert}/het-hieu-luc', [Admin\AlertController::class, 'expire'])->name('alerts.expire');
+        Route::post('canh-bao/{alert}/huy', [Admin\AlertController::class, 'cancel'])->name('alerts.cancel');
 
         Route::get('hanh-trinh', [Admin\TripController::class, 'index'])->name('trips.index');
         Route::get('hanh-trinh/{trip}', [Admin\TripController::class, 'show'])->name('trips.show');
@@ -104,10 +110,14 @@ Route::prefix('{locale}')->where(['locale' => 'vi|en'])->middleware('locale')->g
         Route::get('thong-bao', [Admin\NotificationController::class, 'index'])->name('notifications.index');
         Route::post('thong-bao/{notification}/gui-lai', [Admin\NotificationController::class, 'resend'])->whereNumber('notification')->name('notifications.resend');
         Route::post('thong-bao/phat-thu-cong', [Admin\NotificationController::class, 'broadcast'])->middleware('throttle:10,1')->name('notifications.broadcast');
+        Route::post('thong-bao/phat', [Admin\NotificationController::class, 'broadcast'])->middleware('throttle:10,1')->name('notifications.broadcast.short');
+        Route::post('thong-bao/gui-lai', [Admin\NotificationController::class, 'resendById'])->name('notifications.resend.body');
 
         Route::get('danh-ba', [Admin\ContactController::class, 'index'])->name('contacts.index');
         Route::get('danh-ba/tao', [Admin\ContactController::class, 'create'])->name('contacts.create');
         Route::post('danh-ba/tao', [Admin\ContactController::class, 'store'])->name('contacts.store');
+        Route::post('danh-ba', [Admin\ContactController::class, 'store'])->name('contacts.store.short');
+        Route::put('danh-ba/{contact}', [Admin\ContactController::class, 'update'])->whereNumber('contact')->name('contacts.update.short');
         Route::get('danh-ba/{contact}/sua', [Admin\ContactController::class, 'edit'])->whereNumber('contact')->name('contacts.edit');
         Route::put('danh-ba/{contact}/sua', [Admin\ContactController::class, 'update'])->whereNumber('contact')->name('contacts.update');
         Route::post('danh-ba/{contact}/xac-minh', [Admin\ContactController::class, 'verify'])->whereNumber('contact')->name('contacts.verify');
@@ -116,6 +126,8 @@ Route::prefix('{locale}')->where(['locale' => 'vi|en'])->middleware('locale')->g
         Route::get('huong-dan', [Admin\GuideController::class, 'index'])->name('guides.index');
         Route::get('huong-dan/tao', [Admin\GuideController::class, 'create'])->name('guides.create');
         Route::post('huong-dan/tao', [Admin\GuideController::class, 'store'])->name('guides.store');
+        Route::post('huong-dan', [Admin\GuideController::class, 'store'])->name('guides.store.short');
+        Route::put('huong-dan/{guide}', [Admin\GuideController::class, 'update'])->name('guides.update.short');
         Route::get('huong-dan/{guide}/sua', [Admin\GuideController::class, 'edit'])->name('guides.edit');
         Route::put('huong-dan/{guide}/sua', [Admin\GuideController::class, 'update'])->name('guides.update');
         Route::post('huong-dan/{guide}/xuat-ban', [Admin\GuideController::class, 'publish'])->name('guides.publish');
@@ -124,6 +136,7 @@ Route::prefix('{locale}')->where(['locale' => 'vi|en'])->middleware('locale')->g
         Route::get('vung', [Admin\ZoneController::class, 'index'])->name('zones.index');
         Route::get('vung/{zone}/sua', [Admin\ZoneController::class, 'edit'])->name('zones.edit');
         Route::put('vung/{zone}/sua', [Admin\ZoneController::class, 'update'])->name('zones.update');
+        Route::put('vung/{zone}', [Admin\ZoneController::class, 'update'])->name('zones.update.short');
 
         Route::get('su-co', [Admin\IncidentController::class, 'index'])->name('incidents.index');
         Route::post('su-co/{incident}/duyet', [Admin\IncidentController::class, 'review'])->whereNumber('incident')->name('incidents.review');
@@ -136,6 +149,7 @@ Route::prefix('{locale}')->where(['locale' => 'vi|en'])->middleware('locale')->g
             Route::get('mo-phong', [Admin\ScenarioController::class, 'index'])->name('scenarios.index');
             Route::post('mo-phong/chay', [Admin\ScenarioController::class, 'run'])->middleware('throttle:10,1')->name('scenarios.run');
             Route::post('mo-phong/lan-chay/{run}/ket-thuc', [Admin\ScenarioController::class, 'finish'])->whereNumber('run')->name('scenarios.finish');
+            Route::post('mo-phong/ket-thuc', [Admin\ScenarioController::class, 'finishBySlug'])->name('scenarios.finish.slug');
             Route::get('nguoi-dung', [Admin\UserController::class, 'index'])->name('users.index');
             Route::patch('nguoi-dung/{user}', [Admin\UserController::class, 'update'])->whereNumber('user')->name('users.update');
             Route::get('nhat-ky', [Admin\AuditLogController::class, 'index'])->name('audit.index');

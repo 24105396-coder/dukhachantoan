@@ -9,6 +9,7 @@ use App\Http\Resources\WeatherNow;
 use App\Http\Resources\ZoneCard;
 use App\Models\Zone;
 use App\Services\AuditLogger;
+use App\Services\LookupService;
 use App\Services\RiskService;
 use App\Services\WeatherService;
 use Illuminate\Http\RedirectResponse;
@@ -19,12 +20,14 @@ use Inertia\Response;
 /** Vùng rủi ro: sửa tên, hình học (dán GeoJSON), bán kính; xem thời tiết/điểm rủi ro. */
 class ZoneController extends Controller
 {
-    public function index(Request $request): Response
+    public function index(Request $request, LookupService $lookup): Response
     {
-        $filters = $this->filters($request, ['type', 'q']);
+        $filters = $this->filters($request, ['type', 'zone_type', 'province', 'q']);
+        $filters['type'] ??= $filters['zone_type'];
         $zones = Zone::query()->with('province')
             ->when($request->user()->scopedProvinceId(), fn ($q, $p) => $q->where('province_id', $p))
             ->when($filters['type'], fn ($q, $v) => $q->where('zone_type', $v))
+            ->when($filters['province'], fn ($q, $v) => $q->whereHas('province', fn ($p) => $p->where('code', $v)))
             ->when($filters['q'], fn ($q, $v) => $q->where(fn ($w) => $w->where('name', 'like', like_contains($v))->orWhere('code', 'like', like_contains($v))))
             ->orderBy('zone_type')->orderBy('name')->get();
 
@@ -32,10 +35,11 @@ class ZoneController extends Controller
             'zones' => $zones->map(fn (Zone $z) => ZoneCard::one($z) + ['has_geometry' => is_array($z->geometry), 'is_active' => (bool) $z->is_active])->all(),
             'filters' => $filters,
             'types' => $this->enumOptions('zone_types', Zone::TYPES),
+            'provinces' => $lookup->provinces(),
         ]);
     }
 
-    public function edit(Request $request, WeatherService $weather, Zone $zone): Response
+    public function edit(Request $request, WeatherService $weather, RiskService $risk, Zone $zone): Response
     {
         $this->authorizeZone($request, $zone);
         $zone->load('province');
@@ -49,8 +53,11 @@ class ZoneController extends Controller
                 'source_name' => $zone->source_name,
                 'source_url' => $zone->source_url,
                 'is_active' => (bool) $zone->is_active,
+                'translations' => ['vi' => ['name' => $zone->name], 'en' => ['name' => $zone->name_en]],
             ],
             'now' => WeatherNow::one($weather->now($zone)),
+            'weather' => WeatherNow::one($weather->now($zone)),
+            'risk' => $risk->zoneStats()[$zone->id] ?? null,
             'forecast' => ForecastDay::list($weather->forecast($zone)),
         ]);
     }

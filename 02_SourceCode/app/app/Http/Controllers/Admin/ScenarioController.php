@@ -34,6 +34,7 @@ class ScenarioController extends Controller
                     'matches_created' => (int) $r->matches_created,
                     'notifications_created' => (int) $r->notifications_created,
                     'starter' => $r->starter ? ['name' => $r->starter->name] : null,
+                    'started_by' => $r->starter ? ['name' => $r->starter->name] : null,
                     'mode' => $r->summary['mode'] ?? null,
                     'steps_total' => (int) ($r->summary['steps_total'] ?? 0),
                     'steps_done' => (int) ($r->summary['steps_done'] ?? 0),
@@ -56,6 +57,20 @@ class ScenarioController extends Controller
         return back()->with('success', __('messages.simulation.started', [
             'alerts' => $run->alerts_created, 'matches' => $run->matches_created, 'notifications' => $run->notifications_created,
         ]));
+    }
+
+    /** Kết thúc lần chạy đang mở mới nhất của kịch bản (frontend gửi {slug}). */
+    public function finishBySlug(Request $request, SimulationService $simulation): RedirectResponse
+    {
+        $this->authorize('run-simulation');
+        $slug = $request->validate(['slug' => ['required', 'string', Rule::exists('simulation_scenarios', 'slug')]])['slug'];
+        $run = SimulationRun::query()->whereNull('finished_at')
+            ->whereHas('scenario', fn ($q) => $q->where('slug', $slug))->latest('started_at')->latest('id')->first();
+        if ($run === null) {
+            return back()->withErrors(['slug' => __('messages.simulation.already_finished')])->with('error', __('messages.simulation.already_finished'));
+        }
+
+        return $this->finish($request, $simulation, $run);
     }
 
     public function finish(Request $request, SimulationService $simulation, SimulationRun $run): RedirectResponse

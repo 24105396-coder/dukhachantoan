@@ -35,6 +35,7 @@ class NotificationItem extends BaseResource
             'is_reminder' => (bool) ($n->payload['reminder_of'] ?? false),
             'is_digest' => (bool) ($n->payload['digest'] ?? false),
             'recipient' => $n->relationLoaded('user') && $n->user ? ['name' => $n->user->name] : null,
+            'user' => $n->relationLoaded('user') && $n->user ? ['name' => $n->user->name, 'email' => $n->user->email] : null,
             'alert' => $n->alert ? ['code' => $n->alert->code, 'severity' => (int) $n->alert->severity, 'headline' => $n->alert->headline] : null,
             'trip' => $n->trip ? ['code' => $n->trip->code, 'title' => $n->trip->title] : null,
             'deliveries' => $n->relationLoaded('deliveries') ? $n->deliveries->map(fn (NotificationDelivery $d) => [

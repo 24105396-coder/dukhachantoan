@@ -10,6 +10,9 @@ use App\Http\Resources\AlertDetail;
 use App\Http\Resources\MatchItem;
 use App\Models\Alert;
 use App\Models\AlertMatch;
+use App\Models\IncidentReport;
+use App\Services\IncidentService;
+use App\Http\Resources\ZoneGeo;
 use App\Models\Notification;
 use App\Services\AlertService;
 use App\Services\LookupService;
@@ -46,17 +49,35 @@ class AlertController extends Controller
         ]);
     }
 
-    public function create(LookupService $lookup): Response
+    public function create(Request $request, LookupService $lookup): Response
     {
         $this->authorize('create', Alert::class);
+        $props = $this->formProps($lookup);
+        // "Tạo cảnh báo từ sự cố": ?incident={id} điền sẵn loại rủi ro, vùng, hình tròn 10 km, tiêu đề
+        $incident = $request->integer('incident') ? IncidentReport::query()->with('zone', 'hazardType')->find($request->integer('incident')) : null;
+        if ($incident && $request->user()->can('review', $incident)) {
+            $props['defaults'] = array_merge($props['defaults'], [
+                'incident_id' => $incident->id,
+                'hazard_code' => $incident->hazardType?->code,
+                'severity' => max(2, (int) $incident->hazardType?->default_severity),
+                'zone_codes' => array_filter([$incident->zone?->code]),
+                'geometry' => $incident->lat !== null ? ['type' => 'Circle', 'center' => ['lat' => $incident->lat, 'lng' => $incident->lng],
+                    'radius_km' => IncidentService::ALERT_RADIUS_KM] : null,
+                'translations' => ['vi' => ['headline' => $incident->title, 'description' => $incident->description]],
+            ]);
+        }
 
-        return Inertia::render('Admin/Alerts/Form', $this->formProps($lookup) + ['alert' => null]);
+        return Inertia::render('Admin/Alerts/Form', $props + ['alert' => null]);
     }
 
     public function store(AlertRequest $request): RedirectResponse
     {
         $this->authorize('create', Alert::class);
         $alert = $this->alerts->create($request->validated(), $request->user());
+        // intent=publish: lưu rồi phát hành ngay
+        if ($request->input('intent') === 'publish') {
+            $this->alerts->publish($alert, $request->user());
+        }
 
         return redirect(localized_route('admin.alerts.show', ['alert' => $alert->code]))->with('success', __('messages.alerts.created'));
     }
@@ -72,6 +93,7 @@ class AlertController extends Controller
             'alert' => (new AlertDetail($alert))->withAffectedTrips($matches->pluck('trip_id')->unique()->count())->resolve($request),
             'matches' => MatchItem::list($matches),
             'notifications' => $this->notificationStats($alert),
+            'zonesGeo' => ZoneGeo::collection($alert->zones->load('province')),
             'transitions' => array_values(Alert::TRANSITIONS[$alert->status] ?? []),
             'can' => ['update' => $request->user()->can('update', $alert)],
         ]);
@@ -97,6 +119,9 @@ class AlertController extends Controller
     {
         $this->authorize('update', $alert);
         $this->alerts->update($alert, $request->validated(), $request->user());
+        if ($request->input('intent') === 'publish' && $alert->status === Alert::STATUS_DRAFT) {
+            $this->alerts->publish($alert, $request->user());
+        }
 
         return redirect(localized_route('admin.alerts.show', ['alert' => $alert->code]))->with('success', __('messages.alerts.updated'));
     }
@@ -114,12 +139,47 @@ class AlertController extends Controller
         ]));
     }
 
+    public function publish(Request $request, Alert $alert): RedirectResponse
+    {
+        return $this->applyTransition($request, $alert, Alert::STATUS_ACTIVE);
+    }
+
+    public function expire(Request $request, Alert $alert): RedirectResponse
+    {
+        return $this->applyTransition($request, $alert, Alert::STATUS_EXPIRED);
+    }
+
+    public function cancel(Request $request, Alert $alert): RedirectResponse
+    {
+        return $this->applyTransition($request, $alert, Alert::STATUS_CANCELLED);
+    }
+
+    private function applyTransition(Request $request, Alert $alert, string $status): RedirectResponse
+    {
+        $this->authorize('update', $alert);
+        $result = $this->alerts->transition($alert, $status, $request->user());
+
+        return back()->with('success', __('messages.alerts.transitioned', [
+            'status' => __('enums.alert_statuses.'.$alert->status),
+            'matches' => $result['matches'] ?? 0,
+            'notifications' => $result['notifications'] ?? 0,
+        ]));
+    }
+
     private function notificationStats(Alert $alert): array
     {
         $rows = Notification::query()->where('alert_id', $alert->id)
             ->selectRaw('status, channel, COUNT(*) AS total')->groupBy('status', 'channel')->get();
 
+        $count = fn (string $status) => (int) $rows->where('status', $status)->sum('total');
+        $ok = $count('sent') + $count('read');
+
         return [
+            'queued' => $count('queued'),
+            'sent' => $count('sent'),
+            'failed' => $count('failed'),
+            'read' => $count('read'),
+            'delivery_success_rate' => $ok + $count('failed') > 0 ? round($ok / ($ok + $count('failed')), 3) : null,
             'total' => (int) $rows->sum('total'),
             'by_status' => collect(Notification::STATUSES)->mapWithKeys(fn ($s) => [$s => (int) $rows->where('status', $s)->sum('total')])->all(),
             'by_channel' => collect(Notification::CHANNELS)->mapWithKeys(fn ($c) => [$c => (int) $rows->where('channel', $c)->sum('total')])->all(),

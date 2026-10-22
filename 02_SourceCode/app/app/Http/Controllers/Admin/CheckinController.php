@@ -20,9 +20,10 @@ class CheckinController extends Controller
 
     public function index(Request $request, LookupService $lookup): Response
     {
-        $filters = $this->filters($request, ['status', 'response_status', 'province']);
+        $filters = $this->filters($request, ['status', 'response_status', 'province', 'trip']);
         $checkins = SafetyCheckin::query()->with(CheckinItem::RELATIONS)
             ->when($request->user()->scopedProvinceId(), fn ($q, $p) => $q->inProvince($p))
+            ->when($filters['trip'], fn ($q, $v) => $q->whereHas('trip', fn ($t) => $t->where('code', $v)))
             ->when($filters['status'], fn ($q, $v) => $q->where('status', $v))
             ->when($filters['response_status'], fn ($q, $v) => $q->where('response_status', $v))
             ->when($filters['province'], fn ($q, $v) => $q->whereHas('trip.legs.zone.province', fn ($p) => $p->where('code', $v)))

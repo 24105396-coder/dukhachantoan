@@ -114,6 +114,8 @@ class ContactController extends Controller
             'province_id' => $provinceId,
             'zone_id' => ! empty($data['zone_code']) ? Zone::query()->where('code', $data['zone_code'])->value('id') : null,
             'sort_order' => $data['sort_order'] ?? 0,
+            'is_verified' => (bool) ($data['is_verified'] ?? $contact->is_verified ?? false),
+            'verified_at' => ! empty($data['is_verified']) ? ($contact->verified_at ?? now()->toDateString()) : null,
         ])->save();
         $contact->syncTranslations($data['translations']);
     }

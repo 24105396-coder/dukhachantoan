@@ -159,8 +159,12 @@ class TripService
         $trip->unsetRelation('legs');
     }
 
+    /** Thay danh sách thành viên; khi sửa, members[].id + phone null = giữ số cũ (form chỉ hiện số đã che). */
     private function syncMembers(Trip $trip, array $members): void
     {
+        $oldPhones = $trip->members()->pluck('phone', 'id');
+        $members = array_map(fn ($m) => ($m['phone'] ?? null) === null && ! empty($m['id']) && isset($oldPhones[(int) $m['id']])
+            ? array_merge($m, ['phone' => $oldPhones[(int) $m['id']]]) : $m, $members);
         $trip->members()->delete();
         foreach ($members as $i => $member) {
             if (empty($member['full_name'])) {

@@ -29,6 +29,7 @@ class ContactRequest extends FormRequest
             'languages.*' => ['string', 'size:2'],
             'source_name' => ['required', 'string', 'max:255'],
             'source_url' => ['nullable', 'url:http,https', 'max:500'],
+            'is_verified' => ['nullable', 'boolean'],
             'sort_order' => ['nullable', 'integer', 'min:0', 'max:9999'],
             'translations' => ['required', 'array'],
             'translations.vi.name' => ['required', 'string', 'max:190'],

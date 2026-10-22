@@ -15,6 +15,14 @@ class ZoneRequest extends FormRequest
 
     protected function prepareForValidation(): void
     {
+        // Frontend gửi translations{vi,en}{name} → cột name / name_en
+        $translations = $this->input('translations');
+        if (is_array($translations)) {
+            $this->merge(array_filter([
+                'name' => $this->input('name') ?? ($translations['vi']['name'] ?? null),
+                'name_en' => $this->input('name_en') ?? ($translations['en']['name'] ?? null),
+            ], fn ($v) => $v !== null));
+        }
         $geometry = $this->input('geometry');
         if (is_string($geometry)) {
             $this->merge(['geometry' => trim($geometry) === '' ? null : (json_decode($geometry, true) ?? 'invalid')]);

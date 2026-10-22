@@ -34,7 +34,8 @@ class SharedTripController extends Controller
         $trip = self::resolve($token);
 
         return Inertia::render('Trips/SharedCheckin', [
-            'trip' => ['code' => $trip->code, 'title' => $trip->title, 'status' => $trip->status],
+            'trip' => ['code' => $trip->code, 'title' => $trip->title, 'status' => $trip->status,
+                'start_date' => $trip->start_date?->toDateString(), 'end_date' => $trip->end_date?->toDateString()],
             'token' => $token,
             'statuses' => $this->enumOptions('checkin_statuses', ['safe', 'need_help']),
             'alerts' => AlertCard::list(self::liveAlerts($trip)),

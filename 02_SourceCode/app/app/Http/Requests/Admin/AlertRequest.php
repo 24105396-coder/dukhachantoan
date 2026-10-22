@@ -31,6 +31,7 @@ class AlertRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'intent' => ['nullable', Rule::in(['draft', 'publish', 'update'])],
             'hazard_code' => ['required', 'string', Rule::exists('hazard_types', 'code')],
             'severity' => ['required', 'integer', 'between:1,4'],
             'zone_codes' => ['array', 'required_without:geometry'],

@@ -27,6 +27,7 @@ class GuideCard extends BaseResource
             'min_severity' => (int) $g->min_severity,
             'audience' => $g->audience,
             'status' => $g->status,
+            'is_machine_translated' => (bool) ($t?->is_machine_translated ?? false),
             'url' => localized_route('guides.show', ['guide' => $g->slug]),
         ];
     }
