@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('roles', function (Blueprint $table) {
             $table->id();
-            $table->string('code', 32)->unique();      // admin | manager | contributor | member
+            $table->string('code', 32)->unique();      // admin | agency | partner | traveler
             $table->string('name', 100);
             $table->string('description', 255)->nullable();
             $table->timestamps();
@@ -29,7 +29,12 @@ return new class extends Migration
             $table->char('locale', 2)->default('vi');
             $table->string('theme', 16)->default('light');
             $table->string('phone', 20)->nullable();
-            $table->string('organization', 190)->nullable(); // đơn vị quản lý di tích (vai trò contributor)
+            $table->string('nationality', 60)->nullable();     // ưu tiên mã ISO 3166-1 alpha-2 (VN, GB…)
+            $table->string('organization', 190)->nullable(); // cơ quan hỗ trợ / đơn vị lữ hành
+            // Cơ quan hỗ trợ phụ trách tỉnh nào; null = toàn quốc
+            $table->foreignId('province_id')->nullable()->constrained('provinces')->nullOnDelete();
+            $table->string('emergency_contact_name', 120)->nullable();
+            $table->string('emergency_contact_phone', 20)->nullable();
             $table->boolean('is_active')->default(true);
             $table->timestamp('last_login_at')->nullable();
             $table->rememberToken();

@@ -17,9 +17,9 @@ class UserFactory extends Factory
 
     private const ROLE_NAMES = [
         Role::ADMIN => 'Quản trị hệ thống',
-        Role::MANAGER => 'Quản lý nghiệp vụ',
-        Role::CONTRIBUTOR => 'Đơn vị quản lý di tích / nhà cung cấp tour',
-        Role::MEMBER => 'Thành viên',
+        Role::AGENCY => 'Cơ quan hỗ trợ du khách',
+        Role::PARTNER => 'Đơn vị lữ hành',
+        Role::TRAVELER => 'Du khách',
     ];
 
     public function definition(): array
@@ -29,7 +29,7 @@ class UserFactory extends Factory
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('password'),
-            'role_id' => fn () => self::roleId(Role::MEMBER),
+            'role_id' => fn () => self::roleId(Role::TRAVELER),
             'locale' => 'vi',
             'theme' => 'light',
             'is_active' => true,
@@ -52,19 +52,23 @@ class UserFactory extends Factory
         return $this->withRole(Role::ADMIN);
     }
 
-    public function manager(): static
+    /** Cơ quan hỗ trợ; mặc định phụ trách Khánh Hòa, truyền null để phụ trách toàn quốc. */
+    public function agency(?string $provinceCode = 'KH'): static
     {
-        return $this->withRole(Role::MANAGER);
+        return $this->withRole(Role::AGENCY)->state(fn () => [
+            'organization' => 'Trung tâm hỗ trợ du khách (thử nghiệm)',
+            'province_id' => $provinceCode ? FactoryHelpers::provinceId($provinceCode) : null,
+        ]);
     }
 
-    public function contributor(): static
+    public function partner(): static
     {
-        return $this->withRole(Role::CONTRIBUTOR)->state(['organization' => 'Ban quản lý di tích thử nghiệm']);
+        return $this->withRole(Role::PARTNER)->state(['organization' => 'Công ty lữ hành thử nghiệm']);
     }
 
-    public function member(): static
+    public function traveler(): static
     {
-        return $this->withRole(Role::MEMBER);
+        return $this->withRole(Role::TRAVELER);
     }
 
     public function inactive(): static

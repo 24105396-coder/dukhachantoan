@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Storage;
 
 class MediaAsset extends Model
 {
-    public const LICENSES = ['public_domain', 'cc_by', 'cc_by_sa', 'cc_by_nc', 'all_rights_reserved', 'simulated'];
+    public const LICENSES = ['public_domain', 'cc_by', 'cc_by_sa', 'cc_by_nc', 'all_rights_reserved', 'user_upload', 'simulated'];
 
     protected $fillable = [
         'subject_type', 'subject_id', 'media_type', 'locale', 'path', 'external_url', 'mime', 'size_bytes',

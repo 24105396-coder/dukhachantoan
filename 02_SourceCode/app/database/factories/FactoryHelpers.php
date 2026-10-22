@@ -2,37 +2,43 @@
 
 namespace Database\Factories;
 
-use App\Models\Interpretation;
+use App\Models\AlertSource;
+use App\Models\HazardType;
 use App\Models\Province;
-use Illuminate\Database\Eloquent\Model;
 
 /**
- * Tiện ích dùng chung cho factory: tỉnh mặc định và diễn giải depth 1 vi/en.
+ * Tiện ích dùng chung cho factory: tỉnh, nguồn và loại rủi ro mặc định (tạo nếu chưa có).
  */
 final class FactoryHelpers
 {
-    public static function defaultProvinceId(): int
+    public static function provinceId(string $code = 'KH'): int
     {
-        return Province::firstOrCreate(
-            ['code' => 'HN'],
-            ['name' => 'Hà Nội', 'name_en' => 'Hanoi', 'region' => 'bac', 'lat' => 21.0285, 'lng' => 105.8542],
-        )->id;
+        $defaults = [
+            'KH' => ['name' => 'Khánh Hòa', 'name_en' => 'Khanh Hoa', 'region' => 'trung', 'lat' => 12.2388, 'lng' => 109.1967],
+            'HN' => ['name' => 'Hà Nội', 'name_en' => 'Hanoi', 'region' => 'bac', 'lat' => 21.0285, 'lng' => 105.8542],
+        ];
+
+        return Province::firstOrCreate(['code' => $code], $defaults[$code] ?? [
+            'name' => $code, 'name_en' => $code, 'region' => 'bac', 'lat' => 21.0, 'lng' => 105.8,
+        ])->id;
     }
 
-    public static function interpretations(Model $subject, string $viPrefix, string $enPrefix): void
+    public static function sourceId(string $code = 'manual'): int
     {
-        $word = ucfirst(fake()->word()).' '.fake()->numberBetween(1, 9999);
-        foreach (['vi' => $viPrefix, 'en' => $enPrefix] as $locale => $prefix) {
-            Interpretation::create([
-                'subject_type' => $subject->getMorphClass(),
-                'subject_id' => $subject->getKey(),
-                'locale' => $locale,
-                'depth_level' => 1,
-                'title' => "{$prefix} {$word}",
-                'summary' => fake()->sentence(12),
-                'body' => fake()->paragraphs(2, true),
-                'sources' => 'Nguồn thử nghiệm',
-            ]);
+        return AlertSource::firstOrCreate(['code' => $code], [
+            'name' => 'Cơ quan hỗ trợ (nhập tay)',
+            'source_type' => 'manual',
+            'provider' => 'manual',
+        ])->id;
+    }
+
+    public static function hazardTypeId(string $code = 'bao'): int
+    {
+        $hazard = HazardType::firstOrCreate(['code' => $code], ['icon' => $code, 'color' => '#d32f2f', 'default_severity' => 3]);
+        if (! $hazard->translations()->exists()) {
+            $hazard->syncTranslations(['vi' => ['name' => ucfirst($code)], 'en' => ['name' => ucfirst($code)]]);
         }
+
+        return $hazard->id;
     }
 }
