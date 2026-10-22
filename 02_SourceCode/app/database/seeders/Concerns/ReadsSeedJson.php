@@ -2,103 +2,85 @@
 
 namespace Database\Seeders\Concerns;
 
-use App\Models\Interpretation;
-use Illuminate\Database\Eloquent\Model;
+use App\Support\RelativeDate;
+use Illuminate\Support\Carbon;
 
 /**
- * Đọc dữ liệu hạt giống JSON trong database/data; file thiếu hoặc lỗi cú pháp trả mảng rỗng
- * để seeder chạy lại được khi dữ liệu chưa đủ.
+ * Đọc dữ liệu hạt giống JSON trong database/data (lược đồ và từ điển dữ liệu: 03_Database/TuDienDuLieu.md).
+ * Tệp thiếu hoặc lỗi cú pháp → in cảnh báo và trả mảng rỗng để seeder vẫn chạy được khi dữ liệu chưa có.
  */
 trait ReadsSeedJson
 {
+    /** Thư mục dữ liệu: database/data, hoặc config dukhach.seed_data_path (test dùng tệp mẫu). */
     protected function dataPath(string $file = ''): string
     {
-        return database_path('data'.($file !== '' ? '/'.$file : ''));
+        $base = rtrim((string) (config('dukhach.seed_data_path') ?: database_path('data')), '/');
+
+        return $base.($file !== '' ? '/'.$file : '');
+    }
+
+    protected function hasJson(string $file): bool
+    {
+        return is_file($this->dataPath($file));
     }
 
     protected function readJson(string $file): array
     {
         $path = str_starts_with($file, '/') ? $file : $this->dataPath($file);
         if (! is_file($path)) {
+            $this->warnSeed("Bỏ qua: chưa có database/data/".basename($path));
+
             return [];
         }
         $data = json_decode((string) file_get_contents($path), true);
+        if (! is_array($data)) {
+            $this->warnSeed('Bỏ qua: '.basename($path).' không phải JSON mảng hợp lệ ('.json_last_error_msg().')');
 
-        return is_array($data) ? $data : [];
-    }
-
-    /** Gộp mọi file khớp mẫu (ví dụ sites-*.json) thành một mảng. */
-    protected function globJson(string $pattern): array
-    {
-        $files = glob($this->dataPath($pattern)) ?: [];
-        sort($files);
-        $items = [];
-        foreach ($files as $file) {
-            array_push($items, ...$this->readJson($file));
+            return [];
         }
 
-        return $items;
+        return $data;
     }
 
-    /** Ghi các lớp diễn giải từ khối "interp" {locale: {depth: {...}}}. */
-    protected function syncInterpretations(Model $subject, array $interp): void
+    protected function warnSeed(string $message): void
     {
-        foreach ($interp as $locale => $depths) {
-            foreach ((array) $depths as $depth => $row) {
-                if (! is_array($row) || empty($row['title'])) {
-                    continue;
-                }
-                $sources = $row['sources'] ?? null;
-                Interpretation::updateOrCreate(
-                    ['subject_type' => $subject->getMorphClass(), 'subject_id' => $subject->getKey(), 'locale' => $locale, 'depth_level' => (int) $depth],
-                    [
-                        'title' => mb_substr($row['title'], 0, 255),
-                        'summary' => $row['summary'] ?? null,
-                        'body' => $row['body'] ?? '',
-                        'sources' => is_array($sources) ? implode("\n", $sources) : $sources,
-                        'is_machine_translated' => (bool) ($row['is_machine_translated'] ?? false),
-                    ],
-                );
-            }
+        if (isset($this->command)) {
+            $this->command->warn('  '.static::class.': '.$message);
         }
     }
 
-    /** Gắn thẻ theo danh sách slug, bỏ qua slug không tồn tại. */
-    protected function syncTags(Model $subject, array $slugs): void
+    /** {"vi": "...", "en": "..."} hoặc chuỗi → giá trị theo locale (chuỗi dùng cho mọi locale). */
+    protected function pick(mixed $value, string $locale): mixed
     {
-        $ids = \App\Models\Tag::whereIn('slug', $slugs)->pluck('id')->all();
-        $subject->tags()->sync($ids);
+        if (is_array($value) && (array_key_exists('vi', $value) || array_key_exists('en', $value))) {
+            return $value[$locale] ?? null;
+        }
+
+        return $value;
     }
 
-    /** Tạo lại sự kiện dòng thời gian của một di sản/nhân vật; $periodId của chủ thể chỉ là gợi ý ưu tiên. */
-    protected function syncEvents(string $column, Model $subject, array $events, ?int $periodId): void
+    /**
+     * Gom các khóa đa ngữ của một bản ghi thành {locale: {field: value}} để syncTranslations().
+     *
+     * @param  array<string, string>  $map  khóa JSON => cột bản dịch
+     */
+    protected function translationsFrom(array $row, array $map): array
     {
-        \App\Models\TimelineEvent::where($column, $subject->getKey())->delete();
-        $periods = app(\App\Services\PeriodResolver::class);
-        foreach ($events as $ev) {
-            if (empty($ev['year']) && ($ev['year'] ?? null) !== 0) {
-                continue;
-            }
-            $event = \App\Models\TimelineEvent::create([
-                $column => $subject->getKey(),
-                'period_id' => $periods->forYear((int) $ev['year'], $periodId),
-                'event_type' => $ev['type'] ?? 'khac',
-                'event_year' => (int) $ev['year'],
-                'event_month' => $ev['month'] ?? null,
-                'event_day' => $ev['day'] ?? null,
-                'end_year' => $ev['end_year'] ?? null,
-                'importance' => (int) ($ev['importance'] ?? 2),
-            ]);
-            foreach (['vi', 'en'] as $locale) {
-                if (! empty($ev[$locale]['title'])) {
-                    \App\Models\TimelineEventTranslation::create([
-                        'event_id' => $event->id,
-                        'locale' => $locale,
-                        'title' => mb_substr($ev[$locale]['title'], 0, 255),
-                        'description' => $ev[$locale]['description'] ?? null,
-                    ]);
+        $out = [];
+        foreach (['vi', 'en'] as $locale) {
+            foreach ($map as $jsonKey => $column) {
+                $value = $this->pick($row[$jsonKey] ?? null, $locale);
+                if ($value !== null && $value !== '' && $value !== []) {
+                    $out[$locale][$column] = $value;
                 }
             }
         }
+
+        return $out;
+    }
+
+    protected function when(?string $value): ?Carbon
+    {
+        return RelativeDate::parse($value);
     }
 }

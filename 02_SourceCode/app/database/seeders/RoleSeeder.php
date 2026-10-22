@@ -8,10 +8,10 @@ use Illuminate\Database\Seeder;
 class RoleSeeder extends Seeder
 {
     public const ROLES = [
-        Role::ADMIN => ['Quản trị hệ thống', 'Toàn quyền, quản lý người dùng, xem nhật ký'],
-        Role::MANAGER => ['Quản lý nghiệp vụ', 'Quản lý nội dung di sản, tuyến tham quan, kiểm duyệt đóng góp'],
-        Role::CONTRIBUTOR => ['Đơn vị quản lý di tích / nhà cung cấp tour', 'Quản lý tuyến và khung giờ của mình, gửi đóng góp'],
-        Role::MEMBER => ['Thành viên', 'Đặt lịch, thanh toán, yêu thích, gửi đóng góp'],
+        Role::ADMIN => ['Quản trị hệ thống', 'Toàn quyền: người dùng, nhật ký, sao lưu, nguồn dữ liệu, mô phỏng'],
+        Role::AGENCY => ['Cơ quan hỗ trợ du khách', 'Dashboard tỉnh mình, phát cảnh báo, phản hồi check-in, danh bạ, hướng dẫn, duyệt sự cố'],
+        Role::PARTNER => ['Đơn vị lữ hành', 'Đăng ký và quản lý hành trình cho đoàn khách, check-in thay đoàn'],
+        Role::TRAVELER => ['Du khách', 'Hành trình của mình, thông báo, check-in, báo sự cố'],
     ];
 
     public function run(): void
