@@ -43,6 +43,11 @@ run_as_www php artisan migrate --force
 if [ "$(run_as_www php artisan app:is-seeded)" != "yes" ]; then
   echo "[entrypoint] seeding sample data (roles, provinces, accounts, hazards, zones, alerts, trips) ..."
   run_as_www php artisan db:seed --force
+  # Dữ liệu trình diễn: đối sánh cảnh báo mẫu với hành trình mẫu rồi gửi một lượt thông báo
+  # (SMS là mô phỏng, chỉ ghi log; email dùng MAIL_MAILER=log) để trang Thông báo/Dashboard có số liệu ngay
+  echo "[entrypoint] matching sample alerts with sample trips and dispatching demo notifications ..."
+  run_as_www php artisan app:match-alerts || true
+  run_as_www php artisan app:dispatch-notifications || true
 fi
 
 # public/storage symlink nằm ngoài storage/ nên tạo bằng root là đủ
