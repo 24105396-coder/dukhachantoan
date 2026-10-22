@@ -1,7 +1,7 @@
 import { usePage } from '@inertiajs/vue3';
 
 /**
- * Trả hàm dựng URL có tiền tố locale hiện tại: lr('/di-san') → '/vi/di-san'.
+ * Trả hàm dựng URL có tiền tố locale hiện tại: lr('/canh-bao') → '/vi/canh-bao'.
  * Đường dẫn rỗng hoặc '/' trả về trang chủ của locale.
  */
 export function useLocaleRoute() {

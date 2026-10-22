@@ -67,7 +67,7 @@ function firstViolation(value, rule, form) {
  *   confirmed?: 'tên trường gốc',
  *   pattern?: { regex, message: 'phone'|'password'|'slug', normalize?: (s) => s },
  * } }
- * Trường lồng nhau dùng đường dẫn chấm, ví dụ 'interpretations.0.title'.
+ * Trường lồng nhau dùng đường dẫn chấm, ví dụ 'legs.0.zone_code'.
  */
 export function useClientValidation(form, rules) {
     const { t } = useT();
@@ -90,7 +90,7 @@ export function useClientValidation(form, rules) {
     Object.entries(rules).forEach(([field, rule]) => {
         const sources = [() => getPath(form, field)];
         if (rule.confirmed) sources.push(() => getPath(form, rule.confirmed));
-        // deep: 1 để mảng (vd stops) báo thay đổi khi thêm/bớt phần tử
+        // deep: 1 để mảng (vd legs, members) báo thay đổi khi thêm/bớt phần tử
         watch(sources, () => {
             const msg = clientErrors.get(field);
             if (msg === undefined) return;

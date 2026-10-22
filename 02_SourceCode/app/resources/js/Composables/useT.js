@@ -2,7 +2,7 @@ import { computed } from 'vue';
 import { usePage } from '@inertiajs/vue3';
 
 /**
- * Tra một khóa trong bảng dịch: hỗ trợ khóa phẳng ("nav.sites") của lang/*.json
+ * Tra một khóa trong bảng dịch: hỗ trợ khóa phẳng ("nav.alerts") của lang/*.json
  * và cả cấu trúc lồng nhau nếu backend trả về dạng object.
  */
 function lookup(dict, key) {
@@ -25,6 +25,7 @@ function replaceParams(text, params) {
         }, text);
 }
 
+/** Dịch khóa; thiếu khóa thì hiển thị chính khóa đó (dễ phát hiện khóa chưa thêm vào lang/*.json). */
 export function translate(dict, key, params) {
     const found = lookup(dict, key);
     return replaceParams(typeof found === 'string' ? found : key, params);
@@ -36,11 +37,10 @@ export function useT() {
     const locale = computed(() => page.props.locale || 'vi');
 
     const t = (key, params) => translate(dict.value, key, params);
-    /** Nhãn enum: te('site_type', 'di_tich') → t('enums.site_type.di_tich'), fallback mã gốc. */
+    /** Nhãn enum: te('trip_status', 'active') → t('enums.trip_status.active'), thiếu khóa thì trả mã gốc. */
     const te = (group, code) => {
         if (code === null || code === undefined || code === '') return '';
-        const key = `enums.${group}.${code}`;
-        const found = lookup(dict.value, key);
+        const found = lookup(dict.value, `enums.${group}.${code}`);
         return typeof found === 'string' ? found : String(code);
     };
     const has = (key) => typeof lookup(dict.value, key) === 'string';
@@ -52,11 +52,6 @@ export const i18nPlugin = {
     install(app) {
         app.config.globalProperties.$t = function (key, params) {
             return translate(this.$page?.props?.translations, key, params);
-        };
-        app.config.globalProperties.$te = function (group, code) {
-            if (code === null || code === undefined || code === '') return '';
-            const found = lookup(this.$page?.props?.translations, `enums.${group}.${code}`);
-            return typeof found === 'string' ? found : String(code);
         };
     },
 };

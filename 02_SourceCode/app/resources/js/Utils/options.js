@@ -1,11 +1,11 @@
 // Chuẩn hóa danh sách từ backend thành options [{value,label}] cho <select>/checkbox
 
-export const STATUS_CODES = ['draft', 'published', 'archived'];
 export const LOCALES = ['vi', 'en'];
-export const DEPTHS = [1, 2, 3];
+export const CHANNELS = ['inapp', 'email', 'sms'];
+export const ALERT_LEVELS = [1, 2, 3, 4];
 
 /**
- * Enum: chấp nhận ['di_tich', ...], [{code,name}], [{value,label}] hoặc object {code: label}.
+ * Enum: chấp nhận ['active', ...], [{code,name}], [{value,label}] hoặc object {code: label}.
  * Khi chỉ có mã, nhãn lấy từ te(group, code).
  */
 export function enumOptions(list, te, group) {
@@ -20,13 +20,6 @@ export function enumOptions(list, te, group) {
             return { value, label };
         })
         .filter(Boolean);
-}
-
-/** Thực thể tham chiếu theo id: [{id, title|name}] → options; fallback code nếu thiếu id. */
-export function entityOptions(list) {
-    return (list || [])
-        .filter(Boolean)
-        .map((item) => ({ value: item.id ?? item.code, label: item.title ?? item.name ?? item.label ?? String(item.id) }));
 }
 
 /** Lấy mảng hàng từ prop có thể là mảng hoặc Paginated của Laravel. */
