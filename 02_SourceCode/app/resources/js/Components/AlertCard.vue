@@ -41,7 +41,7 @@ const headingTag = computed(() => `h${Math.min(6, Math.max(2, props.headingLevel
 
 <template>
     <article
-        class="clay-card-sm relative flex h-full flex-col gap-3 overflow-hidden p-5 pl-6 before:absolute before:inset-y-0 before:left-0 before:w-1.5"
+        class="clay-card-sm relative flex h-full flex-col gap-2.5 overflow-hidden p-4 pl-5 before:absolute before:inset-y-0 before:left-0 before:w-1"
         :class="[STRIPES[level], isInactive ? 'opacity-80' : '']"
         :data-severity="level"
     >
@@ -53,7 +53,7 @@ const headingTag = computed(() => `h${Math.min(6, Math.max(2, props.headingLevel
             <span v-if="alert.status && alert.status !== 'active'" class="pill" :class="isInactive ? 'line-through decoration-1' : ''">{{ te('status', alert.status) }}</span>
         </div>
 
-        <component :is="headingTag" class="font-display text-lg font-bold leading-snug">
+        <component :is="headingTag" class="font-display text-base font-bold leading-snug md:text-[1.0625rem]">
             <Link v-if="alert.url" :href="alert.url" class="hover:text-link hover:underline focus-visible:underline">{{ alert.headline }}</Link>
             <span v-else>{{ alert.headline }}</span>
         </component>
@@ -71,7 +71,7 @@ const headingTag = computed(() => `h${Math.min(6, Math.max(2, props.headingLevel
             </div>
         </dl>
 
-        <div class="mt-auto border-t border-line pt-3">
+        <div class="mt-auto border-t border-line pt-2.5">
             <SourceStamp :source="alert.source" :updated-at="alert.updated_at_source || alert.issued_at" :simulated="!!alert.is_simulated" />
         </div>
     </article>

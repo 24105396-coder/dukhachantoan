@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 /*
- * DuKhachAnToan – hệ thống thiết kế "Mint Clay" (dka-conventions/references/design-system.md).
+ * DuKhachAnToan – hệ thống thiết kế "Clean Teal" (dka-conventions/references/design-system.md):
+ * nền trung tính sáng, thẻ trắng viền mảnh, xanh ngọc #10A688 là màu nhấn duy nhất, màu mức chỉ ở nhãn/viền trái.
  * Font tự host nằm trong resources/css/fonts.css, nạp sau lần vẽ đầu (xem app.blade.php).
  * Quy tắc: component chỉ dùng token/utility dưới đây, không hard-code màu.
  */
@@ -14,10 +15,10 @@
 
 /*
  * Phông dự phòng đã chỉnh số đo (BUG-5, CLS): fonts.css nạp sau lần vẽ đầu nên chữ hiện bằng phông hệ thống
- * trước rồi mới đổi sang Plus Jakarta Sans / Baloo 2. Nếu phông hệ thống rộng hơn (DejaVu, Segoe…), dòng chữ
+ * trước rồi mới đổi sang Plus Jakarta Sans. Nếu phông hệ thống rộng hơn (DejaVu, Segoe…), dòng chữ
  * xuống hàng khác và cả trang dịch khi phông web về. Các mặt phông dưới đây trỏ tới Arial/Liberation Sans/Roboto
  * (cùng bề rộng trung bình) với size-adjust tính từ xWidthAvg (Capsize): Jakarta 400 = 468/1000, 600–700 ≈ 482,
- * Baloo 2 700 = 450; Arial thường 913/2048, đậm 983/2048. ascent/descent chia cho size-adjust.
+ * Arial thường 913/2048, đậm 983/2048. ascent/descent chia cho size-adjust.
  */
 @font-face {
     font-family: 'Plus Jakarta Sans Fallback';
@@ -39,21 +40,12 @@
     descent-override: 22.1%;
     line-gap-override: 0%;
 }
-@font-face {
-    font-family: 'Baloo 2 Fallback';
-    src: local('Arial Bold'), local('Arial-BoldMT'), local('Liberation Sans Bold'), local('LiberationSans-Bold'), local('Roboto Bold'), local('Roboto-Bold');
-    font-weight: 100 900;
-    font-style: normal;
-    size-adjust: 94%;
-    ascent-override: 114.7%;
-    descent-override: 55.7%;
-    line-gap-override: 0%;
-}
 
 /* ---------- Token gốc: phông, bảng màu, bán kính, bóng ---------- */
 @theme {
     --font-sans: 'Plus Jakarta Sans Variable', 'Plus Jakarta Sans', 'Plus Jakarta Sans Fallback', ui-sans-serif, system-ui, 'Segoe UI', Roboto, sans-serif;
-    --font-display: 'Baloo 2', 'Baloo 2 Fallback', 'Plus Jakarta Sans Variable', 'Plus Jakarta Sans', 'Plus Jakarta Sans Fallback', ui-sans-serif, sans-serif;
+    /* Tiêu đề dùng cùng Plus Jakarta Sans (đậm 700/800, tracking -0.01em); giữ token để utility font-display vẫn dùng được */
+    --font-display: var(--font-sans);
 
     --color-brand-50: #EAFBF5;
     --color-brand-100: #CBF3E7;
@@ -70,17 +62,6 @@
     --color-ink-900: #071612;
     --color-ink-950: #04100D;
 
-    --color-mint-50: #F3FBF7;
-    --color-mint-100: #E4F6EE;
-    --color-mint-200: #CDEEE1;
-    --color-mint-300: #AEE3D0;
-
-    --color-peach-100: #FFEBDC;
-    --color-peach-200: #FFD9BF;
-    --color-lemon-100: #FDF4D3;
-    --color-lemon-200: #FAE9A9;
-    --color-sky-100: #DFEEFB;
-    --color-sky-200: #C4E0F7;
 
     /* Mức cảnh báo: cố định ở cả hai theme; luôn đi kèm icon + nhãn chữ */
     --color-level-0: #10A688;
@@ -89,25 +70,19 @@
     --color-level-3: #EA580C;
     --color-level-4: #DC2626;
 
-    --radius-clay: 28px;
-    --radius-img: 20px;
-    --radius-input: 14px;
+    --radius-clay: 14px;
+    --radius-card-sm: 12px;
+    --radius-img: 12px;
+    --radius-input: 10px;
 
-    --shadow-clay: 0 22px 40px -18px rgba(12, 132, 111, 0.32), inset 0 -10px 18px rgba(12, 132, 111, 0.10), inset 0 10px 14px rgba(255, 255, 255, 0.85);
-    --shadow-clay-sm: 0 10px 20px -12px rgba(12, 132, 111, 0.35), inset 0 -5px 10px rgba(12, 132, 111, 0.08), inset 0 5px 8px rgba(255, 255, 255, 0.85);
-    --shadow-clay-btn: 0 14px 26px -10px rgba(16, 166, 136, 0.55), inset 0 -6px 12px rgba(7, 80, 66, 0.35), inset 0 4px 8px rgba(255, 255, 255, 0.45);
-    --shadow-clay-inset: inset 0 3px 8px rgba(12, 132, 111, 0.14), inset 0 -2px 4px rgba(255, 255, 255, 0.9);
-    --shadow-clay-dark: 0 22px 40px -18px rgba(0, 0, 0, 0.7), inset 0 -10px 18px rgba(0, 0, 0, 0.35), inset 0 10px 14px rgba(85, 211, 183, 0.06);
-    --shadow-clay-dark-sm: 0 10px 20px -12px rgba(0, 0, 0, 0.7), inset 0 -5px 10px rgba(0, 0, 0, 0.3), inset 0 5px 8px rgba(85, 211, 183, 0.05);
-    --shadow-soft: 0 8px 24px -12px rgba(12, 132, 111, 0.25);
-    --shadow-card: 0 1px 2px rgba(12, 132, 111, 0.08), 0 6px 18px -8px rgba(12, 132, 111, 0.18);
+    /* Bóng rất nhẹ (tên token giữ "clay" để không đổi utility đang dùng) */
+    --shadow-clay: 0 1px 2px rgba(16, 24, 22, 0.04), 0 2px 8px -2px rgba(16, 24, 22, 0.06);
+    --shadow-clay-sm: 0 1px 2px rgba(16, 24, 22, 0.05);
+    --shadow-clay-btn: 0 1px 2px rgba(16, 24, 22, 0.08);
+    --shadow-clay-inset: none;
+    --shadow-soft: 0 8px 24px -12px rgba(16, 24, 22, 0.18);
+    --shadow-card: 0 1px 2px rgba(16, 24, 22, 0.05), 0 4px 12px -6px rgba(16, 24, 22, 0.10);
 
-    --animate-floaty: floaty 5s ease-in-out infinite;
-
-    @keyframes floaty {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-6px); }
-    }
 }
 
 /* ---------- Token ngữ nghĩa theo theme → utility (bg-page, bg-surface, text-fg, text-muted, border-line…) ---------- */
@@ -137,42 +112,43 @@
     --color-level-4-fg: var(--level-4-fg);
 }
 
-/* Theme "Ban ngày" */
+/* Theme "Ban ngày": nền xám rất nhạt, thẻ trắng viền mảnh, xanh ngọc chỉ ở nút chính/link/mục chọn */
 :root,
 :root[data-theme="light"] {
     color-scheme: light;
-    --bg-page: #DCF1E9;
-    --bg-surface: var(--color-mint-50);
-    --bg-soft: var(--color-mint-100);
+    --bg-page: #F7F9F8;
+    --bg-surface: #FFFFFF;
+    --bg-soft: #F1F4F3;
     --bg-raised: #FFFFFF;
-    --text: #0C1A16;
-    --text-muted: rgb(22 52 44 / 0.75);
-    --border: rgba(12, 132, 111, 0.14);
+    --text: #111A17;
+    --text-muted: #4A5753;
+    --border: #E2E7E5;
+    --border-strong: #CBD3D0;
     --link: var(--color-brand-700);
     --focus: var(--color-brand-600);
-    --overlay: rgb(4 16 13 / 0.55);
-    /* Chữ trên nền brand-300/400/500 dùng ink-950 (trắng trên brand-400 không đạt AA) */
+    --overlay: rgb(10 16 14 / 0.5);
+    /* Chữ trên nền brand-500 #10A688 dùng ink-950 (trắng trên #10A688 chỉ ~3:1, không đạt AA) */
     --on-brand: var(--color-ink-950);
     --danger: #B91C1C;
     --success: var(--color-brand-700);
-    --btn-from: var(--color-brand-400);
-    --btn-to: var(--color-brand-500);
-    --scrollbar: var(--color-mint-300);
-    --blob-1: var(--color-mint-200);
-    --blob-2: var(--color-peach-100);
-    --blob-3: var(--color-lemon-100);
+    --btn-bg: var(--color-brand-500);
+    --btn-bg-hover: var(--color-brand-400);
+    /* Mục đang chọn (menu, tab): nền ngọc rất nhạt + chữ ngọc đậm */
+    --selected-bg: var(--color-brand-50);
+    --selected-fg: var(--color-brand-700);
+    --scrollbar: #CBD3D0;
 
-    /* Mức cảnh báo: --level-N màu chính, -soft nền nhạt, -fg màu chữ đạt AA trên màu chính */
+    /* Mức cảnh báo: --level-N màu chính (nhãn, viền trái), -soft nền rất nhạt (chỉ chip nhỏ), -fg chữ đạt AA trên màu chính */
     --level-0: var(--color-level-0);
     --level-1: var(--color-level-1);
     --level-2: var(--color-level-2);
     --level-3: var(--color-level-3);
     --level-4: var(--color-level-4);
-    --level-0-soft: var(--color-mint-100);
-    --level-1-soft: var(--color-sky-100);
-    --level-2-soft: var(--color-lemon-100);
-    --level-3-soft: var(--color-peach-100);
-    --level-4-soft: #FEE2E2;
+    --level-0-soft: color-mix(in srgb, var(--color-level-0) 8%, #FFFFFF);
+    --level-1-soft: color-mix(in srgb, var(--color-level-1) 7%, #FFFFFF);
+    --level-2-soft: color-mix(in srgb, var(--color-level-2) 9%, #FFFFFF);
+    --level-3-soft: color-mix(in srgb, var(--color-level-3) 7%, #FFFFFF);
+    --level-4-soft: color-mix(in srgb, var(--color-level-4) 7%, #FFFFFF);
     --level-0-fg: var(--color-ink-950);
     --level-1-fg: #FFFFFF;
     --level-2-fg: var(--color-ink-950);
@@ -180,53 +156,39 @@
     --level-4-fg: #FFFFFF;
 }
 
-/* Theme "Trực ban đêm" */
+/* Theme "Trực ban đêm": nền #0F1514, thẻ #171F1D, viền sáng mảnh */
 :root[data-theme="dark"] {
     color-scheme: dark;
-    --bg-page: var(--color-ink-950);
-    --bg-surface: var(--color-ink-850);
-    --bg-soft: var(--color-ink-800);
-    --bg-raised: var(--color-ink-700);
-    --text: #D8ECE6;
-    --text-muted: rgb(174 227 208 / 0.75);
-    --border: rgba(85, 211, 183, 0.16);
+    --bg-page: #0F1514;
+    --bg-surface: #171F1D;
+    --bg-soft: #1E2826;
+    --bg-raised: #222D2A;
+    --text: #E4ECE9;
+    --text-muted: #A3B3AE;
+    --border: rgba(255, 255, 255, 0.08);
+    --border-strong: rgba(255, 255, 255, 0.16);
     --link: var(--color-brand-300);
     --focus: var(--color-brand-300);
     --overlay: rgb(0 0 0 / 0.65);
     --danger: #F87171;
     --success: var(--color-brand-300);
-    --btn-from: var(--color-brand-300);
-    --btn-to: var(--color-brand-500);
-    --scrollbar: var(--color-brand-700);
-    --blob-1: rgba(16, 166, 136, 0.18);
-    --blob-2: rgba(255, 217, 191, 0.08);
-    --blob-3: rgba(250, 233, 169, 0.07);
+    --btn-bg: var(--color-brand-500);
+    --btn-bg-hover: var(--color-brand-400);
+    --selected-bg: rgba(16, 166, 136, 0.16);
+    --selected-fg: var(--color-brand-300);
+    --scrollbar: #2E3B38;
 
-    /* Pastel phụ chuyển sang bản tối trong suốt */
-    --color-mint-50: #0A1E19;
-    --color-mint-100: #0F2721;
-    --color-mint-200: #16342C;
-    --color-mint-300: #1F4A3F;
-    --color-peach-100: rgba(255, 217, 191, 0.12);
-    --color-peach-200: rgba(255, 217, 191, 0.2);
-    --color-lemon-100: rgba(250, 233, 169, 0.1);
-    --color-lemon-200: rgba(250, 233, 169, 0.18);
-    --color-sky-100: rgba(196, 224, 247, 0.1);
-    --color-sky-200: rgba(196, 224, 247, 0.18);
+    --level-0-soft: color-mix(in srgb, var(--color-level-0) 14%, #171F1D);
+    --level-1-soft: color-mix(in srgb, var(--color-level-1) 16%, #171F1D);
+    --level-2-soft: color-mix(in srgb, var(--color-level-2) 16%, #171F1D);
+    --level-3-soft: color-mix(in srgb, var(--color-level-3) 16%, #171F1D);
+    --level-4-soft: color-mix(in srgb, var(--color-level-4) 18%, #171F1D);
 
-    --level-0-soft: rgba(16, 166, 136, 0.16);
-    --level-1-soft: rgba(37, 99, 235, 0.18);
-    --level-2-soft: rgba(202, 138, 4, 0.18);
-    --level-3-soft: rgba(234, 88, 12, 0.18);
-    --level-4-soft: #7F1D1D;
-
-    /* Bóng clay tối: mọi utility shadow-clay* tự đổi theo theme */
-    --shadow-clay: var(--shadow-clay-dark);
-    --shadow-clay-sm: var(--shadow-clay-dark-sm);
-    --shadow-clay-btn: 0 14px 26px -12px rgba(16, 166, 136, 0.45), inset 0 -6px 12px rgba(7, 80, 66, 0.4), inset 0 4px 8px rgba(255, 255, 255, 0.25);
-    --shadow-clay-inset: inset 0 3px 8px rgba(0, 0, 0, 0.45), inset 0 -2px 4px rgba(85, 211, 183, 0.06);
+    --shadow-clay: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-clay-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+    --shadow-clay-btn: 0 1px 2px rgba(0, 0, 0, 0.4);
     --shadow-soft: 0 8px 24px -12px rgba(0, 0, 0, 0.6);
-    --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4), 0 6px 18px -8px rgba(0, 0, 0, 0.6);
+    --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4), 0 4px 12px -6px rgba(0, 0, 0, 0.5);
 }
 
 /* ---------- Nền tảng ---------- */
@@ -246,13 +208,15 @@
     h1, h2, h3 {
         font-family: var(--font-display);
         font-weight: 700;
-        line-height: 1.2;
+        line-height: 1.25;
+        letter-spacing: -0.01em;
     }
-    h1 { font-size: 1.75rem; }
-    h2 { font-size: 1.5rem; }
-    h3 { font-size: 1.125rem; }
+    h1 { font-size: 1.4375rem; font-weight: 800; }
+    h2 { font-size: 1.25rem; }
+    h3 { font-size: 1.0625rem; }
     @media (min-width: 768px) {
-        h1 { font-size: 2.25rem; }
+        h1 { font-size: 1.875rem; }
+        h2 { font-size: 1.375rem; }
     }
     :focus-visible {
         outline: 3px solid var(--focus);
@@ -275,7 +239,7 @@
         .container-page { padding-inline: 1.5rem; }
     }
 
-    /* Thẻ clay: nền surface, bo 28px, bóng clay (tự đổi bản tối) */
+    /* Thẻ: nền trắng (surface), viền 1px xám nhạt, bo 14px, bóng rất nhẹ (tự đổi bản tối) */
     .clay-card {
         background: var(--bg-surface);
         color: var(--text);
@@ -286,65 +250,67 @@
     .clay-card-sm {
         background: var(--bg-surface);
         color: var(--text);
-        border-radius: 20px;
+        border-radius: var(--radius-card-sm);
         box-shadow: var(--shadow-clay-sm);
         border: 1px solid var(--border);
     }
 
-    /* Nút: pill, chữ đậm; biến thể qua lớp phụ */
+    /* Nút: bo 10px, chữ đậm, phẳng; biến thể qua lớp phụ */
     .clay-btn {
         display: inline-flex;
         align-items: center;
         justify-content: center;
         gap: 0.5rem;
         min-height: 2.75rem;
-        padding: 0.5rem 1.25rem;
-        border-radius: 999px;
-        font-weight: 700;
+        padding: 0.5rem 1.125rem;
+        border-radius: var(--radius-input);
+        font-weight: 600;
         font-size: 0.9375rem;
         line-height: 1.2;
         white-space: nowrap;
         text-decoration: none;
-        transition: filter 0.15s ease, transform 0.1s ease, background-color 0.15s ease;
-        background: var(--bg-soft);
+        transition: border-color 0.15s ease, transform 0.1s ease, background-color 0.15s ease;
+        background: var(--bg-surface);
         color: var(--text);
-        border: 1px solid var(--border);
+        border: 1px solid var(--border-strong);
         box-shadow: var(--shadow-clay-sm);
     }
-    .clay-btn:hover { filter: brightness(1.04); }
+    .clay-btn:hover { background: var(--bg-soft); }
     .clay-btn:active { transform: translateY(1px); }
     .clay-btn:disabled,
-    .clay-btn[aria-disabled="true"] { opacity: 0.55; cursor: not-allowed; transform: none; filter: none; }
+    .clay-btn[aria-disabled="true"] { opacity: 0.55; cursor: not-allowed; transform: none; }
     .clay-btn-primary {
-        background: linear-gradient(135deg, var(--btn-from), var(--btn-to));
+        background: var(--btn-bg);
         color: var(--on-brand);
         border-color: transparent;
         box-shadow: var(--shadow-clay-btn);
     }
+    .clay-btn-primary:hover { background: var(--btn-bg-hover); }
     .clay-btn-danger {
-        background: linear-gradient(135deg, var(--color-level-4), #B91C1C);
+        background: #B91C1C;
         color: #FFFFFF;
         border-color: transparent;
-        box-shadow: 0 14px 26px -10px rgba(220, 38, 38, 0.5), inset 0 -6px 12px rgba(127, 29, 29, 0.35), inset 0 4px 8px rgba(255, 255, 255, 0.3);
+        box-shadow: var(--shadow-clay-btn);
     }
+    .clay-btn-danger:hover { background: #991B1B; }
     .clay-btn-ghost { background: transparent; border-color: transparent; box-shadow: none; }
-    .clay-btn-ghost:hover { background: var(--bg-soft); filter: none; }
+    .clay-btn-ghost:hover { background: var(--bg-soft); }
     .clay-btn-sm { min-height: 2.25rem; padding: 0.375rem 0.875rem; font-size: 0.875rem; }
     .clay-btn-lg { min-height: 3.25rem; padding: 0.75rem 1.75rem; font-size: 1.0625rem; }
     .clay-btn-icon { padding: 0; width: 2.75rem; }
     .clay-btn-icon.clay-btn-sm { width: 2.25rem; }
     .clay-btn-block { display: flex; width: 100%; }
 
-    /* Ô nhập lõm (clay-inset), bo 14px */
+    /* Ô nhập phẳng nền trắng, viền 1px, bo 10px */
     .clay-input {
         display: block;
         width: 100%;
         min-height: 2.75rem;
         padding: 0.625rem 0.875rem;
         border-radius: var(--radius-input);
-        background: var(--bg-soft);
+        background: var(--bg-surface);
         color: var(--text);
-        border: 1px solid var(--border);
+        border: 1px solid var(--border-strong);
         box-shadow: var(--shadow-clay-inset);
         font: inherit;
         font-size: 1rem;
@@ -358,30 +324,53 @@
     .field-hint { margin-top: 0.375rem; font-size: 0.8125rem; color: var(--text-muted); }
     .field-error { margin-top: 0.375rem; font-size: 0.8125rem; font-weight: 600; color: var(--danger); }
 
-    /* Tiêu đề mục có thanh dọc brand bên trái */
+    /* Tiêu đề mục: thanh dọc ngọc mảnh bên trái */
     .section-title {
         display: flex;
         align-items: center;
-        gap: 0.75rem;
+        gap: 0.625rem;
         font-family: var(--font-display);
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         font-weight: 700;
-        line-height: 1.2;
+        line-height: 1.25;
+        letter-spacing: -0.01em;
     }
     .section-title::before {
         content: '';
         flex: none;
-        width: 6px;
-        height: 1.1em;
+        width: 3px;
+        height: 1em;
         border-radius: 999px;
-        background: linear-gradient(180deg, var(--color-brand-400), var(--color-brand-600));
+        background: var(--color-brand-500);
     }
+
+    /* Mục đang chọn (menu, tab, bước): nền ngọc rất nhạt, chữ ngọc đậm */
+    .is-selected {
+        background: var(--selected-bg);
+        color: var(--selected-fg);
+    }
+
+    /* Khối thông báo/banner: nền thẻ trắng, viền mảnh, viền trái 4px màu mức (callout-0..4) hoặc trung tính */
+    .callout {
+        --callout: var(--border-strong);
+        background: var(--bg-surface);
+        color: var(--text);
+        border: 1px solid var(--border);
+        border-left: 4px solid var(--callout);
+        border-radius: var(--radius-card-sm);
+    }
+    .callout-0 { --callout: var(--level-0); }
+    .callout-1 { --callout: var(--level-1); }
+    .callout-2 { --callout: var(--level-2); }
+    .callout-3 { --callout: var(--level-3); }
+    .callout-4 { --callout: var(--level-4); }
+    .callout-brand { --callout: var(--color-brand-500); }
 
     /* Nhãn nhỏ chữ hoa giãn chữ */
     .eyebrow {
         font-size: 0.75rem;
         font-weight: 700;
-        letter-spacing: 0.18em;
+        letter-spacing: 0.08em;
         text-transform: uppercase;
         color: var(--text-muted);
     }
@@ -400,18 +389,17 @@
         border: 1px solid var(--border);
     }
 
-    /* Ô icon vuông bo 14px nền nổi */
+    /* Ô icon vuông bo 10px nền phụ, icon ngọc */
     .icon-tile {
         display: inline-flex;
         flex: none;
         align-items: center;
         justify-content: center;
-        width: 2.75rem;
-        height: 2.75rem;
-        border-radius: 14px;
-        background: var(--bg-raised);
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: var(--radius-input);
+        background: var(--bg-soft);
         color: var(--link);
-        box-shadow: var(--shadow-clay-sm);
     }
 
     .link { color: var(--link); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
@@ -434,22 +422,12 @@
     .table-clay tbody tr:hover td { background: color-mix(in srgb, var(--bg-soft) 60%, transparent); }
 
     .skeleton {
-        background: linear-gradient(90deg, var(--bg-soft) 25%, var(--color-mint-200) 50%, var(--bg-soft) 75%);
+        background: linear-gradient(90deg, var(--bg-soft) 25%, var(--border) 50%, var(--bg-soft) 75%);
         background-size: 200% 100%;
         animation: shimmer 1.4s ease-in-out infinite;
-        border-radius: 14px;
+        border-radius: var(--radius-input);
     }
 
-    /* Blob nền mờ trôi nhẹ */
-    .blob {
-        position: fixed;
-        z-index: 0;
-        border-radius: 999px;
-        filter: blur(40px);
-        opacity: 0.7;
-        pointer-events: none;
-        animation: var(--animate-floaty);
-    }
 
     .prose-clay p + p { margin-top: 0.75rem; }
     .prose-clay ul { list-style: disc; padding-left: 1.25rem; }
@@ -461,7 +439,7 @@
     100% { background-position: -200% 0; }
 }
 
-/* ---------- Leaflet trong thẻ clay ---------- */
+/* ---------- Leaflet trong thẻ ---------- */
 .leaflet-container {
     font-family: var(--font-sans);
     background: var(--bg-soft);
@@ -469,7 +447,7 @@
 }
 .leaflet-popup-content-wrapper,
 .leaflet-popup-tip { background: var(--bg-surface); color: var(--text); box-shadow: var(--shadow-soft); }
-.leaflet-popup-content-wrapper { border-radius: 16px; }
+.leaflet-popup-content-wrapper { border-radius: var(--radius-card-sm); }
 .leaflet-popup-content a { color: var(--link); font-weight: 600; }
 .leaflet-bar a { background: var(--bg-surface); color: var(--text); border-color: var(--border); }
 .leaflet-control-attribution { background: color-mix(in srgb, var(--bg-surface) 85%, transparent) !important; color: var(--text-muted); }
@@ -497,12 +475,11 @@
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
-    .blob { animation: none; }
 }
 
 /* ---------- In (hướng dẫn ứng phó, hành trình): bỏ khung điều hướng, nền trắng, không bóng ---------- */
 @media print {
-    [data-print-hide], [data-academic-footer], .blob, .leaflet-control-container { display: none !important; }
+    [data-print-hide], [data-academic-footer], .leaflet-control-container { display: none !important; }
     body { background: #FFFFFF; color: #000000; }
     .clay-card, .clay-card-sm { box-shadow: none !important; border-color: #999999; }
     a { text-decoration: underline; }

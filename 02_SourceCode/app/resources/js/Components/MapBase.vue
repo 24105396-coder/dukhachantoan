@@ -269,7 +269,7 @@ onBeforeUnmount(() => {
 <template>
     <section :class="bare ? '' : 'clay-card p-3 md:p-4'" :aria-labelledby="ariaLabel ? undefined : `map-h-${uid}`" :aria-label="ariaLabel || undefined">
         <h2 v-if="!ariaLabel" :id="`map-h-${uid}`" class="sr-only">{{ t('map.title') }}</h2>
-        <div class="relative overflow-hidden rounded-[20px]" :class="heightClass">
+        <div class="relative overflow-hidden rounded-xl" :class="heightClass">
             <div ref="el" class="h-full w-full" :aria-label="t('map.canvas_label')" role="application"></div>
             <div v-if="loading" class="skeleton absolute inset-0" aria-hidden="true"></div>
             <div v-if="failed" class="absolute inset-0 flex items-center justify-center bg-soft p-4">

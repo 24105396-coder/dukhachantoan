@@ -50,7 +50,7 @@ const telHref = (p) => `tel:${String(p || '').replace(/[^\d+]/g, '')}`;
         <span v-if="trip.nationality" class="pill">{{ t('account.nationality') }}: {{ trip.nationality }}</span>
     </div>
 
-    <div v-if="openHelp.length" class="mb-6 flex flex-wrap items-center gap-3 rounded-[20px] border-2 border-level-4 bg-level-4-soft p-4" role="alert">
+    <div v-if="openHelp.length" class="mb-6 flex flex-wrap items-center gap-3 callout callout-4 p-4" role="alert">
         <Icon name="siren" :size="26" />
         <p class="font-bold">{{ t('admin.trips.open_help', { n: openHelp.length }) }}</p>
         <Link :href="lr(`/quan-tri/an-toan?trip=${trip.code}`)" class="clay-btn clay-btn-danger clay-btn-sm ml-auto">{{ t('admin.trips.respond') }}</Link>

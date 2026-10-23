@@ -51,7 +51,7 @@ const itemClass = 'flex items-center gap-3 rounded-full px-3 py-2 text-sm font-s
             :aria-label="t('nav.account_menu')"
             @click="open = !open"
         >
-            <span class="flex h-7 w-7 items-center justify-center rounded-full bg-linear-to-br from-brand-300 to-brand-500 text-xs font-extrabold text-on-brand" aria-hidden="true">
+            <span class="flex h-7 w-7 items-center justify-center rounded-full bg-brand-500 text-xs font-extrabold text-on-brand" aria-hidden="true">
                 {{ user.name?.charAt(0)?.toUpperCase() }}
             </span>
             <span class="hidden max-w-[9rem] truncate lg:inline">{{ user.name }}</span>

@@ -83,7 +83,7 @@ const STATUS_HELP = ['queued', 'sent', 'failed', 'read'];
     <EmptyState v-else :title="onlyUnread ? t('notifications.empty_unread') : t('notifications.empty')" :description="t('notifications.empty_hint')" />
     <Pagination :paginator="notifications" />
 
-    <details class="mt-8 rounded-2xl border border-line bg-soft p-4 text-sm">
+    <details class="mt-8 rounded-xl border border-line bg-soft p-4 text-sm">
         <summary class="cursor-pointer font-semibold">{{ t('notifications.status_help_title') }}</summary>
         <dl class="mt-3 grid gap-2 sm:grid-cols-2">
             <div v-for="s in STATUS_HELP" :key="s"><dt class="font-semibold">{{ t(`enums.status.${s}`) }}</dt><dd class="text-muted">{{ t(`notifications.status_help.${s}`) }}</dd></div>

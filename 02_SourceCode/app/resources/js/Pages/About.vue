@@ -93,7 +93,7 @@ const features = [
             <div>
                 <h2 id="about-academic" class="section-title">{{ t('about.academic_title') }}</h2>
                 <p class="mt-3 text-muted">{{ t('about.academic_text') }}</p>
-                <p class="mt-4 inline-block rounded-2xl bg-lemon-100 px-3 py-2 text-sm font-bold">{{ app.notice || t('footer.academic_notice') }}</p>
+                <p class="callout callout-2 mt-4 inline-block px-3 py-2 text-sm font-bold">{{ app.notice || t('footer.academic_notice') }}</p>
             </div>
             <dl class="grid gap-3 text-sm">
                 <div><dt class="eyebrow">{{ t('footer.course') }}</dt><dd class="font-semibold">{{ app.course || 'Lập trình ứng dụng web trong du lịch 2' }}</dd></div>

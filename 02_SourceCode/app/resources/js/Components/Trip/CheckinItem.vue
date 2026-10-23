@@ -12,9 +12,9 @@ const props = defineProps({
 const { t, te } = useT();
 const { dateTime, ago, number } = useFormat();
 const META = {
-    safe: { icon: 'shield-check', cls: 'border-level-0 bg-level-0-soft' },
-    need_help: { icon: 'siren', cls: 'border-level-4 bg-level-4-soft' },
-    unknown: { icon: 'help', cls: 'border-line bg-soft' },
+    safe: { icon: 'shield-check', cls: 'callout-0' },
+    need_help: { icon: 'siren', cls: 'callout-4' },
+    unknown: { icon: 'help', cls: '' },
 };
 const meta = computed(() => META[props.checkin.status] || META.unknown);
 const hasLocation = computed(() => props.checkin.lat !== null && props.checkin.lat !== undefined && props.checkin.lng !== null && props.checkin.lng !== undefined);
@@ -22,7 +22,7 @@ const mapsHref = computed(() => `https://www.openstreetmap.org/?mlat=${props.che
 </script>
 
 <template>
-    <article class="rounded-[20px] border p-3.5" :class="meta.cls" :data-status="checkin.status">
+    <article class="callout p-3.5" :class="meta.cls" :data-status="checkin.status">
         <div class="flex items-start gap-3">
             <span class="icon-tile h-10 w-10"><Icon :name="meta.icon" :size="20" /></span>
             <div class="min-w-0 flex-1">

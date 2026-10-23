@@ -123,6 +123,6 @@ const geoMessage = computed(() => {
         </div>
         <p v-if="form.errors.status || form.errors.lat" class="field-error" role="alert">{{ form.errors.status || form.errors.lat }}</p>
         <p class="text-xs text-muted">{{ t('checkin.need_help_hint') }}</p>
-        <p v-if="form.recentlySuccessful" class="rounded-xl bg-mint-100 p-2 text-sm font-semibold" role="status">{{ t('checkin.sent') }}</p>
+        <p v-if="form.recentlySuccessful" class="callout callout-0 p-2 text-sm font-semibold" role="status">{{ t('checkin.sent') }}</p>
     </section>
 </template>

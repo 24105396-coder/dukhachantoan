@@ -75,7 +75,7 @@ const geoError = computed(() => ({ denied: t('checkin.geo_denied'), unavailable:
 <template>
     <Head :title="t('nav.report_incident')" />
     <PageHeader :title="t('nav.report_incident')" :description="t('incident.intro')" />
-    <p class="mb-5 flex items-start gap-2 rounded-2xl border border-level-4 bg-level-4-soft p-3 text-sm font-semibold" role="note">
+    <p class="mb-5 flex items-start gap-2 callout callout-4 p-3 text-sm font-semibold" role="note">
         <Icon name="siren" :size="18" class="mt-0.5" />{{ t('incident.emergency_note') }}
     </p>
 
@@ -114,7 +114,7 @@ const geoError = computed(() => ({ denied: t('checkin.geo_denied'), unavailable:
                 />
                 <p id="incident-photo-hint" class="field-hint">{{ t('incident.photo_hint', { mb: MAX_PHOTO_MB }) }}</p>
                 <p v-if="photoError || form.errors.photo" class="field-error" role="alert">{{ photoError || form.errors.photo }}</p>
-                <img v-if="preview" :src="preview" :alt="t('incident.photo_preview')" class="mt-3 max-h-48 rounded-[20px] object-cover" />
+                <img v-if="preview" :src="preview" :alt="t('incident.photo_preview')" class="mt-3 max-h-48 rounded-xl object-cover" />
                 <progress v-if="form.progress" :value="form.progress.percentage" max="100" class="mt-2 w-full" :aria-label="t('incident.uploading')">{{ form.progress.percentage }}%</progress>
             </div>
         </section>

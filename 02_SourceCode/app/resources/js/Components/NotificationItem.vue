@@ -23,10 +23,10 @@ const { dateTime, ago } = useFormat();
 const n = computed(() => props.notification);
 const isUnread = computed(() => !n.value.read_at);
 const STATUS = {
-    queued: { icon: 'clock', cls: 'bg-sky-100' },
-    sending: { icon: 'send', cls: 'bg-sky-100' },
-    sent: { icon: 'check', cls: 'bg-mint-100' },
-    read: { icon: 'check', cls: 'bg-mint-100' },
+    queued: { icon: 'clock', cls: 'bg-soft' },
+    sending: { icon: 'send', cls: 'bg-soft' },
+    sent: { icon: 'check', cls: 'bg-level-0-soft' },
+    read: { icon: 'check', cls: 'bg-soft' },
     failed: { icon: 'circle-x', cls: 'bg-level-4-soft border-level-4' },
     cancelled: { icon: 'ban', cls: 'bg-soft' },
 };
@@ -38,8 +38,8 @@ const isInternal = (url) => /^\/(?!\/)/.test(url);
 
 <template>
     <article
-        class="relative rounded-[20px] border p-4"
-        :class="isUnread ? 'border-brand-400 bg-surface shadow-clay-sm' : 'border-line bg-soft/60'"
+        class="callout relative p-4"
+        :class="isUnread ? 'callout-brand' : 'bg-soft/60'"
         :data-unread="isUnread ? 'true' : 'false'"
     >
         <div class="flex flex-wrap items-center gap-2">

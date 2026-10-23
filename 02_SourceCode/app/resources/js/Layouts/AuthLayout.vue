@@ -5,18 +5,16 @@ import FlashToast from '@/Components/FlashToast.vue';
 import ThemeToggle from '@/Components/ThemeToggle.vue';
 import LocaleSwitch from '@/Components/LocaleSwitch.vue';
 import AppFooter from '@/Components/AppFooter.vue';
-import BackgroundBlobs from '@/Components/BackgroundBlobs.vue';
 import { useT } from '@/Composables/useT';
 import { useLocaleRoute } from '@/Composables/useLocaleRoute';
 
-/** Khung trang xác thực: thẻ clay giữa trang trên nền bạc hà có blob. */
+/** Khung trang xác thực: thẻ trắng viền mảnh giữa trang trên nền trung tính. */
 const { t } = useT();
 const lr = useLocaleRoute();
 </script>
 
 <template>
     <div class="relative flex min-h-screen flex-col">
-        <BackgroundBlobs />
         <header class="container-page relative z-10 flex h-20 items-center justify-between">
             <Link :href="lr('/')" class="rounded-full" :aria-label="t('nav.home_logo')"><AppLogo /></Link>
             <div class="flex items-center gap-1.5">

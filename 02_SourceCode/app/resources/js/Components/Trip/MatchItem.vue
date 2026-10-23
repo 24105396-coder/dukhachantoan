@@ -23,11 +23,11 @@ const { dateTime, km } = useFormat();
 const a = computed(() => props.match.alert || {});
 const level = computed(() => normalizeLevel(a.value.severity) ?? 1);
 const isAcked = computed(() => props.match.status === 'acknowledged' || !!props.match.acknowledged_at);
-const BORDER = { 1: 'border-level-1', 2: 'border-level-2', 3: 'border-level-3', 4: 'border-level-4' };
+const BORDER = { 1: 'callout-1', 2: 'callout-2', 3: 'callout-3', 4: 'callout-4' };
 </script>
 
 <template>
-    <article class="rounded-[20px] border-2 bg-surface p-4" :class="BORDER[level]" :data-severity="level">
+    <article class="callout p-4" :class="BORDER[level]" :data-severity="level">
         <div class="flex flex-wrap items-center gap-2">
             <Badge :level="level" show-level-number :label="a.severity_label || undefined" />
             <span class="pill">{{ te('match_type', match.match_type) }}</span>

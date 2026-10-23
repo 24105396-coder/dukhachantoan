@@ -23,9 +23,9 @@ const { date } = useFormat();
 const lr = useLocaleRoute();
 
 const PHASES = [
-    { key: 'before', icon: 'clipboard-check', tone: 'bg-sky-100' },
-    { key: 'during', icon: 'siren', tone: 'bg-peach-100' },
-    { key: 'after', icon: 'shield-check', tone: 'bg-mint-100' },
+    { key: 'before', icon: 'clipboard-check', tone: 'callout-1' },
+    { key: 'during', icon: 'siren', tone: 'callout-3' },
+    { key: 'after', icon: 'shield-check', tone: 'callout-0' },
 ];
 const steps = (key) => props.guide[`${key}_steps`] || [];
 // Đánh dấu chỉ lưu trong phiên xem (checklist cá nhân, không gửi máy chủ)
@@ -53,10 +53,10 @@ const printPage = () => window.print();
             <span v-if="guide.audience" class="pill"><Icon name="users" :size="14" />{{ te('audience', guide.audience) }}</span>
             <span v-if="guide.updated_at" class="pill">{{ t('guides.updated', { date: date(guide.updated_at) }) }}</span>
         </div>
-        <p v-if="guide.is_machine_translated" class="rounded-2xl border border-level-2 bg-level-2-soft p-3 text-sm" role="note">{{ t('common.machine_translated_notice') }}</p>
+        <p v-if="guide.is_machine_translated" class="callout callout-2 p-3 text-sm" role="note">{{ t('common.machine_translated_notice') }}</p>
 
         <div class="grid gap-4 lg:grid-cols-3">
-            <section v-for="p in PHASES" :key="p.key" class="clay-card-sm p-5 print:break-inside-avoid" :class="p.tone" :aria-labelledby="`ph-${p.key}`">
+            <section v-for="p in PHASES" :key="p.key" class="callout p-4 md:p-5 print:break-inside-avoid" :class="p.tone" :aria-labelledby="`ph-${p.key}`">
                 <div class="mb-3 flex items-center gap-3">
                     <span class="icon-tile"><Icon :name="p.icon" :size="22" /></span>
                     <div>
@@ -76,7 +76,7 @@ const printPage = () => window.print();
             </section>
         </div>
 
-        <div class="grid gap-6 lg:grid-cols-[1.4fr_1fr]">
+        <div class="grid gap-5 lg:grid-cols-[1.4fr_1fr]">
             <section class="space-y-3 print:hidden" aria-labelledby="g-alerts">
                 <h2 id="g-alerts" class="section-title text-xl">{{ t('guides.related_alerts') }}</h2>
                 <ul v-if="relatedAlerts.length" class="grid gap-4 md:grid-cols-2">

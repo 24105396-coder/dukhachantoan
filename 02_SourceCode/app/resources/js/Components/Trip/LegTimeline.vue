@@ -46,7 +46,7 @@ const lv = (v) => normalizeLevel(v) ?? 0;
                     <div v-if="leg.transport" class="flex gap-2"><dt class="text-muted"><Icon name="bus" :size="16" /><span class="sr-only">{{ t('trip.transport') }}</span></dt><dd>{{ leg.transport }}</dd></div>
                     <div v-if="leg.note" class="flex gap-2"><dt class="text-muted"><Icon name="message" :size="16" /><span class="sr-only">{{ t('common.note') }}</span></dt><dd>{{ leg.note }}</dd></div>
                 </dl>
-                <p v-if="leg.destination?.safety_note" class="mt-2 rounded-xl bg-lemon-100 p-2 text-xs">
+                <p v-if="leg.destination?.safety_note" class="callout callout-2 mt-2 p-2 text-xs">
                     <Icon name="info" :size="14" class="inline align-[-2px]" /> {{ leg.destination.safety_note }}
                 </p>
                 <ul v-if="showAlerts && leg.alerts?.length" class="mt-3 space-y-2">

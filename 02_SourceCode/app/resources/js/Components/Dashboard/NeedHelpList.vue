@@ -22,7 +22,7 @@ const lr = useLocaleRoute();
             <Link :href="lr('/quan-tri/an-toan?status=need_help')" class="link text-sm">{{ t('common.view_all') }}</Link>
         </div>
         <ul v-if="items.length" class="space-y-2">
-            <li v-for="c in items" :key="c.id" class="rounded-2xl border border-level-4 bg-level-4-soft p-3">
+            <li v-for="c in items" :key="c.id" class="callout callout-4 p-3">
                 <div class="flex items-start gap-2">
                     <Icon name="siren" :size="18" class="mt-0.5" />
                     <div class="min-w-0 flex-1">

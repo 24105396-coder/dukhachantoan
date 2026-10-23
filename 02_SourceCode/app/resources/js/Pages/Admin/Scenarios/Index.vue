@@ -31,7 +31,7 @@ const processing = ref(false);
 const runRows = computed(() => (Array.isArray(props.runs) ? props.runs : props.runs?.data || []));
 const nameOf = (x) => (typeof x === 'object' && x !== null ? x.name : x);
 const codeOf = (x) => (typeof x === 'object' && x !== null ? x.code : x);
-const STATUS_TONE = { running: 'bg-level-3-soft border-level-3', ready: 'bg-mint-100', finished: 'bg-soft' };
+const STATUS_TONE = { running: 'bg-level-3-soft border-level-3', ready: 'border-brand-500', finished: 'bg-soft' };
 const HOURS_TO_MIN = 60;
 
 function confirmAction() {
@@ -59,7 +59,7 @@ const columns = computed(() => [
 <template>
     <Head :title="t('admin.nav.scenarios')" />
     <PageHeader :eyebrow="t('admin.title')" :title="t('admin.nav.scenarios')" :description="t('admin.scenarios.intro')" />
-    <p v-if="!isAdmin" class="mb-4 rounded-2xl border border-line bg-soft p-3 text-sm" role="note">{{ t('admin.scenarios.admin_only') }}</p>
+    <p v-if="!isAdmin" class="mb-4 rounded-xl border border-line bg-soft p-3 text-sm" role="note">{{ t('admin.scenarios.admin_only') }}</p>
 
     <ul v-if="scenarios.length" class="grid gap-4 lg:grid-cols-2">
         <li v-for="s in scenarios" :key="s.slug">

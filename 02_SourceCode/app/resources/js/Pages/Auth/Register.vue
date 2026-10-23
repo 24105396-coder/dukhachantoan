@@ -46,7 +46,7 @@ const submit = (e) => {
 
 <template>
     <PageMeta :title="t('auth.register_title')" fallback-key="auth.register_intro" />
-    <h1 class="text-3xl">{{ t('auth.register_title') }}</h1>
+    <h1>{{ t('auth.register_title') }}</h1>
     <p class="mt-1 text-sm text-muted">{{ t('auth.register_intro') }}</p>
     <form class="mt-6 grid gap-4 sm:grid-cols-2" novalidate @submit.prevent="submit">
         <FormField v-model="form.name" class="sm:col-span-2" :label="t('common.name')" required minlength="2" maxlength="120" autocomplete="name" :error="form.errors.name" />

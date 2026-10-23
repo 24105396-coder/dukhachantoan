@@ -44,7 +44,7 @@ const toggle = (code, on) => {
             <span class="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-muted"><Icon name="search" :size="18" /></span>
             <input :id="`zp-q-${uid}`" v-model="q" type="search" class="clay-input pl-10" :placeholder="t('admin.zone_picker.search')" :aria-invalid="error ? 'true' : undefined" />
         </div>
-        <ul class="mt-2 max-h-56 overflow-y-auto rounded-[14px] border border-line bg-soft p-2">
+        <ul class="mt-2 max-h-56 overflow-y-auto rounded-lg border border-line bg-soft p-2">
             <li v-for="z in filtered" :key="z.code">
                 <label class="flex cursor-pointer items-center gap-2 rounded-lg px-2 py-1.5 text-sm hover:bg-surface">
                     <input type="checkbox" class="clay-checkbox" :checked="model.includes(z.code)" @change="toggle(z.code, $event.target.checked)" />

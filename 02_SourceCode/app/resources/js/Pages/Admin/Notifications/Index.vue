@@ -54,7 +54,7 @@ const columns = computed(() => [
     { key: 'status', label: t('common.status') },
     { key: 'attempts', label: t('admin.queue.attempts') },
 ]);
-const STATUS_TONE = { failed: 'border-level-4 bg-level-4-soft', sent: 'bg-mint-100', read: 'bg-mint-100', queued: 'bg-sky-100', sending: 'bg-sky-100' };
+const STATUS_TONE = { failed: 'border-level-4 bg-level-4-soft', sent: 'border-level-0', read: 'border-line', queued: 'border-level-1', sending: 'border-level-1' };
 const resending = reactive({});
 function resend(n) {
     resending[n.id] = true;

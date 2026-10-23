@@ -29,7 +29,7 @@ const errorOf = (level) => props.errors?.[`preferences.${keyOf(level)}`] || prop
 </script>
 
 <template>
-    <div class="overflow-x-auto rounded-[20px] border border-line">
+    <div class="overflow-x-auto rounded-xl border border-line">
         <table class="table-clay">
             <caption class="sr-only">{{ t('account.channels_caption') }}</caption>
             <thead>

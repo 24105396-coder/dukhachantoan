@@ -50,7 +50,7 @@ const TONE = { pending: 'border-level-2', verified: 'border-level-0', rejected: 
     <SkeletonList v-if="loading" :count="3" :cols="1" />
     <ul v-else-if="rowsOf(incidents).length" class="space-y-4">
         <li v-for="it in rowsOf(incidents)" :key="it.id">
-            <article class="clay-card-sm grid gap-4 border-l-[6px] p-4 md:grid-cols-[1fr_16rem] md:p-5" :class="TONE[it.status]">
+            <article class="clay-card-sm grid grid-cols-1 gap-4 border-l-4 p-4 md:grid-cols-[minmax(0,1fr)_16rem] md:p-5" :class="TONE[it.status]">
                 <div class="min-w-0 space-y-2">
                     <div class="flex flex-wrap items-center gap-2">
                         <span class="pill text-xs">{{ te('status', it.status) }}</span>
@@ -58,8 +58,8 @@ const TONE = { pending: 'border-level-2', verified: 'border-level-0', rejected: 
                         <span v-if="it.zone" class="pill text-xs"><Icon name="map-pin" :size="14" />{{ nameOf(it.zone) }}</span>
                         <Badge v-if="it.is_simulated" tone="outline" size="sm" icon="flask">{{ t('common.simulated') }}</Badge>
                     </div>
-                    <h2 class="font-display text-lg font-bold leading-snug">{{ it.title }}</h2>
-                    <p class="whitespace-pre-line text-sm">{{ it.description }}</p>
+                    <h2 class="break-words font-display text-lg font-bold leading-snug">{{ it.title }}</h2>
+                    <p class="whitespace-pre-line break-words text-sm">{{ it.description }}</p>
                     <p class="text-xs text-muted">
                         {{ it.reporter?.name || t('admin.incidents.anonymous') }} ·
                         <time :datetime="it.created_at" :title="dateTime(it.created_at)">{{ ago(it.created_at) }}</time>
@@ -69,8 +69,8 @@ const TONE = { pending: 'border-level-2', verified: 'border-level-0', rejected: 
                     </p>
                     <p v-if="it.review_note" class="rounded-xl bg-soft p-2 text-sm"><strong>{{ t('admin.incidents.review_note') }}:</strong> {{ it.review_note }}</p>
                 </div>
-                <div class="space-y-3">
-                    <img v-if="it.photo_url" :src="it.photo_url" :alt="t('admin.incidents.photo_alt', { title: it.title })" class="max-h-40 w-full rounded-[20px] object-cover" loading="lazy" />
+                <div class="min-w-0 space-y-3">
+                    <img v-if="it.photo_url" :src="it.photo_url" :alt="t('admin.incidents.photo_alt', { title: it.title })" class="max-h-40 w-full rounded-xl object-cover" loading="lazy" />
                     <template v-if="it.status === 'pending'">
                         <div>
                             <label :for="`note-${it.id}`" class="field-label">{{ t('admin.incidents.review_note') }}</label>

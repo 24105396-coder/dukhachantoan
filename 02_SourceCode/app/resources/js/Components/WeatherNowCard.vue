@@ -18,7 +18,7 @@ const href = computed(() => (props.weather.zone?.code ? lr(`/thoi-tiet/${props.w
 </script>
 
 <template>
-    <article class="clay-card-sm flex h-full flex-col gap-3 bg-sky-100 p-5">
+    <article class="clay-card-sm flex h-full flex-col gap-3 p-4">
         <div class="flex items-start justify-between gap-3">
             <div class="min-w-0">
                 <h3 class="font-display text-lg font-bold">

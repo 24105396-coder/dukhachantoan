@@ -12,12 +12,12 @@ const { t } = useT();
 </script>
 
 <template>
-    <article class="clay-card-sm flex h-full flex-col gap-3 p-5">
+    <article class="clay-card-sm flex h-full flex-col gap-2.5 p-4">
         <div class="flex items-center gap-3">
-            <span class="icon-tile"><Icon :name="guide.hazard?.icon || guide.hazard?.code || 'life-buoy'" fallback="life-buoy" /></span>
+            <span class="icon-tile h-9 w-9"><Icon :name="guide.hazard?.icon || guide.hazard?.code || 'life-buoy'" fallback="life-buoy" /></span>
             <span v-if="guide.hazard?.name" class="eyebrow">{{ guide.hazard.name }}</span>
         </div>
-        <h3 class="font-display text-lg font-bold leading-snug">
+        <h3 class="font-display text-base font-bold leading-snug md:text-[1.0625rem]">
             <Link v-if="guide.url" :href="guide.url" class="hover:text-link hover:underline">{{ guide.title }}</Link>
             <span v-else>{{ guide.title }}</span>
         </h3>

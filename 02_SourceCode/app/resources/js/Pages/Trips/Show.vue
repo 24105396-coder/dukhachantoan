@@ -82,7 +82,7 @@ const crumbs = computed(() => [{ label: t('nav.trips'), href: lr('/hanh-trinh') 
     </div>
     <TripActions :trip="trip" class="mb-6" />
 
-    <div v-if="urgent.length" class="mb-6 flex items-start gap-3 rounded-[20px] border-2 border-level-4 bg-level-4-soft p-4" role="alert">
+    <div v-if="urgent.length" class="mb-6 flex items-start gap-3 callout callout-4 p-4" role="alert">
         <Icon name="siren" :size="28" class="mt-0.5" />
         <div>
             <p class="font-display text-lg font-bold">{{ t('trip.urgent_title', { n: urgent.length }) }}</p>
@@ -90,7 +90,7 @@ const crumbs = computed(() => [{ label: t('nav.trips'), href: lr('/hanh-trinh') 
         </div>
     </div>
 
-    <div class="grid gap-6 xl:grid-cols-[1.5fr_1fr]">
+    <div class="grid gap-5 xl:grid-cols-[1.5fr_1fr]">
         <div class="min-w-0 space-y-8">
             <!-- Điện thoại/tablet: báo an toàn đặt lên đầu; desktop nằm ở cột phải -->
             <CheckinPanel v-if="trip.can_checkin" class="xl:hidden" :url="lr(`/hanh-trinh/${trip.code}/bao-an-toan`)" :alerts="matchAlerts" />

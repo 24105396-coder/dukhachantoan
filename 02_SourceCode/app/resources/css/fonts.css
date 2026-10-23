@@ -1,13 +1,8 @@
 /*
  * Font tự host (không gọi Google Fonts để giữ CSP font-src 'self' và chạy offline).
- * @fontsource dùng font-display: swap và unicode-range nên trình duyệt chỉ tải tập ký tự trang cần.
+ * Chỉ một họ phông: Plus Jakarta Sans Variable (trục wght 200–800) cho cả thân văn bản và tiêu đề.
+ * @fontsource dùng font-display: swap và unicode-range (có tập vietnamese) nên trình duyệt chỉ tải tập ký tự trang cần.
  * File này KHÔNG gắn vào <head>: app.blade.php nạp nó sau lần vẽ đầu tiên để font không tranh
  * băng thông với JS trên đường găng LCP.
  */
 @import '@fontsource-variable/plus-jakarta-sans/wght.css';
-/* Baloo 2: dùng tệp theo trọng số (600/700/800.css) vì chúng khai báo unicode-range cho từng bộ ký tự
- * (vietnamese, latin, latin-ext, devanagari). Các tệp vietnamese-700.css… KHÔNG có unicode-range nên
- * trình duyệt chỉ dùng @font-face khai báo sau cùng (latin-ext) → thiếu dấu hỏi/ngã tiếng Việt (Ỏ hiện như Ơ). */
-@import '@fontsource/baloo-2/600.css';
-@import '@fontsource/baloo-2/700.css';
-@import '@fontsource/baloo-2/800.css';

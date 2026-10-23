@@ -22,7 +22,7 @@ const isInactive = computed(() => ['cancelled', 'completed'].includes(props.trip
 
 <template>
     <article
-        class="clay-card-sm relative flex h-full flex-col gap-3 overflow-hidden p-5 pl-6 before:absolute before:inset-y-0 before:left-0 before:w-1.5"
+        class="clay-card-sm relative flex h-full flex-col gap-2.5 overflow-hidden p-4 pl-5 before:absolute before:inset-y-0 before:left-0 before:w-1"
         :class="[STRIPES[level], isInactive ? 'opacity-80' : '']"
         :data-risk="level"
     >
@@ -31,7 +31,7 @@ const isInactive = computed(() => ['cancelled', 'completed'].includes(props.trip
             <span class="pill">{{ te('status', trip.status) }}</span>
             <span class="ml-auto font-mono text-xs text-muted">{{ trip.code }}</span>
         </div>
-        <component :is="headingTag" class="font-display text-lg font-bold leading-snug">
+        <component :is="headingTag" class="font-display text-base font-bold leading-snug md:text-[1.0625rem]">
             <Link :href="trip.url || '#'" class="hover:text-link hover:underline">{{ trip.title }}</Link>
         </component>
         <dl class="grid gap-1.5 text-sm">

@@ -33,7 +33,7 @@ const run = () => form.post(lr('/quan-tri/sao-luu'), { preserveScroll: true });
         </template>
     </PageHeader>
     <p class="mb-4 flex items-center gap-2 text-sm text-muted"><Icon name="clock" :size="16" />{{ t('admin.backup.schedule', { time: schedule }) }}</p>
-    <p v-if="form.errors && Object.keys(form.errors).length" class="mb-4 rounded-2xl border border-level-4 bg-level-4-soft p-3 text-sm" role="alert">{{ Object.values(form.errors)[0] }}</p>
+    <p v-if="form.errors && Object.keys(form.errors).length" class="mb-4 callout callout-4 p-3 text-sm" role="alert">{{ Object.values(form.errors)[0] }}</p>
     <DataTable :columns="columns" :rows="backups" row-key="name" :caption="t('admin.backup.title')" :empty-text="t('admin.backup.empty')">
         <template #cell-name="{ value }"><span class="break-all font-mono text-xs">{{ value }}</span></template>
         <template #cell-size_kb="{ value }">{{ number(value) }} KB</template>

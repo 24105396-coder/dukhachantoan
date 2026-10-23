@@ -61,7 +61,7 @@ const fields = computed(() => [
     <div class="container-page space-y-6 py-8 md:py-10">
         <PageHeader :breadcrumbs="[{ label: t('nav.home'), href: lr('/') }, { label: t('nav.contacts') }]" :eyebrow="t('contacts.eyebrow')" :title="t('nav.contacts')" :description="t('contacts.intro')" />
 
-        <section class="clay-card bg-level-4-soft p-4 md:p-6" aria-labelledby="ct-national">
+        <section class="callout callout-4 p-4 md:p-5" aria-labelledby="ct-national">
             <h2 id="ct-national" class="section-title text-xl"><Icon name="siren" :size="22" />{{ t('contacts.national') }}</h2>
             <p class="mt-1 text-sm">{{ t('contacts.national_hint') }}</p>
             <ul v-if="national.length" class="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">

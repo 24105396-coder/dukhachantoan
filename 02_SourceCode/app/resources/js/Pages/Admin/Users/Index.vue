@@ -53,7 +53,7 @@ function update(user, changes) {
 <template>
     <Head :title="t('admin.users.title')" />
     <PageHeader :eyebrow="t('admin.title')" :title="t('admin.users.title')" :description="t('admin.users.intro')" />
-    <p v-if="errors.role_id || errors.is_active" class="mb-4 rounded-2xl border border-level-4 bg-level-4-soft p-3 text-sm font-semibold" role="alert">{{ errors.role_id || errors.is_active }}</p>
+    <p v-if="errors.role_id || errors.is_active" class="mb-4 callout callout-4 p-3 text-sm font-semibold" role="alert">{{ errors.role_id || errors.is_active }}</p>
 
     <FilterBar :filters="filters" :fields="filterFields" class="mb-4" />
     <DataTable :columns="columns" :rows="users?.data || []" :caption="t('admin.users.title')">

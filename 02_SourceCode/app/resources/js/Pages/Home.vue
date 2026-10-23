@@ -44,12 +44,12 @@ const zoneCount = computed(() => props.zonesGeo?.features?.length || 0);
 <template>
     <PageMeta :title="t('home.title')" fallback-key="home.subtitle" />
 
-    <div class="container-page space-y-14 py-8 md:py-12">
+    <div class="container-page space-y-12 py-8 md:py-10">
         <!-- Hero -->
         <section class="grid items-start gap-6 lg:grid-cols-[1.2fr_1fr]" aria-labelledby="home-title">
             <div class="space-y-5 pt-2">
                 <p class="eyebrow">{{ t('home.eyebrow') }}</p>
-                <h1 id="home-title" class="text-[1.75rem] leading-tight sm:text-4xl lg:text-5xl">{{ t('home.title') }}</h1>
+                <h1 id="home-title" class="text-[1.625rem] leading-tight sm:text-3xl lg:text-[2.5rem]">{{ t('home.title') }}</h1>
                 <p class="max-w-xl text-lg text-muted">{{ t('home.subtitle') }}</p>
                 <div class="flex flex-wrap gap-3">
                     <Button :href="lr('/canh-bao')" variant="primary" size="lg" icon="bell-ring">{{ t('home.cta_alerts') }}</Button>
@@ -125,9 +125,9 @@ const zoneCount = computed(() => props.zonesGeo?.features?.length || 0);
         </section>
 
         <!-- Kêu gọi đăng ký hành trình -->
-        <section class="clay-card grid items-center gap-6 bg-peach-100 p-6 md:grid-cols-[1fr_auto] md:p-10" aria-labelledby="home-cta-title">
+        <section class="callout callout-brand grid items-center gap-6 p-6 md:grid-cols-[1fr_auto] md:p-8" aria-labelledby="home-cta-title">
             <div>
-                <h2 id="home-cta-title" class="text-2xl md:text-3xl">{{ t('home.trip_cta_title') }}</h2>
+                <h2 id="home-cta-title" class="text-xl md:text-2xl">{{ t('home.trip_cta_title') }}</h2>
                 <p class="mt-2 max-w-2xl text-muted">{{ t('home.trip_cta_text') }}</p>
             </div>
             <Button :href="user ? lr('/hanh-trinh/tao') : lr('/dang-ky')" variant="primary" size="lg" icon-right="arrow-right">

@@ -60,7 +60,7 @@ const hasLinks = computed(() => props.links.length > 0);
                     <div><dt class="inline text-muted">{{ t('footer.course_code') }}:</dt> <dd class="inline font-semibold">{{ app.courseCode }}</dd></div>
                     <div><dt class="inline text-muted">{{ t('footer.team') }}:</dt> <dd class="inline font-semibold">{{ app.team }}</dd></div>
                 </dl>
-                <p class="mt-3 inline-block rounded-2xl bg-lemon-100 px-3 py-2 text-xs font-bold">{{ notice }}</p>
+                <p class="callout callout-2 mt-3 inline-block px-3 py-2 text-xs font-bold">{{ notice }}</p>
             </div>
         </div>
         <p class="mt-4 text-center text-xs text-muted">© 2026 {{ app.name }} · {{ t('footer.map_credit') }} · {{ t('footer.data_credit') }}</p>

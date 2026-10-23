@@ -8,7 +8,6 @@ import AppFooter from '@/Components/AppFooter.vue';
 import ThemeToggle from '@/Components/ThemeToggle.vue';
 import LocaleSwitch from '@/Components/LocaleSwitch.vue';
 import AccountMenu from '@/Components/AccountMenu.vue';
-import BackgroundBlobs from '@/Components/BackgroundBlobs.vue';
 import DashboardNavItem from '@/Components/DashboardNavItem.vue';
 import { useT } from '@/Composables/useT';
 import { useLocaleRoute } from '@/Composables/useLocaleRoute';
@@ -17,7 +16,7 @@ import { dashboardNavFor, NAV_GROUPS } from '@/Utils/navigation';
 
 /**
  * Khung dashboard (Admin/*, tài khoản, hành trình, thông báo của người đăng nhập):
- * desktop ≥1024px sidebar clay nổi 288px; tablet 768–1023px thanh icon 80px; điện thoại thanh dưới + ngăn kéo.
+ * desktop ≥1024px sidebar trắng cố định 272px viền phải; tablet 768–1023px thanh icon 80px; điện thoại thanh dưới + ngăn kéo.
  */
 const page = usePage();
 const { t, te } = useT();
@@ -56,19 +55,18 @@ const onKey = (e) => {
 
 <template>
     <div class="relative min-h-screen" @keydown="onKey">
-        <BackgroundBlobs />
         <a href="#main" class="clay-btn clay-btn-primary sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[1200]">
             {{ t('common.skip_to_content') }}
         </a>
 
-        <!-- Sidebar: thanh icon 80px (tablet) → thẻ clay 288px (desktop) -->
+        <!-- Sidebar: thanh icon 80px (tablet) → cột trắng 272px (desktop), viền phải mảnh -->
         <aside
             data-print-hide
-            class="clay-card fixed bottom-4 left-4 top-4 z-[1001] hidden flex-col overflow-hidden md:flex md:w-20 lg:w-72"
+            class="fixed inset-y-0 left-0 z-[1001] hidden flex-col overflow-hidden border-r border-line bg-surface md:flex md:w-20 lg:w-68"
             :aria-label="t('dashboard.sidebar')"
         >
             <div class="flex flex-col items-center gap-1 px-3 pb-3 pt-5 lg:items-start lg:px-5">
-                <Link :href="lr('/')" class="rounded-full" :aria-label="t('nav.home_logo')">
+                <Link :href="lr('/')" class="rounded-lg" :aria-label="t('nav.home_logo')">
                     <AppLogo class="lg:hidden" compact />
                     <span class="hidden lg:inline"><AppLogo /></span>
                 </Link>
@@ -76,7 +74,7 @@ const onKey = (e) => {
             </div>
             <nav class="flex-1 overflow-y-auto px-3 pb-3 lg:px-4" :aria-label="t('dashboard.nav_label')">
                 <div v-for="g in groups" :key="g.key" class="mb-3">
-                    <p class="eyebrow hidden px-4 pb-1.5 pt-2 lg:block">{{ t(`dashboard.group.${g.key}`) }}</p>
+                    <p class="eyebrow hidden px-3 pb-1.5 pt-2 lg:block">{{ t(`dashboard.group.${g.key}`) }}</p>
                     <hr class="mx-auto my-2 w-8 border-line lg:hidden" />
                     <ul class="flex flex-col items-center gap-1 lg:items-stretch">
                         <li v-for="item in g.items" :key="item.key">
@@ -92,7 +90,7 @@ const onKey = (e) => {
             </div>
         </aside>
 
-        <div class="relative z-10 flex min-h-screen flex-col px-3 pb-28 pt-3 md:pb-4 md:pl-28 md:pr-4 md:pt-4 lg:pl-80 print:p-0">
+        <div class="relative z-10 flex min-h-screen flex-col px-3 pb-28 pt-3 md:pb-4 md:pl-24 md:pr-4 md:pt-4 lg:pl-72 lg:pr-6 print:p-0">
             <header class="mb-4 flex items-center gap-2" data-print-hide>
                 <Link :href="lr('/')" class="rounded-full md:hidden" :aria-label="t('nav.home_logo')"><AppLogo compact /></Link>
                 <p v-if="user" class="hidden truncate text-sm text-muted md:block">
@@ -105,7 +103,7 @@ const onKey = (e) => {
                     <Link
                         v-if="user"
                         :href="lr('/thong-bao')"
-                        class="clay-btn clay-btn-icon relative rounded-full bg-raised"
+                        class="clay-btn clay-btn-icon relative"
                         :aria-label="t('nav.notifications_count', { n: unread })"
                     >
                         <Icon name="bell" />
@@ -121,7 +119,7 @@ const onKey = (e) => {
                 <!-- Báo dịch vụ phân tích Python không phản hồi trên mọi trang dashboard (prop chia sẻ app.analyticsUp) -->
                 <p
                     v-if="analyticsDown"
-                    class="mb-4 flex items-start gap-2 rounded-2xl border border-level-2 bg-level-2-soft p-3 text-sm font-semibold"
+                    class="callout callout-2 mb-4 flex items-start gap-2 p-3 text-sm font-semibold"
                     role="status"
                     data-testid="analytics-down-banner"
                 >
@@ -134,13 +132,13 @@ const onKey = (e) => {
         </div>
 
         <!-- Điện thoại: thanh dưới tối đa 4 mục + nút Menu mở ngăn kéo -->
-        <nav data-print-hide class="clay-card fixed inset-x-3 bottom-3 z-[1001] flex items-center justify-around rounded-full p-1.5 md:hidden" :aria-label="t('dashboard.bottom_nav')">
+        <nav data-print-hide class="fixed inset-x-0 bottom-0 z-[1001] flex items-center justify-around border-t border-line bg-surface px-1.5 pb-[max(0.375rem,env(safe-area-inset-bottom))] pt-1.5 md:hidden" :aria-label="t('dashboard.bottom_nav')">
             <Link
                 v-for="item in bottomItems"
                 :key="item.key"
                 :href="lr(item.path)"
-                class="relative flex min-w-0 flex-1 flex-col items-center gap-0.5 rounded-full px-1 py-1.5 text-[0.6875rem] font-bold"
-                :class="isActive(item) ? 'bg-linear-to-br from-brand-400 to-brand-500 text-on-brand' : ''"
+                class="relative flex min-w-0 flex-1 flex-col items-center gap-0.5 rounded-lg px-1 py-1.5 text-[0.6875rem] font-bold"
+                :class="isActive(item) ? 'is-selected' : ''"
                 :aria-current="isActive(item) ? 'page' : undefined"
             >
                 <Icon :name="item.icon" :size="20" />
@@ -149,7 +147,7 @@ const onKey = (e) => {
             </Link>
             <button
                 type="button"
-                class="flex min-w-0 flex-1 flex-col items-center gap-0.5 rounded-full px-1 py-1.5 text-[0.6875rem] font-bold"
+                class="flex min-w-0 flex-1 flex-col items-center gap-0.5 rounded-lg px-1 py-1.5 text-[0.6875rem] font-bold"
                 :aria-expanded="drawerOpen ? 'true' : 'false'"
                 aria-controls="dashboard-drawer"
                 @click="drawerOpen = true"
@@ -164,7 +162,7 @@ const onKey = (e) => {
             v-show="drawerOpen"
             id="dashboard-drawer"
             ref="drawer"
-            class="clay-card fixed inset-y-3 left-3 z-[1101] flex w-[min(20rem,calc(100vw-1.5rem))] flex-col overflow-hidden md:hidden"
+            class="fixed inset-y-0 left-0 z-[1101] flex w-[min(20rem,calc(100vw-3rem))] flex-col overflow-hidden border-r border-line bg-surface shadow-soft md:hidden"
             role="dialog"
             aria-modal="true"
             :aria-label="t('dashboard.nav_label')"
@@ -177,7 +175,7 @@ const onKey = (e) => {
             </div>
             <nav class="flex-1 overflow-y-auto px-3 pb-4" :aria-label="t('dashboard.nav_label')">
                 <div v-for="g in groups" :key="g.key" class="mb-3">
-                    <p class="eyebrow px-4 pb-1.5">{{ t(`dashboard.group.${g.key}`) }}</p>
+                    <p class="eyebrow px-3 pb-1.5">{{ t(`dashboard.group.${g.key}`) }}</p>
                     <ul class="space-y-1">
                         <li v-for="item in g.items" :key="item.key">
                             <DashboardNavItem :href="lr(item.path)" :label="t(item.label)" :icon="item.icon" :active="isActive(item)" :badge="badgeOf(item)" />

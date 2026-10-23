@@ -20,13 +20,13 @@ const { t } = useT();
             <li v-for="(s, i) in steps" :key="s.key">
                 <button
                     type="button"
-                    class="flex w-full items-center gap-3 rounded-full border px-3 py-2 text-left text-sm font-semibold transition-colors disabled:cursor-default"
-                    :class="i === current ? 'border-transparent bg-linear-to-br from-brand-400 to-brand-500 text-on-brand shadow-clay-btn' : (s.hasError ? 'border-level-4 bg-level-4-soft' : 'border-line bg-soft')"
+                    class="flex w-full items-center gap-3 rounded-lg border px-3 py-2 text-left text-sm font-semibold transition-colors disabled:cursor-default"
+                    :class="i === current ? 'border-brand-500 is-selected' : (s.hasError ? 'border-level-4 bg-level-4-soft' : 'border-line bg-surface')"
                     :aria-current="i === current ? 'step' : undefined"
                     :disabled="i > current"
                     @click="emit('go', i)"
                 >
-                    <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-raised text-fg">
+                    <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-line bg-surface text-fg">
                         <Icon v-if="i < current && !s.hasError" name="check" :size="16" />
                         <Icon v-else-if="s.hasError" name="circle-alert" :size="16" />
                         <span v-else>{{ i + 1 }}</span>

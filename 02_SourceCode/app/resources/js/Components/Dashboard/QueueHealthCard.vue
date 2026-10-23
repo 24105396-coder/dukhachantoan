@@ -18,11 +18,11 @@ const show = (v) => (v === null || v === undefined ? '—' : number(v));
     <section class="clay-card-sm p-4 md:p-5" aria-labelledby="queue-title">
         <h2 id="queue-title" class="section-title text-lg">{{ t('dashboard.queue_title') }}</h2>
         <dl class="mt-4 grid grid-cols-2 gap-3 text-sm">
-            <div class="rounded-2xl bg-sky-100 p-3">
+            <div class="rounded-lg border border-line bg-soft p-3">
                 <dt class="text-muted">{{ t('dashboard.queue_queued') }}</dt>
                 <dd class="font-display text-2xl font-bold">{{ show(queue?.queued) }}</dd>
             </div>
-            <div class="rounded-2xl p-3" :class="queue?.failed ? 'bg-level-4-soft' : 'bg-mint-100'">
+            <div class="callout p-3" :class="queue?.failed ? 'callout-4' : 'callout-0'">
                 <dt class="text-muted">{{ t('dashboard.queue_failed') }}</dt>
                 <dd class="font-display text-2xl font-bold">{{ show(queue?.failed) }}</dd>
             </div>

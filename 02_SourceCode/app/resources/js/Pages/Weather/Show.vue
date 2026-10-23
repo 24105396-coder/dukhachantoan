@@ -59,7 +59,7 @@ const crumbs = computed(() => [{ label: t('nav.home'), href: lr('/') }, { label:
                 <EmptyState v-else :title="t('home.no_weather')" :description="t('home.no_weather_hint')" compact />
                 <RiskScore :risk="riskWithTime" />
             </div>
-            <p v-if="zone.active_alerts_count" class="flex flex-wrap items-center gap-2 rounded-2xl border border-level-3 bg-level-3-soft p-3 text-sm font-semibold" role="status">
+            <p v-if="zone.active_alerts_count" class="flex flex-wrap items-center gap-2 callout callout-3 p-3 text-sm font-semibold" role="status">
                 <Icon name="triangle-alert" :size="18" />{{ t('weather.zone_alerts', { n: zone.active_alerts_count }) }}
                 <Button :href="lr(`/canh-bao?province=${zone.province?.code || ''}`)" size="sm" class="ml-auto">{{ t('home.cta_alerts') }}</Button>
             </p>
