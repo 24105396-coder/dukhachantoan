@@ -36,7 +36,7 @@ class SchemaTest extends TestCase
     public function test_heritage_tables_are_gone(): void
     {
         foreach (self::HERITAGE_TABLES as $table) {
-            $this->assertFalse(Schema::hasTable($table), "Còn bảng di sản {$table}");
+            $this->assertFalse(Schema::hasTable($table), "Còn bảng nghiệp vụ cũ {$table}");
         }
     }
 

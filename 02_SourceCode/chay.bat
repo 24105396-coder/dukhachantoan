@@ -10,7 +10,7 @@ cd /d "%~dp0"
 title DuKhachAnToan - khoi dong
 
 echo.
-echo  ===== DuKhachAnToan - Nen tang so hoa va dien giai di san van hoa da ngu =====
+echo  ===== DuKhachAnToan - He thong canh bao rui ro va ho tro du khach theo thoi gian thuc =====
 echo.
 
 rem --- 1. Kiem tra Docker ------------------------------------------------

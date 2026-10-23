@@ -5,7 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 /**
- * Giữ từ DiSanSo: tệp đa phương tiện (ảnh hướng dẫn, ảnh sự cố, ảnh vùng) kèm chú thích đa ngữ
+ * Giữ từ mã nền kế thừa: tệp đa phương tiện (ảnh hướng dẫn, ảnh sự cố, ảnh vùng) kèm chú thích đa ngữ
  * và nhật ký kiểm toán.
  */
 return new class extends Migration

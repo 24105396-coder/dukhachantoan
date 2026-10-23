@@ -49,7 +49,7 @@ createInertiaApp({
         document.getElementById('static-footer')?.remove();
         // Nạp font tự host khi rảnh, sau khi nội dung đầu tiên đã vẽ (hàm định nghĩa trong app.blade.php)
         const whenIdle = window.requestIdleCallback || ((cb) => window.setTimeout(cb, FONT_FALLBACK_DELAY_MS));
-        whenIdle(() => (window.dkaLoadFonts || window.disansoLoadFonts)?.());
+        whenIdle(() => window.dkaLoadFonts?.());
     },
     progress: {
         color: PROGRESS_COLOR,

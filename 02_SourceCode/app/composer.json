@@ -1,8 +1,8 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "disanso/app",
+    "name": "dukhach/app",
     "type": "project",
-    "description": "DiSanSo – nền tảng số hóa và diễn giải di sản văn hóa đa ngữ",
+    "description": "DuKhachAnToan – hệ thống cảnh báo rủi ro và hỗ trợ du khách theo thời gian thực (CSE703073 ĐT-15)",
     "keywords": [
         "laravel",
         "framework"
