@@ -70,8 +70,16 @@ docker run --rm -u $(id -u):$(id -g) --network dukhach_default -v "$PWD/app":/va
 # pytest
 (cd python-service && docker run --rm -u root -v "$PWD":/src -w /src --entrypoint sh dukhach-analytics \
   -c "pip install -q -r requirements-dev.txt && python -m pytest -q")
-# Playwright
+# Playwright 3 trình duyệt (máy thiếu thư viện WebKit thì chạy trong image chính thức)
 (cd app && npx playwright test --project=chromium --project=firefox --project=webkit)
+docker run --rm --network host --ipc=host -v "$PWD/app":/app -w /app \
+  mcr.microsoft.com/playwright:v1.64.1-noble npx playwright test
 ```
+
+Kết quả lượt kiểm thử chính thức ngày 23/10/2026 (commit `abb8c86`): 136 ca hộp đen, 127 đạt; PHPUnit 165 đạt; pytest 112 đạt; ma trận 3 trình duyệt × 3 khổ 54/54. Chi tiết và minh chứng ở `../05_KiemThu/`.
+
+Lưu ý vận hành:
+- Sao lưu thủ công phải chạy dưới người dùng web: `docker compose exec -u www-data app php artisan app:backup-db` (chạy bằng root sẽ tạo tệp sao lưu thuộc root mà ứng dụng không đọc được).
+- Sau khi chạy kiểm thử, CSDL còn dữ liệu do kiểm thử sinh ra; chạy `nap-lai-du-lieu.sh` (hoặc `.bat`) trước khi chấm hay quay video.
 
 Cài đặt không Docker, vận hành, sao lưu và triển khai Railway: `../04_HuongDanSuDung/HuongDan_CaiDat_QuanTri.md`. CSDL độc lập (schema, ERD, từ điển dữ liệu): `../03_Database`.
