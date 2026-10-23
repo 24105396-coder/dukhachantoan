@@ -60,6 +60,9 @@ services:
         value: database
       - key: QUEUE_CONNECTION
         value: database
+      # Mạng riêng Render không tới được giữa 2 dịch vụ Free → đặt ANALYTICS_URL công khai; ANALYTICS_HOST/PORT chỉ là dự phòng
+      - key: ANALYTICS_URL
+        value: https://dukhach-analytics.onrender.com
       - key: ANALYTICS_HOST
         fromService:
           name: dukhach-analytics
@@ -76,7 +79,7 @@ services:
           type: web
           envVarKey: ANALYTICS_TOKEN
       - key: ANALYTICS_TIMEOUT
-        value: "3"
+        value: "5"
       - key: SIMULATION_MODE
         value: "true"
       - key: SMS_SIM_FAIL_RATE
