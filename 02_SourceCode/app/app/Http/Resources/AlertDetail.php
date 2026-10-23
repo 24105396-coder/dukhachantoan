@@ -82,7 +82,9 @@ class AlertDetail extends BaseResource
         }
 
         return collect([
-            ['status' => Alert::STATUS_DRAFT, 'at' => $alert->created_at],
+            // Dữ liệu nạp sẵn có created_at (lúc seed) muộn hơn published_at: lấy mốc sớm hơn cho bước nháp
+            ['status' => Alert::STATUS_DRAFT, 'at' => $alert->published_at && $alert->created_at?->gt($alert->published_at)
+                ? $alert->published_at : $alert->created_at],
             ['status' => Alert::STATUS_ACTIVE, 'at' => $alert->published_at],
             ['status' => $alert->status, 'at' => $alert->expired_at ?? ($alert->status === Alert::STATUS_UPDATED ? $alert->updated_at : null)],
         ])->filter(fn ($row) => $row['at'] !== null)->unique('status')

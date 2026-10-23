@@ -18,7 +18,7 @@ use Inertia\Response;
 class MapController extends Controller
 {
     public const CENTER = ['lat' => 16.0, 'lng' => 106.5, 'zoom' => 5];
-    public const LEVEL_COLORS = [0 => '#94A3B8', 1 => '#38BDF8', 2 => '#FACC15', 3 => '#F97316', 4 => '#DC2626'];
+    public const LEVEL_COLORS = [0 => '#1DBE9F', 1 => '#2563EB', 2 => '#CA8A04', 3 => '#EA580C', 4 => '#DC2626'];
 
     public function __invoke(Request $request, PageCache $cache): Response
     {
