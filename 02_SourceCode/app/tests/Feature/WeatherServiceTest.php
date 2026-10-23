@@ -61,4 +61,20 @@ class WeatherServiceTest extends TestCase
         $this->assertNotNull($source->last_error);
         $this->assertSame(0, Alert::count());
     }
+    /** FastAPI trả 422 nếu thân POST là [] (mảng rỗng PHP): client phải gửi đối tượng JSON {}. */
+    public function test_python_post_without_params_sends_json_object(): void
+    {
+        $this->zoneIn('KH', ['code' => 'khanh-hoa']);
+        Http::fake(['*' => Http::response(['fetched' => 0, 'drafts' => []])]);
+
+        app(\App\Services\WeatherService::class)->fetchAll();
+
+        foreach (['/weather/refresh', '/risk/compute', '/weather/derive-alerts'] as $path) {
+            Http::assertSent(fn ($request) => str_ends_with($request->url(), $path) && $request->body() === '{}'
+                && str_contains($request->header('Content-Type')[0] ?? '', 'application/json'));
+        }
+        Http::fake(['*' => Http::response(['fetched' => 1])]);
+        app(\App\Services\AnalyticsClient::class)->refreshWeather(['khanh-hoa']);
+        Http::assertSent(fn ($request) => str_ends_with($request->url(), '/weather/refresh') && $request->body() === '{"zone_codes":["khanh-hoa"]}');
+    }
 }

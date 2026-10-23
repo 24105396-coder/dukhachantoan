@@ -85,7 +85,10 @@ class AnalyticsClient
     {
         try {
             $client = $this->client($timeout);
-            $response = $method === 'get' ? $client->get($path, $body) : $client->post($path, $body);
+            // POST luôn gửi đối tượng JSON: mảng rỗng PHP mã hóa thành [] khiến FastAPI trả 422
+            $response = $method === 'get'
+                ? $client->get($path, $body)
+                : $client->withBody(json_encode($body === [] ? new \stdClass : $body), 'application/json')->post($path);
 
             if (! $response->successful()) {
                 Log::error('Analytics service error', ['path' => $path, 'status' => $response->status()]);
