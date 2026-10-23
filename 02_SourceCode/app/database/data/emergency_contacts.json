@@ -4200,5 +4200,2396 @@
    "vi": "Hỗ trợ lãnh sự cho công dân nước mình: mất hộ chiếu, tai nạn, bị bắt giữ. Số chưa đối chiếu được với nguồn chính thức, hãy kiểm tra lại trên website.",
    "en": "Consular help for its nationals: lost passport, accident, arrest. Number not yet verified against the official site; please double-check."
   }
+ },
+ {
+  "province_code": "HN",
+  "zone_code": "ha-noi",
+  "contact_type": "hospital",
+  "phone": "096 985 1616",
+  "phone_alt": "1900 888 866",
+  "address": "78 Giải Phóng, Hà Nội",
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Website Bệnh viện Bạch Mai – đường dây nóng; 1900 888 866 là tổng đài đặt lịch khám",
+  "source_url": "https://bachmai.gov.vn",
+  "sort_order": 6,
+  "name": {
+   "vi": "Bệnh viện Bạch Mai",
+   "en": "Bach Mai Hospital"
+  },
+  "note": {
+   "vi": "Bệnh viện đa khoa tuyến trung ương lớn nhất miền Bắc. Số chính là đường dây nóng của bệnh viện; cấp cứu ngoài viện gọi 115.",
+   "en": "Major national general hospital in northern Viet Nam. Main number is the hospital hotline; for an ambulance call 115."
+  }
+ },
+ {
+  "province_code": "HP",
+  "zone_code": "hai-phong",
+  "contact_type": "hospital",
+  "phone": "1900 23 23 61",
+  "phone_alt": null,
+  "address": "Số 1 Nhà Thương, Hải Phòng",
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Website Bệnh viện Hữu nghị Việt Tiệp – hotline",
+  "source_url": "https://viettiephospital.vn",
+  "sort_order": 6,
+  "name": {
+   "vi": "Bệnh viện Hữu nghị Việt Tiệp",
+   "en": "Viet Tiep Friendship Hospital"
+  },
+  "note": {
+   "vi": "Bệnh viện đa khoa tuyến cuối của Hải Phòng, tiếp nhận người bệnh từ Cát Bà và vùng ven biển. Cấp cứu ngoài viện gọi 115.",
+   "en": "Main referral hospital of Hai Phong, receives patients from Cat Ba and the coast. For an ambulance call 115."
+  }
+ },
+ {
+  "province_code": "KH",
+  "zone_code": "khanh-hoa",
+  "contact_type": "hospital",
+  "phone": "0258 3822 175",
+  "phone_alt": null,
+  "address": "19 Yersin, Nha Trang, Khánh Hòa",
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Website Bệnh viện Đa khoa Khánh Hòa – hotline",
+  "source_url": "https://benhvienkhanhhoa.org.vn",
+  "sort_order": 6,
+  "name": {
+   "vi": "Bệnh viện Đa khoa Khánh Hòa",
+   "en": "Khanh Hoa General Hospital"
+  },
+  "note": {
+   "vi": "Bệnh viện đa khoa tuyến tỉnh ở trung tâm Nha Trang (tên mới sau sắp xếp 7/2025, trước là Bệnh viện Đa khoa tỉnh Khánh Hòa). Cấp cứu ngoài viện gọi 115.",
+   "en": "Provincial general hospital in central Nha Trang. For an ambulance call 115."
+  }
+ },
+ {
+  "province_code": "TH",
+  "zone_code": "thanh-hoa",
+  "contact_type": "hospital",
+  "phone": "0237 3951 467",
+  "phone_alt": "1900 1536",
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Website Bệnh viện Đa khoa tỉnh Thanh Hóa – Phòng Kế hoạch tổng hợp; 1900 1536 là hotline",
+  "source_url": "https://bvdktinhthanhhoa.com.vn",
+  "sort_order": 6,
+  "name": {
+   "vi": "Bệnh viện Đa khoa tỉnh Thanh Hóa",
+   "en": "Thanh Hoa Provincial General Hospital"
+  },
+  "note": {
+   "vi": "Bệnh viện tuyến tỉnh tại thành phố Thanh Hóa, gần tuyến biển Sầm Sơn. Cấp cứu ngoài viện gọi 115.",
+   "en": "Provincial hospital in Thanh Hoa city, near Sam Son beach. For an ambulance call 115."
+  }
+ },
+ {
+  "province_code": "HT",
+  "zone_code": "ha-tinh",
+  "contact_type": "hospital",
+  "phone": "0239 3855 569",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Website Bệnh viện Đa khoa tỉnh Hà Tĩnh – hotline",
+  "source_url": "https://bvdkht.vn",
+  "sort_order": 6,
+  "name": {
+   "vi": "Bệnh viện Đa khoa tỉnh Hà Tĩnh",
+   "en": "Ha Tinh Provincial General Hospital"
+  },
+  "note": {
+   "vi": "Bệnh viện tuyến tỉnh tại Hà Tĩnh. Cấp cứu ngoài viện gọi 115.",
+   "en": "Provincial hospital in Ha Tinh. For an ambulance call 115."
+  }
+ },
+ {
+  "province_code": "LC",
+  "zone_code": "lao-cai",
+  "contact_type": "hospital",
+  "phone": "0822 359 399",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "Giờ hành chính",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Website Bệnh viện Đa khoa số 2 tỉnh Lào Cai – tổng đài chăm sóc khách hàng",
+  "source_url": "https://bvdklaocai.vn",
+  "sort_order": 6,
+  "name": {
+   "vi": "Bệnh viện Đa khoa số 2 tỉnh Lào Cai",
+   "en": "Lao Cai Provincial General Hospital No. 2"
+  },
+  "note": {
+   "vi": "Tổng đài chăm sóc khách hàng của bệnh viện (giờ hành chính). Đang ở Sa Pa, Mù Cang Chải gặp cấp cứu thì gọi 115 trước.",
+   "en": "Hospital customer service line (office hours). In Sa Pa or Mu Cang Chai, call 115 first in an emergency."
+  }
+ },
+ {
+  "province_code": "HCM",
+  "zone_code": "ho-chi-minh",
+  "contact_type": "hospital",
+  "phone": "115",
+  "phone_alt": null,
+  "address": "201B Nguyễn Chí Thanh, TP. Hồ Chí Minh",
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số cấp cứu 115); tên bệnh viện theo danh mục cơ sở khám chữa bệnh của Sở Y tế",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 6,
+  "name": {
+   "vi": "Bệnh viện Chợ Rẫy (qua 115)",
+   "en": "Cho Ray Hospital (via 115)"
+  },
+  "note": {
+   "vi": "Bệnh viện đa khoa tuyến trung ương lớn nhất phía Nam. Chưa đối chiếu được tổng đài riêng của bệnh viện: gọi 115 để điều phối tới bệnh viện gần nhất.",
+   "en": "The largest national general hospital in the south. Hospital switchboard not yet verified: call 115 to be dispatched to the nearest hospital."
+  }
+ },
+ {
+  "province_code": "QN",
+  "zone_code": "quang-ninh",
+  "contact_type": "hospital",
+  "phone": "115",
+  "phone_alt": null,
+  "address": "Hạ Long, Quảng Ninh",
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số cấp cứu 115); tên bệnh viện theo danh mục cơ sở khám chữa bệnh của Sở Y tế",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 6,
+  "name": {
+   "vi": "Bệnh viện Bãi Cháy (qua 115)",
+   "en": "Bai Chay Hospital (via 115)"
+  },
+  "note": {
+   "vi": "Bệnh viện đa khoa gần khu du lịch Bãi Cháy – vịnh Hạ Long. Chưa đối chiếu được tổng đài riêng của bệnh viện: gọi 115 để điều phối tới bệnh viện gần nhất.",
+   "en": "General hospital near Bai Chay and Ha Long Bay. Hospital switchboard not yet verified: call 115 to be dispatched to the nearest hospital."
+  }
+ },
+ {
+  "province_code": "BN",
+  "zone_code": "bac-ninh",
+  "contact_type": "hospital",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số cấp cứu 115); tên bệnh viện theo danh mục cơ sở khám chữa bệnh của Sở Y tế",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 6,
+  "name": {
+   "vi": "Bệnh viện Đa khoa tỉnh Bắc Ninh (qua 115)",
+   "en": "Bac Ninh Provincial General Hospital (via 115)"
+  },
+  "note": {
+   "vi": "Bệnh viện tuyến tỉnh. Chưa đối chiếu được tổng đài riêng của bệnh viện: gọi 115 để điều phối tới bệnh viện gần nhất.",
+   "en": "Provincial hospital. Hospital switchboard not yet verified: call 115 to be dispatched to the nearest hospital."
+  }
+ },
+ {
+  "province_code": "HY",
+  "zone_code": "hung-yen",
+  "contact_type": "hospital",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số cấp cứu 115); tên bệnh viện theo danh mục cơ sở khám chữa bệnh của Sở Y tế",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 6,
+  "name": {
+   "vi": "Bệnh viện Đa khoa tỉnh Hưng Yên (qua 115)",
+   "en": "Hung Yen Provincial General Hospital (via 115)"
+  },
+  "note": {
+   "vi": "Bệnh viện tuyến tỉnh. Chưa đối chiếu được tổng đài riêng của bệnh viện: gọi 115 để điều phối tới bệnh viện gần nhất.",
+   "en": "Provincial hospital. Hospital switchboard not yet verified: call 115 to be dispatched to the nearest hospital."
+  }
+ },
+ {
+  "province_code": "NB",
+  "zone_code": "ninh-binh",
+  "contact_type": "hospital",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số cấp cứu 115); tên bệnh viện theo danh mục cơ sở khám chữa bệnh của Sở Y tế",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 6,
+  "name": {
+   "vi": "Bệnh viện Đa khoa tỉnh Ninh Bình (qua 115)",
+   "en": "Ninh Binh Provincial General Hospital (via 115)"
+  },
+  "note": {
+   "vi": "Bệnh viện tuyến tỉnh, gần Tràng An – Tam Cốc. Chưa đối chiếu được tổng đài riêng của bệnh viện: gọi 115 để điều phối tới bệnh viện gần nhất.",
+   "en": "Provincial hospital near Trang An – Tam Coc. Hospital switchboard not yet verified: call 115 to be dispatched to the nearest hospital."
+  }
+ },
+ {
+  "province_code": "PT",
+  "zone_code": "phu-tho",
+  "contact_type": "hospital",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số cấp cứu 115); tên bệnh viện theo danh mục cơ sở khám chữa bệnh của Sở Y tế",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 6,
+  "name": {
+   "vi": "Bệnh viện Đa khoa tỉnh Phú Thọ (qua 115)",
+   "en": "Phu Tho Provincial General Hospital (via 115)"
+  },
+  "note": {
+   "vi": "Bệnh viện tuyến tỉnh tại Việt Trì. Chưa đối chiếu được tổng đài riêng của bệnh viện: gọi 115 để điều phối tới bệnh viện gần nhất.",
+   "en": "Provincial hospital in Viet Tri. Hospital switchboard not yet verified: call 115 to be dispatched to the nearest hospital."
+  }
+ },
+ {
+  "province_code": "TN",
+  "zone_code": "thai-nguyen",
+  "contact_type": "hospital",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số cấp cứu 115); tên bệnh viện theo danh mục cơ sở khám chữa bệnh của Sở Y tế",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 6,
+  "name": {
+   "vi": "Bệnh viện Trung ương Thái Nguyên (qua 115)",
+   "en": "Thai Nguyen National Hospital (via 115)"
+  },
+  "note": {
+   "vi": "Bệnh viện tuyến trung ương cho vùng trung du miền núi phía Bắc. Chưa đối chiếu được tổng đài riêng của bệnh viện: gọi 115 để điều phối tới bệnh viện gần nhất.",
+   "en": "National hospital for the northern midlands. Hospital switchboard not yet verified: call 115 to be dispatched to the nearest hospital."
+  }
+ },
+ {
+  "province_code": "TQ",
+  "zone_code": "tuyen-quang",
+  "contact_type": "hospital",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số cấp cứu 115); tên bệnh viện theo danh mục cơ sở khám chữa bệnh của Sở Y tế",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 6,
+  "name": {
+   "vi": "Bệnh viện Đa khoa tỉnh Tuyên Quang (qua 115)",
+   "en": "Tuyen Quang Provincial General Hospital (via 115)"
+  },
+  "note": {
+   "vi": "Bệnh viện tuyến tỉnh; khách ở cao nguyên đá Đồng Văn gọi 115 để được chuyển tới cơ sở gần nhất. Chưa đối chiếu được tổng đài riêng của bệnh viện: gọi 115 để điều phối tới bệnh viện gần nhất.",
+   "en": "Provincial hospital; on the Dong Van plateau call 115 to reach the nearest facility. Hospital switchboard not yet verified: call 115 to be dispatched to the nearest hospital."
+  }
+ },
+ {
+  "province_code": "LC",
+  "zone_code": "lao-cai",
+  "contact_type": "hospital",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số cấp cứu 115); tên bệnh viện theo danh mục cơ sở khám chữa bệnh của Sở Y tế",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 7,
+  "name": {
+   "vi": "Bệnh viện Đa khoa tỉnh Lào Cai (qua 115)",
+   "en": "Lao Cai Provincial General Hospital (via 115)"
+  },
+  "note": {
+   "vi": "Bệnh viện tuyến tỉnh tại thành phố Lào Cai cũ, gần Sa Pa. Chưa đối chiếu được tổng đài riêng của bệnh viện: gọi 115 để điều phối tới bệnh viện gần nhất.",
+   "en": "Provincial hospital in former Lao Cai city, near Sa Pa. Hospital switchboard not yet verified: call 115 to be dispatched to the nearest hospital."
+  }
+ },
+ {
+  "province_code": "LCH",
+  "zone_code": "lai-chau",
+  "contact_type": "hospital",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số cấp cứu 115); tên bệnh viện theo danh mục cơ sở khám chữa bệnh của Sở Y tế",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 6,
+  "name": {
+   "vi": "Bệnh viện Đa khoa tỉnh Lai Châu (qua 115)",
+   "en": "Lai Chau Provincial General Hospital (via 115)"
+  },
+  "note": {
+   "vi": "Bệnh viện tuyến tỉnh. Chưa đối chiếu được tổng đài riêng của bệnh viện: gọi 115 để điều phối tới bệnh viện gần nhất.",
+   "en": "Provincial hospital. Hospital switchboard not yet verified: call 115 to be dispatched to the nearest hospital."
+  }
+ },
+ {
+  "province_code": "DB",
+  "zone_code": "dien-bien",
+  "contact_type": "hospital",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số cấp cứu 115); tên bệnh viện theo danh mục cơ sở khám chữa bệnh của Sở Y tế",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 6,
+  "name": {
+   "vi": "Bệnh viện Đa khoa tỉnh Điện Biên (qua 115)",
+   "en": "Dien Bien Provincial General Hospital (via 115)"
+  },
+  "note": {
+   "vi": "Bệnh viện tuyến tỉnh tại Điện Biên Phủ. Chưa đối chiếu được tổng đài riêng của bệnh viện: gọi 115 để điều phối tới bệnh viện gần nhất.",
+   "en": "Provincial hospital in Dien Bien Phu. Hospital switchboard not yet verified: call 115 to be dispatched to the nearest hospital."
+  }
+ },
+ {
+  "province_code": "SL",
+  "zone_code": "son-la",
+  "contact_type": "hospital",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số cấp cứu 115); tên bệnh viện theo danh mục cơ sở khám chữa bệnh của Sở Y tế",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 6,
+  "name": {
+   "vi": "Bệnh viện Đa khoa tỉnh Sơn La (qua 115)",
+   "en": "Son La Provincial General Hospital (via 115)"
+  },
+  "note": {
+   "vi": "Bệnh viện tuyến tỉnh; khách ở Mộc Châu gọi 115 để được điều phối. Chưa đối chiếu được tổng đài riêng của bệnh viện: gọi 115 để điều phối tới bệnh viện gần nhất.",
+   "en": "Provincial hospital; in Moc Chau call 115 for dispatch. Hospital switchboard not yet verified: call 115 to be dispatched to the nearest hospital."
+  }
+ },
+ {
+  "province_code": "LS",
+  "zone_code": "lang-son",
+  "contact_type": "hospital",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số cấp cứu 115); tên bệnh viện theo danh mục cơ sở khám chữa bệnh của Sở Y tế",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 6,
+  "name": {
+   "vi": "Bệnh viện Đa khoa tỉnh Lạng Sơn (qua 115)",
+   "en": "Lang Son Provincial General Hospital (via 115)"
+  },
+  "note": {
+   "vi": "Bệnh viện tuyến tỉnh. Chưa đối chiếu được tổng đài riêng của bệnh viện: gọi 115 để điều phối tới bệnh viện gần nhất.",
+   "en": "Provincial hospital. Hospital switchboard not yet verified: call 115 to be dispatched to the nearest hospital."
+  }
+ },
+ {
+  "province_code": "CB",
+  "zone_code": "cao-bang",
+  "contact_type": "hospital",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số cấp cứu 115); tên bệnh viện theo danh mục cơ sở khám chữa bệnh của Sở Y tế",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 6,
+  "name": {
+   "vi": "Bệnh viện Đa khoa tỉnh Cao Bằng (qua 115)",
+   "en": "Cao Bang Provincial General Hospital (via 115)"
+  },
+  "note": {
+   "vi": "Bệnh viện tuyến tỉnh. Chưa đối chiếu được tổng đài riêng của bệnh viện: gọi 115 để điều phối tới bệnh viện gần nhất.",
+   "en": "Provincial hospital. Hospital switchboard not yet verified: call 115 to be dispatched to the nearest hospital."
+  }
+ },
+ {
+  "province_code": "NA",
+  "zone_code": "nghe-an",
+  "contact_type": "hospital",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số cấp cứu 115); tên bệnh viện theo danh mục cơ sở khám chữa bệnh của Sở Y tế",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 6,
+  "name": {
+   "vi": "Bệnh viện Hữu nghị Đa khoa Nghệ An (qua 115)",
+   "en": "Nghe An Friendship General Hospital (via 115)"
+  },
+  "note": {
+   "vi": "Bệnh viện tuyến tỉnh tại Vinh, gần Cửa Lò. Chưa đối chiếu được tổng đài riêng của bệnh viện: gọi 115 để điều phối tới bệnh viện gần nhất.",
+   "en": "Provincial hospital in Vinh, near Cua Lo beach. Hospital switchboard not yet verified: call 115 to be dispatched to the nearest hospital."
+  }
+ },
+ {
+  "province_code": "QT",
+  "zone_code": "quang-tri",
+  "contact_type": "hospital",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số cấp cứu 115); tên bệnh viện theo danh mục cơ sở khám chữa bệnh của Sở Y tế",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 6,
+  "name": {
+   "vi": "Bệnh viện Hữu nghị Việt Nam – Cu Ba Đồng Hới (qua 115)",
+   "en": "Viet Nam – Cuba Friendship Hospital, Dong Hoi (via 115)"
+  },
+  "note": {
+   "vi": "Bệnh viện đa khoa lớn ở Đồng Hới (Quảng Bình cũ), gần Phong Nha – Kẻ Bàng. Chưa đối chiếu được tổng đài riêng của bệnh viện: gọi 115 để điều phối tới bệnh viện gần nhất.",
+   "en": "Large general hospital in Dong Hoi (former Quang Binh), near Phong Nha – Ke Bang. Hospital switchboard not yet verified: call 115 to be dispatched to the nearest hospital."
+  }
+ },
+ {
+  "province_code": "HUE",
+  "zone_code": "hue",
+  "contact_type": "hospital",
+  "phone": "115",
+  "phone_alt": null,
+  "address": "16 Lê Lợi, Huế",
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số cấp cứu 115); tên bệnh viện theo danh mục cơ sở khám chữa bệnh của Sở Y tế",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 6,
+  "name": {
+   "vi": "Bệnh viện Trung ương Huế (qua 115)",
+   "en": "Hue Central Hospital (via 115)"
+  },
+  "note": {
+   "vi": "Bệnh viện tuyến trung ương cho miền Trung. Chưa đối chiếu được tổng đài riêng của bệnh viện: gọi 115 để điều phối tới bệnh viện gần nhất.",
+   "en": "National referral hospital for central Viet Nam. Hospital switchboard not yet verified: call 115 to be dispatched to the nearest hospital."
+  }
+ },
+ {
+  "province_code": "DN",
+  "zone_code": "da-nang",
+  "contact_type": "hospital",
+  "phone": "115",
+  "phone_alt": null,
+  "address": "124 Hải Phòng, Đà Nẵng",
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số cấp cứu 115); tên bệnh viện theo danh mục cơ sở khám chữa bệnh của Sở Y tế",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 6,
+  "name": {
+   "vi": "Bệnh viện Đà Nẵng (qua 115)",
+   "en": "Da Nang Hospital (via 115)"
+  },
+  "note": {
+   "vi": "Bệnh viện đa khoa tuyến cuối của Đà Nẵng; khách ở Hội An, Cù Lao Chàm cũng gọi 115. Chưa đối chiếu được tổng đài riêng của bệnh viện: gọi 115 để điều phối tới bệnh viện gần nhất.",
+   "en": "Main general hospital of Da Nang; also call 115 from Hoi An or Cu Lao Cham. Hospital switchboard not yet verified: call 115 to be dispatched to the nearest hospital."
+  }
+ },
+ {
+  "province_code": "QNG",
+  "zone_code": "quang-ngai",
+  "contact_type": "hospital",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số cấp cứu 115); tên bệnh viện theo danh mục cơ sở khám chữa bệnh của Sở Y tế",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 6,
+  "name": {
+   "vi": "Bệnh viện Đa khoa tỉnh Quảng Ngãi (qua 115)",
+   "en": "Quang Ngai Provincial General Hospital (via 115)"
+  },
+  "note": {
+   "vi": "Bệnh viện tuyến tỉnh; khách trên đảo Lý Sơn gọi 115 để được điều phối. Chưa đối chiếu được tổng đài riêng của bệnh viện: gọi 115 để điều phối tới bệnh viện gần nhất.",
+   "en": "Provincial hospital; on Ly Son island call 115 for dispatch. Hospital switchboard not yet verified: call 115 to be dispatched to the nearest hospital."
+  }
+ },
+ {
+  "province_code": "GL",
+  "zone_code": "gia-lai",
+  "contact_type": "hospital",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số cấp cứu 115); tên bệnh viện theo danh mục cơ sở khám chữa bệnh của Sở Y tế",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 6,
+  "name": {
+   "vi": "Bệnh viện Đa khoa tỉnh Bình Định cũ (Quy Nhơn) (qua 115)",
+   "en": "Former Binh Dinh Provincial General Hospital (Quy Nhon) (via 115)"
+  },
+  "note": {
+   "vi": "Bệnh viện đa khoa lớn ở Quy Nhơn (Bình Định cũ, nay thuộc Gia Lai); tên có thể đổi sau sắp xếp 7/2025. Chưa đối chiếu được tổng đài riêng của bệnh viện: gọi 115 để điều phối tới bệnh viện gần nhất.",
+   "en": "Large general hospital in Quy Nhon (former Binh Dinh, now Gia Lai); name may change after the 2025 merger. Hospital switchboard not yet verified: call 115 to be dispatched to the nearest hospital."
+  }
+ },
+ {
+  "province_code": "DL",
+  "zone_code": "dak-lak",
+  "contact_type": "hospital",
+  "phone": "115",
+  "phone_alt": null,
+  "address": "184 Trần Quý Cáp, Buôn Ma Thuột, Đắk Lắk",
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số cấp cứu 115); tên bệnh viện theo danh mục cơ sở khám chữa bệnh của Sở Y tế",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 6,
+  "name": {
+   "vi": "Bệnh viện Đa khoa vùng Tây Nguyên (qua 115)",
+   "en": "Central Highlands Regional General Hospital (via 115)"
+  },
+  "note": {
+   "vi": "Bệnh viện tuyến vùng tại Buôn Ma Thuột. Chưa đối chiếu được tổng đài riêng của bệnh viện: gọi 115 để điều phối tới bệnh viện gần nhất.",
+   "en": "Regional hospital in Buon Ma Thuot. Hospital switchboard not yet verified: call 115 to be dispatched to the nearest hospital."
+  }
+ },
+ {
+  "province_code": "LD",
+  "zone_code": "lam-dong",
+  "contact_type": "hospital",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số cấp cứu 115); tên bệnh viện theo danh mục cơ sở khám chữa bệnh của Sở Y tế",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 6,
+  "name": {
+   "vi": "Bệnh viện Đa khoa tỉnh Lâm Đồng (qua 115)",
+   "en": "Lam Dong Provincial General Hospital (via 115)"
+  },
+  "note": {
+   "vi": "Bệnh viện tuyến tỉnh tại Đà Lạt; khách ở Mũi Né – Phan Thiết gọi 115 để được điều phối. Chưa đối chiếu được tổng đài riêng của bệnh viện: gọi 115 để điều phối tới bệnh viện gần nhất.",
+   "en": "Provincial hospital in Da Lat; in Mui Ne – Phan Thiet call 115 for dispatch. Hospital switchboard not yet verified: call 115 to be dispatched to the nearest hospital."
+  }
+ },
+ {
+  "province_code": "DNA",
+  "zone_code": "dong-nai",
+  "contact_type": "hospital",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số cấp cứu 115); tên bệnh viện theo danh mục cơ sở khám chữa bệnh của Sở Y tế",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 6,
+  "name": {
+   "vi": "Bệnh viện Đa khoa Đồng Nai (qua 115)",
+   "en": "Dong Nai General Hospital (via 115)"
+  },
+  "note": {
+   "vi": "Bệnh viện tuyến tỉnh tại Biên Hòa. Chưa đối chiếu được tổng đài riêng của bệnh viện: gọi 115 để điều phối tới bệnh viện gần nhất.",
+   "en": "Provincial hospital in Bien Hoa. Hospital switchboard not yet verified: call 115 to be dispatched to the nearest hospital."
+  }
+ },
+ {
+  "province_code": "TNI",
+  "zone_code": "tay-ninh",
+  "contact_type": "hospital",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số cấp cứu 115); tên bệnh viện theo danh mục cơ sở khám chữa bệnh của Sở Y tế",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 6,
+  "name": {
+   "vi": "Bệnh viện Đa khoa tỉnh Tây Ninh (qua 115)",
+   "en": "Tay Ninh Provincial General Hospital (via 115)"
+  },
+  "note": {
+   "vi": "Bệnh viện tuyến tỉnh, gần núi Bà Đen. Chưa đối chiếu được tổng đài riêng của bệnh viện: gọi 115 để điều phối tới bệnh viện gần nhất.",
+   "en": "Provincial hospital near Ba Den mountain. Hospital switchboard not yet verified: call 115 to be dispatched to the nearest hospital."
+  }
+ },
+ {
+  "province_code": "DT",
+  "zone_code": "dong-thap",
+  "contact_type": "hospital",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số cấp cứu 115); tên bệnh viện theo danh mục cơ sở khám chữa bệnh của Sở Y tế",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 6,
+  "name": {
+   "vi": "Bệnh viện Đa khoa Đồng Tháp (qua 115)",
+   "en": "Dong Thap General Hospital (via 115)"
+  },
+  "note": {
+   "vi": "Bệnh viện tuyến tỉnh. Chưa đối chiếu được tổng đài riêng của bệnh viện: gọi 115 để điều phối tới bệnh viện gần nhất.",
+   "en": "Provincial hospital. Hospital switchboard not yet verified: call 115 to be dispatched to the nearest hospital."
+  }
+ },
+ {
+  "province_code": "VL",
+  "zone_code": "vinh-long",
+  "contact_type": "hospital",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số cấp cứu 115); tên bệnh viện theo danh mục cơ sở khám chữa bệnh của Sở Y tế",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 6,
+  "name": {
+   "vi": "Bệnh viện Đa khoa tỉnh Vĩnh Long (qua 115)",
+   "en": "Vinh Long Provincial General Hospital (via 115)"
+  },
+  "note": {
+   "vi": "Bệnh viện tuyến tỉnh. Chưa đối chiếu được tổng đài riêng của bệnh viện: gọi 115 để điều phối tới bệnh viện gần nhất.",
+   "en": "Provincial hospital. Hospital switchboard not yet verified: call 115 to be dispatched to the nearest hospital."
+  }
+ },
+ {
+  "province_code": "CT",
+  "zone_code": "can-tho",
+  "contact_type": "hospital",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số cấp cứu 115); tên bệnh viện theo danh mục cơ sở khám chữa bệnh của Sở Y tế",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 6,
+  "name": {
+   "vi": "Bệnh viện Đa khoa Trung ương Cần Thơ (qua 115)",
+   "en": "Can Tho Central General Hospital (via 115)"
+  },
+  "note": {
+   "vi": "Bệnh viện tuyến trung ương cho Đồng bằng sông Cửu Long. Chưa đối chiếu được tổng đài riêng của bệnh viện: gọi 115 để điều phối tới bệnh viện gần nhất.",
+   "en": "National referral hospital for the Mekong Delta. Hospital switchboard not yet verified: call 115 to be dispatched to the nearest hospital."
+  }
+ },
+ {
+  "province_code": "AG",
+  "zone_code": "an-giang",
+  "contact_type": "hospital",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số cấp cứu 115); tên bệnh viện theo danh mục cơ sở khám chữa bệnh của Sở Y tế",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 6,
+  "name": {
+   "vi": "Bệnh viện Đa khoa Trung tâm An Giang (qua 115)",
+   "en": "An Giang Central General Hospital (via 115)"
+  },
+  "note": {
+   "vi": "Bệnh viện tuyến tỉnh tại Long Xuyên; khách ở Phú Quốc, Rạch Giá gọi 115 để được chuyển tới cơ sở y tế gần nhất. Chưa đối chiếu được tổng đài riêng của bệnh viện: gọi 115 để điều phối tới bệnh viện gần nhất.",
+   "en": "Provincial hospital in Long Xuyen; in Phu Quoc or Rach Gia call 115 to reach the nearest facility. Hospital switchboard not yet verified: call 115 to be dispatched to the nearest hospital."
+  }
+ },
+ {
+  "province_code": "CM",
+  "zone_code": "ca-mau",
+  "contact_type": "hospital",
+  "phone": "115",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Bộ Thông tin và Truyền thông – Quy hoạch kho số viễn thông (số cấp cứu 115); tên bệnh viện theo danh mục cơ sở khám chữa bệnh của Sở Y tế",
+  "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Vietnam",
+  "sort_order": 6,
+  "name": {
+   "vi": "Bệnh viện Đa khoa Cà Mau (qua 115)",
+   "en": "Ca Mau General Hospital (via 115)"
+  },
+  "note": {
+   "vi": "Bệnh viện tuyến tỉnh. Chưa đối chiếu được tổng đài riêng của bệnh viện: gọi 115 để điều phối tới bệnh viện gần nhất.",
+   "en": "Provincial hospital. Hospital switchboard not yet verified: call 115 to be dispatched to the nearest hospital."
+  }
+ },
+ {
+  "province_code": "HN",
+  "zone_code": "ha-noi",
+  "contact_type": "tourist_support",
+  "phone": "024 3733 9898",
+  "phone_alt": null,
+  "address": "Khu liên cơ quan số 258 Võ Chí Công, Hà Nội",
+  "lat": null,
+  "lng": null,
+  "hours": "Giờ hành chính",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Website Sở Du lịch Hà Nội – thông tin liên hệ",
+  "source_url": "https://sodulich.hanoi.gov.vn",
+  "sort_order": 5,
+  "name": {
+   "vi": "Sở Du lịch Hà Nội",
+   "en": "Hanoi Department of Tourism"
+  },
+  "note": {
+   "vi": "Tiếp nhận phản ánh, hỗ trợ thông tin du lịch (giờ hành chính). Khẩn cấp gọi 113 hoặc 112.",
+   "en": "Tourist information and complaints (office hours). In an emergency call 113 or 112."
+  }
+ },
+ {
+  "province_code": "HCM",
+  "zone_code": "ho-chi-minh",
+  "contact_type": "tourist_support",
+  "phone": "028 3824 2904",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "Giờ hành chính",
+  "languages": [
+   "vi"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Website Sở Du lịch TP. Hồ Chí Minh – mục Đường dây nóng",
+  "source_url": "https://sodulich.hochiminhcity.gov.vn",
+  "sort_order": 5,
+  "name": {
+   "vi": "Đường dây nóng Sở Du lịch TP. Hồ Chí Minh",
+   "en": "Ho Chi Minh City Department of Tourism hotline"
+  },
+  "note": {
+   "vi": "Đường dây nóng tiếp nhận phản ánh của Sở Du lịch. Khẩn cấp gọi 113 hoặc 112.",
+   "en": "Department of Tourism hotline for complaints and reports. In an emergency call 113 or 112."
+  }
+ },
+ {
+  "province_code": "KH",
+  "zone_code": "khanh-hoa",
+  "contact_type": "tourist_support",
+  "phone": "1800 1109",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": null,
+  "languages": [
+   "vi"
+  ],
+  "is_verified": false,
+  "verified_at": null,
+  "source_name": "Chưa xác minh – đường dây nóng du lịch quốc gia (Cục Du lịch Quốc gia Việt Nam), cần đối chiếu",
+  "source_url": "https://vietnamtourism.gov.vn",
+  "sort_order": 5,
+  "name": {
+   "vi": "Đường dây nóng du lịch quốc gia (áp dụng cho Khánh Hòa)",
+   "en": "National tourism hotline (for Khanh Hoa)"
+  },
+  "note": {
+   "vi": "Chưa có số Trung tâm hỗ trợ du khách/Sở Du lịch Khánh Hòa đã xác minh; tạm dùng đường dây nóng du lịch quốc gia (phạm vi toàn quốc, chưa đối chiếu nguồn chính thức). Khẩn cấp gọi 113 hoặc 112.",
+   "en": "No verified local tourist-support number for Khanh Hoa yet; national tourism hotline shown (nationwide, not yet verified). In an emergency call 113 or 112."
+  }
+ },
+ {
+  "province_code": "QN",
+  "zone_code": "quang-ninh",
+  "contact_type": "tourist_support",
+  "phone": "1800 1109",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": null,
+  "languages": [
+   "vi"
+  ],
+  "is_verified": false,
+  "verified_at": null,
+  "source_name": "Chưa xác minh – đường dây nóng du lịch quốc gia (Cục Du lịch Quốc gia Việt Nam), cần đối chiếu",
+  "source_url": "https://vietnamtourism.gov.vn",
+  "sort_order": 5,
+  "name": {
+   "vi": "Đường dây nóng du lịch quốc gia (áp dụng cho Quảng Ninh)",
+   "en": "National tourism hotline (for Quang Ninh)"
+  },
+  "note": {
+   "vi": "Chưa có số Trung tâm hỗ trợ du khách/Sở Du lịch Quảng Ninh đã xác minh; tạm dùng đường dây nóng du lịch quốc gia (phạm vi toàn quốc, chưa đối chiếu nguồn chính thức). Khẩn cấp gọi 113 hoặc 112.",
+   "en": "No verified local tourist-support number for Quang Ninh yet; national tourism hotline shown (nationwide, not yet verified). In an emergency call 113 or 112."
+  }
+ },
+ {
+  "province_code": "HUE",
+  "zone_code": "hue",
+  "contact_type": "tourist_support",
+  "phone": "1800 1109",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": null,
+  "languages": [
+   "vi"
+  ],
+  "is_verified": false,
+  "verified_at": null,
+  "source_name": "Chưa xác minh – đường dây nóng du lịch quốc gia (Cục Du lịch Quốc gia Việt Nam), cần đối chiếu",
+  "source_url": "https://vietnamtourism.gov.vn",
+  "sort_order": 5,
+  "name": {
+   "vi": "Đường dây nóng du lịch quốc gia (áp dụng cho Huế)",
+   "en": "National tourism hotline (for Hue)"
+  },
+  "note": {
+   "vi": "Chưa có số Trung tâm hỗ trợ du khách/Sở Du lịch Huế đã xác minh; tạm dùng đường dây nóng du lịch quốc gia (phạm vi toàn quốc, chưa đối chiếu nguồn chính thức). Khẩn cấp gọi 113 hoặc 112.",
+   "en": "No verified local tourist-support number for Hue yet; national tourism hotline shown (nationwide, not yet verified). In an emergency call 113 or 112."
+  }
+ },
+ {
+  "province_code": "LC",
+  "zone_code": "lao-cai",
+  "contact_type": "tourist_support",
+  "phone": "1800 1109",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": null,
+  "languages": [
+   "vi"
+  ],
+  "is_verified": false,
+  "verified_at": null,
+  "source_name": "Chưa xác minh – đường dây nóng du lịch quốc gia (Cục Du lịch Quốc gia Việt Nam), cần đối chiếu",
+  "source_url": "https://vietnamtourism.gov.vn",
+  "sort_order": 5,
+  "name": {
+   "vi": "Đường dây nóng du lịch quốc gia (áp dụng cho Lào Cai – Sa Pa)",
+   "en": "National tourism hotline (for Lao Cai – Sa Pa)"
+  },
+  "note": {
+   "vi": "Chưa có số Trung tâm hỗ trợ du khách/Sở Du lịch Lào Cai – Sa Pa đã xác minh; tạm dùng đường dây nóng du lịch quốc gia (phạm vi toàn quốc, chưa đối chiếu nguồn chính thức). Khẩn cấp gọi 113 hoặc 112.",
+   "en": "No verified local tourist-support number for Lao Cai – Sa Pa yet; national tourism hotline shown (nationwide, not yet verified). In an emergency call 113 or 112."
+  }
+ },
+ {
+  "province_code": "AG",
+  "zone_code": "an-giang",
+  "contact_type": "tourist_support",
+  "phone": "1800 1109",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": null,
+  "languages": [
+   "vi"
+  ],
+  "is_verified": false,
+  "verified_at": null,
+  "source_name": "Chưa xác minh – đường dây nóng du lịch quốc gia (Cục Du lịch Quốc gia Việt Nam), cần đối chiếu",
+  "source_url": "https://vietnamtourism.gov.vn",
+  "sort_order": 5,
+  "name": {
+   "vi": "Đường dây nóng du lịch quốc gia (áp dụng cho An Giang – Phú Quốc)",
+   "en": "National tourism hotline (for An Giang – Phu Quoc)"
+  },
+  "note": {
+   "vi": "Chưa có số Trung tâm hỗ trợ du khách/Sở Du lịch An Giang – Phú Quốc đã xác minh; tạm dùng đường dây nóng du lịch quốc gia (phạm vi toàn quốc, chưa đối chiếu nguồn chính thức). Khẩn cấp gọi 113 hoặc 112.",
+   "en": "No verified local tourist-support number for An Giang – Phu Quoc yet; national tourism hotline shown (nationwide, not yet verified). In an emergency call 113 or 112."
+  }
+ },
+ {
+  "province_code": "LD",
+  "zone_code": "lam-dong",
+  "contact_type": "tourist_support",
+  "phone": "1800 1109",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": null,
+  "languages": [
+   "vi"
+  ],
+  "is_verified": false,
+  "verified_at": null,
+  "source_name": "Chưa xác minh – đường dây nóng du lịch quốc gia (Cục Du lịch Quốc gia Việt Nam), cần đối chiếu",
+  "source_url": "https://vietnamtourism.gov.vn",
+  "sort_order": 5,
+  "name": {
+   "vi": "Đường dây nóng du lịch quốc gia (áp dụng cho Lâm Đồng – Đà Lạt)",
+   "en": "National tourism hotline (for Lam Dong – Da Lat)"
+  },
+  "note": {
+   "vi": "Chưa có số Trung tâm hỗ trợ du khách/Sở Du lịch Lâm Đồng – Đà Lạt đã xác minh; tạm dùng đường dây nóng du lịch quốc gia (phạm vi toàn quốc, chưa đối chiếu nguồn chính thức). Khẩn cấp gọi 113 hoặc 112.",
+   "en": "No verified local tourist-support number for Lam Dong – Da Lat yet; national tourism hotline shown (nationwide, not yet verified). In an emergency call 113 or 112."
+  }
+ },
+ {
+  "province_code": "NB",
+  "zone_code": "ninh-binh",
+  "contact_type": "tourist_support",
+  "phone": "1800 1109",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": null,
+  "languages": [
+   "vi"
+  ],
+  "is_verified": false,
+  "verified_at": null,
+  "source_name": "Chưa xác minh – đường dây nóng du lịch quốc gia (Cục Du lịch Quốc gia Việt Nam), cần đối chiếu",
+  "source_url": "https://vietnamtourism.gov.vn",
+  "sort_order": 5,
+  "name": {
+   "vi": "Đường dây nóng du lịch quốc gia (áp dụng cho Ninh Bình)",
+   "en": "National tourism hotline (for Ninh Binh)"
+  },
+  "note": {
+   "vi": "Chưa có số Trung tâm hỗ trợ du khách/Sở Du lịch Ninh Bình đã xác minh; tạm dùng đường dây nóng du lịch quốc gia (phạm vi toàn quốc, chưa đối chiếu nguồn chính thức). Khẩn cấp gọi 113 hoặc 112.",
+   "en": "No verified local tourist-support number for Ninh Binh yet; national tourism hotline shown (nationwide, not yet verified). In an emergency call 113 or 112."
+  }
+ },
+ {
+  "province_code": "HP",
+  "zone_code": "hai-phong",
+  "contact_type": "tourist_support",
+  "phone": "1800 1109",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": null,
+  "languages": [
+   "vi"
+  ],
+  "is_verified": false,
+  "verified_at": null,
+  "source_name": "Chưa xác minh – đường dây nóng du lịch quốc gia (Cục Du lịch Quốc gia Việt Nam), cần đối chiếu",
+  "source_url": "https://vietnamtourism.gov.vn",
+  "sort_order": 5,
+  "name": {
+   "vi": "Đường dây nóng du lịch quốc gia (áp dụng cho Hải Phòng – Cát Bà)",
+   "en": "National tourism hotline (for Hai Phong – Cat Ba)"
+  },
+  "note": {
+   "vi": "Chưa có số Trung tâm hỗ trợ du khách/Sở Du lịch Hải Phòng – Cát Bà đã xác minh; tạm dùng đường dây nóng du lịch quốc gia (phạm vi toàn quốc, chưa đối chiếu nguồn chính thức). Khẩn cấp gọi 113 hoặc 112.",
+   "en": "No verified local tourist-support number for Hai Phong – Cat Ba yet; national tourism hotline shown (nationwide, not yet verified). In an emergency call 113 or 112."
+  }
+ },
+ {
+  "province_code": "QN",
+  "zone_code": "quang-ninh",
+  "contact_type": "coast_guard",
+  "phone": "0225 3759 508",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi",
+   "en"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Cổng thông tin Trung tâm Phối hợp tìm kiếm, cứu nạn hàng hải Việt Nam (VMRCC) – Đường dây nóng",
+  "source_url": "https://vmrcc.gov.vn",
+  "sort_order": 8,
+  "name": {
+   "vi": "Trung tâm Phối hợp TKCN hàng hải khu vực I (Hải Phòng)",
+   "en": "Maritime Rescue Coordination Centre Region I (Hai Phong)"
+  },
+  "note": {
+   "vi": "Trực ban 24/24 tìm kiếm cứu nạn trên biển (tàu thuyền gặp nạn, người rơi xuống biển, mất liên lạc). Khu vực phụ trách mang tính tham khảo; nếu không liên lạc được gọi trực ban MRCC Việt Nam hoặc 112.",
+   "en": "24/7 search and rescue at sea (vessel in distress, person overboard, lost contact). Coverage area is indicative; if no answer call Viet Nam MRCC or 112."
+  }
+ },
+ {
+  "province_code": "QN",
+  "zone_code": "quang-ninh",
+  "contact_type": "coast_guard",
+  "phone": "024 3768 3050",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi",
+   "en"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Cổng thông tin Trung tâm Phối hợp tìm kiếm, cứu nạn hàng hải Việt Nam (VMRCC) – Đường dây nóng",
+  "source_url": "https://vmrcc.gov.vn",
+  "sort_order": 9,
+  "name": {
+   "vi": "Trung tâm Phối hợp TKCN hàng hải Việt Nam (MRCC) – trực ban toàn quốc",
+   "en": "Viet Nam Maritime Rescue Coordination Centre (MRCC) – national duty desk"
+  },
+  "note": {
+   "vi": "Trực ban tìm kiếm cứu nạn trên biển 24/24, phạm vi toàn vùng biển Việt Nam (trụ sở 11A Láng Hạ, Hà Nội). Kết hợp gọi 112 khi gặp nạn gần bờ.",
+   "en": "24/7 maritime search-and-rescue duty desk covering all Vietnamese waters. Also call 112 for incidents near shore."
+  }
+ },
+ {
+  "province_code": "HP",
+  "zone_code": "hai-phong",
+  "contact_type": "coast_guard",
+  "phone": "0225 3759 508",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi",
+   "en"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Cổng thông tin Trung tâm Phối hợp tìm kiếm, cứu nạn hàng hải Việt Nam (VMRCC) – Đường dây nóng",
+  "source_url": "https://vmrcc.gov.vn",
+  "sort_order": 8,
+  "name": {
+   "vi": "Trung tâm Phối hợp TKCN hàng hải khu vực I (Hải Phòng)",
+   "en": "Maritime Rescue Coordination Centre Region I (Hai Phong)"
+  },
+  "note": {
+   "vi": "Trực ban 24/24 tìm kiếm cứu nạn trên biển (tàu thuyền gặp nạn, người rơi xuống biển, mất liên lạc). Khu vực phụ trách mang tính tham khảo; nếu không liên lạc được gọi trực ban MRCC Việt Nam hoặc 112.",
+   "en": "24/7 search and rescue at sea (vessel in distress, person overboard, lost contact). Coverage area is indicative; if no answer call Viet Nam MRCC or 112."
+  }
+ },
+ {
+  "province_code": "HP",
+  "zone_code": "hai-phong",
+  "contact_type": "coast_guard",
+  "phone": "024 3768 3050",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi",
+   "en"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Cổng thông tin Trung tâm Phối hợp tìm kiếm, cứu nạn hàng hải Việt Nam (VMRCC) – Đường dây nóng",
+  "source_url": "https://vmrcc.gov.vn",
+  "sort_order": 9,
+  "name": {
+   "vi": "Trung tâm Phối hợp TKCN hàng hải Việt Nam (MRCC) – trực ban toàn quốc",
+   "en": "Viet Nam Maritime Rescue Coordination Centre (MRCC) – national duty desk"
+  },
+  "note": {
+   "vi": "Trực ban tìm kiếm cứu nạn trên biển 24/24, phạm vi toàn vùng biển Việt Nam (trụ sở 11A Láng Hạ, Hà Nội). Kết hợp gọi 112 khi gặp nạn gần bờ.",
+   "en": "24/7 maritime search-and-rescue duty desk covering all Vietnamese waters. Also call 112 for incidents near shore."
+  }
+ },
+ {
+  "province_code": "HY",
+  "zone_code": "hung-yen",
+  "contact_type": "coast_guard",
+  "phone": "0225 3759 508",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi",
+   "en"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Cổng thông tin Trung tâm Phối hợp tìm kiếm, cứu nạn hàng hải Việt Nam (VMRCC) – Đường dây nóng",
+  "source_url": "https://vmrcc.gov.vn",
+  "sort_order": 8,
+  "name": {
+   "vi": "Trung tâm Phối hợp TKCN hàng hải khu vực I (Hải Phòng)",
+   "en": "Maritime Rescue Coordination Centre Region I (Hai Phong)"
+  },
+  "note": {
+   "vi": "Trực ban 24/24 tìm kiếm cứu nạn trên biển (tàu thuyền gặp nạn, người rơi xuống biển, mất liên lạc). Khu vực phụ trách mang tính tham khảo; nếu không liên lạc được gọi trực ban MRCC Việt Nam hoặc 112.",
+   "en": "24/7 search and rescue at sea (vessel in distress, person overboard, lost contact). Coverage area is indicative; if no answer call Viet Nam MRCC or 112."
+  }
+ },
+ {
+  "province_code": "HY",
+  "zone_code": "hung-yen",
+  "contact_type": "coast_guard",
+  "phone": "024 3768 3050",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi",
+   "en"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Cổng thông tin Trung tâm Phối hợp tìm kiếm, cứu nạn hàng hải Việt Nam (VMRCC) – Đường dây nóng",
+  "source_url": "https://vmrcc.gov.vn",
+  "sort_order": 9,
+  "name": {
+   "vi": "Trung tâm Phối hợp TKCN hàng hải Việt Nam (MRCC) – trực ban toàn quốc",
+   "en": "Viet Nam Maritime Rescue Coordination Centre (MRCC) – national duty desk"
+  },
+  "note": {
+   "vi": "Trực ban tìm kiếm cứu nạn trên biển 24/24, phạm vi toàn vùng biển Việt Nam (trụ sở 11A Láng Hạ, Hà Nội). Kết hợp gọi 112 khi gặp nạn gần bờ.",
+   "en": "24/7 maritime search-and-rescue duty desk covering all Vietnamese waters. Also call 112 for incidents near shore."
+  }
+ },
+ {
+  "province_code": "NB",
+  "zone_code": "ninh-binh",
+  "contact_type": "coast_guard",
+  "phone": "0225 3759 508",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi",
+   "en"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Cổng thông tin Trung tâm Phối hợp tìm kiếm, cứu nạn hàng hải Việt Nam (VMRCC) – Đường dây nóng",
+  "source_url": "https://vmrcc.gov.vn",
+  "sort_order": 8,
+  "name": {
+   "vi": "Trung tâm Phối hợp TKCN hàng hải khu vực I (Hải Phòng)",
+   "en": "Maritime Rescue Coordination Centre Region I (Hai Phong)"
+  },
+  "note": {
+   "vi": "Trực ban 24/24 tìm kiếm cứu nạn trên biển (tàu thuyền gặp nạn, người rơi xuống biển, mất liên lạc). Khu vực phụ trách mang tính tham khảo; nếu không liên lạc được gọi trực ban MRCC Việt Nam hoặc 112.",
+   "en": "24/7 search and rescue at sea (vessel in distress, person overboard, lost contact). Coverage area is indicative; if no answer call Viet Nam MRCC or 112."
+  }
+ },
+ {
+  "province_code": "NB",
+  "zone_code": "ninh-binh",
+  "contact_type": "coast_guard",
+  "phone": "024 3768 3050",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi",
+   "en"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Cổng thông tin Trung tâm Phối hợp tìm kiếm, cứu nạn hàng hải Việt Nam (VMRCC) – Đường dây nóng",
+  "source_url": "https://vmrcc.gov.vn",
+  "sort_order": 9,
+  "name": {
+   "vi": "Trung tâm Phối hợp TKCN hàng hải Việt Nam (MRCC) – trực ban toàn quốc",
+   "en": "Viet Nam Maritime Rescue Coordination Centre (MRCC) – national duty desk"
+  },
+  "note": {
+   "vi": "Trực ban tìm kiếm cứu nạn trên biển 24/24, phạm vi toàn vùng biển Việt Nam (trụ sở 11A Láng Hạ, Hà Nội). Kết hợp gọi 112 khi gặp nạn gần bờ.",
+   "en": "24/7 maritime search-and-rescue duty desk covering all Vietnamese waters. Also call 112 for incidents near shore."
+  }
+ },
+ {
+  "province_code": "TH",
+  "zone_code": "thanh-hoa",
+  "contact_type": "coast_guard",
+  "phone": "0225 3759 508",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi",
+   "en"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Cổng thông tin Trung tâm Phối hợp tìm kiếm, cứu nạn hàng hải Việt Nam (VMRCC) – Đường dây nóng",
+  "source_url": "https://vmrcc.gov.vn",
+  "sort_order": 8,
+  "name": {
+   "vi": "Trung tâm Phối hợp TKCN hàng hải khu vực I (Hải Phòng)",
+   "en": "Maritime Rescue Coordination Centre Region I (Hai Phong)"
+  },
+  "note": {
+   "vi": "Trực ban 24/24 tìm kiếm cứu nạn trên biển (tàu thuyền gặp nạn, người rơi xuống biển, mất liên lạc). Khu vực phụ trách mang tính tham khảo; nếu không liên lạc được gọi trực ban MRCC Việt Nam hoặc 112.",
+   "en": "24/7 search and rescue at sea (vessel in distress, person overboard, lost contact). Coverage area is indicative; if no answer call Viet Nam MRCC or 112."
+  }
+ },
+ {
+  "province_code": "TH",
+  "zone_code": "thanh-hoa",
+  "contact_type": "coast_guard",
+  "phone": "024 3768 3050",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi",
+   "en"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Cổng thông tin Trung tâm Phối hợp tìm kiếm, cứu nạn hàng hải Việt Nam (VMRCC) – Đường dây nóng",
+  "source_url": "https://vmrcc.gov.vn",
+  "sort_order": 9,
+  "name": {
+   "vi": "Trung tâm Phối hợp TKCN hàng hải Việt Nam (MRCC) – trực ban toàn quốc",
+   "en": "Viet Nam Maritime Rescue Coordination Centre (MRCC) – national duty desk"
+  },
+  "note": {
+   "vi": "Trực ban tìm kiếm cứu nạn trên biển 24/24, phạm vi toàn vùng biển Việt Nam (trụ sở 11A Láng Hạ, Hà Nội). Kết hợp gọi 112 khi gặp nạn gần bờ.",
+   "en": "24/7 maritime search-and-rescue duty desk covering all Vietnamese waters. Also call 112 for incidents near shore."
+  }
+ },
+ {
+  "province_code": "NA",
+  "zone_code": "nghe-an",
+  "contact_type": "coast_guard",
+  "phone": "0225 3759 508",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi",
+   "en"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Cổng thông tin Trung tâm Phối hợp tìm kiếm, cứu nạn hàng hải Việt Nam (VMRCC) – Đường dây nóng",
+  "source_url": "https://vmrcc.gov.vn",
+  "sort_order": 8,
+  "name": {
+   "vi": "Trung tâm Phối hợp TKCN hàng hải khu vực I (Hải Phòng)",
+   "en": "Maritime Rescue Coordination Centre Region I (Hai Phong)"
+  },
+  "note": {
+   "vi": "Trực ban 24/24 tìm kiếm cứu nạn trên biển (tàu thuyền gặp nạn, người rơi xuống biển, mất liên lạc). Khu vực phụ trách mang tính tham khảo; nếu không liên lạc được gọi trực ban MRCC Việt Nam hoặc 112.",
+   "en": "24/7 search and rescue at sea (vessel in distress, person overboard, lost contact). Coverage area is indicative; if no answer call Viet Nam MRCC or 112."
+  }
+ },
+ {
+  "province_code": "NA",
+  "zone_code": "nghe-an",
+  "contact_type": "coast_guard",
+  "phone": "024 3768 3050",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi",
+   "en"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Cổng thông tin Trung tâm Phối hợp tìm kiếm, cứu nạn hàng hải Việt Nam (VMRCC) – Đường dây nóng",
+  "source_url": "https://vmrcc.gov.vn",
+  "sort_order": 9,
+  "name": {
+   "vi": "Trung tâm Phối hợp TKCN hàng hải Việt Nam (MRCC) – trực ban toàn quốc",
+   "en": "Viet Nam Maritime Rescue Coordination Centre (MRCC) – national duty desk"
+  },
+  "note": {
+   "vi": "Trực ban tìm kiếm cứu nạn trên biển 24/24, phạm vi toàn vùng biển Việt Nam (trụ sở 11A Láng Hạ, Hà Nội). Kết hợp gọi 112 khi gặp nạn gần bờ.",
+   "en": "24/7 maritime search-and-rescue duty desk covering all Vietnamese waters. Also call 112 for incidents near shore."
+  }
+ },
+ {
+  "province_code": "HT",
+  "zone_code": "ha-tinh",
+  "contact_type": "coast_guard",
+  "phone": "0225 3759 508",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi",
+   "en"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Cổng thông tin Trung tâm Phối hợp tìm kiếm, cứu nạn hàng hải Việt Nam (VMRCC) – Đường dây nóng",
+  "source_url": "https://vmrcc.gov.vn",
+  "sort_order": 8,
+  "name": {
+   "vi": "Trung tâm Phối hợp TKCN hàng hải khu vực I (Hải Phòng)",
+   "en": "Maritime Rescue Coordination Centre Region I (Hai Phong)"
+  },
+  "note": {
+   "vi": "Trực ban 24/24 tìm kiếm cứu nạn trên biển (tàu thuyền gặp nạn, người rơi xuống biển, mất liên lạc). Khu vực phụ trách mang tính tham khảo; nếu không liên lạc được gọi trực ban MRCC Việt Nam hoặc 112.",
+   "en": "24/7 search and rescue at sea (vessel in distress, person overboard, lost contact). Coverage area is indicative; if no answer call Viet Nam MRCC or 112."
+  }
+ },
+ {
+  "province_code": "HT",
+  "zone_code": "ha-tinh",
+  "contact_type": "coast_guard",
+  "phone": "024 3768 3050",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi",
+   "en"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Cổng thông tin Trung tâm Phối hợp tìm kiếm, cứu nạn hàng hải Việt Nam (VMRCC) – Đường dây nóng",
+  "source_url": "https://vmrcc.gov.vn",
+  "sort_order": 9,
+  "name": {
+   "vi": "Trung tâm Phối hợp TKCN hàng hải Việt Nam (MRCC) – trực ban toàn quốc",
+   "en": "Viet Nam Maritime Rescue Coordination Centre (MRCC) – national duty desk"
+  },
+  "note": {
+   "vi": "Trực ban tìm kiếm cứu nạn trên biển 24/24, phạm vi toàn vùng biển Việt Nam (trụ sở 11A Láng Hạ, Hà Nội). Kết hợp gọi 112 khi gặp nạn gần bờ.",
+   "en": "24/7 maritime search-and-rescue duty desk covering all Vietnamese waters. Also call 112 for incidents near shore."
+  }
+ },
+ {
+  "province_code": "QT",
+  "zone_code": "quang-tri",
+  "contact_type": "coast_guard",
+  "phone": "0236 3924 957",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi",
+   "en"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Cổng thông tin Trung tâm Phối hợp tìm kiếm, cứu nạn hàng hải Việt Nam (VMRCC) – Đường dây nóng",
+  "source_url": "https://vmrcc.gov.vn",
+  "sort_order": 8,
+  "name": {
+   "vi": "Trung tâm Phối hợp TKCN hàng hải khu vực II (Đà Nẵng)",
+   "en": "Maritime Rescue Coordination Centre Region II (Da Nang)"
+  },
+  "note": {
+   "vi": "Trực ban 24/24 tìm kiếm cứu nạn trên biển (tàu thuyền gặp nạn, người rơi xuống biển, mất liên lạc). Khu vực phụ trách mang tính tham khảo; nếu không liên lạc được gọi trực ban MRCC Việt Nam hoặc 112.",
+   "en": "24/7 search and rescue at sea (vessel in distress, person overboard, lost contact). Coverage area is indicative; if no answer call Viet Nam MRCC or 112."
+  }
+ },
+ {
+  "province_code": "QT",
+  "zone_code": "quang-tri",
+  "contact_type": "coast_guard",
+  "phone": "024 3768 3050",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi",
+   "en"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Cổng thông tin Trung tâm Phối hợp tìm kiếm, cứu nạn hàng hải Việt Nam (VMRCC) – Đường dây nóng",
+  "source_url": "https://vmrcc.gov.vn",
+  "sort_order": 9,
+  "name": {
+   "vi": "Trung tâm Phối hợp TKCN hàng hải Việt Nam (MRCC) – trực ban toàn quốc",
+   "en": "Viet Nam Maritime Rescue Coordination Centre (MRCC) – national duty desk"
+  },
+  "note": {
+   "vi": "Trực ban tìm kiếm cứu nạn trên biển 24/24, phạm vi toàn vùng biển Việt Nam (trụ sở 11A Láng Hạ, Hà Nội). Kết hợp gọi 112 khi gặp nạn gần bờ.",
+   "en": "24/7 maritime search-and-rescue duty desk covering all Vietnamese waters. Also call 112 for incidents near shore."
+  }
+ },
+ {
+  "province_code": "HUE",
+  "zone_code": "hue",
+  "contact_type": "coast_guard",
+  "phone": "0236 3924 957",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi",
+   "en"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Cổng thông tin Trung tâm Phối hợp tìm kiếm, cứu nạn hàng hải Việt Nam (VMRCC) – Đường dây nóng",
+  "source_url": "https://vmrcc.gov.vn",
+  "sort_order": 8,
+  "name": {
+   "vi": "Trung tâm Phối hợp TKCN hàng hải khu vực II (Đà Nẵng)",
+   "en": "Maritime Rescue Coordination Centre Region II (Da Nang)"
+  },
+  "note": {
+   "vi": "Trực ban 24/24 tìm kiếm cứu nạn trên biển (tàu thuyền gặp nạn, người rơi xuống biển, mất liên lạc). Khu vực phụ trách mang tính tham khảo; nếu không liên lạc được gọi trực ban MRCC Việt Nam hoặc 112.",
+   "en": "24/7 search and rescue at sea (vessel in distress, person overboard, lost contact). Coverage area is indicative; if no answer call Viet Nam MRCC or 112."
+  }
+ },
+ {
+  "province_code": "HUE",
+  "zone_code": "hue",
+  "contact_type": "coast_guard",
+  "phone": "024 3768 3050",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi",
+   "en"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Cổng thông tin Trung tâm Phối hợp tìm kiếm, cứu nạn hàng hải Việt Nam (VMRCC) – Đường dây nóng",
+  "source_url": "https://vmrcc.gov.vn",
+  "sort_order": 9,
+  "name": {
+   "vi": "Trung tâm Phối hợp TKCN hàng hải Việt Nam (MRCC) – trực ban toàn quốc",
+   "en": "Viet Nam Maritime Rescue Coordination Centre (MRCC) – national duty desk"
+  },
+  "note": {
+   "vi": "Trực ban tìm kiếm cứu nạn trên biển 24/24, phạm vi toàn vùng biển Việt Nam (trụ sở 11A Láng Hạ, Hà Nội). Kết hợp gọi 112 khi gặp nạn gần bờ.",
+   "en": "24/7 maritime search-and-rescue duty desk covering all Vietnamese waters. Also call 112 for incidents near shore."
+  }
+ },
+ {
+  "province_code": "DN",
+  "zone_code": "da-nang",
+  "contact_type": "coast_guard",
+  "phone": "0236 3924 957",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi",
+   "en"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Cổng thông tin Trung tâm Phối hợp tìm kiếm, cứu nạn hàng hải Việt Nam (VMRCC) – Đường dây nóng",
+  "source_url": "https://vmrcc.gov.vn",
+  "sort_order": 8,
+  "name": {
+   "vi": "Trung tâm Phối hợp TKCN hàng hải khu vực II (Đà Nẵng)",
+   "en": "Maritime Rescue Coordination Centre Region II (Da Nang)"
+  },
+  "note": {
+   "vi": "Trực ban 24/24 tìm kiếm cứu nạn trên biển (tàu thuyền gặp nạn, người rơi xuống biển, mất liên lạc). Khu vực phụ trách mang tính tham khảo; nếu không liên lạc được gọi trực ban MRCC Việt Nam hoặc 112.",
+   "en": "24/7 search and rescue at sea (vessel in distress, person overboard, lost contact). Coverage area is indicative; if no answer call Viet Nam MRCC or 112."
+  }
+ },
+ {
+  "province_code": "DN",
+  "zone_code": "da-nang",
+  "contact_type": "coast_guard",
+  "phone": "024 3768 3050",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi",
+   "en"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Cổng thông tin Trung tâm Phối hợp tìm kiếm, cứu nạn hàng hải Việt Nam (VMRCC) – Đường dây nóng",
+  "source_url": "https://vmrcc.gov.vn",
+  "sort_order": 9,
+  "name": {
+   "vi": "Trung tâm Phối hợp TKCN hàng hải Việt Nam (MRCC) – trực ban toàn quốc",
+   "en": "Viet Nam Maritime Rescue Coordination Centre (MRCC) – national duty desk"
+  },
+  "note": {
+   "vi": "Trực ban tìm kiếm cứu nạn trên biển 24/24, phạm vi toàn vùng biển Việt Nam (trụ sở 11A Láng Hạ, Hà Nội). Kết hợp gọi 112 khi gặp nạn gần bờ.",
+   "en": "24/7 maritime search-and-rescue duty desk covering all Vietnamese waters. Also call 112 for incidents near shore."
+  }
+ },
+ {
+  "province_code": "QNG",
+  "zone_code": "quang-ngai",
+  "contact_type": "coast_guard",
+  "phone": "0236 3924 957",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi",
+   "en"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Cổng thông tin Trung tâm Phối hợp tìm kiếm, cứu nạn hàng hải Việt Nam (VMRCC) – Đường dây nóng",
+  "source_url": "https://vmrcc.gov.vn",
+  "sort_order": 8,
+  "name": {
+   "vi": "Trung tâm Phối hợp TKCN hàng hải khu vực II (Đà Nẵng)",
+   "en": "Maritime Rescue Coordination Centre Region II (Da Nang)"
+  },
+  "note": {
+   "vi": "Trực ban 24/24 tìm kiếm cứu nạn trên biển (tàu thuyền gặp nạn, người rơi xuống biển, mất liên lạc). Khu vực phụ trách mang tính tham khảo; nếu không liên lạc được gọi trực ban MRCC Việt Nam hoặc 112.",
+   "en": "24/7 search and rescue at sea (vessel in distress, person overboard, lost contact). Coverage area is indicative; if no answer call Viet Nam MRCC or 112."
+  }
+ },
+ {
+  "province_code": "QNG",
+  "zone_code": "quang-ngai",
+  "contact_type": "coast_guard",
+  "phone": "024 3768 3050",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi",
+   "en"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Cổng thông tin Trung tâm Phối hợp tìm kiếm, cứu nạn hàng hải Việt Nam (VMRCC) – Đường dây nóng",
+  "source_url": "https://vmrcc.gov.vn",
+  "sort_order": 9,
+  "name": {
+   "vi": "Trung tâm Phối hợp TKCN hàng hải Việt Nam (MRCC) – trực ban toàn quốc",
+   "en": "Viet Nam Maritime Rescue Coordination Centre (MRCC) – national duty desk"
+  },
+  "note": {
+   "vi": "Trực ban tìm kiếm cứu nạn trên biển 24/24, phạm vi toàn vùng biển Việt Nam (trụ sở 11A Láng Hạ, Hà Nội). Kết hợp gọi 112 khi gặp nạn gần bờ.",
+   "en": "24/7 maritime search-and-rescue duty desk covering all Vietnamese waters. Also call 112 for incidents near shore."
+  }
+ },
+ {
+  "province_code": "GL",
+  "zone_code": "gia-lai",
+  "contact_type": "coast_guard",
+  "phone": "0236 3924 957",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi",
+   "en"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Cổng thông tin Trung tâm Phối hợp tìm kiếm, cứu nạn hàng hải Việt Nam (VMRCC) – Đường dây nóng",
+  "source_url": "https://vmrcc.gov.vn",
+  "sort_order": 8,
+  "name": {
+   "vi": "Trung tâm Phối hợp TKCN hàng hải khu vực II (Đà Nẵng)",
+   "en": "Maritime Rescue Coordination Centre Region II (Da Nang)"
+  },
+  "note": {
+   "vi": "Trực ban 24/24 tìm kiếm cứu nạn trên biển (tàu thuyền gặp nạn, người rơi xuống biển, mất liên lạc). Khu vực phụ trách mang tính tham khảo; nếu không liên lạc được gọi trực ban MRCC Việt Nam hoặc 112.",
+   "en": "24/7 search and rescue at sea (vessel in distress, person overboard, lost contact). Coverage area is indicative; if no answer call Viet Nam MRCC or 112."
+  }
+ },
+ {
+  "province_code": "GL",
+  "zone_code": "gia-lai",
+  "contact_type": "coast_guard",
+  "phone": "024 3768 3050",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi",
+   "en"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Cổng thông tin Trung tâm Phối hợp tìm kiếm, cứu nạn hàng hải Việt Nam (VMRCC) – Đường dây nóng",
+  "source_url": "https://vmrcc.gov.vn",
+  "sort_order": 9,
+  "name": {
+   "vi": "Trung tâm Phối hợp TKCN hàng hải Việt Nam (MRCC) – trực ban toàn quốc",
+   "en": "Viet Nam Maritime Rescue Coordination Centre (MRCC) – national duty desk"
+  },
+  "note": {
+   "vi": "Trực ban tìm kiếm cứu nạn trên biển 24/24, phạm vi toàn vùng biển Việt Nam (trụ sở 11A Láng Hạ, Hà Nội). Kết hợp gọi 112 khi gặp nạn gần bờ.",
+   "en": "24/7 maritime search-and-rescue duty desk covering all Vietnamese waters. Also call 112 for incidents near shore."
+  }
+ },
+ {
+  "province_code": "DL",
+  "zone_code": "dak-lak",
+  "contact_type": "coast_guard",
+  "phone": "0258 3880 373",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi",
+   "en"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Cổng thông tin Trung tâm Phối hợp tìm kiếm, cứu nạn hàng hải Việt Nam (VMRCC) – Đường dây nóng",
+  "source_url": "https://vmrcc.gov.vn",
+  "sort_order": 8,
+  "name": {
+   "vi": "Trung tâm Phối hợp TKCN hàng hải khu vực IV (Nha Trang)",
+   "en": "Maritime Rescue Coordination Centre Region IV (Nha Trang)"
+  },
+  "note": {
+   "vi": "Trực ban 24/24 tìm kiếm cứu nạn trên biển (tàu thuyền gặp nạn, người rơi xuống biển, mất liên lạc). Khu vực phụ trách mang tính tham khảo; nếu không liên lạc được gọi trực ban MRCC Việt Nam hoặc 112.",
+   "en": "24/7 search and rescue at sea (vessel in distress, person overboard, lost contact). Coverage area is indicative; if no answer call Viet Nam MRCC or 112."
+  }
+ },
+ {
+  "province_code": "DL",
+  "zone_code": "dak-lak",
+  "contact_type": "coast_guard",
+  "phone": "024 3768 3050",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi",
+   "en"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Cổng thông tin Trung tâm Phối hợp tìm kiếm, cứu nạn hàng hải Việt Nam (VMRCC) – Đường dây nóng",
+  "source_url": "https://vmrcc.gov.vn",
+  "sort_order": 9,
+  "name": {
+   "vi": "Trung tâm Phối hợp TKCN hàng hải Việt Nam (MRCC) – trực ban toàn quốc",
+   "en": "Viet Nam Maritime Rescue Coordination Centre (MRCC) – national duty desk"
+  },
+  "note": {
+   "vi": "Trực ban tìm kiếm cứu nạn trên biển 24/24, phạm vi toàn vùng biển Việt Nam (trụ sở 11A Láng Hạ, Hà Nội). Kết hợp gọi 112 khi gặp nạn gần bờ.",
+   "en": "24/7 maritime search-and-rescue duty desk covering all Vietnamese waters. Also call 112 for incidents near shore."
+  }
+ },
+ {
+  "province_code": "KH",
+  "zone_code": "khanh-hoa",
+  "contact_type": "coast_guard",
+  "phone": "0258 3880 373",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi",
+   "en"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Cổng thông tin Trung tâm Phối hợp tìm kiếm, cứu nạn hàng hải Việt Nam (VMRCC) – Đường dây nóng",
+  "source_url": "https://vmrcc.gov.vn",
+  "sort_order": 8,
+  "name": {
+   "vi": "Trung tâm Phối hợp TKCN hàng hải khu vực IV (Nha Trang)",
+   "en": "Maritime Rescue Coordination Centre Region IV (Nha Trang)"
+  },
+  "note": {
+   "vi": "Trực ban 24/24 tìm kiếm cứu nạn trên biển (tàu thuyền gặp nạn, người rơi xuống biển, mất liên lạc). Khu vực phụ trách mang tính tham khảo; nếu không liên lạc được gọi trực ban MRCC Việt Nam hoặc 112.",
+   "en": "24/7 search and rescue at sea (vessel in distress, person overboard, lost contact). Coverage area is indicative; if no answer call Viet Nam MRCC or 112."
+  }
+ },
+ {
+  "province_code": "KH",
+  "zone_code": "khanh-hoa",
+  "contact_type": "coast_guard",
+  "phone": "024 3768 3050",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi",
+   "en"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Cổng thông tin Trung tâm Phối hợp tìm kiếm, cứu nạn hàng hải Việt Nam (VMRCC) – Đường dây nóng",
+  "source_url": "https://vmrcc.gov.vn",
+  "sort_order": 9,
+  "name": {
+   "vi": "Trung tâm Phối hợp TKCN hàng hải Việt Nam (MRCC) – trực ban toàn quốc",
+   "en": "Viet Nam Maritime Rescue Coordination Centre (MRCC) – national duty desk"
+  },
+  "note": {
+   "vi": "Trực ban tìm kiếm cứu nạn trên biển 24/24, phạm vi toàn vùng biển Việt Nam (trụ sở 11A Láng Hạ, Hà Nội). Kết hợp gọi 112 khi gặp nạn gần bờ.",
+   "en": "24/7 maritime search-and-rescue duty desk covering all Vietnamese waters. Also call 112 for incidents near shore."
+  }
+ },
+ {
+  "province_code": "LD",
+  "zone_code": "lam-dong",
+  "contact_type": "coast_guard",
+  "phone": "0258 3880 373",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi",
+   "en"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Cổng thông tin Trung tâm Phối hợp tìm kiếm, cứu nạn hàng hải Việt Nam (VMRCC) – Đường dây nóng",
+  "source_url": "https://vmrcc.gov.vn",
+  "sort_order": 8,
+  "name": {
+   "vi": "Trung tâm Phối hợp TKCN hàng hải khu vực IV (Nha Trang)",
+   "en": "Maritime Rescue Coordination Centre Region IV (Nha Trang)"
+  },
+  "note": {
+   "vi": "Trực ban 24/24 tìm kiếm cứu nạn trên biển (tàu thuyền gặp nạn, người rơi xuống biển, mất liên lạc). Khu vực phụ trách mang tính tham khảo; nếu không liên lạc được gọi trực ban MRCC Việt Nam hoặc 112.",
+   "en": "24/7 search and rescue at sea (vessel in distress, person overboard, lost contact). Coverage area is indicative; if no answer call Viet Nam MRCC or 112."
+  }
+ },
+ {
+  "province_code": "LD",
+  "zone_code": "lam-dong",
+  "contact_type": "coast_guard",
+  "phone": "024 3768 3050",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi",
+   "en"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Cổng thông tin Trung tâm Phối hợp tìm kiếm, cứu nạn hàng hải Việt Nam (VMRCC) – Đường dây nóng",
+  "source_url": "https://vmrcc.gov.vn",
+  "sort_order": 9,
+  "name": {
+   "vi": "Trung tâm Phối hợp TKCN hàng hải Việt Nam (MRCC) – trực ban toàn quốc",
+   "en": "Viet Nam Maritime Rescue Coordination Centre (MRCC) – national duty desk"
+  },
+  "note": {
+   "vi": "Trực ban tìm kiếm cứu nạn trên biển 24/24, phạm vi toàn vùng biển Việt Nam (trụ sở 11A Láng Hạ, Hà Nội). Kết hợp gọi 112 khi gặp nạn gần bờ.",
+   "en": "24/7 maritime search-and-rescue duty desk covering all Vietnamese waters. Also call 112 for incidents near shore."
+  }
+ },
+ {
+  "province_code": "HCM",
+  "zone_code": "ho-chi-minh",
+  "contact_type": "coast_guard",
+  "phone": "0254 3850 950",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi",
+   "en"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Cổng thông tin Trung tâm Phối hợp tìm kiếm, cứu nạn hàng hải Việt Nam (VMRCC) – Đường dây nóng",
+  "source_url": "https://vmrcc.gov.vn",
+  "sort_order": 8,
+  "name": {
+   "vi": "Trung tâm Phối hợp TKCN hàng hải khu vực III (Vũng Tàu)",
+   "en": "Maritime Rescue Coordination Centre Region III (Vung Tau)"
+  },
+  "note": {
+   "vi": "Trực ban 24/24 tìm kiếm cứu nạn trên biển (tàu thuyền gặp nạn, người rơi xuống biển, mất liên lạc). Khu vực phụ trách mang tính tham khảo; nếu không liên lạc được gọi trực ban MRCC Việt Nam hoặc 112.",
+   "en": "24/7 search and rescue at sea (vessel in distress, person overboard, lost contact). Coverage area is indicative; if no answer call Viet Nam MRCC or 112."
+  }
+ },
+ {
+  "province_code": "HCM",
+  "zone_code": "ho-chi-minh",
+  "contact_type": "coast_guard",
+  "phone": "024 3768 3050",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi",
+   "en"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Cổng thông tin Trung tâm Phối hợp tìm kiếm, cứu nạn hàng hải Việt Nam (VMRCC) – Đường dây nóng",
+  "source_url": "https://vmrcc.gov.vn",
+  "sort_order": 9,
+  "name": {
+   "vi": "Trung tâm Phối hợp TKCN hàng hải Việt Nam (MRCC) – trực ban toàn quốc",
+   "en": "Viet Nam Maritime Rescue Coordination Centre (MRCC) – national duty desk"
+  },
+  "note": {
+   "vi": "Trực ban tìm kiếm cứu nạn trên biển 24/24, phạm vi toàn vùng biển Việt Nam (trụ sở 11A Láng Hạ, Hà Nội). Kết hợp gọi 112 khi gặp nạn gần bờ.",
+   "en": "24/7 maritime search-and-rescue duty desk covering all Vietnamese waters. Also call 112 for incidents near shore."
+  }
+ },
+ {
+  "province_code": "DT",
+  "zone_code": "dong-thap",
+  "contact_type": "coast_guard",
+  "phone": "0254 3850 950",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi",
+   "en"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Cổng thông tin Trung tâm Phối hợp tìm kiếm, cứu nạn hàng hải Việt Nam (VMRCC) – Đường dây nóng",
+  "source_url": "https://vmrcc.gov.vn",
+  "sort_order": 8,
+  "name": {
+   "vi": "Trung tâm Phối hợp TKCN hàng hải khu vực III (Vũng Tàu)",
+   "en": "Maritime Rescue Coordination Centre Region III (Vung Tau)"
+  },
+  "note": {
+   "vi": "Trực ban 24/24 tìm kiếm cứu nạn trên biển (tàu thuyền gặp nạn, người rơi xuống biển, mất liên lạc). Khu vực phụ trách mang tính tham khảo; nếu không liên lạc được gọi trực ban MRCC Việt Nam hoặc 112.",
+   "en": "24/7 search and rescue at sea (vessel in distress, person overboard, lost contact). Coverage area is indicative; if no answer call Viet Nam MRCC or 112."
+  }
+ },
+ {
+  "province_code": "DT",
+  "zone_code": "dong-thap",
+  "contact_type": "coast_guard",
+  "phone": "024 3768 3050",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi",
+   "en"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Cổng thông tin Trung tâm Phối hợp tìm kiếm, cứu nạn hàng hải Việt Nam (VMRCC) – Đường dây nóng",
+  "source_url": "https://vmrcc.gov.vn",
+  "sort_order": 9,
+  "name": {
+   "vi": "Trung tâm Phối hợp TKCN hàng hải Việt Nam (MRCC) – trực ban toàn quốc",
+   "en": "Viet Nam Maritime Rescue Coordination Centre (MRCC) – national duty desk"
+  },
+  "note": {
+   "vi": "Trực ban tìm kiếm cứu nạn trên biển 24/24, phạm vi toàn vùng biển Việt Nam (trụ sở 11A Láng Hạ, Hà Nội). Kết hợp gọi 112 khi gặp nạn gần bờ.",
+   "en": "24/7 maritime search-and-rescue duty desk covering all Vietnamese waters. Also call 112 for incidents near shore."
+  }
+ },
+ {
+  "province_code": "VL",
+  "zone_code": "vinh-long",
+  "contact_type": "coast_guard",
+  "phone": "0254 3850 950",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi",
+   "en"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Cổng thông tin Trung tâm Phối hợp tìm kiếm, cứu nạn hàng hải Việt Nam (VMRCC) – Đường dây nóng",
+  "source_url": "https://vmrcc.gov.vn",
+  "sort_order": 8,
+  "name": {
+   "vi": "Trung tâm Phối hợp TKCN hàng hải khu vực III (Vũng Tàu)",
+   "en": "Maritime Rescue Coordination Centre Region III (Vung Tau)"
+  },
+  "note": {
+   "vi": "Trực ban 24/24 tìm kiếm cứu nạn trên biển (tàu thuyền gặp nạn, người rơi xuống biển, mất liên lạc). Khu vực phụ trách mang tính tham khảo; nếu không liên lạc được gọi trực ban MRCC Việt Nam hoặc 112.",
+   "en": "24/7 search and rescue at sea (vessel in distress, person overboard, lost contact). Coverage area is indicative; if no answer call Viet Nam MRCC or 112."
+  }
+ },
+ {
+  "province_code": "VL",
+  "zone_code": "vinh-long",
+  "contact_type": "coast_guard",
+  "phone": "024 3768 3050",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi",
+   "en"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Cổng thông tin Trung tâm Phối hợp tìm kiếm, cứu nạn hàng hải Việt Nam (VMRCC) – Đường dây nóng",
+  "source_url": "https://vmrcc.gov.vn",
+  "sort_order": 9,
+  "name": {
+   "vi": "Trung tâm Phối hợp TKCN hàng hải Việt Nam (MRCC) – trực ban toàn quốc",
+   "en": "Viet Nam Maritime Rescue Coordination Centre (MRCC) – national duty desk"
+  },
+  "note": {
+   "vi": "Trực ban tìm kiếm cứu nạn trên biển 24/24, phạm vi toàn vùng biển Việt Nam (trụ sở 11A Láng Hạ, Hà Nội). Kết hợp gọi 112 khi gặp nạn gần bờ.",
+   "en": "24/7 maritime search-and-rescue duty desk covering all Vietnamese waters. Also call 112 for incidents near shore."
+  }
+ },
+ {
+  "province_code": "CT",
+  "zone_code": "can-tho",
+  "contact_type": "coast_guard",
+  "phone": "0254 3850 950",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi",
+   "en"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Cổng thông tin Trung tâm Phối hợp tìm kiếm, cứu nạn hàng hải Việt Nam (VMRCC) – Đường dây nóng",
+  "source_url": "https://vmrcc.gov.vn",
+  "sort_order": 8,
+  "name": {
+   "vi": "Trung tâm Phối hợp TKCN hàng hải khu vực III (Vũng Tàu)",
+   "en": "Maritime Rescue Coordination Centre Region III (Vung Tau)"
+  },
+  "note": {
+   "vi": "Trực ban 24/24 tìm kiếm cứu nạn trên biển (tàu thuyền gặp nạn, người rơi xuống biển, mất liên lạc). Khu vực phụ trách mang tính tham khảo; nếu không liên lạc được gọi trực ban MRCC Việt Nam hoặc 112.",
+   "en": "24/7 search and rescue at sea (vessel in distress, person overboard, lost contact). Coverage area is indicative; if no answer call Viet Nam MRCC or 112."
+  }
+ },
+ {
+  "province_code": "CT",
+  "zone_code": "can-tho",
+  "contact_type": "coast_guard",
+  "phone": "024 3768 3050",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi",
+   "en"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Cổng thông tin Trung tâm Phối hợp tìm kiếm, cứu nạn hàng hải Việt Nam (VMRCC) – Đường dây nóng",
+  "source_url": "https://vmrcc.gov.vn",
+  "sort_order": 9,
+  "name": {
+   "vi": "Trung tâm Phối hợp TKCN hàng hải Việt Nam (MRCC) – trực ban toàn quốc",
+   "en": "Viet Nam Maritime Rescue Coordination Centre (MRCC) – national duty desk"
+  },
+  "note": {
+   "vi": "Trực ban tìm kiếm cứu nạn trên biển 24/24, phạm vi toàn vùng biển Việt Nam (trụ sở 11A Láng Hạ, Hà Nội). Kết hợp gọi 112 khi gặp nạn gần bờ.",
+   "en": "24/7 maritime search-and-rescue duty desk covering all Vietnamese waters. Also call 112 for incidents near shore."
+  }
+ },
+ {
+  "province_code": "AG",
+  "zone_code": "an-giang",
+  "contact_type": "coast_guard",
+  "phone": "0254 3850 950",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi",
+   "en"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Cổng thông tin Trung tâm Phối hợp tìm kiếm, cứu nạn hàng hải Việt Nam (VMRCC) – Đường dây nóng",
+  "source_url": "https://vmrcc.gov.vn",
+  "sort_order": 8,
+  "name": {
+   "vi": "Trung tâm Phối hợp TKCN hàng hải khu vực III (Vũng Tàu)",
+   "en": "Maritime Rescue Coordination Centre Region III (Vung Tau)"
+  },
+  "note": {
+   "vi": "Trực ban 24/24 tìm kiếm cứu nạn trên biển (tàu thuyền gặp nạn, người rơi xuống biển, mất liên lạc). Khu vực phụ trách mang tính tham khảo; nếu không liên lạc được gọi trực ban MRCC Việt Nam hoặc 112.",
+   "en": "24/7 search and rescue at sea (vessel in distress, person overboard, lost contact). Coverage area is indicative; if no answer call Viet Nam MRCC or 112."
+  }
+ },
+ {
+  "province_code": "AG",
+  "zone_code": "an-giang",
+  "contact_type": "coast_guard",
+  "phone": "024 3768 3050",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi",
+   "en"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Cổng thông tin Trung tâm Phối hợp tìm kiếm, cứu nạn hàng hải Việt Nam (VMRCC) – Đường dây nóng",
+  "source_url": "https://vmrcc.gov.vn",
+  "sort_order": 9,
+  "name": {
+   "vi": "Trung tâm Phối hợp TKCN hàng hải Việt Nam (MRCC) – trực ban toàn quốc",
+   "en": "Viet Nam Maritime Rescue Coordination Centre (MRCC) – national duty desk"
+  },
+  "note": {
+   "vi": "Trực ban tìm kiếm cứu nạn trên biển 24/24, phạm vi toàn vùng biển Việt Nam (trụ sở 11A Láng Hạ, Hà Nội). Kết hợp gọi 112 khi gặp nạn gần bờ.",
+   "en": "24/7 maritime search-and-rescue duty desk covering all Vietnamese waters. Also call 112 for incidents near shore."
+  }
+ },
+ {
+  "province_code": "CM",
+  "zone_code": "ca-mau",
+  "contact_type": "coast_guard",
+  "phone": "0254 3850 950",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi",
+   "en"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Cổng thông tin Trung tâm Phối hợp tìm kiếm, cứu nạn hàng hải Việt Nam (VMRCC) – Đường dây nóng",
+  "source_url": "https://vmrcc.gov.vn",
+  "sort_order": 8,
+  "name": {
+   "vi": "Trung tâm Phối hợp TKCN hàng hải khu vực III (Vũng Tàu)",
+   "en": "Maritime Rescue Coordination Centre Region III (Vung Tau)"
+  },
+  "note": {
+   "vi": "Trực ban 24/24 tìm kiếm cứu nạn trên biển (tàu thuyền gặp nạn, người rơi xuống biển, mất liên lạc). Khu vực phụ trách mang tính tham khảo; nếu không liên lạc được gọi trực ban MRCC Việt Nam hoặc 112.",
+   "en": "24/7 search and rescue at sea (vessel in distress, person overboard, lost contact). Coverage area is indicative; if no answer call Viet Nam MRCC or 112."
+  }
+ },
+ {
+  "province_code": "CM",
+  "zone_code": "ca-mau",
+  "contact_type": "coast_guard",
+  "phone": "024 3768 3050",
+  "phone_alt": null,
+  "address": null,
+  "lat": null,
+  "lng": null,
+  "hours": "24/7",
+  "languages": [
+   "vi",
+   "en"
+  ],
+  "is_verified": true,
+  "verified_at": "2026-10-23",
+  "source_name": "Cổng thông tin Trung tâm Phối hợp tìm kiếm, cứu nạn hàng hải Việt Nam (VMRCC) – Đường dây nóng",
+  "source_url": "https://vmrcc.gov.vn",
+  "sort_order": 9,
+  "name": {
+   "vi": "Trung tâm Phối hợp TKCN hàng hải Việt Nam (MRCC) – trực ban toàn quốc",
+   "en": "Viet Nam Maritime Rescue Coordination Centre (MRCC) – national duty desk"
+  },
+  "note": {
+   "vi": "Trực ban tìm kiếm cứu nạn trên biển 24/24, phạm vi toàn vùng biển Việt Nam (trụ sở 11A Láng Hạ, Hà Nội). Kết hợp gọi 112 khi gặp nạn gần bờ.",
+   "en": "24/7 maritime search-and-rescue duty desk covering all Vietnamese waters. Also call 112 for incidents near shore."
+  }
  }
 ]
