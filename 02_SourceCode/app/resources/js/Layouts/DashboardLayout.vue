@@ -37,6 +37,7 @@ const isActive = (item) => {
     const target = lr(item.path);
     return item.exact ? currentPath.value === target : currentPath.value === target || currentPath.value.startsWith(`${target}/`);
 };
+const analyticsDown = computed(() => page.props.app?.analyticsUp === false);
 const badgeOf = (item) => (item.badge === 'unread' ? unread.value : 0);
 
 const stopNavigate = router.on('navigate', () => (drawerOpen.value = false));
@@ -117,6 +118,15 @@ const onKey = (e) => {
             <FlashToast />
 
             <main id="main" class="clay-card min-w-0 flex-1 p-4 md:p-6 lg:p-8" tabindex="-1">
+                <!-- Báo dịch vụ phân tích Python không phản hồi trên mọi trang dashboard (prop chia sẻ app.analyticsUp) -->
+                <p
+                    v-if="analyticsDown"
+                    class="mb-4 flex items-start gap-2 rounded-2xl border border-level-2 bg-level-2-soft p-3 text-sm font-semibold"
+                    role="status"
+                    data-testid="analytics-down-banner"
+                >
+                    <Icon name="triangle-alert" :size="18" class="mt-0.5 shrink-0" />{{ t('dashboard.analytics_down') }}
+                </p>
                 <slot />
             </main>
 

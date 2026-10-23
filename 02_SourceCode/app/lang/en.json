@@ -52,6 +52,7 @@
     "admin.common.name": "Name",
     "admin.common.title": "Title",
     "admin.common.view_public": "View public page",
+    "dashboard.analytics_down": "The analytics service (Python) is not responding: matching uses the fallback, risk scores keep their last values.",
     "admin.dashboard.analytics_down": "The analytics service (Python) is not responding: matching uses the fallback, risk scores keep their last values.",
     "admin.dashboard.intro": "Active alerts, affected trips, help requests and notification delivery status.",
     "admin.dashboard.recent_audit": "Recent activity",

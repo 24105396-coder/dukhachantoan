@@ -52,6 +52,7 @@
     "admin.common.name": "Tên",
     "admin.common.title": "Tiêu đề",
     "admin.common.view_public": "Xem trang công khai",
+    "dashboard.analytics_down": "Dịch vụ phân tích (Python) không phản hồi: đối sánh dùng phương án dự phòng, điểm rủi ro giữ giá trị cũ.",
     "admin.dashboard.analytics_down": "Dịch vụ phân tích (Python) không phản hồi: đối sánh dùng phương án dự phòng, điểm rủi ro giữ giá trị cũ.",
     "admin.dashboard.intro": "Cảnh báo đang hiệu lực, hành trình bị ảnh hưởng, yêu cầu hỗ trợ và tình trạng gửi thông báo.",
     "admin.dashboard.recent_audit": "Hoạt động gần đây",
