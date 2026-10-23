@@ -16,12 +16,40 @@ use Throwable;
 class AnalyticsClient
 {
     public const STATUS_KEY = 'analytics:up';
+    public const PROBE_KEY = 'analytics:probe';
 
     public function isUp(): bool
     {
         return (bool) Cache::remember(self::STATUS_KEY, $this->ttl(), function () {
             return $this->send('get', '/healthz') !== null;
         });
+    }
+
+    /**
+     * Thăm dò trực tiếp cho /healthz: không dùng trạng thái nhớ 60 s, timeout ngắn (mặc định 1,5 s),
+     * nhớ kết quả tối đa probe_ttl giây và cập nhật luôn STATUS_KEY để các trang khác phản ánh ngay.
+     * Bộ nhớ đệm lỗi (cache dùng CSDL) thì vẫn gọi thẳng.
+     */
+    public function probe(): bool
+    {
+        $timeout = (float) config('dukhach.analytics.probe_timeout', 1.5);
+        try {
+            $cached = Cache::get(self::PROBE_KEY);
+            if (is_bool($cached)) {
+                return $cached;
+            }
+        } catch (Throwable) {
+            return $this->send('get', '/healthz', [], $timeout) !== null;
+        }
+        $up = $this->send('get', '/healthz', [], $timeout) !== null;
+        try {
+            Cache::put(self::PROBE_KEY, $up, (int) config('dukhach.analytics.probe_ttl', 5));
+            Cache::put(self::STATUS_KEY, $up, $this->ttl());
+        } catch (Throwable) {
+            // Không ghi được bộ nhớ đệm: vẫn trả kết quả vừa thăm dò
+        }
+
+        return $up;
     }
 
     /** Trạng thái chi tiết của dịch vụ Python: {status, db, last_fetch} hoặc null khi tắt. */

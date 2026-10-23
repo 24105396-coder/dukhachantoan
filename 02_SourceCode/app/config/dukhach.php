@@ -22,6 +22,9 @@ return [
         // Đề yêu cầu dự phòng nhanh: 3 giây rồi chuyển sang tính toán bằng PHP
         'timeout' => (float) env('ANALYTICS_TIMEOUT', 3),
         'status_ttl' => 60,
+        // /healthz thăm dò trực tiếp: timeout ngắn, nhớ kết quả tối đa vài giây
+        'probe_timeout' => (float) env('ANALYTICS_PROBE_TIMEOUT', 1.5),
+        'probe_ttl' => 5,
     ],
 
     // Chế độ mô phỏng: bật nút chạy kịch bản và nhãn [MÔ PHỎNG] trên giao diện

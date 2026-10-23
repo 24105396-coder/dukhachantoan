@@ -22,12 +22,8 @@ class HealthController extends Controller
             $db = 'fail';
         }
 
-        $analyticsUp = false;
-        try {
-            $analyticsUp = $analytics->isUp();
-        } catch (Throwable) {
-            // Cache có thể dùng CSDL; khi CSDL lỗi coi như dịch vụ phân tích không rõ trạng thái
-        }
+        // Thăm dò trực tiếp (timeout 1,5 s, nhớ tối đa 5 s), không dùng trạng thái nhớ 60 s
+        $analyticsUp = $analytics->probe();
 
         return response()->json([
             'status' => $db === 'ok' ? 'ok' : 'fail',

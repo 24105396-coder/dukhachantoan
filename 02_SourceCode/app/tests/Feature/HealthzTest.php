@@ -2,6 +2,8 @@
 
 namespace Tests\Feature;
 
+use App\Services\AnalyticsClient;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 use Tests\TestCase;
@@ -33,5 +35,30 @@ class HealthzTest extends TestCase
         DB::purge('mysql');
 
         $this->getJson('/healthz')->assertStatus(503)->assertJson(['status' => 'fail', 'db' => 'fail', 'queue' => null]);
+    }
+
+    public function test_healthz_ignores_sixty_second_status_memory(): void
+    {
+        // Trang khác vừa ghi "up" vào bộ nhớ 60 s, nhưng dịch vụ đã tắt: /healthz phải báo down ngay
+        Cache::put(AnalyticsClient::STATUS_KEY, true, 60);
+        Cache::forget(AnalyticsClient::PROBE_KEY);
+        Http::fake(['*' => Http::response(null, 500)]);
+
+        $this->getJson('/healthz')->assertOk()->assertJson(['analytics' => 'down']);
+        $this->assertFalse(Cache::get(AnalyticsClient::STATUS_KEY));
+    }
+
+    public function test_healthz_probe_result_is_cached_at_most_five_seconds(): void
+    {
+        Cache::forget(AnalyticsClient::PROBE_KEY);
+        Http::fake(['*/healthz' => Http::sequence()->push(['status' => 'ok'])->push(null, 500)->push(null, 500)]);
+
+        $this->getJson('/healthz')->assertJson(['analytics' => 'ok']);
+        $this->getJson('/healthz')->assertJson(['analytics' => 'ok']);
+        Http::assertSentCount(1);
+
+        $this->travel(6)->seconds();
+        $this->getJson('/healthz')->assertJson(['analytics' => 'down']);
+        Http::assertSentCount(2);
     }
 }
