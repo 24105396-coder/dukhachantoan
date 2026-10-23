@@ -14,6 +14,10 @@ class AlertRequest extends FormRequest
 {
     public const MAX_RADIUS_KM = 500;
 
+    public const MIN_RADIUS_KM = 0.1;
+
+    public const MIN_RING_POINTS = 3;
+
     public function authorize(): bool
     {
         return (bool) $this->user()?->isStaff();
@@ -38,6 +42,14 @@ class AlertRequest extends FormRequest
             'zone_codes.*' => ['string', Rule::exists('zones', 'code')],
             'geometry' => ['nullable', 'array'],
             'geometry.type' => ['required_with:geometry', Rule::in(['Polygon', 'MultiPolygon', 'Circle'])],
+            // Khóa con phải có rule, nếu không validated() (excludeUnvalidatedArrayKeys) sẽ bỏ tâm/bán kính/tọa độ
+            'geometry.center' => ['exclude_unless:geometry.type,Circle', 'required', 'array'],
+            'geometry.center.lat' => ['exclude_unless:geometry.type,Circle', 'required', 'numeric', 'between:-90,90'],
+            'geometry.center.lng' => ['exclude_unless:geometry.type,Circle', 'required', 'numeric', 'between:-180,180'],
+            'geometry.radius_km' => ['exclude_unless:geometry.type,Circle', 'required', 'numeric',
+                'min:'.self::MIN_RADIUS_KM, 'max:'.self::MAX_RADIUS_KM],
+            // Polygon/MultiPolygon: GeoJSON [lng, lat]; cấu trúc vòng kiểm trong after() để giữ nguyên mảng lồng
+            'geometry.coordinates' => ['exclude_if:geometry.type,Circle', 'required_with:geometry.type', 'array', 'min:1'],
             'starts_at' => ['nullable', 'date'],
             'ends_at' => ['nullable', 'date', 'after:starts_at'],
             'source_name' => ['required', 'string', 'max:255'],
@@ -60,18 +72,39 @@ class AlertRequest extends FormRequest
     private function validateGeometry(Validator $validator): void
     {
         $geometry = $this->input('geometry');
-        if ($geometry === null || $validator->errors()->has('geometry')) {
+        if (! is_array($geometry) || $validator->errors()->hasAny(['geometry', 'geometry.*'])) {
             return;
         }
         $valid = match ($geometry['type'] ?? null) {
-            'Circle' => isset($geometry['center']) && is_array($geometry['center'])
-                && is_numeric($geometry['radius_km'] ?? null)
-                && (float) $geometry['radius_km'] > 0 && (float) $geometry['radius_km'] <= self::MAX_RADIUS_KM,
-            'Polygon', 'MultiPolygon' => is_array($geometry['coordinates'] ?? null) && $geometry['coordinates'] !== [],
+            'Circle' => true,
+            'Polygon' => self::validPolygon($geometry['coordinates'] ?? null),
+            'MultiPolygon' => is_array($geometry['coordinates'] ?? null) && $geometry['coordinates'] !== []
+                && collect($geometry['coordinates'])->every(fn ($polygon) => self::validPolygon($polygon)),
             default => false,
         };
         if (! $valid) {
             $validator->errors()->add('geometry', __('messages.alerts.invalid_geometry'));
         }
+    }
+
+    /** Polygon = danh sách vòng; mỗi vòng ≥ 3 điểm [lng, lat] trong miền hợp lệ. */
+    private static function validPolygon(mixed $rings): bool
+    {
+        if (! is_array($rings) || $rings === []) {
+            return false;
+        }
+
+        return collect($rings)->every(fn ($ring) => is_array($ring) && count($ring) >= self::MIN_RING_POINTS
+            && collect($ring)->every(fn ($point) => self::validPosition($point)));
+    }
+
+    private static function validPosition(mixed $point): bool
+    {
+        if (! is_array($point) || ! array_is_list($point) || count($point) < 2
+            || ! is_numeric($point[0]) || ! is_numeric($point[1])) {
+            return false;
+        }
+
+        return abs((float) $point[0]) <= 180 && abs((float) $point[1]) <= 90;
     }
 }
