@@ -19,7 +19,7 @@ const { dateTime } = useFormat();
 const META_PREVIEW = 120;
 const fields = computed(() => [
     props.actions.length
-        ? { name: 'action', type: 'select', label: t('admin.audit.action'), options: props.actions.map((a) => ({ value: a, label: a })) }
+        ? { name: 'action', type: 'select', label: t('admin.audit.action'), options: props.actions.map((a) => ({ value: a, label: te('audit_action', a) })) }
         : { name: 'action', type: 'search', label: t('admin.audit.action'), placeholder: t('admin.audit.action_placeholder') },
     { name: 'user', type: 'search', label: t('admin.audit.user'), placeholder: t('admin.audit.user_placeholder') },
     { name: 'from', type: 'date', label: t('common.from') },
@@ -50,7 +50,7 @@ function metaText(meta) {
         <DataTable :columns="columns" :rows="logs?.data || []" :empty-text="t('admin.audit.empty')" :caption="t('admin.audit.title')">
             <template #cell-created_at="{ value }"><span class="whitespace-nowrap">{{ dateTime(value) }}</span></template>
             <template #cell-user="{ value }">{{ userName(value) }}</template>
-            <template #cell-action="{ value }"><code class="text-xs">{{ value }}</code></template>
+            <template #cell-action="{ value }"><span :title="value">{{ te('audit_action', value) }}</span></template>
             <template #cell-subject_type="{ row }">
                 <span v-if="row.subject_type">{{ te('subject_type', row.subject_type) }} #{{ row.subject_id }}</span>
                 <span v-else>—</span>
