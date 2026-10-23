@@ -1,6 +1,6 @@
 @echo off
 rem ============================================================
-rem  DuKhachAnToan (CSE703073 DT-04) - Khoi dong he thong bang mot lenh
+rem  DuKhachAnToan (CSE703073 DT-15) - Khoi dong he thong bang mot lenh
 rem  Yeu cau: Windows 10/11 + Docker Desktop dang chay (Engine running)
 rem  Cach dung: nhay dup chuot vao chay.bat hoac go  chay  trong PowerShell/CMD
 rem ============================================================

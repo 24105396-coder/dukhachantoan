@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-# DuKhachAnToan (CSE703073 ĐT-04) – khởi động hệ thống bằng một lệnh trên macOS/Linux.
+# DuKhachAnToan (CSE703073 ĐT-15) – khởi động hệ thống bằng một lệnh trên macOS/Linux.
 # Yêu cầu: Docker Engine + Compose v2 đang chạy. Dùng: ./chay.sh
 set -eu
 cd "$(dirname "$0")"
