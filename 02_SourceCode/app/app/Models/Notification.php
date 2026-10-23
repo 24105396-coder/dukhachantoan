@@ -99,6 +99,13 @@ class Notification extends Model
             ->where(fn ($q) => $q->whereNull('next_attempt_at')->orWhere('next_attempt_at', '<=', now()));
     }
 
+    /** Thông báo thuộc tỉnh: hành trình có chặng trong tỉnh hoặc người nhận thuộc tỉnh. */
+    public function scopeInProvince($query, int $provinceId)
+    {
+        return $query->where(fn ($w) => $w->whereHas('trip', fn ($t) => $t->inProvince($provinceId))
+            ->orWhereHas('user', fn ($u) => $u->where('province_id', $provinceId)));
+    }
+
     public function isRead(): bool
     {
         return $this->read_at !== null;

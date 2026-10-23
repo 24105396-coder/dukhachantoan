@@ -44,13 +44,14 @@ class DashboardService
         ];
     }
 
-    public function queueHealth(): array
+    /** Tình trạng hàng đợi; $provinceId != null chỉ tính thông báo thuộc tỉnh (admin toàn hệ thống). */
+    public function queueHealth(?int $provinceId = null): array
     {
-        $queued = Notification::query()->where('status', Notification::STATUS_QUEUED);
+        $queued = $this->notificationsInScope($provinceId)->where('status', Notification::STATUS_QUEUED);
 
         return [
             'queued' => (clone $queued)->count(),
-            'failed' => Notification::query()->where('status', Notification::STATUS_FAILED)->count(),
+            'failed' => $this->notificationsInScope($provinceId)->where('status', Notification::STATUS_FAILED)->count(),
             'oldest_queued_at' => $this->iso((clone $queued)->min('created_at')),
         ];
     }
@@ -81,7 +82,7 @@ class DashboardService
 
     private function notificationsInScope(?int $provinceId): Builder
     {
-        return Notification::query()->when($provinceId, fn ($q) => $q->whereHas('trip.legs.zone', fn ($z) => $z->where('province_id', $provinceId)));
+        return Notification::query()->when($provinceId, fn ($q, $p) => $q->inProvince($p));
     }
 
     private function iso(mixed $value): ?string

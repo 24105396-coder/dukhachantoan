@@ -40,7 +40,7 @@ class DashboardController extends Controller
                 ->when($provinceId, fn ($q, $v) => $q->inProvince($v))
                 ->latest('updated_at')->limit(self::RECENT_ALERTS)->get()),
             'zonesGeo' => ZoneGeo::collection(Zone::query()->active()->when($provinceId, fn ($q, $v) => $q->where('province_id', $v))->orderBy('id')->get()),
-            'queueHealth' => $dashboard->queueHealth(),
+            'queueHealth' => $dashboard->queueHealth($provinceId),
             'scope' => ['province' => $request->user()->isAgency() ? $request->user()->province?->brief() : null],
         ]);
     }

@@ -26,7 +26,7 @@ class NotificationController extends Controller
         $filters = $this->filters($request, ['status', 'channel', 'level', 'q', 'alert']);
         $provinceId = $request->user()->scopedProvinceId();
         $base = Notification::query()->when($provinceId, fn ($q, $p) => $q->where(fn ($w) => $w
-            ->whereHas('trip', fn ($t) => $t->inProvince($p))->orWhere('user_id', $request->user()->id)));
+            ->inProvince($p)->orWhere('user_id', $request->user()->id)));
         $page = (clone $base)->with('deliveries', 'user:id,name,email', 'alert.translations', 'trip')
             ->when($filters['alert'], fn ($q, $v) => $q->whereHas('alert', fn ($a) => $a->where('code', $v)))
             ->when($filters['q'], fn ($q, $v) => $q->where(fn ($w) => $w->where('title', 'like', like_contains($v))
@@ -36,6 +36,7 @@ class NotificationController extends Controller
             ->when($filters['level'], fn ($q, $v) => $q->where('level', (int) $v))
             ->latest('id')->paginate(self::PER_PAGE)->withQueryString();
         $byStatus = (clone $base)->selectRaw('status, COUNT(*) AS total')->groupBy('status')->pluck('total', 'status');
+        $queue = $dashboard->queueHealth($provinceId);
         $ok = (int) ($byStatus['sent'] ?? 0) + (int) ($byStatus['read'] ?? 0);
         $failed = (int) ($byStatus['failed'] ?? 0);
 
@@ -43,10 +44,10 @@ class NotificationController extends Controller
             'notifications' => NotificationItem::paginate($page),
             'stats' => collect(Notification::STATUSES)->mapWithKeys(fn ($s) => [$s => (int) ($byStatus[$s] ?? 0)])->all() + [
                 'delivery_success_rate' => $ok + $failed > 0 ? round($ok / ($ok + $failed), 3) : null,
-                'oldest_queued_at' => $dashboard->queueHealth()['oldest_queued_at'],
+                'oldest_queued_at' => $queue['oldest_queued_at'],
                 'by_status' => collect(Notification::STATUSES)->mapWithKeys(fn ($s) => [$s => (int) ($byStatus[$s] ?? 0)])->all(),
                 'success_rate' => $ok + $failed > 0 ? round($ok / ($ok + $failed), 3) : null,
-                'queue' => $dashboard->queueHealth(),
+                'queue' => $queue,
             ],
             'filters' => $filters,
             'zones' => $lookup->zones(),
