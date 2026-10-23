@@ -46,11 +46,11 @@ Route::prefix('{locale}')->where(['locale' => 'vi|en'])->middleware('locale')->g
         Route::get('dang-nhap', [LoginController::class, 'create'])->name('login');
         Route::post('dang-nhap', [LoginController::class, 'store'])->middleware('throttle:login')->name('login.store');
         Route::get('dang-ky', [RegisterController::class, 'create'])->name('register');
-        Route::post('dang-ky', [RegisterController::class, 'store'])->middleware('throttle:6,1')->name('register.store');
+        Route::post('dang-ky', [RegisterController::class, 'store'])->middleware('throttle:6,1,register')->name('register.store');
         Route::get('quen-mat-khau', [PasswordResetController::class, 'create'])->name('password.request');
-        Route::post('quen-mat-khau', [PasswordResetController::class, 'store'])->middleware('throttle:6,1')->name('password.email');
+        Route::post('quen-mat-khau', [PasswordResetController::class, 'store'])->middleware('throttle:6,1,password-email')->name('password.email');
         Route::get('dat-lai-mat-khau/{token}', [PasswordResetController::class, 'edit'])->name('password.reset');
-        Route::post('dat-lai-mat-khau', [PasswordResetController::class, 'update'])->middleware('throttle:6,1')->name('password.update');
+        Route::post('dat-lai-mat-khau', [PasswordResetController::class, 'update'])->middleware('throttle:6,1,password-update')->name('password.update');
     });
     Route::post('dang-xuat', [LoginController::class, 'destroy'])->middleware('auth')->name('logout');
 
@@ -65,12 +65,12 @@ Route::prefix('{locale}')->where(['locale' => 'vi|en'])->middleware('locale')->g
 
         Route::get('hanh-trinh', [TripController::class, 'index'])->name('trips.index');
         Route::get('hanh-trinh/tao', [TripController::class, 'create'])->name('trips.create');
-        Route::post('hanh-trinh/tao', [TripController::class, 'store'])->middleware('throttle:20,1')->name('trips.store');
+        Route::post('hanh-trinh/tao', [TripController::class, 'store'])->middleware('throttle:20,1,trips-store')->name('trips.store');
         Route::get('hanh-trinh/{trip}', [TripController::class, 'show'])->name('trips.show');
         Route::get('hanh-trinh/{trip}/sua', [TripController::class, 'edit'])->name('trips.edit');
         Route::put('hanh-trinh/{trip}/sua', [TripController::class, 'update'])->name('trips.update');
         Route::post('hanh-trinh/{trip}/huy', [TripController::class, 'cancel'])->name('trips.cancel');
-        Route::post('hanh-trinh/{trip}/bao-an-toan', [TripController::class, 'checkin'])->middleware('throttle:30,60')->name('trips.checkin');
+        Route::post('hanh-trinh/{trip}/bao-an-toan', [TripController::class, 'checkin'])->middleware('throttle:30,60,trips-checkin')->name('trips.checkin');
         Route::post('hanh-trinh/{trip}/xac-nhan/{match}', [TripController::class, 'acknowledge'])->whereNumber('match')->name('trips.acknowledge');
         Route::get('hanh-trinh/{trip}/lich.ics', [TripController::class, 'ical'])->name('trips.ical');
 
@@ -79,7 +79,7 @@ Route::prefix('{locale}')->where(['locale' => 'vi|en'])->middleware('locale')->g
         Route::post('thong-bao/{notification}/da-doc', [NotificationController::class, 'read'])->whereNumber('notification')->name('notifications.read');
 
         Route::get('bao-su-co', [IncidentController::class, 'create'])->name('incidents.create');
-        Route::post('bao-su-co', [IncidentController::class, 'store'])->middleware('throttle:10,60')->name('incidents.store');
+        Route::post('bao-su-co', [IncidentController::class, 'store'])->middleware('throttle:10,60,incidents-store')->name('incidents.store');
     });
 
     // ---------- Quản trị: cơ quan hỗ trợ + quản trị hệ thống ----------
@@ -109,8 +109,8 @@ Route::prefix('{locale}')->where(['locale' => 'vi|en'])->middleware('locale')->g
 
         Route::get('thong-bao', [Admin\NotificationController::class, 'index'])->name('notifications.index');
         Route::post('thong-bao/{notification}/gui-lai', [Admin\NotificationController::class, 'resend'])->whereNumber('notification')->name('notifications.resend');
-        Route::post('thong-bao/phat-thu-cong', [Admin\NotificationController::class, 'broadcast'])->middleware('throttle:10,1')->name('notifications.broadcast');
-        Route::post('thong-bao/phat', [Admin\NotificationController::class, 'broadcast'])->middleware('throttle:10,1')->name('notifications.broadcast.short');
+        Route::post('thong-bao/phat-thu-cong', [Admin\NotificationController::class, 'broadcast'])->middleware('throttle:10,1,notifications-broadcast')->name('notifications.broadcast');
+        Route::post('thong-bao/phat', [Admin\NotificationController::class, 'broadcast'])->middleware('throttle:10,1,notifications-broadcast')->name('notifications.broadcast.short');
         Route::post('thong-bao/gui-lai', [Admin\NotificationController::class, 'resendById'])->name('notifications.resend.body');
 
         Route::get('danh-ba', [Admin\ContactController::class, 'index'])->name('contacts.index');
@@ -145,16 +145,16 @@ Route::prefix('{locale}')->where(['locale' => 'vi|en'])->middleware('locale')->g
         // Chỉ quản trị hệ thống
         Route::middleware('role:admin')->group(function () {
             Route::get('nguon', [Admin\SourceController::class, 'index'])->name('sources.index');
-            Route::post('nguon/lay-ngay', [Admin\SourceController::class, 'fetch'])->middleware('throttle:6,1')->name('sources.fetch');
+            Route::post('nguon/lay-ngay', [Admin\SourceController::class, 'fetch'])->middleware('throttle:6,1,sources-fetch')->name('sources.fetch');
             Route::get('mo-phong', [Admin\ScenarioController::class, 'index'])->name('scenarios.index');
-            Route::post('mo-phong/chay', [Admin\ScenarioController::class, 'run'])->middleware('throttle:10,1')->name('scenarios.run');
+            Route::post('mo-phong/chay', [Admin\ScenarioController::class, 'run'])->middleware('throttle:10,1,scenarios-run')->name('scenarios.run');
             Route::post('mo-phong/lan-chay/{run}/ket-thuc', [Admin\ScenarioController::class, 'finish'])->whereNumber('run')->name('scenarios.finish');
             Route::post('mo-phong/ket-thuc', [Admin\ScenarioController::class, 'finishBySlug'])->name('scenarios.finish.slug');
             Route::get('nguoi-dung', [Admin\UserController::class, 'index'])->name('users.index');
             Route::patch('nguoi-dung/{user}', [Admin\UserController::class, 'update'])->whereNumber('user')->name('users.update');
             Route::get('nhat-ky', [Admin\AuditLogController::class, 'index'])->name('audit.index');
             Route::get('sao-luu', [Admin\BackupController::class, 'index'])->name('backup.index');
-            Route::post('sao-luu', [Admin\BackupController::class, 'store'])->middleware('throttle:3,1')->name('backup.store');
+            Route::post('sao-luu', [Admin\BackupController::class, 'store'])->middleware('throttle:3,1,backup-store')->name('backup.store');
         });
     });
 });
