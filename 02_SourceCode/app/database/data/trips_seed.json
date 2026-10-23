@@ -861,8 +861,8 @@
   "owner_email": "traveler3@dukhach.test",
   "partner_email": null,
   "title": "Nha Trang beach 4 days",
-  "start": "+2d",
-  "end": "+5d",
+  "start": "-1d",
+  "end": "+2d",
   "status": "active",
   "group_size": 3,
   "nationality": "JP",
@@ -876,8 +876,8 @@
    {
     "zone_code": "khanh-hoa",
     "destination_slug": "san-bay-cam-ranh",
-    "starts_at": "+2d 13:00",
-    "ends_at": "+2d 15:00",
+    "starts_at": "-1d 13:00",
+    "ends_at": "-1d 15:00",
     "lodging": null,
     "transport": "plane",
     "note": null
@@ -885,8 +885,8 @@
    {
     "zone_code": "khanh-hoa",
     "destination_slug": "vinh-nha-trang",
-    "starts_at": "+2d 16:00",
-    "ends_at": "+4d 10:00",
+    "starts_at": "-1d 16:00",
+    "ends_at": "+1d 10:00",
     "lodging": "Khách sạn mô phỏng Trần Phú",
     "transport": "taxi",
     "note": null
@@ -894,8 +894,8 @@
    {
     "zone_code": "khanh-hoa",
     "destination_slug": "thap-ba-po-nagar",
-    "starts_at": "+4d 11:00",
-    "ends_at": "+5d 10:00",
+    "starts_at": "+1d 11:00",
+    "ends_at": "+2d 10:00",
     "lodging": "Khách sạn mô phỏng Trần Phú",
     "transport": "taxi",
     "note": null
