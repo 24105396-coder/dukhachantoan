@@ -26,7 +26,7 @@ class AuthTest extends TestCase
 
         $response = $this->post('/vi/dang-nhap', ['email' => 'USER@dukhach.test', 'password' => 'password']);
 
-        $response->assertRedirect(localized_route('account.edit', ['locale' => 'vi']));
+        $response->assertRedirect(localized_route('trips.index', ['locale' => 'vi']));
         $this->assertAuthenticatedAs($user);
         $this->assertNotSame($oldSession, session()->getId());
         $this->assertNotNull($user->fresh()->last_login_at);
@@ -81,6 +81,23 @@ class AuthTest extends TestCase
         $this->post('/vi/dang-nhap', ['email' => 'agency@dukhach.test', 'password' => 'password'])
             ->assertRedirect(localized_route('admin.dashboard', ['locale' => 'vi']));
         $this->assertAuthenticatedAs($agency);
+    }
+
+    public function test_partner_login_redirects_to_trips(): void
+    {
+        $partner = User::factory()->partner()->create(['email' => 'partner@dukhach.test']);
+
+        $this->post('/vi/dang-nhap', ['email' => 'partner@dukhach.test', 'password' => 'password'])
+            ->assertRedirect(localized_route('trips.index', ['locale' => 'vi']));
+        $this->assertAuthenticatedAs($partner);
+    }
+
+    public function test_admin_login_redirects_to_admin_dashboard(): void
+    {
+        User::factory()->admin()->create(['email' => 'admin@dukhach.test']);
+
+        $this->post('/vi/dang-nhap', ['email' => 'admin@dukhach.test', 'password' => 'password'])
+            ->assertRedirect(localized_route('admin.dashboard', ['locale' => 'vi']));
     }
 
     public function test_register_creates_traveler_and_ignores_role_input(): void

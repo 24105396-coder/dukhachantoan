@@ -116,7 +116,7 @@ class User extends Authenticatable
     /** Trang đích sau đăng nhập: cơ quan/quản trị → bảng điều khiển, còn lại → tài khoản. */
     public function homeRouteName(): string
     {
-        return $this->isStaff() ? 'admin.dashboard' : 'account.edit';
+        return $this->isStaff() ? 'admin.dashboard' : 'trips.index';
     }
 
     /** Cơ quan có phạm vi tỉnh (admin và agency toàn quốc trả null). */
