@@ -111,6 +111,22 @@ class SeederTest extends TestCase
         }
     }
 
+    public function test_checkin_seeder_creates_open_need_help_in_khanh_hoa_and_is_idempotent(): void
+    {
+        $this->useFixtures();
+        $this->seed(DatabaseSeeder::class);
+        \App\Models\SafetyCheckin::query()->update(['response_status' => 'closed']);
+        $this->seed(DatabaseSeeder::class);
+
+        $kh = \App\Models\Province::where('code', 'KH')->value('id');
+        $needHelp = \App\Models\SafetyCheckin::query()->inProvince($kh)
+            ->where('status', 'need_help')->where('response_status', 'open')->get();
+        $this->assertCount(3, $needHelp, 'chạy lại seeder đặt lại 3 check-in cần hỗ trợ đang mở, không nhân bản');
+        $this->assertTrue($needHelp->every(fn ($c) => $c->checked_at->gt(now()->subDay())));
+        // Bộ dữ liệu mẫu nhỏ chỉ có TR-SEED-01: thêm 1 check-in "an toàn", các mã khác bỏ qua
+        $this->assertSame(4, \App\Models\SafetyCheckin::count());
+    }
+
     private function counts(): array
     {
         return [
@@ -126,6 +142,7 @@ class SeederTest extends TestCase
             'members' => \App\Models\TripMember::count(),
             'hazards' => HazardType::count(),
             'translations' => \App\Models\AlertTranslation::count() + \App\Models\DestinationTranslation::count(),
+            'checkins' => \App\Models\SafetyCheckin::count(),
         ];
     }
 }

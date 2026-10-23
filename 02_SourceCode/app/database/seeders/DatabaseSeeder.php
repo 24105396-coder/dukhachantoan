@@ -6,7 +6,7 @@ use Illuminate\Database\Seeder;
 
 /**
  * Thứ tự phụ thuộc: vai trò → tỉnh → người dùng → loại rủi ro, nguồn → vùng → điểm đến, danh bạ, hướng dẫn,
- * kịch bản → cảnh báo → hành trình. Seeder đọc JSON thiếu tệp thì bỏ qua kèm cảnh báo; chạy lại an toàn.
+ * kịch bản → cảnh báo → hành trình → check-in mẫu. Seeder đọc JSON thiếu tệp thì bỏ qua kèm cảnh báo; chạy lại an toàn.
  */
 class DatabaseSeeder extends Seeder
 {
@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
             ScenarioSeeder::class,
             AlertSeeder::class,
             TripSeeder::class,
+            CheckinSeeder::class,
         ]);
     }
 }
