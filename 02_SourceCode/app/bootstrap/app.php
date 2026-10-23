@@ -30,7 +30,7 @@ return Application::configure(basePath: dirname(__DIR__))
         apiPrefix: 'api',
         then: function () {
             // Health check tự viết: không qua session/CSRF để Docker gọi nhanh
-            Route::get('/healthz', HealthController::class)->name('healthz');
+            Route::get('/healthz', HealthController::class)->middleware(SecurityHeaders::class.':'.SecurityHeaders::MODE_API)->name('healthz');
         },
     )
     ->withMiddleware(function (Middleware $middleware): void {
@@ -56,7 +56,7 @@ return Application::configure(basePath: dirname(__DIR__))
         ]);
 
         // ForceJsonResponse đứng đầu để cả lỗi 429 của throttle cũng là JSON
-        $middleware->api(prepend: [ForceJsonResponse::class, 'throttle:api']);
+        $middleware->api(prepend: [ForceJsonResponse::class, SecurityHeaders::class.':'.SecurityHeaders::MODE_API, 'throttle:api']);
 
         // auth có thể chạy trước SetLocale (thứ tự ưu tiên middleware) → lấy locale từ đoạn đầu URL
         $middleware->redirectGuestsTo(fn (Request $request) => localized_route('login', [
