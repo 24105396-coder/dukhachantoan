@@ -10,6 +10,7 @@ use App\Http\Middleware\ForceJsonResponse;
 use App\Http\Middleware\HandleInertiaRequests;
 use App\Http\Middleware\SecurityHeaders;
 use App\Http\Middleware\SetLocale;
+use App\Http\Middleware\ThrottleHealthz;
 use App\Services\AccessDeniedLogger;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Foundation\Application;
@@ -29,8 +30,10 @@ return Application::configure(basePath: dirname(__DIR__))
         commands: __DIR__.'/../routes/console.php',
         apiPrefix: 'api',
         then: function () {
-            // Health check tự viết: không qua session/CSRF để Docker gọi nhanh
-            Route::get('/healthz', HealthController::class)->middleware(SecurityHeaders::class.':'.SecurityHeaders::MODE_API)->name('healthz');
+            // Health check tự viết: không qua session/CSRF để Docker gọi nhanh; giới hạn 60 lượt/phút/IP, bộ đếm riêng
+            Route::get('/healthz', HealthController::class)
+                ->middleware([SecurityHeaders::class.':'.SecurityHeaders::MODE_API, ThrottleHealthz::class.':60,1,healthz'])
+                ->name('healthz');
         },
     )
     ->withMiddleware(function (Middleware $middleware): void {

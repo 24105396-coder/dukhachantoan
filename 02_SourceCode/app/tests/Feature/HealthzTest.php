@@ -61,4 +61,29 @@ class HealthzTest extends TestCase
         $this->getJson('/healthz')->assertJson(['analytics' => 'down']);
         Http::assertSentCount(2);
     }
+
+    public function test_healthz_has_its_own_rate_limit_headers_and_returns_429_when_exceeded(): void
+    {
+        Http::fake(['*' => Http::response(null, 500)]);
+
+        $this->getJson('/healthz')->assertOk()
+            ->assertHeader('X-RateLimit-Limit', '60')
+            ->assertHeader('X-RateLimit-Remaining', '59');
+        for ($i = 0; $i < 59; $i++) {
+            $this->getJson('/healthz');
+        }
+        $this->getJson('/healthz')->assertStatus(429)->assertHeader('Retry-After');
+    }
+
+    public function test_healthz_still_reports_503_when_rate_limit_store_is_the_unreachable_database(): void
+    {
+        Http::fake(['*' => Http::response(null, 500)]);
+        config(['cache.default' => 'database', 'cache.limiter' => 'database',
+            'database.connections.mysql.host' => '127.0.0.1', 'database.connections.mysql.port' => 1]);
+        DB::purge('mysql');
+        $this->app->forgetInstance(\Illuminate\Cache\RateLimiter::class);
+        Cache::forgetDriver('database');
+
+        $this->getJson('/healthz')->assertStatus(503)->assertJson(['status' => 'fail', 'db' => 'fail']);
+    }
 }
