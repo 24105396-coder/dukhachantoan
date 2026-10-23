@@ -81,7 +81,8 @@ class AdminPagesTest extends TestCase
     {
         $zone = $this->zoneIn('KH', ['code' => 'khanh-hoa']);
         $trip = $this->tripInZone($zone);
-        $failed = Notification::factory()->failed()->create();
+        // Thông báo thuộc hành trình trong tỉnh của cơ quan (gửi lại bị giới hạn phạm vi tỉnh)
+        $failed = Notification::factory()->failed()->create(['trip_id' => $trip->id]);
         $agency = $this->agency('KH');
 
         $this->actingAs($agency)->post("/vi/quan-tri/thong-bao/{$failed->id}/gui-lai")->assertRedirect();

@@ -90,4 +90,32 @@ class RbacBusinessTest extends TestCase
         $this->actingAs($owner)->post("/vi/thong-bao/{$notification->id}/da-doc")->assertRedirect();
         $this->assertNotNull($notification->fresh()->read_at);
     }
+
+    public function test_agency_of_province_a_cannot_resend_notification_of_province_b(): void
+    {
+        $tripHanoi = $this->tripInZone($this->zoneIn('HN'));
+        $tripKhanhHoa = $this->tripInZone($this->zoneIn('KH'));
+        $foreign = Notification::factory()->failed()->create(['user_id' => $tripHanoi->user_id, 'trip_id' => $tripHanoi->id]);
+        $own = Notification::factory()->failed()->create(['user_id' => $tripKhanhHoa->user_id, 'trip_id' => $tripKhanhHoa->id]);
+        $agencyKh = $this->agency('KH');
+
+        // Cả hai đường gửi lại (theo {id} trên URL và theo body) đều qua policy
+        $this->actingAs($agencyKh)->post("/vi/quan-tri/thong-bao/{$foreign->id}/gui-lai")->assertForbidden();
+        $this->actingAs($agencyKh)->post('/vi/quan-tri/thong-bao/gui-lai', ['id' => $foreign->id])->assertForbidden();
+        $this->assertSame(Notification::STATUS_FAILED, $foreign->fresh()->status);
+
+        $this->actingAs($agencyKh)->post("/vi/quan-tri/thong-bao/{$own->id}/gui-lai")->assertRedirect();
+        $this->assertSame(Notification::STATUS_QUEUED, $own->fresh()->status);
+    }
+
+    public function test_national_agency_and_admin_can_resend_any_province(): void
+    {
+        $tripHanoi = $this->tripInZone($this->zoneIn('HN'));
+        $first = Notification::factory()->failed()->create(['user_id' => $tripHanoi->user_id, 'trip_id' => $tripHanoi->id]);
+        $second = Notification::factory()->failed()->create(['user_id' => $tripHanoi->user_id, 'trip_id' => $tripHanoi->id]);
+
+        $this->actingAs($this->agency(null))->post('/vi/quan-tri/thong-bao/gui-lai', ['id' => $first->id])->assertRedirect();
+        $this->actingAs($this->admin())->post("/vi/quan-tri/thong-bao/{$second->id}/gui-lai")->assertRedirect();
+        $this->assertSame([Notification::STATUS_QUEUED, Notification::STATUS_QUEUED], [$first->fresh()->status, $second->fresh()->status]);
+    }
 }
