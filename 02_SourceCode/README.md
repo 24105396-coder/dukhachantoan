@@ -76,7 +76,7 @@ docker run --rm --network host --ipc=host -v "$PWD/app":/app -w /app \
   mcr.microsoft.com/playwright:v1.64.1-noble npx playwright test
 ```
 
-Kết quả lượt kiểm thử chính thức ngày 23/10/2026 (commit `abb8c86`): 136 ca hộp đen, 127 đạt; PHPUnit 165 đạt; pytest 112 đạt; ma trận 3 trình duyệt × 3 khổ 54/54. Chi tiết và minh chứng ở `../05_KiemThu/`.
+Kết quả kiểm thử ngày 23/10/2026: lượt 1 (commit `abb8c86`) 136 ca hộp đen, 127 đạt, 10 lỗi; lượt 2 sau sửa (commit `5733203`) 136/136 đạt; PHPUnit 189 đạt; pytest 112 đạt; ma trận 3 trình duyệt × 3 khổ 54/54. Chi tiết và minh chứng ở `../05_KiemThu/`.
 
 Lưu ý vận hành:
 - Sao lưu thủ công phải chạy dưới người dùng web: `docker compose exec -u www-data app php artisan app:backup-db` (chạy bằng root sẽ tạo tệp sao lưu thuộc root mà ứng dụng không đọc được).
