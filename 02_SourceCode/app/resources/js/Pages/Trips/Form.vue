@@ -31,6 +31,7 @@ const { t, te, locale } = useT();
 const { date } = useFormat();
 const lr = useLocaleRoute();
 const isEdit = computed(() => !!props.trip?.code);
+// Phải khớp TripRequest (group_size max:200, BUG-3); thông điệp lỗi lấy từ khóa lang validation.client.number
 const MAX_GROUP = 200;
 
 const form = useForm(initialTripForm(props.trip, props.defaults));

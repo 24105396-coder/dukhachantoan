@@ -80,7 +80,8 @@ const zoneCount = computed(() => props.zonesGeo?.features?.length || 0);
                 <h1>{{ t('nav.map') }}</h1>
                 <p class="mt-1 max-w-2xl text-muted">{{ t('map.intro') }}</p>
             </div>
-            <div class="flex flex-wrap items-center gap-2">
+            <!-- Điện thoại: hai nút xếp dọc cố định, không phụ thuộc bề rộng chữ (tránh dịch khi phông web về, BUG-5) -->
+            <div class="grid gap-2 sm:flex sm:flex-wrap sm:items-center">
                 <Button icon="locate" :loading="geo.status.value === 'locating'" @click="locate">{{ t('map.locate') }}</Button>
                 <Button :href="lr('/canh-bao')" icon="list">{{ t('map.list_view') }}</Button>
             </div>

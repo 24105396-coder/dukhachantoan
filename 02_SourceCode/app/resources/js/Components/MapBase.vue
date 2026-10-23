@@ -4,7 +4,7 @@ import { router } from '@inertiajs/vue3';
 import EmptyState from '@/Components/EmptyState.vue';
 import { useT } from '@/Composables/useT';
 import { LEVELS, normalizeLevel, levelColor } from '@/Utils/levels';
-import { normalizeGeometry } from '@/Utils/geo';
+import { normalizeGeometry, emptyBox, extendBoxGeoJson, extendBoxPoint, boxToBounds } from '@/Utils/geo';
 
 /**
  * Bản đồ Leaflet + tile OpenStreetMap trong thẻ clay.
@@ -151,7 +151,8 @@ function pointStyle(level) {
     return { radius: 8, color: '#FFFFFF', weight: 2, fillColor: color, fillOpacity: 0.95 };
 }
 
-function draw() {
+/** Vẽ lại toàn bộ lớp dữ liệu; refit = đặt lại khung nhìn theo dữ liệu (lần đầu đã đặt trước trong onMounted). */
+function draw(refit = true) {
     if (!map.value || !L) return;
     dataLayer?.remove();
     dataLayer = L.featureGroup();
@@ -177,16 +178,31 @@ function draw() {
     drawRoute();
     drawUser();
     dataLayer.addTo(map.value);
-    focusView();
+    if (refit) focusView(dataLayer.getBounds());
 }
 
-function focusView() {
+/** Khung bao dữ liệu tính thẳng từ props (không dựng lớp Leaflet) để đặt khung nhìn cuối trước khi tải tile. */
+function dataBounds() {
+    const box = emptyBox();
+    features.value.forEach((f) => extendBoxGeoJson(box, f));
+    props.markers.forEach((m) => extendBoxPoint(box, m));
+    props.route.forEach((p) => extendBoxPoint(box, p));
+    extendBoxPoint(box, props.userLocation);
+    props.overlays.forEach((o) => {
+        const g = normalizeGeometry(o.geometry);
+        if (g?.kind === 'circle') extendBoxPoint(box, g.center, g.radiusKm);
+        else if (g) extendBoxGeoJson(box, g.data);
+    });
+    const b = boxToBounds(box);
+    return b ? L.latLngBounds(b) : null;
+}
+
+function focusView(bounds) {
     const f = props.focus;
     if (f && Number.isFinite(Number(f.lat)) && Number.isFinite(Number(f.lng))) {
         map.value.setView([Number(f.lat), Number(f.lng)], f.zoom ?? MAX_FIT_ZOOM);
         return;
     }
-    const bounds = dataLayer?.getBounds?.();
     if (props.fit && bounds?.isValid()) {
         map.value.fitBounds(bounds, { padding: FIT_PADDING, maxZoom: MAX_FIT_ZOOM });
         return;
@@ -195,18 +211,40 @@ function focusView() {
     map.value.setView([c.lat, c.lng], c.zoom ?? VIETNAM.zoom);
 }
 
+/**
+ * BUG-9 (WebKit/Safari): Leaflet gọi container.focus() khi mousedown rồi window.scrollTo() để giữ vị trí cuộn,
+ * nhưng WebKit vẫn cuộn bản đồ vào khung nhìn sau đó, phần tử dưới con trỏ đổi giữa pointerdown (path) và
+ * pointerup (div) nên lần bấm đầu không chọn được vùng. Lấy focus bằng preventScroll để trang không cuộn;
+ * container vẫn nhận focus (tabindex của Leaflet) nên điều khiển bằng bàn phím giữ nguyên.
+ */
+function patchKeyboardFocus(leaflet) {
+    const proto = leaflet?.Map?.Keyboard?.prototype;
+    if (!proto || proto.dkaPreventScroll) return;
+    proto._onMouseDown = function onMouseDown() {
+        if (this._focused) return;
+        this._map._container.focus({ preventScroll: true });
+    };
+    proto.dkaPreventScroll = true;
+}
+
 onMounted(async () => {
     try {
         // CSS nạp cùng JS để chunk vendor-leaflet không bị kéo vào bundle chung của mọi trang
         const [mod] = await Promise.all([import('leaflet'), import('leaflet/dist/leaflet.css')]);
         L = mod.default ?? mod;
+        patchKeyboardFocus(L);
         map.value = L.map(el.value, { scrollWheelZoom: props.scrollZoom, zoomControl: true, attributionControl: true });
-        L.tileLayer(TILE_URL, { maxZoom: 18, attribution: TILE_ATTRIBUTION }).addTo(map.value);
         // Đặt khung nhìn ban đầu trước khi vẽ: Leaflet hoãn thêm lớp (vd L.circle) khi bản đồ chưa có view
         const c = props.center || VIETNAM;
         map.value.setView([c.lat, c.lng], c.zoom ?? VIETNAM.zoom);
         map.value.on('click', (e) => emit('mapclick', { lat: e.latlng.lat, lng: e.latlng.lng }));
-        draw();
+        // BUG-5: đặt khung nhìn cuối từ khung bao dữ liệu rồi mới thêm lớp tile → tile (phần tử LCP của trang bản đồ)
+        // chỉ tải một lần đúng khung nhìn và được yêu cầu trước khi vẽ 60+ vùng; vẽ dời sang tác vụ sau để không
+        // gộp thành một long task dài (giảm TBT)
+        focusView(dataBounds());
+        L.tileLayer(TILE_URL, { maxZoom: 18, attribution: TILE_ATTRIBUTION }).addTo(map.value);
+        await new Promise((resolve) => window.setTimeout(resolve, 0));
+        draw(false);
     } catch {
         failed.value = true;
     } finally {
@@ -214,7 +252,7 @@ onMounted(async () => {
     }
 });
 
-watch(() => [props.geojson, props.markers, props.overlays, props.route, props.userLocation, props.focus, props.selected], draw, { deep: true });
+watch(() => [props.geojson, props.markers, props.overlays, props.route, props.userLocation, props.focus, props.selected], () => draw(), { deep: true });
 
 /** Cho trang cha gọi lại khi khung chứa đổi kích thước (vd mở/đóng panel bên). */
 function invalidate() {

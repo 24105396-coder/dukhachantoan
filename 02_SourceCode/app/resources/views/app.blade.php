@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="color-scheme" content="light dark">
-    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="icon" href="/favicon.ico">
     {{-- Đặt theme trước khi render để tránh nháy màu --}}
     <script nonce="{{ Vite::cspNonce() }}">
+        // Có JS: ẩn chân trang tĩnh phía máy chủ ngay từ lần vẽ đầu (AppFooter của Vue thay thế) để nội dung
+        // không chèn lên trên nó khi Vue gắn (BUG-5, CLS); không có JS thì footer tĩnh vẫn hiển thị
+        document.documentElement.classList.add('js');
         (function () {
             try {
                 var t = localStorage.getItem('dka-theme');
@@ -53,6 +56,25 @@
         ));
     @endphp
     @vite($pageAssets)
+    {{-- Trang có bản đồ Leaflet (MapBase): mở sẵn kết nối tới máy chủ tile OSM; trang bản đồ tải song song chunk
+         vendor-leaflet ngay khi phân tích HTML thay vì chờ Vue gắn mới import động (ảnh tile là phần tử LCP trên điện thoại) --}}
+    @php
+        $mapPages = ['Home', 'Map/Index', 'Trips/Show', 'Alerts/Show', 'Admin/Dashboard', 'Admin/Trips/Show', 'Admin/Alerts/Show', 'Admin/Zones/Form'];
+        $hasMap = in_array($pageComponent, $mapPages, true);
+        // Chỉ preload Leaflet ở trang bản đồ toàn màn (bản đồ nằm trên màn hình đầu); trang khác bản đồ ở dưới, không tranh băng thông
+        $leafletChunk = $pageComponent === 'Map/Index' && $viteManifest
+            ? collect($viteManifest)->first(fn ($e) => ($e['name'] ?? null) === 'vendor-leaflet' && str_ends_with($e['file'] ?? '', '.js'))
+            : null;
+    @endphp
+    @if ($hasMap)
+        <link rel="preconnect" href="https://tile.openstreetmap.org">
+    @endif
+    @if ($leafletChunk)
+        <link rel="modulepreload" href="{{ asset('build/'.$leafletChunk['file']) }}" nonce="{{ Vite::cspNonce() }}">
+        @foreach ($leafletChunk['css'] ?? [] as $leafletCss)
+            <link rel="preload" as="style" href="{{ asset('build/'.$leafletCss) }}" nonce="{{ Vite::cspNonce() }}">
+        @endforeach
+    @endif
     {{-- Mô tả mặc định phía máy chủ cho trình thu thập không chạy JS; PageMeta.vue (head-key="description") thay thế sau khi tải --}}
     @php
         $pageProps = $page['props'] ?? [];

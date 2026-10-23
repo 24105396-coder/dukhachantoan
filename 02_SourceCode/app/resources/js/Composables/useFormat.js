@@ -5,6 +5,20 @@ const intlLocale = (locale) => (locale === 'en' ? 'en-GB' : 'vi-VN');
 // Cảnh báo phát hành theo giờ Việt Nam: hiển thị cố định múi giờ này để du khách nước ngoài không nhầm
 export const DISPLAY_TIME_ZONE = 'Asia/Ho_Chi_Minh';
 
+// Tạo Intl.DateTimeFormat/NumberFormat (nhất là có timeZone) tốn vài trăm µs mỗi lần; trang bản đồ/cảnh báo
+// gọi hàng trăm lần khi gắn → dùng lại formatter theo (locale, tùy chọn) để giảm TBT (BUG-5)
+const formatterCache = new Map();
+function cachedFormatter(Ctor, locale, opts) {
+    const key = `${Ctor.name}|${locale}|${JSON.stringify(opts)}`;
+    let f = formatterCache.get(key);
+    if (!f) {
+        f = new Ctor(locale, opts);
+        formatterCache.set(key, f);
+    }
+    return f;
+}
+const STAMP_OPTS = { timeZone: DISPLAY_TIME_ZONE, hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit', hour12: false };
+
 const MINUTE = 60 * 1000;
 const HOUR = 60 * MINUTE;
 const DAY = 24 * HOUR;
@@ -23,7 +37,7 @@ export function useFormat() {
 
     const number = (value, digits = 0) => {
         if (value === null || value === undefined || value === '') return '';
-        return new Intl.NumberFormat(intlLocale(loc()), { maximumFractionDigits: digits }).format(Number(value));
+        return cachedFormatter(Intl.NumberFormat, intlLocale(loc()), { maximumFractionDigits: digits }).format(Number(value));
     };
 
     const percent = (value, digits = 0) => {
@@ -31,12 +45,12 @@ export function useFormat() {
         const n = Number(value);
         // Chấp nhận cả tỉ lệ 0–1 và phần trăm 0–100
         const ratio = n > 1 ? n / 100 : n;
-        return new Intl.NumberFormat(intlLocale(loc()), { style: 'percent', maximumFractionDigits: digits }).format(ratio);
+        return cachedFormatter(Intl.NumberFormat, intlLocale(loc()), { style: 'percent', maximumFractionDigits: digits }).format(ratio);
     };
 
     const date = (iso, opts = { day: '2-digit', month: '2-digit', year: 'numeric' }) => {
         const d = toDate(iso);
-        return d ? new Intl.DateTimeFormat(intlLocale(loc()), { timeZone: DISPLAY_TIME_ZONE, ...opts }).format(d) : '';
+        return d ? cachedFormatter(Intl.DateTimeFormat, intlLocale(loc()), { timeZone: DISPLAY_TIME_ZONE, ...opts }).format(d) : '';
     };
 
     const dateTime = (iso) => date(iso, { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false });
@@ -49,9 +63,7 @@ export function useFormat() {
         const d = toDate(iso);
         if (!d) return '';
         const parts = Object.fromEntries(
-            new Intl.DateTimeFormat('en-GB', {
-                timeZone: DISPLAY_TIME_ZONE, hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit', hour12: false,
-            }).formatToParts(d).map((p) => [p.type, p.value]),
+            cachedFormatter(Intl.DateTimeFormat, 'en-GB', STAMP_OPTS).formatToParts(d).map((p) => [p.type, p.value]),
         );
         return `${parts.hour}:${parts.minute} ${parts.day}/${parts.month}`;
     };

@@ -67,4 +67,57 @@ export function circleGeometry(lat, lng, radiusKm) {
     return { type: 'Circle', center: [Number(lng), Number(lat)], radius_km: r };
 }
 
+const KM_PER_DEG_LAT = 111.32;
+
+/** Khung bao rỗng để cộng dồn tọa độ; `extendBox` nhận một điểm hoặc mảng tọa độ GeoJSON lồng nhau. */
+export function emptyBox() {
+    return { south: Infinity, west: Infinity, north: -Infinity, east: -Infinity };
+}
+
+function extendPoint(box, lat, lng) {
+    if (!inLat(lat) || !inLng(lng)) return;
+    const la = Number(lat);
+    const ln = Number(lng);
+    box.south = Math.min(box.south, la);
+    box.north = Math.max(box.north, la);
+    box.west = Math.min(box.west, ln);
+    box.east = Math.max(box.east, ln);
+}
+
+function extendCoords(box, coords) {
+    if (!Array.isArray(coords)) return;
+    if (typeof coords[0] === 'number') {
+        extendPoint(box, coords[1], coords[0]);
+        return;
+    }
+    coords.forEach((c) => extendCoords(box, c));
+}
+
+/** Cộng dồn GeoJSON (geometry / Feature / FeatureCollection) vào khung bao. */
+export function extendBoxGeoJson(box, data) {
+    if (!data || typeof data !== 'object') return box;
+    if (data.type === 'FeatureCollection') (data.features || []).forEach((f) => extendBoxGeoJson(box, f));
+    else if (data.type === 'Feature') extendBoxGeoJson(box, data.geometry);
+    else if (data.type === 'GeometryCollection') (data.geometries || []).forEach((g) => extendBoxGeoJson(box, g));
+    else extendCoords(box, data.coordinates);
+    return box;
+}
+
+/** Cộng dồn điểm { lat, lng }; nếu có radiusKm thì cộng cả hình vuông bao vòng tròn (xấp xỉ theo độ). */
+export function extendBoxPoint(box, point, radiusKm = 0) {
+    if (!point || !inLat(point.lat) || !inLng(point.lng)) return box;
+    const lat = Number(point.lat);
+    const lng = Number(point.lng);
+    const dLat = radiusKm / KM_PER_DEG_LAT;
+    const dLng = radiusKm / (KM_PER_DEG_LAT * Math.max(Math.cos((lat * Math.PI) / 180), 0.01));
+    extendPoint(box, Math.max(-90, lat - dLat), Math.max(-180, lng - dLng));
+    extendPoint(box, Math.min(90, lat + dLat), Math.min(180, lng + dLng));
+    return box;
+}
+
+/** Khung bao hợp lệ → [[south, west], [north, east]] (dạng Leaflet nhận), ngược lại null. */
+export function boxToBounds(box) {
+    return Number.isFinite(box.south) && Number.isFinite(box.west) ? [[box.south, box.west], [box.north, box.east]] : null;
+}
+
 export { MAX_RADIUS_KM };
