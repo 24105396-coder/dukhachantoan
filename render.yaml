@@ -1,0 +1,125 @@
+# Render Blueprint – DuKhachAnToan (CSE703073 ĐT-15)
+# Dashboard Render → New → Blueprint → chọn kho này → Apply. Render tạo 2 dịch vụ web (Docker, gói Free, Singapore).
+# CSDL: Render không có MySQL quản lý → dùng MySQL ngoài (Aiven Free, Railway MySQL, …) và điền DB_* ở Environment
+# của CẢ HAI dịch vụ (sync: false = Render hỏi khi Apply). Nếu MySQL yêu cầu TLS: dán nội dung CA (PEM) vào DB_SSL_CA.
+# Gói Free ngủ sau 15 phút không có truy cập; lần mở đầu chờ 30–60 giây. Dữ liệu mẫu được nạp tự động ở lần chạy đầu.
+services:
+  - type: web
+    name: dukhach-web
+    runtime: docker
+    plan: free
+    region: singapore
+    branch: main
+    dockerfilePath: ./02_SourceCode/deploy/Dockerfile.web
+    dockerContext: .
+    healthCheckPath: /healthz
+    autoDeploy: true
+    envVars:
+      - key: APP_NAME
+        value: DuKhachAnToan
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: "false"
+      - key: APP_LOCALE
+        value: vi
+      - key: APP_FALLBACK_LOCALE
+        value: en
+      # APP_URL để trống: entrypoint lấy RENDER_EXTERNAL_URL. APP_KEY suy từ APP_KEY_SEED (ổn định giữa các lần deploy).
+      - key: APP_KEY_SEED
+        generateValue: true
+      - key: LOG_CHANNEL
+        value: stack
+      - key: LOG_STACK
+        value: daily
+      - key: LOG_DAILY_DAYS
+        value: "14"
+      - key: LOG_LEVEL
+        value: info
+      - key: DB_CONNECTION
+        value: mysql
+      - key: DB_HOST
+        sync: false
+      - key: DB_PORT
+        sync: false
+      - key: DB_DATABASE
+        sync: false
+      - key: DB_USERNAME
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: DB_SSL_CA
+        sync: false
+      - key: SESSION_DRIVER
+        value: database
+      - key: SESSION_LIFETIME
+        value: "120"
+      - key: SESSION_SECURE_COOKIE
+        value: "true"
+      - key: CACHE_STORE
+        value: database
+      - key: QUEUE_CONNECTION
+        value: database
+      - key: ANALYTICS_HOST
+        fromService:
+          name: dukhach-analytics
+          type: web
+          property: host
+      - key: ANALYTICS_PORT
+        fromService:
+          name: dukhach-analytics
+          type: web
+          property: port
+      - key: ANALYTICS_TOKEN
+        fromService:
+          name: dukhach-analytics
+          type: web
+          envVarKey: ANALYTICS_TOKEN
+      - key: ANALYTICS_TIMEOUT
+        value: "3"
+      - key: SIMULATION_MODE
+        value: "true"
+      - key: SMS_SIM_FAIL_RATE
+        value: "0.1"
+      - key: MAP_PROVIDER
+        value: osm
+      - key: SEED_DEMO_PASSWORD
+        value: DuKhach@2026
+      - key: TRUSTED_PROXIES
+        value: "*"
+      - key: BACKGROUND_WORKERS
+        value: "true"
+      - key: BACKUP_ENABLED
+        value: "false"
+      - key: MAIL_MAILER
+        value: log
+
+  - type: web
+    name: dukhach-analytics
+    runtime: docker
+    plan: free
+    region: singapore
+    branch: main
+    dockerfilePath: ./02_SourceCode/deploy/Dockerfile.analytics
+    dockerContext: .
+    healthCheckPath: /healthz
+    autoDeploy: true
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: UVICORN_HOST
+        value: dual
+      - key: ANALYTICS_TOKEN
+        generateValue: true
+      - key: DB_HOST
+        sync: false
+      - key: DB_PORT
+        sync: false
+      - key: DB_DATABASE
+        sync: false
+      - key: DB_USERNAME
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: DB_SSL_CA
+        sync: false

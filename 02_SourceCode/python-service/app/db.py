@@ -27,6 +27,22 @@ def database_url() -> URL | str:
     )
 
 
+def mysql_connect_args() -> dict:
+    """Tham số PyMySQL: timeout 3 s; TLS khi MySQL ngoài yêu cầu (DB_SSL_CA = PEM/đường dẫn, hoặc DB_SSL=true)."""
+    args: dict = {"connect_timeout": 3}
+    ca = os.getenv("DB_SSL_CA", "").strip()
+    if ca.startswith("-----BEGIN"):
+        path = os.path.join(os.getenv("TMPDIR", "/tmp"), "db-ca.pem")
+        with open(path, "w", encoding="utf-8") as fh:
+            fh.write(ca + "\n")
+        ca = path
+    if ca:
+        args["ssl"] = {"ca": ca}
+    elif os.getenv("DB_SSL", "").lower() in {"1", "true", "yes"}:
+        args["ssl"] = {"check_hostname": False}  # mã hóa đường truyền, không kiểm chứng thư
+    return args
+
+
 def get_engine() -> Engine:
     engine = _STATE["engine"]
     if engine is None:
@@ -34,7 +50,7 @@ def get_engine() -> Engine:
         is_mysql = str(url).startswith("mysql")
         engine = create_engine(
             url, pool_pre_ping=True, pool_recycle=1800,
-            connect_args={"connect_timeout": 3} if is_mysql else {},
+            connect_args=mysql_connect_args() if is_mysql else {},
         )
         _STATE["engine"] = engine
     return engine

@@ -4,6 +4,27 @@
 set -e
 cd /var/www/html
 
+# 0. Nền tảng PaaS (Render/Railway): suy ra biến còn thiếu từ biến nền tảng cấp sẵn
+#    - APP_URL           <- RENDER_EXTERNAL_URL (Render tự cấp)
+#    - ANALYTICS_URL     <- ANALYTICS_HOST + ANALYTICS_PORT (Render Blueprint: fromService host/port)
+#    - APP_KEY           <- APP_KEY_SEED (Render generateValue) băm SHA-256 -> khóa 32 byte ổn định giữa các lần deploy
+#    - MYSQL_ATTR_SSL_CA <- DB_SSL_CA (nội dung PEM hoặc đường dẫn) khi dùng MySQL ngoài yêu cầu TLS (Aiven, PlanetScale...)
+if [ -z "${APP_URL:-}" ] && [ -n "${RENDER_EXTERNAL_URL:-}" ]; then
+  export APP_URL="$RENDER_EXTERNAL_URL"
+fi
+if [ -z "${ANALYTICS_URL:-}" ] && [ -n "${ANALYTICS_HOST:-}" ]; then
+  export ANALYTICS_URL="http://${ANALYTICS_HOST}:${ANALYTICS_PORT:-8001}"
+fi
+if [ -z "${APP_KEY:-}" ] && [ -n "${APP_KEY_SEED:-}" ]; then
+  export APP_KEY="$(php -r 'echo "base64:".base64_encode(hash("sha256", getenv("APP_KEY_SEED"), true));')"
+fi
+if [ -n "${DB_SSL_CA:-}" ]; then
+  case "$DB_SSL_CA" in
+    -----BEGIN*) printf '%s\n' "$DB_SSL_CA" > /tmp/db-ca.pem; chmod 644 /tmp/db-ca.pem; export MYSQL_ATTR_SSL_CA=/tmp/db-ca.pem ;;
+    *) export MYSQL_ATTR_SSL_CA="$DB_SSL_CA" ;;
+  esac
+fi
+
 # Mọi lệnh artisan/ghi tệp chạy dưới www-data (cùng user với Apache) để storage/logs,
 # storage/app/** không bị root chiếm quyền -> Apache vẫn ghi được laravel.log.
 run_as_www() {
@@ -30,9 +51,10 @@ fi
 # 2. Wait for the database (max ~2 minutes)
 echo "[entrypoint] waiting for database ${DB_HOST}:${DB_PORT:-3306} ..."
 for i in $(seq 1 60); do
-  if php -r 'try{new PDO("mysql:host=".getenv("DB_HOST").";port=".(getenv("DB_PORT")?:3306),getenv("DB_USERNAME"),getenv("DB_PASSWORD"));exit(0);}catch(Exception $e){exit(1);}'; then
+  if php -r '$o=[]; if(getenv("MYSQL_ATTR_SSL_CA")){$o[PDO::MYSQL_ATTR_SSL_CA]=getenv("MYSQL_ATTR_SSL_CA");} try{new PDO("mysql:host=".getenv("DB_HOST").";port=".(getenv("DB_PORT")?:3306),getenv("DB_USERNAME"),getenv("DB_PASSWORD"),$o);exit(0);}catch(Exception $e){fwrite(STDERR,$e->getMessage().PHP_EOL);exit(1);}' 2>/tmp/db-wait.err; then
     break
   fi
+  [ $((i % 10)) -eq 0 ] && echo "[entrypoint] database not ready yet: $(head -c 160 /tmp/db-wait.err 2>/dev/null)"
   sleep 2
 done
 
