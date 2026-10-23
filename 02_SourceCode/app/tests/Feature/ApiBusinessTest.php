@@ -100,4 +100,13 @@ class ApiBusinessTest extends TestCase
             $this->assertArrayHasKey($path, $spec['paths'], $path);
         }
     }
+    /** page-contract dùng ?lang=, OpenAPI ghi ?locale=: cả hai đều đổi ngôn ngữ nội dung. */
+    public function test_api_accepts_lang_and_locale_query(): void
+    {
+        $this->alertForZones([$this->zoneIn('KH')], 3);
+
+        $this->getJson('/api/v1/alerts?lang=en')->assertOk()->assertJsonPath('meta.locale', 'en');
+        $this->getJson('/api/v1/alerts?locale=en')->assertOk()->assertJsonPath('meta.locale', 'en');
+        $this->getJson('/api/v1/alerts?lang=fr')->assertOk()->assertJsonPath('meta.locale', 'vi');
+    }
 }
