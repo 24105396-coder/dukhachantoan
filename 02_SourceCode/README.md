@@ -2,6 +2,8 @@
 
 Hệ thống cảnh báo rủi ro và hỗ trợ du khách theo thời gian thực. Sản phẩm học thuật, học phần Lập trình ứng dụng web trong du lịch 2 (CSE703073), Đại học Phenikaa. Dữ liệu cá nhân trong dữ liệu mẫu là mô phỏng.
 
+**Bản trực tuyến:** https://dukhach-web.onrender.com (kiểm tra sống `/healthz`; dịch vụ Python https://dukhach-analytics.onrender.com) – Render (Blueprint `render.yaml` ở gốc kho, 2 dịch vụ Docker gói Free, Singapore) + Aiven for MySQL 8.4 gói Free (TLS). Gói Free ngủ sau 15 phút không truy cập, lần mở đầu chờ 30–90 giây. Kho: https://github.com/truongnguyen123123/test3.
+
 ## Chạy nhanh (Docker)
 
 Yêu cầu: Docker Desktop (Windows/macOS) hoặc Docker Engine ≥ 24 kèm Compose v2; RAM trống ≥ 4 GB.
@@ -43,7 +45,7 @@ Mật khẩu chung `DuKhach@2026` (biến `SEED_DEMO_PASSWORD`).
 ├── compose.yaml            # db (MySQL 8.0), analytics (FastAPI), app (Apache + PHP 8.3)
 ├── .env.example            # biến môi trường mẫu (giá trị mô phỏng)
 ├── chay.*, dung.*, nap-lai-du-lieu.*   # chạy / dừng / nạp lại dữ liệu
-├── deploy/                 # Dockerfile và biến môi trường cho Railway
+├── deploy/                 # Dockerfile.web, Dockerfile.analytics (Render, xem ../render.yaml); mẫu biến Railway (dự phòng)
 ├── db-init/                # tạo CSDL kiểm thử dukhach_test
 ├── app/                    # Laravel 12 + Inertia 2 + Vue 3.5 + Tailwind 4 + Leaflet
 │   ├── app/Http/{Controllers,Middleware,Requests,Resources}
@@ -82,4 +84,4 @@ Lưu ý vận hành:
 - Sao lưu thủ công phải chạy dưới người dùng web: `docker compose exec -u www-data app php artisan app:backup-db` (chạy bằng root sẽ tạo tệp sao lưu thuộc root mà ứng dụng không đọc được).
 - Sau khi chạy kiểm thử, CSDL còn dữ liệu do kiểm thử sinh ra; chạy `nap-lai-du-lieu.sh` (hoặc `.bat`) trước khi chấm hay quay video.
 
-Cài đặt không Docker, vận hành, sao lưu và triển khai Railway: `../04_HuongDanSuDung/HuongDan_CaiDat_QuanTri.md`. CSDL độc lập (schema, ERD, từ điển dữ liệu): `../03_Database`.
+Cài đặt không Docker, vận hành, sao lưu và triển khai trực tuyến (Render + Aiven; Railway dự phòng): `../04_HuongDanSuDung/HuongDan_CaiDat_QuanTri.md`. CSDL độc lập (schema, ERD, từ điển dữ liệu): `../03_Database`.
