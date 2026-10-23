@@ -25,9 +25,14 @@ RUN apt-get update \
  && rm -rf /var/lib/apt/lists/*
 
 ENV APACHE_DOCUMENT_ROOT=/var/www/html/public
+# Debian đặt Alias /icons/ → /usr/share/apache2/icons/ che public/icons (favicon.svg 404): bỏ Alias + khối Directory,
+# tắt autoindex (không liệt kê thư mục, không dùng biểu tượng /icons/) và serve-cgi-bin (không dùng CGI)
 RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf \
  && sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf \
- && printf 'ServerTokens Prod\nServerSignature Off\n' >> /etc/apache2/apache2.conf
+ && printf 'ServerTokens Prod\nServerSignature Off\n' >> /etc/apache2/apache2.conf \
+ && sed -i -e '/^Alias \/icons\//d' -e '/<Directory "\/usr\/share\/apache2\/icons">/,/<\/Directory>/d' /etc/apache2/mods-available/alias.conf \
+ && a2dismod -f -q autoindex && a2disconf -q serve-cgi-bin \
+ && ! grep -Eq '^[[:space:]]*Alias[[:space:]]+/icons/' /etc/apache2/mods-available/alias.conf
 COPY docker/php.ini /usr/local/etc/php/conf.d/app.ini
 # Cache tĩnh dài hạn cho /build/assets, gzip, tinh chỉnh prefork
 COPY docker/apache-performance.conf /etc/apache2/conf-available/dukhach-performance.conf
