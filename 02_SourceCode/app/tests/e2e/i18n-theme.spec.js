@@ -108,3 +108,28 @@ test.describe('Thông điệp lỗi máy chủ', () => {
         expect(raw, raw.join(' | ')).toEqual([]);
     });
 });
+
+test.describe('Nhật ký quản trị', () => {
+    test.use({ storageState: authFile('admin') });
+
+    test('TC-I18N-005 nhật ký quản trị hiện tên hành động đã dịch (vi/en), không còn mã thô như auth.login', async ({ page }, info) => {
+        const out = {};
+        for (const loc of ['vi', 'en']) {
+            await page.goto(`/${loc}/quan-tri/nhat-ky`);
+            await page.waitForLoadState('networkidle').catch(() => {});
+            // chỉ xét cột "Hành động"/"Action"; cột Chi tiết là JSON kỹ thuật (tên route…) có chủ đích
+            const cells = await page.evaluate(() => {
+                const t = document.querySelector('main table');
+                if (!t) return [];
+                const idx = [...t.querySelectorAll('thead th')].findIndex((th) => /hành động|action/i.test(th.innerText));
+                return [...t.querySelectorAll('tbody tr')].map((tr) => (tr.children[idx]?.innerText || '').trim()).filter(Boolean);
+            });
+            const raw = [...new Set(cells.filter((c) => /^[a-z]+(_[a-z]+)*\.[a-z_.]+$/.test(c)))];
+            out[loc] = { raw, sample: [...new Set(cells)].slice(0, 6).join(' | ') };
+            if (loc === 'vi') await shot(page, 'TC-I18N-005', info);
+        }
+        actual(info, `vi: mã thô ${out.vi.raw.length} (${out.vi.raw.slice(0, 4).join(', ')}) – mẫu "${out.vi.sample}"; en: mã thô ${out.en.raw.length} (${out.en.raw.slice(0, 4).join(', ')})`);
+        expect(out.vi.raw).toEqual([]);
+        expect(out.en.raw).toEqual([]);
+    });
+});
