@@ -37,16 +37,15 @@ class SecurityHeaders
 
         return implode('; ', [
             "default-src 'self'",
-            // Font (@fontsource) và model-viewer tự host → không cần CDN; wasm-unsafe-eval chỉ cho phép biên dịch
+            // Font (@fontsource) tự host → không cần CDN
             // WebAssembly (giải mã GLB), không mở eval JS
-            "script-src 'self' 'nonce-{$nonce}' 'wasm-unsafe-eval'{$dev}",
+            "script-src 'self' 'nonce-{$nonce}'{$dev}",
             "style-src 'self' 'unsafe-inline'{$dev}",
             "font-src 'self' data:",
             // Tile bản đồ nền: Google Maps (mt0–mt3.google.com) hoặc OpenStreetMap tùy MAP_PROVIDER
-            "img-src 'self' data: blob: https://*.google.com https://tile.openstreetmap.org https://*.tile.openstreetmap.org https://modelviewer.dev https:",
-            "media-src 'self' data: blob: https://modelviewer.dev https:",
-            // blob: cho texture nhúng trong GLB; www.gstatic.com cho bộ giải mã Draco/KTX2 của model-viewer
-            "connect-src 'self' blob: https://modelviewer.dev https://*.githubusercontent.com https://www.gstatic.com{$dev}",
+            "img-src 'self' data: blob: https://tile.openstreetmap.org https://*.tile.openstreetmap.org https:",
+            "media-src 'self' data: blob:",
+            "connect-src 'self'{$dev}",
             "worker-src 'self' blob:",
             "object-src 'none'",
             "base-uri 'self'",

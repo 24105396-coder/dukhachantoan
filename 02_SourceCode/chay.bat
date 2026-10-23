@@ -95,9 +95,9 @@ echo   API mo         : %URL%/api/v1/openapi.json
 echo.
 echo   Tai khoan mau (mat khau: DuKhach@2026)
 echo     admin@dukhach.test     Quan tri he thong
-echo     manager@dukhach.test   Quan ly noi dung
-echo     partner@dukhach.test   Doi tac (don vi quan ly di tich / nha cung cap tour)
-echo     user@dukhach.test      Thanh vien
+echo     agency@dukhach.test    Co quan ho tro du khach (Khanh Hoa)
+echo     partner@dukhach.test   Don vi lu hanh
+echo     traveler@dukhach.test  Du khach
 echo.
 echo   Dung he thong  : chay dung.bat   (giu du lieu)
 echo   Xoa sach du lieu de nap lai tu dau: docker compose down -v

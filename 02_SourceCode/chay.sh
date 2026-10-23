@@ -39,9 +39,9 @@ cat <<TXT
 
   Tài khoản mẫu (mật khẩu: DuKhach@2026)
     admin@dukhach.test     Quản trị hệ thống
-    manager@dukhach.test   Quản lý nội dung
-    partner@dukhach.test   Đối tác
-    user@dukhach.test      Thành viên
+    agency@dukhach.test    Cơ quan hỗ trợ du khách (Khánh Hòa)
+    partner@dukhach.test   Đơn vị lữ hành
+    traveler@dukhach.test  Du khách
 
   Dừng: ./dung.sh (giữ dữ liệu). Xóa sạch dữ liệu: docker compose down -v
 TXT
