@@ -16,6 +16,8 @@ import { normalizeGeometry, emptyBox, extendBoxGeoJson, extendBoxPoint, boxToBou
  * - route: [{ lat, lng }] – đường nối các chặng theo thứ tự; userLocation: { lat, lng } – vị trí của tôi.
  * - focus: { lat, lng, zoom } – ưu tiên đặt khung nhìn vào điểm này thay vì tự khớp dữ liệu.
  * - selected: mã vùng đang chọn (viền đậm).
+ * - priority: ảnh nền cục bộ (đường viền 34 tỉnh, /images/map-placeholder.svg) nạp ưu tiên cao – dùng ở trang
+ *   mà bản đồ là nội dung chính trên màn hình đầu (BUG-11: ảnh này thành phần tử LCP thay cho ô tile OSM ngoài).
  * Leaflet nạp động (chunk vendor-leaflet) để trang không có bản đồ không phải tải.
  */
 const props = defineProps({
@@ -34,6 +36,7 @@ const props = defineProps({
     focus: { type: Object, default: null },
     selected: { type: String, default: null },
     scrollZoom: { type: Boolean, default: false },
+    priority: { type: Boolean, default: false },
 });
 const emit = defineEmits(['select', 'mapclick']);
 const { t } = useT();
@@ -43,6 +46,8 @@ const VIETNAM = { lat: 16.2, lng: 106.5, zoom: 5 };
 const FIT_PADDING = [24, 24];
 const MAX_FIT_ZOOM = 11;
 const TILE_URL = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
+const PLACEHOLDER_SRC = '/images/map-placeholder.svg';
+const PLACEHOLDER_SIZE = 1600;
 const TILE_ATTRIBUTION = '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a>';
 
 const el = ref(null);
@@ -269,9 +274,21 @@ onBeforeUnmount(() => {
 <template>
     <section :class="bare ? '' : 'clay-card p-3 md:p-4'" :aria-labelledby="ariaLabel ? undefined : `map-h-${uid}`" :aria-label="ariaLabel || undefined">
         <h2 v-if="!ariaLabel" :id="`map-h-${uid}`" class="sr-only">{{ t('map.title') }}</h2>
-        <div class="relative overflow-hidden rounded-xl" :class="heightClass">
-            <div ref="el" class="h-full w-full" :aria-label="t('map.canvas_label')" role="application"></div>
-            <div v-if="loading" class="skeleton absolute inset-0" aria-hidden="true"></div>
+        <div class="map-shell relative overflow-hidden rounded-xl" :class="heightClass">
+            <!-- Nền cục bộ hiển thị ngay khi trang gắn (trước Leaflet và tile); Leaflet trong suốt nên nó còn thấy tới khi tile phủ -->
+            <img
+                :src="PLACEHOLDER_SRC"
+                alt=""
+                aria-hidden="true"
+                :width="PLACEHOLDER_SIZE"
+                :height="PLACEHOLDER_SIZE"
+                :loading="priority ? 'eager' : 'lazy'"
+                :fetchpriority="priority ? 'high' : 'auto'"
+                decoding="async"
+                class="map-placeholder pointer-events-none absolute inset-0 h-full w-full object-cover"
+            />
+            <div ref="el" class="relative h-full w-full" :aria-label="t('map.canvas_label')" role="application"></div>
+            <div v-if="loading" class="skeleton map-skeleton absolute inset-0" aria-hidden="true"></div>
             <div v-if="failed" class="absolute inset-0 flex items-center justify-center bg-soft p-4">
                 <EmptyState variant="error" :title="t('map.load_error')" :description="t('map.load_error_hint')" compact />
             </div>

@@ -69,6 +69,10 @@
     @if ($hasMap)
         <link rel="preconnect" href="https://tile.openstreetmap.org">
     @endif
+    @if ($pageComponent === 'Map/Index')
+        {{-- BUG-11: ảnh nền cục bộ của bản đồ (MapBase priority) là phần tử LCP trên điện thoại thay cho ô tile OSM ngoài --}}
+        <link rel="preload" as="image" href="/images/map-placeholder.svg" fetchpriority="high" type="image/svg+xml">
+    @endif
     @if ($leafletChunk)
         <link rel="modulepreload" href="{{ asset('build/'.$leafletChunk['file']) }}" nonce="{{ Vite::cspNonce() }}">
         @foreach ($leafletChunk['css'] ?? [] as $leafletCss)

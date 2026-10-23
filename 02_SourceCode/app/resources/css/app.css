@@ -452,6 +452,11 @@
 .leaflet-bar a { background: var(--bg-surface); color: var(--text); border-color: var(--border); }
 .leaflet-control-attribution { background: color-mix(in srgb, var(--bg-surface) 85%, transparent) !important; color: var(--text-muted); }
 .leaflet-control-attribution a { color: var(--link); }
+/* BUG-11: nền cục bộ dưới bản đồ (MapBase) – Leaflet trong suốt để nền còn thấy tới khi tile phủ; theme tối đảo màu
+ * ảnh nền thay vì tải tệp thứ hai; skeleton chỉ phủ mờ để nền vẫn là phần tử vẽ lớn nhất ngay từ đầu */
+.map-shell .leaflet-container { background: transparent; }
+.map-shell .map-skeleton { opacity: 0.55; }
+[data-theme="dark"] .map-placeholder { filter: invert(1) hue-rotate(180deg) brightness(0.92); }
 [data-theme="dark"] .leaflet-tile-pane { filter: brightness(0.7) contrast(1.1) saturate(0.75); }
 
 /* ---------- Chân trang tĩnh phía máy chủ (partials/academic-footer) ----------

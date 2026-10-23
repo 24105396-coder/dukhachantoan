@@ -100,6 +100,7 @@ const zoneCount = computed(() => props.zonesGeo?.features?.length || 0);
                 <MapBase
                     bare
                     scroll-zoom
+                    priority
                     :geojson="zonesShown"
                     :overlays="overlays"
                     :markers="legMarkers"
