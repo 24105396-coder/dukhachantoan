@@ -1,5 +1,5 @@
-// Đăng nhập một lần cho mỗi vai trò và lưu storageState (giới hạn đăng nhập 5 lần/phút theo email+IP).
-// Nếu storageState cũ vẫn còn phiên hợp lệ thì dùng lại, không đăng nhập lại.
+// Đăng nhập một lần cho mỗi vai trò (qua HTTP như form) và lưu storageState; dùng lại nếu phiên cũ còn hiệu lực
+// (đăng nhập giới hạn 5 lần/phút theo email + IP).
 import fs from 'node:fs';
 import path from 'node:path';
 import { request } from '@playwright/test';
@@ -22,7 +22,7 @@ async function login(baseURL, email, file) {
         maxRedirects: 0,
     });
     const location = res.headers()['location'] || '';
-    if (![302, 303].includes(res.status()) || !location.includes('/tai-khoan') && !location.includes('/quan-tri')) {
+    if (![302, 303].includes(res.status()) || /dang-nhap/.test(location)) {
         throw new Error(`Đăng nhập ${email} thất bại: ${res.status()} ${location}`);
     }
     await ctx.storageState({ path: file });

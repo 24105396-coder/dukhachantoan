@@ -1,21 +1,32 @@
-// Tiện ích dùng chung cho các bộ kiểm thử E2E DiSanSo.
+// Tiện ích dùng chung cho bộ E2E DuKhachAnToan (ĐT-15).
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { expect } from '@playwright/test';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 export const AUTH_DIR = path.join(here, '.auth');
-export const IMG_DIR = path.resolve(here, '../../../../05_KiemThu/img');
-export const MATRIX_DIR = path.resolve(here, '../../../../05_KiemThu/matrix');
 export const FIXTURES = path.join(here, 'fixtures');
-export const PASSWORD = process.env.E2E_PASSWORD || 'DiSan@2026';
+// Minh chứng ghi ra hồ sơ nộp (ngoài Git); đổi bằng env E2E_EVIDENCE_DIR
+export const IMG_DIR = process.env.E2E_EVIDENCE_DIR || path.resolve(here, '../../../../05_KiemThu/img');
+export const MATRIX_DIR = process.env.E2E_MATRIX_DIR || path.resolve(here, '../../../../05_KiemThu/matrix');
+export const PASSWORD = process.env.E2E_PASSWORD || 'DuKhach@2026';
 export const ROLES = {
-    admin: 'admin@disanso.test',
-    manager: 'manager@disanso.test',
-    contributor: 'partner@disanso.test',
-    member: 'user@disanso.test',
-    member2: 'member1@disanso.test',
+    admin: 'admin@dukhach.test',
+    agency: 'agency@dukhach.test',
+    partner: 'partner@dukhach.test',
+    traveler: 'traveler@dukhach.test',
+    traveler1: 'traveler1@dukhach.test',
+    traveler3: 'traveler3@dukhach.test',
+    traveler5: 'traveler5@dukhach.test',
+    traveler6: 'traveler6@dukhach.test',
 };
+// Tài khoản ghi dữ liệu (tạo hành trình, báo sự cố) theo trình duyệt: các route throttle:20,1 / 30,60 / 10,60 của ứng dụng
+// dùng chung một bộ đếm theo người dùng (lỗi BUG-8), nên mỗi trình duyệt dùng tài khoản riêng để không chặn lẫn nhau.
+export const WRITER = { chromium: 'traveler', firefox: 'traveler5', webkit: 'traveler6' };
+export const writerFile = (testInfo) => authFile(WRITER[testInfo.project.name] || 'traveler');
+// Tài khoản đăng nhập bằng giao diện theo trình duyệt (tránh giới hạn 5 lần/phút theo email khi 3 project chạy liền nhau)
+export const UI_LOGIN = { chromium: 'traveler2@dukhach.test', firefox: 'traveler4@dukhach.test', webkit: 'traveler5@dukhach.test' };
 
 /** Đường dẫn storageState của một vai trò. */
 export const authFile = (role) => path.join(AUTH_DIR, `${role}.json`);
@@ -31,32 +42,34 @@ export async function xsrfHeader(ctx) {
 export function pageFromHtml(html) {
     const m = html.match(/data-page="([^"]*)"/);
     if (!m) return null;
-    const json = m[1]
-        .replace(/&quot;/g, '"')
-        .replace(/&#039;/g, "'")
-        .replace(/&lt;/g, '<')
-        .replace(/&gt;/g, '>')
-        .replace(/&amp;/g, '&');
+    const json = m[1].replace(/&quot;/g, '"').replace(/&#039;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
     return JSON.parse(json);
 }
 
-/** GET một trang và trả {status, page} (page = đối tượng Inertia). */
-export async function getPage(req, url) {
-    const res = await req.get(url);
+/** GET một trang và trả {status, page, html, res} (page = đối tượng Inertia). */
+export async function getPage(req, url, opts = {}) {
+    const res = await req.get(url, opts);
     const html = await res.text();
-    return { status: res.status(), page: pageFromHtml(html), html, res };
+    let page = null;
+    try {
+        page = pageFromHtml(html);
+    } catch {
+        page = null;
+    }
+    return { status: res.status(), page, html, res };
 }
 
-/** Gửi yêu cầu ghi có CSRF. accept=json để nhận 422 JSON khi lỗi hợp lệ. */
-export async function send(req, method, url, data = {}, { json = true, multipart = null, accept = 'json', headers: extra = {} } = {}) {
-    const headers = { ...(await xsrfHeader(req)), Accept: accept === 'json' ? 'application/json' : 'text/html', ...extra };
+/** Gửi yêu cầu ghi có CSRF. Mặc định Accept JSON để nhận 422 JSON khi lỗi hợp lệ; không theo chuyển hướng. */
+export async function send(req, method, url, data = {}, { multipart = null, form = false, accept = 'json', headers: extra = {}, csrf = true } = {}) {
+    if (csrf && !(await req.storageState()).cookies.some((c) => c.name === 'XSRF-TOKEN')) await req.get('/vi/gioi-thieu');
+    const headers = { ...(csrf ? await xsrfHeader(req) : {}), Accept: accept === 'json' ? 'application/json' : 'text/html', ...extra };
     const opts = { method, headers, maxRedirects: 0 };
     if (multipart) opts.multipart = multipart;
-    else if (json) opts.data = data;
-    else opts.form = data;
+    else if (form) opts.form = data;
+    else opts.data = data;
     const res = await req.fetch(url, opts);
-    let body = null;
     const text = await res.text();
+    let body;
     try {
         body = JSON.parse(text);
     } catch {
@@ -65,71 +78,85 @@ export async function send(req, method, url, data = {}, { json = true, multipart
     return { status: res.status(), location: res.headers()['location'] || '', body, headers: res.headers() };
 }
 
-/** Lưu ảnh minh chứng theo mã ca. */
-export async function shot(page, code, opts = {}) {
+/** Lưu ảnh minh chứng theo mã ca (chỉ lượt Chromium ghi tên chuẩn TC-xxx.png; trình duyệt khác thêm hậu tố). */
+export async function shot(page, code, testInfo, opts = {}) {
+    const project = testInfo?.project?.name || 'chromium';
+    const name = project === 'chromium' ? `${code}.png` : `${code}-${project}.png`;
+    if (project !== 'chromium' && !opts.allBrowsers) return;
     fs.mkdirSync(IMG_DIR, { recursive: true });
-    await page.screenshot({ path: path.join(IMG_DIR, `${code}.png`), fullPage: false, ...opts });
+    const { allBrowsers, ...rest } = opts;
+    await page.screenshot({ path: path.join(IMG_DIR, name), fullPage: false, ...rest });
 }
 
-/** Lưu minh chứng dạng văn bản (kết quả HTTP). */
-export function evidence(code, text) {
-    fs.mkdirSync(IMG_DIR, { recursive: true });
-    fs.writeFileSync(path.join(IMG_DIR, `${code}.txt`), text, 'utf8');
-}
-
-/** Ghi kết quả thực tế vào annotation để tổng hợp vào test_cases.json. */
+/** Ghi kết quả thực tế vào annotation để tổng hợp vào 05_KiemThu/test_cases.json. */
 export function actual(testInfo, text) {
     testInfo.annotations.push({ type: 'actual', description: text });
 }
 
-/** Hiển thị một khối văn bản (JSON/HTTP) trên trang trắng để chụp làm minh chứng. */
-export async function showText(page, code, title, text) {
-    const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
-    await page.setContent(`<html><body style="font:13px monospace;padding:16px;background:#fff;color:#111"><h3>${esc(code)} – ${esc(title)}</h3><pre style="white-space:pre-wrap">${esc(text)}</pre></body></html>`);
-    await shot(page, code, { fullPage: true });
-    evidence(code, `${title}\n\n${text}`);
+/** Trang HTML hiển thị một khối văn bản (dùng để chụp minh chứng cho ca HTTP/API). */
+export async function showText(page, title, text) {
+    await page.setContent(`<!doctype html><meta charset="utf-8"><body style="font:14px/1.45 monospace;padding:16px;background:#f5fbf8">
+<h2 style="font-family:sans-serif;color:#0b7a64">${escapeHtml(title)}</h2><pre style="white-space:pre-wrap">${escapeHtml(text)}</pre></body>`);
 }
 
-/** Lấy ngẫu nhiên chuỗi ngắn để tạo dữ liệu kiểm thử không trùng. */
-export const rnd = () => Math.random().toString(36).slice(2, 8);
-
-/** Mật khẩu của tài khoản kiểm thử đăng ký mới (đủ chữ hoa, chữ thường, chữ số). */
-export const FRESH_PASSWORD = 'KiemThu2026';
-
-/**
- * Vòng 3 (M6: tối đa 3 booking chưa thanh toán và 10 chỗ/ngày mỗi tài khoản): đăng ký một tài khoản member mới
- * qua form đăng ký (POST /vi/dang-ky giống form giao diện, có CSRF). Gặp 429 (đăng ký 6 lần/phút/IP) thì chờ
- * Retry-After rồi thử lại. Lưu storageState vào .auth/<label>.json và trả { email, password, id, file }.
- */
-export async function registerFresh(browser, label, password = FRESH_PASSWORD) {
-    const email = `qa_${label}_${rnd()}@disanso.test`.toLowerCase();
-    // storageState rỗng: nếu không, context mới kế thừa storageState của test.use (đang đăng nhập) và POST bị guest-middleware chuyển hướng
-    const ctx = await browser.newContext({ storageState: { cookies: [], origins: [] } });
-    try {
-        for (let attempt = 0; attempt < 4; attempt++) {
-            await ctx.request.get('/vi/dang-ky');
-            const r = await ctx.request.post('/vi/dang-ky', {
-                form: { name: `QA V5 ${label}`, email, password, password_confirmation: password },
-                headers: { ...(await xsrfHeader(ctx)), Accept: 'text/html' },
-                maxRedirects: 0,
-            });
-            if (r.status() === 429) {
-                const wait = Number(r.headers()['retry-after'] || 30) + 1;
-                await new Promise((res) => setTimeout(res, wait * 1000));
-                continue;
-            }
-            const loc = r.headers()['location'] || '';
-            if (![302, 303].includes(r.status()) || loc.includes('/dang-ky')) {
-                throw new Error(`Đăng ký ${email} thất bại: ${r.status()} ${loc}`);
-            }
-            const file = authFile(label);
-            await ctx.storageState({ path: file });
-            const user = (await getPage(ctx.request, '/vi/tai-khoan')).page.props.auth.user;
-            if (user?.email !== email) throw new Error(`Đăng ký ${email}: phiên đang là ${user?.email}`);
-            return { email, password, id: user.id, file };
-        }
-        throw new Error(`Đăng ký ${email}: vẫn 429 sau 4 lần thử`);
-    } finally {
-        await ctx.close();
-    }
+function escapeHtml(s) {
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
+
+/** Đăng nhập qua giao diện; trả URL đích. */
+export async function loginUI(page, email, password = PASSWORD) {
+    await page.goto('/vi/dang-nhap');
+    await page.fill('input[type=email]', email);
+    await page.fill('input[type=password]', password);
+    await Promise.all([page.waitForURL((u) => !u.pathname.endsWith('/dang-nhap'), { timeout: 15_000 }), page.click('button[type=submit]')]);
+    return new URL(page.url()).pathname;
+}
+
+/** Ngày giờ địa phương 'YYYY-MM-DDTHH:mm' (Asia/Ho_Chi_Minh) lệch d ngày, h giờ so với bây giờ. */
+export function localDT(days = 0, hours = 0) {
+    const t = new Date(Date.now() + (days * 24 + hours) * 3600_000 + 7 * 3600_000);
+    return t.toISOString().slice(0, 16);
+}
+export const localDate = (days = 0) => localDT(days).slice(0, 10);
+
+/** Chọn một cảnh báo đang hiệu lực, không mô phỏng, còn hiệu lực ít nhất 3 giờ (để đối sánh chặng tạo mới). */
+export async function pickActiveAlert(req) {
+    const res = await req.get('/api/v1/alerts?active=1&per_page=50');
+    expect(res.status()).toBe(200);
+    const { data } = await res.json();
+    const soon = Date.now() + 3 * 3600_000;
+    const ok = data.filter((a) => a.zones?.length && (!a.ends_at || Date.parse(a.ends_at) > soon) && Date.parse(a.starts_at) < Date.now());
+    // ưu tiên cảnh báo theo vùng (không hình học) của dữ liệu mẫu để kết quả đối sánh ổn định
+    return ok.find((a) => !a.geometry && /^AL-SIM-/.test(a.code)) || ok.find((a) => !a.geometry) || ok[0];
+}
+
+/** Tạo hành trình qua POST (như wizard gửi), trả {status, code, location, body}. */
+export async function createTrip(req, { title, legs, start, end, extra = {} }) {
+    const payload = {
+        title,
+        start_date: start,
+        end_date: end,
+        group_size: 2,
+        nationality: 'VN',
+        preferred_locale: 'vi',
+        contact_name: 'Kiểm thử E2E',
+        contact_phone: '0901234567',
+        contact_email: 'e2e@dukhach.test',
+        status: 'active',
+        legs,
+        members: [],
+        ...extra,
+    };
+    const r = await send(req, 'POST', '/vi/hanh-trinh/tao', payload, { headers: { 'X-Inertia': 'true' } });
+    const m = (r.location || '').match(/\/hanh-trinh\/(TR-[A-Z0-9-]+)$/);
+    return { ...r, code: m ? m[1] : null };
+}
+
+/** Lấy TripDetail (props.trip) của trang hành trình. */
+export async function tripDetail(req, code) {
+    const { status, page } = await getPage(req, `/vi/hanh-trinh/${code}`);
+    return { status, trip: page?.props?.trip, props: page?.props };
+}
+
+/** Token chia sẻ (40 ký tự) từ share_url. */
+export const tokenOf = (trip) => (trip?.share_url || '').split('/chia-se/')[1]?.split(/[/?#]/)[0];
