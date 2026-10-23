@@ -16,6 +16,11 @@ return [
         'en' => 'English',
     ],
 
+    // Hành trình (F1): giới hạn số khách thống nhất với máy khách (Pages/Trips/Form.vue MAX_GROUP = 200)
+    'trips' => [
+        'max_group_size' => 200,
+    ],
+
     'analytics' => [
         'url' => env('ANALYTICS_URL', 'http://analytics:8001'),
         'token' => env('ANALYTICS_TOKEN', ''),

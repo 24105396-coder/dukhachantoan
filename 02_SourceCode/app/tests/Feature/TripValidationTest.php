@@ -65,6 +65,17 @@ class TripValidationTest extends TestCase
         $this->actingAs($this->traveler())->post('/vi/hanh-trinh/tao', $data)->assertSessionHasErrors('legs.0.zone_code');
     }
 
+    public function test_group_size_limit_matches_client_maximum_of_200(): void
+    {
+        $this->assertSame(200, config('dukhach.trips.max_group_size'));
+        $traveler = $this->traveler();
+
+        $this->actingAs($traveler)->post('/vi/hanh-trinh/tao', $this->payload(['group_size' => 201]))->assertSessionHasErrors('group_size');
+        $this->assertSame(0, Trip::count());
+        $this->actingAs($traveler)->post('/vi/hanh-trinh/tao', $this->payload(['group_size' => 200]))->assertSessionHasNoErrors();
+        $this->assertSame(200, (int) Trip::sole()->group_size);
+    }
+
     public function test_valid_trip_is_created_with_random_code_and_share_token(): void
     {
         $traveler = $this->traveler();

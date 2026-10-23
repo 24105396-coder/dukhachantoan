@@ -34,7 +34,7 @@ class TripRequest extends FormRequest
             'title' => ['required', 'string', 'max:190'],
             'start_date' => ['required', 'date_format:Y-m-d'],
             'end_date' => ['required', 'date_format:Y-m-d', 'after_or_equal:start_date'],
-            'group_size' => ['nullable', 'integer', 'min:1', 'max:500'],
+            'group_size' => ['nullable', 'integer', 'min:1', 'max:'.(int) config('dukhach.trips.max_group_size', 200)],
             'nationality' => ['nullable', 'string', 'max:60'],
             'preferred_locale' => ['nullable', Rule::in(['vi', 'en'])],
             'status' => ['nullable', Rule::in([Trip::STATUS_DRAFT, Trip::STATUS_ACTIVE])],
