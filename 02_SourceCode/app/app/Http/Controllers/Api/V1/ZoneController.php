@@ -9,6 +9,7 @@ use App\Http\Resources\ZoneGeo;
 use App\Models\Zone;
 use App\Services\RiskService;
 use App\Services\WeatherService;
+use App\Support\RiskFactors;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
@@ -40,7 +41,7 @@ class ZoneController extends ApiController
             'zone' => $model->brief(),
             'now' => WeatherNow::one($weather->now($model)),
             'forecast' => ForecastDay::list($weather->forecast($model)),
-            'risk' => $stats ? ['score' => $stats['score'], 'level' => $stats['level'], 'factors' => $stats['factors'], 'computed_at' => $stats['computed_at']] : null,
+            'risk' => $stats ? ['score' => $stats['score'], 'level' => $stats['level'], 'factors' => RiskFactors::present($stats['factors']), 'computed_at' => $stats['computed_at']] : null,
         ]]);
     }
 }

@@ -37,7 +37,8 @@ const factors = computed(() => {
         note: typeof v === 'object' && v !== null ? v.note || '' : '',
     }));
 });
-const show = (v) => (typeof v === 'number' || (typeof v === 'string' && v !== '' && !Number.isNaN(Number(v))) ? number(v, 1) : String(v ?? '—'));
+// Giá trị chuỗi có dấu + (xu hướng tăng) giữ dấu khi định dạng số
+const show = (v) => (typeof v === 'string' && v.startsWith('+') && !Number.isNaN(Number(v)) ? `+${number(v.slice(1), 1)}` : typeof v === 'number' || (typeof v === 'string' && v !== '' && !Number.isNaN(Number(v))) ? number(v, 1) : String(v ?? '—'));
 </script>
 
 <template>

@@ -12,6 +12,7 @@ use App\Services\AuditLogger;
 use App\Services\LookupService;
 use App\Services\RiskService;
 use App\Services\WeatherService;
+use App\Support\RiskFactors;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -57,7 +58,8 @@ class ZoneController extends Controller
             ],
             'now' => WeatherNow::one($weather->now($zone)),
             'weather' => WeatherNow::one($weather->now($zone)),
-            'risk' => $risk->zoneStats()[$zone->id] ?? null,
+            'risk' => ($stats = $risk->zoneStats()[$zone->id] ?? null)
+                ? ['factors' => RiskFactors::present($stats['factors'])] + $stats : null,
             'forecast' => ForecastDay::list($weather->forecast($zone)),
         ]);
     }

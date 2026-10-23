@@ -8,6 +8,7 @@ use App\Http\Resources\ZoneCard;
 use App\Models\Zone;
 use App\Services\RiskService;
 use App\Services\WeatherService;
+use App\Support\RiskFactors;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -26,7 +27,7 @@ class WeatherController extends Controller
             'zone' => ZoneCard::one($model),
             'now' => WeatherNow::one($weather->now($model)),
             'forecast' => ForecastDay::list($weather->forecast($model)),
-            'risk' => $stats ? ['score' => $stats['score'], 'level' => $stats['level'], 'factors' => $stats['factors'], 'computed_at' => $stats['computed_at']] : null,
+            'risk' => $stats ? ['score' => $stats['score'], 'level' => $stats['level'], 'factors' => RiskFactors::present($stats['factors']), 'computed_at' => $stats['computed_at']] : null,
             'zones' => Zone::query()->active()->orderBy('name')->get()->map(fn (Zone $z) => $z->brief() + ['zone_type' => $z->zone_type])->all(),
         ]);
     }

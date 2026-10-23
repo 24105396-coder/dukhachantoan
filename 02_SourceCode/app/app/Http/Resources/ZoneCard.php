@@ -4,6 +4,7 @@ namespace App\Http\Resources;
 
 use App\Models\Zone;
 use App\Services\RiskService;
+use App\Support\RiskFactors;
 use Illuminate\Http\Request;
 
 /**
@@ -30,7 +31,7 @@ class ZoneCard extends BaseResource
                 'score' => $stats['score'],
                 'level' => $stats['level'],
                 'computed_at' => $stats['computed_at'],
-                'factors' => $stats['factors'],
+                'factors' => RiskFactors::present($stats['factors']),
             ] : ($stats && $stats['level'] > 0 ? [
                 'score' => $stats['score'], 'level' => $stats['level'], 'computed_at' => null, 'factors' => null,
             ] : null),
