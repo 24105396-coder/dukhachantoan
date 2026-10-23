@@ -205,13 +205,16 @@ test.describe('Header bảo mật và lỗi', () => {
         const nonce2 = ((r2.headers()['content-security-policy'] || '').match(/'nonce-([^']+)'/) || [])[1];
         await showText(page, 'TC-SEC-009 Header bảo mật', `${out.join('\n')}\n\nCSP: ${csp}\n\n${scripts.length} thẻ script, inline thiếu nonce: ${inlineNoNonce}; nonce khớp: ${nonceOk}; nonce đổi mỗi yêu cầu: ${nonce !== nonce2}`);
         await shot(page, 'TC-SEC-009', info);
-        actual(info, `${out.join(' | ')}; CSP có frame-ancestors 'none', object-src 'none'; ${scripts.length} script, inline thiếu nonce ${inlineNoNonce}, nonce khớp ${nonceOk}, nonce đổi mỗi yêu cầu ${nonce !== nonce2}; img-src còn "https:" và connect-src còn modelviewer.dev/githubusercontent/gstatic (thừa từ DiSanSo)`);
+        actual(info, `${out.join(' | ')}; CSP có frame-ancestors 'none', object-src 'none'; ${scripts.length} script, inline thiếu nonce ${inlineNoNonce}, nonce khớp ${nonceOk}, nonce đổi mỗi yêu cầu ${nonce !== nonce2}; img-src: ${(csp.match(/img-src([^;]*)/) || [])[1]?.trim()}`);
         // trang HTML: đủ 5 header; phản hồi JSON (API, healthz): tối thiểu X-Content-Type-Options: nosniff
         expect(out[0]).toMatch(/XFO=DENY; XCTO=nosniff; Referrer=strict-origin-when-cross-origin; Permissions=có; CSP=có/);
         expect(out.slice(1).every((l) => /XCTO=nosniff/.test(l)), 'API/healthz thiếu nosniff').toBeTruthy();
         expect(inlineNoNonce).toBe(0);
         expect(nonceOk).toBeTruthy();
         expect(nonce).not.toBe(nonce2);
+        // img-src chỉ liệt kê nguồn tile cụ thể, không cho mọi https:
+        const imgSrc = (csp.match(/img-src([^;]*)/) || [])[1] || '';
+        expect(imgSrc.split(/\s+/)).not.toContain('https:');
     });
 
     test('TC-SEC-011 tải ảnh sự cố sai MIME (văn bản đổi đuôi .jpg) và > 5 MB → 422; ảnh PNG thật → nhận @chromium', async ({ page, playwright }, info) => {

@@ -10,6 +10,8 @@ export const FIXTURES = path.join(here, 'fixtures');
 // Minh chứng ghi ra hồ sơ nộp (ngoài Git); đổi bằng env E2E_EVIDENCE_DIR
 export const IMG_DIR = process.env.E2E_EVIDENCE_DIR || path.resolve(here, '../../../../05_KiemThu/img');
 export const MATRIX_DIR = process.env.E2E_MATRIX_DIR || path.resolve(here, '../../../../05_KiemThu/matrix');
+// Hậu tố tên ảnh minh chứng theo lượt (vd _r2) để không ghi đè lượt trước
+export const SHOT_SUFFIX = process.env.E2E_SHOT_SUFFIX || '';
 export const PASSWORD = process.env.E2E_PASSWORD || 'DuKhach@2026';
 export const ROLES = {
     admin: 'admin@dukhach.test',
@@ -81,7 +83,7 @@ export async function send(req, method, url, data = {}, { multipart = null, form
 /** Lưu ảnh minh chứng theo mã ca (chỉ lượt Chromium ghi tên chuẩn TC-xxx.png; trình duyệt khác thêm hậu tố). */
 export async function shot(page, code, testInfo, opts = {}) {
     const project = testInfo?.project?.name || 'chromium';
-    const name = project === 'chromium' ? `${code}.png` : `${code}-${project}.png`;
+    const name = project === 'chromium' ? `${code}${SHOT_SUFFIX}.png` : `${code}${SHOT_SUFFIX}-${project}.png`;
     if (project !== 'chromium' && !opts.allBrowsers) return;
     fs.mkdirSync(IMG_DIR, { recursive: true });
     const { allBrowsers, ...rest } = opts;
