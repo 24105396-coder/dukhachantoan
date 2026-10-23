@@ -85,7 +85,7 @@ services:
       - key: SMS_SIM_FAIL_RATE
         value: "0.1"
       - key: MAP_PROVIDER
-        value: osm
+        value: google
       - key: SEED_DEMO_PASSWORD
         value: DuKhach@2026
       - key: TRUSTED_PROXIES

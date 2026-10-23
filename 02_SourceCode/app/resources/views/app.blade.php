@@ -67,7 +67,12 @@
             : null;
     @endphp
     @if ($hasMap)
+        @if (\App\Http\Middleware\HandleInertiaRequests::mapProvider() === 'google')
+        <link rel="preconnect" href="https://mt0.google.com">
+        <link rel="preconnect" href="https://mt1.google.com">
+        @else
         <link rel="preconnect" href="https://tile.openstreetmap.org">
+        @endif
     @endif
     @if ($pageComponent === 'Map/Index')
         {{-- BUG-11: ảnh nền cục bộ của bản đồ (MapBase priority) là phần tử LCP trên điện thoại thay cho ô tile OSM ngoài --}}

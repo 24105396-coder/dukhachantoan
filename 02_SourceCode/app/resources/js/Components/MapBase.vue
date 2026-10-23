@@ -1,6 +1,6 @@
 <script setup>
 import { ref, computed, watch, onMounted, onBeforeUnmount, shallowRef, useId } from 'vue';
-import { router } from '@inertiajs/vue3';
+import { router, usePage } from '@inertiajs/vue3';
 import EmptyState from '@/Components/EmptyState.vue';
 import { useT } from '@/Composables/useT';
 import { LEVELS, normalizeLevel, levelColor } from '@/Utils/levels';
@@ -45,10 +45,20 @@ const uid = useId();
 const VIETNAM = { lat: 16.2, lng: 106.5, zoom: 5 };
 const FIT_PADDING = [24, 24];
 const MAX_FIT_ZOOM = 11;
-const TILE_URL = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
+// Nền bản đồ chọn bằng env MAP_PROVIDER (shared prop map.provider): google (mặc định) hoặc osm; CSP ở SecurityHeaders
+const TILE_SOURCES = {
+    google: {
+        url: 'https://mt{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',
+        options: { subdomains: ['0', '1', '2', '3'], maxZoom: 20, attribution: '&copy; Google' },
+    },
+    osm: {
+        url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+        options: { maxZoom: 18, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a>' },
+    },
+};
 const PLACEHOLDER_SRC = '/images/map-placeholder.svg';
 const PLACEHOLDER_SIZE = 1600;
-const TILE_ATTRIBUTION = '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a>';
+const tileSource = () => TILE_SOURCES[usePage().props?.map?.provider] ?? TILE_SOURCES.osm;
 
 const el = ref(null);
 const map = shallowRef(null);
@@ -247,7 +257,8 @@ onMounted(async () => {
         // chỉ tải một lần đúng khung nhìn và được yêu cầu trước khi vẽ 60+ vùng; vẽ dời sang tác vụ sau để không
         // gộp thành một long task dài (giảm TBT)
         focusView(dataBounds());
-        L.tileLayer(TILE_URL, { maxZoom: 18, attribution: TILE_ATTRIBUTION }).addTo(map.value);
+        const tiles = tileSource();
+        L.tileLayer(tiles.url, tiles.options).addTo(map.value);
         await new Promise((resolve) => window.setTimeout(resolve, 0));
         draw(false);
     } catch {

@@ -74,7 +74,7 @@ services:
       SIMULATION_MODE: ${SIMULATION_MODE:-true}
       SMS_SIM_FAIL_RATE: ${SMS_SIM_FAIL_RATE:-0.1}   # SMS mô phỏng thất bại ngẫu nhiên để chứng minh thử lại
       BACKGROUND_WORKERS: ${BACKGROUND_WORKERS:-true}
-      MAP_PROVIDER: ${MAP_PROVIDER:-osm}   # bản đồ nền: osm | google
+      MAP_PROVIDER: ${MAP_PROVIDER:-google}   # bản đồ nền: google | osm
       SEED_DEMO_PASSWORD: ${SEED_DEMO_PASSWORD:-DuKhach@2026}
       TRUSTED_PROXIES: ${TRUSTED_PROXIES:-}   # đặt "*" chỉ khi chạy sau proxy của PaaS (Railway/Render)
     ports:

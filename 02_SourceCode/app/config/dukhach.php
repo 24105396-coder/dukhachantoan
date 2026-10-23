@@ -56,9 +56,9 @@ return [
         'default_mode' => env('SIMULATION_MODE_RUN', 'realtime'),
     ],
 
-    // Bản đồ nền: osm (OpenStreetMap, dữ liệu mở, mặc định) hoặc google
+    // Bản đồ nền: google (mặc định, tile Google Maps) hoặc osm (OpenStreetMap, dữ liệu mở)
     'map' => [
-        'provider' => env('MAP_PROVIDER', 'osm'),
+        'provider' => env('MAP_PROVIDER', 'google'),
     ],
 
     'seed_demo_password' => env('SEED_DEMO_PASSWORD', 'DuKhach@2026'),
