@@ -118,4 +118,20 @@ class RbacBusinessTest extends TestCase
         $this->actingAs($this->admin())->post("/vi/quan-tri/thong-bao/{$second->id}/gui-lai")->assertRedirect();
         $this->assertSame([Notification::STATUS_QUEUED, Notification::STATUS_QUEUED], [$first->fresh()->status, $second->fresh()->status]);
     }
+
+    public function test_agency_of_province_a_cannot_view_admin_alert_of_province_b(): void
+    {
+        $alertHanoi = $this->alertForZones([$this->zoneIn('HN')]);
+        $alertKhanhHoa = $this->alertForZones([$this->zoneIn('KH')]);
+        $agencyKh = $this->agency('KH');
+
+        $this->actingAs($agencyKh)->get("/vi/quan-tri/canh-bao/{$alertHanoi->code}")->assertForbidden();
+        $this->actingAs($agencyKh)->get("/vi/quan-tri/canh-bao/{$alertKhanhHoa->code}")->assertOk();
+        $this->actingAs($this->agency(null))->get("/vi/quan-tri/canh-bao/{$alertHanoi->code}")->assertOk();
+        $this->actingAs($this->admin())->get("/vi/quan-tri/canh-bao/{$alertHanoi->code}")->assertOk();
+        // Danh sách quản trị vẫn chỉ liệt kê cảnh báo trong phạm vi tỉnh
+        $this->actingAs($agencyKh)->get('/vi/quan-tri/canh-bao')->assertOk()
+            ->assertInertia(fn ($page) => $page->component('Admin/Alerts/Index')->has('alerts.data', 1)
+                ->where('alerts.data.0.code', $alertKhanhHoa->code));
+    }
 }
