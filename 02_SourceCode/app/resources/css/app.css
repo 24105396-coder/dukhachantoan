@@ -154,6 +154,14 @@
     --level-2-fg: var(--color-ink-950);
     --level-3-fg: var(--color-ink-950);
     --level-4-fg: #FFFFFF;
+    /* Ảnh: lớp phủ hero (chữ trên ảnh luôn ≥ 4.5:1 dù ảnh sáng/tối), nền thay thế khi thiếu ảnh, nền credit */
+    --hero-scrim: rgb(247 249 248 / 0.9);
+    --hero-scrim-weak: rgb(247 249 248 / 0.45);
+    --figure-fallback-from: var(--color-brand-50);
+    --figure-fallback-to: var(--color-brand-100);
+    --figure-fallback-fg: var(--color-brand-700);
+    --figure-credit-bg: rgb(255 255 255 / 0.85);
+    --figure-credit-fg: #111A17;
 }
 
 /* Theme "Trực ban đêm": nền #0F1514, thẻ #171F1D, viền sáng mảnh */
@@ -189,6 +197,13 @@
     --shadow-clay-btn: 0 1px 2px rgba(0, 0, 0, 0.4);
     --shadow-soft: 0 8px 24px -12px rgba(0, 0, 0, 0.6);
     --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4), 0 4px 12px -6px rgba(0, 0, 0, 0.5);
+    --hero-scrim: rgb(15 21 20 / 0.9);
+    --hero-scrim-weak: rgb(15 21 20 / 0.5);
+    --figure-fallback-from: #1E2826;
+    --figure-fallback-to: color-mix(in srgb, var(--color-brand-500) 18%, #171F1D);
+    --figure-fallback-fg: var(--color-brand-300);
+    --figure-credit-bg: rgb(15 21 20 / 0.82);
+    --figure-credit-fg: #E4ECE9;
 }
 
 /* ---------- Nền tảng ---------- */
@@ -428,6 +443,22 @@
         border-radius: var(--radius-input);
     }
 
+
+    /* Ảnh (Figure.vue): nền thay thế khi thiếu ảnh, nhãn credit đặt trên ảnh */
+    .figure-fallback {
+        background: linear-gradient(135deg, var(--figure-fallback-from), var(--figure-fallback-to));
+        color: var(--figure-fallback-fg);
+    }
+    .figure-credit { background: var(--figure-credit-bg); color: var(--figure-credit-fg); border-top-left-radius: 6px; }
+
+    /* Lớp phủ hero: điện thoại phủ đều; từ 1024px đậm bên trái (chữ), nhạt dần bên phải để thấy ảnh */
+    .hero-scrim { background: var(--hero-scrim); }
+    @media (min-width: 1024px) {
+        .hero-scrim { background: linear-gradient(90deg, var(--hero-scrim) 0%, var(--hero-scrim) 48%, var(--hero-scrim-weak) 100%); }
+    }
+
+    /* Mục vừa gửi (Requests/Index ?moi=): viền brand trong 3 giây */
+    .is-highlighted { box-shadow: 0 0 0 3px var(--color-brand-500); transition: box-shadow 0.3s ease; }
 
     .prose-clay p + p { margin-top: 0.75rem; }
     .prose-clay ul { list-style: disc; padding-left: 1.25rem; }

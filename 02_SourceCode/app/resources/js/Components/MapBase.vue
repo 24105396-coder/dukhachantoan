@@ -3,6 +3,7 @@ import { ref, computed, watch, onMounted, onBeforeUnmount, shallowRef, useId } f
 import { router, usePage } from '@inertiajs/vue3';
 import EmptyState from '@/Components/EmptyState.vue';
 import { useT } from '@/Composables/useT';
+import { useFormat } from '@/Composables/useFormat';
 import { LEVELS, normalizeLevel, levelColor } from '@/Utils/levels';
 import { normalizeGeometry, emptyBox, extendBoxGeoJson, extendBoxPoint, boxToBounds } from '@/Utils/geo';
 
@@ -11,8 +12,8 @@ import { normalizeGeometry, emptyBox, extendBoxGeoJson, extendBoxPoint, boxToBou
  * - geojson: FeatureCollection(ZoneGeo) – vùng tô màu theo properties.level (0–4), popup tên + mức + liên kết url.
  * - markers: [{ id, lat, lng, label, level?, url?, description? }] – điểm tròn màu theo mức.
  * - legend: [{ level, label, color? }] (mặc định 5 mức) hiển thị dạng pill có chữ (không chỉ dựa màu).
- * - overlays: [{ id, geometry, level, label, url?, description? }] – phạm vi cảnh báo (GeoJSON hoặc
- *   { type:'Circle', center, radius_km }) vẽ nét đứt theo mức.
+ * - overlays: [{ id, geometry, level, label, url?, description?, source?, updatedAt?, simulated? }] – phạm vi cảnh báo
+ *   (GeoJSON hoặc { type:'Circle', center, radius_km }) vẽ nét đứt theo mức; popup có dòng "Nguồn · Cập nhật · Mô phỏng".
  * - route: [{ lat, lng }] – đường nối các chặng theo thứ tự; userLocation: { lat, lng } – vị trí của tôi.
  * - focus: { lat, lng, zoom } – ưu tiên đặt khung nhìn vào điểm này thay vì tự khớp dữ liệu.
  * - selected: mã vùng đang chọn (viền đậm).
@@ -40,6 +41,7 @@ const props = defineProps({
 });
 const emit = defineEmits(['select', 'mapclick']);
 const { t } = useT();
+const { stamp } = useFormat();
 const uid = useId();
 
 const VIETNAM = { lat: 16.2, lng: 106.5, zoom: 5 };
@@ -82,8 +84,24 @@ const summary = computed(() =>
 
 const isSafeHref = (url) => typeof url === 'string' && (/^\/(?!\/)/.test(url) || /^https?:\/\//i.test(url));
 
+/**
+ * Dòng "Nguồn: … · Cập nhật: hh:mm dd/mm · Mô phỏng" trong popup cảnh báo (bắt buộc theo đề), dựng bằng textContent.
+ * @param {{source?: string, updatedAt?: string, simulated?: boolean}} info
+ * @returns {HTMLElement|null} phần tử dòng nguồn hoặc null khi không có thông tin nguồn
+ */
+function sourceLine({ source, updatedAt, simulated }) {
+    if (!source && !updatedAt && !simulated) return null;
+    const line = document.createElement('span');
+    line.className = 'block border-t border-line pt-1 text-xs text-muted';
+    line.setAttribute('data-source-stamp', '');
+    const parts = [`${t('common.source')}: ${source || t('source.unknown')}`, `${t('common.updated')}: ${stamp(updatedAt) || '—'}`];
+    if (simulated) parts.push(t('common.simulated'));
+    line.textContent = parts.join(' · ');
+    return line;
+}
+
 /** Popup dựng bằng DOM + textContent (không chèn HTML từ dữ liệu). */
-function popupContent({ name, level, url, description }) {
+function popupContent({ name, level, url, description, source, updatedAt, simulated }) {
     const box = document.createElement('div');
     box.className = 'space-y-1';
     const title = document.createElement('strong');
@@ -103,6 +121,8 @@ function popupContent({ name, level, url, description }) {
         p.textContent = description;
         box.appendChild(p);
     }
+    const stampLine = sourceLine({ source, updatedAt, simulated });
+    if (stampLine) box.appendChild(stampLine);
     if (isSafeHref(url)) {
         const a = document.createElement('a');
         a.href = url;
@@ -135,7 +155,9 @@ const KM_TO_M = 1000;
 function drawOverlay(o) {
     const g = normalizeGeometry(o.geometry);
     if (!g) return;
-    const content = () => popupContent({ name: o.label, level: o.level, url: o.url, description: o.description });
+    const content = () => popupContent({
+        name: o.label, level: o.level, url: o.url, description: o.description, source: o.source, updatedAt: o.updatedAt, simulated: o.simulated,
+    });
     const layer = g.kind === 'circle'
         ? L.circle([g.center.lat, g.center.lng], { radius: g.radiusKm * KM_TO_M, ...overlayStyle(o.level) })
         : L.geoJSON(g.data, {

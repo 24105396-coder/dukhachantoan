@@ -12,9 +12,11 @@ import StatusHistory from '@/Components/StatusHistory.vue';
 import GuideCard from '@/Components/GuideCard.vue';
 import ContactItem from '@/Components/ContactItem.vue';
 import EmptyState from '@/Components/EmptyState.vue';
+import Figure from '@/Components/Figure.vue';
 import { useT } from '@/Composables/useT';
 import { useFormat } from '@/Composables/useFormat';
 import { useLocaleRoute } from '@/Composables/useLocaleRoute';
+import { useImages } from '@/Composables/useImages';
 import { normalizeLevel } from '@/Utils/levels';
 
 /** Chi tiết cảnh báo (AlertDetail): nhãn mức cạnh tiêu đề + viền trái màu mức, hàng meta vùng/hiệu lực, hướng dẫn, danh bạ gần, bản đồ phạm vi, lịch sử trạng thái. */
@@ -26,12 +28,18 @@ const props = defineProps({
 const { t, te, locale } = useT();
 const { dateTime, number } = useFormat();
 const lr = useLocaleRoute();
+const images = useImages();
+/** Ảnh minh họa loại hiểm họa (96px, chỉ từ 640px để khối cảnh báo trên điện thoại vẫn gọn). */
+const hazardImage = computed(() => images.hazard(props.alert.hazard?.code));
 
 const level = computed(() => normalizeLevel(props.alert.severity) ?? 1);
 const CALLOUT = { 1: 'callout-1', 2: 'callout-2', 3: 'callout-3', 4: 'callout-4' };
 const isInactive = computed(() => ['expired', 'cancelled'].includes(props.alert.status));
 const overlays = computed(() => (props.alert.geometry
-    ? [{ id: props.alert.code, geometry: props.alert.geometry, level: level.value, label: props.alert.headline }]
+    ? [{
+        id: props.alert.code, geometry: props.alert.geometry, level: level.value, label: props.alert.headline,
+        source: props.alert.source?.name, updatedAt: props.alert.updated_at_source || props.alert.issued_at, simulated: !!props.alert.is_simulated,
+    }]
     : []));
 const missingTranslation = computed(() => Array.isArray(props.alert.translations_available)
     && !props.alert.translations_available.includes(locale.value));
@@ -51,6 +59,18 @@ const crumbs = computed(() => [
 
         <!-- Khối đầu cảnh báo: nền trắng, viền trái màu mức, nhãn mức (màu + icon + chữ) cạnh tiêu đề -->
         <article class="callout p-5 md:p-6" :class="CALLOUT[level]" :data-severity="level">
+            <Figure
+                v-if="alert.hazard"
+                :image="hazardImage"
+                :alt="hazardImage?.alt || alert.hazard.name"
+                class="float-right ml-4 hidden w-24 sm:block"
+                ratio-class="aspect-square"
+                rounded-class="rounded-[var(--radius-card-sm)]"
+                credit="tooltip"
+                :fallback-icon="alert.hazard.icon || alert.hazard.code || 'alert'"
+                :width="96"
+                :height="96"
+            />
             <div class="flex flex-wrap items-center gap-2">
                 <Badge :level="level" :label="alert.severity_label ? t('level.with_number', { n: level, label: alert.severity_label }) : undefined" show-level-number />
                 <span v-if="alert.hazard" class="pill"><Icon :name="alert.hazard.icon || alert.hazard.code || 'alert'" fallback="alert" :size="14" />{{ alert.hazard.name }}</span>
@@ -75,7 +95,7 @@ const crumbs = computed(() => [
             <p v-if="alert.affected_trips_count !== undefined && alert.affected_trips_count !== null" class="mt-2 flex items-center gap-1.5 text-sm">
                 <Icon name="route" :size="16" class="text-muted" />{{ t('alert.affected_trips', { n: number(alert.affected_trips_count) }) }}
             </p>
-            <div class="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 border-t border-line pt-3">
+            <div class="mt-4 flex clear-both flex-wrap items-center gap-x-4 gap-y-1 border-t border-line pt-3">
                 <SourceStamp :source="alert.source" :updated-at="alert.updated_at_source || alert.issued_at" :simulated="!!alert.is_simulated" />
                 <p v-if="alert.issued_at" class="text-xs text-muted">{{ t('alert.issued_at', { time: dateTime(alert.issued_at) }) }}</p>
             </div>

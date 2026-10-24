@@ -8,9 +8,11 @@ import Icon from '@/Components/Icon.vue';
 import AlertCard from '@/Components/AlertCard.vue';
 import ContactItem from '@/Components/ContactItem.vue';
 import EmptyState from '@/Components/EmptyState.vue';
+import Figure from '@/Components/Figure.vue';
 import { useT } from '@/Composables/useT';
 import { useFormat } from '@/Composables/useFormat';
 import { useLocaleRoute } from '@/Composables/useLocaleRoute';
+import { useImages } from '@/Composables/useImages';
 
 /** Hướng dẫn ứng phó (GuideDetail): 3 giai đoạn trước/trong/sau dạng checklist tự đánh dấu, nguồn, danh bạ, cảnh báo liên quan, nút in. */
 const props = defineProps({
@@ -21,6 +23,9 @@ const props = defineProps({
 const { t, te } = useT();
 const { date } = useFormat();
 const lr = useLocaleRoute();
+const images = useImages();
+/** Ảnh đầu trang theo loại hiểm họa của hướng dẫn (null → nền brand + icon hiểm họa). */
+const hazardImage = computed(() => images.hazard(props.guide.hazard?.code));
 
 const PHASES = [
     { key: 'before', icon: 'clipboard-check', tone: 'callout-1' },
@@ -48,6 +53,15 @@ const printPage = () => window.print();
                 <Button icon="printer" class="print:hidden" @click="printPage">{{ t('guides.print') }}</Button>
             </template>
         </PageHeader>
+        <Figure
+            v-if="guide.hazard"
+            :image="hazardImage"
+            :alt="hazardImage?.alt || guide.hazard.name"
+            class="print:hidden"
+            ratio-class="aspect-[16/9] sm:aspect-[21/9] lg:aspect-[3/1]"
+            :fallback-icon="guide.hazard.icon || guide.hazard.code || 'life-buoy'"
+            priority
+        />
         <div class="flex flex-wrap gap-2">
             <Badge v-if="guide.min_severity" :level="guide.min_severity" soft :label="t('guide.from_level', { label: t(`enums.levels.${guide.min_severity}`) })" />
             <span v-if="guide.audience" class="pill"><Icon name="users" :size="14" />{{ te('audience', guide.audience) }}</span>

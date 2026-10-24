@@ -13,7 +13,7 @@ defineProps({
 });
 const { t, te } = useT();
 const lr = useLocaleRoute();
-const { user, canAccessAdmin, adminHome, unread } = usePermissions();
+const { user, canAccessAdmin, adminHome, unread, isTraveler, isPartner } = usePermissions();
 const menuId = `acc-${useId()}`;
 
 const open = ref(false);
@@ -76,6 +76,7 @@ const itemClass = 'flex items-center gap-3 rounded-full px-3 py-2 text-sm font-s
                         <span v-if="unread" class="ml-auto rounded-full bg-level-4 px-2 text-xs font-bold text-level-4-fg">{{ unread }}</span>
                     </Link>
                 </li>
+                <li v-if="isTraveler || isPartner"><Link :href="lr('/yeu-cau-cua-toi')" :class="itemClass" @click="close"><Icon name="clipboard-check" :size="18" />{{ t('nav.requests') }}</Link></li>
                 <li><Link :href="lr('/tai-khoan')" :class="itemClass" @click="close"><Icon name="user-cog" :size="18" />{{ t('nav.account') }}</Link></li>
                 <li v-if="canAccessAdmin"><Link :href="lr(adminHome)" :class="itemClass" @click="close"><Icon name="dashboard" :size="18" />{{ t('nav.admin') }}</Link></li>
                 <li>

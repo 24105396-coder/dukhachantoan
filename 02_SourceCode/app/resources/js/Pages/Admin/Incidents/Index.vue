@@ -2,6 +2,7 @@
 import { computed, reactive } from 'vue';
 import { Head, router } from '@inertiajs/vue3';
 import PageHeader from '@/Components/PageHeader.vue';
+import ExportButton from '@/Components/Admin/ExportButton.vue';
 import FilterBar from '@/Components/FilterBar.vue';
 import Pagination from '@/Components/Pagination.vue';
 import EmptyState from '@/Components/EmptyState.vue';
@@ -45,7 +46,11 @@ const TONE = { pending: 'border-level-2', verified: 'border-level-0', rejected: 
 
 <template>
     <Head :title="t('admin.nav.incidents')" />
-    <PageHeader :eyebrow="t('admin.title')" :title="t('admin.nav.incidents')" :description="t('admin.incidents.intro')" />
+    <PageHeader :eyebrow="t('admin.title')" :title="t('admin.nav.incidents')" :description="t('admin.incidents.intro')">
+        <template #actions>
+            <ExportButton dataset="su-co" />
+        </template>
+    </PageHeader>
     <FilterBar :filters="filters" :fields="fields" class="mb-4" />
     <SkeletonList v-if="loading" :count="3" :cols="1" />
     <ul v-else-if="rowsOf(incidents).length" class="space-y-4">

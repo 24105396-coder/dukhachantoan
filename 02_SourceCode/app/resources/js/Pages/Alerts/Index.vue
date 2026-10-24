@@ -8,6 +8,7 @@ import Pagination from '@/Components/Pagination.vue';
 import EmptyState from '@/Components/EmptyState.vue';
 import SkeletonList from '@/Components/SkeletonList.vue';
 import Button from '@/Components/Button.vue';
+import DataLegend from '@/Components/DataLegend.vue';
 import { useT } from '@/Composables/useT';
 import { useLocaleRoute } from '@/Composables/useLocaleRoute';
 import { useVisitLoading } from '@/Composables/useVisitLoading';
@@ -45,7 +46,8 @@ const total = computed(() => props.alerts?.meta?.total ?? props.alerts?.total ??
             </template>
         </PageHeader>
 
-        <FilterBar :filters="filters" :fields="fields" class="mb-4" />
+        <FilterBar :filters="filters" :fields="fields" class="mb-3" />
+        <DataLegend class="mb-3" />
         <p class="mb-4 text-sm text-muted" aria-live="polite">{{ t('alerts.count', { n: total }) }}</p>
 
         <SkeletonList v-if="loading" :count="6" :cols="3" height="h-24" />

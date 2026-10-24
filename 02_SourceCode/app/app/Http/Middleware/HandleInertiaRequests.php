@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use App\Services\AnalyticsClient;
 use App\Services\RiskService;
+use App\Services\TravelerRequestService;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
 use Throwable;
@@ -27,6 +28,8 @@ class HandleInertiaRequests extends Middleware
             'flash' => fn () => [
                 'success' => $request->session()->get('success'),
                 'error' => $request->session()->get('error'),
+                // Liên kết "Xem trạng thái" kèm thông điệp thành công (vd. sau khi báo sự cố)
+                'success_link' => $request->session()->get('success_link'),
             ],
             'app' => fn () => [
                 'name' => 'DuKhachAnToan',
@@ -70,7 +73,22 @@ class HandleInertiaRequests extends Middleware
             'theme' => $user->theme,
             'province' => $user->province?->brief(),
             'unread_notifications' => $this->unreadCount($user),
+            // Số yêu cầu đang mở (chờ tiếp nhận + đang xử lý) cho badge "Yêu cầu của tôi"
+            'open_requests' => $this->openRequests($user),
         ];
+    }
+
+    private function openRequests($user): int
+    {
+        try {
+            $counts = app(TravelerRequestService::class)->counts($user);
+
+            return $counts['pending'] + $counts['in_progress'];
+        } catch (Throwable $e) {
+            report($e);
+
+            return 0;
+        }
     }
 
     private function unreadCount($user): int

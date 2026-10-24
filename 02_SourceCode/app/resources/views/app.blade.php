@@ -45,7 +45,7 @@
             $pageComponent === null => null,
             str_starts_with($pageComponent, 'Auth/') => 'resources/js/Layouts/AuthLayout.vue',
             in_array($pageComponent, ['Trips/Shared', 'Trips/SharedCheckin'], true) => 'resources/js/Layouts/PublicLayout.vue',
-            (bool) preg_match('#^(Admin|Account|Notifications|Incidents|Trips)/#', $pageComponent) => 'resources/js/Layouts/DashboardLayout.vue',
+            (bool) preg_match('#^(Admin|Account|Notifications|Incidents|Trips|Requests)/#', $pageComponent) => 'resources/js/Layouts/DashboardLayout.vue',
             default => 'resources/js/Layouts/PublicLayout.vue',
         };
         // Chỉ preload file có mục riêng trong manifest (layout gộp vào chunk app-ui thì không có); chế độ dev nạp mọi file

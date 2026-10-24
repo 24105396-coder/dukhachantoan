@@ -2,6 +2,7 @@
 import { computed } from 'vue';
 import { Head } from '@inertiajs/vue3';
 import PageHeader from '@/Components/PageHeader.vue';
+import ExportButton from '@/Components/Admin/ExportButton.vue';
 import FilterBar from '@/Components/FilterBar.vue';
 import DataTable from '@/Components/DataTable.vue';
 import Pagination from '@/Components/Pagination.vue';
@@ -44,7 +45,11 @@ function metaText(meta) {
 
 <template>
     <Head :title="t('admin.audit.title')" />
-    <PageHeader :eyebrow="t('admin.title')" :title="t('admin.audit.title')" :description="t('admin.audit.intro')" />
+    <PageHeader :eyebrow="t('admin.title')" :title="t('admin.audit.title')" :description="t('admin.audit.intro')">
+        <template #actions>
+            <ExportButton dataset="nhat-ky" />
+        </template>
+    </PageHeader>
     <FilterBar :filters="filters" :fields="fields" />
     <div class="mt-6">
         <DataTable :columns="columns" :rows="logs?.data || []" :empty-text="t('admin.audit.empty')" :caption="t('admin.audit.title')">

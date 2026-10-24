@@ -1,0 +1,618 @@
+{
+  "hero": {
+    "about": {
+      "file": "/images/hero/about.webp",
+      "alt": {
+        "vi": "Phố Trần Phú trong phố cổ Hội An với nhà tường vàng và đèn lồng",
+        "en": "Tran Phu Street in Hoi An Ancient Town with yellow houses and lanterns"
+      },
+      "credit": "Steffen Schmitz",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:H%E1%BB%99i_An,_Ancient_Town,_2020-01_CN-10.jpg"
+    },
+    "auth": {
+      "file": "/images/hero/auth.webp",
+      "alt": {
+        "vi": "Ruộng bậc thang xanh dưới chân núi mây ở Sa Pa",
+        "en": "Green rice terraces below cloudy mountains in Sa Pa"
+      },
+      "credit": "Christophe95",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Rice_terraces_in_Sa_Pa_02.jpg"
+    },
+    "home": {
+      "file": "/images/hero/home.webp",
+      "alt": {
+        "vi": "Vịnh Hạ Long nhìn từ trên cao với tàu du lịch giữa núi đá vôi",
+        "en": "Ha Long Bay from above with tour boats among limestone karsts"
+      },
+      "credit": "Vyacheslav Argenberg",
+      "license": "CC BY 4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Ha_Long_Bay,_Vietnam,_View_from_above.jpg"
+    }
+  },
+  "hazards": {
+    "bao": {
+      "file": "/images/hazards/bao.webp",
+      "alt": {
+        "vi": "Bão Yagi nhìn từ vệ tinh trên Biển Đông, tháng 9/2024",
+        "en": "Typhoon Yagi seen from satellite over the South China Sea, Sept 2024"
+      },
+      "credit": "MODIS Land Rapid Response Team, NASA GSFC",
+      "license": "Public domain",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Typhoon_Yagi_Strengthens_After_Swiping_the_Philippines_(MODIS_2024-09-05).jpg"
+    },
+    "ap_thap": {
+      "file": "/images/hazards/ap_thap.webp",
+      "alt": {
+        "vi": "Áp thấp nhiệt đới nhìn từ vệ tinh trên Biển Đông, tháng 6/2025",
+        "en": "Tropical depression seen from satellite over the South China Sea, June 2025"
+      },
+      "credit": "MODIS Land Rapid Response Team, NASA GSFC",
+      "license": "Public domain",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Tropical_Depression_Delivers_Second_Blow_to_Storm-battered_Hainan_Island_(MODIS_2025-06-28).jpg"
+    },
+    "mua_lon": {
+      "file": "/images/hazards/mua_lon.webp",
+      "alt": {
+        "vi": "Mưa lớn làm ngập mặt đường phố Lương Ngọc Quyến, Hà Nội",
+        "en": "Heavy rain flooding Luong Ngoc Quyen Street, Hanoi"
+      },
+      "credit": "Christophe95",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Heavy_rain_in_Hanoi.jpg"
+    },
+    "lu": {
+      "file": "/images/hazards/lu.webp",
+      "alt": {
+        "vi": "Nước lũ tràn ngập sân trường và hàng cây ở Huế năm 2009",
+        "en": "Floodwater covering a schoolyard and trees in Hue, 2009"
+      },
+      "credit": "Lưu Ly",
+      "license": "CC BY 3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Ketsana_2009,_Hue,_Vietnam_5.JPG"
+    },
+    "lu_quet": {
+      "file": "/images/hazards/lu_quet.webp",
+      "alt": {
+        "vi": "Sông Cầu dâng cao, nước đục ngầu mùa lũ ở Thái Nguyên",
+        "en": "The Cau River running high and muddy in flood season, Thai Nguyen"
+      },
+      "credit": "Bacthai20",
+      "license": "CC0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Cau_River_flood_in_Cao_Ngan.jpg"
+    },
+    "sat_lo": {
+      "file": "/images/hazards/sat_lo.webp",
+      "alt": {
+        "vi": "Taluy đất sạt lở bên đường đèo vùng núi phía Bắc",
+        "en": "Collapsed earth slope beside a northern mountain road"
+      },
+      "credit": "ChieuTimViet",
+      "license": "CC BY 3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:S%E1%BA%A1t_l%E1%BB%9F_M%C6%B0%E1%BB%9Dng_Can_-_panoramio.jpg"
+    },
+    "song_lon": {
+      "file": "/images/hazards/song_lon.webp",
+      "alt": {
+        "vi": "Sóng lớn đánh vào bờ đá dưới bầu trời u ám",
+        "en": "Storm waves breaking on a rocky shore under grey skies"
+      },
+      "credit": "John Robert McPherson",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Storm_waves_at_Emu_Park,_Capricorn_Coast_106_9549.jpg"
+    },
+    "trieu_cuong": {
+      "file": "/images/hazards/trieu_cuong.webp",
+      "alt": {
+        "vi": "Nước triều cường tràn vào lối đi ven sông ở Nam Bộ",
+        "en": "King tide water spilling onto a riverside lane in southern Vietnam"
+      },
+      "credit": "cong nguyen huynh",
+      "license": "CC BY 3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Tri%E1%BB%81u_c%C6%B0%E1%BB%9Dng_-_panoramio.jpg"
+    },
+    "nang_nong": {
+      "file": "/images/hazards/nang_nong.webp",
+      "alt": {
+        "vi": "Đồi cát Mũi Né dưới nắng gắt và trời xanh",
+        "en": "Mui Ne sand dunes under harsh sun and clear sky"
+      },
+      "credit": "Vyacheslav Argenberg",
+      "license": "CC BY 4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Vietnam,_Mui_Ne_sand_dunes,_blue_sky_and_trees_on_the_sand.jpg"
+    },
+    "ret_dam": {
+      "file": "/images/hazards/ret_dam.webp",
+      "alt": {
+        "vi": "Núi Mẫu Sơn (Lạng Sơn), nơi thường có băng giá khi rét đậm",
+        "en": "Mau Son mountain in Lang Son, prone to frost in cold spells"
+      },
+      "credit": "Minh Chu",
+      "license": "CC BY-SA 2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:M%E1%BA%ABu_S%C6%A1n.jpg"
+    },
+    "suong_mu": {
+      "file": "/images/hazards/suong_mu.webp",
+      "alt": {
+        "vi": "Sương mù dày đặc phủ kín đường đèo Hải Vân",
+        "en": "Dense fog covering the road over Hai Van Pass"
+      },
+      "credit": "Vyacheslav Argenberg",
+      "license": "CC BY 4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Hai_Van_Pass_in_dense_fog,_Vietnam.jpg"
+    },
+    "dong_set": {
+      "file": "/images/hazards/dong_set.webp",
+      "alt": {
+        "vi": "Tia sét giáng xuống mặt hồ lúc giông chiều ở Việt Nam",
+        "en": "Lightning striking over a lake during an evening storm in Vietnam"
+      },
+      "credit": "Irene Steeves",
+      "license": "Public domain",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Stormy_Lake_in_Vietnam_-_Flickr_-_isteeves.jpg"
+    },
+    "chay_rung": {
+      "file": "/images/hazards/chay_rung.webp",
+      "alt": {
+        "vi": "Khói cháy rừng che mờ mặt trời trên mặt hồ",
+        "en": "Forest fire smoke dimming the sun over a lake"
+      },
+      "credit": "Tiesky",
+      "license": "CC BY-SA 3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Forest_fire_smoke_-_panoramio.jpg"
+    },
+    "dich_benh": {
+      "file": "/images/hazards/dich_benh.webp",
+      "alt": {
+        "vi": "Gói khẩu trang y tế bày bán tại siêu thị ở Hà Nội",
+        "en": "Packs of medical face masks on sale at a Hanoi store"
+      },
+      "credit": "Newone",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:NewOne_-_Surgical_mask_in_Covid-19.jpg"
+    },
+    "an_ninh": {
+      "file": "/images/hazards/an_ninh.webp",
+      "alt": {
+        "vi": "Biển nhắc giữ tài sản của Công an phường Bến Thành",
+        "en": "Ben Thanh ward police sign reminding people to mind belongings"
+      },
+      "credit": "Ominae",
+      "license": "CC BY-SA 3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Public_Warning_sign.JPG"
+    },
+    "giao_thong": {
+      "file": "/images/hazards/giao_thong.webp",
+      "alt": {
+        "vi": "Dòng xe máy và ô tô đông đúc trên phố Hà Nội",
+        "en": "Dense motorbike and car traffic on a Hanoi street"
+      },
+      "credit": "Benjamin Arnold",
+      "license": "CC BY 3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Hanoi_Traffic_(174818911).jpeg"
+    },
+    "dong_dat": {
+      "file": "/images/hazards/dong_dat.webp",
+      "alt": {
+        "vi": "Máy ghi địa chấn đang vẽ băng sóng địa chấn",
+        "en": "A seismograph drum recording a seismogram"
+      },
+      "credit": "Z22",
+      "license": "CC BY-SA 3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Seismogram_at_Weston_Observatory.JPG"
+    },
+    "khac": {
+      "file": "/images/hazards/khac.webp",
+      "alt": {
+        "vi": "Quầy thông tin du lịch tại sân bay Nội Bài",
+        "en": "Tourism information desk at Noi Bai Airport"
+      },
+      "credit": "David McKelvey",
+      "license": "CC BY 2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Tourist_Information,_Noi_Bai_International_Airport,_Hanoi_(7060129229).jpg"
+    }
+  },
+  "destinations": {
+    "ba-na-hills": {
+      "file": "/images/destinations/ba-na-hills.webp",
+      "alt": {
+        "vi": "Cầu Vàng trên đôi bàn tay đá khổng lồ ở Bà Nà",
+        "en": "The Golden Bridge held by giant stone hands at Ba Na"
+      },
+      "credit": "DvTor8303",
+      "license": "CC0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Golden_Bridge_at_Ba_Na_Hills_20250718.jpg"
+    },
+    "bai-bien-my-khe": {
+      "file": "/images/destinations/bai-bien-my-khe.webp",
+      "alt": {
+        "vi": "Bờ biển Mỹ Khê cát trắng và hàng dừa nhìn từ trên cao",
+        "en": "My Khe's white-sand coastline and palms from above"
+      },
+      "credit": "Jpatokal",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:My_Khe_Beach_Danang_Coastline.jpg"
+    },
+    "bai-sau-vung-tau": {
+      "file": "/images/destinations/bai-sau-vung-tau.webp",
+      "alt": {
+        "vi": "Ghềnh đá và bãi cát ở Bãi Sau, Vũng Tàu",
+        "en": "Rocks and sand on Vung Tau's Back Beach"
+      },
+      "credit": "Willyvu",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%E1%BA%A2nh_%C4%91%E1%BA%B9p_V%C5%A9ng_T%C3%A0u_-_On_the_Back_Beach_1.jpg"
+    },
+    "bien-lang-co": {
+      "file": "/images/destinations/bien-lang-co.webp",
+      "alt": {
+        "vi": "Thuyền đánh cá neo trên đầm Lập An, Lăng Cô",
+        "en": "Fishing boats moored on Lap An lagoon, Lang Co"
+      },
+      "credit": "Vyacheslav Argenberg",
+      "license": "CC BY 4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Vietnamese_fishing_boats,_Lang_Co_lagoon,_Vietnam.jpg"
+    },
+    "cho-ben-thanh": {
+      "file": "/images/destinations/cho-ben-thanh.webp",
+      "alt": {
+        "vi": "Cổng chính chợ Bến Thành có tháp đồng hồ",
+        "en": "Ben Thanh Market's main gate with its clock tower"
+      },
+      "credit": "Diego Delso",
+      "license": "CC BY-SA 3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Ben_Thanh,_Ciudad_Ho_Chi_Minh,_Vietnam,_2013-08-14,_DD_01.JPG"
+    },
+    "cho-noi-cai-rang": {
+      "file": "/images/destinations/cho-noi-cai-rang.webp",
+      "alt": {
+        "vi": "Ghe thuyền buôn bán trên chợ nổi Cái Răng",
+        "en": "Trading boats at Cai Rang Floating Market"
+      },
+      "credit": "Christophe95",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Cai_Rang_Floating_Market_3.jpg"
+    },
+    "chua-huong": {
+      "file": "/images/destinations/chua-huong.webp",
+      "alt": {
+        "vi": "Gác chuông mái cong nhiều tầng trong quần thể chùa Hương",
+        "en": "Multi-tiered curved-roof pavilion at the Perfume Pagoda complex"
+      },
+      "credit": "Maya-Anaïs Y.",
+      "license": "CC BY 2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Vietnam_-_Perfume_Pagoda_(14346190612).jpg"
+    },
+    "chua-thien-mu": {
+      "file": "/images/destinations/chua-thien-mu.webp",
+      "alt": {
+        "vi": "Tháp Phước Duyên và cổng chùa Thiên Mụ",
+        "en": "Phuoc Duyen Tower and the gate of Thien Mu Pagoda"
+      },
+      "credit": "CEphoto, Uwe Aranas",
+      "license": "CC BY-SA 3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Hue_Vietnam_Thien-Mu-Temple-and-Pagoda-01.jpg"
+    },
+    "con-dao": {
+      "file": "/images/destinations/con-dao.webp",
+      "alt": {
+        "vi": "Biển và núi đảo nhìn từ mũi Cá Mập, Côn Đảo",
+        "en": "Sea and island peaks seen from Ca Map Cape, Con Dao"
+      },
+      "credit": "Terminalwlyonline",
+      "license": "CC BY 4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:M%C5%A9i_C%C3%A1_M%E1%BA%ADp_(ph%C3%ADa_nh%C3%ACn_ra_H%C3%B2n_B%C3%A0)_-_C%C3%B4n_%C4%90%E1%BA%A3o.jpg"
+    },
+    "cu-lao-cham": {
+      "file": "/images/destinations/cu-lao-cham.webp",
+      "alt": {
+        "vi": "Bãi cát và tàu khách cập bờ ở Cù Lao Chàm",
+        "en": "Sandy shore and passenger boats at the Cham Islands"
+      },
+      "credit": "Theguywithkpdomain",
+      "license": "CC0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:A_seaside_shot_in_C%C3%B9_Lao_Ch%C3%A0m,_Qu%E1%BA%A3ng_Nam_province,_taken_in_July_2024.jpg"
+    },
+    "dai-noi-hue": {
+      "file": "/images/destinations/dai-noi-hue.webp",
+      "alt": {
+        "vi": "Cổng cổ sơn son trong Đại Nội Huế",
+        "en": "An ornate old gate inside the Imperial City of Hue"
+      },
+      "credit": "Vyacheslav Argenberg",
+      "license": "CC BY 4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Vietnam,_Hue,_Imperial_City_of_Hue,_Gate.jpg"
+    },
+    "dao-cat-ba": {
+      "file": "/images/destinations/dao-cat-ba.webp",
+      "alt": {
+        "vi": "Đảo đá vôi chìm trong mây mù phía đông nam đảo Cát Bà",
+        "en": "Misty limestone islets southeast of Cat Ba Island"
+      },
+      "credit": "Jakub Hałun",
+      "license": "CC BY 4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Islands_southeast_of_Cat_Ba_Island_in_Vietnam,_20240131_1402_4656.jpg"
+    },
+    "deo-hai-van": {
+      "file": "/images/destinations/deo-hai-van.webp",
+      "alt": {
+        "vi": "Khúc cua đường đèo Hải Vân giữa đồi xanh",
+        "en": "A hairpin bend on Hai Van Pass among green hills"
+      },
+      "credit": "Steffen Schmitz",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:L%C4%83ng_C%C3%B4,_H%E1%BA%A3i_V%C3%A2n_Pass,_2020-01_CN-01.jpg"
+    },
+    "deo-ma-pi-leng": {
+      "file": "/images/destinations/deo-ma-pi-leng.webp",
+      "alt": {
+        "vi": "Đường đèo Mã Pì Lèng uốn quanh sườn núi đá Hà Giang",
+        "en": "Ma Pi Leng Pass winding along Ha Giang's rocky slopes"
+      },
+      "credit": "Khánh Hmoong",
+      "license": "CC BY 2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Ma_Pi_Leng_Pass_winding_road_Ha_Giang_Vietnam.jpg"
+    },
+    "dia-dao-cu-chi": {
+      "file": "/images/destinations/dia-dao-cu-chi.webp",
+      "alt": {
+        "vi": "Lối đi đất đỏ giữa rừng cây ở khu địa đạo Củ Chi",
+        "en": "A red-earth path through the woods at the Cu Chi Tunnels"
+      },
+      "credit": "Alan & Flora Botting",
+      "license": "CC BY-SA 2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Cu_Chi_Tunnels_33.jpg"
+    },
+    "dinh-doc-lap": {
+      "file": "/images/destinations/dinh-doc-lap.webp",
+      "alt": {
+        "vi": "Mặt tiền Dinh Độc Lập và bãi cỏ phía trước",
+        "en": "Facade of Independence Palace and its front lawn"
+      },
+      "credit": "Suicasmo",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Reunification_Palace_20190922-1.jpg"
+    },
+    "hang-mua": {
+      "file": "/images/destinations/hang-mua.webp",
+      "alt": {
+        "vi": "Đồng lúa và núi đá vôi nhìn từ đỉnh Hang Múa",
+        "en": "Rice fields and karst hills seen from Mua Cave peak"
+      },
+      "credit": "Shyamal",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:View_from_Hang_Mua.jpg"
+    },
+    "ho-ba-be": {
+      "file": "/images/destinations/ho-ba-be.webp",
+      "alt": {
+        "vi": "Mặt hồ Ba Bể phản chiếu núi rừng và mây trắng",
+        "en": "Ba Be Lake reflecting forested hills and clouds"
+      },
+      "credit": "Ekrem Canli",
+      "license": "CC BY-SA 3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Ba_Be_Lake_2014.jpg"
+    },
+    "ho-hoan-kiem": {
+      "file": "/images/destinations/ho-hoan-kiem.webp",
+      "alt": {
+        "vi": "Cầu Thê Húc đỏ bắc qua hồ Hoàn Kiếm",
+        "en": "The red The Huc Bridge over Hoan Kiem Lake"
+      },
+      "credit": "Rolf Müller (User:Rolfmueller)",
+      "license": "CC BY-SA 3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Hoan_kiem_lake_huc_bridge_hanoi_2007_01.jpg"
+    },
+    "ho-xuan-huong-da-lat": {
+      "file": "/images/destinations/ho-xuan-huong-da-lat.webp",
+      "alt": {
+        "vi": "Hồ Xuân Hương và đường ven hồ giữa trung tâm Đà Lạt",
+        "en": "Xuan Huong Lake and lakeside road in central Da Lat"
+      },
+      "credit": "P. Hughes",
+      "license": "CC BY 4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Da_Lat_-_Xuan_Huong_Lake.jpg"
+    },
+    "ky-co-eo-gio": {
+      "file": "/images/destinations/ky-co-eo-gio.webp",
+      "alt": {
+        "vi": "Bãi Kỳ Co cong hình vòng cung nhìn từ đồi Nhơn Lý",
+        "en": "The curved Ky Co beach seen from the Nhon Ly hills"
+      },
+      "credit": "Boconganh Phan",
+      "license": "Public domain",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Ky_Co_-_Nhon_Ly_-_Quy_Nhon_-_Binh_Dinh_-_Viet_Nam.jpg"
+    },
+    "moc-chau": {
+      "file": "/images/destinations/moc-chau.webp",
+      "alt": {
+        "vi": "Đồi núi Mộc Châu nhấp nhô trong nắng chiều vàng",
+        "en": "Rolling hills of Moc Chau in golden evening light"
+      },
+      "credit": "Linh Pham (Unsplash, linharex)",
+      "license": "CC0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:M%E1%BB%99c_Ch%C3%A2u_District,_Vietnam_(Unsplash).jpg"
+    },
+    "mu-cang-chai": {
+      "file": "/images/destinations/mu-cang-chai.webp",
+      "alt": {
+        "vi": "Ruộng bậc thang lúa chín ở xã Chế Cu Nha, Mù Cang Chải",
+        "en": "Ripening rice terraces in Che Cu Nha, Mu Cang Chai"
+      },
+      "credit": "Doan Tuan (Unsplash, danny_pham93)",
+      "license": "CC0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Terraces_in_Che_Cu_Nha_commune,_Mu_Cang_Chai_(Unsplash).jpg"
+    },
+    "mui-ca-mau": {
+      "file": "/images/destinations/mui-ca-mau.webp",
+      "alt": {
+        "vi": "Rừng ngập mặn và biển ở Mũi Cà Mau nhìn từ trên cao",
+        "en": "Mangroves and sea at Ca Mau Cape from above"
+      },
+      "credit": "Colalumbu",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Muicamau.jpg"
+    },
+    "mui-ne": {
+      "file": "/images/destinations/mui-ne.webp",
+      "alt": {
+        "vi": "Đồi cát lượn sóng ở Mũi Né",
+        "en": "Rippled sand dunes at Mui Ne"
+      },
+      "credit": "Vyacheslav Argenberg",
+      "license": "CC BY 4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Vietnam,_Mui_Ne_sand_dunes.jpg"
+    },
+    "nui-sam-chau-doc": {
+      "file": "/images/destinations/nui-sam-chau-doc.webp",
+      "alt": {
+        "vi": "Cánh đồng Châu Đốc nhìn từ núi Sam lúc hoàng hôn",
+        "en": "Chau Doc plains seen from Sam Mountain at sunset"
+      },
+      "credit": "Vyacheslav Argenberg",
+      "license": "CC BY 4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Vietnam,_Chau_Doc,_Sam_Mountain.jpg"
+    },
+    "pho-co-ha-noi": {
+      "file": "/images/destinations/pho-co-ha-noi.webp",
+      "alt": {
+        "vi": "Ngõ nhỏ phố cổ Hà Nội với hàng quán và xe máy",
+        "en": "A narrow Old Quarter lane in Hanoi with shops and motorbikes"
+      },
+      "credit": "Alexkom000",
+      "license": "CC BY 4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:2024-11-03_Hanoi%27s_Old_Quarter_3.jpg"
+    },
+    "pho-co-hoi-an": {
+      "file": "/images/destinations/pho-co-hoi-an.webp",
+      "alt": {
+        "vi": "Góc phố cổ Hội An với nhà tường vàng mái ngói",
+        "en": "A Hoi An street corner with yellow tiled-roof houses"
+      },
+      "credit": "Steffen Schmitz",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:H%E1%BB%99i_An,_Ancient_Town,_2020-01_CN-06.jpg"
+    },
+    "phong-nha-ke-bang": {
+      "file": "/images/destinations/phong-nha-ke-bang.webp",
+      "alt": {
+        "vi": "Thuyền du lịch đậu trong lòng động Phong Nha",
+        "en": "Tour boats moored inside Phong Nha Cave"
+      },
+      "credit": "Andre Hospers",
+      "license": "CC BY 4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Dong_Hoi_Phong_Nha_grotten_(59500).jpg"
+    },
+    "phu-quoc-bai-sao": {
+      "file": "/images/destinations/phu-quoc-bai-sao.webp",
+      "alt": {
+        "vi": "Bãi Sao cát trắng nước xanh ngọc ở Phú Quốc",
+        "en": "White sand and turquoise water at Sao Beach, Phu Quoc"
+      },
+      "credit": "Trantuonglam",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Bai-sao-phu-quoc-tuonglamphotos.jpg"
+    },
+    "phu-quoc-duong-dong": {
+      "file": "/images/destinations/phu-quoc-duong-dong.webp",
+      "alt": {
+        "vi": "Rạch Dương Đông với nhà ven sông ở Phú Quốc",
+        "en": "Duong Dong canal lined with riverside houses, Phu Quoc"
+      },
+      "credit": "Vano111ru",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:R%E1%BA%A1ch_D%C6%B0%C6%A1ng_D%C3%B3ng.jpg"
+    },
+    "rung-tram-tra-su": {
+      "file": "/images/destinations/rung-tram-tra-su.webp",
+      "alt": {
+        "vi": "Rừng tràm Trà Sư với mặt nước phủ bèo xanh",
+        "en": "Tra Su cajuput forest over duckweed-covered water"
+      },
+      "credit": "Bùi Thụy Đào Nguyên",
+      "license": "CC BY-SA 3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:R%E1%BB%ABng_tr%C3%A0m_Tr%C3%A0_S%C6%B0.jpg"
+    },
+    "sa-pa": {
+      "file": "/images/destinations/sa-pa.webp",
+      "alt": {
+        "vi": "Con đường đất giữa ruộng lúa và núi mây ở Sa Pa",
+        "en": "A dirt road between paddy fields and misty hills in Sa Pa"
+      },
+      "credit": "Jakub Hałun",
+      "license": "CC BY 4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Road_and_paddy_fields_in_Sa_Pa,_Vietnam,_20240126_1202_3586.jpg"
+    },
+    "thac-ban-gioc": {
+      "file": "/images/destinations/thac-ban-gioc.webp",
+      "alt": {
+        "vi": "Thác Bản Giốc nhiều tầng đổ xuống hồ nước xanh",
+        "en": "Multi-tiered Ban Gioc Waterfall falling into green pools"
+      },
+      "credit": "jankgo",
+      "license": "CC BY 2.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Ban_Gioc_-_Detian_Falls2.jpg"
+    },
+    "thanh-dia-my-son": {
+      "file": "/images/destinations/thanh-dia-my-son.webp",
+      "alt": {
+        "vi": "Các tháp gạch Chăm cổ ở Thánh địa Mỹ Sơn",
+        "en": "Ancient Cham brick towers at My Son Sanctuary"
+      },
+      "credit": "Philip Nalangan",
+      "license": "CC BY 4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:My_Son_Sanctuary_Vietnam_06.jpg"
+    },
+    "trang-an": {
+      "file": "/images/destinations/trang-an.webp",
+      "alt": {
+        "vi": "Thuyền chở khách trên sông giữa núi đá Tràng An",
+        "en": "Tourist boats on the river among Trang An karst peaks"
+      },
+      "credit": "Jakub Hałun",
+      "license": "CC BY 4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Trang_An_Landscape_Complex,_Ninh_Binh_Province,_Vietnam,_20240202_1447_5310.jpg"
+    },
+    "van-mieu-quoc-tu-giam": {
+      "file": "/images/destinations/van-mieu-quoc-tu-giam.webp",
+      "alt": {
+        "vi": "Cổng chính Văn Miếu – Quốc Tử Giám giữa hàng cây",
+        "en": "Main gate of the Temple of Literature among trees"
+      },
+      "credit": "Daderot",
+      "license": "CC0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Main_gate_-_Temple_of_Literature,_Hanoi_-_DSC04519.JPG"
+    },
+    "vinh-ha-long": {
+      "file": "/images/destinations/vinh-ha-long.webp",
+      "alt": {
+        "vi": "Các đảo đá vôi dựng đứng trên mặt nước vịnh Hạ Long",
+        "en": "Sheer limestone islets rising from Ha Long Bay"
+      },
+      "credit": "Thomas Hirsch (User:Ravn)",
+      "license": "CC BY-SA 3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Halong_Bay_in_Vietnam.jpg"
+    },
+    "vinh-nha-trang": {
+      "file": "/images/destinations/vinh-nha-trang.webp",
+      "alt": {
+        "vi": "Bãi tắm nước trong trên đảo Hòn Nội, vịnh Nha Trang",
+        "en": "Clear-water beach on Hon Noi island in Nha Trang Bay"
+      },
+      "credit": "Minh Duc Ly",
+      "license": "Public domain",
+      "source_url": "https://commons.wikimedia.org/wiki/File:H%C3%B2n_N%E1%BB%99i,_Nha_Trang_Bay,_Vietnam.jpg"
+    },
+    "vuon-quoc-gia-cat-tien": {
+      "file": "/images/destinations/vuon-quoc-gia-cat-tien.webp",
+      "alt": {
+        "vi": "Rừng nhiệt đới rậm rạp trong Vườn quốc gia Cát Tiên",
+        "en": "Dense lowland tropical forest in Cat Tien National Park"
+      },
+      "credit": "Vyacheslav Argenberg",
+      "license": "CC BY 4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Cat_Tien_Park,_Vietnam,_lowland_tropical_forest.jpg"
+    }
+  }
+}

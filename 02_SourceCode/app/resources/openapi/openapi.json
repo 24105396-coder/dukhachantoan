@@ -32,6 +32,10 @@
     },
     {
       "name": "trips"
+    },
+    {
+      "name": "me",
+      "description": "Dữ liệu của người dùng đã đăng nhập (phiên cookie cùng nguồn)"
     }
   ],
   "paths": {
@@ -759,6 +763,146 @@
           },
           "429": {
             "description": "Quá giới hạn tần suất",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/me/requests": {
+      "get": {
+        "summary": "Yêu cầu của tôi: sự cố đã báo và check-in cần hỗ trợ kèm trạng thái xử lý",
+        "tags": [
+          "me"
+        ],
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "locale",
+            "in": "query",
+            "description": "Ngôn ngữ nội dung (vi mặc định).",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "vi",
+                "en"
+              ]
+            }
+          },
+          {
+            "name": "incidents_page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          {
+            "name": "checkins_page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK (20 mục mỗi loại, mới nhất trước)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "incidents": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/RequestIncident"
+                          }
+                        },
+                        "checkins": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/RequestCheckin"
+                          }
+                        }
+                      }
+                    },
+                    "counts": {
+                      "type": "object",
+                      "properties": {
+                        "pending": {
+                          "type": "integer"
+                        },
+                        "in_progress": {
+                          "type": "integer"
+                        },
+                        "done": {
+                          "type": "integer"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "type": "object",
+                      "properties": {
+                        "incidents": {
+                          "type": "object",
+                          "properties": {
+                            "current_page": {
+                              "type": "integer"
+                            },
+                            "last_page": {
+                              "type": "integer"
+                            },
+                            "per_page": {
+                              "type": "integer"
+                            },
+                            "total": {
+                              "type": "integer"
+                            }
+                          }
+                        },
+                        "checkins": {
+                          "type": "object",
+                          "properties": {
+                            "current_page": {
+                              "type": "integer"
+                            },
+                            "last_page": {
+                              "type": "integer"
+                            },
+                            "per_page": {
+                              "type": "integer"
+                            },
+                            "total": {
+                              "type": "integer"
+                            }
+                          }
+                        },
+                        "locale": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Chưa đăng nhập",
             "content": {
               "application/json": {
                 "schema": {
@@ -1755,6 +1899,198 @@
             "type": "string"
           }
         }
+      },
+      "RequestIncident": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "hazard": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "code": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          },
+          "zone": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            }
+          },
+          "province": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            }
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "verified",
+              "rejected"
+            ]
+          },
+          "submitted_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "reviewed_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "review_note": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "reviewer_role": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "enum": [
+              "agency",
+              "admin",
+              null
+            ]
+          },
+          "alert": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "title": {
+                "type": "string"
+              },
+              "code": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              }
+            }
+          },
+          "is_simulated": {
+            "type": "boolean"
+          }
+        }
+      },
+      "RequestCheckin": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "trip": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "title": {
+                "type": "string"
+              },
+              "code": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              }
+            }
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "safe",
+              "need_help",
+              "unknown"
+            ]
+          },
+          "response_status": {
+            "type": "string",
+            "enum": [
+              "open",
+              "in_progress",
+              "closed"
+            ]
+          },
+          "message": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "checked_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "responded_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "response_note": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "responder_role": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "enum": [
+              "agency",
+              "admin",
+              null
+            ]
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "sessionCookie": {
+        "type": "apiKey",
+        "in": "cookie",
+        "name": "dukhachantoan-session",
+        "description": "Cookie phiên đăng nhập web (HttpOnly, SameSite=Lax)."
       }
     }
   }

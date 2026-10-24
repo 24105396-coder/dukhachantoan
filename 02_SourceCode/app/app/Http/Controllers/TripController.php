@@ -13,6 +13,7 @@ use App\Http\Resources\WeatherNow;
 use App\Http\Resources\ZoneGeo;
 use App\Models\AlertMatch;
 use App\Models\Destination;
+use App\Models\SafetyCheckin;
 use App\Models\Trip;
 use App\Models\TripLeg;
 use App\Services\CheckinService;
@@ -104,9 +105,18 @@ class TripController extends Controller
     {
         $this->authorize('checkin', $trip);
         $checkin = $checkins->create($trip, $request->user(), $request->validated(), 'app');
+        $response = back()->with('checkin', CheckinItem::one($checkin->load(CheckinItem::RELATIONS)));
+        if ($checkin->status !== SafetyCheckin::STATUS_NEED_HELP) {
+            return $response->with('success', __('messages.checkins.recorded'));
+        }
+        $provinces = $checkins->responderProvinceNames($trip);
 
-        return back()->with('success', __('messages.checkins.recorded'))
-            ->with('checkin', CheckinItem::one($checkin->load(CheckinItem::RELATIONS)));
+        return $response
+            ->with('success', __('messages.checkins.need_help_sent', [
+                'id' => $checkin->id,
+                'provinces' => $provinces !== [] ? implode(', ', $provinces) : __('messages.checkins.national_agency'),
+            ]))
+            ->with('success_link', localized_route('requests.index', ['moi' => 'checkin:'.$checkin->id]));
     }
 
     public function acknowledge(Request $request, Trip $trip, AlertMatch $match): RedirectResponse

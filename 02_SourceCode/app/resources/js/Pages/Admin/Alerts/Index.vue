@@ -2,6 +2,7 @@
 import { computed } from 'vue';
 import { Head, Link } from '@inertiajs/vue3';
 import PageHeader from '@/Components/PageHeader.vue';
+import ExportButton from '@/Components/Admin/ExportButton.vue';
 import FilterBar from '@/Components/FilterBar.vue';
 import DataTable from '@/Components/DataTable.vue';
 import Pagination from '@/Components/Pagination.vue';
@@ -49,6 +50,7 @@ const columns = computed(() => [
     <Head :title="t('admin.nav.alerts')" />
     <PageHeader :eyebrow="t('admin.title')" :title="t('admin.nav.alerts')" :description="t('admin.alerts.intro')">
         <template #actions>
+            <ExportButton dataset="canh-bao" />
             <Button :href="lr('/quan-tri/canh-bao/tao')" variant="primary" icon="plus">{{ t('admin.alerts.create') }}</Button>
         </template>
     </PageHeader>

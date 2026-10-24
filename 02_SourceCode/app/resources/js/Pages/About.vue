@@ -7,8 +7,11 @@ import Card from '@/Components/Card.vue';
 import Icon from '@/Components/Icon.vue';
 import Button from '@/Components/Button.vue';
 import EmptyState from '@/Components/EmptyState.vue';
+import Figure from '@/Components/Figure.vue';
+import DataLegend from '@/Components/DataLegend.vue';
 import { useT } from '@/Composables/useT';
 import { useLocaleRoute } from '@/Composables/useLocaleRoute';
+import { useImages } from '@/Composables/useImages';
 
 /** Giới thiệu: người dùng mục tiêu, chức năng chính, nguồn dữ liệu (attribution) và thông tin học thuật. */
 const props = defineProps({
@@ -25,6 +28,19 @@ const teamName = computed(() => {
     if (Array.isArray(props.team)) return props.team.map((m) => m.name || m).join(', ');
     return props.team.name || app.value.team;
 });
+const images = useImages();
+/** Ảnh đầu trang Giới thiệu (null → nền brand + icon). */
+const heroImage = computed(() => images.hero('about'));
+/**
+ * Bốn loại dữ liệu và tần suất cập nhật (khớp routes/console.php: app:fetch-weather mỗi 30 phút).
+ * `simulated` = hiển thị nhãn Mô phỏng như trên thẻ cảnh báo.
+ */
+const dataKinds = [
+    { key: 'weather', icon: 'cloud-sun', simulated: false },
+    { key: 'agency', icon: 'building', simulated: false },
+    { key: 'simulated', icon: 'flask', simulated: true },
+    { key: 'contacts', icon: 'phone', simulated: false },
+];
 const isSafeUrl = (u) => typeof u === 'string' && /^https?:\/\//i.test(u);
 
 const personas = [
@@ -48,7 +64,10 @@ const features = [
 <template>
     <PageMeta :title="t('about.title')" fallback-key="about.intro" />
     <div class="container-page space-y-14 py-8 md:py-12">
-        <PageHeader :eyebrow="t('about.eyebrow')" :title="t('about.title')" :description="t('about.intro')" />
+        <div class="space-y-5">
+            <PageHeader :eyebrow="t('about.eyebrow')" :title="t('about.title')" :description="t('about.intro')" />
+            <Figure :image="heroImage" ratio-class="aspect-[16/9] md:aspect-[21/9]" priority fallback-icon="shield-check" :width="1600" :height="900" />
+        </div>
 
         <section aria-labelledby="about-personas" class="space-y-5">
             <h2 id="about-personas" class="section-title">{{ t('about.personas_title') }}</h2>
@@ -74,9 +93,24 @@ const features = [
             </ul>
         </section>
 
-        <section aria-labelledby="about-sources" class="space-y-5">
-            <h2 id="about-sources" class="section-title">{{ t('about.data_sources') }}</h2>
+        <section id="nguon-du-lieu" aria-labelledby="about-sources" class="scroll-mt-24 space-y-5">
+            <h2 id="about-sources" class="section-title">{{ t('ui.about.sources_title') }}</h2>
             <p class="max-w-3xl text-muted">{{ t('about.data_sources_text') }}</p>
+            <DataLegend :show-link="false" />
+            <ul class="grid gap-3 md:grid-cols-2">
+                <li v-for="d in dataKinds" :key="d.key" class="callout flex gap-3 p-4" :class="d.simulated ? 'callout-2' : 'callout-brand'">
+                    <span class="icon-tile"><Icon :name="d.icon" :size="20" /></span>
+                    <div class="min-w-0">
+                        <h3 class="flex flex-wrap items-center gap-2 text-base">
+                            {{ t(`ui.about.kind_${d.key}`) }}
+                            <span v-if="d.simulated" class="pill border-dashed px-2 py-0 text-[0.6875rem]"><Icon name="flask" :size="12" />{{ t('common.simulated') }}</span>
+                        </h3>
+                        <p class="mt-1 text-sm text-muted">{{ t(`ui.about.kind_${d.key}_text`) }}</p>
+                        <p class="mt-1 text-xs font-semibold">{{ t(`ui.about.kind_${d.key}_freq`) }}</p>
+                    </div>
+                </li>
+            </ul>
+            <h3 class="text-base">{{ t('about.data_sources') }}</h3>
             <ul v-if="sources.length" class="grid gap-3 md:grid-cols-2">
                 <li v-for="s in sources" :key="s.code || s.name" class="clay-card-sm p-4">
                     <p class="font-semibold">

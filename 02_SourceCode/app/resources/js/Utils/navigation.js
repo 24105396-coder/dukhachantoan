@@ -25,6 +25,7 @@ export const DASHBOARD_NAV = [
     { key: 'admin_checkins', label: 'admin.nav.checkins', path: '/quan-tri/an-toan', icon: 'hand', roles: STAFF, primary: true, group: 'operate' },
     { key: 'admin_notifications', label: 'admin.nav.notifications', path: '/quan-tri/thong-bao', icon: 'send', roles: STAFF, group: 'operate' },
     { key: 'admin_incidents', label: 'admin.nav.incidents', path: '/quan-tri/su-co', icon: 'shield-alert', roles: STAFF, group: 'operate' },
+    { key: 'admin_reports', label: 'nav.reports', path: '/quan-tri/bao-cao', icon: 'chart', roles: STAFF, group: 'operate' },
     { key: 'admin_contacts', label: 'admin.nav.contacts', path: '/quan-tri/danh-ba', icon: 'phone', roles: STAFF, group: 'content' },
     { key: 'admin_guides', label: 'admin.nav.guides', path: '/quan-tri/huong-dan', icon: 'life-buoy', roles: STAFF, group: 'content' },
     { key: 'admin_zones', label: 'admin.nav.zones', path: '/quan-tri/vung', icon: 'layers', roles: STAFF, group: 'content' },
@@ -37,6 +38,7 @@ export const DASHBOARD_NAV = [
     { key: 'my_trips', label: 'nav.trips', path: '/hanh-trinh', icon: 'route', roles: TRAVELER, primary: true, group: 'personal' },
     { key: 'notifications', label: 'nav.notifications', path: '/thong-bao', icon: 'bell', roles: [...TRAVELER, ...STAFF], primary: true, group: 'personal', badge: 'unread' },
     { key: 'report_incident', label: 'nav.report_incident', path: '/bao-su-co', icon: 'megaphone', roles: TRAVELER, primary: true, group: 'personal' },
+    { key: 'my_requests', label: 'nav.requests', path: '/yeu-cau-cua-toi', icon: 'clipboard-check', roles: TRAVELER, group: 'personal' },
     { key: 'alerts', label: 'nav.alerts', path: '/canh-bao', icon: 'triangle-alert', roles: TRAVELER, group: 'personal' },
     { key: 'account', label: 'nav.account', path: '/tai-khoan', icon: 'user-cog', roles: [...TRAVELER, ...STAFF], group: 'personal' },
 ];

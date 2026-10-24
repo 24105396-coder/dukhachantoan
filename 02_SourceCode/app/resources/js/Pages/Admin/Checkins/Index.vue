@@ -2,6 +2,7 @@
 import { computed } from 'vue';
 import { Head, Link } from '@inertiajs/vue3';
 import PageHeader from '@/Components/PageHeader.vue';
+import ExportButton from '@/Components/Admin/ExportButton.vue';
 import FilterBar from '@/Components/FilterBar.vue';
 import DataTable from '@/Components/DataTable.vue';
 import Pagination from '@/Components/Pagination.vue';
@@ -47,6 +48,7 @@ const mapHref = (c) => `https://www.openstreetmap.org/?mlat=${c.lat}&mlon=${c.ln
     <Head :title="t('admin.nav.checkins')" />
     <PageHeader :eyebrow="t('admin.title')" :title="t('admin.nav.checkins')" :description="t('admin.checkins.intro')">
         <template #actions>
+            <ExportButton dataset="an-toan" />
             <RefreshIndicator :refreshing="isRefreshing" :last-refreshed-at="lastRefreshedAt" :interval-seconds="DEFAULT_POLL_MS / 1000" @refresh="refresh" />
         </template>
     </PageHeader>

@@ -1,9 +1,13 @@
 <script setup>
+import Figure from '@/Components/Figure.vue';
+
 /**
  * Trạng thái trống: minh họa SVG tông mint + tiêu đề + câu hướng dẫn ngắn; slot mặc định cho nút hành động.
- * `variant="error"` dùng cho lỗi tải dữ liệu (role=alert).
+ * `variant="error"` dùng cho lỗi tải dữ liệu (role=alert). `image` (từ useImages) thay SVG bằng ảnh nhỏ 16:9
+ * (thiếu ảnh → nền brand + icon), chỉ dùng ở trạng thái trống của trang ít dữ liệu.
  */
 defineProps({
+    image: { type: Object, default: undefined },
     title: { type: String, required: true },
     description: { type: String, default: '' },
     compact: { type: Boolean, default: false },
@@ -17,7 +21,8 @@ defineProps({
         :class="compact ? 'gap-2 p-5' : 'gap-3 p-8 md:p-10'"
         :role="variant === 'error' ? 'alert' : undefined"
     >
-        <svg :width="compact ? 72 : 112" :height="compact ? 54 : 84" viewBox="0 0 160 120" fill="none" aria-hidden="true">
+        <Figure v-if="image !== undefined" :image="image" class="w-48 max-w-full" ratio-class="aspect-[16/9]" credit="tooltip" fallback-icon="shield-check" />
+        <svg v-else :width="compact ? 72 : 112" :height="compact ? 54 : 84" viewBox="0 0 160 120" fill="none" aria-hidden="true">
             <ellipse cx="80" cy="108" rx="56" ry="8" class="fill-[var(--bg-soft)]" />
             <rect x="34" y="22" width="92" height="74" rx="22" class="fill-[var(--bg-soft)] stroke-brand-300" stroke-width="3" />
             <circle cx="64" cy="56" r="5" class="fill-brand-500" />

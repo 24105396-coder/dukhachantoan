@@ -36,7 +36,13 @@ class NotificationItem extends BaseResource
             'is_digest' => (bool) ($n->payload['digest'] ?? false),
             'recipient' => $n->relationLoaded('user') && $n->user ? ['name' => $n->user->name] : null,
             'user' => $n->relationLoaded('user') && $n->user ? ['name' => $n->user->name, 'email' => $n->user->email] : null,
-            'alert' => $n->alert ? ['code' => $n->alert->code, 'severity' => (int) $n->alert->severity, 'headline' => $n->alert->headline] : null,
+            'alert' => $n->alert ? [
+                'code' => $n->alert->code, 'severity' => (int) $n->alert->severity, 'headline' => $n->alert->headline,
+                // Nguồn gốc cảnh báo cho SourceStamp trên mục thông báo (cột của alerts, không thêm truy vấn)
+                'source' => ['name' => $n->alert->source_name, 'url' => $n->alert->source_url],
+                'updated_at_source' => self::iso($n->alert->updated_at_source ?? $n->alert->updated_at),
+                'is_simulated' => (bool) $n->alert->is_simulated,
+            ] : null,
             'trip' => $n->trip ? ['code' => $n->trip->code, 'title' => $n->trip->title] : null,
             'deliveries' => $n->relationLoaded('deliveries') ? $n->deliveries->map(fn (NotificationDelivery $d) => [
                 'attempt_no' => (int) $d->attempt_no,

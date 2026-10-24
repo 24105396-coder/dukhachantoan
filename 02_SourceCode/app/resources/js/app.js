@@ -14,7 +14,7 @@ const PROGRESS_COLOR = '#10A688'; // brand-500 (thanh tiến trình Inertia khô
 const pages = import.meta.glob('./Pages/**/*.vue');
 
 // Trang dùng khung dashboard (sidebar): khu quản trị và khu cá nhân của người đã đăng nhập
-const DASHBOARD_PREFIXES = ['Admin/', 'Account/', 'Notifications/', 'Incidents/', 'Trips/'];
+const DASHBOARD_PREFIXES = ['Admin/', 'Account/', 'Notifications/', 'Incidents/', 'Requests/', 'Trips/'];
 // Trang công khai theo token trong thư mục Trips (người thân xem/báo an toàn, không cần đăng nhập)
 const PUBLIC_EXCEPTIONS = ['Trips/Shared', 'Trips/SharedCheckin'];
 

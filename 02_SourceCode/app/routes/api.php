@@ -2,9 +2,13 @@
 
 use App\Http\Controllers\Api\V1;
 use App\Http\Controllers\HealthController;
+use App\Http\Middleware\EnsureActiveUser;
+use Illuminate\Cookie\Middleware\EncryptCookies;
+use Illuminate\Session\Middleware\AuthenticateSession;
+use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Support\Facades\Route;
 
-// API mở v1: JSON, không cần đăng nhập, giới hạn 60 yêu cầu/phút/IP (throttle:api)
+// API mở v1: JSON, không cần đăng nhập (trừ /me/*), giới hạn 60 yêu cầu/phút/IP (throttle:api)
 Route::prefix('v1')->name('api.v1.')->group(function () {
     Route::get('healthz', HealthController::class)->name('healthz');
     Route::get('stats/overview', V1\StatsController::class)->name('stats.overview');
@@ -22,4 +26,9 @@ Route::prefix('v1')->name('api.v1.')->group(function () {
     Route::get('trips/shared/{token}', [V1\SharedTripController::class, 'show'])->name('trips.shared');
     Route::post('trips/shared/{token}/checkin', [V1\SharedTripController::class, 'checkin'])
         ->middleware('throttle:checkin-token')->name('trips.shared.checkin');
+
+    // Dữ liệu cá nhân: cần phiên đăng nhập (cookie phiên của web, cùng nguồn); chưa đăng nhập → 401 JSON
+    Route::get('me/requests', [V1\MeController::class, 'requests'])
+        ->middleware([EncryptCookies::class, StartSession::class, AuthenticateSession::class, EnsureActiveUser::class, 'auth'])
+        ->name('me.requests');
 });

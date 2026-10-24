@@ -2,6 +2,7 @@
 import { computed } from 'vue';
 import { Head, Link } from '@inertiajs/vue3';
 import PageHeader from '@/Components/PageHeader.vue';
+import ExportButton from '@/Components/Admin/ExportButton.vue';
 import FilterBar from '@/Components/FilterBar.vue';
 import DataTable from '@/Components/DataTable.vue';
 import Pagination from '@/Components/Pagination.vue';
@@ -46,7 +47,11 @@ const columns = computed(() => [
 
 <template>
     <Head :title="t('admin.nav.trips')" />
-    <PageHeader :eyebrow="t('admin.title')" :title="t('admin.nav.trips')" :description="t('admin.trips.intro')" />
+    <PageHeader :eyebrow="t('admin.title')" :title="t('admin.nav.trips')" :description="t('admin.trips.intro')">
+        <template #actions>
+            <ExportButton dataset="hanh-trinh" />
+        </template>
+    </PageHeader>
     <FilterBar :filters="filters" :fields="fields" class="mb-4" />
     <DataTable :columns="columns" :rows="rowsOf(trips)" row-key="code" :loading="loading" :caption="t('admin.nav.trips')" :empty-text="t('trips.empty_filtered')">
         <template #cell-code="{ row }">

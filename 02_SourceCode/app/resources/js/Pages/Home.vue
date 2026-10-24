@@ -12,10 +12,13 @@ import GuideCard from '@/Components/GuideCard.vue';
 import Icon from '@/Components/Icon.vue';
 import NationalRiskPanel from '@/Components/Home/NationalRiskPanel.vue';
 import HotlineStrip from '@/Components/Home/HotlineStrip.vue';
+import Figure from '@/Components/Figure.vue';
+import DataLegend from '@/Components/DataLegend.vue';
 import { useT } from '@/Composables/useT';
 import { useFormat } from '@/Composables/useFormat';
 import { useLocaleRoute } from '@/Composables/useLocaleRoute';
 import { usePermissions } from '@/Composables/usePermissions';
+import { useImages } from '@/Composables/useImages';
 
 /** Trang chủ: mức rủi ro quốc gia, bản đồ vùng, cảnh báo nổi bật, thời tiết điểm du lịch, hướng dẫn. */
 const props = defineProps({
@@ -30,6 +33,9 @@ const { t } = useT();
 const { number } = useFormat();
 const lr = useLocaleRoute();
 const { user } = usePermissions();
+const images = useImages();
+/** Ảnh nền hero trang chủ (null → nền brand + icon). */
+const heroImage = computed(() => images.hero('home'));
 
 const fmt = (v) => (v === null || v === undefined ? null : number(v));
 const kpis = computed(() => [
@@ -45,8 +51,16 @@ const zoneCount = computed(() => props.zonesGeo?.features?.length || 0);
     <PageMeta :title="t('home.title')" fallback-key="home.subtitle" />
 
     <div class="container-page space-y-12 py-8 md:py-10">
-        <!-- Hero -->
-        <section class="grid items-start gap-6 lg:grid-cols-[1.2fr_1fr]" aria-labelledby="home-title">
+        <!-- Hero: ảnh nền + lớp phủ (chữ ≥ 4.5:1 trên mọi vùng ảnh), credit ở góc dưới -->
+        <section class="relative isolate grid items-start gap-6 overflow-hidden rounded-[var(--radius-clay)] border border-line p-4 sm:p-6 lg:grid-cols-[1.2fr_1fr] lg:p-8" aria-labelledby="home-title">
+            <div class="absolute inset-0 -z-10">
+                <Figure :image="heroImage" fill priority credit="none" rounded-class="" fallback-icon="mountain" :width="1600" :height="900" />
+                <div class="hero-scrim pointer-events-none absolute inset-0" aria-hidden="true"></div>
+            </div>
+            <p v-if="heroImage?.credit" class="figure-credit absolute bottom-0 right-0 z-10 max-w-[70%] truncate px-2 py-0.5 text-[0.6875rem]">
+                <a v-if="heroImage.sourceUrl" :href="heroImage.sourceUrl" target="_blank" rel="noopener noreferrer" class="underline">{{ t('ui.images.credit', { credit: heroImage.credit }) }}</a>
+                <span v-else>{{ t('ui.images.credit', { credit: heroImage.credit }) }}</span>
+            </p>
             <div class="space-y-5 pt-2">
                 <p class="eyebrow">{{ t('home.eyebrow') }}</p>
                 <h1 id="home-title" class="text-[1.625rem] leading-tight sm:text-3xl lg:text-[2.5rem]">{{ t('home.title') }}</h1>
@@ -94,6 +108,7 @@ const zoneCount = computed(() => props.zonesGeo?.features?.length || 0);
                 <h2 id="home-alerts-title" class="section-title">{{ t('home.top_alerts') }}</h2>
                 <Link :href="lr('/canh-bao')" class="link inline-flex items-center gap-1">{{ t('common.view_all') }}<Icon name="arrow-right" :size="16" /></Link>
             </div>
+            <DataLegend />
             <div v-if="topAlerts.length" class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                 <AlertCard v-for="a in topAlerts" :key="a.code || a.id" :alert="a" />
             </div>

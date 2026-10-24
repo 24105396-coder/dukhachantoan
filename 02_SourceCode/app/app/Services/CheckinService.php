@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Models\Alert;
+use App\Models\Province;
 use App\Models\Role;
 use App\Models\SafetyCheckin;
 use App\Models\Trip;
@@ -48,28 +49,54 @@ class CheckinService
         return $checkin;
     }
 
-    /** Cơ quan phản hồi check-in: trạng thái xử lý + ghi chú; báo lại cho chủ hành trình (mức 2, in-app). */
+    /**
+     * Cơ quan phản hồi check-in: trạng thái xử lý + ghi chú; báo lại cho chủ hành trình (mức 2, in-app).
+     * Lưu lại y nguyên (cùng trạng thái, cùng ghi chú) thì không gửi thêm thông báo trùng.
+     */
     public function respond(SafetyCheckin $checkin, User $actor, string $status, ?string $note): SafetyCheckin
     {
+        $changed = $checkin->response_status !== $status || (string) $checkin->response_note !== (string) $note;
         $checkin->forceFill([
             'response_status' => $status,
             'response_note' => $note,
             'responded_by' => $actor->id,
             'responded_at' => now(),
         ])->save();
-        $trip = $checkin->trip()->with('user')->first();
-        if ($trip?->user) {
-            $locale = $this->notifications->localeFor($trip->user, $trip);
-            $this->notifications->queueFor($trip->user, 2, [
-                'locale' => $locale,
-                'title' => __('messages.notify.checkin_response_title', ['trip' => $trip->title], $locale),
-                'body' => trim(__('enums.response_statuses.'.$status, [], $locale).'. '.(string) $note),
-                'action_url' => localized_route('trips.show', ['locale' => $locale, 'trip' => $trip->code]),
-            ], ['trip_id' => $trip->id, 'checkin_id' => $checkin->id], ['inapp']);
+        if ($changed) {
+            $this->notifyOwner($checkin, $status, $note);
         }
         $this->audit->log('checkin.respond', $checkin, ['response_status' => $status], $actor);
 
         return $checkin;
+    }
+
+    /** Thông báo in-app mức 2 cho chủ hành trình; check-in "cần hỗ trợ" trỏ về trang Yêu cầu của tôi. */
+    private function notifyOwner(SafetyCheckin $checkin, string $status, ?string $note): void
+    {
+        $trip = $checkin->trip()->with('user')->first();
+        if (! $trip?->user) {
+            return;
+        }
+        $locale = $this->notifications->localeFor($trip->user, $trip);
+        $url = $checkin->status === SafetyCheckin::STATUS_NEED_HELP
+            ? localized_route('requests.index', ['locale' => $locale, 'moi' => 'checkin:'.$checkin->id])
+            : localized_route('trips.show', ['locale' => $locale, 'trip' => $trip->code]);
+        $this->notifications->queueFor($trip->user, 2, [
+            'locale' => $locale,
+            'title' => __('messages.notify.checkin_response_title', ['trip' => $trip->title], $locale),
+            'body' => trim(__('enums.response_statuses.'.$status, [], $locale).'. '.(string) $note),
+            'action_url' => $url,
+            'payload' => ['kind' => 'checkin_response', 'response_status' => $status],
+        ], ['trip_id' => $trip->id, 'checkin_id' => $checkin->id], ['inapp']);
+    }
+
+    /** Tên tỉnh (theo locale hiện tại) có cơ quan hỗ trợ nhận yêu cầu "cần hỗ trợ" của hành trình. @return list<string> */
+    public function responderProvinceNames(Trip $trip): array
+    {
+        $ids = $this->currentProvinceIds($trip);
+
+        return $ids === [] ? [] : Province::query()->whereIn('id', $ids)->orderBy('name')->get()
+            ->map(fn (Province $p) => $p->localizedName())->values()->all();
     }
 
     /** Người nhận cảnh báo "cần hỗ trợ": agency đúng tỉnh + agency toàn quốc + admin. @return Collection<int, User> */

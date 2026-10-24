@@ -2,6 +2,7 @@
 import { computed, reactive } from 'vue';
 import { Head, router } from '@inertiajs/vue3';
 import PageHeader from '@/Components/PageHeader.vue';
+import ExportButton from '@/Components/Admin/ExportButton.vue';
 import FilterBar from '@/Components/FilterBar.vue';
 import DataTable from '@/Components/DataTable.vue';
 import Pagination from '@/Components/Pagination.vue';
@@ -66,6 +67,7 @@ function resend(n) {
     <Head :title="t('admin.nav.notifications')" />
     <PageHeader :eyebrow="t('admin.title')" :title="t('admin.nav.notifications')" :description="t('admin.queue.intro')">
         <template #actions>
+            <ExportButton dataset="thong-bao" />
             <RefreshIndicator :refreshing="isRefreshing" :last-refreshed-at="lastRefreshedAt" :interval-seconds="DEFAULT_POLL_MS / 1000" @refresh="refresh" />
         </template>
     </PageHeader>

@@ -26,8 +26,11 @@ class IncidentController extends Controller
 
     public function store(IncidentRequest $request, IncidentService $incidents): RedirectResponse
     {
-        $incidents->report($request->user(), $request->safe()->except('photo'), $request->file('photo'));
+        $incident = $incidents->report($request->user(), $request->safe()->except('photo'), $request->file('photo'));
+        $url = localized_route('requests.index', ['moi' => 'incident:'.$incident->id]);
 
-        return redirect(localized_route('incidents.create'))->with('success', __('messages.incidents.reported'));
+        return redirect($url)
+            ->with('success', __('messages.incidents.reported_with_id', ['id' => $incident->id]))
+            ->with('success_link', $url);
     }
 }

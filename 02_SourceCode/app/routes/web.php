@@ -13,6 +13,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\IncidentController;
 use App\Http\Controllers\MapController;
 use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\RequestController;
 use App\Http\Controllers\SharedTripController;
 use App\Http\Controllers\TripController;
 use App\Http\Controllers\WeatherController;
@@ -80,6 +81,9 @@ Route::prefix('{locale}')->where(['locale' => 'vi|en'])->middleware('locale')->g
 
         Route::get('bao-su-co', [IncidentController::class, 'create'])->name('incidents.create');
         Route::post('bao-su-co', [IncidentController::class, 'store'])->middleware('throttle:10,60,incidents-store')->name('incidents.store');
+
+        // Du khách theo dõi yêu cầu đã gửi (sự cố + check-in cần hỗ trợ); ?moi=incident:12 để làm nổi bật
+        Route::get('yeu-cau-cua-toi', [RequestController::class, 'index'])->name('requests.index');
     });
 
     // ---------- Quản trị: cơ quan hỗ trợ + quản trị hệ thống ----------
@@ -137,6 +141,11 @@ Route::prefix('{locale}')->where(['locale' => 'vi|en'])->middleware('locale')->g
         Route::get('vung/{zone}/sua', [Admin\ZoneController::class, 'edit'])->name('zones.edit');
         Route::put('vung/{zone}/sua', [Admin\ZoneController::class, 'update'])->name('zones.update');
         Route::put('vung/{zone}', [Admin\ZoneController::class, 'update'])->name('zones.update.short');
+
+        Route::get('bao-cao', [Admin\ReportController::class, 'index'])->name('reports.index');
+        Route::get('xuat-excel/{dataset}', [Admin\ExportController::class, 'download'])
+            ->where('dataset', 'tong-hop|canh-bao|hanh-trinh|thong-bao|an-toan|su-co|danh-ba|nhat-ky')
+            ->middleware('throttle:10,1,exports')->name('exports.download');
 
         Route::get('su-co', [Admin\IncidentController::class, 'index'])->name('incidents.index');
         Route::post('su-co/{incident}/duyet', [Admin\IncidentController::class, 'review'])->whereNumber('incident')->name('incidents.review');

@@ -24,8 +24,14 @@ class IncidentService
     /** Bán kính mặc định (km) của cảnh báo tạo từ sự cố có tọa độ. */
     public const ALERT_RADIUS_KM = 10;
 
-    public function __construct(private readonly AlertService $alerts, private readonly AuditLogger $audit)
-    {
+    /** Mức thông báo in-app báo du khách kết quả duyệt. */
+    public const REVIEW_NOTIFY_LEVEL = 2;
+
+    public function __construct(
+        private readonly AlertService $alerts,
+        private readonly AuditLogger $audit,
+        private readonly NotificationService $notifications,
+    ) {
     }
 
     public function report(?User $user, array $data, ?UploadedFile $photo = null): IncidentReport
@@ -52,17 +58,39 @@ class IncidentService
         });
     }
 
+    /** Duyệt sự cố; đổi trạng thái/ghi chú → thông báo in-app mức 2 cho người báo (lưu y nguyên thì không gửi trùng). */
     public function review(IncidentReport $incident, User $actor, string $status, ?string $note): IncidentReport
     {
+        $changed = $incident->status !== $status || (string) $incident->review_note !== (string) $note;
         $incident->forceFill([
             'status' => $status,
             'review_note' => $note,
             'reviewed_by' => $actor->id,
             'reviewed_at' => now(),
         ])->save();
+        if ($changed) {
+            $this->notifyReporter($incident);
+        }
         $this->audit->log('incident.review', $incident, ['status' => $status], $actor);
 
         return $incident;
+    }
+
+    private function notifyReporter(IncidentReport $incident): void
+    {
+        $reporter = $incident->user()->first();
+        if (! $reporter) {
+            return;
+        }
+        $locale = $this->notifications->localeFor($reporter);
+        $status = __('requests.incident_status.'.$incident->status, [], $locale);
+        $this->notifications->queueFor($reporter, self::REVIEW_NOTIFY_LEVEL, [
+            'locale' => $locale,
+            'title' => __('messages.notify.incident_review_title', ['id' => $incident->id, 'status' => $status], $locale),
+            'body' => trim($incident->title.'. '.(string) $incident->review_note),
+            'action_url' => localized_route('requests.index', ['locale' => $locale, 'moi' => 'incident:'.$incident->id]),
+            'payload' => ['kind' => 'incident_review', 'incident_id' => $incident->id, 'status' => $incident->status],
+        ], ['trip_id' => $incident->trip_id], ['inapp']);
     }
 
     /** Cảnh báo nháp từ sự cố đã xác minh: cùng loại rủi ro, vùng; có tọa độ thì thêm hình tròn 10 km. */

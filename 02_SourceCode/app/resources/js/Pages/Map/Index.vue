@@ -8,6 +8,7 @@ import Badge from '@/Components/Badge.vue';
 import Button from '@/Components/Button.vue';
 import EmptyState from '@/Components/EmptyState.vue';
 import Icon from '@/Components/Icon.vue';
+import DataLegend from '@/Components/DataLegend.vue';
 import { useT } from '@/Composables/useT';
 import { useLocaleRoute } from '@/Composables/useLocaleRoute';
 import { useGeolocation } from '@/Composables/useGeolocation';
@@ -39,6 +40,7 @@ const zonesShown = computed(() => (layers.zones ? props.zonesGeo : null));
 const overlays = computed(() => (layers.alerts
     ? props.alerts.filter((a) => a.geometry).map((a) => ({
         id: a.code, geometry: a.geometry, level: a.severity, label: a.headline, url: a.url, description: a.hazard?.name,
+        source: a.source?.name, updatedAt: a.updated_at_source || a.issued_at, simulated: !!a.is_simulated,
     }))
     : []));
 const legPoint = (leg) => ({
@@ -97,6 +99,7 @@ const zoneCount = computed(() => props.zonesGeo?.features?.length || 0);
                     <label class="inline-flex items-center gap-2 font-semibold"><input v-model="layers.alerts" type="checkbox" class="clay-checkbox" />{{ t('map.layer_alerts', { n: alerts.length }) }}</label>
                     <label v-if="user" class="inline-flex items-center gap-2 font-semibold"><input v-model="layers.legs" type="checkbox" class="clay-checkbox" />{{ t('map.layer_my_legs', { n: myLegs.length }) }}</label>
                 </fieldset>
+                <DataLegend class="mb-3" />
                 <MapBase
                     bare
                     scroll-zoom

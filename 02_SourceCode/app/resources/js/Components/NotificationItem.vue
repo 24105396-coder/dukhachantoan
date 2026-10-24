@@ -1,9 +1,10 @@
 <script setup>
 import { computed } from 'vue';
-import { Link } from '@inertiajs/vue3';
+import { Link, usePage } from '@inertiajs/vue3';
 import Icon from '@/Components/Icon.vue';
 import Badge from '@/Components/Badge.vue';
 import Button from '@/Components/Button.vue';
+import SourceStamp from '@/Components/SourceStamp.vue';
 import { useT } from '@/Composables/useT';
 import { useFormat } from '@/Composables/useFormat';
 
@@ -19,6 +20,7 @@ const props = defineProps({
 const emit = defineEmits(['read']);
 const { t, te } = useT();
 const { dateTime, ago } = useFormat();
+const page = usePage();
 
 const n = computed(() => props.notification);
 const isUnread = computed(() => !n.value.read_at);
@@ -34,6 +36,12 @@ const status = computed(() => STATUS[n.value.status] || STATUS.queued);
 const CHANNEL_ICON = { inapp: 'bell', email: 'mail', sms: 'smartphone' };
 const isSafeHref = (url) => typeof url === 'string' && (/^\/(?!\/)/.test(url) || /^https?:\/\//i.test(url));
 const isInternal = (url) => /^\/(?!\/)/.test(url);
+/** Nguồn hiển thị: nguồn của cảnh báo gốc nếu backend gửi kèm, nếu không là hệ thống phát thông báo. */
+const stampSource = computed(() => n.value.alert?.source || page.props.app?.name || 'DuKhachAnToan');
+/** Mốc cập nhật: giờ cập nhật nguồn của cảnh báo, rồi giờ gửi, rồi giờ tạo thông báo. */
+const stampAt = computed(() => n.value.alert?.updated_at_source || n.value.sent_at || n.value.created_at);
+/** Nhãn Mô phỏng khi thông báo sinh từ cảnh báo kịch bản diễn tập. */
+const stampSimulated = computed(() => !!(n.value.alert?.is_simulated ?? n.value.is_simulated));
 </script>
 
 <template>
@@ -63,6 +71,8 @@ const isInternal = (url) => /^\/(?!\/)/.test(url);
             <span v-if="n.sent_at"> · {{ t('notification.sent_at', { time: dateTime(n.sent_at) }) }}</span>
             <span v-if="n.last_error" class="block font-semibold text-danger">{{ t('notification.last_error') }}: {{ n.last_error }}</span>
         </p>
+
+        <SourceStamp class="mt-2" :source="stampSource" :updated-at="stampAt" :simulated="stampSimulated" />
 
         <details v-if="n.deliveries?.length" class="mt-2 text-xs">
             <summary class="cursor-pointer font-semibold text-link">{{ t('notification.deliveries', { n: n.deliveries.length }) }}</summary>

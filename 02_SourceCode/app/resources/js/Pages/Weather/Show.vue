@@ -10,6 +10,8 @@ import EmptyState from '@/Components/EmptyState.vue';
 import SkeletonList from '@/Components/SkeletonList.vue';
 import Button from '@/Components/Button.vue';
 import Icon from '@/Components/Icon.vue';
+import SourceStamp from '@/Components/SourceStamp.vue';
+import DataLegend from '@/Components/DataLegend.vue';
 import { useT } from '@/Composables/useT';
 import { useLocaleRoute } from '@/Composables/useLocaleRoute';
 import { useVisitLoading } from '@/Composables/useVisitLoading';
@@ -31,6 +33,9 @@ watch(() => props.zone?.code, (c) => (picked.value = c || ''));
 function go() {
     if (picked.value && picked.value !== props.zone?.code) router.get(lr(`/thoi-tiet/${picked.value}`), {}, { preserveScroll: true });
 }
+/** Nguồn dự báo: Open-Meteo, giờ lấy dữ liệu theo lần lấy gần nhất của vùng. */
+const OPEN_METEO = { name: 'Open-Meteo', url: 'https://open-meteo.com/' };
+const forecastUpdatedAt = computed(() => props.now?.fetched_at || props.now?.observed_at || null);
 const riskWithTime = computed(() => (props.risk ? { computed_at: props.zone?.risk?.computed_at, ...props.risk } : null));
 const crumbs = computed(() => [{ label: t('nav.home'), href: lr('/') }, { label: t('nav.weather') }]);
 </script>
@@ -51,6 +56,7 @@ const crumbs = computed(() => [{ label: t('nav.home'), href: lr('/') }, { label:
                 </form>
             </template>
         </PageHeader>
+        <DataLegend />
 
         <SkeletonList v-if="loading" :count="2" :cols="2" />
         <template v-else-if="zone">
@@ -70,7 +76,10 @@ const crumbs = computed(() => [{ label: t('nav.home'), href: lr('/') }, { label:
                     <li v-for="d in forecast" :key="d.date"><ForecastDay :day="d" /></li>
                 </ul>
                 <EmptyState v-else :title="t('weather.no_forecast')" :description="t('home.no_weather_hint')" compact />
-                <p class="text-xs text-muted">{{ t('footer.data_credit') }}</p>
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                    <SourceStamp :source="OPEN_METEO" :updated-at="forecastUpdatedAt" />
+                    <p class="text-xs text-muted">{{ t('footer.data_credit') }}</p>
+                </div>
             </section>
         </template>
         <EmptyState v-else :title="t('weather.no_zone')" :description="t('weather.no_zone_hint')" />
