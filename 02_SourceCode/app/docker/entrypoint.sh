@@ -70,6 +70,10 @@ if [ "$(run_as_www php artisan app:is-seeded)" != "yes" ]; then
   echo "[entrypoint] matching sample alerts with sample trips and dispatching demo notifications ..."
   run_as_www php artisan app:match-alerts || true
   run_as_www php artisan app:dispatch-notifications || true
+else
+  # CSDL đã có dữ liệu: chỉ bổ sung dữ liệu trình diễn mới (seeder dùng updateOrCreate, chạy lại không nhân bản)
+  echo "[entrypoint] refreshing demo requests (RequestDemoSeeder) ..."
+  run_as_www php artisan db:seed --class=RequestDemoSeeder --force || true
 fi
 
 # public/storage symlink nằm ngoài storage/ nên tạo bằng root là đủ
